@@ -2,9 +2,6 @@ package ags.goldenlionerp.apiTests;
 
 import static org.junit.Assert.*;
 
-import java.time.Duration;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -170,8 +167,6 @@ public class CompanyApiTest {
 					.accept(MediaType.APPLICATION_JSON)
 					.contentType(MediaType.APPLICATION_JSON)
 					.content(mapper.writeValueAsString(requestObject)))
-				//.andDo(res -> System.out.println(res.getRequest().getMethod()))
-				//.andDo(res -> System.out.println(res.getResponse().getContentAsString()))
 				.andExpect(MockMvcResultMatchers.status().is2xxSuccessful());
 		EntityManager manager = BeanFinder.findBean(EntityManager.class);
 		manager.flush();
@@ -190,5 +185,17 @@ public class CompanyApiTest {
 				JsonPath.read(getResult, "$.lastUpdateDateTime"),
 				JsonPath.read(getResult, "$.inputDateTime")
 		);
+	}
+	
+	@Test
+	@Rollback
+	public void deleteTest() throws Exception {
+		mockMvc.perform(delete(url + existingId))
+				.andExpect(MockMvcResultMatchers.status().isNoContent());
+				
+		mockMvc.perform(get(url + existingId))
+				.andExpect(MockMvcResultMatchers.status().isNotFound());
+		
+		
 	}
 }
