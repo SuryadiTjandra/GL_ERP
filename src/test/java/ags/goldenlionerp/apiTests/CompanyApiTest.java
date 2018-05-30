@@ -9,6 +9,10 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.persistence.EntityManager;
+
+import org.hamcrest.Matcher;
+import org.hamcrest.Matchers;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -22,6 +26,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.context.WebApplicationContext;
@@ -29,8 +34,12 @@ import org.springframework.web.context.WebApplicationContext;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import com.jayway.jsonpath.JsonPath;
 
 import ags.goldenlionerp.masterdata.company.Company;
+import ags.goldenlionerp.util.BeanFinder;
+import ags.goldenlionerp.util.DateMatcher;
+import ags.goldenlionerp.util.TimeDifferenceLessThanOneHourMatcher;
 
 @SpringBootTest
 @RunWith(SpringRunner.class)
@@ -46,6 +55,7 @@ public class CompanyApiTest {
 	String url;
 	String existingId;
 	String newId;
+	Matcher<String> dateTimeMatcher;
 	
 	@Before
 	public void setUp() throws Exception {
@@ -70,6 +80,11 @@ public class CompanyApiTest {
 		requestObject.put("currentReceivablePeriod", "0");
 		requestObject.put("currentInventoryPeriod", "0");
 		requestObject.put("computerId", "YOOO");
+		
+		dateTimeMatcher = Matchers.allOf(
+							new DateMatcher(),
+							new TimeDifferenceLessThanOneHourMatcher()
+						  );
 	}
 
 	@Test
@@ -108,13 +123,26 @@ public class CompanyApiTest {
 						.accept(MediaType.APPLICATION_JSON)
 						.contentType(MediaType.APPLICATION_JSON)
 						.content(mapper.writeValueAsString(requestObject)))
-				.andExpect(MockMvcResultMatchers.status().isCreated())
-				.andExpect(MockMvcResultMatchers.jsonPath(expression, matcher))
+				.andExpect(MockMvcResultMatchers.status().isCreated());
 		
-		String getResult = mockMvc.perform(get(url + newId)).andReturn().getResponse().getContentAsString();
+		String getResult = mockMvc.perform(get(url + newId))
+				.andExpect(MockMvcResultMatchers.status().isOk())
+				.andExpect(jsonPath("$.companyId").value(newId))
+				.andExpect(jsonPath("$.inputUserId").value("login not yet"))
+				.andExpect(jsonPath("$.inputDateTime", dateTimeMatcher))
+				.andExpect(jsonPath("$.lastUpdateUserId").value("login not yet"))
+				.andExpect(jsonPath("$.lastUpdateDateTime", dateTimeMatcher))
+				.andExpect(jsonPath("$.description").value(requestObject.get("description")))
+				.andExpect(jsonPath("$.fiscalDatePattern").value(requestObject.get("fiscalDatePattern")))
+				.andExpect(jsonPath("$.currentReceivablePeriod").value(requestObject.get("currentReceivablePeriod")))
+				.andReturn().getResponse().getContentAsString();
+
+		assertEquals(
+				(String) JsonPath.read(getResult, "$.lastUpdateDateTime"),
+				(String) JsonPath.read(getResult, "$.inputDateTime")
+		);
 		
-		
-		Company comp = mapper.readValue(getResult, Company.class);
+		/*Company comp = mapper.readValue(getResult, Company.class);
 
 		assertEquals(newId, comp.getCompanyId());
 		assertEquals(LocalDate.now(), comp.getInputDateTime().toLocalDate());
@@ -127,6 +155,7 @@ public class CompanyApiTest {
 		assertEquals(requestObject.get("description"), comp.getDescription());
 		assertEquals(requestObject.get("fiscalDatePattern"), comp.getFiscalDatePattern());
 		assertEquals(requestObject.get("currentReceivablePeriod"), String.valueOf(comp.getCurrentReceivablePeriod()));
+	*/
 	}
 	
 	@Test
@@ -156,9 +185,29 @@ public class CompanyApiTest {
 					.accept(MediaType.APPLICATION_JSON)
 					.contentType(MediaType.APPLICATION_JSON)
 					.content(mapper.writeValueAsString(requestObject)))
-				.andExpect(MockMvcResultMatchers.status().isNoContent());
-				
-		String getResult = mockMvc.perform(get(url)).andReturn().getResponse().getContentAsString();
+				//.andDo(res -> System.out.println(res.getRequest().getMethod()))
+				//.andDo(res -> System.out.println(res.getResponse().getContentAsString()))
+				.andExpect(MockMvcResultMatchers.status().is2xxSuccessful());
+		EntityManager manager = BeanFinder.findBean(EntityManager.class);
+		manager.flush();
+		
+		String getResult = mockMvc.perform(get(url + existingId))
+				.andExpect(MockMvcResultMatchers.status().isOk())
+				.andExpect(jsonPath("$.companyId").value(existingId))
+				.andExpect(jsonPath("$.lastUpdateUserId").value("login not yet"))
+				.andExpect(jsonPath("$.lastUpdateDateTime", dateTimeMatcher))
+				.andExpect(jsonPath("$.description").value(requestObject.get("description")))
+				.andExpect(jsonPath("$.fiscalDatePattern").value(requestObject.get("fiscalDatePattern")))
+				.andExpect(jsonPath("$.currentReceivablePeriod").value(requestObject.get("currentReceivablePeriod")))
+				.andReturn().getResponse().getContentAsString();
+		
+		assertNotEquals(
+				JsonPath.read(getResult, "$.lastUpdateDateTime"),
+				JsonPath.read(getResult, "$.inputDateTime")
+		);
+		
+		/*String getResult = mockMvc.perform(get(url + existingId))
+				.andReturn().getResponse().getContentAsString();
 		Company comp = mapper.readValue(getResult, Company.class);
 
 		assertEquals("00000", comp.getCompanyId());
@@ -170,6 +219,6 @@ public class CompanyApiTest {
 		
 		assertEquals(requestObject.get("description"), comp.getDescription());
 		assertEquals(requestObject.get("fiscalDatePattern"), comp.getFiscalDatePattern());
-		assertEquals(requestObject.get("currentReceivablePeriod"), String.valueOf(comp.getCurrentReceivablePeriod()));
+		assertEquals(requestObject.get("currentReceivablePeriod"), String.valueOf(comp.getCurrentReceivablePeriod()));*/
 	}
 }

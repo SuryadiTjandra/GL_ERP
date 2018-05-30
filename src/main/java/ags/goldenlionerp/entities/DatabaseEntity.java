@@ -20,6 +20,7 @@ import com.fasterxml.jackson.annotation.JsonProperty.Access;
 public abstract class DatabaseEntity extends ResourceSupport {
 	
 	@Column(name="UID")
+	@JsonProperty(access=Access.READ_ONLY)
 	protected String inputUserId;
 
 	@Column(name="DTIN")
@@ -28,12 +29,13 @@ public abstract class DatabaseEntity extends ResourceSupport {
 	@Column(name="TMIN")
 	protected String inputTime="";
 	
-	@Column(name="UIDM")
+	@JsonProperty(access=Access.READ_ONLY)
+	@Column(name="UIDM")W
 	protected String lastUpdateUserId;
 
 	@Column(name="DTLU")
 	protected Timestamp lastUpdateDate;
-	
+
 	@Column(name="TMLU")
 	protected String lastUpdateTime="";
 	
@@ -43,12 +45,14 @@ public abstract class DatabaseEntity extends ResourceSupport {
 	public String getInputUserId() {
 		return inputUserId;
 	}
+	@JsonProperty(access=Access.READ_ONLY)
 	public LocalDateTime getInputDateTime() {
 		return toLocalDateTime(inputDate, inputTime);
 	}
 	public String getLastUpdateUserId() {
 		return lastUpdateUserId;
 	}
+	@JsonProperty(access=Access.READ_ONLY)
 	public LocalDateTime getLastUpdateDateTime() {
 		return toLocalDateTime(lastUpdateDate, lastUpdateTime);
 	}	
