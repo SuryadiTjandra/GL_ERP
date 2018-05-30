@@ -30,7 +30,7 @@ public abstract class DatabaseEntity extends ResourceSupport {
 	protected String inputTime="";
 	
 	@JsonProperty(access=Access.READ_ONLY)
-	@Column(name="UIDM")W
+	@Column(name="UIDM")
 	protected String lastUpdateUserId;
 
 	@Column(name="DTLU")

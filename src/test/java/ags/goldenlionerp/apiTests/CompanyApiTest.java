@@ -141,21 +141,6 @@ public class CompanyApiTest {
 				(String) JsonPath.read(getResult, "$.lastUpdateDateTime"),
 				(String) JsonPath.read(getResult, "$.inputDateTime")
 		);
-		
-		/*Company comp = mapper.readValue(getResult, Company.class);
-
-		assertEquals(newId, comp.getCompanyId());
-		assertEquals(LocalDate.now(), comp.getInputDateTime().toLocalDate());
-		Duration inputDur = Duration.between(comp.getInputDateTime(), LocalDateTime.now());
-		assertTrue(inputDur.toHours() <= 1);
-		assertEquals("login not yet", comp.getInputUserId());
-		assertEquals(comp.getInputDateTime(), comp.getLastUpdateDateTime());
-		assertEquals(comp.getInputUserId(), comp.getLastUpdateUserId());
-		
-		assertEquals(requestObject.get("description"), comp.getDescription());
-		assertEquals(requestObject.get("fiscalDatePattern"), comp.getFiscalDatePattern());
-		assertEquals(requestObject.get("currentReceivablePeriod"), String.valueOf(comp.getCurrentReceivablePeriod()));
-	*/
 	}
 	
 	@Test
@@ -205,20 +190,5 @@ public class CompanyApiTest {
 				JsonPath.read(getResult, "$.lastUpdateDateTime"),
 				JsonPath.read(getResult, "$.inputDateTime")
 		);
-		
-		/*String getResult = mockMvc.perform(get(url + existingId))
-				.andReturn().getResponse().getContentAsString();
-		Company comp = mapper.readValue(getResult, Company.class);
-
-		assertEquals("00000", comp.getCompanyId());
-		assertEquals(LocalDate.now(), comp.getLastUpdateDateTime().toLocalDate());
-		Duration dur = Duration.between(comp.getLastUpdateDateTime(), LocalDateTime.now());
-		assertTrue(dur.toHours() <= 1);
-		assertEquals("login not yet", comp.getLastUpdateUserId());
-		assertNotEquals(comp.getInputDateTime(), comp.getLastUpdateDateTime());
-		
-		assertEquals(requestObject.get("description"), comp.getDescription());
-		assertEquals(requestObject.get("fiscalDatePattern"), comp.getFiscalDatePattern());
-		assertEquals(requestObject.get("currentReceivablePeriod"), String.valueOf(comp.getCurrentReceivablePeriod()));*/
 	}
 }
