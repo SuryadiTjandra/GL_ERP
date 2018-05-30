@@ -34,25 +34,24 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.jayway.jsonpath.JsonPath;
 
 import ags.goldenlionerp.masterdata.company.Company;
-import ags.goldenlionerp.util.BeanFinder;
 import ags.goldenlionerp.util.DateMatcher;
 import ags.goldenlionerp.util.TimeDifferenceLessThanOneHourMatcher;
 
 @SpringBootTest
 @RunWith(SpringRunner.class)
 @Transactional
-public class CompanyApiTest {
+public class CompanyApiTest implements ApiTest{
 
 	@Autowired
-	WebApplicationContext wac;
+	private WebApplicationContext wac;
 	
-	MockMvc mockMvc;
-	ObjectMapper mapper;
-	Map<String, String> requestObject;
-	String url;
-	String existingId;
-	String newId;
-	Matcher<String> dateTimeMatcher;
+	private MockMvc mockMvc;
+	private ObjectMapper mapper;
+	private Map<String, String> requestObject;
+	private String url;
+	private String existingId;
+	private String newId;
+	private Matcher<String> dateTimeMatcher;
 	
 	@Before
 	public void setUp() throws Exception {
@@ -168,7 +167,7 @@ public class CompanyApiTest {
 					.contentType(MediaType.APPLICATION_JSON)
 					.content(mapper.writeValueAsString(requestObject)))
 				.andExpect(MockMvcResultMatchers.status().is2xxSuccessful());
-		EntityManager manager = BeanFinder.findBean(EntityManager.class);
+		EntityManager manager = wac.getBean(EntityManager.class);
 		manager.flush();
 		
 		String getResult = mockMvc.perform(get(url + existingId))
@@ -195,7 +194,6 @@ public class CompanyApiTest {
 				
 		mockMvc.perform(get(url + existingId))
 				.andExpect(MockMvcResultMatchers.status().isNotFound());
-		
 		
 	}
 }

@@ -5,15 +5,18 @@ import java.util.Optional;
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;
 import javax.persistence.Column;
+import javax.persistence.Convert;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.NotFoundAction;
+import org.springframework.data.rest.core.annotation.RestResource;
 
 import ags.goldenlionerp.entities.DatabaseEntity;
 import ags.goldenlionerp.masterdata.company.Company;
@@ -32,7 +35,7 @@ import ags.goldenlionerp.masterdata.company.Company;
 public class BusinessUnit extends DatabaseEntity{
 	@Id
 	@Column(name="BNBUID")
-	private String buId;
+	private String businessUnitId;
 	@Column(name="BNDESB1")
 	private String description;
 	@Column(name="BNBUTY")
@@ -45,17 +48,24 @@ public class BusinessUnit extends DatabaseEntity{
 	@JoinColumn(name="BNCOID")
 	private Company company;
 	
-	@ManyToOne(fetch=FetchType.EAGER)
-	@JoinColumn(name="BNBUID1")
-	@NotFound(action = NotFoundAction.IGNORE)
-	private BusinessUnit relatedBusinessUnit;
-	
+	//@ManyToOne(fetch=FetchType.LAZY)
+	//@JoinColumn(name="BNBUID1")
+	//@NotFound(action = NotFoundAction.IGNORE)
+	//@Column(name="BNBUID1")
+	//@Convert(converter = BusinessUnitConverter.class)
+	//@RestResource(exported=true, path="related", rel="related")
+	//private BusinessUnitPreview relatedBusinessUnit;
+
 	//private String relatedBusinessUnit;
 	
 	@Column(name="BNFMOD")
 	private String modelOrConsolidated;
 
 
+	public String getBusinessUnitId() {
+		return businessUnitId;
+	}
+	
 	public String getDescription() {
 		return description;
 	}
@@ -72,9 +82,9 @@ public class BusinessUnit extends DatabaseEntity{
 		return company;
 	}
 
-	public Optional<BusinessUnit> getRelatedBusinessUnit() {
-		return Optional.ofNullable(relatedBusinessUnit);
-	}
+	//public BusinessUnitPreview getRelatedBusinessUnit() {
+	//	return relatedBusinessUnit;
+	//}
 	//@Column(name="BNBUID1")
 	//public Optional<String> getRelatedBusinessUnit() {
 	//	return Optional.empty();

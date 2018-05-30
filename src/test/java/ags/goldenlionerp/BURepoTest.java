@@ -27,7 +27,7 @@ public class BURepoTest {
 	@Test
 	public void test() {
 		BusinessUnit bu = repo.findById("100").get();
-		assertFalse(bu.getRelatedBusinessUnit().isPresent());
+		assertFalse(bu.getRelatedBusinessUnit() == null);
 		assertEquals(repo.count(), 4);
 	}
 
