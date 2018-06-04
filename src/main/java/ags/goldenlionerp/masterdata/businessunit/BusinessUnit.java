@@ -5,20 +5,24 @@ import java.util.Optional;
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;
 import javax.persistence.Column;
-import javax.persistence.Convert;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
 import javax.persistence.Table;
-import javax.persistence.Transient;
-
 import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.NotFoundAction;
 import org.springframework.data.rest.core.annotation.RestResource;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import ags.goldenlionerp.entities.DatabaseEntity;
+import ags.goldenlionerp.entities.previews.BusinessUnitPreview;
+import ags.goldenlionerp.entities.previews.CompanyPreview;
+import ags.goldenlionerp.entities.previews.Previews;
 import ags.goldenlionerp.masterdata.company.Company;
 
 @Entity
@@ -48,13 +52,11 @@ public class BusinessUnit extends DatabaseEntity{
 	@JoinColumn(name="BNCOID")
 	private Company company;
 	
-	//@ManyToOne(fetch=FetchType.LAZY)
-	//@JoinColumn(name="BNBUID1")
-	//@NotFound(action = NotFoundAction.IGNORE)
-	//@Column(name="BNBUID1")
-	//@Convert(converter = BusinessUnitConverter.class)
-	//@RestResource(exported=true, path="related", rel="related")
-	//private BusinessUnitPreview relatedBusinessUnit;
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="BNBUID1")
+	@NotFound(action=NotFoundAction.IGNORE)
+	@RestResource(exported=true, path="related", rel="related")
+	private BusinessUnit relatedBusinessUnit;
 
 	//private String relatedBusinessUnit;
 	
@@ -81,17 +83,51 @@ public class BusinessUnit extends DatabaseEntity{
 	public Company getCompany() {
 		return company;
 	}
-
-	//public BusinessUnitPreview getRelatedBusinessUnit() {
-	//	return relatedBusinessUnit;
-	//}
-	//@Column(name="BNBUID1")
-	//public Optional<String> getRelatedBusinessUnit() {
-	//	return Optional.empty();
-	//}
+	
+	public Optional<BusinessUnit> getRelatedBusinessUnit() {
+		return Optional.ofNullable(relatedBusinessUnit);
+	}
 
 	public String getModelOrConsolidated() {
 		return modelOrConsolidated;
 	}
+	
+	@JsonProperty("relatedPreview")
+	public Optional<BusinessUnitPreview> getRelatedBusinessUnitPreview() {
+		return getRelatedBusinessUnit().map(Previews::getPreview);
+	}
+	
+	public CompanyPreview getCompanyPreview() {
+		return Previews.getPreview(getCompany());
+	}
+
+	void setBusinessUnitId(String businessUnitId) {
+		this.businessUnitId = businessUnitId;
+	}
+
+	void setDescription(String description) {
+		this.description = description;
+	}
+
+	void setBusinessUnitType(String businessUnitType) {
+		this.businessUnitType = businessUnitType;
+	}
+
+	void setIdNumber(String idNumber) {
+		this.idNumber = idNumber;
+	}
+
+	void setCompany(Company company) {
+		this.company = company;
+	}
+
+	void setRelatedBusinessUnit(BusinessUnit relatedBusinessUnit) {
+		this.relatedBusinessUnit = relatedBusinessUnit;
+	}
+
+	void setModelOrConsolidated(String modelOrConsolidated) {
+		this.modelOrConsolidated = modelOrConsolidated;
+	}
+
 
 }

@@ -12,4 +12,5 @@ public class BusinessUnitController {
 	public ResponseEntity<?> noPutAllowed(){
 		return new ResponseEntity<>(HttpStatus.METHOD_NOT_ALLOWED);
 	}
+	
 }
