@@ -10,6 +10,7 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.NotFoundAction;
@@ -61,6 +62,8 @@ public class BusinessUnit extends DatabaseEntity{
 	@Column(name="BNFMOD")
 	private String modelOrConsolidated;
 
+	@OneToOne(fetch=FetchType.LAZY, mappedBy="branch")
+	private BranchPlantConstant configuration;
 
 	public String getBusinessUnitId() {
 		return businessUnitId;
@@ -90,11 +93,14 @@ public class BusinessUnit extends DatabaseEntity{
 		return modelOrConsolidated;
 	}
 	
+	public BranchPlantConstant getConfiguration() {
+		return configuration;
+	}
+	
 	@JsonProperty("relatedPreview")
 	public Optional<BusinessUnitPreview> getRelatedBusinessUnitPreview() {
 		return getRelatedBusinessUnit().map(Previews::getPreview);
 	}
-	
 	public CompanyPreview getCompanyPreview() {
 		return Previews.getPreview(getCompany());
 	}
@@ -127,5 +133,7 @@ public class BusinessUnit extends DatabaseEntity{
 		this.modelOrConsolidated = modelOrConsolidated;
 	}
 
-
+	void setConfiguration(BranchPlantConstant configuration) {
+		this.configuration = configuration;
+	}
 }
