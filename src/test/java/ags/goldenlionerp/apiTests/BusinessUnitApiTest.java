@@ -144,8 +144,8 @@ public class BusinessUnitApiTest implements ApiTest {
 	}
 
 	@Test
-	//@Rollback
-	@Commit
+	@Rollback
+	//@Commit
 	public void createTestWithPostWithoutRelatedBU() throws Exception {
 		requestObject.remove("relatedBusinessUnit");
 
