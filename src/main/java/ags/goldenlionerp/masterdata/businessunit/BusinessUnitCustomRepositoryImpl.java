@@ -1,8 +1,8 @@
 package ags.goldenlionerp.masterdata.businessunit;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 import javax.persistence.Table;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
@@ -22,22 +22,57 @@ public class BusinessUnitCustomRepositoryImpl extends AbstractCustomRepository<B
 	@Override
 	public <S extends BusinessUnit> S save(S businessUnit) {
 		if (businessUnit.getRelatedBusinessUnit().isPresent()) {
-			return em.merge(businessUnit);
+			if (em.contains(businessUnit)) {
+				return em.merge(businessUnit);
+			}else {
+				em.persist(businessUnit);
+				return businessUnit;
+			}
 		}
 		
 		return em.contains(businessUnit) ? update(businessUnit) : insert(businessUnit);
 	}
 	
+	@SuppressWarnings("unchecked")
 	private <S extends BusinessUnit> S update(S bu) {
-		/*
-		StringBuilder sb = new StringBuilder();
-		sb.append("UPDATE ")
-			.append(tableName)
-			.append("SET ")
-			.append(str)*/
-		return bu;
+		em.detach(bu);
+		setUpdateInfo(bu);
+		
+		String sql = new StringBuilder()
+			.append("UPDATE T0021 ")
+			.append("SET BNDESB1 = ?, ")
+			.append(" BNBUTY = ? ,")
+			.append(" BNANUM = ? ,")
+			.append(" BNCOID = ? ,")
+			.append(" BNBUID1 = ? ,")
+			.append(" BNFMOD = ? ,")
+			.append(" BNDTLU = ? ,")
+			.append(" BNTMLU = ? ,")
+			.append(" BNUIDM = ? ,")
+			.append(" BNCID = ? ")
+			.append(" WHERE BNBUID = ?")
+			.toString();
+
+		Query query = em.createNativeQuery(sql)
+			.setParameter(1, bu.getDescription())
+			.setParameter(2, bu.getBusinessUnitType())
+			.setParameter(3, bu.getIdNumber())
+			.setParameter(4, bu.getCompany().getCompanyId())
+			.setParameter(5, bu.getRelatedBusinessUnit().map(rbu -> rbu.getBusinessUnitId()).orElse(""))
+			.setParameter(6, bu.getModelOrConsolidated())
+			.setParameter(7, DatabaseEntityUtil.toDate(bu.getLastUpdateDateTime()))
+			.setParameter(8, DatabaseEntityUtil.toTimeString(bu.getLastUpdateDateTime()))
+			.setParameter(9, bu.getLastUpdateUserId())
+			.setParameter(10, bu.getComputerId())
+			.setParameter(11, bu.getBusinessUnitId());
+		
+		query.executeUpdate();
+		
+		em.flush();
+		return (S) em.find(bu.getClass(), bu.getBusinessUnitId());
 	}
 	
+	@SuppressWarnings("unchecked")
 	private <S extends BusinessUnit> S insert(S bu) {
 		setCreationInfo(bu);
 		String tableName = BusinessUnit.class.getAnnotation(Table.class).name();
@@ -69,9 +104,9 @@ public class BusinessUnitCustomRepositoryImpl extends AbstractCustomRepository<B
 		
 		em.flush();
 		
-		BusinessUnit newBu = em.find(bu.getClass(), bu.getBusinessUnitId());
+		//BusinessUnit newBu = em.find(bu.getClass(), bu.getBusinessUnitId());
 		
-		return bu;
+		return (S) em.find(bu.getClass(), bu.getBusinessUnitId());
 		
 	}
 

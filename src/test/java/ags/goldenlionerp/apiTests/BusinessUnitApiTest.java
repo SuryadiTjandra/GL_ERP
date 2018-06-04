@@ -2,6 +2,7 @@ package ags.goldenlionerp.apiTests;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assume.assumeTrue;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.patch;
@@ -154,7 +155,7 @@ public class BusinessUnitApiTest implements ApiTest {
 		String getResult = mockMvc.perform(get(url + newId).accept(MediaType.APPLICATION_JSON))
 				//.andDo(res -> System.out.println(res.getResponse().getContentAsString()))
 				.andExpect(MockMvcResultMatchers.status().isOk())
-				.andDo(res -> System.out.println(res.getResponse().getErrorMessage()))
+				//.andDo(res -> System.out.println(res.getResponse().getErrorMessage()))
 				.andReturn().getResponse().getContentAsString();
 
 		String relatedUrl = JsonPath.read(getResult, "$._links.related.href");
@@ -191,7 +192,12 @@ public class BusinessUnitApiTest implements ApiTest {
 	@Test
 	@Rollback
 	public void updateTestWithPatch() throws Exception {
-		requestObject.remove("relatedBusinessUnit");
+		String beforePatch = mockMvc.perform(get(url + existingId))
+								.andReturn().getResponse().getContentAsString();
+				
+		requestObject.remove("businessUnitType");
+		requestObject.remove("computerId");
+		
 		mockMvc.perform(patch(url + existingId)
 					.accept(MediaType.APPLICATION_JSON)
 					.contentType(MediaType.APPLICATION_JSON)
@@ -208,6 +214,10 @@ public class BusinessUnitApiTest implements ApiTest {
 				.andExpect(jsonPath("$.lastUpdateUserId").value("login not yet"))
 				.andExpect(jsonPath("$.lastUpdateDateTime", dateTimeMatcher))
 				.andExpect(jsonPath("$.description").value(requestObject.get("description")))
+				.andExpect(jsonPath("$.businessUnitType").value((String) JsonPath.read(beforePatch, "$.businessUnitType")))
+				.andExpect(jsonPath("$.computerId").value((String) JsonPath.read(beforePatch, "$.computerId")))
+				.andExpect(jsonPath("$.inputDateTime").value((String) JsonPath.read(beforePatch, "$.inputDateTime")))
+				.andExpect(jsonPath("$.inputUserId").value((String) JsonPath.read(beforePatch, "$.inputUserId")))
 				.andReturn().getResponse().getContentAsString();
 		
 		assertNotEquals(
@@ -222,6 +232,42 @@ public class BusinessUnitApiTest implements ApiTest {
 		mockMvc.perform(get(relatedUrl))
 				.andExpect(jsonPath("$._links.self.href", Matchers.endsWith(requestObject.get("relatedBusinessUnit"))));
 			
+	}
+	
+	@Test
+	@Rollback
+	public void updateTestWithPatchRemoveRelatedBusinessUnit() throws Exception {
+		
+		String id = "123";
+		requestObject.put("relatedBusinessUnit", null);
+		
+		//check beforehand that the entity has a non-null relatedBusinessUnit association
+		String beforePatch = mockMvc.perform(get(url + id).accept(MediaType.APPLICATION_JSON))
+				.andExpect(MockMvcResultMatchers.status().isOk())
+				.andReturn().getResponse().getContentAsString();
+		String beforeRelated = JsonPath.read(beforePatch, "$._links.related.href");
+		mockMvc.perform(get(beforeRelated))
+				.andDo(res -> assumeTrue(res.getResponse().getStatus() == 200));
+				//.andExpect(MockMvcResultMatchers.status().isOk());
+		
+		//do a PATCH to remove the association
+		mockMvc.perform(patch(url + id)
+					.accept(MediaType.APPLICATION_JSON)
+					.contentType(MediaType.APPLICATION_JSON)
+					.content(mapper.writeValueAsString(requestObject)))
+				.andExpect(MockMvcResultMatchers.status().is2xxSuccessful());
+		
+		EntityManager manager = wac.getBean(EntityManager.class);
+		manager.flush();
+		
+		//do a GET to check the result
+		String getResult = mockMvc.perform(get(url + id).accept(MediaType.APPLICATION_JSON))
+				.andExpect(MockMvcResultMatchers.status().isOk())
+				.andReturn().getResponse().getContentAsString();
+		
+		String relatedUrl = JsonPath.read(getResult, "$._links.related.href");
+		mockMvc.perform(get(relatedUrl))
+				.andExpect(MockMvcResultMatchers.status().isNotFound());
 	}
 
 	@Override
