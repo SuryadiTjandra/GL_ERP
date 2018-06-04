@@ -24,6 +24,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.hateoas.hal.Jackson2HalModule;
 import org.springframework.http.MediaType;
+import org.springframework.test.annotation.Commit;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
@@ -72,7 +73,7 @@ public class BusinessUnitApiTest implements ApiTest {
 		requestObject.put("businessUnitType", "BS");
 		requestObject.put("idNumber", "");
 		requestObject.put("company", "/api/companies/00000");
-		requestObject.put("relatedBusinessUnit", "/api/businessUnit/100");
+		requestObject.put("relatedBusinessUnit", "/api/businessUnits/100");
 		requestObject.put("modelOrConsolidated", "");
 		requestObject.put("computerId", "YOOO");
 		
@@ -86,6 +87,7 @@ public class BusinessUnitApiTest implements ApiTest {
 	@Test
 	public void getTestSingle() throws Exception {
 		mockMvc.perform(get(url + existingId).accept(MediaType.APPLICATION_JSON))
+			.andDo(res -> System.out.println(res.getResponse().getContentAsString()))
 			.andExpect(MockMvcResultMatchers.status().isOk())
 			.andExpect(MockMvcResultMatchers.content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
 			.andExpect(jsonPath("$.businessUnitId").value(existingId))
@@ -117,12 +119,14 @@ public class BusinessUnitApiTest implements ApiTest {
 		
 		String getResult = mockMvc.perform(get(url + newId).accept(MediaType.APPLICATION_JSON))
 				//.andDo(res -> System.out.println(res.getResponse().getContentAsString()))
+				.andExpect(MockMvcResultMatchers.status().isOk())
 				.andExpect(jsonPath("$.businessUnitId").value(newId))
 				.andExpect(jsonPath("$.inputUserId").value("login not yet"))
 				.andExpect(jsonPath("$.inputDateTime", dateTimeMatcher))
 				.andExpect(jsonPath("$.lastUpdateUserId").value("login not yet"))
 				.andExpect(jsonPath("$.lastUpdateDateTime", dateTimeMatcher))
 				.andExpect(jsonPath("$.description").value(requestObject.get("description")))
+				.andExpect(jsonPath("$.relatedPreview.businessUnitId").value("100"))
 				.andReturn().getResponse().getContentAsString();
 		
 		assertEquals(
@@ -133,25 +137,29 @@ public class BusinessUnitApiTest implements ApiTest {
 		String companyUrl = JsonPath.read(getResult, "$._links.company.href");
 		mockMvc.perform(get(companyUrl))
 				.andExpect(jsonPath("$._links.self.href", Matchers.endsWith(requestObject.get("company"))));
-		String relatedUrl = JsonPath.read(getResult, "$._links.relatedBusinessUnit.href");
+		String relatedUrl = JsonPath.read(getResult, "$._links.related.href");
 		mockMvc.perform(get(relatedUrl))
 				.andExpect(jsonPath("$._links.self.href", Matchers.endsWith(requestObject.get("relatedBusinessUnit"))));
 			
 	}
 
 	@Test
-	@Rollback
+	//@Rollback
+	@Commit
 	public void createTestWithPostWithoutRelatedBU() throws Exception {
 		requestObject.remove("relatedBusinessUnit");
+
 		mockMvc.perform(post(url)
 						.content(mapper.writeValueAsString(requestObject)))
 				.andExpect(MockMvcResultMatchers.status().isCreated());
 
 		String getResult = mockMvc.perform(get(url + newId).accept(MediaType.APPLICATION_JSON))
 				//.andDo(res -> System.out.println(res.getResponse().getContentAsString()))
+				.andExpect(MockMvcResultMatchers.status().isOk())
+				.andDo(res -> System.out.println(res.getResponse().getErrorMessage()))
 				.andReturn().getResponse().getContentAsString();
 
-		String relatedUrl = JsonPath.read(getResult, "$._links.relatedBusinessUnit.href");
+		String relatedUrl = JsonPath.read(getResult, "$._links.related.href");
 		mockMvc.perform(get(relatedUrl))
 				.andExpect(MockMvcResultMatchers.status().isNotFound());
 			
@@ -163,10 +171,10 @@ public class BusinessUnitApiTest implements ApiTest {
 	public void createTestWithPut() throws Exception {
 		requestObject.remove("businessUnitId");
 		mockMvc.perform(put(url + newId)
-				.accept(MediaType.APPLICATION_JSON)
-				.contentType(MediaType.APPLICATION_JSON)
-				.content(mapper.writeValueAsString(requestObject)))
-		.andExpect(MockMvcResultMatchers.status().isMethodNotAllowed());
+					.accept(MediaType.APPLICATION_JSON)
+					.contentType(MediaType.APPLICATION_JSON)
+					.content(mapper.writeValueAsString(requestObject)))
+				.andExpect(MockMvcResultMatchers.status().isMethodNotAllowed());
 	}
 
 	@Override
@@ -185,6 +193,7 @@ public class BusinessUnitApiTest implements ApiTest {
 	@Test
 	@Rollback
 	public void updateTestWithPatch() throws Exception {
+		requestObject.remove("relatedBusinessUnit");
 		mockMvc.perform(patch(url + existingId)
 					.accept(MediaType.APPLICATION_JSON)
 					.contentType(MediaType.APPLICATION_JSON)
@@ -196,6 +205,7 @@ public class BusinessUnitApiTest implements ApiTest {
 		
 		String getResult = mockMvc.perform(get(url + existingId).accept(MediaType.APPLICATION_JSON))
 				//.andDo(res -> System.out.println(res.getResponse().getContentAsString()))
+				.andExpect(MockMvcResultMatchers.status().isOk())
 				.andExpect(jsonPath("$.businessUnitId").value(existingId))
 				.andExpect(jsonPath("$.lastUpdateUserId").value("login not yet"))
 				.andExpect(jsonPath("$.lastUpdateDateTime", dateTimeMatcher))
@@ -210,7 +220,7 @@ public class BusinessUnitApiTest implements ApiTest {
 		String companyUrl = JsonPath.read(getResult, "$._links.company.href");
 		mockMvc.perform(get(companyUrl))
 				.andExpect(jsonPath("$._links.self.href", Matchers.endsWith(requestObject.get("company"))));
-		String relatedUrl = JsonPath.read(getResult, "$._links.relatedBusinessUnit.href");
+		String relatedUrl = JsonPath.read(getResult, "$._links.related.href");
 		mockMvc.perform(get(relatedUrl))
 				.andExpect(jsonPath("$._links.self.href", Matchers.endsWith(requestObject.get("relatedBusinessUnit"))));
 			
@@ -221,10 +231,10 @@ public class BusinessUnitApiTest implements ApiTest {
 	@Rollback
 	public void updateTestWithPut() throws Exception {
 		mockMvc.perform(put(url + existingId)
-				.accept(MediaType.APPLICATION_JSON)
-				.contentType(MediaType.APPLICATION_JSON)
-				.content(mapper.writeValueAsString(requestObject)))
-		.andExpect(MockMvcResultMatchers.status().isMethodNotAllowed());
+					.accept(MediaType.APPLICATION_JSON)
+					.contentType(MediaType.APPLICATION_JSON)
+					.content(mapper.writeValueAsString(requestObject)))
+				.andExpect(MockMvcResultMatchers.status().isMethodNotAllowed());
 
 	}
 	
