@@ -1,18 +1,16 @@
-package ags.goldenlionerp.masterdata.businessunit;
+package ags.goldenlionerp.entities.previews;
 
 import org.springframework.hateoas.ResourceSupport;
+
+import ags.goldenlionerp.masterdata.businessunit.BusinessUnit;
 
 public class BusinessUnitPreview extends ResourceSupport{
 	private String businessUnitId;
 	private String description;
 	
-	private BusinessUnitPreview(BusinessUnit bu) {
+	BusinessUnitPreview(BusinessUnit bu) {
 		this.businessUnitId = bu.getBusinessUnitId();
 		this.description = bu.getDescription();
-	}
-	
-	public static BusinessUnitPreview getPreview(BusinessUnit bu) {
-		return new BusinessUnitPreview(bu);
 	}
 
 	public String getDescription() {
