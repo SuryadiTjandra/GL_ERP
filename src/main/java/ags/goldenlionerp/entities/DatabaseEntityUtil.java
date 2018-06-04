@@ -7,9 +7,6 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.time.temporal.ChronoUnit;
 
-import javax.persistence.PrePersist;
-import javax.persistence.PreUpdate;
-
 import org.springframework.data.domain.AuditorAware;
 
 import ags.goldenlionerp.util.BeanFinder;
