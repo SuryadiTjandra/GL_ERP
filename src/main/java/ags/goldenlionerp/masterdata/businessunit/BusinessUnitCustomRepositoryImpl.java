@@ -7,8 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
+import ags.goldenlionerp.entities.AbstractCustomRepository;
+import ags.goldenlionerp.entities.DatabaseEntityUtil;
+
 @Component
-public class BusinessUnitRepositoryCustomImpl implements BusinessUnitRepositoryCustom{
+public class BusinessUnitCustomRepositoryImpl extends AbstractCustomRepository<BusinessUnit> implements BusinessUnitCustomRepository {
 
 	@Autowired
 	JdbcTemplate template;
@@ -36,26 +39,15 @@ public class BusinessUnitRepositoryCustomImpl implements BusinessUnitRepositoryC
 	}
 	
 	private <S extends BusinessUnit> S insert(S bu) {
-		
-		em.persist(bu);
-		BusinessUnit newBu = em.find(BusinessUnit.class, bu.getBusinessUnitId());
-		BusinessUnit nullBu = new BusinessUnit();
-		nullBu.setBusinessUnitId("");
-		em.createQuery("UPDATE BusinessUnit SET relatedBusinessUnit = :nullBu WHERE businessUnitId = :buId")
-			.setParameter("nullBu", nullBu)
-			.setParameter("buId", bu.getBusinessUnitId())
-			.executeUpdate();
-		
-		return (S) em.find(BusinessUnit.class, bu.getBusinessUnitId());
-		
-		/*String tableName = BusinessUnit.class.getAnnotation(Table.class).name();
-		
+		setCreationInfo(bu);
+		String tableName = BusinessUnit.class.getAnnotation(Table.class).name();
+
 		String sql = new StringBuilder()
 			.append("INSERT INTO ")
 			.append(tableName)
-			.append(" (BNBUID, BNDESB1, BNBUTY, BNANUM, BNCOID, BNBUID1, BNFMOD, BNCID, BNDTIN, BNTMIN, ) ")
+			.append(" (BNBUID, BNDESB1, BNBUTY, BNANUM, BNCOID, BNBUID1, BNFMOD, BNCID, BNDTIN, BNTMIN, BNUID, BNDTLU, BNTMLU, BNUIDM) ")
 			.append(" VALUES ")
-			.append(" (?, ?, ?, ?, ?, ?, ?, ?) ")
+			.append(" (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ")
 			.toString();
 		
 		em.createNativeQuery(sql)
@@ -67,13 +59,19 @@ public class BusinessUnitRepositoryCustomImpl implements BusinessUnitRepositoryC
 			.setParameter(6, bu.getRelatedBusinessUnit().map(rbu -> rbu.getBusinessUnitId()).orElse(""))
 			.setParameter(7, bu.getModelOrConsolidated())
 			.setParameter(8, bu.getComputerId())
+			.setParameter(9, DatabaseEntityUtil.toDate(bu.getInputDateTime()))
+			.setParameter(10, DatabaseEntityUtil.toTimeString(bu.getInputDateTime()))
+			.setParameter(11, bu.getInputUserId())
+			.setParameter(12, DatabaseEntityUtil.toDate(bu.getLastUpdateDateTime()))
+			.setParameter(13, DatabaseEntityUtil.toTimeString(bu.getLastUpdateDateTime()))
+			.setParameter(14, bu.getLastUpdateUserId())
 			.executeUpdate();
 		
 		em.flush();
 		
 		BusinessUnit newBu = em.find(bu.getClass(), bu.getBusinessUnitId());
 		
-		return bu;*/
+		return bu;
 		
 	}
 

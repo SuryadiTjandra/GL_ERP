@@ -1,5 +1,5 @@
 package ags.goldenlionerp.masterdata.businessunit;
 
-public interface BusinessUnitRepositoryCustom {
+public interface BusinessUnitCustomRepository {
 	<S extends BusinessUnit> S save(S businessUnit);
 }
