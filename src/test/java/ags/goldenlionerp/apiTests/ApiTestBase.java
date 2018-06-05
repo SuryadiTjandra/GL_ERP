@@ -62,6 +62,7 @@ public abstract class ApiTestBase implements ApiTest{
 					.registerModule(new JavaTimeModule());
 		
 		requestObject = populateRequestObject();
+		requestObject.put("computerId", "YOOO");
 		
 		dateTimeMatcher = Matchers.allOf(
 							new DateMatcher(),

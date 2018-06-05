@@ -22,6 +22,7 @@ import ags.goldenlionerp.entities.DatabaseEntity;
 import ags.goldenlionerp.entities.previews.BusinessUnitPreview;
 import ags.goldenlionerp.entities.previews.CompanyPreview;
 import ags.goldenlionerp.entities.previews.Previews;
+import ags.goldenlionerp.masterdata.branchplantconstant.BranchPlantConstant;
 import ags.goldenlionerp.masterdata.company.Company;
 
 @Entity

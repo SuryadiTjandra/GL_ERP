@@ -72,9 +72,12 @@ public class BranchPlantConstantApiTest extends ApiTestBase{
 						.content(mapper.writeValueAsString(requestObject)))
 				.andExpect(MockMvcResultMatchers.status().is2xxSuccessful());
 		
+		em.flush();
+		em.clear();
+		
 		String getResult = mockMvc.perform(get(url).accept(MediaType.APPLICATION_JSON))
 				.andExpect(MockMvcResultMatchers.status().isOk())
-				.andExpect(jsonPath("$.branchCode").value(existingId))
+				.andExpect(jsonPath("$.branchCode").value(newId))
 				.andExpect(jsonPath("$.purchaseCostMethod").value(requestObject.get("purchaseCostMethod")))
 				.andExpect(jsonPath("$.inventoryLotCreation").value(requestObject.get("inventoryLotCreation")))
 				.andReturn().getResponse().getContentAsString();
@@ -141,7 +144,7 @@ public class BranchPlantConstantApiTest extends ApiTestBase{
 		
 		String getResult = mockMvc.perform(get(url).accept(MediaType.APPLICATION_JSON))
 				.andExpect(MockMvcResultMatchers.status().isOk())
-				.andExpect(jsonPath("$.branchCode").value(newId))
+				.andExpect(jsonPath("$.branchCode").value(existingId))
 				.andExpect(jsonPath("$.purchaseCostMethod").value(requestObject.get("purchaseCostMethod")))
 				.andExpect(jsonPath("$.inventoryLotCreation").value(requestObject.get("inventoryLotCreation")))
 				.andExpect(jsonPath("$.salesInventoryPurchaseMethod").value(JsonPath.read(beforePatch, "$.salesInventoryPurchaseMethod")))
@@ -170,7 +173,7 @@ public class BranchPlantConstantApiTest extends ApiTestBase{
 		
 		String getResult = mockMvc.perform(get(url).accept(MediaType.APPLICATION_JSON))
 				.andExpect(MockMvcResultMatchers.status().isOk())
-				.andExpect(jsonPath("$.branchCode").value(newId))
+				.andExpect(jsonPath("$.branchCode").value(existingId))
 				.andExpect(jsonPath("$.purchaseCostMethod").value(requestObject.get("purchaseCostMethod")))
 				.andExpect(jsonPath("$.inventoryLotCreation").value(requestObject.get("inventoryLotCreation")))
 				.andExpect(jsonPath("$.salesInventoryPurchaseMethod").value(""))
