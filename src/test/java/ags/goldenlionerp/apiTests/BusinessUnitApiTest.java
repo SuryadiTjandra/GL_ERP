@@ -15,78 +15,50 @@ import java.util.Map;
 
 import javax.persistence.EntityManager;
 
-import org.hamcrest.Matcher;
 import org.hamcrest.Matchers;
-import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.hateoas.hal.Jackson2HalModule;
 import org.springframework.http.MediaType;
 import org.springframework.test.annotation.Rollback;
-import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.context.WebApplicationContext;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.jayway.jsonpath.JsonPath;
 
-import ags.goldenlionerp.util.DateMatcher;
-import ags.goldenlionerp.util.TimeDifferenceLessThanOneHourMatcher;
 
-@SpringBootTest
-@RunWith(SpringRunner.class)
 @Transactional
-public class BusinessUnitApiTest implements ApiTest {
+public class BusinessUnitApiTest extends ApiTestBase/*implements ApiTest*/ {
 
-	@Autowired
-	WebApplicationContext wac;
-	
-	MockMvc mockMvc;
-	ObjectMapper mapper;
-	Map<String, String> requestObject;
-	String url;
-	String existingId;
-	String newId;
-	Matcher<String> dateTimeMatcher;
-	
-	@Before
-	public void setUp() throws Exception {
-		url = "/api/businessUnits/";
-		existingId = "100";
-		newId = "125";
-		
-		mockMvc = MockMvcBuilders.webAppContextSetup(wac).build();
-		mapper = new ObjectMapper()
-					.registerModule(new Jackson2HalModule())
-					.registerModule(new JavaTimeModule());
-		
-		requestObject = new HashMap<>();
-		requestObject.put("businessUnitId", newId);
-		requestObject.put("description", "TESTTEST");
-		requestObject.put("businessUnitType", "BS");
-		requestObject.put("idNumber", "");
-		requestObject.put("company", "/api/companies/00000");
-		requestObject.put("relatedBusinessUnit", "/api/businessUnits/100");
-		requestObject.put("modelOrConsolidated", "");
-		requestObject.put("computerId", "YOOO");
-		
-		dateTimeMatcher = Matchers.allOf(
-							new DateMatcher(),
-							new TimeDifferenceLessThanOneHourMatcher()
-						  );
+	@Override
+	Map<String, String> populateRequestObject() {
+		Map<String, String> map = new HashMap<>();
+		map.put("businessUnitId", newId);
+		map.put("description", "TESTTEST");
+		map.put("businessUnitType", "BS");
+		map.put("idNumber", "");
+		map.put("company", "/api/companies/00000");
+		map.put("relatedBusinessUnit", "/api/businessUnits/110");
+		map.put("modelOrConsolidated", "");
+		map.put("computerId", "YOOO");
+		map.put("inputUserId", "abcdefghijklmnopqrstuvwxyz");
+		return map;
+	}
+	@Override
+	String baseUrl() {
+		return "/api/businessUnits/";
+	}
+	@Override
+	String existingId() {
+		return "100";
+	}
+	@Override
+	String newId() {
+		return "125";
 	}
 	
 	@Override
 	@Test
 	public void getTestSingle() throws Exception {
-		mockMvc.perform(get(url + existingId).accept(MediaType.APPLICATION_JSON))
-			.andDo(res -> System.out.println(res.getResponse().getContentAsString()))
+		mockMvc.perform(get(baseUrl + existingId).accept(MediaType.APPLICATION_JSON))
+			//.andDo(res -> System.out.println(res.getResponse().getContentAsString()))
 			.andExpect(MockMvcResultMatchers.status().isOk())
 			.andExpect(MockMvcResultMatchers.content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
 			.andExpect(jsonPath("$.businessUnitId").value(existingId))
@@ -97,7 +69,7 @@ public class BusinessUnitApiTest implements ApiTest {
 	@Override
 	@Test
 	public void getTestCollection() throws Exception {
-		mockMvc.perform(get(url).accept(MediaType.APPLICATION_JSON))
+		mockMvc.perform(get(baseUrl).accept(MediaType.APPLICATION_JSON))
 				.andExpect(MockMvcResultMatchers.status().isOk())
 				.andExpect(MockMvcResultMatchers.content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
 				.andExpect(jsonPath("$..businessUnits.length()").value(5))
@@ -110,13 +82,13 @@ public class BusinessUnitApiTest implements ApiTest {
 	@Test
 	@Rollback
 	public void createTestWithPost() throws Exception {
-		mockMvc.perform(post(url)
+		mockMvc.perform(post(baseUrl)
 						.accept(MediaType.APPLICATION_JSON)
 						.contentType(MediaType.APPLICATION_JSON)
 						.content(mapper.writeValueAsString(requestObject)))
 				.andExpect(MockMvcResultMatchers.status().isCreated());
 		
-		String getResult = mockMvc.perform(get(url + newId).accept(MediaType.APPLICATION_JSON))
+		String getResult = mockMvc.perform(get(baseUrl + newId).accept(MediaType.APPLICATION_JSON))
 				//.andDo(res -> System.out.println(res.getResponse().getContentAsString()))
 				.andExpect(MockMvcResultMatchers.status().isOk())
 				.andExpect(jsonPath("$.businessUnitId").value(newId))
@@ -125,7 +97,7 @@ public class BusinessUnitApiTest implements ApiTest {
 				.andExpect(jsonPath("$.lastUpdateUserId").value("login not yet"))
 				.andExpect(jsonPath("$.lastUpdateDateTime", dateTimeMatcher))
 				.andExpect(jsonPath("$.description").value(requestObject.get("description")))
-				.andExpect(jsonPath("$.relatedPreview.businessUnitId").value("100"))
+				.andExpect(jsonPath("$.relatedPreview.businessUnitId").value("110"))
 				.andReturn().getResponse().getContentAsString();
 		
 		assertEquals(
@@ -148,11 +120,11 @@ public class BusinessUnitApiTest implements ApiTest {
 	public void createTestWithPostWithoutRelatedBU() throws Exception {
 		requestObject.remove("relatedBusinessUnit");
 
-		mockMvc.perform(post(url)
+		mockMvc.perform(post(baseUrl)
 						.content(mapper.writeValueAsString(requestObject)))
 				.andExpect(MockMvcResultMatchers.status().isCreated());
 
-		String getResult = mockMvc.perform(get(url + newId).accept(MediaType.APPLICATION_JSON))
+		String getResult = mockMvc.perform(get(baseUrl + newId).accept(MediaType.APPLICATION_JSON))
 				//.andDo(res -> System.out.println(res.getResponse().getContentAsString()))
 				.andExpect(MockMvcResultMatchers.status().isOk())
 				//.andDo(res -> System.out.println(res.getResponse().getErrorMessage()))
@@ -169,21 +141,35 @@ public class BusinessUnitApiTest implements ApiTest {
 	@Rollback
 	public void createTestWithPut() throws Exception {
 		requestObject.remove("businessUnitId");
-		mockMvc.perform(put(url + newId)
+		mockMvc.perform(put(baseUrl + newId)
 					.accept(MediaType.APPLICATION_JSON)
 					.contentType(MediaType.APPLICATION_JSON)
 					.content(mapper.writeValueAsString(requestObject)))
 				.andExpect(MockMvcResultMatchers.status().isMethodNotAllowed());
+	}
+	
+	@Test
+	@Rollback
+	public void createTestAlreadyExist() throws Exception{
+		requestObject.put("businessUnitId", existingId);
+		
+		mockMvc.perform(post(baseUrl)
+				.accept(MediaType.APPLICATION_JSON)
+				.contentType(MediaType.APPLICATION_JSON)
+				.content(mapper.writeValueAsString(requestObject)));
+				//.andExpect(MockMvcResultMatchers.status().isConflict());
+		EntityManager em = wac.getBean(EntityManager.class);
+		em.flush();
 	}
 
 	@Override
 	@Test
 	@Rollback
 	public void deleteTest() throws Exception {
-		mockMvc.perform(delete(url + existingId))
+		mockMvc.perform(delete(baseUrl + existingId))
 				.andExpect(MockMvcResultMatchers.status().isNoContent());
 		
-		mockMvc.perform(get(url + existingId))
+		mockMvc.perform(get(baseUrl + existingId))
 				.andExpect(MockMvcResultMatchers.status().isNotFound());
 
 	}
@@ -192,13 +178,13 @@ public class BusinessUnitApiTest implements ApiTest {
 	@Test
 	@Rollback
 	public void updateTestWithPatch() throws Exception {
-		String beforePatch = mockMvc.perform(get(url + existingId))
+		String beforePatch = mockMvc.perform(get(baseUrl + existingId))
 								.andReturn().getResponse().getContentAsString();
 				
 		requestObject.remove("businessUnitType");
 		requestObject.remove("computerId");
 		
-		mockMvc.perform(patch(url + existingId)
+		mockMvc.perform(patch(baseUrl + existingId)
 					.accept(MediaType.APPLICATION_JSON)
 					.contentType(MediaType.APPLICATION_JSON)
 					.content(mapper.writeValueAsString(requestObject)))
@@ -207,7 +193,7 @@ public class BusinessUnitApiTest implements ApiTest {
 		EntityManager manager = wac.getBean(EntityManager.class);
 		manager.flush();
 		
-		String getResult = mockMvc.perform(get(url + existingId).accept(MediaType.APPLICATION_JSON))
+		String getResult = mockMvc.perform(get(baseUrl + existingId).accept(MediaType.APPLICATION_JSON))
 				//.andDo(res -> System.out.println(res.getResponse().getContentAsString()))
 				.andExpect(MockMvcResultMatchers.status().isOk())
 				.andExpect(jsonPath("$.businessUnitId").value(existingId))
@@ -238,20 +224,18 @@ public class BusinessUnitApiTest implements ApiTest {
 	@Rollback
 	public void updateTestWithPatchRemoveRelatedBusinessUnit() throws Exception {
 		
-		String id = "123";
+		String id = "100";
 		requestObject.put("relatedBusinessUnit", null);
 		
 		//check beforehand that the entity has a non-null relatedBusinessUnit association
-		String beforePatch = mockMvc.perform(get(url + id).accept(MediaType.APPLICATION_JSON))
-				.andExpect(MockMvcResultMatchers.status().isOk())
+		String beforePatch = mockMvc.perform(get(baseUrl + id).accept(MediaType.APPLICATION_JSON))
 				.andReturn().getResponse().getContentAsString();
 		String beforeRelated = JsonPath.read(beforePatch, "$._links.related.href");
 		mockMvc.perform(get(beforeRelated))
 				.andDo(res -> assumeTrue(res.getResponse().getStatus() == 200));
-				//.andExpect(MockMvcResultMatchers.status().isOk());
 		
 		//do a PATCH to remove the association
-		mockMvc.perform(patch(url + id)
+		mockMvc.perform(patch(baseUrl + id)
 					.accept(MediaType.APPLICATION_JSON)
 					.contentType(MediaType.APPLICATION_JSON)
 					.content(mapper.writeValueAsString(requestObject)))
@@ -261,7 +245,7 @@ public class BusinessUnitApiTest implements ApiTest {
 		manager.flush();
 		
 		//do a GET to check the result
-		String getResult = mockMvc.perform(get(url + id).accept(MediaType.APPLICATION_JSON))
+		String getResult = mockMvc.perform(get(baseUrl + id).accept(MediaType.APPLICATION_JSON))
 				.andExpect(MockMvcResultMatchers.status().isOk())
 				.andReturn().getResponse().getContentAsString();
 		
@@ -274,13 +258,14 @@ public class BusinessUnitApiTest implements ApiTest {
 	@Test
 	@Rollback
 	public void updateTestWithPut() throws Exception {
-		mockMvc.perform(put(url + existingId)
+		mockMvc.perform(put(baseUrl + existingId)
 					.accept(MediaType.APPLICATION_JSON)
 					.contentType(MediaType.APPLICATION_JSON)
 					.content(mapper.writeValueAsString(requestObject)))
 				.andExpect(MockMvcResultMatchers.status().isMethodNotAllowed());
 
 	}
+
 	
 
 }

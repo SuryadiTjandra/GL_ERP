@@ -8,84 +8,45 @@ import java.util.Map;
 
 import javax.persistence.EntityManager;
 
-import org.hamcrest.Matcher;
-import org.hamcrest.Matchers;
-import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.hateoas.Resources;
-import org.springframework.hateoas.hal.Jackson2HalModule;
 import org.springframework.http.MediaType;
 import org.springframework.test.annotation.Rollback;
-import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.context.WebApplicationContext;
-
 import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.jayway.jsonpath.JsonPath;
 
 import ags.goldenlionerp.masterdata.company.Company;
-import ags.goldenlionerp.util.DateMatcher;
-import ags.goldenlionerp.util.TimeDifferenceLessThanOneHourMatcher;
 
-@SpringBootTest
-@RunWith(SpringRunner.class)
 @Transactional
-public class CompanyApiTest implements ApiTest{
-
-	@Autowired
-	private WebApplicationContext wac;
+public class CompanyApiTest extends ApiTestBase {
 	
-	private MockMvc mockMvc;
-	private ObjectMapper mapper;
-	private Map<String, String> requestObject;
-	private String url;
-	private String existingId;
-	private String newId;
-	private Matcher<String> dateTimeMatcher;
-	
-	@Before
-	public void setUp() throws Exception {
-		url = "/api/companies/";
-		existingId = "00000";
-		newId = "12345";
-		
-		mockMvc = MockMvcBuilders.webAppContextSetup(wac).build();
-		mapper = new ObjectMapper()
-					.registerModule(new Jackson2HalModule())
-					.registerModule(new JavaTimeModule());
-		
-		requestObject = new HashMap<>();
-		requestObject.put("companyId", newId);
-		requestObject.put("description", "TESTTEST");
-		requestObject.put("currencyCodeBase", "IDR");
-		requestObject.put("businessPartnerId", "");
-		requestObject.put("fiscalDatePattern", "R");
-		requestObject.put("currentFiscalYear", "0");
-		requestObject.put("currentAccountingPeriod", "0");
-		requestObject.put("currentPayablePeriod", "0");
-		requestObject.put("currentReceivablePeriod", "0");
-		requestObject.put("currentInventoryPeriod", "0");
-		requestObject.put("computerId", "YOOO");
-		
-		dateTimeMatcher = Matchers.allOf(
-							new DateMatcher(),
-							new TimeDifferenceLessThanOneHourMatcher()
-						  );
+	@Override
+	Map<String, String> populateRequestObject() {
+		Map<String, String> map = new HashMap<>();
+		map.put("companyId", newId);
+		map.put("description", "TESTTEST");
+		map.put("currencyCodeBase", "IDR");
+		map.put("businessPartnerId", "");
+		map.put("fiscalDatePattern", "R");
+		map.put("currentFiscalYear", "0");
+		map.put("currentAccountingPeriod", "0");
+		map.put("currentPayablePeriod", "0");
+		map.put("currentReceivablePeriod", "0");
+		map.put("currentInventoryPeriod", "0");
+		map.put("computerId", "YOOO");
+		return map;
 	}
+	@Override String baseUrl() { return "/api/companies/"; }
+	@Override String existingId() { return "00000"; }
+	@Override String newId() { return "12345"; }
 
 	@Test
 	public void getTestCollection() throws Exception {
-		String jsonResult = mockMvc.perform(get(url).accept(MediaType.APPLICATION_JSON))
+		String jsonResult = mockMvc.perform(get(baseUrl).accept(MediaType.APPLICATION_JSON))
 				.andExpect(MockMvcResultMatchers.status().isOk())
 				.andExpect(MockMvcResultMatchers.content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
 				.andReturn().getResponse().getContentAsString();
@@ -101,7 +62,7 @@ public class CompanyApiTest implements ApiTest{
 	
 	@Test
 	public void getTestSingle() throws Exception{
-		String jsonResult = mockMvc.perform(get(url + existingId).accept(MediaType.APPLICATION_JSON))
+		String jsonResult = mockMvc.perform(get(baseUrl + existingId).accept(MediaType.APPLICATION_JSON))
 				.andExpect(MockMvcResultMatchers.status().isOk())
 				.andExpect(MockMvcResultMatchers.content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
 				.andReturn().getResponse().getContentAsString();
@@ -115,13 +76,13 @@ public class CompanyApiTest implements ApiTest{
 	@Test
 	@Rollback
 	public void createTestWithPost() throws Exception {		
-		mockMvc.perform(post(url)
+		mockMvc.perform(post(baseUrl)
 						.accept(MediaType.APPLICATION_JSON)
 						.contentType(MediaType.APPLICATION_JSON)
 						.content(mapper.writeValueAsString(requestObject)))
 				.andExpect(MockMvcResultMatchers.status().isCreated());
 		
-		String getResult = mockMvc.perform(get(url + newId))
+		String getResult = mockMvc.perform(get(baseUrl + newId))
 				.andExpect(MockMvcResultMatchers.status().isOk())
 				.andExpect(jsonPath("$.companyId").value(newId))
 				.andExpect(jsonPath("$.inputUserId").value("login not yet"))
@@ -142,7 +103,7 @@ public class CompanyApiTest implements ApiTest{
 	@Test
 	@Rollback
 	public void createTestWithPut() throws Exception {	
-		mockMvc.perform(put(url + newId)
+		mockMvc.perform(put(baseUrl + newId)
 					.accept(MediaType.APPLICATION_JSON)
 					.contentType(MediaType.APPLICATION_JSON)
 					.content(mapper.writeValueAsString(requestObject)))
@@ -152,7 +113,7 @@ public class CompanyApiTest implements ApiTest{
 	@Test
 	@Rollback
 	public void updateTestWithPut() throws Exception {
-		mockMvc.perform(put(url + existingId)
+		mockMvc.perform(put(baseUrl + existingId)
 					.accept(MediaType.APPLICATION_JSON)
 					.contentType(MediaType.APPLICATION_JSON)
 					.content(mapper.writeValueAsString(requestObject)))
@@ -162,7 +123,7 @@ public class CompanyApiTest implements ApiTest{
 	@Test
 	@Rollback
 	public void updateTestWithPatch() throws Exception {
-		mockMvc.perform(patch(url + existingId)
+		mockMvc.perform(patch(baseUrl + existingId)
 					.accept(MediaType.APPLICATION_JSON)
 					.contentType(MediaType.APPLICATION_JSON)
 					.content(mapper.writeValueAsString(requestObject)))
@@ -170,7 +131,7 @@ public class CompanyApiTest implements ApiTest{
 		EntityManager manager = wac.getBean(EntityManager.class);
 		manager.flush();
 		
-		String getResult = mockMvc.perform(get(url + existingId))
+		String getResult = mockMvc.perform(get(baseUrl + existingId))
 				.andExpect(MockMvcResultMatchers.status().isOk())
 				.andExpect(jsonPath("$.companyId").value(existingId))
 				.andExpect(jsonPath("$.lastUpdateUserId").value("login not yet"))
@@ -189,11 +150,12 @@ public class CompanyApiTest implements ApiTest{
 	@Test
 	@Rollback
 	public void deleteTest() throws Exception {
-		mockMvc.perform(delete(url + existingId))
+		mockMvc.perform(delete(baseUrl + existingId))
 				.andExpect(MockMvcResultMatchers.status().isNoContent());
 				
-		mockMvc.perform(get(url + existingId))
+		mockMvc.perform(get(baseUrl + existingId))
 				.andExpect(MockMvcResultMatchers.status().isNotFound());
 		
 	}
+
 }
