@@ -1,4 +1,4 @@
-package ags.goldenlionerp.masterdata.businessunit;
+package ags.goldenlionerp.masterdata.branchplantconstant;
 
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;
@@ -10,6 +10,7 @@ import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 import ags.goldenlionerp.entities.DatabaseEntity;
+import ags.goldenlionerp.masterdata.businessunit.BusinessUnit;
 
 @Entity
 @Table(name="T0022")
@@ -26,41 +27,41 @@ public class BranchPlantConstant extends DatabaseEntity {
 
 	@Id
 	@Column(name="BCBUID")
-	private String branchCode;
+	private String branchCode = "";
 	
 	@OneToOne
 	@PrimaryKeyJoinColumn(name="BCBUID", referencedColumnName="BNBUID")
 	private BusinessUnit branch;
 	
 	@Column(name="BCANUM")
-	private String branchAddressCode;
+	private String branchAddressCode = "";
 	
 	@Column(name="BCPUCM")
-	private String purchaseCostMethod;
+	private String purchaseCostMethod = "";
 	
 	@Column(name="BCSICM")
-	private String salesInventoryCostMethod;
+	private String salesInventoryCostMethod = "";
 	
 	@Column(name="BCITGL")
-	private String interfaceToGL;
+	private String interfaceToGL = "";
 	
 	@Column(name="BCCTM")
-	private String commitmentMethod;
+	private String commitmentMethod = "";
 	
 	@Column(name="BCILC")
-	private String inventoryLotCreation;
+	private String inventoryLotCreation = "";
 	
 	@Column(name="BCLCTL")
-	private String locationControl;
+	private String locationControl = "";
 	
 	@Column(name="BCWCTL")
-	private String warehouseControl;
+	private String warehouseControl = "";
 	
 	@Column(name="BCXRT")
-	private String itemCrossReferenceType;
+	private String itemCrossReferenceType = "";
 	
 	@Column(name="BCXRT2")
-	private String itemCrossReferenceType2;
+	private String itemCrossReferenceType2 = "";
 
 	public String getBranchCode() {
 		return branchCode;
@@ -108,6 +109,54 @@ public class BranchPlantConstant extends DatabaseEntity {
 
 	public String getItemCrossReferenceType2() {
 		return itemCrossReferenceType2;
+	}
+
+	void setBranchCode(String branchCode) {
+		this.branchCode = branchCode;
+	}
+
+	void setBranch(BusinessUnit branch) {
+		this.branch = branch;
+	}
+
+	void setBranchAddressCode(String branchAddressCode) {
+		this.branchAddressCode = branchAddressCode;
+	}
+
+	void setPurchaseCostMethod(String purchaseCostMethod) {
+		this.purchaseCostMethod = purchaseCostMethod;
+	}
+
+	void setSalesInventoryCostMethod(String salesInventoryCostMethod) {
+		this.salesInventoryCostMethod = salesInventoryCostMethod;
+	}
+
+	void setInterfaceToGL(String interfaceToGL) {
+		this.interfaceToGL = interfaceToGL;
+	}
+
+	void setCommitmentMethod(String commitmentMethod) {
+		this.commitmentMethod = commitmentMethod;
+	}
+
+	void setInventoryLotCreation(String inventoryLotCreation) {
+		this.inventoryLotCreation = inventoryLotCreation;
+	}
+
+	void setLocationControl(String locationControl) {
+		this.locationControl = locationControl;
+	}
+
+	void setWarehouseControl(String warehouseControl) {
+		this.warehouseControl = warehouseControl;
+	}
+
+	void setItemCrossReferenceType(String itemCrossReferenceType) {
+		this.itemCrossReferenceType = itemCrossReferenceType;
+	}
+
+	void setItemCrossReferenceType2(String itemCrossReferenceType2) {
+		this.itemCrossReferenceType2 = itemCrossReferenceType2;
 	}
 	
 	
