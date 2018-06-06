@@ -94,8 +94,8 @@ public class BusinessUnit extends DatabaseEntity{
 		return modelOrConsolidated;
 	}
 	
-	public BranchPlantConstant getConfiguration() {
-		return configuration;
+	public Optional<BranchPlantConstant> getConfiguration() {
+		return Optional.ofNullable(configuration);
 	}
 	
 	@JsonProperty("relatedPreview")

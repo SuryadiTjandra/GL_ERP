@@ -1,5 +1,6 @@
 package ags.goldenlionerp.apiTests;
 
+import static org.junit.Assert.assertEquals;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.patch;
@@ -33,24 +34,33 @@ public class BranchPlantConstantApiTest extends ApiTestBase{
 		map.put("locationControl", "Y");
 		map.put("warehouseControl", "");
 		map.put("inputUserId", "1234567890");
+		map.put("branchCode", newId);
 		return map;
 	}
 
-	@Override String baseUrl() { return "/api/businessUnits/{id}/configuration"; }
+	@Override String baseUrl() { return "/api/branchPlantConstants/{id}"; }
 	@Override String existingId() { return "110"; }
 	@Override String newId() { return "100"; }
 
-
+	String buAssociationUrl = "/api/businessUnits/{id}/configuration";
+	
 	@Test
 	@Override
 	public void getTestSingle() throws Exception {
 		String url = this.baseUrl.replace("{id}", existingId);
-		mockMvc.perform(get(url).accept(MediaType.APPLICATION_JSON))
+		String getResult1 = mockMvc.perform(get(url).accept(MediaType.APPLICATION_JSON))
 				.andExpect(MockMvcResultMatchers.status().isOk())
 				.andExpect(MockMvcResultMatchers.content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
 				.andExpect(jsonPath("$.branchCode").value(existingId))
 				.andExpect(jsonPath("$.purchaseCostMethod").value("02"))
-				.andExpect(jsonPath("$.salesInventoryCostMethod").value("02"));
+				.andExpect(jsonPath("$.salesInventoryCostMethod").value("02"))
+				.andReturn().getResponse().getContentAsString();
+		
+		String url2 = this.buAssociationUrl.replace("{id}", existingId);
+		String getResult2 = mockMvc.perform(get(url2))
+							.andReturn().getResponse().getContentAsString();
+		
+		assertEquals(getResult1, getResult2);
 	}
 
 	@Test
@@ -66,7 +76,8 @@ public class BranchPlantConstantApiTest extends ApiTestBase{
 		String url = this.baseUrl.replace("{id}", newId);
 		assumeNotExists(url);
 		
-		mockMvc.perform(post(url)
+		String collectionUrl = this.baseUrl.replace("{id}", "");
+		mockMvc.perform(post(collectionUrl)
 						.accept(MediaType.APPLICATION_JSON)
 						.contentType(MediaType.APPLICATION_JSON)
 						.content(mapper.writeValueAsString(requestObject)))
@@ -83,6 +94,11 @@ public class BranchPlantConstantApiTest extends ApiTestBase{
 				.andReturn().getResponse().getContentAsString();
 		
 		assertCreationInfo(getResult);
+		
+		String url2 = this.buAssociationUrl.replace("{id}", newId);
+		String getResult2 = mockMvc.perform(get(url2))
+				.andReturn().getResponse().getContentAsString();
+		assertEquals(getResult, getResult2);
 	}
 
 	@Test
@@ -97,6 +113,9 @@ public class BranchPlantConstantApiTest extends ApiTestBase{
 						.contentType(MediaType.APPLICATION_JSON)
 						.content(mapper.writeValueAsString(requestObject)))
 				.andExpect(MockMvcResultMatchers.status().is2xxSuccessful());
+		
+		em.flush();
+		em.clear();
 		
 		String getResult = mockMvc.perform(get(url).accept(MediaType.APPLICATION_JSON))
 				.andExpect(MockMvcResultMatchers.status().isOk())
@@ -118,9 +137,16 @@ public class BranchPlantConstantApiTest extends ApiTestBase{
 		mockMvc.perform(delete(url))
 				.andExpect(MockMvcResultMatchers.status().is2xxSuccessful());
 		
+		em.flush();
+		em.clear();
+		
 		mockMvc.perform(get(url))
 				.andExpect(MockMvcResultMatchers.status().isNotFound());
 		
+		String url2 = this.buAssociationUrl.replace("{id}", existingId);
+		mockMvc.perform(get(url2))
+				.andExpect(MockMvcResultMatchers.status().isNotFound());
+	
 	}
 
 	@Test
@@ -133,7 +159,7 @@ public class BranchPlantConstantApiTest extends ApiTestBase{
 		String beforePatch = mockMvc.perform(get(url))
 								.andReturn().getResponse().getContentAsString();
 		
-		requestObject.remove("salesInventoryPurchaseMethod");
+		requestObject.remove("salesInventoryCostMethod");
 		requestObject.remove("warehouseControl");
 		
 		mockMvc.perform(patch(url)
@@ -142,13 +168,16 @@ public class BranchPlantConstantApiTest extends ApiTestBase{
 						.content(mapper.writeValueAsString(requestObject)))
 				.andExpect(MockMvcResultMatchers.status().is2xxSuccessful());
 		
+		em.flush();
+		em.clear();
+		
 		String getResult = mockMvc.perform(get(url).accept(MediaType.APPLICATION_JSON))
 				.andExpect(MockMvcResultMatchers.status().isOk())
 				.andExpect(jsonPath("$.branchCode").value(existingId))
 				.andExpect(jsonPath("$.purchaseCostMethod").value(requestObject.get("purchaseCostMethod")))
 				.andExpect(jsonPath("$.inventoryLotCreation").value(requestObject.get("inventoryLotCreation")))
-				.andExpect(jsonPath("$.salesInventoryPurchaseMethod").value(JsonPath.read(beforePatch, "$.salesInventoryPurchaseMethod")))
-				.andExpect(jsonPath("$.warehouseControl").value(JsonPath.read(beforePatch, "$.warehouseControl")))
+				.andExpect(jsonPath("$.salesInventoryCostMethod").value((String) JsonPath.read(beforePatch, "$.salesInventoryCostMethod")))
+				.andExpect(jsonPath("$.warehouseControl").value((String) JsonPath.read(beforePatch, "$.warehouseControl")))
 				.andReturn().getResponse().getContentAsString();
 		
 		assertUpdateInfo(getResult, beforePatch);
@@ -162,7 +191,7 @@ public class BranchPlantConstantApiTest extends ApiTestBase{
 		String url = this.baseUrl.replace("{id}", existingId);
 		assumeExists(url);
 		
-		requestObject.remove("salesInventoryPurchaseMethod");
+		requestObject.remove("salesInventoryCostMethod");
 		requestObject.remove("warehouseControl");
 		
 		mockMvc.perform(put(url)
@@ -171,12 +200,15 @@ public class BranchPlantConstantApiTest extends ApiTestBase{
 						.content(mapper.writeValueAsString(requestObject)))
 				.andExpect(MockMvcResultMatchers.status().is2xxSuccessful());
 		
+		em.flush();
+		em.clear();
+		
 		String getResult = mockMvc.perform(get(url).accept(MediaType.APPLICATION_JSON))
 				.andExpect(MockMvcResultMatchers.status().isOk())
 				.andExpect(jsonPath("$.branchCode").value(existingId))
 				.andExpect(jsonPath("$.purchaseCostMethod").value(requestObject.get("purchaseCostMethod")))
 				.andExpect(jsonPath("$.inventoryLotCreation").value(requestObject.get("inventoryLotCreation")))
-				.andExpect(jsonPath("$.salesInventoryPurchaseMethod").value(""))
+				.andExpect(jsonPath("$.salesInventoryCostMethod").value(""))
 				.andExpect(jsonPath("$.warehouseControl").value(""))
 				.andReturn().getResponse().getContentAsString();
 		

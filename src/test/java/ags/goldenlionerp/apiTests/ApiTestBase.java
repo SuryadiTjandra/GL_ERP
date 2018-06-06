@@ -3,8 +3,6 @@ package ags.goldenlionerp.apiTests;
 import static org.junit.Assert.*;
 import static org.junit.Assume.assumeTrue;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-
 import java.util.Map;
 
 import javax.persistence.EntityManager;
@@ -12,7 +10,6 @@ import javax.transaction.Transactional;
 
 import org.hamcrest.Matcher;
 import org.hamcrest.Matchers;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +17,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.hateoas.hal.Jackson2HalModule;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
@@ -109,8 +105,8 @@ public abstract class ApiTestBase implements ApiTest{
 				(String) JsonPath.read(entityJsonBefore, "$.inputUserId")
 		);
 		assertEquals(
-				(String) JsonPath.read(entityJson, "$.inputUserDateTime"),
-				(String) JsonPath.read(entityJsonBefore, "$.inputUserDateTime")
+				(String) JsonPath.read(entityJson, "$.inputDateTime"),
+				(String) JsonPath.read(entityJsonBefore, "$.inputDateTime")
 		);
 		assertNotEquals(
 				(String) JsonPath.read(entityJson, "$.lastUpdateDateTime"),
