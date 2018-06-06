@@ -126,6 +126,36 @@ public class BranchPlantConstantApiTest extends ApiTestBase{
 		
 		assertCreationInfo(getResult);
 	}
+	
+	@Test
+	@Rollback
+	public void createTestWithPutOnAssociation() throws Exception {		
+		String url = this.buAssociationUrl.replace("{id}", newId);
+		assumeNotExists(url);
+		
+		mockMvc.perform(put(url)
+						.accept(MediaType.APPLICATION_JSON)
+						.contentType(MediaType.APPLICATION_JSON)
+						.content(mapper.writeValueAsString(requestObject)))
+				.andExpect(MockMvcResultMatchers.status().is2xxSuccessful());
+		
+		em.flush();
+		em.clear();
+		
+		String getResult = mockMvc.perform(get(url).accept(MediaType.APPLICATION_JSON))
+				.andExpect(MockMvcResultMatchers.status().isOk())
+				.andExpect(jsonPath("$.branchCode").value(newId))
+				.andExpect(jsonPath("$.purchaseCostMethod").value(requestObject.get("purchaseCostMethod")))
+				.andExpect(jsonPath("$.inventoryLotCreation").value(requestObject.get("inventoryLotCreation")))
+				.andReturn().getResponse().getContentAsString();
+		
+		assertCreationInfo(getResult);
+		
+		String url2 = this.baseUrl.replace("{id}", newId);
+		String getResult2 = mockMvc.perform(get(url2))
+				.andReturn().getResponse().getContentAsString();
+		assertEquals(getResult, getResult2);
+	}
 
 	@Override
 	@Test
