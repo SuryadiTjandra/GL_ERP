@@ -59,7 +59,7 @@ public abstract class ApiTestBase<ID extends Serializable> implements ApiTest{
 					.registerModule(new Jackson2HalModule())
 					.registerModule(new JavaTimeModule());
 		
-		requestObject = populateRequestObject();
+		requestObject = requestObject();
 		requestObject.put("computerId", "YOOO");
 		
 		dateTimeMatcher = Matchers.allOf(
@@ -68,15 +68,15 @@ public abstract class ApiTestBase<ID extends Serializable> implements ApiTest{
 						  );
 	}
 	
-	abstract Map<String, String> populateRequestObject();
+	abstract Map<String, String> requestObject();
 	abstract String baseUrl();
 	abstract ID existingId();
 	abstract ID newId();
 	
 	void assertCreationInfo(String entityJson) {
-		assertEquals(JsonPath.read(entityJson, "$.inputUserId"), "login not yet");
+		assertEquals("login not yet",JsonPath.read(entityJson, "$.inputUserId"));
 		assertThat(JsonPath.read(entityJson, "$.inputDateTime"), dateTimeMatcher);
-		assertEquals(JsonPath.read(entityJson, "$.lastUpdateUserId"), "login not yet");
+		assertEquals("login not yet", JsonPath.read(entityJson, "$.lastUpdateUserId"));
 		assertThat(JsonPath.read(entityJson, "$.lastUpdateDateTime"), dateTimeMatcher);
 		
 		assertEquals(
@@ -90,7 +90,7 @@ public abstract class ApiTestBase<ID extends Serializable> implements ApiTest{
 	}
 	
 	void assertUpdateInfo(String entityJson) {
-		assertEquals(JsonPath.read(entityJson, "$.lastUpdateUserId"), "login not yet");
+		assertEquals("login not yet", JsonPath.read(entityJson, "$.lastUpdateUserId"));
 		assertThat(JsonPath.read(entityJson, "$.lastUpdateDateTime"), dateTimeMatcher);
 		
 		assertNotEquals(

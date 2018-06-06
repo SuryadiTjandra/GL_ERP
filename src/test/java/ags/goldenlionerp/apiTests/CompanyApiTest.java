@@ -25,7 +25,7 @@ import ags.goldenlionerp.masterdata.company.Company;
 public class CompanyApiTest extends ApiTestBase<String> {
 	
 	@Override
-	Map<String, String> populateRequestObject() {
+	Map<String, String> requestObject() {
 		Map<String, String> map = new HashMap<>();
 		map.put("companyId", newId);
 		map.put("description", "TESTTEST");

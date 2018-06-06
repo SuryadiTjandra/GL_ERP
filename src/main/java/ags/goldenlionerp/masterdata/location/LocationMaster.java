@@ -5,9 +5,13 @@ import javax.persistence.AttributeOverrides;
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import ags.goldenlionerp.entities.SynchronizedDatabaseEntity;
+import ags.goldenlionerp.masterdata.businessunit.BusinessUnit;
 
 @Entity
 @Table(name="T4100")
@@ -24,17 +28,21 @@ import ags.goldenlionerp.entities.SynchronizedDatabaseEntity;
 public class LocationMaster extends SynchronizedDatabaseEntity {
 
 	@EmbeddedId
-	private LocationMasterPK pk;
+	private LocationMasterPK pk = new LocationMasterPK();
 	@Column(name="LMWHC")
-	private String warehouseCode;
+	private String warehouseCode = "";
 	@Column(name="LMAISLE")
-	private String aisle;
+	private String aisle = "";
 	@Column(name="LMROW")
-	private String row;
+	private String row = "";
 	@Column(name="LMCOL")
-	private String column;
+	private String column = "";
 	@Column(name="LMDESA1")
-	private String description;
+	private String description = "";
+	
+	@ManyToOne(fetch=FetchType.LAZY, optional=false)
+	@JoinColumn(name="LMBUID", insertable=false, updatable=false)
+	private BusinessUnit businessUnit;
 	
 	public LocationMasterPK getPk() {
 		return pk;
@@ -72,6 +80,11 @@ public class LocationMaster extends SynchronizedDatabaseEntity {
 	public String getDescription() {
 		return description;
 	}
+	public BusinessUnit getBusinessUnit() {
+		return businessUnit;
+	}
+	
+	
 	void setPk(LocationMasterPK pk) {
 		this.pk = pk;
 	}
@@ -91,5 +104,19 @@ public class LocationMaster extends SynchronizedDatabaseEntity {
 		this.description = description;
 	}
 	
+	public static String locationId(String warehouseCode, String aisle, String row, String column) {
+		StringBuilder sb = new StringBuilder(warehouseCode);
+		
+		if (aisle == null || aisle.isEmpty()) return sb.toString();		
+		sb.append(".").append(aisle);
+		
+		if (row == null || row.isEmpty()) return sb.toString();		
+		sb.append(".").append(row);
+		
+		if (column == null || column.isEmpty()) return sb.toString();		
+		sb.append(row);
+		
+		return sb.toString();
+	}
 	
 }

@@ -1,5 +1,7 @@
 package ags.goldenlionerp.masterdata.businessunit;
 
+import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
 
 import javax.persistence.AttributeOverride;
@@ -10,6 +12,7 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import org.hibernate.annotations.NotFound;
@@ -24,6 +27,7 @@ import ags.goldenlionerp.entities.previews.CompanyPreview;
 import ags.goldenlionerp.entities.previews.Previews;
 import ags.goldenlionerp.masterdata.branchplantconstant.BranchPlantConstant;
 import ags.goldenlionerp.masterdata.company.Company;
+import ags.goldenlionerp.masterdata.location.LocationMaster;
 
 @Entity
 @Table(name="T0021")
@@ -65,6 +69,8 @@ public class BusinessUnit extends DatabaseEntity{
 
 	@OneToOne(fetch=FetchType.LAZY, mappedBy="branch")
 	private BranchPlantConstant configuration;
+	@OneToMany(fetch=FetchType.LAZY, mappedBy="businessUnit")
+	private Collection<LocationMaster> locations;
 
 	public String getBusinessUnitId() {
 		return businessUnitId;
@@ -96,6 +102,10 @@ public class BusinessUnit extends DatabaseEntity{
 	
 	public Optional<BranchPlantConstant> getConfiguration() {
 		return Optional.ofNullable(configuration);
+	}
+	
+	public Collection<LocationMaster> getLocations(){
+		return this.locations;
 	}
 	
 	@JsonProperty("relatedPreview")
@@ -136,5 +146,8 @@ public class BusinessUnit extends DatabaseEntity{
 
 	void setConfiguration(BranchPlantConstant configuration) {
 		this.configuration = configuration;
+	}
+	void setLocations(Collection<LocationMaster> locations) {
+		this.locations = locations;
 	}
 }

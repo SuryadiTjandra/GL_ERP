@@ -28,7 +28,7 @@ import com.jayway.jsonpath.JsonPath;
 public class BusinessUnitApiTest extends ApiTestBase<String> {
 
 	@Override
-	Map<String, String> populateRequestObject() {
+	Map<String, String> requestObject() {
 		Map<String, String> map = new HashMap<>();
 		map.put("businessUnitId", newId);
 		map.put("description", "TESTTEST");

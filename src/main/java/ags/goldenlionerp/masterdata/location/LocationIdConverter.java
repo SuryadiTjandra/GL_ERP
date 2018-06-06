@@ -15,6 +15,7 @@ public class LocationIdConverter implements BackendIdConverter {
 
 	@Override
 	public Serializable fromRequestId(String id, Class<?> entityType) {
+		if (id == null) return null;
 		if (!id.contains("_")) 
 			return new LocationMasterPK("", "");
 		
