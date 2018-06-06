@@ -25,7 +25,7 @@ import com.jayway.jsonpath.JsonPath;
 
 
 @Transactional
-public class BusinessUnitApiTest extends ApiTestBase/*implements ApiTest*/ {
+public class BusinessUnitApiTest extends ApiTestBase<String> {
 
 	@Override
 	Map<String, String> populateRequestObject() {

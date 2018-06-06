@@ -21,7 +21,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import com.jayway.jsonpath.JsonPath;
 
 @Transactional
-public class BranchPlantConstantApiTest extends ApiTestBase{
+public class BranchPlantConstantApiTest extends ApiTestBase<String>{
 
 	@Override
 	Map<String, String> populateRequestObject() {

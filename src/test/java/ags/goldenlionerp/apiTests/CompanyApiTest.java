@@ -22,7 +22,7 @@ import com.jayway.jsonpath.JsonPath;
 import ags.goldenlionerp.masterdata.company.Company;
 
 @Transactional
-public class CompanyApiTest extends ApiTestBase {
+public class CompanyApiTest extends ApiTestBase<String> {
 	
 	@Override
 	Map<String, String> populateRequestObject() {

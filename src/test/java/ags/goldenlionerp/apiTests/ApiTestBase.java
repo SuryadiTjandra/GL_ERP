@@ -3,6 +3,8 @@ package ags.goldenlionerp.apiTests;
 import static org.junit.Assert.*;
 import static org.junit.Assume.assumeTrue;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+
+import java.io.Serializable;
 import java.util.Map;
 
 import javax.persistence.EntityManager;
@@ -30,7 +32,7 @@ import ags.goldenlionerp.util.TimeDifferenceLessThanOneHourMatcher;
 @SpringBootTest
 @RunWith(SpringRunner.class)
 @Transactional
-public abstract class ApiTestBase implements ApiTest{
+public abstract class ApiTestBase<ID extends Serializable> implements ApiTest{
 
 	@Autowired
 	WebApplicationContext wac;
@@ -40,8 +42,8 @@ public abstract class ApiTestBase implements ApiTest{
 	ObjectMapper mapper;
 	Map<String, String> requestObject;
 	String baseUrl;
-	String existingId;
-	String newId;
+	ID existingId;
+	ID newId;
 	Matcher<String> dateTimeMatcher;
 	
 	@Before
@@ -68,8 +70,8 @@ public abstract class ApiTestBase implements ApiTest{
 	
 	abstract Map<String, String> populateRequestObject();
 	abstract String baseUrl();
-	abstract String existingId();
-	abstract String newId();
+	abstract ID existingId();
+	abstract ID newId();
 	
 	void assertCreationInfo(String entityJson) {
 		assertEquals(JsonPath.read(entityJson, "$.inputUserId"), "login not yet");
