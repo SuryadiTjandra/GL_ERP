@@ -8,7 +8,15 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.PrePersist;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonCreator.Mode;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
 
 import ags.goldenlionerp.entities.SynchronizedDatabaseEntity;
 import ags.goldenlionerp.masterdata.businessunit.BusinessUnit;
@@ -28,21 +36,39 @@ import ags.goldenlionerp.masterdata.businessunit.BusinessUnit;
 public class LocationMaster extends SynchronizedDatabaseEntity {
 
 	@EmbeddedId
-	private LocationMasterPK pk = new LocationMasterPK();
-	@Column(name="LMWHC")
+	private LocationMasterPK pk;
+	
+	@Column(name="LMWHC", updatable=false)
 	private String warehouseCode = "";
-	@Column(name="LMAISLE")
+	
+	@Column(name="LMAISLE", updatable=false)
 	private String aisle = "";
-	@Column(name="LMROW")
+	
+	@Column(name="LMROW", updatable=false)
 	private String row = "";
-	@Column(name="LMCOL")
+	
+	@Column(name="LMCOL", updatable=false)
 	private String column = "";
+	
 	@Column(name="LMDESA1")
 	private String description = "";
 	
 	@ManyToOne(fetch=FetchType.LAZY, optional=false)
 	@JoinColumn(name="LMBUID", insertable=false, updatable=false)
 	private BusinessUnit businessUnit;
+	
+	//a field to temporarily store the buId before persisting
+	@Transient
+	private String tempBuId;
+	
+	@PrePersist
+	void setLocationId() {
+		//PK is instantiated only when persisting, and can't be changed
+		this.pk = new LocationMasterPK(
+					tempBuId, 
+					locationId(warehouseCode, aisle, row, column)
+				);
+	}
 	
 	public LocationMasterPK getPk() {
 		return pk;
@@ -56,15 +82,6 @@ public class LocationMaster extends SynchronizedDatabaseEntity {
 		return pk.getLocationId();
 	}
 	
-	void setBusinessUnitId(String businessUnitId) {
-		this.pk.setBusinessUnitId(businessUnitId);
-	}
-	void setLocationId(String locationId) {
-		this.pk.setLocationId(locationId);
-	}
-
-
-
 	public String getWarehouseCode() {
 		return warehouseCode;
 	}
@@ -88,18 +105,23 @@ public class LocationMaster extends SynchronizedDatabaseEntity {
 	void setPk(LocationMasterPK pk) {
 		this.pk = pk;
 	}
+	
 	void setWarehouseCode(String warehouseCode) {
 		this.warehouseCode = warehouseCode;
 	}
+
 	void setAisle(String aisle) {
 		this.aisle = aisle;
 	}
+
 	void setRow(String row) {
 		this.row = row;
 	}
+
 	void setColumn(String column) {
 		this.column = column;
 	}
+
 	void setDescription(String description) {
 		this.description = description;
 	}
@@ -119,4 +141,9 @@ public class LocationMaster extends SynchronizedDatabaseEntity {
 		return sb.toString();
 	}
 	
+	//used only for Jackson binding only, shouldn't be used anywhere else
+	@SuppressWarnings("unused")
+	private void setBusinessUnitId(String businessUnitId) {
+		this.tempBuId = businessUnitId;
+	}
 }

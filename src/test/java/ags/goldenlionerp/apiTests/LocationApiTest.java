@@ -98,6 +98,7 @@ public class LocationApiTest extends ApiTestBase<LocationMasterPK>{
 		String newLocation = response.getHeader(HttpHeaders.LOCATION);
 		
 		em.flush();
+		em.clear();
 		
 		String getResult = mockMvc.perform(get(newLocation))
 							.andExpect(MockMvcResultMatchers.status().isOk())
@@ -156,6 +157,9 @@ public class LocationApiTest extends ApiTestBase<LocationMasterPK>{
 					.contentType(MediaType.APPLICATION_JSON)
 					.content(mapper.writeValueAsString(requestObject)))
 				.andExpect(MockMvcResultMatchers.status().is2xxSuccessful());
+		
+		em.flush();
+		em.clear();
 		
 		String getResult = mockMvc.perform(get(baseUrl + existingId))
 							.andExpect(MockMvcResultMatchers.status().is2xxSuccessful())

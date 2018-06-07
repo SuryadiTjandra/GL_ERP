@@ -21,19 +21,14 @@ public class LocationMasterPK implements Serializable {
 		this.locationId = locationId;
 	}
 	
-	public LocationMasterPK() {}
+	@SuppressWarnings("unused")
+	private LocationMasterPK() {}
 	
 	public String getBusinessUnitId() {
 		return businessUnitId;
 	}
 	public String getLocationId() {
 		return locationId;
-	}
-	void setBusinessUnitId(String businessUnitId) {
-		this.businessUnitId = businessUnitId;
-	}
-	void setLocationId(String locationId) {
-		this.locationId = locationId;
 	}
 	
 	@Override
