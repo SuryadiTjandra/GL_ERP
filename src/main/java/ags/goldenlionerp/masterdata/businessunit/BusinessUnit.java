@@ -1,7 +1,6 @@
 package ags.goldenlionerp.masterdata.businessunit;
 
 import java.util.Collection;
-import java.util.List;
 import java.util.Optional;
 
 import javax.persistence.AttributeOverride;
