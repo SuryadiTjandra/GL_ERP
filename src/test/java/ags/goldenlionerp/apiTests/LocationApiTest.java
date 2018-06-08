@@ -8,6 +8,8 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -181,8 +183,79 @@ public class LocationApiTest extends ApiTestBase<LocationMasterPK>{
 	}
 	
 	@Test
+	@Rollback
 	public void updatePutCollectionOnAssociation() throws Exception{
-		fail();
+		String buAssociationUrl = "/api/businessUnits/{id}/locations".replace("{id}", existingId.getBusinessUnitId());
+		
+		LocationMaster loc = em.find(LocationMaster.class, existingId);
+		Map<String, String> requestObject1 = new HashMap<>();
+		requestObject1.put("warehouseCode", loc.getWarehouseCode());
+		requestObject1.put("aisle", loc.getAisle());
+		requestObject1.put("row", loc.getRow());
+		requestObject1.put("column", loc.getColumn());
+		requestObject1.put("description", "TEST1");
+		requestObject1.put("computerId", "GREEN");
+		
+		Map<String, String> requestObject2 = new HashMap<>();
+		requestObject2.put("warehouseCode", "whc");
+		requestObject2.put("aisle", "ais");
+		requestObject2.put("row", "row");
+		requestObject2.put("column", "col");
+		requestObject2.put("description", "TEST2");
+		requestObject2.put("computerId", "RED");
+		
+		Map<String, String> requestObject3 = new HashMap<>();
+		requestObject3.put("warehouseCode", "ABC");
+		requestObject3.put("aisle", "DEF");
+		requestObject3.put("column", "JKL");
+		requestObject3.put("description", "TEST3");
+		requestObject3.put("businessUnitId", "140");
+		requestObject3.put("lastUpdateTime", "12:34:56");
+		requestObject3.put("computerId", "BLUE");
+		
+		Collection<Map<String, String>> requests = Arrays.asList(requestObject1, requestObject2, requestObject3);
+		
+		mockMvc.perform(put(buAssociationUrl)
+						.accept(MediaType.APPLICATION_JSON)
+						.contentType(MediaType.APPLICATION_JSON)
+						.content(mapper.writeValueAsString(requests)))
+				.andExpect(MockMvcResultMatchers.status().is2xxSuccessful());
+		
+		em.flush();
+		em.clear();
+		
+		mockMvc.perform(get(buAssociationUrl))
+				.andExpect(jsonPath("$..locations.length()").value(3));
+		
+		LocationMasterPK pk1 = new LocationMasterPK(loc.getBusinessUnitId(), loc.getLocationId());
+		String res1 = mockMvc.perform(get(baseUrl + pk1))
+				.andExpect(MockMvcResultMatchers.status().isOk())
+				.andExpect(jsonPath("$.businessUnitId").value(loc.getBusinessUnitId()))
+				.andExpect(jsonPath("$.locationId").value(loc.getLocationId()))
+				.andExpect(jsonPath("$.warehouseCode").value(loc.getWarehouseCode()))
+				.andExpect(jsonPath("$.description").value(requestObject1.get("description")))
+				.andReturn().getResponse().getContentAsString();
+		assertUpdateInfo(res1);
+		
+		LocationMasterPK pk2 = new LocationMasterPK(existingId.getBusinessUnitId(), locationId(requestObject2));
+		String res2 = mockMvc.perform(get(baseUrl + pk2))
+				.andExpect(MockMvcResultMatchers.status().isOk())
+				.andExpect(jsonPath("$.businessUnitId").value(loc.getBusinessUnitId()))
+				.andExpect(jsonPath("$.locationId").value(pk2.getLocationId()))
+				.andExpect(jsonPath("$.warehouseCode").value(requestObject2.get("warehouseCode")))
+				.andExpect(jsonPath("$.description").value(requestObject2.get("description")))
+				.andReturn().getResponse().getContentAsString();
+		assertCreationInfo(res2);
+		
+		LocationMasterPK pk3 = new LocationMasterPK(existingId.getBusinessUnitId(), locationId(requestObject3));
+		String res3 = mockMvc.perform(get(baseUrl + pk3))
+				.andExpect(MockMvcResultMatchers.status().isOk())
+				.andExpect(jsonPath("$.businessUnitId").value(loc.getBusinessUnitId()))
+				.andExpect(jsonPath("$.locationId").value(pk3.getLocationId()))
+				.andExpect(jsonPath("$.warehouseCode").value(requestObject3.get("warehouseCode")))
+				.andExpect(jsonPath("$.description").value(requestObject3.get("description")))
+				.andReturn().getResponse().getContentAsString();
+		assertCreationInfo(res3);
 	}
 
 	

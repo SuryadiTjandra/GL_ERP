@@ -55,8 +55,12 @@ public class LocationMaster extends SynchronizedDatabaseEntity {
 	@Transient
 	private String tempBuId;
 	
+	private boolean isPersisted() {
+		return pk != null;
+	}
+	
 	@PrePersist
-	void setLocationId() {
+	void finalizePk() {
 		//PK is instantiated only when persisting, and can't be changed
 		this.pk = new LocationMasterPK(
 					tempBuId, 
@@ -69,11 +73,11 @@ public class LocationMaster extends SynchronizedDatabaseEntity {
 	}
 	
 	public String getBusinessUnitId() {
-		return pk.getBusinessUnitId();
+		return isPersisted() ? pk.getBusinessUnitId() : tempBuId;
 	}
 
 	public String getLocationId() {
-		return pk.getLocationId();
+		return isPersisted() ? pk.getLocationId() : locationId(warehouseCode, aisle, row, column);
 	}
 	
 	public String getWarehouseCode() {
@@ -98,6 +102,10 @@ public class LocationMaster extends SynchronizedDatabaseEntity {
 	
 	void setPk(LocationMasterPK pk) {
 		this.pk = pk;
+	}
+	
+	void setBusinessUnitId(String businessUnitId) {
+		this.tempBuId = businessUnitId;
 	}
 	
 	void setWarehouseCode(String warehouseCode) {
@@ -130,14 +138,14 @@ public class LocationMaster extends SynchronizedDatabaseEntity {
 		sb.append(".").append(row);
 		
 		if (column == null || column.isEmpty()) return sb.toString();		
-		sb.append(row);
+		sb.append(column);
 		
 		return sb.toString();
 	}
 	
-	//used only for Jackson binding only, shouldn't be used anywhere else
-	@SuppressWarnings("unused")
-	private void setBusinessUnitId(String businessUnitId) {
-		this.tempBuId = businessUnitId;
+	@Override
+	public String toString() {
+		return "ID: " + (isPersisted() ? pk.toString() : getBusinessUnitId() + "_" + getLocationId());
 	}
+	
 }
