@@ -28,8 +28,8 @@ import com.jayway.jsonpath.JsonPath;
 public class BusinessUnitApiTest extends ApiTestBase<String> {
 
 	@Override
-	Map<String, String> requestObject() {
-		Map<String, String> map = new HashMap<>();
+	Map<String, Object> requestObject() {
+		Map<String, Object> map = new HashMap<>();
 		map.put("businessUnitId", newId);
 		map.put("description", "TESTTEST");
 		map.put("businessUnitType", "BS");
@@ -107,10 +107,10 @@ public class BusinessUnitApiTest extends ApiTestBase<String> {
 		
 		String companyUrl = JsonPath.read(getResult, "$._links.company.href");
 		mockMvc.perform(get(companyUrl))
-				.andExpect(jsonPath("$._links.self.href", Matchers.endsWith(requestObject.get("company"))));
+				.andExpect(jsonPath("$._links.self.href", Matchers.endsWith(requestObject.get("company").toString())));
 		String relatedUrl = JsonPath.read(getResult, "$._links.related.href");
 		mockMvc.perform(get(relatedUrl))
-				.andExpect(jsonPath("$._links.self.href", Matchers.endsWith(requestObject.get("relatedBusinessUnit"))));
+				.andExpect(jsonPath("$._links.self.href", Matchers.endsWith(requestObject.get("relatedBusinessUnit").toString())));
 			
 	}
 
@@ -213,10 +213,10 @@ public class BusinessUnitApiTest extends ApiTestBase<String> {
 		
 		String companyUrl = JsonPath.read(getResult, "$._links.company.href");
 		mockMvc.perform(get(companyUrl))
-				.andExpect(jsonPath("$._links.self.href", Matchers.endsWith(requestObject.get("company"))));
+				.andExpect(jsonPath("$._links.self.href", Matchers.endsWith(requestObject.get("company").toString())));
 		String relatedUrl = JsonPath.read(getResult, "$._links.related.href");
 		mockMvc.perform(get(relatedUrl))
-				.andExpect(jsonPath("$._links.self.href", Matchers.endsWith(requestObject.get("relatedBusinessUnit"))));
+				.andExpect(jsonPath("$._links.self.href", Matchers.endsWith(requestObject.get("relatedBusinessUnit").toString())));
 			
 	}
 	

@@ -29,8 +29,8 @@ import ags.goldenlionerp.masterdata.location.LocationMasterPK;
 public class LocationApiTest extends ApiTestBase<LocationMasterPK>{
 
 	@Override
-	Map<String, String> requestObject() {
-		Map<String, String> map = new HashMap<>();
+	Map<String, Object> requestObject() {
+		Map<String, Object> map = new HashMap<>();
 		map.put("businessUnitId", "110");
 		map.put("locationId", "QWERTY");
 		map.put("warehouseCode", "XYZ");
@@ -114,12 +114,12 @@ public class LocationApiTest extends ApiTestBase<LocationMasterPK>{
 		
 	}
 	
-	private String locationId(Map<String, String> requestObject) {
+	private String locationId(Map<String, Object> requestObject) {
 		return LocationMaster.locationId(
-				requestObject.get("warehouseCode"),
-				requestObject.get("aisle"),
-				requestObject.get("row"),
-				requestObject.get("column")
+				(String) requestObject.get("warehouseCode"),
+				(String) requestObject.get("aisle"),
+				(String) requestObject.get("row"),
+				(String) requestObject.get("column")
 		);
 	}
 
@@ -188,7 +188,7 @@ public class LocationApiTest extends ApiTestBase<LocationMasterPK>{
 		String buAssociationUrl = "/api/businessUnits/{id}/locations".replace("{id}", existingId.getBusinessUnitId());
 		
 		LocationMaster loc = em.find(LocationMaster.class, existingId);
-		Map<String, String> requestObject1 = new HashMap<>();
+		Map<String, Object> requestObject1 = new HashMap<>();
 		requestObject1.put("warehouseCode", loc.getWarehouseCode());
 		requestObject1.put("aisle", loc.getAisle());
 		requestObject1.put("row", loc.getRow());
@@ -196,7 +196,7 @@ public class LocationApiTest extends ApiTestBase<LocationMasterPK>{
 		requestObject1.put("description", "TEST1");
 		requestObject1.put("computerId", "GREEN");
 		
-		Map<String, String> requestObject2 = new HashMap<>();
+		Map<String, Object> requestObject2 = new HashMap<>();
 		requestObject2.put("warehouseCode", "whc");
 		requestObject2.put("aisle", "ais");
 		requestObject2.put("row", "row");
@@ -204,7 +204,7 @@ public class LocationApiTest extends ApiTestBase<LocationMasterPK>{
 		requestObject2.put("description", "TEST2");
 		requestObject2.put("computerId", "RED");
 		
-		Map<String, String> requestObject3 = new HashMap<>();
+		Map<String, Object> requestObject3 = new HashMap<>();
 		requestObject3.put("warehouseCode", "ABC");
 		requestObject3.put("aisle", "DEF");
 		requestObject3.put("column", "JKL");
@@ -213,7 +213,7 @@ public class LocationApiTest extends ApiTestBase<LocationMasterPK>{
 		requestObject3.put("lastUpdateTime", "12:34:56");
 		requestObject3.put("computerId", "BLUE");
 		
-		Collection<Map<String, String>> requests = Arrays.asList(requestObject1, requestObject2, requestObject3);
+		Collection<Map<String, Object>> requests = Arrays.asList(requestObject1, requestObject2, requestObject3);
 		
 		mockMvc.perform(put(buAssociationUrl)
 						.accept(MediaType.APPLICATION_JSON)

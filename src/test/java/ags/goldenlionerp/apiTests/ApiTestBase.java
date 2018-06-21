@@ -22,6 +22,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.jayway.jsonpath.JsonPath;
@@ -40,7 +41,7 @@ public abstract class ApiTestBase<ID extends Serializable> implements ApiTest{
 	MockMvc mockMvc;
 	EntityManager em;
 	ObjectMapper mapper;
-	Map<String, String> requestObject;
+	Map<String, Object> requestObject;
 	String baseUrl;
 	ID existingId;
 	ID newId;
@@ -68,7 +69,7 @@ public abstract class ApiTestBase<ID extends Serializable> implements ApiTest{
 						  );
 	}
 	
-	abstract Map<String, String> requestObject();
+	abstract Map<String, Object> requestObject() throws Exception;
 	abstract String baseUrl();
 	abstract ID existingId();
 	abstract ID newId();

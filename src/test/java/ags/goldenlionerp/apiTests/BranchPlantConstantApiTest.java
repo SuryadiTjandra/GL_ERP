@@ -24,8 +24,8 @@ import com.jayway.jsonpath.JsonPath;
 public class BranchPlantConstantApiTest extends ApiTestBase<String>{
 
 	@Override
-	Map<String, String> requestObject() {
-		Map<String, String> map = new HashMap<>();
+	Map<String, Object> requestObject() {
+		Map<String, Object> map = new HashMap<>();
 		map.put("branchAddressCode", "");
 		map.put("purchaseCostMethod", "02");
 		map.put("salesInventoryCostMethod", "01");

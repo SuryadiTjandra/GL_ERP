@@ -1,0 +1,271 @@
+package ags.goldenlionerp.masterdata.itemmaster;
+
+import javax.persistence.AttributeOverride;
+import javax.persistence.AttributeOverrides;
+import javax.persistence.Column;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import ags.goldenlionerp.entities.DatabaseEntity;
+
+@Entity
+@Table(name="T4101")
+@AttributeOverrides({
+	@AttributeOverride(name="inputUserId", column=@Column(name="IMUID")),
+	@AttributeOverride(name="inputDate", column=@Column(name="IMDTIN")),
+	@AttributeOverride(name="inputTime", column=@Column(name="IMTMIN")),
+	@AttributeOverride(name="lastUpdateUserId", column=@Column(name="IMUIDM")),
+	@AttributeOverride(name="lastUpdateDate", column=@Column(name="IMDTLU")),
+	@AttributeOverride(name="lastUpdateTime", column=@Column(name="IMTMLU")),
+	@AttributeOverride(name="computerId", column=@Column(name="IMCID")),
+})
+public class ItemMaster extends DatabaseEntity {
+
+	@Id
+	@Column(name="IMINUM")
+	private String itemCode = "";
+	
+	@Column(name="IMINUMB")
+	private String barcode = "";
+	
+	@Column(name="IMINUMS", updatable=false)
+	private int itemCodeShort;
+	
+	@Column(name="IMDESB1")
+	private String description = "";
+	
+	@Column(name="IMDESD1")
+	private String descriptionLong = "";
+	
+	@Column(name="IMSKTY")
+	private String stockingType = "";
+	
+	@Column(name="IMGLCLS")
+	private String glClass = "";
+	
+	@Column(name="IMLNTY")
+	private String transactionType = "";
+	
+	@Column(name="IMICL")
+	private String inventoryCostLevel = "";
+	
+	@Column(name="IMSPL")
+	private String salesPriceLevel = "";
+	
+	@Column(name="IMPPL")
+	private String purchasingPriceLevel = "";
+	
+	@Column(name="IMCTM")
+	private String commitmentMethod = "";
+	
+	@Column(name="IMILC")
+	private boolean inventoryLotCreation;
+	
+	@Column(name="IMSNR")
+	private boolean serialNumberRequired;
+	
+	@Column(name="IMLSC")
+	private String lotStatusCode = "";
+	
+	@Column(name="IMIPG")
+	private String itemPriceGroup = "";
+	
+	@Column(name="IMPLG")
+	private String printerLocationGroup = "";
+	
+	@Column(name="IMVICT")
+	private String variantItemControlType = "";
+	
+	@Column(name="IMINUMP")
+	private String parentItemNumber = "";
+	
+
+	
+	@Embedded
+	private ItemUnitsOfMeasures unitsOfMeasure= new ItemUnitsOfMeasures();
+	
+	@Embedded
+	private ItemRankingsAndParameters parameters = new ItemRankingsAndParameters();
+	
+	@Embedded
+	private ItemDataGroups dataGroups = new ItemDataGroups();
+
+	public String getItemCode() {
+		return itemCode;
+	}
+
+	public String getBarcode() {
+		return barcode;
+	}
+
+	public int getItemCodeShort() {
+		return itemCodeShort;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public String getDescriptionLong() {
+		return descriptionLong;
+	}
+
+	public String getStockingType() {
+		return stockingType;
+	}
+
+	public String getGlClass() {
+		return glClass;
+	}
+
+	public String getTransactionType() {
+		return transactionType;
+	}
+
+	public String getInventoryCostLevel() {
+		return inventoryCostLevel;
+	}
+
+	public String getSalesPriceLevel() {
+		return salesPriceLevel;
+	}
+
+	public String getPurchasingPriceLevel() {
+		return purchasingPriceLevel;
+	}
+
+	public String getCommitmentMethod() {
+		return commitmentMethod;
+	}
+
+	public boolean isInventoryLotCreation() {
+		return inventoryLotCreation;
+	}
+
+	public boolean isSerialNumberRequired() {
+		return serialNumberRequired;
+	}
+
+	public String getLotStatusCode() {
+		return lotStatusCode;
+	}
+
+	public String getItemPriceGroup() {
+		return itemPriceGroup;
+	}
+
+	public String getPrinterLocationGroup() {
+		return printerLocationGroup;
+	}
+
+	public String getVariantItemControlType() {
+		return variantItemControlType;
+	}
+
+	public String getParentItemNumber() {
+		return parentItemNumber;
+	}
+
+	public ItemUnitsOfMeasures getUnitsOfMeasure() {
+		return unitsOfMeasure;
+	}
+
+	public ItemRankingsAndParameters getParameters() {
+		return parameters;
+	}
+
+	public ItemDataGroups getDataGroups() {
+		return dataGroups;
+	}
+
+	void setItemCode(String itemCode) {
+		this.itemCode = itemCode;
+	}
+
+	void setBarcode(String barcode) {
+		this.barcode = barcode;
+	}
+
+	void setItemCodeShort(int itemCodeShort) {
+		this.itemCodeShort = itemCodeShort;
+	}
+
+	void setDescription(String description) {
+		this.description = description;
+	}
+
+	void setDescriptionLong(String descriptionLong) {
+		this.descriptionLong = descriptionLong;
+	}
+
+	void setStockingType(String stockingType) {
+		this.stockingType = stockingType;
+	}
+
+	void setGlClass(String glClass) {
+		this.glClass = glClass;
+	}
+
+	void setTransactionType(String transactionType) {
+		this.transactionType = transactionType;
+	}
+
+	void setInventoryCostLevel(String inventoryCostLevel) {
+		this.inventoryCostLevel = inventoryCostLevel;
+	}
+
+	void setSalesPriceLevel(String salesPriceLevel) {
+		this.salesPriceLevel = salesPriceLevel;
+	}
+
+	void setPurchasingPriceLevel(String purchasingPriceLevel) {
+		this.purchasingPriceLevel = purchasingPriceLevel;
+	}
+
+	void setCommitmentMethod(String commitmentMethod) {
+		this.commitmentMethod = commitmentMethod;
+	}
+
+	void setInventoryLotCreation(boolean inventoryLotCreation) {
+		this.inventoryLotCreation = inventoryLotCreation;
+	}
+
+	void setSerialNumberRequired(boolean serialNumberRequired) {
+		this.serialNumberRequired = serialNumberRequired;
+	}
+
+	void setLotStatusCode(String lotStatusCode) {
+		this.lotStatusCode = lotStatusCode;
+	}
+
+	void setItemPriceGroup(String itemPriceGroup) {
+		this.itemPriceGroup = itemPriceGroup;
+	}
+
+	void setPrinterLocationGroup(String printerLocationGroup) {
+		this.printerLocationGroup = printerLocationGroup;
+	}
+
+	void setVariantItemControlType(String variantItemControlType) {
+		this.variantItemControlType = variantItemControlType;
+	}
+
+	void setParentItemNumber(String parentItemNumber) {
+		this.parentItemNumber = parentItemNumber;
+	}
+
+	void setUnitsOfMeasure(ItemUnitsOfMeasures unitsOfMeasure) {
+		this.unitsOfMeasure = unitsOfMeasure;
+	}
+
+	void setParameters(ItemRankingsAndParameters parameters) {
+		this.parameters = parameters;
+	}
+
+	void setDataGroups(ItemDataGroups dataGroups) {
+		this.dataGroups = dataGroups;
+	}
+
+}
