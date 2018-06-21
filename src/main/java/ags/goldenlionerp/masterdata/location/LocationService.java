@@ -3,11 +3,8 @@ package ags.goldenlionerp.masterdata.location;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
 import java.util.function.BiPredicate;
-import java.util.stream.Collectors;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,12 +18,8 @@ public class LocationService {
 	@Transactional
 	public void putCollection(String buId, Collection<LocationMaster> newLocations) throws Exception{
 		newLocations.forEach(loc -> loc.setBusinessUnitId(buId));
-		Collection<LocationMasterPK> newPks = newLocations.stream()
-												.map(LocationMaster::getPk).collect(Collectors.toSet());
 		
 		Collection<LocationMaster> oldLocations = repo.findByPk_BusinessUnitId(buId);
-		Collection<LocationMasterPK> oldPks = oldLocations.stream()
-												.map(LocationMaster::getPk).collect(Collectors.toSet());
 		 
 		Collection<LocationMaster> newLocToBeInserted = new ArrayList<>();
 		Collection<LocationMaster> oldLocToBeDeleted = new ArrayList<>();

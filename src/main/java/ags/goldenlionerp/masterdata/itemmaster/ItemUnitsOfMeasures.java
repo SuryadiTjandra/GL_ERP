@@ -5,8 +5,6 @@ import java.math.BigDecimal;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-
 @Embeddable
 public class ItemUnitsOfMeasures {
 	@Column(name="IMUOM1")
