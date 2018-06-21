@@ -81,8 +81,6 @@ public class ItemMaster extends DatabaseEntity {
 	@Column(name="IMINUMP")
 	private String parentItemNumber = "";
 	
-
-	
 	@Embedded
 	private ItemUnitsOfMeasures unitsOfMeasure= new ItemUnitsOfMeasures();
 	
@@ -90,6 +88,7 @@ public class ItemMaster extends DatabaseEntity {
 	private ItemRankingsAndParameters parameters = new ItemRankingsAndParameters();
 	
 	@Embedded
+	
 	private ItemDataGroups dataGroups = new ItemDataGroups();
 
 	public String getItemCode() {

@@ -10,7 +10,7 @@ public class ItemIdConverter implements BackendIdConverter {
 
 	@Override
 	public boolean supports(Class<?> delimiter) {
-		return delimiter.getClass().equals(String.class);
+		return delimiter.getClass().equals(ItemMaster.class);
 	}
 
 	@Override
