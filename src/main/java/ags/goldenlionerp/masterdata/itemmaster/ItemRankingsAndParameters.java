@@ -2,43 +2,31 @@ package ags.goldenlionerp.masterdata.itemmaster;
 
 import java.math.BigDecimal;
 
+import javax.persistence.AttributeOverride;
+import javax.persistence.AttributeOverrides;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
+import ags.goldenlionerp.entities.embeddables.RankingsAndParameters;
+
 @Embeddable
-public class ItemRankingsAndParameters {
-	@Column(name="IMUDF", precision=19, scale=15)
-	private BigDecimal discountFactor = new BigDecimal(0);
-	
-	@Column(name="IMPMMF")
-	private BigDecimal profitMarginMinimumFactor = new BigDecimal(0);
+@AttributeOverrides({
+	@AttributeOverride(name="discountFactor", column=@Column(name="IMUDF")),
+	@AttributeOverride(name="profitMarginMinimumFactor", column=@Column(name="IMPMMF")),
+	@AttributeOverride(name="serviceChargeRate", column=@Column(name="IMGSCRT")),
+	@AttributeOverride(name="taxOnSalesCode", column=@Column(name="IMTAXSC")),
+	@AttributeOverride(name="taxOnPurchaseCode", column=@Column(name="IMTAXPC")),
+	@AttributeOverride(name="branchPlantId", column=@Column(name="IMBPID")),
+	@AttributeOverride(name="customerId", column=@Column(name="IMCSID")),
+	@AttributeOverride(name="supplierId", column=@Column(name="IMVNID")),
+	@AttributeOverride(name="rankByInventorySales", column=@Column(name="IMRBIS")),
+	@AttributeOverride(name="rankByInventoryMargin", column=@Column(name="IMRBIM")),
+	@AttributeOverride(name="rankByInventoryInvestment", column=@Column(name="IMRBII"))
+})
+public class ItemRankingsAndParameters extends RankingsAndParameters {
 	
 	@Column(name="IMGSCRT")
 	private BigDecimal serviceChargeRate = new BigDecimal(0);
-	
-	@Column(name="IMTAXSC")
-	private String taxOnSalesCode = "";
-	
-	@Column(name="IMTAXPC")
-	private String taxOnPurchaseCode = "";
-	
-	@Column(name="IMBPID")
-	private String branchPlantId = "";
-	
-	@Column(name="IMCSID")
-	private String customerId = "";
-	
-	@Column(name="IMVNID")
-	private String supplierId = "";
-	
-	@Column(name="IMRBIS")
-	private String rankByInventorySales = "";
-	
-	@Column(name="IMRBIM")
-	private String rankByInventoryMargin = "";
-	
-	@Column(name="IMRBII")
-	private String rankByInventoryInvestement = "";
 	
 	@Column(name="IMDAQC")
 	private boolean disableAutoQtyCombine;
@@ -46,50 +34,10 @@ public class ItemRankingsAndParameters {
 	@Column(name="IMSIOPS")
 	private boolean showItemOnPosScreen;
 
-	public BigDecimal getDiscountFactor() {
-		return discountFactor;
-	}
-
-	public BigDecimal getProfitMarginMinimumFactor() {
-		return profitMarginMinimumFactor;
-	}
-
 	public BigDecimal getServiceChargeRate() {
 		return serviceChargeRate;
 	}
-
-	public String getTaxOnSalesCode() {
-		return taxOnSalesCode;
-	}
-
-	public String getTaxOnPurchaseCode() {
-		return taxOnPurchaseCode;
-	}
-
-	public String getBranchPlantId() {
-		return branchPlantId;
-	}
-
-	public String getCustomerId() {
-		return customerId;
-	}
-
-	public String getSupplierId() {
-		return supplierId;
-	}
-
-	public String getRankByInventorySales() {
-		return rankByInventorySales;
-	}
-
-	public String getRankByInventoryMargin() {
-		return rankByInventoryMargin;
-	}
-
-	public String getRankByInventoryInvestement() {
-		return rankByInventoryInvestement;
-	}
-
+	
 	public boolean isDisableAutoQtyCombine() {
 		return disableAutoQtyCombine;
 	}
@@ -97,51 +45,7 @@ public class ItemRankingsAndParameters {
 	public boolean isShowItemOnPosScreen() {
 		return showItemOnPosScreen;
 	}
-
-	void setDiscountFactor(BigDecimal discountFactor) {
-		this.discountFactor = discountFactor;
-	}
-
-	void setProfitMarginMinimumFactor(BigDecimal profitMarginMinimumFactor) {
-		this.profitMarginMinimumFactor = profitMarginMinimumFactor;
-	}
-
-	void setServiceChargeRate(BigDecimal serviceChargeRate) {
-		this.serviceChargeRate = serviceChargeRate;
-	}
-
-	void setTaxOnSalesCode(String taxOnSalesCode) {
-		this.taxOnSalesCode = taxOnSalesCode;
-	}
-
-	void setTaxOnPurchaseCode(String taxOnPurchaseCode) {
-		this.taxOnPurchaseCode = taxOnPurchaseCode;
-	}
-
-	void setBranchPlantId(String branchPlantId) {
-		this.branchPlantId = branchPlantId;
-	}
-
-	void setCustomerId(String customerId) {
-		this.customerId = customerId;
-	}
-
-	void setSupplierId(String supplierId) {
-		this.supplierId = supplierId;
-	}
-
-	void setRankByInventorySales(String rankByInventorySales) {
-		this.rankByInventorySales = rankByInventorySales;
-	}
-
-	void setRankByInventoryMargin(String rankByInventoryMargin) {
-		this.rankByInventoryMargin = rankByInventoryMargin;
-	}
-
-	void setRankByInventoryInvestement(String rankByInventoryInvestement) {
-		this.rankByInventoryInvestement = rankByInventoryInvestement;
-	}
-
+	
 	void setDisableAutoQtyCombine(boolean disableAutoQtyCombine) {
 		this.disableAutoQtyCombine = disableAutoQtyCombine;
 	}
@@ -150,29 +54,59 @@ public class ItemRankingsAndParameters {
 		this.showItemOnPosScreen = showItemOnPosScreen;
 	}
 
+
+	@Override
+	protected void setDiscountFactor(BigDecimal discountFactor) {
+		super.setDiscountFactor(discountFactor);
+	}
+
+	@Override
+	protected void setProfitMarginMinimumFactor(BigDecimal profitMarginMinimumFactor) {
+		super.setProfitMarginMinimumFactor(profitMarginMinimumFactor);
+	}
+
+	@Override
+	protected void setTaxOnSalesCode(String taxOnSalesCode) {
+		super.setTaxOnSalesCode(taxOnSalesCode);
+	}
+
+	@Override
+	protected void setTaxOnPurchaseCode(String taxOnPurchaseCode) {
+		super.setTaxOnPurchaseCode(taxOnPurchaseCode);
+	}
+
+	@Override
+	protected void setBranchPlantId(String branchPlantId) {
+		super.setBranchPlantId(branchPlantId);
+	}
+
+	@Override
+	protected void setCustomerId(String customerId) {
+		super.setCustomerId(customerId);
+	}
+
+	@Override
+	protected void setSupplierId(String supplierId) {
+		super.setSupplierId(supplierId);
+	}
+
+	@Override
+	protected void setRankByInventorySales(String rankByInventorySales) {
+		super.setRankByInventorySales(rankByInventorySales);
+	}
+
+	@Override
+	protected void setRankByInventoryMargin(String rankByInventoryMargin) {
+		super.setRankByInventoryMargin(rankByInventoryMargin);
+	}
+
+	@Override
+	protected void setRankByInventoryInvestment(String rankByInventoryInvestment) {
+		super.setRankByInventoryInvestment(rankByInventoryInvestment);
+	}
+
 	//for JPA
 	ItemRankingsAndParameters() {}
-	
-	//for Jackson
-	ItemRankingsAndParameters(BigDecimal discountFactor, BigDecimal profitMarginMinimumFactor,
-			BigDecimal serviceChargeRate, String taxOnSalesCode, String taxOnPurchaseCode, String branchPlantId,
-			String customerId, String supplierId, String rankByInventorySales, String rankByInventoryMargin,
-			String rankByInventoryInvestement, boolean disableAutoQtyCombine, boolean showItemOnPosScreen) {
-		super();
-		this.discountFactor = discountFactor;
-		this.profitMarginMinimumFactor = profitMarginMinimumFactor;
-		this.serviceChargeRate = serviceChargeRate;
-		this.taxOnSalesCode = taxOnSalesCode;
-		this.taxOnPurchaseCode = taxOnPurchaseCode;
-		this.branchPlantId = branchPlantId;
-		this.customerId = customerId;
-		this.supplierId = supplierId;
-		this.rankByInventorySales = rankByInventorySales;
-		this.rankByInventoryMargin = rankByInventoryMargin;
-		this.rankByInventoryInvestement = rankByInventoryInvestement;
-		this.disableAutoQtyCombine = disableAutoQtyCombine;
-		this.showItemOnPosScreen = showItemOnPosScreen;
-	}
 	
 	
 }
