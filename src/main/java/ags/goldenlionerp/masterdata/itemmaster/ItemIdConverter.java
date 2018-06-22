@@ -5,22 +5,26 @@ import java.io.Serializable;
 import org.springframework.data.rest.webmvc.spi.BackendIdConverter;
 import org.springframework.stereotype.Component;
 
+import ags.goldenlionerp.util.WebIdUtil;
+
 @Component
 public class ItemIdConverter implements BackendIdConverter {
 
 	@Override
 	public boolean supports(Class<?> delimiter) {
-		return delimiter.getClass().equals(ItemMaster.class);
+		return ItemMaster.class.equals(delimiter);
 	}
 
 	@Override
 	public Serializable fromRequestId(String requestId, Class<?> entityType) {
-		return requestId.replaceAll("_", " ");
+		String res = WebIdUtil.toEntityId(requestId);
+		return res;
 	}
 
 	@Override
 	public String toRequestId(Serializable entityId, Class<?> entityType) {
-		return ((String) entityId).replaceAll(" ", "_");
+		String res = WebIdUtil.toWebId((String) entityId);
+		return res;
 	}
 
 }

@@ -26,6 +26,7 @@ import ags.goldenlionerp.entities.previews.CompanyPreview;
 import ags.goldenlionerp.entities.previews.Previews;
 import ags.goldenlionerp.masterdata.branchplantconstant.BranchPlantConstant;
 import ags.goldenlionerp.masterdata.company.Company;
+import ags.goldenlionerp.masterdata.itembranchinfo.ItemBranchInfo;
 import ags.goldenlionerp.masterdata.location.LocationMaster;
 
 @Entity
@@ -70,6 +71,8 @@ public class BusinessUnit extends DatabaseEntity{
 	private BranchPlantConstant configuration;
 	@OneToMany(fetch=FetchType.LAZY, mappedBy="businessUnit")
 	private Collection<LocationMaster> locations;
+	@OneToMany(fetch=FetchType.LAZY, mappedBy="branch")
+	private Collection<ItemBranchInfo> itemBranchInfos;
 
 	public String getBusinessUnitId() {
 		return businessUnitId;
@@ -105,6 +108,9 @@ public class BusinessUnit extends DatabaseEntity{
 	
 	public Collection<LocationMaster> getLocations(){
 		return this.locations;
+	}
+	public Collection<ItemBranchInfo> getItemBranchInfos() {
+		return itemBranchInfos;
 	}
 	
 	@JsonProperty("relatedPreview")

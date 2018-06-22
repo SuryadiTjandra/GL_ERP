@@ -1,14 +1,19 @@
 package ags.goldenlionerp.masterdata.itemmaster;
 
+import java.util.List;
+
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import ags.goldenlionerp.entities.DatabaseEntity;
+import ags.goldenlionerp.masterdata.itembranchinfo.ItemBranchInfo;
 
 @Entity
 @Table(name="T4101")
@@ -88,8 +93,10 @@ public class ItemMaster extends DatabaseEntity {
 	private ItemRankingsAndParameters parameters = new ItemRankingsAndParameters();
 	
 	@Embedded
-	
 	private ItemDataGroups dataGroups = new ItemDataGroups();
+	
+	@OneToMany(mappedBy="itemMaster", fetch=FetchType.LAZY)
+	private List<ItemBranchInfo> itemBranchInfos;
 
 	public String getItemCode() {
 		return itemCode;
@@ -266,5 +273,11 @@ public class ItemMaster extends DatabaseEntity {
 	void setDataGroups(ItemDataGroups dataGroups) {
 		this.dataGroups = dataGroups;
 	}
+
+	public List<ItemBranchInfo> getItemBranchInfos() {
+		return itemBranchInfos;
+	}
+	
+	
 
 }
