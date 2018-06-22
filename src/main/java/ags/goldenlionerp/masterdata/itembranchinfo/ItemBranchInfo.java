@@ -13,6 +13,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonUnwrapped;
+
 import ags.goldenlionerp.entities.SynchronizedDatabaseEntity;
 import ags.goldenlionerp.masterdata.businessunit.BusinessUnit;
 import ags.goldenlionerp.masterdata.itemmaster.ItemMaster;
@@ -31,35 +33,35 @@ import ags.goldenlionerp.masterdata.itemmaster.ItemMaster;
 })
 public class ItemBranchInfo extends SynchronizedDatabaseEntity {
 
-	@EmbeddedId
+	@EmbeddedId @JsonUnwrapped
 	private ItemBranchInfoPK pk;
 	
 	@Column(name="IBSKTY")
-	private String stockingType;
+	private String stockingType = "";
 	
 	@Column(name="IBGLCLS")
-	private String glClass;
+	private String glClass= "";
 	
 	@Column(name="IBLNTY")
-	private String transactionType;
+	private String transactionType= "";
 	
 	@Column(name="IBROQ", precision=19, scale=5)
-	private BigDecimal reorderQty;
+	private BigDecimal reorderQty = new BigDecimal(0);
 	
 	@Column(name="IBROP", precision=19, scale=5)
-	private BigDecimal reorderPoint;
+	private BigDecimal reorderPoint = new BigDecimal(0);
 	
 	@Column(name="IBMAXROQ", precision=19, scale=5)
-	private BigDecimal maximumReorderQty;
+	private BigDecimal maximumReorderQty = new BigDecimal(0);
 	
 	@Column(name="IBMINROQ", precision=19, scale=5)
-	private BigDecimal minimumReorderQty;
+	private BigDecimal minimumReorderQty = new BigDecimal(0);
 	
 	@Column(name="IBSFSTK", precision=19, scale=5)
-	private BigDecimal safetyStock;
+	private BigDecimal safetyStock = new BigDecimal(0);
 	
 	@Column(name="IBCTM")
-	private String commitmentMethod;
+	private String commitmentMethod = "";
 	
 	@Column(name="IBILC")
 	private boolean inventoryLotCreation;
@@ -68,7 +70,7 @@ public class ItemBranchInfo extends SynchronizedDatabaseEntity {
 	private boolean serialNumberRequired;
 	
 	@Column(name="IBLSC")
-	private String lotStatusCode;
+	private String lotStatusCode = "";
 	
 	@Column(name="IBIPG")
 	private String itemPriceGroup = "";
@@ -77,10 +79,10 @@ public class ItemBranchInfo extends SynchronizedDatabaseEntity {
 	private String printerLocationGroup = "";
 	
 	@Embedded
-	private ItemBranchRankingsAndParameters parameters;
+	private ItemBranchRankingsAndParameters parameters = new ItemBranchRankingsAndParameters();
 	
 	@Embedded
-	private ItemBranchDataGroups dataGroups;
+	private ItemBranchDataGroups dataGroups = new ItemBranchDataGroups();
 	
 	
 	@ManyToOne(fetch=FetchType.LAZY, optional=false)
@@ -97,6 +99,14 @@ public class ItemBranchInfo extends SynchronizedDatabaseEntity {
 		return pk;
 	}
 
+	public String getItemCode() {
+		return pk.getItemCode();
+	}
+	
+	public String getBranchCode() {
+		return pk.getBranchCode();
+	}
+	
 	public String getStockingType() {
 		return stockingType;
 	}
@@ -245,4 +255,5 @@ public class ItemBranchInfo extends SynchronizedDatabaseEntity {
 		this.itemMaster = itemMaster;
 	}
 	
+
 }
