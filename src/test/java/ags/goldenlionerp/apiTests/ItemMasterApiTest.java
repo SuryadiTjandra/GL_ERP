@@ -94,7 +94,7 @@ public class ItemMasterApiTest extends ApiTestBase<String> {
 	@Override @Test @Rollback
 	public void createTestWithPost() throws Exception {
 		assumeNotExists(baseUrl + newId);
-		System.out.println(mapper.writeValueAsString(requestObject));
+		//System.out.println(mapper.writeValueAsString(requestObject));
 		
 		mockMvc.perform(post(baseUrl)
 						.accept(MediaType.APPLICATION_JSON)
@@ -130,8 +130,8 @@ public class ItemMasterApiTest extends ApiTestBase<String> {
 	@Override @Test @Rollback
 	public void createTestWithPut() throws Exception {
 		mockMvc.perform(put(baseUrl + existingId)
-				.content(mapper.writeValueAsString(requestObject)))
-		.andExpect(MockMvcResultMatchers.status().isMethodNotAllowed());
+						.content(mapper.writeValueAsString(requestObject)))
+				.andExpect(MockMvcResultMatchers.status().isMethodNotAllowed());
 	}
 
 	@Override @Test @Rollback
