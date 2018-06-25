@@ -32,8 +32,8 @@ public class TransactionSynchronizedDatabaseEntityImpl extends DatabaseEntity im
 		return Optional.ofNullable(lastTransactionDate).map(Timestamp::toLocalDateTime);
 	}
 	
-	protected void setLastTransactionDate(LocalDateTime lastSynchronizedDate) {
-		this.lastTransactionDate = Timestamp.valueOf(lastSynchronizedDate);
+	protected void setLastTransactionDate(LocalDateTime lastTransactionDate) {
+		this.lastTransactionDate = Timestamp.valueOf(lastTransactionDate);
 	}
 
 }
