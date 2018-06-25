@@ -8,6 +8,7 @@ import java.util.Map;
 
 import javax.transaction.Transactional;
 
+import org.hamcrest.Matchers;
 import org.junit.Test;
 import org.springframework.http.MediaType;
 import org.springframework.test.annotation.Rollback;
@@ -120,6 +121,8 @@ public class ItemMasterApiTest extends ApiTestBase<String> {
 				.andExpect(jsonPath("$.unitsOfMeasure.salesUnitOfMeasure").value(mapUom.get("primaryUnitOfMeasure")))
 				.andExpect(jsonPath("$.dataGroups.brandCode").value(mapCat.get("brandCode")))
 				.andExpect(jsonPath("$.parameters.discountFactor").value(mapPar.get("discountFactor")))
+				.andExpect(jsonPath("$.lastTransactionDate").value(Matchers.nullValue()))
+				.andExpect(jsonPath("$.lastSynchronizedDate").value(Matchers.nullValue()))
 				.andReturn().getResponse().getContentAsString();
 				
 		assertCreationInfo(getRes);

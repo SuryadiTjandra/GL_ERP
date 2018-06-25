@@ -15,7 +15,7 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
 
-import ags.goldenlionerp.entities.SynchronizedDatabaseEntity;
+import ags.goldenlionerp.entities.SynchronizedDatabaseEntityImpl;
 import ags.goldenlionerp.masterdata.businessunit.BusinessUnit;
 import ags.goldenlionerp.masterdata.itemmaster.ItemMaster;
 
@@ -31,7 +31,7 @@ import ags.goldenlionerp.masterdata.itemmaster.ItemMaster;
 	@AttributeOverride(name="computerId", column=@Column(name="IBCID")),
 	@AttributeOverride(name="lastSynchronizedDate", column=@Column(name="IBDTLS"))
 })
-public class ItemBranchInfo extends SynchronizedDatabaseEntity {
+public class ItemBranchInfo extends SynchronizedDatabaseEntityImpl {
 
 	@EmbeddedId @JsonUnwrapped
 	private ItemBranchInfoPK pk;

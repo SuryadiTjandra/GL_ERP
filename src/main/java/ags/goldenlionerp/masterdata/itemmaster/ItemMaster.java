@@ -13,6 +13,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import ags.goldenlionerp.entities.DatabaseEntity;
+import ags.goldenlionerp.entities.TransactionSynchronizedDatabaseEntityImpl;
 import ags.goldenlionerp.masterdata.itembranchinfo.ItemBranchInfo;
 
 @Entity
@@ -25,8 +26,10 @@ import ags.goldenlionerp.masterdata.itembranchinfo.ItemBranchInfo;
 	@AttributeOverride(name="lastUpdateDate", column=@Column(name="IMDTLU")),
 	@AttributeOverride(name="lastUpdateTime", column=@Column(name="IMTMLU")),
 	@AttributeOverride(name="computerId", column=@Column(name="IMCID")),
+	@AttributeOverride(name="lastTransactionDate", column=@Column(name="IMDTLT")),
+	@AttributeOverride(name="lastSynchronizedDate", column=@Column(name="IMDTLS")),
 })
-public class ItemMaster extends DatabaseEntity {
+public class ItemMaster extends TransactionSynchronizedDatabaseEntityImpl{
 
 	@Id
 	@Column(name="IMINUM")

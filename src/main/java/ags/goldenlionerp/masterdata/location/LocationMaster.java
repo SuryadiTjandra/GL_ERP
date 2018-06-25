@@ -12,7 +12,7 @@ import javax.persistence.PrePersist;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
-import ags.goldenlionerp.entities.SynchronizedDatabaseEntity;
+import ags.goldenlionerp.entities.SynchronizedDatabaseEntityImpl;
 import ags.goldenlionerp.masterdata.businessunit.BusinessUnit;
 
 @Entity
@@ -27,7 +27,7 @@ import ags.goldenlionerp.masterdata.businessunit.BusinessUnit;
 	@AttributeOverride(name="computerId", column=@Column(name="LMCID")),
 	@AttributeOverride(name="lastSynchronizedDate", column=@Column(name="LMDTLS"))
 })
-public class LocationMaster extends SynchronizedDatabaseEntity {
+public class LocationMaster extends SynchronizedDatabaseEntityImpl {
 
 	@EmbeddedId
 	private LocationMasterPK pk;
