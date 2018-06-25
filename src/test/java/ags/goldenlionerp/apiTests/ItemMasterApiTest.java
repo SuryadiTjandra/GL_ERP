@@ -136,6 +136,8 @@ public class ItemMasterApiTest extends ApiTestBase<String> {
 
 	@Override @Test @Rollback
 	public void deleteTest() throws Exception {
+		assumeExists(baseUrl + existingId);
+		
 		mockMvc.perform(delete(baseUrl + existingId))
 			.andExpect(MockMvcResultMatchers.status().isNoContent());
 

@@ -55,7 +55,7 @@ public class ItemBranchInfoApiTest extends ApiTestBase<ItemBranchInfoPK> {
 
 	@Override
 	ItemBranchInfoPK newId() {
-		return new ItemBranchInfoPK("123", "TEST");
+		return new ItemBranchInfoPK("123", "TEST.TEST");
 	}
 	
 	@Override @Test
