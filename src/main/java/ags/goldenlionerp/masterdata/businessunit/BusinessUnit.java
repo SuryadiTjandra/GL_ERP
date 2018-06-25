@@ -45,27 +45,31 @@ public class BusinessUnit extends DatabaseEntity{
 	@Column(name="BNBUID")
 	private String businessUnitId;
 	@Column(name="BNDESB1")
-	private String description;
+	private String description = "";
 	@Column(name="BNBUTY")
-	private String businessUnitType;
+	private String businessUnitType = "";
 	
 	@Column(name="BNANUM")
-	private String idNumber;
+	private String idNumber = "";
+	
+	@Column(name="BNCOID")
+	private String companyId = "";
 	
 	@ManyToOne(optional=false)
-	@JoinColumn(name="BNCOID")
+	@JoinColumn(name="BNCOID", updatable=false, insertable=false)
 	private Company company;
 	
+	@Column(name="BNBUID1")
+	private String relatedBusinessUnitId = "";
+	
 	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="BNBUID1")
+	@JoinColumn(name="BNBUID1", updatable=false, insertable=false)
 	@NotFound(action=NotFoundAction.IGNORE)
 	@RestResource(exported=true, path="related", rel="related")
 	private BusinessUnit relatedBusinessUnit;
-
-	//private String relatedBusinessUnit;
 	
 	@Column(name="BNFMOD")
-	private String modelOrConsolidated;
+	private String modelOrConsolidated = "";
 
 	@OneToOne(fetch=FetchType.LAZY, mappedBy="branch")
 	private BranchPlantConstant configuration;
@@ -92,6 +96,14 @@ public class BusinessUnit extends DatabaseEntity{
 
 	public Company getCompany() {
 		return company;
+	}
+	
+	public String getCompanyId() {
+		return companyId;
+	}
+	
+	public String getRelatedBusinessUnitId() {
+		return relatedBusinessUnitId;
 	}
 	
 	public Optional<BusinessUnit> getRelatedBusinessUnit() {
@@ -137,10 +149,18 @@ public class BusinessUnit extends DatabaseEntity{
 		this.idNumber = idNumber;
 	}
 
+	void setCompanyId(String companyId) {
+		this.companyId = companyId;
+	}
+	
 	void setCompany(Company company) {
 		this.company = company;
 	}
 
+	void setRelatedBusinessUnitId(String relatedBusinessUnitId) {
+		this.relatedBusinessUnitId = relatedBusinessUnitId;
+	}
+	
 	void setRelatedBusinessUnit(BusinessUnit relatedBusinessUnit) {
 		this.relatedBusinessUnit = relatedBusinessUnit;
 	}

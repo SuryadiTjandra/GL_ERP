@@ -36,6 +36,8 @@ public class BusinessUnitApiTest extends ApiTestBase<String> {
 		map.put("idNumber", "");
 		map.put("company", "/api/companies/00000");
 		map.put("relatedBusinessUnit", "/api/businessUnits/110");
+		map.put("companyId", "00000");
+		map.put("relatedBusinessUnitId", "110");
 		map.put("modelOrConsolidated", "");
 		map.put("computerId", "YOOO");
 		map.put("inputUserId", "abcdefghijklmnopqrstuvwxyz");
@@ -88,6 +90,8 @@ public class BusinessUnitApiTest extends ApiTestBase<String> {
 						.content(mapper.writeValueAsString(requestObject)))
 				.andExpect(MockMvcResultMatchers.status().isCreated());
 		
+		em.flush(); em.clear();
+		
 		String getResult = mockMvc.perform(get(baseUrl + newId).accept(MediaType.APPLICATION_JSON))
 				//.andDo(res -> System.out.println(res.getResponse().getContentAsString()))
 				.andExpect(MockMvcResultMatchers.status().isOk())
@@ -118,12 +122,14 @@ public class BusinessUnitApiTest extends ApiTestBase<String> {
 	@Rollback
 	//@Commit
 	public void createTestWithPostWithoutRelatedBU() throws Exception {
-		requestObject.remove("relatedBusinessUnit");
+		requestObject.remove("relatedBusinessUnitId");
 
 		mockMvc.perform(post(baseUrl)
 						.content(mapper.writeValueAsString(requestObject)))
 				.andExpect(MockMvcResultMatchers.status().isCreated());
 
+		em.flush(); em.clear();
+		
 		String getResult = mockMvc.perform(get(baseUrl + newId).accept(MediaType.APPLICATION_JSON))
 				//.andDo(res -> System.out.println(res.getResponse().getContentAsString()))
 				.andExpect(MockMvcResultMatchers.status().isOk())
@@ -224,8 +230,8 @@ public class BusinessUnitApiTest extends ApiTestBase<String> {
 	@Rollback
 	public void updateTestWithPatchRemoveRelatedBusinessUnit() throws Exception {
 		
-		String id = "100";
-		requestObject.put("relatedBusinessUnit", null);
+		String id = "123";
+		requestObject.put("relatedBusinessUnitId", "");
 		
 		//check beforehand that the entity has a non-null relatedBusinessUnit association
 		String beforePatch = mockMvc.perform(get(baseUrl + id).accept(MediaType.APPLICATION_JSON))
@@ -243,6 +249,7 @@ public class BusinessUnitApiTest extends ApiTestBase<String> {
 		
 		EntityManager manager = wac.getBean(EntityManager.class);
 		manager.flush();
+		manager.clear();
 		
 		//do a GET to check the result
 		String getResult = mockMvc.perform(get(baseUrl + id).accept(MediaType.APPLICATION_JSON))
