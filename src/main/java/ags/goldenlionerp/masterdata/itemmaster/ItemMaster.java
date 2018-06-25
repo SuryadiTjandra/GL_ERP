@@ -12,7 +12,6 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import ags.goldenlionerp.entities.DatabaseEntity;
 import ags.goldenlionerp.entities.TransactionSynchronizedDatabaseEntityImpl;
 import ags.goldenlionerp.masterdata.itembranchinfo.ItemBranchInfo;
 

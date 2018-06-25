@@ -96,8 +96,8 @@ public class ChartOfAccountApiTest extends ApiTestBase<String>{
 
 	@Override @Test @Rollback
 	public void createTestWithPut() throws Exception {
-		assumeExists(baseUrl + existingId);
-		mockMvc.perform(put(baseUrl + existingId)
+		assumeNotExists(baseUrl + newId);
+		mockMvc.perform(put(baseUrl + newId)
 						.content(mapper.writeValueAsString(requestObject)))
 				.andExpect(MockMvcResultMatchers.status().isMethodNotAllowed());
 		
