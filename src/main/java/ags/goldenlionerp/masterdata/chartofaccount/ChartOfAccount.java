@@ -15,6 +15,7 @@ import org.hibernate.annotations.NotFoundAction;
 
 import ags.goldenlionerp.entities.DatabaseEntity;
 import ags.goldenlionerp.masterdata.company.Company;
+
 @Entity
 @Table(name="T0900")
 @AttributeOverrides({
@@ -33,22 +34,22 @@ public class ChartOfAccount extends DatabaseEntity{
 	private String objectAccountCode;
 	
 	@Column(name="OACOID")
-	private String companyId;
+	private String companyId = "00000";
 	
 	@Column(name="OADESB1")
-	private String description;
+	private String description = "";
 	
 	@Column(name="OADESC1")
-	private String descriptionLong;
+	private String descriptionLong = "";
 	
 	@Column(name="OALOD")
-	private int levelOfDetail;
+	private int levelOfDetail = 0;
 	
 	@Column(name="OAPEC")
 	private boolean postingEditCode;
 	
 	@Column(name="OABLC")
-	private String balanceType;
+	private String balanceType = "";
 	
 	@JoinColumn(name="OACOID", updatable=false, insertable=false)
 	@ManyToOne(fetch=FetchType.LAZY)
