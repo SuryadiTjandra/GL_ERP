@@ -9,10 +9,12 @@ import javax.persistence.PreUpdate;
 
 import org.springframework.hateoas.ResourceSupport;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
 @MappedSuperclass
+@JsonIgnoreProperties({"handler","hibernateLazyInitializer"})
 public abstract class DatabaseEntity extends ResourceSupport {
 	
 	@Column(name="UID")
