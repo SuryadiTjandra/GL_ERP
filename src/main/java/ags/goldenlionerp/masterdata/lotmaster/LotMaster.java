@@ -1,6 +1,8 @@
-package ags.goldenlionerp.masterdata.itemlotmaster;
+package ags.goldenlionerp.masterdata.lotmaster;
 
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.util.Optional;
 
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;
@@ -29,29 +31,29 @@ import ags.goldenlionerp.masterdata.itemmaster.ItemMaster;
 	@AttributeOverride(name="lastUpdateTime", column=@Column(name="LTTMLU")),
 	@AttributeOverride(name="computerId", column=@Column(name="LTCID"))
 })
-public class ItemLotMaster extends DatabaseEntity {
+public class LotMaster extends DatabaseEntity {
 	
 	@EmbeddedId
 	@JsonUnwrapped
-	private ItemLotMasterPK pk;
+	private LotMasterPK pk;
 	
 	@Column(name="LTLDSC")
-	private String lotDescription;
+	private String lotDescription = "";
 	
 	@Column(name="LTLSC")
-	private String lotStatusCode;
+	private String lotStatusCode = "";
 	
 	@Column(name="LTSERN")
-	private String serialNumber;
+	private String serialNumber = "";
 	
 	@Column(name="LTMLOT1")
-	private String memoLot1;
+	private String memoLot1 = "";
 	
 	@Column(name="LTMLOT2")
-	private String memoLot2;
+	private String memoLot2 = "";
 	
 	@Column(name="LTMLOT3")
-	private String memoLot3;
+	private String memoLot3 = "";
 	
 	@Column(name="LTEXPDT")
 	private Timestamp expiredDate;
@@ -79,7 +81,7 @@ public class ItemLotMaster extends DatabaseEntity {
 	@ManyToOne(fetch=FetchType.LAZY, optional=false)
 	private ItemMaster item;
 
-	public ItemLotMasterPK getPk() {
+	public LotMasterPK getPk() {
 		return pk;
 	}
 
@@ -107,28 +109,28 @@ public class ItemLotMaster extends DatabaseEntity {
 		return memoLot3;
 	}
 
-	public Timestamp getExpiredDate() {
-		return expiredDate;
+	public Optional<LocalDateTime> getExpiredDate() {
+		return Optional.ofNullable(expiredDate).map(Timestamp::toLocalDateTime);
 	}
 
-	public Timestamp getBestBeforeDate() {
-		return bestBeforeDate;
+	public Optional<LocalDateTime> getBestBeforeDate() {
+		return Optional.ofNullable(bestBeforeDate).map(Timestamp::toLocalDateTime);
 	}
 
-	public Timestamp getBaseOnDate() {
-		return baseOnDate;
+	public Optional<LocalDateTime> getBaseOnDate() {
+		return Optional.ofNullable(baseOnDate).map(Timestamp::toLocalDateTime);
 	}
 
-	public Timestamp getLotEffectiveDate() {
-		return lotEffectiveDate;
+	public Optional<LocalDateTime> getLotEffectiveDate() {
+		return Optional.ofNullable(lotEffectiveDate).map(Timestamp::toLocalDateTime);
 	}
 
-	public Timestamp getOnHandDate() {
-		return onHandDate;
+	public Optional<LocalDateTime> getOnHandDate() {
+		return Optional.ofNullable(onHandDate).map(Timestamp::toLocalDateTime);
 	}
 
-	public Timestamp getClosedDate() {
-		return closedDate;
+	public Optional<LocalDateTime> getClosedDate() {
+		return Optional.ofNullable(closedDate).map(Timestamp::toLocalDateTime);
 	}
 
 	public BusinessUnit getBusinessUnit() {
@@ -139,7 +141,7 @@ public class ItemLotMaster extends DatabaseEntity {
 		return item;
 	}
 
-	void setPk(ItemLotMasterPK pk) {
+	void setPk(LotMasterPK pk) {
 		this.pk = pk;
 	}
 
@@ -167,28 +169,28 @@ public class ItemLotMaster extends DatabaseEntity {
 		this.memoLot3 = memoLot3;
 	}
 
-	void setExpiredDate(Timestamp expiredDate) {
-		this.expiredDate = expiredDate;
+	void setExpiredDate(LocalDateTime expiredDate) {
+		this.expiredDate = Timestamp.valueOf(expiredDate);
 	}
 
-	void setBestBeforeDate(Timestamp bestBeforeDate) {
-		this.bestBeforeDate = bestBeforeDate;
+	void setBestBeforeDate(LocalDateTime bestBeforeDate) {
+		this.bestBeforeDate = Timestamp.valueOf(bestBeforeDate);
 	}
 
-	void setBaseOnDate(Timestamp baseOnDate) {
-		this.baseOnDate = baseOnDate;
+	void setBaseOnDate(LocalDateTime baseOnDate) {
+		this.baseOnDate = Timestamp.valueOf(baseOnDate);
 	}
 
-	void setLotEffectiveDate(Timestamp lotEffectiveDate) {
-		this.lotEffectiveDate = lotEffectiveDate;
+	void setLotEffectiveDate(LocalDateTime lotEffectiveDate) {
+		this.lotEffectiveDate = Timestamp.valueOf(lotEffectiveDate);
 	}
 
-	void setOnHandDate(Timestamp onHandDate) {
-		this.onHandDate = onHandDate;
+	void setOnHandDate(LocalDateTime onHandDate) {
+		this.onHandDate = Timestamp.valueOf(onHandDate);
 	}
 
-	void setClosedDate(Timestamp closedDate) {
-		this.closedDate = closedDate;
+	void setClosedDate(LocalDateTime closedDate) {
+		this.closedDate = Timestamp.valueOf(closedDate);
 	}
 	
 	

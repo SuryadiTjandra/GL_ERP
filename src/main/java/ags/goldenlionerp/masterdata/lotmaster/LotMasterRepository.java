@@ -1,0 +1,9 @@
+package ags.goldenlionerp.masterdata.lotmaster;
+
+import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+
+@RepositoryRestResource(collectionResourceRel="lots", path="lots")
+public interface LotMasterRepository extends PagingAndSortingRepository<LotMaster, LotMasterPK> {
+
+}

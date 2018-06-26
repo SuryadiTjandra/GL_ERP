@@ -1,4 +1,4 @@
-package ags.goldenlionerp.masterdata.itemlotmaster;
+package ags.goldenlionerp.masterdata.lotmaster;
 
 import java.io.Serializable;
 
@@ -6,7 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 @Embeddable
-public class ItemLotMasterPK implements Serializable {
+public class LotMasterPK implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -19,7 +19,10 @@ public class ItemLotMasterPK implements Serializable {
 	@Column(name="LTSNLOT")
 	private String serialLotNo;
 	
-	public ItemLotMasterPK(String businessUnitId, String itemCode, String serialLotNo) {
+	@SuppressWarnings("unused")
+	private LotMasterPK() {}
+	
+	public LotMasterPK(String businessUnitId, String itemCode, String serialLotNo) {
 		super();
 		this.itemCode = itemCode;
 		this.businessUnitId = businessUnitId;
@@ -75,7 +78,7 @@ public class ItemLotMasterPK implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		ItemLotMasterPK other = (ItemLotMasterPK) obj;
+		LotMasterPK other = (LotMasterPK) obj;
 		if (businessUnitId == null) {
 			if (other.businessUnitId != null)
 				return false;
