@@ -82,7 +82,7 @@ public class ItemLocation extends TransactionDatabaseEntityImpl{
 	public ItemLocationPK getPk() {
 		return pk;
 	}
-
+	
 	public String getLotStatusCode() {
 		return lotStatusCode;
 	}

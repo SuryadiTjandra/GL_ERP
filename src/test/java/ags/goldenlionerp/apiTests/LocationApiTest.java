@@ -78,7 +78,7 @@ public class LocationApiTest extends ApiTestBase<LocationMasterPK>{
 				.andExpect(MockMvcResultMatchers.content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
 				.andExpect(jsonPath("$..locations[0].businessUnitId").value("110"))
 				.andExpect(jsonPath("$..locations[0].description").value("TEST"))
-				.andExpect(jsonPath("$..locations.length()").value(3))
+				.andExpect(jsonPath("$..locations.length()").value(4))
 				.andReturn().getResponse().getContentAsString();
 	}
 
