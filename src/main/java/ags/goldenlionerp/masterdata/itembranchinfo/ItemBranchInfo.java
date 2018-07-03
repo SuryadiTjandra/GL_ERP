@@ -64,10 +64,10 @@ public class ItemBranchInfo extends SynchronizedDatabaseEntityImpl {
 	private String commitmentMethod = "";
 	
 	@Column(name="IBILC")
-	private boolean inventoryLotCreation;
+	private Boolean inventoryLotCreation;
 	
 	@Column(name="IBSNR")
-	private boolean serialNumberRequired;
+	private Boolean serialNumberRequired;
 	
 	@Column(name="IBLSC")
 	private String lotStatusCode = "";

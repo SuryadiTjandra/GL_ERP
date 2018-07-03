@@ -47,13 +47,13 @@ public class ItemUnitsOfMeasures {
 	private BigDecimal weightConversionFactor = new BigDecimal(0);
 	
 	@Column(name="IMDLUM")
-	private boolean dualQuantityUnitOfMeasure;
+	private Boolean dualQuantityUnitOfMeasure;
 	
 	@Column(name="IMDPPO")
-	private boolean dualPickingProcessOption;
+	private Boolean dualPickingProcessOption;
 	
 	@Column(name="IMDLUMT")
-	private boolean dualQuantityUnitOfMeasureTolerance;
+	private Boolean dualQuantityUnitOfMeasureTolerance;
 	
 	@Column(name="IMDLUMP", precision=19, scale=15)
 	private BigDecimal dualQuantityUnitOfMeasurePercentage = new BigDecimal(0);

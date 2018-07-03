@@ -43,19 +43,19 @@ public class BranchPlantConstant extends DatabaseEntity {
 	private String salesInventoryCostMethod = "";
 	
 	@Column(name="BCITGL")
-	private String interfaceToGL = "";
+	private Boolean interfaceToGL;
 	
 	@Column(name="BCCTM")
 	private String commitmentMethod = "";
 	
 	@Column(name="BCILC")
-	private String inventoryLotCreation = "";
+	private Boolean inventoryLotCreation;
 	
 	@Column(name="BCLCTL")
-	private String locationControl = "";
+	private Boolean locationControl;
 	
 	@Column(name="BCWCTL")
-	private String warehouseControl = "";
+	private Boolean warehouseControl;
 	
 	@Column(name="BCXRT")
 	private String itemCrossReferenceType = "";
@@ -83,7 +83,7 @@ public class BranchPlantConstant extends DatabaseEntity {
 		return salesInventoryCostMethod;
 	}
 
-	public String getInterfaceToGL() {
+	public Boolean getInterfaceToGL() {
 		return interfaceToGL;
 	}
 
@@ -91,15 +91,15 @@ public class BranchPlantConstant extends DatabaseEntity {
 		return commitmentMethod;
 	}
 
-	public String getInventoryLotCreation() {
+	public Boolean getInventoryLotCreation() {
 		return inventoryLotCreation;
 	}
 
-	public String getLocationControl() {
+	public Boolean getLocationControl() {
 		return locationControl;
 	}
 
-	public String getWarehouseControl() {
+	public Boolean getWarehouseControl() {
 		return warehouseControl;
 	}
 
@@ -131,7 +131,7 @@ public class BranchPlantConstant extends DatabaseEntity {
 		this.salesInventoryCostMethod = salesInventoryCostMethod;
 	}
 
-	void setInterfaceToGL(String interfaceToGL) {
+	void setInterfaceToGL(Boolean interfaceToGL) {
 		this.interfaceToGL = interfaceToGL;
 	}
 
@@ -139,15 +139,15 @@ public class BranchPlantConstant extends DatabaseEntity {
 		this.commitmentMethod = commitmentMethod;
 	}
 
-	void setInventoryLotCreation(String inventoryLotCreation) {
+	void setInventoryLotCreation(Boolean inventoryLotCreation) {
 		this.inventoryLotCreation = inventoryLotCreation;
 	}
 
-	void setLocationControl(String locationControl) {
+	void setLocationControl(Boolean locationControl) {
 		this.locationControl = locationControl;
 	}
 
-	void setWarehouseControl(String warehouseControl) {
+	void setWarehouseControl(Boolean warehouseControl) {
 		this.warehouseControl = warehouseControl;
 	}
 
@@ -158,6 +158,6 @@ public class BranchPlantConstant extends DatabaseEntity {
 	void setItemCrossReferenceType2(String itemCrossReferenceType2) {
 		this.itemCrossReferenceType2 = itemCrossReferenceType2;
 	}
-	
-	
+
+
 }

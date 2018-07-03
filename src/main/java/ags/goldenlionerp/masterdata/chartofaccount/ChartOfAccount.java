@@ -46,7 +46,7 @@ public class ChartOfAccount extends DatabaseEntity{
 	private int levelOfDetail = 0;
 	
 	@Column(name="OAPEC")
-	private boolean postingEditCode;
+	private Boolean postingEditCode;
 	
 	@Column(name="OABLC")
 	private String balanceType = "";
