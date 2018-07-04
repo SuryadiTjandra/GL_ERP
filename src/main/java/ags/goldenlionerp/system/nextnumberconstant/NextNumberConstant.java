@@ -50,11 +50,11 @@ public class NextNumberConstant extends DatabaseEntity {
 		return resetMethod;
 	}
 
-	public Boolean getIncludeMonthInNextNumber() {
+	public boolean getIncludeMonthInNextNumber() {
 		return includeMonthInNextNumber;
 	}
 
-	public Boolean getIncludeYearInNextNumber() {
+	public boolean getIncludeYearInNextNumber() {
 		return includeYearInNextNumber;
 	}
 
@@ -70,11 +70,11 @@ public class NextNumberConstant extends DatabaseEntity {
 		this.resetMethod = resetMethod;
 	}
 
-	void setIncludeMonthInNextNumber(Boolean includeMonthInNextNumber) {
+	void setIncludeMonthInNextNumber(boolean includeMonthInNextNumber) {
 		this.includeMonthInNextNumber = includeMonthInNextNumber;
 	}
 
-	void setIncludeYearInNextNumber(Boolean includeYearInNextNumber) {
+	void setIncludeYearInNextNumber(boolean includeYearInNextNumber) {
 		this.includeYearInNextNumber = includeYearInNextNumber;
 	}
 	

@@ -14,8 +14,8 @@ public class YNConverter implements AttributeConverter<Boolean, String> {
 
 	@Override
 	public Boolean convertToEntityAttribute(String dbData) {
-		if (!dbData.equals("Y") && !dbData.isEmpty())
-			throw new IllegalArgumentException("This converter can only handle Y or empty values");
+		//if (!dbData.equals("Y") && !dbData.isEmpty())
+		//	throw new IllegalArgumentException("This converter can only handle Y or empty values");
 		return dbData.equals("Y");
 	}
 
