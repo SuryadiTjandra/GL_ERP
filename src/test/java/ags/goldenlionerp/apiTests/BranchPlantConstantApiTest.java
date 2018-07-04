@@ -29,10 +29,10 @@ public class BranchPlantConstantApiTest extends ApiTestBase<String>{
 		map.put("branchAddressCode", "");
 		map.put("purchaseCostMethod", "02");
 		map.put("salesInventoryCostMethod", "01");
-		map.put("interfaceToGL", "");
-		map.put("inventoryLotCreation", "Y");
-		map.put("locationControl", "Y");
-		map.put("warehouseControl", "");
+		map.put("interfaceToGL", false);
+		map.put("inventoryLotCreation", true);
+		map.put("locationControl", Boolean.TRUE);
+		map.put("warehouseControl", Boolean.FALSE);
 		map.put("inputUserId", "1234567890");
 		map.put("branchCode", newId);
 		return map;
@@ -207,7 +207,7 @@ public class BranchPlantConstantApiTest extends ApiTestBase<String>{
 				.andExpect(jsonPath("$.purchaseCostMethod").value(requestObject.get("purchaseCostMethod")))
 				.andExpect(jsonPath("$.inventoryLotCreation").value(requestObject.get("inventoryLotCreation")))
 				.andExpect(jsonPath("$.salesInventoryCostMethod").value((String) JsonPath.read(beforePatch, "$.salesInventoryCostMethod")))
-				.andExpect(jsonPath("$.warehouseControl").value((String) JsonPath.read(beforePatch, "$.warehouseControl")))
+				.andExpect(jsonPath("$.warehouseControl").value((Boolean) JsonPath.read(beforePatch, "$.warehouseControl")))
 				.andReturn().getResponse().getContentAsString();
 		
 		assertUpdateInfo(getResult, beforePatch);
@@ -239,7 +239,7 @@ public class BranchPlantConstantApiTest extends ApiTestBase<String>{
 				.andExpect(jsonPath("$.purchaseCostMethod").value(requestObject.get("purchaseCostMethod")))
 				.andExpect(jsonPath("$.inventoryLotCreation").value(requestObject.get("inventoryLotCreation")))
 				.andExpect(jsonPath("$.salesInventoryCostMethod").value(""))
-				.andExpect(jsonPath("$.warehouseControl").value(""))
+				.andExpect(jsonPath("$.warehouseControl").value(false))
 				.andReturn().getResponse().getContentAsString();
 		
 		assertUpdateInfo(getResult);

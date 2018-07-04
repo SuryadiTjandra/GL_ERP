@@ -65,7 +65,7 @@ public class AccountMaster extends TransactionDatabaseEntityImpl {
 	private int levelOfDetail = 0;
 	
 	@Column(name="AMPEC")
-	private Boolean postingEditCode;
+	private Boolean postingEditCode = false;
 	
 	@Column(name="AMBLC")
 	private String balanceType = "";

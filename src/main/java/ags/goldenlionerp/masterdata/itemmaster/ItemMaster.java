@@ -68,10 +68,10 @@ public class ItemMaster extends TransactionSynchronizedDatabaseEntityImpl{
 	private String commitmentMethod = "";
 	
 	@Column(name="IMILC")
-	private boolean inventoryLotCreation;
+	private Boolean inventoryLotCreation = false;
 	
 	@Column(name="IMSNR")
-	private boolean serialNumberRequired;
+	private Boolean serialNumberRequired = false;
 	
 	@Column(name="IMLSC")
 	private String lotStatusCode = "";
