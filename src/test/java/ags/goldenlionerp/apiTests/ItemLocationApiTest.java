@@ -117,7 +117,7 @@ public class ItemLocationApiTest extends ApiTestBase<ItemLocationPK> {
 	public void createTestWithPut() throws Exception {
 		assumeNotExists(baseUrl+newId);
 		
-		mockMvc.perform(put(baseUrl + existingId)
+		mockMvc.perform(put(baseUrl + newId)
 						.content(mapper.writeValueAsString(requestObject)))
 				.andExpect(MockMvcResultMatchers.status().isMethodNotAllowed());
 		
