@@ -6,13 +6,15 @@ import java.util.Optional;
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;
 import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonUnwrapped;
 
 import ags.goldenlionerp.entities.DatabaseEntityUtil;
 import ags.goldenlionerp.entities.TransactionDatabaseEntityImpl;
@@ -33,30 +35,29 @@ import ags.goldenlionerp.masterdata.company.Company;
 })
 public class AccountMaster extends TransactionDatabaseEntityImpl {
 
-	@Id
-	@Column(name="AMACID")
+	@EmbeddedId
+	@JsonUnwrapped
+	private AccountMasterPK pk;
+	
+	@Column(name="AMACID", updatable=false)
 	private String accountId;
 	
-	@Column(name="AMCOID", updatable=false)
-	private String companyId;
+	
 	@JoinColumn(name="AMCOID", insertable=false, updatable=false)
 	@ManyToOne(fetch=FetchType.LAZY, optional=false)
 	private Company company;
 	
-	@Column(name="AMBUID", updatable=false)
-	private String businessUnitId;
+	
 	@JoinColumn(name="AMBUID", insertable=false, updatable=false)
 	@ManyToOne(fetch=FetchType.LAZY, optional=false)
 	private BusinessUnit businessUnit;
 	
-	@Column(name="AMOBJ", updatable=false)
-	private String objectAccountCode;
+	
 	@JoinColumn(name="AMOBJ", insertable=false, updatable=false)
 	@ManyToOne(fetch=FetchType.LAZY, optional=false)
 	private ChartOfAccount objectAccount;
 	
-	@Column(name="AMSUB", updatable=false)
-	private String subsidiaryCode = "";
+	
 	
 	@Column(name="AMDESB1")
 	private String description = "";
@@ -102,7 +103,11 @@ public class AccountMaster extends TransactionDatabaseEntityImpl {
 
 	@PrePersist
 	private void prePersist() {
-		accountId = businessUnitId + "." + objectAccountCode + "." + subsidiaryCode;
+		String acc = pk.getBusinessUnitId() + "." + pk.getObjectAccountCode();
+		if (!pk.getSubsidiaryCode().isEmpty())
+			acc = acc + "." + pk.getSubsidiaryCode();
+		
+		accountId = acc;
 	}
 	
 	@Override
@@ -122,32 +127,16 @@ public class AccountMaster extends TransactionDatabaseEntityImpl {
 		return accountId;
 	}
 
-	public String getCompanyId() {
-		return companyId;
-	}
-
 	public Company getCompany() {
 		return company;
 	}
-
-	public String getBusinessUnitId() {
-		return businessUnitId;
-	}
-
+	
 	public BusinessUnit getBusinessUnit() {
 		return businessUnit;
 	}
 
-	public String getObjectAccountCode() {
-		return objectAccountCode;
-	}
-
 	public ChartOfAccount getObjectAccount() {
 		return objectAccount;
-	}
-
-	public String getSubsidiaryCode() {
-		return subsidiaryCode;
 	}
 
 	public String getDescription() {
@@ -210,32 +199,24 @@ public class AccountMaster extends TransactionDatabaseEntityImpl {
 		this.accountId = accountId;
 	}
 
-	void setCompanyId(String companyId) {
-		this.companyId = companyId;
-	}
-
 	void setCompany(Company company) {
 		this.company = company;
-	}
-
-	void setBusinessUnitId(String businessUnitId) {
-		this.businessUnitId = businessUnitId;
 	}
 
 	void setBusinessUnit(BusinessUnit businessUnit) {
 		this.businessUnit = businessUnit;
 	}
 
-	void setObjectAccountCode(String objectAccountCode) {
-		this.objectAccountCode = objectAccountCode;
-	}
-
 	void setObjectAccount(ChartOfAccount objectAccount) {
 		this.objectAccount = objectAccount;
 	}
 
-	void setSubsidiaryCode(String subsidiaryCode) {
-		this.subsidiaryCode = subsidiaryCode;
+	public AccountMasterPK getPk() {
+		return pk;
+	}
+
+	void setPk(AccountMasterPK pk) {
+		this.pk = pk;
 	}
 
 	void setDescription(String description) {

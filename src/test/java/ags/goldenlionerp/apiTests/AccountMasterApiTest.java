@@ -41,12 +41,12 @@ public class AccountMasterApiTest extends ApiTestBase<String> {
 
 	@Override
 	String existingId() {
-		return "100.100000";
+		return "11000.100.100000.";
 	}
 
 	@Override
 	String newId() {
-		return "123.100000.123";
+		return "00000.123.100000.123";
 	}
 
 	
@@ -55,7 +55,11 @@ public class AccountMasterApiTest extends ApiTestBase<String> {
 		mockMvc.perform(get(baseUrl + existingId).accept(MediaType.APPLICATION_JSON))
 				.andExpect(MockMvcResultMatchers.status().isOk())
 				.andExpect(MockMvcResultMatchers.content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
-				.andExpect(jsonPath("$.accountId").value(existingId))
+				.andExpect(jsonPath("$.accountId").value("100.100000"))
+				.andExpect(jsonPath("$.companyId").value("11000"))
+				.andExpect(jsonPath("$.businessUnitId").value("100"))
+				.andExpect(jsonPath("$.objectAccountCode").value("100000"))
+				.andExpect(jsonPath("$.subsidiaryCode").value(""))
 				.andExpect(jsonPath("$.description").value("AKTIVA"))
 				.andExpect(jsonPath("$.levelOfDetail").value(3))
 				.andExpect(jsonPath("$.postingEditCode").value(false))
@@ -88,7 +92,7 @@ public class AccountMasterApiTest extends ApiTestBase<String> {
 		
 		String getRes = mockMvc.perform(get(baseUrl + newId))
 				.andExpect(MockMvcResultMatchers.status().isOk())
-				.andExpect(jsonPath("$.accountId").value(newId))
+				.andExpect(jsonPath("$.accountId").value("123.100000.123"))
 				.andExpect(jsonPath("$.companyId").value(requestObject.get("companyId")))
 				.andExpect(jsonPath("$.subsidiaryCode").value(requestObject.get("subsidiaryCode")))
 				.andExpect(jsonPath("$.description").value(requestObject.get("description")))
@@ -142,7 +146,7 @@ public class AccountMasterApiTest extends ApiTestBase<String> {
 		
 		String getResult = mockMvc.perform(get(baseUrl + existingId))
 							.andExpect(MockMvcResultMatchers.status().is2xxSuccessful())
-							.andExpect(jsonPath("$.accountId").value(existingId))
+							.andExpect(jsonPath("$.accountId").value("100.100000"))
 							.andExpect(jsonPath("$.companyId").value((String) JsonPath.read(beforePatch, "$.companyId")))
 							.andExpect(jsonPath("$.businessUnitId").value((String) JsonPath.read(beforePatch, "$.businessUnitId")))
 							.andExpect(jsonPath("$.objectAccountCode").value((String) JsonPath.read(beforePatch, "$.objectAccountCode")))
