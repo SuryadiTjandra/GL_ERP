@@ -2,7 +2,9 @@ package ags.goldenlionerp.apiTests;
 
 import static org.junit.Assert.*;
 import static org.junit.Assume.assumeTrue;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 
 import java.io.Serializable;
 import java.util.Map;
@@ -13,12 +15,15 @@ import javax.transaction.Transactional;
 import org.hamcrest.Matcher;
 import org.hamcrest.Matchers;
 import org.junit.Before;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.hateoas.hal.Jackson2HalModule;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
@@ -72,6 +77,39 @@ public abstract class ApiTestBase<ID extends Serializable> implements ApiTest{
 	abstract String baseUrl();
 	abstract ID existingId();
 	abstract ID newId();
+	
+	@Override @Test @Rollback
+	public void createTestWithPut() throws Exception {		
+		assumeNotExists(baseUrl+newId);
+		
+		mockMvc.perform(put(baseUrl + newId)
+						.content(mapper.writeValueAsString(requestObject)))
+				.andExpect(MockMvcResultMatchers.status().isMethodNotAllowed());
+
+	}
+	
+	@Override @Test @Rollback
+	public void deleteTest() throws Exception {
+		assumeExists(baseUrl + existingId);
+		
+		mockMvc.perform(delete(baseUrl + existingId))
+			.andExpect(MockMvcResultMatchers.status().isNoContent());
+	
+		mockMvc.perform(get(baseUrl + existingId))
+			.andExpect(MockMvcResultMatchers.status().isNotFound());
+
+	}
+	
+	@Override @Test @Rollback
+	public void updateTestWithPut() throws Exception {
+		assumeExists(baseUrl+existingId);
+		
+		mockMvc.perform(put(baseUrl + existingId)
+						.content(mapper.writeValueAsString(requestObject)))
+				.andExpect(MockMvcResultMatchers.status().isMethodNotAllowed());
+
+	}
+	
 	
 	void assertCreationInfo(String entityJson) {
 		assertEquals("login not yet",JsonPath.read(entityJson, "$.inputUserId"));
