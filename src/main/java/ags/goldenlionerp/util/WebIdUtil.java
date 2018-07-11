@@ -1,5 +1,7 @@
 package ags.goldenlionerp.util;
 
+import java.time.format.DateTimeFormatter;
+
 public class  WebIdUtil {
 
 	public static String toWebId(String entityId) {
@@ -14,5 +16,9 @@ public class  WebIdUtil {
 			return null;
 		
 		return webId.replaceAll("_t", "\t").replaceAll("_", " ");
+	}
+	
+	public static DateTimeFormatter getWebIdDateFormatter() {
+		return DateTimeFormatter.ofPattern("yyyyMMdd");
 	}
 }
