@@ -9,8 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import ags.goldenlionerp.masterdata.businessunit.BusinessUnit;
-import ags.goldenlionerp.masterdata.businessunit.BusinessUnitRepository;
+import ags.goldenlionerp.system.businessunit.BusinessUnit;
+import ags.goldenlionerp.system.businessunit.BusinessUnitRepository;
 
 @SpringBootTest
 @RunWith(SpringRunner.class)

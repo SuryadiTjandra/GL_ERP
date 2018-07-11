@@ -1,4 +1,4 @@
-package ags.goldenlionerp.masterdata.branchplantconstant;
+package ags.goldenlionerp.system.branchplantconstant;
 
 import org.springframework.data.repository.CrudRepository;
 

@@ -1,4 +1,4 @@
-package ags.goldenlionerp.masterdata.company;
+package ags.goldenlionerp.system.company;
 
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;

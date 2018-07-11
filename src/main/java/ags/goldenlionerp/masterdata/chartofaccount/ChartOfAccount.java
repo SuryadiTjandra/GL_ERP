@@ -14,7 +14,7 @@ import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.NotFoundAction;
 
 import ags.goldenlionerp.entities.DatabaseEntity;
-import ags.goldenlionerp.masterdata.company.Company;
+import ags.goldenlionerp.system.company.Company;
 
 @Entity
 @Table(name="T0900")

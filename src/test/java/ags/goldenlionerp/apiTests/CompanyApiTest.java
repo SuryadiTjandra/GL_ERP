@@ -19,7 +19,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.jayway.jsonpath.JsonPath;
 
-import ags.goldenlionerp.masterdata.company.Company;
+import ags.goldenlionerp.system.company.Company;
 
 @Transactional
 public class CompanyApiTest extends ApiTestBase<String> {

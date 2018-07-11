@@ -1,4 +1,4 @@
-package ags.goldenlionerp.masterdata.company;
+package ags.goldenlionerp.system.company;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;

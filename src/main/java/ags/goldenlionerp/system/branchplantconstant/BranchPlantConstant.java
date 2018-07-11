@@ -1,4 +1,4 @@
-package ags.goldenlionerp.masterdata.branchplantconstant;
+package ags.goldenlionerp.system.branchplantconstant;
 
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;
@@ -10,7 +10,7 @@ import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 import ags.goldenlionerp.entities.DatabaseEntity;
-import ags.goldenlionerp.masterdata.businessunit.BusinessUnit;
+import ags.goldenlionerp.system.businessunit.BusinessUnit;
 
 @Entity
 @Table(name="T0022")

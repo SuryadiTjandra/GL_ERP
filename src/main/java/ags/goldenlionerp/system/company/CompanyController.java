@@ -1,4 +1,4 @@
-package ags.goldenlionerp.masterdata.company;
+package ags.goldenlionerp.system.company;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.RepositoryRestController;

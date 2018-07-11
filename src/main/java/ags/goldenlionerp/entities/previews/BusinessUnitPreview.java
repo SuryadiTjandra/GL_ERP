@@ -2,7 +2,7 @@ package ags.goldenlionerp.entities.previews;
 
 import org.springframework.hateoas.ResourceSupport;
 
-import ags.goldenlionerp.masterdata.businessunit.BusinessUnit;
+import ags.goldenlionerp.system.businessunit.BusinessUnit;
 
 public class BusinessUnitPreview extends ResourceSupport{
 	private String businessUnitId;

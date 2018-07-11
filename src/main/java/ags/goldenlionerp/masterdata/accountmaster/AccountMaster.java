@@ -18,9 +18,9 @@ import com.fasterxml.jackson.annotation.JsonUnwrapped;
 
 import ags.goldenlionerp.entities.DatabaseEntityUtil;
 import ags.goldenlionerp.entities.TransactionDatabaseEntityImpl;
-import ags.goldenlionerp.masterdata.businessunit.BusinessUnit;
 import ags.goldenlionerp.masterdata.chartofaccount.ChartOfAccount;
-import ags.goldenlionerp.masterdata.company.Company;
+import ags.goldenlionerp.system.businessunit.BusinessUnit;
+import ags.goldenlionerp.system.company.Company;
 @Entity
 @Table(name="T0901")
 @AttributeOverrides({

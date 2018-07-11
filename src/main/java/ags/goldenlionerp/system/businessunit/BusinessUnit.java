@@ -1,4 +1,4 @@
-package ags.goldenlionerp.masterdata.businessunit;
+package ags.goldenlionerp.system.businessunit;
 
 import java.util.Collection;
 import java.util.Optional;
@@ -24,10 +24,10 @@ import ags.goldenlionerp.entities.DatabaseEntity;
 import ags.goldenlionerp.entities.previews.BusinessUnitPreview;
 import ags.goldenlionerp.entities.previews.CompanyPreview;
 import ags.goldenlionerp.entities.previews.Previews;
-import ags.goldenlionerp.masterdata.branchplantconstant.BranchPlantConstant;
-import ags.goldenlionerp.masterdata.company.Company;
 import ags.goldenlionerp.masterdata.itembranchinfo.ItemBranchInfo;
 import ags.goldenlionerp.masterdata.location.LocationMaster;
+import ags.goldenlionerp.system.branchplantconstant.BranchPlantConstant;
+import ags.goldenlionerp.system.company.Company;
 
 @Entity
 @Table(name="T0021")

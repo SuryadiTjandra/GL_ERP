@@ -2,7 +2,7 @@ package ags.goldenlionerp.entities.previews;
 
 import org.springframework.hateoas.ResourceSupport;
 
-import ags.goldenlionerp.masterdata.company.Company;
+import ags.goldenlionerp.system.company.Company;
 
 public class CompanyPreview extends ResourceSupport {
 	private String companyId;

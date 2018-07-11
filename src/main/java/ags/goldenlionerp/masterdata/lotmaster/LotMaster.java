@@ -17,8 +17,8 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
 
 import ags.goldenlionerp.entities.DatabaseEntity;
-import ags.goldenlionerp.masterdata.businessunit.BusinessUnit;
 import ags.goldenlionerp.masterdata.itemmaster.ItemMaster;
+import ags.goldenlionerp.system.businessunit.BusinessUnit;
 
 @Entity
 @Table(name="T4108")

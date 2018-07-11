@@ -1,4 +1,4 @@
-package ags.goldenlionerp.masterdata.businessunit;
+package ags.goldenlionerp.system.businessunit;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;

@@ -13,7 +13,7 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 
 import ags.goldenlionerp.entities.SynchronizedDatabaseEntityImpl;
-import ags.goldenlionerp.masterdata.businessunit.BusinessUnit;
+import ags.goldenlionerp.system.businessunit.BusinessUnit;
 
 @Entity
 @Table(name="T4100")
