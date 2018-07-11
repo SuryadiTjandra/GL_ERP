@@ -24,6 +24,7 @@ public class DatabaseEntityUtil {
 	static void setUpdateInfo(DatabaseEntity e) {
 		e.setLastUpdateUserId(getCurrentUserId());
 		e.setLastUpdateDateTime(LocalDateTime.now());
+		e.setComputerId(getCurrentUserId());
 	}
 	
 	@SuppressWarnings("unchecked")

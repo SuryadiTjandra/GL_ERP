@@ -1,9 +1,6 @@
 package ags.goldenlionerp.masterdata.itemLocation;
 
-import java.util.Collection;
-
 import org.springframework.data.repository.PagingAndSortingRepository;
-import org.springframework.data.rest.core.annotation.RestResource;
 
 public interface ItemLocationRepository extends PagingAndSortingRepository<ItemLocation, ItemLocationPK> {
 

@@ -20,6 +20,7 @@ import com.fasterxml.jackson.annotation.JsonUnwrapped;
 
 import ags.goldenlionerp.entities.DatabaseEntity;
 import ags.goldenlionerp.masterdata.accountmaster.AccountMaster;
+import ags.goldenlionerp.masterdata.chartofaccount.ChartOfAccount;
 @Entity
 @Table(name="T0015")
 @AttributeOverrides({
@@ -73,6 +74,11 @@ public class AutomaticAccountingInstruction extends DatabaseEntity {
 	@ManyToOne(fetch=FetchType.LAZY)
 	@NotFound(action=NotFoundAction.IGNORE)
 	private AccountMaster accountMaster;
+	
+	@JoinColumn(name="AIOBJ", insertable = false, updatable = false)
+	@ManyToOne(fetch=FetchType.LAZY)
+	@NotFound(action=NotFoundAction.IGNORE)
+	private ChartOfAccount account;
 
 	public AutomaticAccountingInstructionPK getPk() {
 		return pk;
@@ -160,6 +166,14 @@ public class AutomaticAccountingInstruction extends DatabaseEntity {
 
 	void setAccountMaster(AccountMaster accountMaster) {
 		this.accountMaster = accountMaster;
+	}
+	
+	public Optional<ChartOfAccount> getAccount() {
+		return Optional.ofNullable(account);
+	}
+
+	void setAccount(ChartOfAccount account) {
+		this.account = account;
 	}
 	
 	
