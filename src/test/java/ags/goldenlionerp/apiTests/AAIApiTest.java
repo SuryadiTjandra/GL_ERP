@@ -17,7 +17,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import com.jayway.jsonpath.JsonPath;
 
-import ags.goldenlionerp.system.aai.AutomaticAccountingInstructionPK;
+import ags.goldenlionerp.application.system.aai.AutomaticAccountingInstructionPK;
 
 public class AAIApiTest extends ApiTestBase<AutomaticAccountingInstructionPK> {
 

@@ -19,7 +19,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import com.jayway.jsonpath.JsonPath;
 
-import ags.goldenlionerp.system.generalconstant.GeneralConstant;
+import ags.goldenlionerp.application.system.generalconstant.GeneralConstant;
 
 public class GeneralConstantApiTest extends ApiTestBase<String> {
 

@@ -12,8 +12,8 @@ import javax.persistence.PrePersist;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import ags.goldenlionerp.application.system.businessunit.BusinessUnit;
 import ags.goldenlionerp.entities.SynchronizedDatabaseEntityImpl;
-import ags.goldenlionerp.system.businessunit.BusinessUnit;
 
 @Entity
 @Table(name="T4100")

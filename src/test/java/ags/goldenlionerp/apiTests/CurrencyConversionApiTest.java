@@ -16,7 +16,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import com.jayway.jsonpath.JsonPath;
 
-import ags.goldenlionerp.system.currencyconversion.CurrencyConversionPK;
+import ags.goldenlionerp.application.system.currencyconversion.CurrencyConversionPK;
 
 public class CurrencyConversionApiTest extends ApiTestBase<CurrencyConversionPK> {
 

@@ -16,11 +16,11 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
 
+import ags.goldenlionerp.application.system.businessunit.BusinessUnit;
+import ags.goldenlionerp.application.system.company.Company;
 import ags.goldenlionerp.entities.DatabaseEntityUtil;
 import ags.goldenlionerp.entities.TransactionDatabaseEntityImpl;
 import ags.goldenlionerp.masterdata.chartofaccount.ChartOfAccount;
-import ags.goldenlionerp.system.businessunit.BusinessUnit;
-import ags.goldenlionerp.system.company.Company;
 @Entity
 @Table(name="T0901")
 @AttributeOverrides({

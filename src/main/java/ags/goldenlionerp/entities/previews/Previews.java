@@ -1,7 +1,7 @@
 package ags.goldenlionerp.entities.previews;
 
-import ags.goldenlionerp.system.businessunit.BusinessUnit;
-import ags.goldenlionerp.system.company.Company;
+import ags.goldenlionerp.application.system.businessunit.BusinessUnit;
+import ags.goldenlionerp.application.system.company.Company;
 
 public class Previews {
 	private Previews() {}
