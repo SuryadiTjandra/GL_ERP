@@ -28,7 +28,7 @@ import ags.goldenlionerp.entities.DatabaseEntity;
 	@AttributeOverride(name="lastUpdateTime", column=@Column(name="VCTMLU")),
 	@AttributeOverride(name="computerId", column=@Column(name="VCCID")),
 })
-public class CurrencyConversion extends DatabaseEntity {
+public class CurrencyConversion extends DatabaseEntity<CurrencyConversionPK> {
 
 	@EmbeddedId @JsonUnwrapped
 	private CurrencyConversionPK pk;
@@ -87,6 +87,11 @@ public class CurrencyConversion extends DatabaseEntity {
 		if (conditionDate == null) 
 			this.conditionDate = null;
 		this.conditionDate = Timestamp.valueOf(conditionDate.atStartOfDay());
+	}
+
+	@Override
+	public CurrencyConversionPK getId() {
+		return getPk();
 	}
 	
 	

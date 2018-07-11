@@ -1,6 +1,6 @@
 package ags.goldenlionerp.entities;
 
-public abstract class AbstractCustomRepository<T extends DatabaseEntity> {
+public abstract class AbstractCustomRepository<T extends DatabaseEntity<?>> {
 
 	protected void setCreationInfo(T entity) {
 		DatabaseEntityUtil.setCreationInfo(entity);

@@ -31,7 +31,7 @@ import ags.goldenlionerp.masterdata.itemmaster.ItemMaster;
 	@AttributeOverride(name="computerId", column=@Column(name="IBCID")),
 	@AttributeOverride(name="lastSynchronizedDate", column=@Column(name="IBDTLS"))
 })
-public class ItemBranchInfo extends SynchronizedDatabaseEntityImpl {
+public class ItemBranchInfo extends SynchronizedDatabaseEntityImpl<ItemBranchInfoPK> {
 
 	@EmbeddedId @JsonUnwrapped
 	private ItemBranchInfoPK pk;
@@ -253,6 +253,11 @@ public class ItemBranchInfo extends SynchronizedDatabaseEntityImpl {
 
 	void setItemMaster(ItemMaster itemMaster) {
 		this.itemMaster = itemMaster;
+	}
+
+	@Override
+	public ItemBranchInfoPK getId() {
+		return getPk();
 	}
 	
 

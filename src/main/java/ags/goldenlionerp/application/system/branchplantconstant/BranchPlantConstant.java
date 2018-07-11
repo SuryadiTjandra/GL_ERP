@@ -23,7 +23,7 @@ import ags.goldenlionerp.entities.DatabaseEntity;
 	@AttributeOverride(name="lastUpdateTime", column=@Column(name="BCTMLU")),
 	@AttributeOverride(name="computerId", column=@Column(name="BCCID")),
 })
-public class BranchPlantConstant extends DatabaseEntity {
+public class BranchPlantConstant extends DatabaseEntity<String> {
 
 	@Id
 	@Column(name="BCBUID")
@@ -157,6 +157,11 @@ public class BranchPlantConstant extends DatabaseEntity {
 
 	void setItemCrossReferenceType2(String itemCrossReferenceType2) {
 		this.itemCrossReferenceType2 = itemCrossReferenceType2;
+	}
+
+	@Override
+	public String getId() {
+		return getBranchCode();
 	}
 
 

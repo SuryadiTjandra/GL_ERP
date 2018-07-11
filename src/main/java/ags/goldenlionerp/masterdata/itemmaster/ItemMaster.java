@@ -28,7 +28,7 @@ import ags.goldenlionerp.masterdata.itembranchinfo.ItemBranchInfo;
 	@AttributeOverride(name="lastTransactionDate", column=@Column(name="IMDTLT")),
 	@AttributeOverride(name="lastSynchronizedDate", column=@Column(name="IMDTLS")),
 })
-public class ItemMaster extends TransactionSynchronizedDatabaseEntityImpl{
+public class ItemMaster extends TransactionSynchronizedDatabaseEntityImpl<String>{
 
 	@Id
 	@Column(name="IMINUM")
@@ -278,6 +278,11 @@ public class ItemMaster extends TransactionSynchronizedDatabaseEntityImpl{
 
 	public List<ItemBranchInfo> getItemBranchInfos() {
 		return itemBranchInfos;
+	}
+
+	@Override
+	public String getId() {
+		return getItemCode();
 	}
 	
 	

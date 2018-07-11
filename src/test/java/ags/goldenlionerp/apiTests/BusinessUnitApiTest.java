@@ -34,8 +34,8 @@ public class BusinessUnitApiTest extends ApiTestBase<String> {
 		map.put("description", "TESTTEST");
 		map.put("businessUnitType", "BS");
 		map.put("idNumber", "");
-		map.put("company", "/api/companies/00000");
-		map.put("relatedBusinessUnit", "/api/businessUnits/110");
+		//map.put("company", "/api/companies/00000");
+		//map.put("relatedBusinessUnit", "/api/businessUnits/110");
 		map.put("companyId", "00000");
 		map.put("relatedBusinessUnitId", "110");
 		map.put("modelOrConsolidated", "");
@@ -111,10 +111,10 @@ public class BusinessUnitApiTest extends ApiTestBase<String> {
 		
 		String companyUrl = JsonPath.read(getResult, "$._links.company.href");
 		mockMvc.perform(get(companyUrl))
-				.andExpect(jsonPath("$._links.self.href", Matchers.endsWith(requestObject.get("company").toString())));
+				.andExpect(jsonPath("$._links.self.href", Matchers.endsWith("/api/companies/00000")));
 		String relatedUrl = JsonPath.read(getResult, "$._links.related.href");
 		mockMvc.perform(get(relatedUrl))
-				.andExpect(jsonPath("$._links.self.href", Matchers.endsWith(requestObject.get("relatedBusinessUnit").toString())));
+				.andExpect(jsonPath("$._links.self.href", Matchers.endsWith("/api/businessUnits/110")));
 			
 	}
 

@@ -21,7 +21,7 @@ import ags.goldenlionerp.entities.DatabaseEntity;
 	@AttributeOverride(name="lastUpdateTime", column=@Column(name="DUTMLU")),
 	@AttributeOverride(name="computerId", column=@Column(name="DUCID"))
 })
-public class DiscountMaster extends DatabaseEntity {
+public class DiscountMaster extends DatabaseEntity<String> {
 
 	@Id
 	@Column(name="DUDCCD")
@@ -165,6 +165,11 @@ public class DiscountMaster extends DatabaseEntity {
 
 	void setObjectId(String objectId) {
 		this.objectId = objectId;
+	}
+
+	@Override
+	public String getId() {
+		return getDiscountCode();
 	}
 	
 	

@@ -1,5 +1,6 @@
 package ags.goldenlionerp.entities;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import javax.persistence.Column;
@@ -7,15 +8,16 @@ import javax.persistence.MappedSuperclass;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 
-import org.springframework.hateoas.ResourceSupport;
+import org.springframework.hateoas.Identifiable;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
 @MappedSuperclass
-@JsonIgnoreProperties({"handler","hibernateLazyInitializer"})
-public abstract class DatabaseEntity extends ResourceSupport {
+@JsonIgnoreProperties({"handler","hibernateLazyInitializer", "_links"})
+public abstract class DatabaseEntity<ID extends Serializable> implements Identifiable<ID>{
 	
 	@Column(name="UID")
 	@JsonProperty(access=Access.READ_ONLY)
@@ -75,6 +77,14 @@ public abstract class DatabaseEntity extends ResourceSupport {
 	}
 	protected void setComputerId(String computerId) {
 		this.computerId = computerId;
+	}
+	
+	@Override @JsonIgnore
+	public abstract ID getId();
+	
+	@Override
+	public String toString() {
+		return getId().toString();
 	}
 	
 	@PrePersist

@@ -25,7 +25,7 @@ import ags.goldenlionerp.entities.DatabaseEntity;
 	@AttributeOverride(name="lastUpdateTime", column=@Column(name="TSTMLU")),
 	@AttributeOverride(name="computerId", column=@Column(name="TSCID"))
 })
-public class TaxRule extends DatabaseEntity{
+public class TaxRule extends DatabaseEntity<TaxRulePK>{
 
 	@EmbeddedId
 	@JsonUnwrapped
@@ -236,6 +236,11 @@ public class TaxRule extends DatabaseEntity{
 
 	void setDocumentType(String documentType) {
 		this.documentType = documentType;
+	}
+
+	@Override
+	public TaxRulePK getId() {
+		return getPk();
 	}
 	
 	

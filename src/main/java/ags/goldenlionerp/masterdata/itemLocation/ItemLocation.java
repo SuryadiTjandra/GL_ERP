@@ -38,7 +38,7 @@ import ags.goldenlionerp.masterdata.lotmaster.LotMaster;
 	@AttributeOverride(name="computerId", column=@Column(name="ILCID")),
 	@AttributeOverride(name="lastTransactionDate", column=@Column(name="ILDTLT"))
 })
-public class ItemLocation extends TransactionDatabaseEntityImpl{
+public class ItemLocation extends TransactionDatabaseEntityImpl<ItemLocationPK>{
 
 	@EmbeddedId @JsonUnwrapped
 	private ItemLocationPK pk;
@@ -148,6 +148,11 @@ public class ItemLocation extends TransactionDatabaseEntityImpl{
 
 	void setQuantities(ItemLocationQuantities quantities) {
 		this.quantities = quantities;
+	}
+
+	@Override
+	public ItemLocationPK getId() {
+		return getPk();
 	}
 	
 	

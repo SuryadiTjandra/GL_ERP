@@ -31,7 +31,7 @@ import ags.goldenlionerp.masterdata.itemmaster.ItemMaster;
 	@AttributeOverride(name="lastUpdateTime", column=@Column(name="LTTMLU")),
 	@AttributeOverride(name="computerId", column=@Column(name="LTCID"))
 })
-public class LotMaster extends DatabaseEntity {
+public class LotMaster extends DatabaseEntity<LotMasterPK> {
 	
 	@EmbeddedId
 	@JsonUnwrapped
@@ -191,6 +191,11 @@ public class LotMaster extends DatabaseEntity {
 
 	void setClosedDate(LocalDateTime closedDate) {
 		this.closedDate = Timestamp.valueOf(closedDate);
+	}
+
+	@Override
+	public LotMasterPK getId() {
+		return getPk();
 	}
 	
 	

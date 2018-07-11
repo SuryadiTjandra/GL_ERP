@@ -40,7 +40,7 @@ import ags.goldenlionerp.masterdata.location.LocationMaster;
 	@AttributeOverride(name="lastUpdateTime", column=@Column(name="BNTMLU")),
 	@AttributeOverride(name="computerId", column=@Column(name="BNCID")),
 })
-public class BusinessUnit extends DatabaseEntity{
+public class BusinessUnit extends DatabaseEntity<String>{
 	@Id
 	@Column(name="BNBUID")
 	private String businessUnitId;
@@ -174,5 +174,10 @@ public class BusinessUnit extends DatabaseEntity{
 	}
 	void setLocations(Collection<LocationMaster> locations) {
 		this.locations = locations;
+	}
+
+	@Override
+	public String getId() {
+		return getBusinessUnitId();
 	}
 }

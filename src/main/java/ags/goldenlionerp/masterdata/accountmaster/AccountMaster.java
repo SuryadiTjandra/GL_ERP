@@ -33,7 +33,7 @@ import ags.goldenlionerp.masterdata.chartofaccount.ChartOfAccount;
 	@AttributeOverride(name="computerId", column=@Column(name="AMCID")),
 	@AttributeOverride(name="lastTransactionDate", column=@Column(name="AMDTLT"))
 })
-public class AccountMaster extends TransactionDatabaseEntityImpl {
+public class AccountMaster extends TransactionDatabaseEntityImpl<AccountMasterPK> {
 
 	@EmbeddedId
 	@JsonUnwrapped
@@ -273,6 +273,11 @@ public class AccountMaster extends TransactionDatabaseEntityImpl {
 
 	void setLastTransactionTime(String lastTransactionTime) {
 		this.lastTransactionTime = lastTransactionTime;
+	}
+
+	@Override
+	public AccountMasterPK getId() {
+		return getPk();
 	}
 	
 	

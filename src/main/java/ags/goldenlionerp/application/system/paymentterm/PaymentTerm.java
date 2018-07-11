@@ -22,7 +22,7 @@ import ags.goldenlionerp.entities.DatabaseEntity;
 	@AttributeOverride(name="lastUpdateTime", column=@Column(name="PYTMLU")),
 	@AttributeOverride(name="computerId", column=@Column(name="PYCID"))
 })
-public class PaymentTerm extends DatabaseEntity {
+public class PaymentTerm extends DatabaseEntity<String> {
 
 	@Id
 	@Column(name="PYPTC")
@@ -166,6 +166,11 @@ public class PaymentTerm extends DatabaseEntity {
 
 	void setObjectId(String objectId) {
 		this.objectId = objectId;
+	}
+
+	@Override
+	public String getId() {
+		return getPaymentTermCode();
 	}
 	
 	

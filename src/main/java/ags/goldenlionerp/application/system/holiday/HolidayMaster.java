@@ -22,7 +22,7 @@ import ags.goldenlionerp.entities.DatabaseEntity;
 	@AttributeOverride(name="lastUpdateTime", column=@Column(name="HDTMLU")),
 	@AttributeOverride(name="computerId", column=@Column(name="HDCID")),
 })
-public class HolidayMaster extends DatabaseEntity {
+public class HolidayMaster extends DatabaseEntity<LocalDate> {
 
 	@Id
 	@Column(name="HDOFDT")
@@ -56,6 +56,11 @@ public class HolidayMaster extends DatabaseEntity {
 
 	void setDescription(String description) {
 		this.description = description;
+	}
+
+	@Override
+	public LocalDate getId() {
+		return getOffDate();
 	}
 	
 	

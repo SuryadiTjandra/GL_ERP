@@ -15,13 +15,13 @@ public class DatabaseEntityUtil {
 	
 	private DatabaseEntityUtil() {}
 	
-	static void setCreationInfo(DatabaseEntity e) {
+	static void setCreationInfo(DatabaseEntity<?> e) {
 		e.setInputUserId(getCurrentUserId());
 		e.setInputDateTime(LocalDateTime.now());
 		setUpdateInfo(e);
 	}
 	
-	static void setUpdateInfo(DatabaseEntity e) {
+	static void setUpdateInfo(DatabaseEntity<?> e) {
 		e.setLastUpdateUserId(getCurrentUserId());
 		e.setLastUpdateDateTime(LocalDateTime.now());
 		e.setComputerId(getCurrentUserId());

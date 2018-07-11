@@ -22,7 +22,7 @@ import ags.goldenlionerp.util.BeanFinder;
 	@AttributeOverride(name="lastUpdateTime", column=@Column(name="GCTMLU")),
 	@AttributeOverride(name="computerId", column=@Column(name="GCCID"))
 })
-public class GeneralConstant extends DatabaseEntity {
+public class GeneralConstant extends DatabaseEntity<String> {
 
 	public final static String DEFAULT_CODE = "00";
 	
@@ -262,6 +262,10 @@ public class GeneralConstant extends DatabaseEntity {
 	}
 	public void setUrl(String url) {
 		this.url = url;
+	}
+	@Override
+	public String getId() {
+		return getCode();
 	}
 	
 	

@@ -20,7 +20,7 @@ import ags.goldenlionerp.entities.DatabaseEntity;
 	@AttributeOverride(name="lastUpdateTime", column=@Column(name="CNTMLU")),
 	@AttributeOverride(name="computerId", column=@Column(name="CNCID")),
 })
-public class Company extends DatabaseEntity {
+public class Company extends DatabaseEntity<String> {
 	@Id
 	@Column(name="CNCOID")
 	private String companyId;
@@ -117,6 +117,11 @@ public class Company extends DatabaseEntity {
 
 	void setCurrentInventoryPeriod(int currentInventoryPeriod) {
 		this.currentInventoryPeriod = currentInventoryPeriod;
+	}
+
+	@Override
+	public String getId() {
+		return getCompanyId();
 	}
 
 

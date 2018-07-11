@@ -27,7 +27,7 @@ import ags.goldenlionerp.entities.SynchronizedDatabaseEntityImpl;
 	@AttributeOverride(name="computerId", column=@Column(name="LMCID")),
 	@AttributeOverride(name="lastSynchronizedDate", column=@Column(name="LMDTLS"))
 })
-public class LocationMaster extends SynchronizedDatabaseEntityImpl {
+public class LocationMaster extends SynchronizedDatabaseEntityImpl<LocationMasterPK> {
 
 	@EmbeddedId
 	private LocationMasterPK pk;
@@ -146,6 +146,11 @@ public class LocationMaster extends SynchronizedDatabaseEntityImpl {
 	@Override
 	public String toString() {
 		return "ID: " + (isPersisted() ? pk.toString() : getBusinessUnitId() + "_" + getLocationId());
+	}
+
+	@Override
+	public LocationMasterPK getId() {
+		return getPk();
 	}
 	
 }

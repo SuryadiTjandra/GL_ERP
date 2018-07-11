@@ -27,7 +27,7 @@ import ags.goldenlionerp.entities.DatabaseEntity;
 	@AttributeOverride(name="lastUpdateTime", column=@Column(name="FPTMLU")),
 	@AttributeOverride(name="computerId", column=@Column(name="FPCID"))
 })
-public class FiscalYear extends DatabaseEntity {
+public class FiscalYear extends DatabaseEntity<FiscalYearPK> {
 
 	public final static int NUMBER_OF_PERIOD = 12;
 	
@@ -268,6 +268,11 @@ public class FiscalYear extends DatabaseEntity {
 			case 12: setEndDateOfPeriod12(endDate); break;
 			default: throw new IllegalArgumentException("Illegal period number: " + n);
 		}
+	}
+
+	@Override
+	public FiscalYearPK getId() {
+		return getPk();
 	}
 
 	//void setEndDateOfPeriod13(LocalDate endDateOfPeriod13) {

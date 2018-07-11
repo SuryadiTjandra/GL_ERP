@@ -20,7 +20,7 @@ import ags.goldenlionerp.entities.DatabaseEntity;
 	@AttributeOverride(name="lastUpdateTime", column=@Column(name="NCTMLU")),
 	@AttributeOverride(name="computerId", column=@Column(name="NCCID"))
 })
-public class NextNumberConstant extends DatabaseEntity {
+public class NextNumberConstant extends DatabaseEntity<String> {
 
 	@Id
 	@Column(name="NCDOCTY")
@@ -76,6 +76,11 @@ public class NextNumberConstant extends DatabaseEntity {
 
 	void setIncludeYearInNextNumber(boolean includeYearInNextNumber) {
 		this.includeYearInNextNumber = includeYearInNextNumber;
+	}
+
+	@Override
+	public String getId() {
+		return getDocumentType();
 	}
 	
 	

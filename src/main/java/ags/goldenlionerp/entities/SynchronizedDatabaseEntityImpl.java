@@ -1,5 +1,6 @@
 package ags.goldenlionerp.entities;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.Optional;
@@ -11,7 +12,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
 @MappedSuperclass
-public abstract class SynchronizedDatabaseEntityImpl extends DatabaseEntity implements SynchronizedDatabaseEntity {
+public abstract class SynchronizedDatabaseEntityImpl<ID extends Serializable> extends DatabaseEntity<ID> implements SynchronizedDatabaseEntity {
 	@Column(name="DTLS")
 	protected Timestamp lastSynchronizedDate;
 	

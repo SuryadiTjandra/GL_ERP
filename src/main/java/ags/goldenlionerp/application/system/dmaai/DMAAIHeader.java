@@ -10,12 +10,14 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.springframework.hateoas.Identifiable;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name="T0016")
 @JsonIgnoreProperties({"handler", "hibernateLazyInitializer"})
-public class DMAAIHeader {
+public class DMAAIHeader implements Identifiable<Integer>{
 
 	@Id
 	@Column(name="MKDMNO")
@@ -89,6 +91,11 @@ public class DMAAIHeader {
 
 	void setMultiplyFactor(BigDecimal multiplyFactor) {
 		this.multiplyFactor = multiplyFactor;
+	}
+
+	@Override
+	public Integer getId() {
+		return getDmaaiNo();
 	}
 	
 }

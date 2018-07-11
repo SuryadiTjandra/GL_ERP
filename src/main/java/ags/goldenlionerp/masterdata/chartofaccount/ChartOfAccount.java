@@ -27,7 +27,7 @@ import ags.goldenlionerp.entities.DatabaseEntity;
 	@AttributeOverride(name="lastUpdateTime", column=@Column(name="OATMLU")),
 	@AttributeOverride(name="computerId", column=@Column(name="OACID")),
 })
-public class ChartOfAccount extends DatabaseEntity{
+public class ChartOfAccount extends DatabaseEntity<String>{
 
 	@Id
 	@Column(name="OAOBJ")
@@ -118,6 +118,11 @@ public class ChartOfAccount extends DatabaseEntity{
 
 	void setCompany(Company company) {
 		this.company = company;
+	}
+
+	@Override
+	public String getId() {
+		return getObjectAccountCode();
 	}
 	
 	

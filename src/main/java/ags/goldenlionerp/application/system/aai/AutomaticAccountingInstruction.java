@@ -32,7 +32,7 @@ import ags.goldenlionerp.masterdata.chartofaccount.ChartOfAccount;
 	@AttributeOverride(name="lastUpdateTime", column=@Column(name="AITMLU")),
 	@AttributeOverride(name="computerId", column=@Column(name="AICID"))
 })
-public class AutomaticAccountingInstruction extends DatabaseEntity {
+public class AutomaticAccountingInstruction extends DatabaseEntity<AutomaticAccountingInstructionPK> {
 
 	@EmbeddedId
 	@JsonUnwrapped
@@ -174,6 +174,11 @@ public class AutomaticAccountingInstruction extends DatabaseEntity {
 
 	void setAccount(ChartOfAccount account) {
 		this.account = account;
+	}
+
+	@Override
+	public AutomaticAccountingInstructionPK getId() {
+		return getPk();
 	}
 	
 	
