@@ -141,16 +141,16 @@ public abstract class ApiTestBase<ID extends Serializable> implements ApiTest{
 		assertUpdateInfo(entityJson);
 		
 		assertEquals(
-				(String) JsonPath.read(entityJson, "$.inputUserId"),
-				(String) JsonPath.read(entityJsonBefore, "$.inputUserId")
+				(String) JsonPath.read(entityJsonBefore, "$.inputUserId"),
+				(String) JsonPath.read(entityJson, "$.inputUserId")
 		);
 		assertEquals(
-				(String) JsonPath.read(entityJson, "$.inputDateTime"),
-				(String) JsonPath.read(entityJsonBefore, "$.inputDateTime")
+				(String) JsonPath.read(entityJsonBefore, "$.inputDateTime"),
+				(String) JsonPath.read(entityJson, "$.inputDateTime")
 		);
 		assertNotEquals(
-				(String) JsonPath.read(entityJson, "$.lastUpdateDateTime"),
-				(String) JsonPath.read(entityJsonBefore, "$.lastUpdateDateTime")
+				(String) JsonPath.read(entityJsonBefore, "$.lastUpdateDateTime"),
+				(String) JsonPath.read(entityJson, "$.lastUpdateDateTime")
 		);
 	}
 	
