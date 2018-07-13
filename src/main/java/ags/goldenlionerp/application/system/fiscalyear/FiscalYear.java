@@ -19,9 +19,9 @@ import ags.goldenlionerp.entities.DatabaseEntity;
 @Entity
 @Table(name="T0018")
 @AttributeOverrides({
-	@AttributeOverride(name="inputUserId", column=@Column(name="FPUID")),
-	@AttributeOverride(name="inputDate", column=@Column(name="FPDTIN")),
-	@AttributeOverride(name="inputTime", column=@Column(name="FPTMIN")),
+	@AttributeOverride(name="inputUserId", column=@Column(name="FPUID", updatable=false)),
+	@AttributeOverride(name="inputDate", column=@Column(name="FPDTIN", updatable=false)),
+	@AttributeOverride(name="inputTime", column=@Column(name="FPTMIN", updatable=false)),
 	@AttributeOverride(name="lastUpdateUserId", column=@Column(name="FPUIDM")),
 	@AttributeOverride(name="lastUpdateDate", column=@Column(name="FPDTLU")),
 	@AttributeOverride(name="lastUpdateTime", column=@Column(name="FPTMLU")),

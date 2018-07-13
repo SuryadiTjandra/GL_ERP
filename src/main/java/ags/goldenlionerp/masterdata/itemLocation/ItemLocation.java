@@ -29,9 +29,9 @@ import ags.goldenlionerp.masterdata.lotmaster.LotMaster;
 @Entity
 @Table(name="T41021")
 @AttributeOverrides({
-	@AttributeOverride(name="inputUserId", column=@Column(name="ILUID")),
-	@AttributeOverride(name="inputDate", column=@Column(name="ILDTIN")),
-	@AttributeOverride(name="inputTime", column=@Column(name="ILTMIN")),
+	@AttributeOverride(name="inputUserId", column=@Column(name="ILUID", updatable=false)),
+	@AttributeOverride(name="inputDate", column=@Column(name="ILDTIN", updatable=false)),
+	@AttributeOverride(name="inputTime", column=@Column(name="ILTMIN", updatable=false)),
 	@AttributeOverride(name="lastUpdateUserId", column=@Column(name="ILUIDM")),
 	@AttributeOverride(name="lastUpdateDate", column=@Column(name="ILDTLU")),
 	@AttributeOverride(name="lastUpdateTime", column=@Column(name="ILTMLU")),

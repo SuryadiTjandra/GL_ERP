@@ -18,9 +18,9 @@ import ags.goldenlionerp.masterdata.itembranchinfo.ItemBranchInfo;
 @Entity
 @Table(name="T4101")
 @AttributeOverrides({
-	@AttributeOverride(name="inputUserId", column=@Column(name="IMUID")),
-	@AttributeOverride(name="inputDate", column=@Column(name="IMDTIN")),
-	@AttributeOverride(name="inputTime", column=@Column(name="IMTMIN")),
+	@AttributeOverride(name="inputUserId", column=@Column(name="IMUID", updatable=false)),
+	@AttributeOverride(name="inputDate", column=@Column(name="IMDTIN", updatable=false)),
+	@AttributeOverride(name="inputTime", column=@Column(name="IMTMIN", updatable=false)),
 	@AttributeOverride(name="lastUpdateUserId", column=@Column(name="IMUIDM")),
 	@AttributeOverride(name="lastUpdateDate", column=@Column(name="IMDTLU")),
 	@AttributeOverride(name="lastUpdateTime", column=@Column(name="IMTMLU")),

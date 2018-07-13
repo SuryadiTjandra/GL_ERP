@@ -195,34 +195,27 @@ public class BusinessUnitApiTest extends ApiTestBase<String> {
 					.contentType(MediaType.APPLICATION_JSON)
 					.content(mapper.writeValueAsString(requestObject)))
 				.andExpect(MockMvcResultMatchers.status().is2xxSuccessful());
-		
-		EntityManager manager = wac.getBean(EntityManager.class);
-		manager.flush();
+	
+		em.flush();
+		em.clear();
 		
 		String getResult = mockMvc.perform(get(baseUrl + existingId).accept(MediaType.APPLICATION_JSON))
 				//.andDo(res -> System.out.println(res.getResponse().getContentAsString()))
 				.andExpect(MockMvcResultMatchers.status().isOk())
 				.andExpect(jsonPath("$.businessUnitId").value(existingId))
-				.andExpect(jsonPath("$.lastUpdateUserId").value("login not yet"))
-				.andExpect(jsonPath("$.lastUpdateDateTime", dateTimeMatcher))
 				.andExpect(jsonPath("$.description").value(requestObject.get("description")))
 				.andExpect(jsonPath("$.businessUnitType").value((String) JsonPath.read(beforePatch, "$.businessUnitType")))
 				//.andExpect(jsonPath("$.computerId").value((String) JsonPath.read(beforePatch, "$.computerId")))
-				.andExpect(jsonPath("$.inputDateTime").value((String) JsonPath.read(beforePatch, "$.inputDateTime")))
-				.andExpect(jsonPath("$.inputUserId").value((String) JsonPath.read(beforePatch, "$.inputUserId")))
 				.andReturn().getResponse().getContentAsString();
 		
-		assertNotEquals(
-				JsonPath.read(getResult, "$.lastUpdateDateTime"),
-				JsonPath.read(getResult, "$.inputDateTime")
-		);
+		assertUpdateInfo(getResult, beforePatch);
 		
 		String companyUrl = JsonPath.read(getResult, "$._links.company.href");
 		mockMvc.perform(get(companyUrl))
-				.andExpect(jsonPath("$._links.self.href", Matchers.endsWith(requestObject.get("company").toString())));
+				.andExpect(jsonPath("$._links.self.href", Matchers.endsWith(requestObject.get("companyId").toString())));
 		String relatedUrl = JsonPath.read(getResult, "$._links.related.href");
 		mockMvc.perform(get(relatedUrl))
-				.andExpect(jsonPath("$._links.self.href", Matchers.endsWith(requestObject.get("relatedBusinessUnit").toString())));
+				.andExpect(jsonPath("$._links.self.href", Matchers.endsWith(requestObject.get("relatedBusinessUnitId").toString())));
 			
 	}
 	

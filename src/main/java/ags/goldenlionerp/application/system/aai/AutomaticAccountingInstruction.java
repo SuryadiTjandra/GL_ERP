@@ -24,9 +24,9 @@ import ags.goldenlionerp.masterdata.chartofaccount.ChartOfAccount;
 @Entity
 @Table(name="T0015")
 @AttributeOverrides({
-	@AttributeOverride(name="inputUserId", column=@Column(name="AIUID")),
-	@AttributeOverride(name="inputDate", column=@Column(name="AIDTIN")),
-	@AttributeOverride(name="inputTime", column=@Column(name="AITMIN")),
+	@AttributeOverride(name="inputUserId", column=@Column(name="AIUID", updatable=false)),
+	@AttributeOverride(name="inputDate", column=@Column(name="AIDTIN", updatable=false)),
+	@AttributeOverride(name="inputTime", column=@Column(name="AITMIN", updatable=false)),
 	@AttributeOverride(name="lastUpdateUserId", column=@Column(name="AIUIDM")),
 	@AttributeOverride(name="lastUpdateDate", column=@Column(name="AIDTLU")),
 	@AttributeOverride(name="lastUpdateTime", column=@Column(name="AITMLU")),

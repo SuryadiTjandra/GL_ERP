@@ -22,9 +22,9 @@ import ags.goldenlionerp.masterdata.itemmaster.ItemMaster;
 @Entity
 @Table(name="T41011")
 @AttributeOverrides({
-	@AttributeOverride(name="inputUserId", column=@Column(name="IBUID")),
-	@AttributeOverride(name="inputDate", column=@Column(name="IBDTIN")),
-	@AttributeOverride(name="inputTime", column=@Column(name="IBTMIN")),
+	@AttributeOverride(name="inputUserId", column=@Column(name="IBUID", updatable=false)),
+	@AttributeOverride(name="inputDate", column=@Column(name="IBDTIN", updatable=false)),
+	@AttributeOverride(name="inputTime", column=@Column(name="IBTMIN", updatable=false)),
 	@AttributeOverride(name="lastUpdateUserId", column=@Column(name="IBUIDM")),
 	@AttributeOverride(name="lastUpdateDate", column=@Column(name="IBDTLU")),
 	@AttributeOverride(name="lastUpdateTime", column=@Column(name="IBTMLU")),

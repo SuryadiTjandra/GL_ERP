@@ -18,9 +18,9 @@ import ags.goldenlionerp.entities.SynchronizedDatabaseEntityImpl;
 @Entity
 @Table(name="T4100")
 @AttributeOverrides({
-	@AttributeOverride(name="inputUserId", column=@Column(name="LMUID")),
-	@AttributeOverride(name="inputDate", column=@Column(name="LMDTIN")),
-	@AttributeOverride(name="inputTime", column=@Column(name="LMTMIN")),
+	@AttributeOverride(name="inputUserId", column=@Column(name="LMUID", updatable=false)),
+	@AttributeOverride(name="inputDate", column=@Column(name="LMDTIN", updatable=false)),
+	@AttributeOverride(name="inputTime", column=@Column(name="LMTMIN", updatable=false)),
 	@AttributeOverride(name="lastUpdateUserId", column=@Column(name="LMUIDM")),
 	@AttributeOverride(name="lastUpdateDate", column=@Column(name="LMDTLU")),
 	@AttributeOverride(name="lastUpdateTime", column=@Column(name="LMTMLU")),

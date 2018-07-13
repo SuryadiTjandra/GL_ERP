@@ -14,9 +14,9 @@ import ags.goldenlionerp.util.BeanFinder;
 @Entity
 @Table(name="T0010")
 @AttributeOverrides({
-	@AttributeOverride(name="inputUserId", column=@Column(name="GCUID")),
-	@AttributeOverride(name="inputDate", column=@Column(name="GCDTIN")),
-	@AttributeOverride(name="inputTime", column=@Column(name="GCTMIN")),
+	@AttributeOverride(name="inputUserId", column=@Column(name="GCUID", updatable=false)),
+	@AttributeOverride(name="inputDate", column=@Column(name="GCDTIN", updatable=false)),
+	@AttributeOverride(name="inputTime", column=@Column(name="GCTMIN", updatable=false)),
 	@AttributeOverride(name="lastUpdateUserId", column=@Column(name="GCUIDM")),
 	@AttributeOverride(name="lastUpdateDate", column=@Column(name="GCDTLU")),
 	@AttributeOverride(name="lastUpdateTime", column=@Column(name="GCTMLU")),

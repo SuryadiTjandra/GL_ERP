@@ -32,9 +32,9 @@ import ags.goldenlionerp.masterdata.location.LocationMaster;
 @Entity
 @Table(name="T0021")
 @AttributeOverrides({
-	@AttributeOverride(name="inputUserId", column=@Column(name="BNUID")),
-	@AttributeOverride(name="inputDate", column=@Column(name="BNDTIN")),
-	@AttributeOverride(name="inputTime", column=@Column(name="BNTMIN")),
+	@AttributeOverride(name="inputUserId", column=@Column(name="BNUID", updatable=false)),
+	@AttributeOverride(name="inputDate", column=@Column(name="BNDTIN", updatable=false)),
+	@AttributeOverride(name="inputTime", column=@Column(name="BNTMIN", updatable=false)),
 	@AttributeOverride(name="lastUpdateUserId", column=@Column(name="BNUIDM")),
 	@AttributeOverride(name="lastUpdateDate", column=@Column(name="BNDTLU")),
 	@AttributeOverride(name="lastUpdateTime", column=@Column(name="BNTMLU")),

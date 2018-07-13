@@ -12,9 +12,9 @@ import ags.goldenlionerp.entities.DatabaseEntity;
 @Entity
 @Table(name="T0020")
 @AttributeOverrides({
-	@AttributeOverride(name="inputUserId", column=@Column(name="CNUID")),
-	@AttributeOverride(name="inputDate", column=@Column(name="CNDTIN")),
-	@AttributeOverride(name="inputTime", column=@Column(name="CNTMIN")),
+	@AttributeOverride(name="inputUserId", column=@Column(name="CNUID", updatable=false)),
+	@AttributeOverride(name="inputDate", column=@Column(name="CNDTIN", updatable=false)),
+	@AttributeOverride(name="inputTime", column=@Column(name="CNTMIN", updatable=false)),
 	@AttributeOverride(name="lastUpdateUserId", column=@Column(name="CNUIDM")),
 	@AttributeOverride(name="lastUpdateDate", column=@Column(name="CNDTLU")),
 	@AttributeOverride(name="lastUpdateTime", column=@Column(name="CNTMLU")),

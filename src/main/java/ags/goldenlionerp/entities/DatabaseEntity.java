@@ -19,17 +19,17 @@ import com.fasterxml.jackson.annotation.JsonProperty.Access;
 @JsonIgnoreProperties({"handler","hibernateLazyInitializer", "_links"})
 public abstract class DatabaseEntity<ID extends Serializable> implements Identifiable<ID>{
 	
-	@Column(name="UID")
-	@JsonProperty(access=Access.READ_ONLY)
+	@Column(name="UID", updatable=false)
+	//@JsonProperty(access=Access.READ_ONLY)
 	protected String inputUserId;
 
-	@Column(name="DTIN")
+	@Column(name="DTIN", updatable=false)
 	protected Timestamp inputDate;
 	
-	@Column(name="TMIN")
+	@Column(name="TMIN", updatable=false)
 	protected String inputTime="";
 	
-	@JsonProperty(access=Access.READ_ONLY)
+	//@JsonProperty(access=Access.READ_ONLY)
 	@Column(name="UIDM")
 	protected String lastUpdateUserId;
 
@@ -45,14 +45,14 @@ public abstract class DatabaseEntity<ID extends Serializable> implements Identif
 	public String getInputUserId() {
 		return inputUserId;
 	}
-	@JsonProperty(access=Access.READ_ONLY)
+	//@JsonProperty(access=Access.READ_ONLY)
 	public LocalDateTime getInputDateTime() {
 		return DatabaseEntityUtil.toLocalDateTime(inputDate, inputTime);
 	}
 	public String getLastUpdateUserId() {
 		return lastUpdateUserId;
 	}
-	@JsonProperty(access=Access.READ_ONLY)
+	//@JsonProperty(access=Access.READ_ONLY)
 	public LocalDateTime getLastUpdateDateTime() {
 		return DatabaseEntityUtil.toLocalDateTime(lastUpdateDate, lastUpdateTime);
 	}	

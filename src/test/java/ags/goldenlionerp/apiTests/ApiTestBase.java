@@ -7,6 +7,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Map;
 
 import javax.persistence.EntityManager;
@@ -66,6 +67,10 @@ public abstract class ApiTestBase<ID extends Serializable> implements ApiTest{
 		
 		requestObject = requestObject();
 		requestObject.put("computerId", "YOOO");
+		requestObject.put("inputUserId", "NO");
+		requestObject.put("lastUpdateUserId", "NAY");
+		requestObject.put("inputUserDateTime", LocalDateTime.of(1994, 1, 26, 8, 15, 30));
+		requestObject.put("lastUpdateDateTime",  LocalDateTime.of(2015, 2, 28, 20, 45, 0));
 		
 		dateTimeMatcher = Matchers.allOf(
 							new DateMatcher(),
