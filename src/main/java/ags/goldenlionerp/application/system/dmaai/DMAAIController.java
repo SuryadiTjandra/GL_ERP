@@ -1,5 +1,6 @@
 package ags.goldenlionerp.application.system.dmaai;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
@@ -34,8 +35,8 @@ public class DMAAIController {
 			@PathVariable("headerId") int headerId,
 			@RequestBody List<Map<String, Object>> postedDetails){
 		
-		service.saveDetailsToHeader(headerId, postedDetails);
-		return new ResponseEntity<>(HttpStatus.CREATED);
+		Collection<DMAAIDetail> result = service.saveDetailsToHeader(headerId, postedDetails);
+		return new ResponseEntity<>(result, HttpStatus.OK);
 	}
 	
 	@DeleteMapping("/dmaai/{headerId}")
