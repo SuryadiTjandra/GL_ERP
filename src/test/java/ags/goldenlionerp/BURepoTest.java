@@ -12,11 +12,11 @@ import org.springframework.test.context.junit4.SpringRunner;
 import ags.goldenlionerp.application.system.businessunit.BusinessUnit;
 import ags.goldenlionerp.application.system.businessunit.BusinessUnitRepository;
 
-@SpringBootTest
-@RunWith(SpringRunner.class)
+/*@SpringBootTest
+@RunWith(SpringRunner.class)*/
 public class BURepoTest {
 
-	@Autowired
+	/*@Autowired
 	BusinessUnitRepository repo;
 	
 	@Before
@@ -29,6 +29,6 @@ public class BURepoTest {
 		BusinessUnit bu = repo.findById("100").get();
 		assertFalse(bu.getRelatedBusinessUnit() == null);
 		assertEquals(repo.count(), 4);
-	}
+	}*/
 
 }
