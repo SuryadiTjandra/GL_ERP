@@ -27,6 +27,7 @@ import org.hibernate.annotations.NotFoundAction;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import ags.goldenlionerp.application.addresses.contact.ContactPerson;
 import ags.goldenlionerp.application.system.businessunit.BusinessUnit;
 import ags.goldenlionerp.entities.DatabaseEntityUtil;
 import ags.goldenlionerp.entities.TransactionSynchronizedDatabaseEntityImpl;
@@ -100,6 +101,9 @@ public class AddressBookMaster extends TransactionSynchronizedDatabaseEntityImpl
 	@OneToMany(mappedBy="master", cascade= {CascadeType.ALL})
 	@JsonIgnore
 	private List<EffectiveAddress> addressHistory= new ArrayList<>();
+	
+	@OneToMany(mappedBy="master")
+	private List<ContactPerson> contactPeople;
 	 
 	@PrePersist
 	private void prePersist() {
@@ -281,6 +285,14 @@ public class AddressBookMaster extends TransactionSynchronizedDatabaseEntityImpl
 
 	void setAddressHistory(List<EffectiveAddress> addressHistory) {
 		this.addressHistory = addressHistory;
+	}
+
+	public List<ContactPerson> getContactPeople() {
+		return contactPeople;
+	}
+
+	void setContactPeople(List<ContactPerson> contactPeople) {
+		this.contactPeople = contactPeople;
 	}
 
 	
