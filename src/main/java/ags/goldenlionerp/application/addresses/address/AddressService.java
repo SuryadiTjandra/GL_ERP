@@ -20,8 +20,6 @@ public class AddressService {
 
 	@Autowired
 	private AddressBookRepository repo;
-	@Autowired
-	private EffectiveAddressRepository eaRepo;
 	@Autowired @Qualifier("halObjectMapper")
 	private ObjectMapper mapper;
 	

@@ -8,17 +8,15 @@ public class AddressCustomRepositoryImpl implements AddressCustomRepository {
 
 	@Autowired
 	private EntityManager em;
-	@Autowired
-	private EffectiveAddressRepository eaRepo;
 	
 	@Override
-	public AddressBookMaster save(AddressBookMaster entity) {
+	public <S extends AddressBookMaster> S save(S entity) {
 		return em.find(AddressBookMaster.class, entity.getId()) != null? 
 				handleUpdate(entity) : 
 				handleCreate(entity);
 	}
 
-	private AddressBookMaster handleCreate(AddressBookMaster entity) {
+	private <S extends AddressBookMaster> S handleCreate(S entity) {
 		EffectiveAddress ea = entity.getCurrentAddress();
 		if (ea == null) {
 			ea = new EffectiveAddress();
@@ -31,7 +29,7 @@ public class AddressCustomRepositoryImpl implements AddressCustomRepository {
 		return entity;
 	}
 	
-	private AddressBookMaster handleUpdate(AddressBookMaster entity) {
+	private <S extends AddressBookMaster> S handleUpdate(S entity) {
 		EffectiveAddress ea = entity.getCurrentAddress();
 		if (!em.contains(ea)) {
 			EffectiveAddressPK pk = new EffectiveAddressPK(entity.getAddressNumber());

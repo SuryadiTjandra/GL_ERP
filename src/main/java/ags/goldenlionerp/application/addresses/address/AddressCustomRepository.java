@@ -1,5 +1,7 @@
 package ags.goldenlionerp.application.addresses.address;
 
-public interface AddressCustomRepository {
-	AddressBookMaster save(AddressBookMaster entity);
+import ags.goldenlionerp.basecomponents.CustomSaveRepository;
+
+public interface AddressCustomRepository extends CustomSaveRepository<AddressBookMaster> {
+	
 }
