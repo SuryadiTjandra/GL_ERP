@@ -103,7 +103,7 @@ public class AddressBookMaster extends TransactionSynchronizedDatabaseEntityImpl
 	private List<EffectiveAddress> addressHistory= new ArrayList<>();
 	
 	@OneToMany(mappedBy="master")
-	private List<ContactPerson> contactPeople;
+	private List<ContactPerson> contacts;
 	 
 	@PrePersist
 	private void prePersist() {
@@ -287,12 +287,12 @@ public class AddressBookMaster extends TransactionSynchronizedDatabaseEntityImpl
 		this.addressHistory = addressHistory;
 	}
 
-	public List<ContactPerson> getContactPeople() {
-		return contactPeople;
+	public List<ContactPerson> getContacts() {
+		return contacts;
 	}
 
-	void setContactPeople(List<ContactPerson> contactPeople) {
-		this.contactPeople = contactPeople;
+	void setContacts(List<ContactPerson> contactPeople) {
+		this.contacts = contactPeople;
 	}
 
 	

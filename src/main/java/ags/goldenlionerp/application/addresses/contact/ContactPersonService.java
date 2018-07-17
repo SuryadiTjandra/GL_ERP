@@ -25,8 +25,7 @@ public class ContactPersonService extends ParentChildService<AddressBookMaster, 
 	}
 	
 	public Collection<ContactPerson> saveContactsForAddress(String addressNumber, Collection<Map<String, Object>> patchRequests) {
-		super.saveChildrenToParent(addressNumber, patchRequests);
-		return null;
+		return super.saveChildrenToParent(addressNumber, patchRequests);
 	}
 	
 	@Override
