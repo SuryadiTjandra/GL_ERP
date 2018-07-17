@@ -19,9 +19,12 @@ public class ContactPersonService extends ParentChildService<AddressBookMaster, 
 	@Autowired @Qualifier("halObjectMapper")
 	private ObjectMapper mapper;
 	
+	private ContactPersonRepository repo;
+	
 	@Autowired
 	public ContactPersonService(AddressBookRepository addressRepo, ContactPersonRepository contactRepo) {
 		super(addressRepo, contactRepo);
+		this.repo = contactRepo;
 	}
 	
 	public Collection<ContactPerson> saveContactsForAddress(String addressNumber, Collection<Map<String, Object>> patchRequests) {
@@ -47,5 +50,19 @@ public class ContactPersonService extends ParentChildService<AddressBookMaster, 
 		return mapper.convertValue(childRequest, ContactPerson.class);
 	}
 
+	public ContactPerson createNewContactFor(AddressBookMaster master) {
+		int maxSequence = master.getContacts().stream()
+							.mapToInt(c -> c.getPk().getSequence())
+							.max()
+							.orElse(-1);
+		ContactPersonPK pk = new ContactPersonPK(master.getAddressNumber(), maxSequence + 1);
+		
+		ContactPerson cp = new ContactPerson();
+		cp.setPk(pk);
+		cp.setName(master.getName());
+		cp.setMailingName(master.getMailingName());
+		cp.setType(ContactPerson.DEFAULT_TYPE);
+		return repo.save(cp);
+	}
 	
 }

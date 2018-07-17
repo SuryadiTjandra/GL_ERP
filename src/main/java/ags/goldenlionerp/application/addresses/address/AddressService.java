@@ -15,6 +15,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.JsonNodeFactory;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
+import ags.goldenlionerp.application.addresses.contact.ContactPersonService;
+
 @Service
 public class AddressService {
 
@@ -22,6 +24,14 @@ public class AddressService {
 	private AddressBookRepository repo;
 	@Autowired @Qualifier("halObjectMapper")
 	private ObjectMapper mapper;
+	@Autowired
+	private ContactPersonService cpService;
+	
+	public AddressBookMaster post(AddressBookMaster entityToCreate) {
+		AddressBookMaster created = repo.save(entityToCreate);
+		cpService.createNewContactFor(created);
+		return created;
+	}
 	
 	public AddressBookMaster patch(String addressNumber, Map<String, Object> patchRequest) throws IOException {
 		AddressBookMaster entity = repo.findById(addressNumber)

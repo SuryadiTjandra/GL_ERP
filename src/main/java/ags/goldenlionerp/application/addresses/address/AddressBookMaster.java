@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
@@ -103,7 +104,7 @@ public class AddressBookMaster extends TransactionSynchronizedDatabaseEntityImpl
 	private List<EffectiveAddress> addressHistory= new ArrayList<>();
 	
 	@OneToMany(mappedBy="master")
-	private List<ContactPerson> contacts;
+	private List<ContactPerson> contacts = Collections.emptyList();
 	 
 	@PrePersist
 	private void prePersist() {

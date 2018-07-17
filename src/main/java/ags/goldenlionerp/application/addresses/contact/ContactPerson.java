@@ -31,6 +31,8 @@ import ags.goldenlionerp.entities.SynchronizedDatabaseEntityImpl;
 })
 public class ContactPerson extends SynchronizedDatabaseEntityImpl<ContactPersonPK> {
 
+	static final String DEFAULT_TYPE = "C";
+	
 	@EmbeddedId @JsonUnwrapped
 	private ContactPersonPK pk;
 	

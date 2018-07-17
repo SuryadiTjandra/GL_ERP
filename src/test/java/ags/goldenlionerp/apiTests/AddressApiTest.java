@@ -12,6 +12,7 @@ import java.util.Map;
 import org.junit.Test;
 import org.springframework.http.MediaType;
 import org.springframework.test.annotation.Rollback;
+import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import com.jayway.jsonpath.JsonPath;
@@ -102,6 +103,7 @@ public class AddressApiTest extends ApiTestBase<String> {
 						.accept(MediaType.APPLICATION_JSON)
 						.contentType(MediaType.APPLICATION_JSON)
 						.content(mapper.writeValueAsString(requestObject)))
+				.andDo(MockMvcResultHandlers.print())
 				.andExpect(MockMvcResultMatchers.status().isCreated());
 		
 		em.flush(); em.clear();
@@ -140,6 +142,28 @@ public class AddressApiTest extends ApiTestBase<String> {
 				
 		assertCreationInfo(getRes);
 
+		//check contact is created
+		checkContactCreation(getRes);
+	}
+	
+	private void checkContactCreation(String createdAddressJson) throws Exception {
+		String contactLink = JsonPath.read(createdAddressJson, "$._links.contacts.href");
+		String name = JsonPath.read(createdAddressJson, "$.name");
+		String mailingName = JsonPath.read(createdAddressJson, "$.mailingName");
+		
+		String getRes = mockMvc.perform(get(contactLink))
+							.andDo(MockMvcResultHandlers.print())
+							.andExpect(jsonPath("$._embedded.contacts").exists())
+							.andExpect(jsonPath("$._embedded.contacts.length()").value(1))
+							.andExpect(jsonPath("$._embedded.contacts[0].name").value(name))
+							.andExpect(jsonPath("$._embedded.contacts[0].mailingName").value(mailingName))
+							.andExpect(jsonPath("$._embedded.contacts[0].type").value("C"))
+							.andReturn().getResponse().getContentAsString();
+		
+		String contactJSon = mapper.writeValueAsString(
+								JsonPath.read(getRes, "$._embedded.contacts[0]")
+							);
+		assertCreationInfo(contactJSon);
 	}
 
 	@SuppressWarnings("unchecked")
