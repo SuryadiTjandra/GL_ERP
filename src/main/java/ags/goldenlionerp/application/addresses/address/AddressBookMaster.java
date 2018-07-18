@@ -28,7 +28,9 @@ import org.hibernate.annotations.NotFoundAction;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import ags.goldenlionerp.application.addresses.bankaccount.BankAccount;
 import ags.goldenlionerp.application.addresses.contact.ContactPerson;
+import ags.goldenlionerp.application.addresses.phone.PhoneNumber;
 import ags.goldenlionerp.application.system.businessunit.BusinessUnit;
 import ags.goldenlionerp.entities.DatabaseEntityUtil;
 import ags.goldenlionerp.entities.TransactionSynchronizedDatabaseEntityImpl;
@@ -99,12 +101,16 @@ public class AddressBookMaster extends TransactionSynchronizedDatabaseEntityImpl
 	@Embedded
 	private AddressCategories categories = new AddressCategories();
 	
-	@OneToMany(mappedBy="master", cascade= {CascadeType.ALL})
+	@OneToMany(mappedBy="master", cascade= {CascadeType.ALL}, fetch=FetchType.LAZY)
 	@JsonIgnore
 	private List<EffectiveAddress> addressHistory= new ArrayList<>();
 	
-	@OneToMany(mappedBy="master")
+	@OneToMany(mappedBy="master", fetch=FetchType.LAZY)
 	private List<ContactPerson> contacts = Collections.emptyList();
+	@OneToMany(mappedBy="master", fetch=FetchType.LAZY)
+	private List<PhoneNumber> phoneNumbers = Collections.emptyList();
+	@OneToMany(mappedBy="master", fetch=FetchType.LAZY)
+	private List<BankAccount> bankAccounts = Collections.emptyList();
 	 
 	@PrePersist
 	private void prePersist() {

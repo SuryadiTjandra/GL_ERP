@@ -6,6 +6,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -124,6 +125,7 @@ public class AddressApiTest extends ApiTestBase<String> {
 				.andExpect(jsonPath("$.employee").value(requestObject.getOrDefault("employee", false)))
 				.andExpect(jsonPath("$.taxId").value(requestObject.getOrDefault("taxId", "")))
 				.andExpect(jsonPath("$.businessUnitId").value(requestObject.getOrDefault("businessUnitId", "")))
+				.andExpect(jsonPath("$.recordId").value(requestObject.getOrDefault("recordId", LocalDate.now().format(DateTimeFormatter.ofPattern("yyyyMMdd")))))
 				.andExpect(jsonPath("$.categories.categoryCode01").value(catMap.getOrDefault("categoryCode01", "")))
 				.andExpect(jsonPath("$.categories.categoryCode02").value(catMap.getOrDefault("categoryCode02", "")))
 				.andExpect(jsonPath("$.categories.categoryCode05").value(catMap.getOrDefault("categoryCode05", "")))
