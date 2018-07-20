@@ -99,6 +99,8 @@ public abstract class ApiTestBase<ID extends Serializable> implements ApiTest{
 		
 		mockMvc.perform(delete(baseUrl + existingId))
 			.andExpect(MockMvcResultMatchers.status().isNoContent());
+		
+		em.flush();em.clear();
 	
 		mockMvc.perform(get(baseUrl + existingId))
 			.andExpect(MockMvcResultMatchers.status().isNotFound());
