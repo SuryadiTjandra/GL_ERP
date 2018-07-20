@@ -16,6 +16,8 @@ import com.fasterxml.jackson.databind.node.JsonNodeFactory;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
 import ags.goldenlionerp.application.addresses.contact.ContactPersonService;
+import ags.goldenlionerp.application.ap.setting.AccountPayableSettingService;
+import ags.goldenlionerp.application.ar.setting.AccountReceivableSettingService;
 
 @Service
 public class AddressService {
@@ -26,10 +28,16 @@ public class AddressService {
 	private ObjectMapper mapper;
 	@Autowired
 	private ContactPersonService cpService;
+	@Autowired
+	private AccountReceivableSettingService arServ;
+	@Autowired
+	private AccountPayableSettingService apServ;
 	
 	public AddressBookMaster post(AddressBookMaster entityToCreate) {
 		AddressBookMaster created = repo.save(entityToCreate);
 		cpService.createNewContactFor(created);
+		handleAccountReceivable(null, created);
+		handleAccountPayable(null, created);
 		return created;
 	}
 	
@@ -49,8 +57,10 @@ public class AddressService {
 		patchedEntity.setAddressHistory(entity.getAddressHistory());
 		patchedEntity.setCurrentAddress(patchedCurAdd);
 
-		return repo.save(patchedEntity);
-		
+		patchedEntity = repo.save(patchedEntity);
+		handleAccountPayable(entity, patchedEntity);
+		handleAccountReceivable(entity, patchedEntity);
+		return patchedEntity;
 	}
 	
 	private ObjectNode patchJson(JsonNode nodeToPatch, Map<String, Object> patchRequest) {
@@ -73,5 +83,33 @@ public class AddressService {
 			}
 		}
 		return node;
+	}
+	
+	private void handleAccountReceivable(AddressBookMaster oldEnt, AddressBookMaster newEnt) {
+		boolean oldAr = oldEnt == null ? false : oldEnt.getAccountReceivable();
+		boolean newAr = newEnt.getAccountReceivable();
+		
+		if (oldAr == newAr) return;
+		
+		if (!oldAr && newAr) {
+			arServ.createNewSettingForAddress(newEnt);
+		}
+		if (oldAr && !newAr) {
+			arServ.deleteSettingOfAddress(oldEnt);
+		}
+	}
+	
+	private void handleAccountPayable(AddressBookMaster oldEnt, AddressBookMaster newEnt) {
+		boolean oldAr = oldEnt == null ? false : oldEnt.getAccountPayable();
+		boolean newAr = newEnt.getAccountPayable();
+		
+		if (oldAr == newAr) return;
+		
+		if (!oldAr && newAr) {
+			apServ.createNewSettingForAddress(newEnt);
+		}
+		if (oldAr && !newAr) {
+			apServ.deleteSettingOfAddress(oldEnt);
+		}
 	}
 }

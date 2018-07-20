@@ -222,6 +222,17 @@ public class AddressApiTest extends ApiTestBase<String> {
 
 	}
 
-	
+	@Override @Test @Rollback
+	public void deleteTest() throws Exception {
+		super.deleteTest();
+		
+		String arUrl = new AccountReceivableSettingApiTest().baseUrl();
+		mockMvc.perform(get(arUrl + existingId))
+				.andExpect(MockMvcResultMatchers.status().isNotFound());
+		
+		String apUrl = new AccountPayableSettingApiTest().baseUrl();
+		mockMvc.perform(get(apUrl + existingId))
+				.andExpect(MockMvcResultMatchers.status().isNotFound());
+	}
 
 }

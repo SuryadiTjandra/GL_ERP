@@ -35,4 +35,5 @@ public class AddressController {
 		AddressBookMaster result = service.post(entityToCreate);
 		return new ResponseEntity<>(result, HttpStatus.CREATED);
 	}
+	
 }

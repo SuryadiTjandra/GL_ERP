@@ -25,12 +25,13 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.NotFoundAction;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import ags.goldenlionerp.application.addresses.bankaccount.BankAccount;
 import ags.goldenlionerp.application.addresses.contact.ContactPerson;
 import ags.goldenlionerp.application.addresses.phone.PhoneNumber;
+import ags.goldenlionerp.application.ap.setting.AccountPayableSetting;
+import ags.goldenlionerp.application.ar.setting.AccountReceivableSetting;
 import ags.goldenlionerp.application.system.businessunit.BusinessUnit;
 import ags.goldenlionerp.entities.DatabaseEntityUtil;
 import ags.goldenlionerp.entities.TransactionSynchronizedDatabaseEntityImpl;
@@ -105,12 +106,20 @@ public class AddressBookMaster extends TransactionSynchronizedDatabaseEntityImpl
 	@JsonIgnore
 	private List<EffectiveAddress> addressHistory= new ArrayList<>();
 	
-	@OneToMany(mappedBy="master", fetch=FetchType.LAZY)
+	@OneToMany(mappedBy="master", fetch=FetchType.LAZY, cascade= {CascadeType.REMOVE})
 	private List<ContactPerson> contacts = Collections.emptyList();
-	@OneToMany(mappedBy="master", fetch=FetchType.LAZY)
+	@OneToMany(mappedBy="master", fetch=FetchType.LAZY, cascade= {CascadeType.REMOVE})
 	private List<PhoneNumber> phoneNumbers = Collections.emptyList();
-	@OneToMany(mappedBy="master", fetch=FetchType.LAZY)
+	@OneToMany(mappedBy="master", fetch=FetchType.LAZY, cascade= {CascadeType.REMOVE})
 	private List<BankAccount> bankAccounts = Collections.emptyList();
+	
+	@OneToMany(mappedBy="master", fetch=FetchType.LAZY, cascade= {CascadeType.REMOVE})
+	//should be one to one, but it doesn't do lazy fetching properly
+	private List<AccountReceivableSetting> arSetting;
+	
+	@OneToMany(mappedBy="master", fetch=FetchType.LAZY, cascade= {CascadeType.REMOVE})
+	//should be one to one, but it doesn't do lazy fetching properly
+	private List<AccountPayableSetting> apSetting;
 	 
 	@PrePersist
 	private void prePersist() {
@@ -300,6 +309,28 @@ public class AddressBookMaster extends TransactionSynchronizedDatabaseEntityImpl
 
 	void setContacts(List<ContactPerson> contactPeople) {
 		this.contacts = contactPeople;
+	}
+
+	public List<PhoneNumber> getPhoneNumbers() {
+		return phoneNumbers;
+	}
+
+	public List<BankAccount> getBankAccounts() {
+		return bankAccounts;
+	}
+
+	public Optional<AccountReceivableSetting> getArSetting() {
+		if (arSetting == null || arSetting.isEmpty())
+			return Optional.empty();
+		return Optional.of(arSetting.get(0));
+		//return Optional.ofNullable(arSetting);
+	}
+
+	public Optional<AccountPayableSetting> getApSetting() {
+		if (apSetting == null || apSetting.isEmpty())
+			return Optional.empty();
+		return Optional.of(apSetting.get(0));
+		//return Optional.ofNullable(apSetting);
 	}
 
 	
