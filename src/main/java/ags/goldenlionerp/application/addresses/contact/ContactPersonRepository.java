@@ -5,11 +5,11 @@ import java.util.Collection;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-import ags.goldenlionerp.basecomponents.ChildEntityRepository;
+import ags.goldenlionerp.basecomponents.ChildrenEntityRepository;
 
 @RepositoryRestResource(collectionResourceRel="contacts", path="contacts")
 public interface ContactPersonRepository extends CrudRepository<ContactPerson, ContactPersonPK>, 
-	ChildEntityRepository<ContactPerson, String> {
+	ChildrenEntityRepository<ContactPerson, String> {
 
 	@Override
 	default Collection<ContactPerson> findChildrenByParentId(String addressNumber){

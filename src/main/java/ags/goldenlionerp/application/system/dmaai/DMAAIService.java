@@ -10,12 +10,12 @@ import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import ags.goldenlionerp.basecomponents.ParentChildService;
+import ags.goldenlionerp.basecomponents.ParentChildrenService;
 
 import java.io.IOException;
 
 @Service
-public class DMAAIService extends ParentChildService<DMAAIHeader, DMAAIDetail, Integer, DMAAIDetailPK> {
+public class DMAAIService extends ParentChildrenService<DMAAIHeader, DMAAIDetail, Integer, DMAAIDetailPK> {
 
 	private DMAAIHeaderRepository headRepo;
 	private DMAAIDetailRepository detailRepo;

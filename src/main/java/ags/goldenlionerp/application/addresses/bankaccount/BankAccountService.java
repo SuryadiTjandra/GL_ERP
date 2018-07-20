@@ -8,10 +8,10 @@ import org.springframework.stereotype.Service;
 
 import ags.goldenlionerp.application.addresses.address.AddressBookMaster;
 import ags.goldenlionerp.application.addresses.address.AddressBookRepository;
-import ags.goldenlionerp.basecomponents.ParentChildService;
+import ags.goldenlionerp.basecomponents.ParentChildrenService;
 
 @Service
-public class BankAccountService extends ParentChildService<AddressBookMaster, BankAccount, String, BankAccountPK>{
+public class BankAccountService extends ParentChildrenService<AddressBookMaster, BankAccount, String, BankAccountPK>{
 
 	public Collection<BankAccount> saveBankAccountsForAddress(String addressNumber, Collection<Map<String, Object>> requests){
 		return super.saveChildrenToParent(addressNumber, requests);

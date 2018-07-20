@@ -6,10 +6,10 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.data.rest.core.annotation.RestResource;
 
-import ags.goldenlionerp.basecomponents.ChildEntityRepository;
+import ags.goldenlionerp.basecomponents.ChildrenEntityRepository;
 
 @RepositoryRestResource(exported=true, collectionResourceRel="dmaaiDetails", path="dmaaiDetails")
-public interface DMAAIDetailRepository extends CrudRepository<DMAAIDetail, DMAAIDetailPK>, ChildEntityRepository<DMAAIDetail, Integer>{
+public interface DMAAIDetailRepository extends CrudRepository<DMAAIDetail, DMAAIDetailPK>, ChildrenEntityRepository<DMAAIDetail, Integer>{
 
 	@RestResource(exported=false)
 	Iterable<DMAAIDetail> findAll();

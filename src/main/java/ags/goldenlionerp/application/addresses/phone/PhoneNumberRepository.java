@@ -5,11 +5,11 @@ import java.util.Collection;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.rest.webmvc.RepositoryRestController;
 
-import ags.goldenlionerp.basecomponents.ChildEntityRepository;
+import ags.goldenlionerp.basecomponents.ChildrenEntityRepository;
 
 @RepositoryRestController
 public interface PhoneNumberRepository
-		extends CrudRepository<PhoneNumber, PhoneNumberPK>, ChildEntityRepository<PhoneNumber, String> {
+		extends CrudRepository<PhoneNumber, PhoneNumberPK>, ChildrenEntityRepository<PhoneNumber, String> {
 
 	@Override
 	default Collection<PhoneNumber> findChildrenByParentId(String parentId) {

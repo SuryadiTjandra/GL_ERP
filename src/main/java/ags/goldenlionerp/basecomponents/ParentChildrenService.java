@@ -16,7 +16,7 @@ import org.springframework.hateoas.Identifiable;
 import ags.goldenlionerp.custompatchers.CustomPatcher;
 
 //P == class of parent, PID == class of parentId, C = class of child, CID = class of child id
-public abstract class ParentChildService<
+public abstract class ParentChildrenService<
 	P extends Identifiable<PID>, 
 	C extends Identifiable<CID>, 
 	PID extends Serializable, 
@@ -30,8 +30,8 @@ public abstract class ParentChildService<
 	private Object childRepo;
 	
 	protected <PREPO extends CrudRepository<P, PID>, 
-			   CREPO extends CrudRepository<C, CID> & ChildEntityRepository<C, PID>>
-		ParentChildService(PREPO parentRepo, CREPO childRepo){
+			   CREPO extends CrudRepository<C, CID> & ChildrenEntityRepository<C, PID>>
+		ParentChildrenService(PREPO parentRepo, CREPO childRepo){
 		this.parentRepo = parentRepo;
 		this.childRepo = childRepo;
 	}
@@ -104,7 +104,7 @@ public abstract class ParentChildService<
 	
 	protected Collection<C> getChildrenOf(P parent){
 		@SuppressWarnings("unchecked")
-		ChildEntityRepository<C, PID> crepo = (ChildEntityRepository<C, PID>) childRepo;
+		ChildrenEntityRepository<C, PID> crepo = (ChildrenEntityRepository<C, PID>) childRepo;
 		return crepo.findChildrenByParentId(parent.getId());
 	}
 	protected abstract CID constructChildId(Map<String, Object> childRequest);

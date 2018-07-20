@@ -11,10 +11,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import ags.goldenlionerp.application.addresses.address.AddressBookMaster;
 import ags.goldenlionerp.application.addresses.address.AddressBookRepository;
-import ags.goldenlionerp.basecomponents.ParentChildService;
+import ags.goldenlionerp.basecomponents.ParentChildrenService;
 
 @Service
-public class PhoneNumberService extends ParentChildService<AddressBookMaster, PhoneNumber, String, PhoneNumberPK>{
+public class PhoneNumberService extends ParentChildrenService<AddressBookMaster, PhoneNumber, String, PhoneNumberPK>{
 
 	@Autowired @Qualifier("halObjectMapper")
 	private ObjectMapper mapper;
