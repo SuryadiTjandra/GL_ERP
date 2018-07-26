@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import ags.goldenlionerp.application.addresses.address.AddressBookMaster;
 import ags.goldenlionerp.application.addresses.address.AddressBookRepository;
@@ -13,6 +14,7 @@ import ags.goldenlionerp.basecomponents.ParentChildrenService;
 @Service
 public class BankAccountService extends ParentChildrenService<AddressBookMaster, BankAccount, String, BankAccountPK>{
 
+	@Transactional
 	public Collection<BankAccount> saveBankAccountsForAddress(String addressNumber, Collection<Map<String, Object>> requests){
 		return super.saveChildrenToParent(addressNumber, requests);
 	}

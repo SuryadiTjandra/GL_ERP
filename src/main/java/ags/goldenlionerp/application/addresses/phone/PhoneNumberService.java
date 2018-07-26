@@ -6,6 +6,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -19,6 +20,7 @@ public class PhoneNumberService extends ParentChildrenService<AddressBookMaster,
 	@Autowired @Qualifier("halObjectMapper")
 	private ObjectMapper mapper;
 	
+	@Transactional
 	public Collection<PhoneNumber> savePhoneNumbersForAddress(String addressNumber, Collection<Map<String, Object>> childRequests){
 		return super.saveChildrenToParent(addressNumber, childRequests);
 	}

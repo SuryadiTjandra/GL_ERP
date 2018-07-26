@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -33,6 +34,7 @@ public class AddressService {
 	@Autowired
 	private AccountPayableSettingService apServ;
 	
+	@Transactional
 	public AddressBookMaster post(AddressBookMaster entityToCreate) {
 		AddressBookMaster created = repo.save(entityToCreate);
 		cpService.createNewContactFor(created);
@@ -41,6 +43,7 @@ public class AddressService {
 		return created;
 	}
 	
+	@Transactional
 	public AddressBookMaster patch(String addressNumber, Map<String, Object> patchRequest) throws IOException {
 		AddressBookMaster entity = repo.findById(addressNumber)
 									.orElseThrow(() -> new ResourceNotFoundException());

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -15,6 +16,7 @@ import ags.goldenlionerp.basecomponents.ParentChildrenService;
 import java.io.IOException;
 
 @Service
+@Transactional
 public class DMAAIService extends ParentChildrenService<DMAAIHeader, DMAAIDetail, Integer, DMAAIDetailPK> {
 
 	private DMAAIHeaderRepository headRepo;
