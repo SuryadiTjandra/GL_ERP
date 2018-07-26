@@ -13,6 +13,7 @@ import java.util.Map;
 
 import javax.transaction.Transactional;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.springframework.http.MediaType;
 import org.springframework.test.annotation.Rollback;
@@ -44,9 +45,20 @@ public class BranchPlantConstantApiTest extends ApiTestBase<String>{
 
 	String buAssociationUrl = "/api/businessUnits/{id}/configuration";
 	
+	@Override @Before
+	public void setUp() throws Exception {
+		super.setUp();
+		String getRes = mockMvc.perform(get(new BusinessUnitApiTest().baseUrl() + existingId()))
+						.andReturn().getResponse().getContentAsString();
+		buAssociationUrl = JsonPath.read(getRes, "$._links.configuration.href");
+		buAssociationUrl = buAssociationUrl.replace(existingId(), "{id}");
+				
+	}
+	
 	@Test
 	@Override
 	public void getTestSingle() throws Exception {
+		
 		String url = this.baseUrl.replace("{id}", existingId);
 		String getResult1 = mockMvc.perform(get(url).accept(MediaType.APPLICATION_JSON))
 				.andExpect(MockMvcResultMatchers.status().isOk())
@@ -57,7 +69,9 @@ public class BranchPlantConstantApiTest extends ApiTestBase<String>{
 				.andReturn().getResponse().getContentAsString();
 		
 		String url2 = this.buAssociationUrl.replace("{id}", existingId);
-		String getResult2 = mockMvc.perform(get(url2))
+		String getResult2 = mockMvc.perform(get(url2).accept(MediaType.APPLICATION_JSON))
+							//.andDo(MockMvcResultHandlers.print())
+							.andExpect(MockMvcResultMatchers.status().isOk())
 							.andReturn().getResponse().getContentAsString();
 		
 		assertEquals(getResult1, getResult2);
@@ -173,9 +187,9 @@ public class BranchPlantConstantApiTest extends ApiTestBase<String>{
 		mockMvc.perform(get(url))
 				.andExpect(MockMvcResultMatchers.status().isNotFound());
 		
-		String url2 = this.buAssociationUrl.replace("{id}", existingId);
-		mockMvc.perform(get(url2))
-				.andExpect(MockMvcResultMatchers.status().isNotFound());
+		//String url2 = this.buAssociationUrl.replace("{id}", existingId);
+		//mockMvc.perform(get(url2))
+		//		.andExpect(MockMvcResultMatchers.status().isNotFound());
 	
 	}
 

@@ -5,8 +5,8 @@ import javax.persistence.AttributeOverrides;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
-import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 import ags.goldenlionerp.application.system.businessunit.BusinessUnit;
@@ -29,8 +29,9 @@ public class BranchPlantConstant extends DatabaseEntity<String> {
 	@Column(name="BCBUID")
 	private String branchCode = "";
 	
-	@OneToOne
-	@PrimaryKeyJoinColumn(name="BCBUID", referencedColumnName="BNBUID")
+	@OneToOne(optional=false) //should be one-to-one but fake many-to-one to allow lazy load
+	//@PrimaryKeyJoinColumn(name="BCBUID", referencedColumnName="BNBUID")
+	@JoinColumn(name="BCBUID", insertable=false, updatable=false)
 	private BusinessUnit branch;
 	
 	@Column(name="BCANUM")

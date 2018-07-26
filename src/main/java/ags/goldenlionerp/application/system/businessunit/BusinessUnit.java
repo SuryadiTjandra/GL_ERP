@@ -7,15 +7,16 @@ import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EntityNotFoundException;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.PostLoad;
 import javax.persistence.Table;
-import org.hibernate.annotations.NotFound;
-import org.hibernate.annotations.NotFoundAction;
+
 import org.springframework.data.rest.core.annotation.RestResource;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -64,14 +65,14 @@ public class BusinessUnit extends DatabaseEntity<String>{
 	
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="BNBUID1", updatable=false, insertable=false)
-	@NotFound(action=NotFoundAction.IGNORE)
+	//@NotFound(action=NotFoundAction.IGNORE)
 	@RestResource(exported=true, path="related", rel="related")
 	private BusinessUnit relatedBusinessUnit;
 	
 	@Column(name="BNFMOD")
 	private String modelOrConsolidated = "";
 
-	@OneToOne(fetch=FetchType.LAZY, mappedBy="branch")
+	@OneToOne(mappedBy="branch")
 	private BranchPlantConstant configuration;
 	@OneToMany(fetch=FetchType.LAZY, mappedBy="businessUnit")
 	private Collection<LocationMaster> locations;
@@ -107,6 +108,9 @@ public class BusinessUnit extends DatabaseEntity<String>{
 	}
 	
 	public Optional<BusinessUnit> getRelatedBusinessUnit() {
+		if (relatedBusinessUnitId == null || relatedBusinessUnitId.isEmpty())
+			return Optional.empty();
+
 		return Optional.ofNullable(relatedBusinessUnit);
 	}
 
@@ -179,5 +183,16 @@ public class BusinessUnit extends DatabaseEntity<String>{
 	@Override
 	public String getId() {
 		return getBusinessUnitId();
+	}
+	
+	@PostLoad
+	public void postLoad() {
+		try {
+			if (relatedBusinessUnitId == null || relatedBusinessUnitId.isEmpty()) {
+				setRelatedBusinessUnit(null);
+			}
+		} catch (EntityNotFoundException e) {
+			setRelatedBusinessUnit(null);
+		}
 	}
 }
