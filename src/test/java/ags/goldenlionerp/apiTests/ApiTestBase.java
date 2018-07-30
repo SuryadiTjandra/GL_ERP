@@ -65,11 +65,13 @@ public abstract class ApiTestBase<ID extends Serializable> implements ApiTest{
 					.registerModule(new Jackson2HalModule())
 					.registerModule(new JavaTimeModule());
 		
+	
 		requestObject = requestObject();
+		//and random metadata to request object. These shouldn't affect the request result.
 		requestObject.put("computerId", "YOOO");
 		requestObject.put("inputUserId", "NO");
 		requestObject.put("lastUpdateUserId", "NAY");
-		requestObject.put("inputUserDateTime", LocalDateTime.of(1994, 1, 26, 8, 15, 30));
+		requestObject.put("inputDateTime", LocalDateTime.of(1994, 1, 26, 8, 15, 30));
 		requestObject.put("lastUpdateDateTime",  LocalDateTime.of(2015, 2, 28, 20, 45, 0));
 		
 		dateTimeMatcher = Matchers.allOf(
