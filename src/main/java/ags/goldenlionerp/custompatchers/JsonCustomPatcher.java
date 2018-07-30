@@ -15,7 +15,7 @@ import com.fasterxml.jackson.databind.node.JsonNodeFactory;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
 @Component
-public class JsonCustomPatcher extends CustomPatcher {
+public class JsonCustomPatcher implements CustomPatcher {
 	
 	private ObjectMapper mapper;
 	
