@@ -1,11 +1,15 @@
 package ags.goldenlionerp.application.meta.user;
 
+import java.net.URI;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.RepositoryRestController;
+import org.springframework.data.rest.webmvc.support.RepositoryEntityLinks;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +23,8 @@ public class UserController extends NoPutController {
 
 	@Autowired
 	private UserService service;
+	@Autowired
+	private RepositoryEntityLinks links;
 	
 	@PutMapping("/users/{id}")
 	@Override
@@ -26,14 +32,31 @@ public class UserController extends NoPutController {
 		return super.noPutAllowed();
 	}
 	
+	@PostMapping("/users/")
+	public ResponseEntity<?> post(@RequestBody Map<String, Object> request) throws Exception{
+		User user = service.post(request);
+		String userLink = links.linkToSingleResource(User.class, user.getId()).getHref();
+		return ResponseEntity.created(new URI(userLink)).body(user);
+	}
+	
+	@PatchMapping("/users/{id}")
+	public ResponseEntity<?> patch(
+			@PathVariable("id") String userId, 
+			@RequestBody Map<String, Object> request){
+		
+		User user = service.patch(userId, request);
+		return ResponseEntity.ok(user);
+
+	}
+	
 	@RequestMapping(path="/users/{id}/password", method= {POST, PUT, PATCH})
 	public ResponseEntity<?> changePassword(
 			@PathVariable("id") String userId, 
-			@RequestBody Map<String, String> request){
+			@RequestBody Map<String, Object> request){
 		
 		service.changePassword(userId, 
-				request.getOrDefault("userSecurityCode", ""), 
-				request.getOrDefault("userSecurityCodeRe", ""));
+				(String) request.getOrDefault("userSecurityCode", ""), 
+				(String) request.getOrDefault("userSecurityCodeRe", ""));
 		return ResponseEntity.noContent().build();
 	}
 }
