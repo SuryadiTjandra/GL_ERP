@@ -24,6 +24,8 @@ public class UserController extends NoPutController {
 	@Autowired
 	private UserService service;
 	@Autowired
+	private UserGroupService grService;
+	@Autowired
 	private RepositoryEntityLinks links;
 	
 	@PutMapping("/users/{id}")
@@ -34,7 +36,7 @@ public class UserController extends NoPutController {
 	
 	@PostMapping("/users/")
 	public ResponseEntity<?> post(@RequestBody Map<String, Object> request) throws Exception{
-		User user = service.post(request);
+		UserBase user = service.post(request);
 		String userLink = links.linkToSingleResource(User.class, user.getId()).getHref();
 		return ResponseEntity.created(new URI(userLink)).body(user);
 	}
@@ -44,7 +46,7 @@ public class UserController extends NoPutController {
 			@PathVariable("id") String userId, 
 			@RequestBody Map<String, Object> request){
 		
-		User user = service.patch(userId, request);
+		UserBase user = service.patch(userId, request);
 		return ResponseEntity.ok(user);
 
 	}

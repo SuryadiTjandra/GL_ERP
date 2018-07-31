@@ -4,10 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserService extends UserBaseService<User>{
+public class UserGroupService extends UserBaseService<UserGroup> {
 
 	@Autowired
-	UserService(UserRepository repo) {
+	UserGroupService(UserGroupRepository repo) {
 		super(repo);
 	}
 
