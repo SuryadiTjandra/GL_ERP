@@ -25,7 +25,7 @@ public class AppUserDetailsService implements UserDetailsService {
 					.username(username)
 					.password(user.getUserSecurityCode())
 					.authorities(Collections.emptyList())
-					.passwordEncoder(Function.identity())
+					.passwordEncoder(Function.identity()) //TODO use actual password encoding
 					.build();
 	}
 

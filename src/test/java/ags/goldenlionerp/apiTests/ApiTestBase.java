@@ -21,6 +21,8 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.hateoas.hal.Jackson2HalModule;
+import org.springframework.security.test.context.support.WithMockUser;
+import org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
@@ -35,22 +37,28 @@ import com.jayway.jsonpath.JsonPath;
 import ags.goldenlionerp.util.DateMatcher;
 import ags.goldenlionerp.util.TimeDifferenceLessThanOneHourMatcher;
 
+/**
+ * The old base class for API Tests. Don't subclass this anymore 
+ * @author user
+ *
+ * @param <ID>
+ */
 @SpringBootTest
 @RunWith(SpringRunner.class)
 @Transactional
 public abstract class ApiTestBase<ID extends Serializable> implements ApiTest{
 
 	@Autowired
-	WebApplicationContext wac;
+	protected WebApplicationContext wac;
 	
-	MockMvc mockMvc;
-	EntityManager em;
-	ObjectMapper mapper;
-	Map<String, Object> requestObject;
-	String baseUrl;
-	ID existingId;
-	ID newId;
-	Matcher<String> dateTimeMatcher;
+	protected MockMvc mockMvc;
+	protected EntityManager em;
+	protected ObjectMapper mapper;
+	protected Map<String, Object> requestObject;
+	protected String baseUrl;
+	protected ID existingId;
+	protected ID newId;
+	protected Matcher<String> dateTimeMatcher;
 	
 	@Before
 	public void setUp() throws Exception{
@@ -58,7 +66,10 @@ public abstract class ApiTestBase<ID extends Serializable> implements ApiTest{
 		existingId = existingId();
 		newId = newId();
 		
-		mockMvc = MockMvcBuilders.webAppContextSetup(wac).build();
+		mockMvc = MockMvcBuilders
+					.webAppContextSetup(wac)
+					.apply(SecurityMockMvcConfigurers.springSecurity())
+					.build();
 		em = wac.getBean(EntityManager.class);
 		
 		mapper = new ObjectMapper()
@@ -109,7 +120,7 @@ public abstract class ApiTestBase<ID extends Serializable> implements ApiTest{
 
 	}
 	
-	@Override @Test @Rollback
+	@Override @Test @Rollback @WithMockUser
 	public void updateTestWithPut() throws Exception {
 		assumeExists(baseUrl+existingId);
 		
@@ -118,7 +129,6 @@ public abstract class ApiTestBase<ID extends Serializable> implements ApiTest{
 				.andExpect(MockMvcResultMatchers.status().isMethodNotAllowed());
 
 	}
-	
 	
 	void assertCreationInfo(String entityJson) {
 		assertEquals("login not yet",JsonPath.read(entityJson, "$.inputUserId"));

@@ -2,9 +2,12 @@ package ags.goldenlionerp.apiTests;
 
 import static org.junit.Assert.*;
 import static org.junit.Assume.assumeTrue;
+import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestBuilders.formLogin;
+import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.patch;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 
 import java.util.HashMap;
@@ -13,7 +16,10 @@ import java.util.Map;
 import org.junit.Test;
 import org.springframework.http.MediaType;
 import org.springframework.mock.web.MockHttpServletResponse;
+import org.springframework.security.test.context.support.WithMockUser;
+import org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestBuilders;
 import org.springframework.test.annotation.Rollback;
+import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
@@ -87,15 +93,16 @@ public class UserApiTest extends ApiTestBase<String> {
 
 	}
 
-	@Override @Test @Rollback
+	@Override @Test @Rollback @WithMockUser
 	public void createTestWithPost() throws Exception {
 		assumeNotExists(baseUrl+newId);
 		
 		mockMvc.perform(post(baseUrl)
 						.accept(MediaType.APPLICATION_JSON)
 						.contentType(MediaType.APPLICATION_JSON)
-						.content(mapper.writeValueAsString(requestObject)))
-				.andDo(MockMvcResultHandlers.print())
+						.content(mapper.writeValueAsString(requestObject))
+						.with(csrf()))
+				//.andDo(MockMvcResultHandlers.print())
 				.andExpect(MockMvcResultMatchers.status().isCreated());
 		
 		em.flush(); em.clear();
@@ -117,10 +124,10 @@ public class UserApiTest extends ApiTestBase<String> {
 				
 		assertCreationInfo(getRes);
 
-		assertTrue(testCanLogin(existingId, newPassword()));
+		assertTrue(testCanLogin(newId, newPassword()));
 	}
 
-	@Override @Test @Rollback
+	@Override @Test @Rollback @WithMockUser
 	public void updateTestWithPatch() throws Exception {
 		assumeExists(baseUrl + existingId);
 		requestObject.put("userSecurityType", "G");
@@ -131,7 +138,8 @@ public class UserApiTest extends ApiTestBase<String> {
 		mockMvc.perform(patch(baseUrl + existingId)
 						.accept(MediaType.APPLICATION_JSON)
 						.contentType(MediaType.APPLICATION_JSON)
-						.content(mapper.writeValueAsString(requestObject)))
+						.content(mapper.writeValueAsString(requestObject))
+						.with(csrf()))
 					.andExpect(MockMvcResultMatchers.status().is2xxSuccessful());
 	
 		em.flush();	em.clear();
@@ -246,8 +254,11 @@ public class UserApiTest extends ApiTestBase<String> {
 				.andExpect(MockMvcResultMatchers.status().is4xxClientError());
 	}
 
-	private boolean testCanLogin(String userId, String password) {
-		//TODO test login
-		return true;
+	private boolean testCanLogin(String userId, String password) throws Exception {
+		MvcResult loginRes = mockMvc.perform(formLogin().user(userId).password(password))
+				.andDo(print())
+				.andReturn();
+		
+		return !loginRes.getResponse().getRedirectedUrl().endsWith("error");
 	}
 }
