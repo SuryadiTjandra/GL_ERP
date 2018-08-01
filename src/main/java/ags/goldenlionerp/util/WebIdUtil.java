@@ -1,6 +1,9 @@
 package ags.goldenlionerp.util;
 
+import java.io.Serializable;
 import java.time.format.DateTimeFormatter;
+
+import org.springframework.data.rest.webmvc.spi.BackendIdConverter;
 
 public class  WebIdUtil {
 
@@ -16,6 +19,15 @@ public class  WebIdUtil {
 			return null;
 		
 		return webId.replaceAll("_t", "\t").replaceAll("_", " ");
+	}
+	
+	public static String toWebId(Serializable webId) {
+		return BeanFinder.findBeans(BackendIdConverter.class)
+						.values().stream()
+						.filter(bic -> bic.supports(webId.getClass()))
+						.findFirst()
+						.map(bic -> bic.toRequestId(webId, webId.getClass()))
+						.orElse(webId.toString());
 	}
 	
 	public static DateTimeFormatter getWebIdDateFormatter() {

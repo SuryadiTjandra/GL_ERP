@@ -1,5 +1,7 @@
 package ags.goldenlionerp.util;
 
+import java.util.Map;
+
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
@@ -28,6 +30,10 @@ public class BeanFinder implements ApplicationContextAware {
 	 */
 	public static <T> T findBean(Class<T> beanClass) {
 		return (T) context.getBean(beanClass);
+	}
+	
+	public static <T> Map<String, T> findBeans(Class<T> beanClass){
+		return context.getBeansOfType(beanClass);
 	}
 
 }
