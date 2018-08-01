@@ -32,7 +32,7 @@ import ags.goldenlionerp.application.addresses.contact.ContactPerson;
 import ags.goldenlionerp.application.addresses.phone.PhoneNumber;
 import ags.goldenlionerp.application.ap.setting.AccountPayableSetting;
 import ags.goldenlionerp.application.ar.setting.AccountReceivableSetting;
-import ags.goldenlionerp.application.system.businessunit.BusinessUnit;
+import ags.goldenlionerp.application.setups.businessunit.BusinessUnit;
 import ags.goldenlionerp.entities.DatabaseEntityUtil;
 import ags.goldenlionerp.entities.TransactionSynchronizedDatabaseEntityImpl;
 

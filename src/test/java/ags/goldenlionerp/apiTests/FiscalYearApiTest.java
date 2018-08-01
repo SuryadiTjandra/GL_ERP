@@ -18,7 +18,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import com.jayway.jsonpath.JsonPath;
 
-import ags.goldenlionerp.application.system.fiscalyear.FiscalYearPK;
+import ags.goldenlionerp.application.setups.fiscalyear.FiscalYearPK;
 
 public class FiscalYearApiTest extends ApiTestBase<FiscalYearPK> {
 

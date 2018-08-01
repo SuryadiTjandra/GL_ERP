@@ -12,7 +12,7 @@ import javax.persistence.PrePersist;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
-import ags.goldenlionerp.application.system.businessunit.BusinessUnit;
+import ags.goldenlionerp.application.setups.businessunit.BusinessUnit;
 import ags.goldenlionerp.entities.SynchronizedDatabaseEntityImpl;
 
 @Entity

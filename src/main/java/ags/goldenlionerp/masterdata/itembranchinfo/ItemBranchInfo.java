@@ -15,7 +15,7 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
 
-import ags.goldenlionerp.application.system.businessunit.BusinessUnit;
+import ags.goldenlionerp.application.setups.businessunit.BusinessUnit;
 import ags.goldenlionerp.entities.SynchronizedDatabaseEntityImpl;
 import ags.goldenlionerp.masterdata.itemmaster.ItemMaster;
 

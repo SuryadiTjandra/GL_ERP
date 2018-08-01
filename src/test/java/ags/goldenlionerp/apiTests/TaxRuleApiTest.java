@@ -19,7 +19,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import com.jayway.jsonpath.JsonPath;
 
-import ags.goldenlionerp.application.system.taxcode.TaxRulePK;
+import ags.goldenlionerp.application.setups.taxcode.TaxRulePK;
 
 public class TaxRuleApiTest extends ApiTestBase<TaxRulePK> {
 
