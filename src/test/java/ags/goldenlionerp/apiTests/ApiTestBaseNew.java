@@ -4,7 +4,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assume.assumeTrue;
-import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.user;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -19,7 +18,6 @@ import org.springframework.http.MediaType;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.UserRequestPostProcessor;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.web.servlet.ResultActions;
 
@@ -84,9 +82,13 @@ public abstract class ApiTestBaseNew<ID extends Serializable> extends ApiTestBas
 	}
 	
 	protected void assertCreationInfo(String entityJson) {
-		assertEquals("login not yet",JsonPath.read(entityJson, "$.inputUserId"));
+		assertCreationInfoWithUser(defaultUsername(), entityJson);
+	}
+	
+	protected void assertCreationInfoWithUser(String username, String entityJson) {
+		assertEquals(username, JsonPath.read(entityJson, "$.inputUserId"));
 		assertThat(JsonPath.read(entityJson, "$.inputDateTime"), dateTimeMatcher);
-		assertEquals("login not yet", JsonPath.read(entityJson, "$.lastUpdateUserId"));
+		assertEquals(username, JsonPath.read(entityJson, "$.lastUpdateUserId"));
 		assertThat(JsonPath.read(entityJson, "$.lastUpdateDateTime"), dateTimeMatcher);
 		
 		assertEquals(
@@ -100,7 +102,11 @@ public abstract class ApiTestBaseNew<ID extends Serializable> extends ApiTestBas
 	}
 	
 	protected void assertUpdateInfo(String entityJson) {
-		assertEquals("login not yet", JsonPath.read(entityJson, "$.lastUpdateUserId"));
+		assertUpdateInfoWithUser(defaultUsername(), entityJson);
+	}
+	
+	protected void assertUpdateInfoWithUser(String username, String entityJson) {
+		assertEquals(username, JsonPath.read(entityJson, "$.lastUpdateUserId"));
 		assertThat(JsonPath.read(entityJson, "$.lastUpdateDateTime"), dateTimeMatcher);
 		
 		assertNotEquals(
@@ -110,7 +116,11 @@ public abstract class ApiTestBaseNew<ID extends Serializable> extends ApiTestBas
 	}
 	
 	protected void assertUpdateInfo(String entityJson, String entityJsonBefore) {
-		assertUpdateInfo(entityJson);
+		assertUpdateInfoWithUser(defaultUsername(), entityJson, entityJsonBefore);
+	}
+	
+	protected void assertUpdateInfoWithUser(String username, String entityJson, String entityJsonBefore) {
+		assertUpdateInfoWithUser(username, entityJson);
 		
 		assertEquals(
 				(String) JsonPath.read(entityJsonBefore, "$.inputUserId"),
