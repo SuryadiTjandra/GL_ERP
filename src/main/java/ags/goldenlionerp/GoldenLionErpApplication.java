@@ -19,9 +19,8 @@ public class GoldenLionErpApplication {
 		SpringApplication.run(GoldenLionErpApplication.class, args);
 	}
 	
-	@Bean
+	@Bean //the default auditoraware bean if spring security is not used
 	public AuditorAware<String> auditorAware(){
-		//TODO: Implement spring security and find out the logged in user
 		return () -> Optional.of("login not yet");
 	}
 }
