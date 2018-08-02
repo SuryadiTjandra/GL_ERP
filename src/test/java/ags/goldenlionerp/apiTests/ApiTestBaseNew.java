@@ -14,6 +14,9 @@ import java.util.Collections;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.springframework.boot.test.context.TestConfiguration;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Import;
 import org.springframework.http.MediaType;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -25,6 +28,7 @@ import com.jayway.jsonpath.JsonPath;
 
 import ags.goldenlionerp.util.WebIdUtil;
 import ags.goldenlionerp.util.mockmvcperformer.MockMvcPerformer;
+import ags.goldenlionerp.util.refresh.JpaRefresher;
 
 /**
  * A new base class for API tests. Contain the boilerplates for the standard test as specified by {@link ApiTest} interface.
@@ -33,6 +37,7 @@ import ags.goldenlionerp.util.mockmvcperformer.MockMvcPerformer;
  *
  * @param <ID>
  */
+@Import(ApiTestBaseNew.TestConfig.class)
 public abstract class ApiTestBaseNew<ID extends Serializable> extends ApiTestBase<ID>{
 	
 	protected MockMvcPerformer performer;
@@ -63,9 +68,9 @@ public abstract class ApiTestBaseNew<ID extends Serializable> extends ApiTestBas
 		return Collections.emptyList();
 	}
 	
-	public void refreshData() {
-		em.flush();
-		em.clear();
+	public void refreshData() throws Exception {
+		JpaRefresher ref = new JpaRefresher(performer);
+		ref.refresh();
 	}
 	
 	
@@ -235,5 +240,10 @@ public abstract class ApiTestBaseNew<ID extends Serializable> extends ApiTestBas
 			.andExpect(status().isNotFound());
 			
 	}
+	
+	@TestConfiguration
+	@ComponentScan("ags.goldenlionerp")
+	public static class TestConfig {
 
+	}
 }
