@@ -173,12 +173,12 @@ public abstract class ApiTestBase<ID extends Serializable> implements ApiTest{
 		);
 	}
 	
-	void assumeExists(String url) throws Exception {
+	protected void assumeExists(String url) throws Exception {
 		mockMvc.perform(get(url))
 				.andDo(res -> assumeTrue(res.getResponse().getStatus()==200));
 	}
 	
-	void assumeNotExists(String url) throws Exception {
+	protected void assumeNotExists(String url) throws Exception {
 		mockMvc.perform(get(url))
 				.andDo(res -> assumeTrue(res.getResponse().getStatus()==404));
 	}
