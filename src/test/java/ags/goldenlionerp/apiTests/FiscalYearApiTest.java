@@ -2,20 +2,17 @@ package ags.goldenlionerp.apiTests;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.hamcrest.Matchers;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 import org.springframework.http.MediaType;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
-
 import com.jayway.jsonpath.JsonPath;
 
 import ags.goldenlionerp.application.setups.fiscalyear.FiscalYearPK;
@@ -59,13 +56,12 @@ public class FiscalYearApiTest extends ApiTestBaseNew<FiscalYearPK> {
 		super.updateTestWithPatch();
 	}
 	
-	@Rule
-	public ExpectedException exp = ExpectedException.none();
-	
-	@Test @Rollback
+	@Test @Rollback 
 	public void updateTestWithPatchException() throws Exception {
-		exp.expectCause(Matchers.instanceOf(IllegalStateException.class));
-		super.updateTestWithPatch();
+		assumeExists(baseUrl + existingId);
+		
+		performer.performPatch(baseUrl + existingId, requestObject)
+					.andExpect(status().isUnprocessableEntity());
 	}
 	
 	@Test @Rollback
