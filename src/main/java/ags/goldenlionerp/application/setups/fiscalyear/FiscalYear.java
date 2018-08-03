@@ -8,8 +8,6 @@ import javax.persistence.AttributeOverrides;
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.PrePersist;
-import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
@@ -80,25 +78,6 @@ public class FiscalYear extends DatabaseEntity<FiscalYearPK> {
 	//@Column(name="FPDATE14")
 	//private Timestamp endDateOfPeriod14;
 
-	@PrePersist
-	private void prePersist() {
-		for (int n = 1; n <= NUMBER_OF_PERIOD; n++) {
-			setEndDateOfPeriod(n, getEndDateOfPeriod(n));
-		}
-	}
-	
-	@PreUpdate
-	private void preUpdate() {
-		LocalDate prev = getStartDate();
-		for (int n = 1; n <= NUMBER_OF_PERIOD; n++) {
-			LocalDate cur = getEndDateOfPeriod(n);
-			if (cur.compareTo(prev) < 0)
-				throw new IllegalStateException("End date of period must not be earlier than the previous period: Period " + n);
-			
-			prev = cur;
-		}
-	}
-	
 	public FiscalYearPK getPk() {
 		return pk;
 	}
