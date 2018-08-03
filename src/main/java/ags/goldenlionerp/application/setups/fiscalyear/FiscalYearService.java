@@ -23,7 +23,7 @@ public class FiscalYearService {
 								);
 		
 		if (repo.existsById(newPk))
-			throw new DataIntegrityViolationException("The extension of fiscal year " + pk + " already exists! ");
+			throw new FiscalYearExtensionAlreadyExistsException("The extension of fiscal year " + pk + " already exists! ");
 		
 		FiscalYear newYear = new FiscalYear();
 		newYear.setPk(newPk);

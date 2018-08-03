@@ -32,13 +32,10 @@ public class FiscalYearController {
 	@PostMapping("/fiscalYears/{id}/extend")
 	public ResponseEntity<?> extend(@PathVariable("id") String idOfOldYear, PersistentEntityResourceAssembler assembler) {
 		FiscalYearPK pk = (FiscalYearPK) converter.fromRequestId(idOfOldYear, FiscalYearPK.class);
-		try {
-			FiscalYear newYear = service.extendFiscalYear(pk);
-			Link newYearLink = links.linkToSingleResource(FiscalYear.class, newYear.getPk());
-			URI newYearUri = URI.create(newYearLink.getHref());
-			return ResponseEntity.created(newYearUri).body(assembler.toResource(newYear));
-		} catch (DataIntegrityViolationException e) {
-			return new ResponseEntity<>(e.getMessage(), HttpStatus.CONFLICT);
-		}
+		FiscalYear newYear = service.extendFiscalYear(pk);
+		Link newYearLink = links.linkToSingleResource(FiscalYear.class, newYear.getPk());
+		URI newYearUri = URI.create(newYearLink.getHref());
+		return ResponseEntity.created(newYearUri).body(assembler.toResource(newYear));
+
 	}
 }
