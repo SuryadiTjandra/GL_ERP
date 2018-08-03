@@ -176,13 +176,15 @@ public abstract class ApiTestBaseNew<ID extends Serializable> extends ApiTestBas
 		
 		ResultActions action = performer.performGet(baseUrl() + newId);
 		action.andDo(print());
-		assertCreateWithPostResult(action);
-		
-		String getRes = action.andReturn().getResponse().getContentAsString();
-		assertCreationInfo(getRes);
+		assertCreateWithPostResultOuter(action);
 		
 	}
 
+	public void assertCreateWithPostResultOuter(ResultActions action) throws Exception {
+		assertCreateWithPostResult(action);
+		String getRes = action.andReturn().getResponse().getContentAsString();
+		assertCreationInfo(getRes);
+	}
 	public abstract void assertCreateWithPostResult(ResultActions action) throws Exception;
 
 	@Override @Test @Rollback
@@ -199,13 +201,15 @@ public abstract class ApiTestBaseNew<ID extends Serializable> extends ApiTestBas
 		refreshData();
 		
 		ResultActions action = performer.performGet(baseUrl() + existingId);
-		assertUpdateWithPatchResult(action, beforePatch);
-		
-		String getResult = action.andReturn().getResponse().getContentAsString();
-		assertUpdateInfo(getResult, beforePatch);
+		assertUpdateWithPatchResultOuter(action, beforePatch);
 
 	}
 	
+	public void assertUpdateWithPatchResultOuter(ResultActions action, String beforeUpdateJson) throws Exception {
+		assertUpdateWithPatchResult(action, beforeUpdateJson);
+		String getRes = action.andReturn().getResponse().getContentAsString();
+		assertUpdateInfo(getRes, beforeUpdateJson);
+	}
 	public abstract void assertUpdateWithPatchResult(ResultActions action, String beforeUpdateJson) throws Exception;
 
 	@Override @Test @Rollback
