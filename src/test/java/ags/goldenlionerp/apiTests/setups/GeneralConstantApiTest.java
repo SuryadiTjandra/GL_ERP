@@ -1,4 +1,4 @@
-package ags.goldenlionerp.apiTests;
+package ags.goldenlionerp.apiTests.setups;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 
@@ -14,6 +14,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import com.jayway.jsonpath.JsonPath;
 
+import ags.goldenlionerp.apiTests.ApiTestBaseNew;
 import ags.goldenlionerp.application.setups.generalconstant.GeneralConstant;
 
 public class GeneralConstantApiTest extends ApiTestBaseNew<String> {

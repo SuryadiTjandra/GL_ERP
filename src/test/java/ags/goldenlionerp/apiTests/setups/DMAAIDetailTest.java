@@ -1,4 +1,4 @@
-package ags.goldenlionerp.apiTests;
+package ags.goldenlionerp.apiTests.setups;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 
@@ -12,6 +12,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import com.jayway.jsonpath.JsonPath;
 
+import ags.goldenlionerp.apiTests.ApiTestBaseMassUpdate;
 import ags.goldenlionerp.application.setups.dmaai.DMAAIDetailPK;
 
 public class DMAAIDetailTest extends ApiTestBaseMassUpdate<DMAAIDetailPK> {

@@ -1,4 +1,4 @@
-package ags.goldenlionerp.apiTests;
+package ags.goldenlionerp.apiTests.setups;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 
@@ -7,6 +7,8 @@ import java.util.Map;
 
 import org.springframework.test.web.servlet.ResultActions;
 import com.jayway.jsonpath.JsonPath;
+
+import ags.goldenlionerp.apiTests.ApiTestBaseNew;
 
 public class PaymentTermApiTest extends ApiTestBaseNew<String> {
 

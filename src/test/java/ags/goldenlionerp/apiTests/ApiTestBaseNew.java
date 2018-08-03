@@ -11,6 +11,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Map;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -41,6 +42,11 @@ import ags.goldenlionerp.util.refresh.JpaRefresher;
 public abstract class ApiTestBaseNew<ID extends Serializable> extends ApiTestBase<ID>{
 	
 	protected MockMvcPerformer performer;
+	
+	protected abstract Map<String, Object> requestObject() throws Exception;
+	protected abstract String baseUrl();
+	protected abstract ID existingId();
+	protected abstract ID newId();
 	
 	@Before	@Override
 	public void setUp() throws Exception {

@@ -1,4 +1,4 @@
-package ags.goldenlionerp.apiTests;
+package ags.goldenlionerp.apiTests.setups;
 
 import static org.junit.Assert.assertEquals;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -14,6 +14,8 @@ import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import com.jayway.jsonpath.JsonPath;
+
+import ags.goldenlionerp.apiTests.ApiTestBaseNew;
 
 public class DMAAIHeaderTest extends ApiTestBaseNew<Integer> {
 
