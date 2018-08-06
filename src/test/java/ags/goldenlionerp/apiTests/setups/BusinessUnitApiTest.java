@@ -40,7 +40,7 @@ public class BusinessUnitApiTest extends ApiTestBaseNew<String> {
 		return map;
 	}
 	@Override
-	protected String baseUrl() {
+	public String baseUrl() {
 		return "/api/businessUnits/";
 	}
 	@Override
