@@ -9,9 +9,9 @@ import java.util.Map;
 import org.springframework.test.web.servlet.ResultActions;
 import com.jayway.jsonpath.JsonPath;
 
-import ags.goldenlionerp.apiTests.ApiTestBaseNew;
+import ags.goldenlionerp.apiTests.ApiTestBase;
 
-public class HolidayApiTest extends ApiTestBaseNew<LocalDate> {
+public class HolidayApiTest extends ApiTestBase<LocalDate> {
 
 	@Override
 	protected Map<String, Object> requestObject() throws Exception {

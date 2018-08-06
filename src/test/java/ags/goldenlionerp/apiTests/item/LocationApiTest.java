@@ -14,11 +14,11 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import com.jayway.jsonpath.JsonPath;
 
-import ags.goldenlionerp.apiTests.ApiTestBaseNew;
+import ags.goldenlionerp.apiTests.ApiTestBase;
 import ags.goldenlionerp.masterdata.location.LocationMaster;
 import ags.goldenlionerp.masterdata.location.LocationMasterPK;
 
-public class LocationApiTest extends ApiTestBaseNew<LocationMasterPK>{
+public class LocationApiTest extends ApiTestBase<LocationMasterPK>{
 
 	@Override
 	protected Map<String, Object> requestObject() {

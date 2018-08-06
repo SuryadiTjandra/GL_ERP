@@ -14,10 +14,10 @@ import org.springframework.test.web.servlet.ResultActions;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.jayway.jsonpath.JsonPath;
 
-import ags.goldenlionerp.apiTests.ApiTestBaseNew;
+import ags.goldenlionerp.apiTests.ApiTestBase;
 
 @Transactional
-public class ItemMasterApiTest extends ApiTestBaseNew<String> {
+public class ItemMasterApiTest extends ApiTestBase<String> {
 
 	@Override
 	protected Map<String, Object> requestObject() throws JsonProcessingException {

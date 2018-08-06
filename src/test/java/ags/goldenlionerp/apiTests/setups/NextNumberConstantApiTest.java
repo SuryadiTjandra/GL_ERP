@@ -10,9 +10,9 @@ import org.springframework.test.annotation.Rollback;
 import org.springframework.test.web.servlet.ResultActions;
 import com.jayway.jsonpath.JsonPath;
 
-import ags.goldenlionerp.apiTests.ApiTestBaseNew;
+import ags.goldenlionerp.apiTests.ApiTestBase;
 
-public class NextNumberConstantApiTest extends ApiTestBaseNew<String> {
+public class NextNumberConstantApiTest extends ApiTestBase<String> {
 
 	@Override
 	protected Map<String, Object> requestObject() throws Exception {

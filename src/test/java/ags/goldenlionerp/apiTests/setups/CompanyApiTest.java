@@ -15,11 +15,11 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import org.springframework.transaction.annotation.Transactional;
 import com.fasterxml.jackson.core.type.TypeReference;
 
-import ags.goldenlionerp.apiTests.ApiTestBaseNew;
+import ags.goldenlionerp.apiTests.ApiTestBase;
 import ags.goldenlionerp.application.setups.company.Company;
 
 @Transactional
-public class CompanyApiTest extends ApiTestBaseNew<String> {
+public class CompanyApiTest extends ApiTestBase<String> {
 	
 	@Override
 	protected Map<String, Object> requestObject() {

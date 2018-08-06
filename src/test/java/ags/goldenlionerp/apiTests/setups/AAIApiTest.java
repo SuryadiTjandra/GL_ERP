@@ -10,10 +10,10 @@ import org.springframework.test.annotation.Rollback;
 import org.springframework.test.web.servlet.ResultActions;
 import com.jayway.jsonpath.JsonPath;
 
-import ags.goldenlionerp.apiTests.ApiTestBaseNew;
+import ags.goldenlionerp.apiTests.ApiTestBase;
 import ags.goldenlionerp.application.setups.aai.AutomaticAccountingInstructionPK;
 
-public class AAIApiTest extends ApiTestBaseNew<AutomaticAccountingInstructionPK> {
+public class AAIApiTest extends ApiTestBase<AutomaticAccountingInstructionPK> {
 
 	@Override
 	protected Map<String, Object> requestObject() throws Exception {

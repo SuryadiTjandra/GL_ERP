@@ -11,10 +11,10 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import com.jayway.jsonpath.JsonPath;
 
-import ags.goldenlionerp.apiTests.ApiTestBaseNew;
+import ags.goldenlionerp.apiTests.ApiTestBase;
 import ags.goldenlionerp.masterdata.itemLocation.ItemLocationPK;
 
-public class ItemLocationApiTest extends ApiTestBaseNew<ItemLocationPK> {
+public class ItemLocationApiTest extends ApiTestBase<ItemLocationPK> {
 
 	@Override
 	protected Map<String, Object> requestObject() throws Exception {

@@ -15,9 +15,9 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import com.jayway.jsonpath.JsonPath;
 
-import ags.goldenlionerp.apiTests.ApiTestBaseNew;
+import ags.goldenlionerp.apiTests.ApiTestBase;
 
-public class DMAAIHeaderTest extends ApiTestBaseNew<Integer> {
+public class DMAAIHeaderTest extends ApiTestBase<Integer> {
 
 	@Override
 	protected Map<String, Object> requestObject() throws Exception {

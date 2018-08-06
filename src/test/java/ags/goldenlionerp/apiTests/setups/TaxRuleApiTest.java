@@ -9,10 +9,10 @@ import java.util.Map;
 import org.springframework.test.web.servlet.ResultActions;
 import com.jayway.jsonpath.JsonPath;
 
-import ags.goldenlionerp.apiTests.ApiTestBaseNew;
+import ags.goldenlionerp.apiTests.ApiTestBase;
 import ags.goldenlionerp.application.setups.taxcode.TaxRulePK;
 
-public class TaxRuleApiTest extends ApiTestBaseNew<TaxRulePK> {
+public class TaxRuleApiTest extends ApiTestBase<TaxRulePK> {
 
 	@Override
 	protected Map<String, Object> requestObject() throws Exception {

@@ -9,10 +9,10 @@ import java.util.Map;
 import org.springframework.test.web.servlet.ResultActions;
 import com.jayway.jsonpath.JsonPath;
 
-import ags.goldenlionerp.apiTests.ApiTestBaseNew;
+import ags.goldenlionerp.apiTests.ApiTestBase;
 import ags.goldenlionerp.application.setups.currencyconversion.CurrencyConversionPK;
 
-public class CurrencyConversionApiTest extends ApiTestBaseNew<CurrencyConversionPK> {
+public class CurrencyConversionApiTest extends ApiTestBase<CurrencyConversionPK> {
 
 	@Override
 	protected Map<String, Object> requestObject() throws Exception {

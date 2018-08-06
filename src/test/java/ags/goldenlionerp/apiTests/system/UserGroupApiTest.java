@@ -8,10 +8,10 @@ import java.util.Map;
 import org.springframework.test.web.servlet.ResultActions;
 import com.jayway.jsonpath.JsonPath;
 
-import ags.goldenlionerp.apiTests.ApiTestBaseNew;
+import ags.goldenlionerp.apiTests.ApiTestBase;
 import ags.goldenlionerp.util.WebIdUtil;
 
-public class UserGroupApiTest extends ApiTestBaseNew<String> {
+public class UserGroupApiTest extends ApiTestBase<String> {
 
 	@Override
 	protected Map<String, Object> requestObject() throws Exception {

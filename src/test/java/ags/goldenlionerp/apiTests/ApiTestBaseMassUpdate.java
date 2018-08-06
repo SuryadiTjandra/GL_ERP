@@ -14,7 +14,7 @@ import org.springframework.test.web.servlet.ResultActions;
 
 import ags.goldenlionerp.util.WebIdUtil;
 
-public abstract class ApiTestBaseMassUpdate<ID extends Serializable> extends ApiTestBaseNew<ID> {
+public abstract class ApiTestBaseMassUpdate<ID extends Serializable> extends ApiTestBase<ID> {
 
 	protected abstract Map<String, Object> requestObject2() throws Exception;
 	protected abstract String associationLinkUrl() throws Exception;

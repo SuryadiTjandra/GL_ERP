@@ -16,12 +16,12 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.transaction.annotation.Transactional;
 import com.jayway.jsonpath.JsonPath;
 
-import ags.goldenlionerp.apiTests.ApiTestBaseNew;
+import ags.goldenlionerp.apiTests.ApiTestBase;
 import ags.goldenlionerp.util.ResultAssertion;
 
 
 @Transactional
-public class BusinessUnitApiTest extends ApiTestBaseNew<String> {
+public class BusinessUnitApiTest extends ApiTestBase<String> {
 
 	@Override
 	protected Map<String, Object> requestObject() {

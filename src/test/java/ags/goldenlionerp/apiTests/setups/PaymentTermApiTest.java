@@ -8,9 +8,9 @@ import java.util.Map;
 import org.springframework.test.web.servlet.ResultActions;
 import com.jayway.jsonpath.JsonPath;
 
-import ags.goldenlionerp.apiTests.ApiTestBaseNew;
+import ags.goldenlionerp.apiTests.ApiTestBase;
 
-public class PaymentTermApiTest extends ApiTestBaseNew<String> {
+public class PaymentTermApiTest extends ApiTestBase<String> {
 
 	@Override
 	protected Map<String, Object> requestObject() throws Exception {

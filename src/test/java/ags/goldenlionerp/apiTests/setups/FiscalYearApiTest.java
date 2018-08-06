@@ -15,10 +15,10 @@ import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import com.jayway.jsonpath.JsonPath;
 
-import ags.goldenlionerp.apiTests.ApiTestBaseNew;
+import ags.goldenlionerp.apiTests.ApiTestBase;
 import ags.goldenlionerp.application.setups.fiscalyear.FiscalYearPK;
 
-public class FiscalYearApiTest extends ApiTestBaseNew<FiscalYearPK> {
+public class FiscalYearApiTest extends ApiTestBase<FiscalYearPK> {
 
 	@Override
 	protected Map<String, Object> requestObject() throws Exception {

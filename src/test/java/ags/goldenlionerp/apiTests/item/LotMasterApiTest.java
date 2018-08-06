@@ -16,10 +16,10 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import com.jayway.jsonpath.JsonPath;
 
-import ags.goldenlionerp.apiTests.ApiTestBaseNew;
+import ags.goldenlionerp.apiTests.ApiTestBase;
 import ags.goldenlionerp.masterdata.lotmaster.LotMasterPK;
 
-public class LotMasterApiTest extends ApiTestBaseNew<LotMasterPK> {
+public class LotMasterApiTest extends ApiTestBase<LotMasterPK> {
 
 	@Override
 	protected Map<String, Object> requestObject() throws Exception {

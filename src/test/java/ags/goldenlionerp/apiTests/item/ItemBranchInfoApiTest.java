@@ -10,10 +10,10 @@ import org.springframework.test.annotation.Rollback;
 import org.springframework.test.web.servlet.ResultActions;
 import com.jayway.jsonpath.JsonPath;
 
-import ags.goldenlionerp.apiTests.ApiTestBaseNew;
+import ags.goldenlionerp.apiTests.ApiTestBase;
 import ags.goldenlionerp.masterdata.itembranchinfo.ItemBranchInfoPK;
 
-public class ItemBranchInfoApiTest extends ApiTestBaseNew<ItemBranchInfoPK> {
+public class ItemBranchInfoApiTest extends ApiTestBase<ItemBranchInfoPK> {
 
 
 	@Override
