@@ -10,11 +10,11 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 
-import org.springframework.data.rest.core.annotation.RestResource;
-
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
 import ags.goldenlionerp.entities.DatabaseEntity;
 
@@ -43,7 +43,7 @@ public abstract class UserBase extends DatabaseEntity<String> {
 	protected String userSecurityId;
 	
 	@Column(name="SCUSC")
-	@RestResource(exported=false)
+	@JsonProperty(access=Access.WRITE_ONLY)
 	protected String userSecurityCode;
 	
 	@Column(name="SCUSL")
