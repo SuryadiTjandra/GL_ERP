@@ -150,8 +150,8 @@ public abstract class ApiTestBaseNew<ID extends Serializable> extends ApiTestBas
 	
 	@Override @Test
 	public void getTestSingle() throws Exception {
-		String existingId = WebIdUtil.toWebId(existingId());
-		ResultActions action = performer.performGet(baseUrl() + existingId)
+		String existingIdStr = WebIdUtil.toWebId(existingId);
+		ResultActions action = performer.performGet(baseUrl() + existingIdStr)
 				.andExpect(status().isOk())
 				.andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON));
 
@@ -177,15 +177,15 @@ public abstract class ApiTestBaseNew<ID extends Serializable> extends ApiTestBas
 	}
 	
 	public void createTestWithPost(ResultAssertion assertMethod) throws Exception{
-		String newId = WebIdUtil.toWebId(newId());
-		assumeNotExists(baseUrl()+newId);
+		String newIdStr = WebIdUtil.toWebId(newId);
+		assumeNotExists(baseUrl()+newIdStr);
 		
 		performer.performPost(baseUrl(), requestObject)
 			.andExpect(status().isCreated());
 		
 		refreshData();
 		
-		ResultActions action = performer.performGet(baseUrl() + newId);
+		ResultActions action = performer.performGet(baseUrl() + newIdStr);
 		action.andDo(print());
 		//assertCreateWithPostResultOuter(action);
 		assertMethod.assertResult(action);
@@ -204,18 +204,18 @@ public abstract class ApiTestBaseNew<ID extends Serializable> extends ApiTestBas
 	}
 	
 	public void updateTestWithPatch(UpdateResultAssertion assertMethod) throws Exception {
-		String existingId = WebIdUtil.toWebId(existingId());
-		assumeExists(baseUrl() + existingId);
+		String existingIdStr = WebIdUtil.toWebId(existingId);
+		assumeExists(baseUrl() + existingIdStr);
 		
-		String beforePatch = performer.performGet(baseUrl() + existingId)
+		String beforePatch = performer.performGet(baseUrl() + existingIdStr)
 								.andReturn().getResponse().getContentAsString();
 		
-		performer.performPatch(baseUrl() + existingId, requestObject)
+		performer.performPatch(baseUrl() + existingIdStr, requestObject)
 			.andExpect(status().is2xxSuccessful());
 	
 		refreshData();
 		
-		ResultActions action = performer.performGet(baseUrl() + existingId);
+		ResultActions action = performer.performGet(baseUrl() + existingIdStr);
 		assertMethod.assertResult(action, beforePatch);
 	}
 	
