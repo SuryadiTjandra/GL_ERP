@@ -12,7 +12,6 @@ import java.io.Serializable;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Map;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.boot.test.context.TestConfiguration;
@@ -27,6 +26,8 @@ import org.springframework.test.web.servlet.ResultActions;
 
 import com.jayway.jsonpath.JsonPath;
 
+import ags.goldenlionerp.util.UpdateResultAssertion;
+import ags.goldenlionerp.util.ResultAssertion;
 import ags.goldenlionerp.util.WebIdUtil;
 import ags.goldenlionerp.util.mockmvcperformer.MockMvcPerformer;
 import ags.goldenlionerp.util.refresh.JpaRefresher;
@@ -172,6 +173,10 @@ public abstract class ApiTestBaseNew<ID extends Serializable> extends ApiTestBas
 
 	@Override @Test @Rollback
 	public void createTestWithPost() throws Exception {
+		createTestWithPost(this::assertCreateWithPostResultOuter);
+	}
+	
+	public void createTestWithPost(ResultAssertion assertMethod) throws Exception{
 		String newId = WebIdUtil.toWebId(newId());
 		assumeNotExists(baseUrl()+newId);
 		
@@ -182,8 +187,8 @@ public abstract class ApiTestBaseNew<ID extends Serializable> extends ApiTestBas
 		
 		ResultActions action = performer.performGet(baseUrl() + newId);
 		action.andDo(print());
-		assertCreateWithPostResultOuter(action);
-		
+		//assertCreateWithPostResultOuter(action);
+		assertMethod.assertResult(action);
 	}
 
 	public void assertCreateWithPostResultOuter(ResultActions action) throws Exception {
@@ -195,6 +200,10 @@ public abstract class ApiTestBaseNew<ID extends Serializable> extends ApiTestBas
 
 	@Override @Test @Rollback
 	public void updateTestWithPatch() throws Exception {
+		updateTestWithPatch(this::assertUpdateWithPatchResultOuter);
+	}
+	
+	public void updateTestWithPatch(UpdateResultAssertion assertMethod) throws Exception {
 		String existingId = WebIdUtil.toWebId(existingId());
 		assumeExists(baseUrl() + existingId);
 		
@@ -207,8 +216,7 @@ public abstract class ApiTestBaseNew<ID extends Serializable> extends ApiTestBas
 		refreshData();
 		
 		ResultActions action = performer.performGet(baseUrl() + existingId);
-		assertUpdateWithPatchResultOuter(action, beforePatch);
-
+		assertMethod.assertResult(action, beforePatch);
 	}
 	
 	public void assertUpdateWithPatchResultOuter(ResultActions action, String beforeUpdateJson) throws Exception {
