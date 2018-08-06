@@ -1,4 +1,4 @@
-package ags.goldenlionerp.apiTests;
+package ags.goldenlionerp.apiTests.addresses;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 
@@ -10,6 +10,7 @@ import org.springframework.test.annotation.Rollback;
 import org.springframework.test.web.servlet.ResultActions;
 import com.jayway.jsonpath.JsonPath;
 
+import ags.goldenlionerp.apiTests.ApiTestBaseMassUpdate;
 import ags.goldenlionerp.application.addresses.phone.PhoneNumberPK;
 
 public class PhoneNumberApiTest extends ApiTestBaseMassUpdate<PhoneNumberPK> {
