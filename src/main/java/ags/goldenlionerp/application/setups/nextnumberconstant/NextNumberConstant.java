@@ -82,6 +82,10 @@ public class NextNumberConstant extends DatabaseEntity<String> {
 	public String getId() {
 		return getDocumentType();
 	}
+
+	public static NextNumberConstant defaultSetting() {
+		return DefaultNextNumberConstant.getInstance();
+	}
 	
 	
 }
