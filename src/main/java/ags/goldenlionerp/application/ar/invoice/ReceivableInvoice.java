@@ -40,7 +40,7 @@ public class ReceivableInvoice extends DatabaseEntity<ReceivableInvoicePK> imple
 	private String invoiceMatchStatus = "";
 	
 	@Column(name="RIICU")
-	private String batchNumber = "";
+	private int batchNumber;
 	
 	@Column(name="RIICUT")
 	private String batchType = "";
@@ -64,40 +64,40 @@ public class ReceivableInvoice extends DatabaseEntity<ReceivableInvoicePK> imple
 	private LocalDate discountDueDate;
 	
 	@Column(name="RICLDT")
-	private String closedDate = "";
+	private LocalDate closedDate;
 	
 	@Column(name="RIAMNT", precision=19, scale=5)
 	private BigDecimal netAmount = new BigDecimal(0);
 	
 	@Column(name="RIAOP", precision=19, scale=5)
-	private BigDecimal openAmount = new BigDecimal(0);;
+	private BigDecimal openAmount = new BigDecimal(0);
 	
 	@Column(name="RIADSCA", precision=19, scale=5)
-	private BigDecimal discountAmountAvailable = new BigDecimal(0);;
+	private BigDecimal discountAmountAvailable = new BigDecimal(0);
 	
 	@Column(name="RIADSCT", precision=19, scale=5)
-	private BigDecimal discountAmountTaken = new BigDecimal(0);;
+	private BigDecimal discountAmountTaken = new BigDecimal(0);
 	
 	@Column(name="RITAXAB", precision=19, scale=5)
-	private BigDecimal baseTaxableAmount = new BigDecimal(0);;
+	private BigDecimal baseTaxableAmount = new BigDecimal(0);
 	
 	@Column(name="RITAXAM", precision=19, scale=5)
-	private BigDecimal taxableAmount = new BigDecimal(0);;
+	private BigDecimal taxableAmount = new BigDecimal(0);
 	
 	@Column(name="RIFEA", precision=19, scale=5)
-	private BigDecimal foreignExtendedAmount = new BigDecimal(0);;
+	private BigDecimal foreignExtendedAmount = new BigDecimal(0);
 	
 	@Column(name="RIFDA", precision=19, scale=5)
-	private BigDecimal foreignDiscountAmountAvailable = new BigDecimal(0);;
+	private BigDecimal foreignDiscountAmountAvailable = new BigDecimal(0);
 	
 	@Column(name="RIFDT", precision=19, scale=5)
-	private BigDecimal foreignDiscountAmountTaken = new BigDecimal(0);;
+	private BigDecimal foreignDiscountAmountTaken = new BigDecimal(0);
 	
 	@Column(name="RIFTB", precision=19, scale=5)
-	private BigDecimal foreignBaseTaxableAmount = new BigDecimal(0);;
+	private BigDecimal foreignBaseTaxableAmount = new BigDecimal(0);
 	
 	@Column(name="RIFTA", precision=19, scale=5)
-	private BigDecimal foreignTaxableAmount = new BigDecimal(0);;
+	private BigDecimal foreignTaxableAmount = new BigDecimal(0);
 	
 	@Column(name="RICRCB")
 	private String baseCurrency = "";
@@ -106,13 +106,13 @@ public class ReceivableInvoice extends DatabaseEntity<ReceivableInvoicePK> imple
 	private String transactionCurrency = "";
 	
 	@Column(name="RIEXCRT", precision=19, scale=9)
-	private BigDecimal exchangeRate = new BigDecimal(0);;
+	private BigDecimal exchangeRate = new BigDecimal(0);
 	
 	@Column(name="RITAXCD")
 	private String taxCode = "";
 	
 	@Column(name="RITAXRT", precision=19, scale=15)
-	private BigDecimal taxRate = new BigDecimal(0);;
+	private BigDecimal taxRate = new BigDecimal(0);
 	
 	@Column(name="RITAXAL")
 	private String taxAllowance = "";
@@ -209,7 +209,7 @@ public class ReceivableInvoice extends DatabaseEntity<ReceivableInvoicePK> imple
 		return invoiceMatchStatus;
 	}
 
-	public String getBatchNumber() {
+	public int getBatchNumber() {
 		return batchNumber;
 	}
 
@@ -241,7 +241,7 @@ public class ReceivableInvoice extends DatabaseEntity<ReceivableInvoicePK> imple
 		return discountDueDate;
 	}
 
-	public String getClosedDate() {
+	public LocalDate getClosedDate() {
 		return closedDate;
 	}
 
@@ -421,7 +421,7 @@ public class ReceivableInvoice extends DatabaseEntity<ReceivableInvoicePK> imple
 		this.invoiceMatchStatus = invoiceMatchStatus;
 	}
 
-	void setBatchNumber(String batchNumber) {
+	void setBatchNumber(int batchNumber) {
 		this.batchNumber = batchNumber;
 	}
 
@@ -453,7 +453,7 @@ public class ReceivableInvoice extends DatabaseEntity<ReceivableInvoicePK> imple
 		this.discountDueDate = discountDueDate;
 	}
 
-	void setClosedDate(String closedDate) {
+	void setClosedDate(LocalDate closedDate) {
 		this.closedDate = closedDate;
 	}
 
@@ -623,6 +623,10 @@ public class ReceivableInvoice extends DatabaseEntity<ReceivableInvoicePK> imple
 	
 	public boolean isVoided() {
 		return voided;
+	}
+	
+	void voidInvoice() {
+		this.documentVoidStatus = "V";
 	}
 
 }
