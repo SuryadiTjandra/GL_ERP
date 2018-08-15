@@ -277,12 +277,14 @@ public class ReceivableInvoiceApiTest extends ApiTestBase<ReceivableInvoicePK> {
 					.andExpect(status().isConflict());
 	}
 	
-	@Override
+	@Override @Test @Rollback
 	public void deleteTest() throws Exception {
 		super.deleteTest();
 		
-		performer.performGet(baseUrl + voidedId() + "?includeVoided=true")
-				.andExpect(status().isOk());
+		performer.performGet(baseUrl + existingId + "?includeVoided=true")
+				.andExpect(status().isOk())
+				
+				.andExpect(jsonPath("$.closedDate").value(LocalDate.now().toString()));
 	}
 	
 	@Override
