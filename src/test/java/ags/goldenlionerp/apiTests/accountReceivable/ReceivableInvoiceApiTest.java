@@ -1,6 +1,7 @@
 package ags.goldenlionerp.apiTests.accountReceivable;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -90,7 +91,7 @@ public class ReceivableInvoiceApiTest extends ApiTestBase<ReceivableInvoicePK> {
 			.andExpect(jsonPath("$.paymentTermCode").value("DBC"))
 			.andExpect(jsonPath("$.voided").value(false))
 			.andExpect(jsonPath("$.accountId").value("100.112100"))
-			.andExpect(jsonPath("$.description2").value("Ace Colours~tes3"));
+			.andExpect(jsonPath("$.description").value("Ace Colours~tes3"));
 			
 	}
 
@@ -123,7 +124,7 @@ public class ReceivableInvoiceApiTest extends ApiTestBase<ReceivableInvoicePK> {
 			.andExpect(jsonPath("$.exchangeRate").value(requestObject.getOrDefault("exchangeRate", 1.0)))
 			.andExpect(jsonPath("$.transactionCurrency").value(requestObject.get("transactionCurrency")))
 			.andExpect(jsonPath("$.paymentTermCode").value(requestObject.get("paymentTermCode")))
-			.andExpect(jsonPath("$.description2").value(requestObject.getOrDefault("description2", "")))
+			//.andExpect(jsonPath("$.description").value(requestObject.getOrDefault("description", "")))
 			//others
 			.andExpect(jsonPath("$.batchNumber").value(nextRNumber))
 			.andExpect(jsonPath("$.batchType").value("R"))
@@ -165,9 +166,9 @@ public class ReceivableInvoiceApiTest extends ApiTestBase<ReceivableInvoicePK> {
 									.map(AddressBookMaster::getName)
 									.get();
 		String description = customerName;
-		if (requestObject.containsKey("description2"))
-			description = description + "~" + requestObject.get("description2");
-		assertEquals(description, JsonPath.read(result, "$.descripton2"));
+		if (requestObject.containsKey("description"))
+			description = description + "~" + requestObject.get("description");
+		assertEquals(description, JsonPath.read(result, "$.description"));
 	}
 	
 	private void assertDueDates(String result) {
@@ -200,17 +201,14 @@ public class ReceivableInvoiceApiTest extends ApiTestBase<ReceivableInvoicePK> {
 		BigDecimal expectedDisc = netAmount.multiply(discPerc);
 		
 		BigDecimal disc = BigDecimal.valueOf(((Double) JsonPath.read(result, "$.discountAmountAvailable")).doubleValue());
-		assertEquals(expectedDisc, disc);
+		assertTrue(expectedDisc.compareTo(disc) == 0);
 		
 		BigDecimal takenDisc = BigDecimal.valueOf(((Double) JsonPath.read(result, "$.discountAmountTaken")).doubleValue());
-		assertEquals(BigDecimal.valueOf(0), takenDisc);
+		assertTrue(BigDecimal.ZERO.compareTo(takenDisc) == 0);
 		
 		BigDecimal taxAmt = BigDecimal.valueOf(((Double) JsonPath.read(result, "$.taxableAmount")).doubleValue());
 		BigDecimal taxBase = BigDecimal.valueOf(((Double) JsonPath.read(result, "$.baseTaxableAmount")).doubleValue());
-		assertEquals(
-			netAmount.subtract(taxAmt),
-			taxBase
-		);
+		assertTrue(netAmount.subtract(taxAmt).compareTo(taxBase) == 0);
 	}
 	
 	private void assertForeignAmounts(String result) {

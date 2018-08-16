@@ -184,10 +184,10 @@ public class ReceivableInvoice extends DatabaseEntity<ReceivableInvoicePK> imple
 	private String subledgerType = "";
 	
 	@Column(name="RIDESB1")
-	private String description1 = "";
+	private String accountDescription = "";
 	
 	@Column(name="RIDESB2")
-	private String description2 = "";
+	private String description = "";
 	
 	@Column(name="RIOBID")
 	private String objectId = "";
@@ -397,14 +397,6 @@ public class ReceivableInvoice extends DatabaseEntity<ReceivableInvoicePK> imple
 		return subledgerType;
 	}
 
-	public String getDescription1() {
-		return description1;
-	}
-
-	public String getDescription2() {
-		return description2;
-	}
-
 	public String getObjectId() {
 		return objectId;
 	}
@@ -609,16 +601,24 @@ public class ReceivableInvoice extends DatabaseEntity<ReceivableInvoicePK> imple
 		this.subledgerType = subledgerType;
 	}
 
-	void setDescription1(String description1) {
-		this.description1 = description1;
-	}
-
-	void setDescription2(String description2) {
-		this.description2 = description2;
-	}
-
 	void setObjectId(String objectId) {
 		this.objectId = objectId;
+	}
+	
+	void setAccountDescription(String accountDescription) {
+		this.accountDescription = accountDescription;
+	}
+
+	void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getAccountDescription() {
+		return accountDescription;
+	}
+
+	public String getDescription() {
+		return description;
 	}
 	
 	public boolean isVoided() {
