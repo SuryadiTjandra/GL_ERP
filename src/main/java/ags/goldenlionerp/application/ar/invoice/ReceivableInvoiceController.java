@@ -1,7 +1,7 @@
 package ags.goldenlionerp.application.ar.invoice;
 
-import java.util.Collection;
-import java.util.List;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,10 +11,10 @@ import org.springframework.data.rest.webmvc.PersistentEntityResourceAssembler;
 import org.springframework.data.rest.webmvc.RepositoryRestController;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.data.rest.webmvc.support.DefaultedPageable;
+import org.springframework.data.rest.webmvc.support.RepositoryEntityLinks;
 import org.springframework.data.web.PagedResourcesAssembler;
 import org.springframework.hateoas.Resource;
 import org.springframework.hateoas.Resources;
-import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -39,6 +39,8 @@ public class ReceivableInvoiceController {
 	private ReceivableInvoiceService service;
 	@Autowired
 	private ReceivableInvoiceIdConverter converter;
+	@Autowired
+	private RepositoryEntityLinks links;
 	
 	@RequestMapping(path="/{id}", method= {RequestMethod.PATCH, RequestMethod.PUT})
 	public ResponseEntity<?> noUpdateAllowed(){
@@ -46,13 +48,15 @@ public class ReceivableInvoiceController {
 	}
 	
 	@PostMapping
-	public Resource<?> post(@RequestBody ReceivableInvoice invoiceRequest, 
-			PersistentEntityResourceAssembler assembler){
+	public ResponseEntity<?> post(@RequestBody ReceivableInvoice invoiceRequest, 
+			PersistentEntityResourceAssembler assembler) throws URISyntaxException{
 		if (repo.existsById(invoiceRequest.getId()))
 			throw new ResourceAlreadyExistsException("invoice", invoiceRequest.getId());
 		
 		ReceivableInvoice createdInvoice = service.create(invoiceRequest);
-		return assembler.toFullResource(createdInvoice);
+		Resource<?> invAsResource = assembler.toFullResource(createdInvoice);
+		URI createdLink = new URI(links.linkToSingleResource(ReceivableInvoice.class, createdInvoice.getId()).getHref());
+		return ResponseEntity.created(createdLink).body(invAsResource);
 	}
 	
 	@GetMapping("/{id}")
