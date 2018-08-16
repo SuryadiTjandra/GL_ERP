@@ -2,6 +2,7 @@ package ags.goldenlionerp.apiTests.accountReceivable;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -169,8 +170,10 @@ public class ReceivableInvoiceApiTest extends ApiTestBase<ReceivableInvoicePK> {
 		if (requestObject.containsKey("description"))
 			description = description + "~" + requestObject.get("description");
 		assertEquals(description, JsonPath.read(result, "$.description"));
+		
+		assertCreatedJournal(result);
 	}
-	
+
 	private void assertDueDates(String result) {
 		String ptc = JsonPath.read(result, "$.paymentTermCode");
 		PaymentTerm pt = ptcRepo.findById(ptc).get();
@@ -231,7 +234,10 @@ public class ReceivableInvoiceApiTest extends ApiTestBase<ReceivableInvoicePK> {
 		// TODO Still don't know what to do
 	}
 
-	
+	private void assertCreatedJournal(String result) {
+		// TODO wait until journal is finished
+		fail();
+	}
 
 	@Test
 	public void getVoidedSingle() throws Exception {
@@ -246,14 +252,19 @@ public class ReceivableInvoiceApiTest extends ApiTestBase<ReceivableInvoicePK> {
 	}
 	
 	@Test
-	public void getVoidedCollection() throws Exception {
-		performer.performGet(baseUrl)
-		.andDo(print())
-				.andExpect(jsonPath("$.page.totalElements").value(1440));
+	public void getVoidedCollection() throws Exception {		
+		String normalRes = performer.performGet(baseUrl)
+				//.andDo(print())
+				//.andExpect(jsonPath("$.page.totalElements").value(1440));
+				.andReturn().getResponse().getContentAsString();
+		int withoutVoidNumber = JsonPath.read(normalRes, "$.page.totalElements");
 		
-		performer.performGet(baseUrl + "?includeVoided=true")
-		.andDo(print())
-				.andExpect(jsonPath("$.page.totalElements").value(1441));
+		String voidRes = performer.performGet(baseUrl + "?includeVoided=true")
+				//.andDo(print())
+				//.andExpect(jsonPath("$.page.totalElements").value(1441));
+				.andReturn().getResponse().getContentAsString();
+		int withVoidNumber = JsonPath.read(voidRes, "$.page.totalElements");
+		assertTrue(withVoidNumber > withoutVoidNumber);
 	}
 
 	@Override @Test @Rollback
