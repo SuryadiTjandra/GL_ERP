@@ -98,28 +98,28 @@ public class NextNumberServiceTest {
 	
 	@Test @Rollback
 	public void testDocumentNo_CY() {
-		assumeTrue(false); //skip first because not sure how behavior should be implemented
+		assumeTrue(false); //TODO skip first because not sure how behavior should be implemented
 		String docNo = service.findNextDocumentNumber("11000", "RP", YearMonth.of(2018, 4));
 		assertEquals("????", docNo);
 	}
 	
 	@Test @Rollback
 	public void testDocumentNo_NR() {
-		assumeTrue(false); //skip first because not sure how behavior should be implemented
+		assumeTrue(false); //TODO skip first because not sure how behavior should be implemented
 		String docNo = service.findNextDocumentNumber("11000", "P", YearMonth.of(2018, 4));
 		assertEquals("????", docNo);
 	}
 
 	@Test @Rollback
 	public void testDocumentNo_YR() {
-		assumeTrue(false); //skip first because not sure how behavior should be implemented
+		assumeTrue(false); //TODO skip first because not sure how behavior should be implemented
 		String docNo = service.findNextDocumentNumber("11000", "??", YearMonth.of(2018, 4));
 		assertEquals("????", docNo);
 	}
 	
 	@Test @Rollback
 	public void testDocumentNo_MO() {
-		assumeTrue(false); //skip first because not sure how behavior should be implemented
+		assumeTrue(false); //TODO skip first because not sure how behavior should be implemented
 		String docNo = service.findNextDocumentNumber("11000", "??", YearMonth.of(2018, 4));
 		assertEquals("????", docNo);
 	}
