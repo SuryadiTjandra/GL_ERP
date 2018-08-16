@@ -160,7 +160,7 @@ public class ReceivableInvoice extends DatabaseEntity<ReceivableInvoicePK> imple
 	private String documentVoidStatus = "";
 	@Column(name="RIDVS", insertable=false, updatable=false)
 	@Convert(converter=VoidedAttributeConverter.class)
-	private Boolean voided;
+	private Boolean voided = false;
 	
 	@Column(name="RIGLCLS")
 	private String glClass = "";
@@ -627,6 +627,8 @@ public class ReceivableInvoice extends DatabaseEntity<ReceivableInvoicePK> imple
 	
 	void voidInvoice() {
 		this.documentVoidStatus = "V";
+		this.closedDate = LocalDate.now();
+		this.openAmount = BigDecimal.ZERO;
 	}
 
 }

@@ -283,8 +283,8 @@ public class ReceivableInvoiceApiTest extends ApiTestBase<ReceivableInvoicePK> {
 		
 		performer.performGet(baseUrl + existingId + "?includeVoided=true")
 				.andExpect(status().isOk())
-				
-				.andExpect(jsonPath("$.closedDate").value(LocalDate.now().toString()));
+				.andExpect(jsonPath("$.closedDate").value(LocalDate.now().toString()))
+				.andExpect(jsonPath("$.openAmount").value(0.0));
 	}
 	
 	@Override
