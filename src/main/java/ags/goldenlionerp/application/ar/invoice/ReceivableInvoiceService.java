@@ -199,7 +199,7 @@ public class ReceivableInvoiceService {
 		if (invoice.isVoided())
 			throw new AlreadyVoidedException("Invoice with number " + pk.getInvoiceNumber() + " is already voided!");
 		
-		invoice.voidInvoice();
+		invoice.voidDocument();
 		return repo.save(invoice);
 	}
 }

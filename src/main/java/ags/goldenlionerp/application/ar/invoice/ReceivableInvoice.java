@@ -625,7 +625,7 @@ public class ReceivableInvoice extends DatabaseEntity<ReceivableInvoicePK> imple
 		return voided;
 	}
 	
-	void voidInvoice() {
+	void voidDocument() {
 		this.documentVoidStatus = "V";
 		this.closedDate = LocalDate.now();
 		this.openAmount = BigDecimal.ZERO;
