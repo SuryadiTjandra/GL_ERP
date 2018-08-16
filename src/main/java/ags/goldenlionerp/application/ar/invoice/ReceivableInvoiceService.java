@@ -7,6 +7,7 @@ import java.time.YearMonth;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import ags.goldenlionerp.application.addresses.address.AddressBookMaster;
 import ags.goldenlionerp.application.addresses.address.AddressBookRepository;
@@ -21,7 +22,7 @@ import ags.goldenlionerp.masterdata.accountmaster.AccountMaster;
 import ags.goldenlionerp.masterdata.accountmaster.AccountMasterPK;
 import ags.goldenlionerp.masterdata.accountmaster.AccountMasterRepository;
 
-@Service
+@Service @Transactional
 public class ReceivableInvoiceService {
 
 	@Autowired private ReceivableInvoiceRepository repo;

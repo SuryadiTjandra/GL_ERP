@@ -33,7 +33,7 @@ public class NextNumberServiceTest {
 		assertEquals("BK", nn.getPk().getDocumentOrBatchType());
 		assertEquals(2018, nn.getPk().getYear());
 		assertEquals(4, nn.getPk().getMonth());
-		assertEquals(12, nn.getNextSequence());
+		assertEquals(13, nn.getNextSequence());
 	}
 	
 	@Test @Rollback
@@ -55,7 +55,7 @@ public class NextNumberServiceTest {
 		assertEquals("RP", nn.getPk().getDocumentOrBatchType());
 		assertEquals(2018, nn.getPk().getYear());
 		assertEquals(1, nn.getPk().getMonth());
-		assertEquals(0, nn.getNextSequence());
+		assertEquals(1, nn.getNextSequence());
 	}
 	
 	@Test @Rollback
@@ -66,28 +66,29 @@ public class NextNumberServiceTest {
 		assertEquals("P", nn.getPk().getDocumentOrBatchType());
 		assertEquals(9999, nn.getPk().getYear());
 		assertEquals(1, nn.getPk().getMonth());
-		assertEquals(162, nn.getNextSequence());
+		assertEquals(163, nn.getNextSequence());
 	}
 	
 	@Test @Rollback
 	public void testIncrement() {
 		NextNumber nn = service.findNextNumber("11000", "P", YearMonth.now());
-		
-		em.clear();
-		service.incrementNextNumber("11000", "P", YearMonth.now());
+		int nextSeq = nn.getNextSequence();
+		//em.clear();
+		//service.incrementNextNumber("11000", "P", YearMonth.now());
 		NextNumber nn2 = service.findNextNumber("11000", "P", YearMonth.now());
+		int nextSeq2 = nn2.getNextSequence();
 		
 		assertEquals(nn.getPk().getCompanyId()			, nn2.getPk().getCompanyId());
 		assertEquals(nn.getPk().getDocumentOrBatchType(), nn2.getPk().getDocumentOrBatchType());
 		assertEquals(nn.getPk().getYear()				, nn2.getPk().getYear());
 		assertEquals(nn.getPk().getMonth()				, nn2.getPk().getMonth());
-		assertEquals(nn.getNextSequence() + 1			, nn2.getNextSequence());
+		assertEquals(nextSeq + 1			, nextSeq2);
 	}
 	
 	@Test @Rollback
 	public void testDocumentNo_CM() {
 		String docNo = service.findNextDocumentNumber("11000", "BK", YearMonth.of(2018, 4));
-		assertEquals("180400012", docNo);
+		assertEquals("180400013", docNo);
 	}
 	
 	@Test @Rollback

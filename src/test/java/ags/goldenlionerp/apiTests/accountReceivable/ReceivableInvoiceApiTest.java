@@ -107,7 +107,7 @@ public class ReceivableInvoiceApiTest extends ApiTestBase<ReceivableInvoicePK> {
 
 	@Override
 	public void assertCreateWithPostResult(ResultActions action) throws Exception {
-		int nextRNumber = nnServ.findNextNumber(newId().getCompanyId(), "R", YearMonth.now()).getNextSequence();
+		int nextRNumber = nnServ.peekAtNextNumber(newId().getCompanyId(), "R", YearMonth.now()).getNextSequence();
 		
 		action
 			//primary key
@@ -127,7 +127,7 @@ public class ReceivableInvoiceApiTest extends ApiTestBase<ReceivableInvoicePK> {
 			.andExpect(jsonPath("$.paymentTermCode").value(requestObject.get("paymentTermCode")))
 			//.andExpect(jsonPath("$.description").value(requestObject.getOrDefault("description", "")))
 			//others
-			.andExpect(jsonPath("$.batchNumber").value(nextRNumber))
+			.andExpect(jsonPath("$.batchNumber").value(nextRNumber - 1))
 			.andExpect(jsonPath("$.batchType").value("R"))
 			.andExpect(jsonPath("$.glDate").value(requestObject.getOrDefault("$.glDate", requestObject.get("invoiceDate")).toString()))
 			.andExpect(jsonPath("$.salesmanId").isEmpty())
@@ -239,6 +239,23 @@ public class ReceivableInvoiceApiTest extends ApiTestBase<ReceivableInvoicePK> {
 		fail();
 	}
 
+	@Test @Rollback
+	public void createTestNoInvoiceNumber() throws Exception {
+		requestObject.remove("invoiceNumber");
+		String nextDocNo = nnServ.peekAtNextDocumentNumber(newId().getCompanyId(), "RI", YearMonth.now());
+		
+		ResultActions action = performer.performPost(baseUrl, requestObject)
+					.andExpect(status().isCreated());
+		String createdUrl = action.andReturn().getResponse().getHeader("Location");
+		
+		performer.performGet(createdUrl)
+				.andExpect(jsonPath("$.companyId").value(newId().getCompanyId()))
+				.andExpect(jsonPath("$.invoiceNumber").value(nextDocNo))
+				.andExpect(jsonPath("$.invoiceType").value("RI"))
+				.andExpect(jsonPath("$.invoiceSequence").value(newId().getInvoiceSequence()));
+				
+	}
+	
 	@Test
 	public void getVoidedSingle() throws Exception {
 		performer.performGet(baseUrl + voidedId())
@@ -254,7 +271,7 @@ public class ReceivableInvoiceApiTest extends ApiTestBase<ReceivableInvoicePK> {
 	@Test
 	public void getVoidedCollection() throws Exception {		
 		String normalRes = performer.performGet(baseUrl)
-				//.andDo(print())
+				.andDo(print())
 				//.andExpect(jsonPath("$.page.totalElements").value(1440));
 				.andReturn().getResponse().getContentAsString();
 		int withoutVoidNumber = JsonPath.read(normalRes, "$.page.totalElements");

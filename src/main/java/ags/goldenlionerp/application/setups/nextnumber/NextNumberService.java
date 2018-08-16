@@ -24,6 +24,54 @@ public class NextNumberService {
 	private static final int DEFAULT_YEAR = 9999;
 	private static final int DEFAULT_MONTH = 1;
 	
+	/**
+	 * Return the next number for the given parameters. Does not increment.
+	 * @param companyId
+	 * @param docBType
+	 * @param yearMonth
+	 * @return
+	 */
+	public NextNumber peekAtNextNumber(String companyId, String docBType, YearMonth yearMonth){
+		return findNextNumber(companyId, docBType, yearMonth, false);
+	}
+	
+	/**
+	 * Return and increment the next number for the given parameters.
+	 * @param companyId
+	 * @param docBType
+	 * @param yearMonth
+	 * @return
+	 */
+	public NextNumber findNextNumber(String companyId, String docBType, YearMonth yearMonth){
+		return findNextNumber(companyId, docBType, yearMonth, true);
+	}
+	
+	private NextNumber findNextNumber(String companyId, String docBType, YearMonth yearMonth, boolean incrementNumber){
+		NextNumberConstant nc = conRepo.findById(docBType)
+				.orElse(NextNumberConstant.defaultSetting());
+
+		NextNumberPK pk = new NextNumberPK(companyId, docBType, yearMonth.getYear(), yearMonth.getMonthValue());
+		NextNumber nn = findNextNumber(nc, pk)
+				.map(this::incrementNextNumber)
+				.orElseGet(() -> createNextNumber(nc, companyId, docBType, yearMonth));
+		
+		
+		//nn = incrementNextNumber(nn);
+		if (incrementNumber) {
+			nn = repo.save(nn);
+		}
+		return nn;
+		
+	}
+	
+	public String peekAtNextDocumentNumber(String companyId, String docBType, YearMonth yearMonth) {
+		NextNumberConstant nc = conRepo.findById(docBType)
+				.orElse(NextNumberConstant.defaultSetting());
+		NextNumber nn = peekAtNextNumber(companyId, docBType, yearMonth);
+
+		return toDocumentNumber(nn, nc.getIncludeYearInNextNumber(), nc.getIncludeMonthInNextNumber());
+	}
+	
 	public String findNextDocumentNumber(String companyId, String docBType, YearMonth yearMonth) {
 		NextNumberConstant nc = conRepo.findById(docBType)
 								.orElse(NextNumberConstant.defaultSetting());
@@ -32,23 +80,11 @@ public class NextNumberService {
 		return toDocumentNumber(nn, nc.getIncludeYearInNextNumber(), nc.getIncludeMonthInNextNumber());
 	}
 	
-	public NextNumber findNextNumber(String companyId, String docBType, YearMonth yearMonth){
-		NextNumberConstant nc = conRepo.findById(docBType)
-								.orElse(NextNumberConstant.defaultSetting());
-
-		NextNumberPK pk = new NextNumberPK(companyId, docBType, yearMonth.getYear(), yearMonth.getMonthValue());
-		return findNextNumber(nc, pk)
-				.orElseGet(() -> createNextNumber(nc, companyId, docBType, yearMonth));
-	}
-	
-	public void incrementNextNumber(String companyId, String docBType, YearMonth yearMonth) {
-		NextNumber nn = findNextNumber(companyId, docBType, yearMonth);
-		incrementNextNumber(nn);
-	}
-	
-	private void incrementNextNumber(NextNumber nn) {
-		nn.setNextSequence(nn.getNextSequence() + 1);
-		repo.save(nn);
+	private NextNumber incrementNextNumber(NextNumber nn) {
+		NextNumber nn2 = new NextNumber();
+		nn2.setPk(nn.getPk());
+		nn2.setNextSequence(nn.getNextSequence() + 1);
+		return nn2;
 	}
 
 	private Optional<NextNumber> findNextNumber(NextNumberConstant nc, NextNumberPK pk){
