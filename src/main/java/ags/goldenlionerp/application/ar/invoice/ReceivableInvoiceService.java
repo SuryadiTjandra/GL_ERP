@@ -12,8 +12,9 @@ import org.springframework.transaction.annotation.Transactional;
 import ags.goldenlionerp.application.addresses.address.AddressBookMaster;
 import ags.goldenlionerp.application.addresses.address.AddressBookRepository;
 import ags.goldenlionerp.application.setups.aai.AutomaticAccountingInstruction;
-import ags.goldenlionerp.application.setups.aai.AutomaticAccountingInstructionPK;
 import ags.goldenlionerp.application.setups.aai.AutomaticAccountingInstructionRepository;
+import ags.goldenlionerp.application.setups.company.Company;
+import ags.goldenlionerp.application.setups.company.CompanyRepository;
 import ags.goldenlionerp.application.setups.nextnumber.NextNumberService;
 import ags.goldenlionerp.application.setups.paymentterm.PaymentTerm;
 import ags.goldenlionerp.application.setups.paymentterm.PaymentTermRepository;
@@ -31,10 +32,10 @@ public class ReceivableInvoiceService {
 	@Autowired private AutomaticAccountingInstructionRepository aaiRepo;
 	@Autowired private AccountMasterRepository accRepo;
 	@Autowired private AddressBookRepository addRepo;
+	@Autowired private CompanyRepository compRepo;
 	
 	private final static String DOCUMENT_TYPE_INVOICE = "RI";
 	private final static String INSTRUCTION_TYPE = "R";
-	private final static String DEFAULT_CURRENCY = "IDR";
 	
 	public ReceivableInvoice create(ReceivableInvoice newInvoice) {
 		newInvoice = setPrimaryKey(newInvoice);
@@ -140,22 +141,16 @@ public class ReceivableInvoiceService {
 		newInvoice.setClosedDate(null);
 		
 		//currency
-		String currencyBase = newInvoice.getBaseCurrency();
-		String currencyTran = newInvoice.getTransactionCurrency();
-		if (currencyBase.isEmpty() && !currencyTran.isEmpty()) {
-			newInvoice.setBaseCurrency(currencyTran);
-		} else if (!currencyBase.isEmpty() && currencyTran.isEmpty()) {
-			newInvoice.setTransactionCurrency(currencyBase);
-		} else if (currencyBase.isEmpty() && currencyTran.isEmpty()) {
-			newInvoice.setBaseCurrency(DEFAULT_CURRENCY);
-			newInvoice.setTransactionCurrency(DEFAULT_CURRENCY);
-		}
+		Company company = compRepo.findById(newInvoice.getPk().getCompanyId())
+									.orElseThrow(() -> new ResourceNotFoundException("Company with id " + newInvoice.getPk().getCompanyId() + " does not exist"));
+		String baseCurrency = company.getCurrencyCodeBase();
+		newInvoice.setBaseCurrency(baseCurrency);
+		newInvoice.setDomesticOrForeignTransaction(
+				newInvoice.getTransactionCurrency().equals(baseCurrency) ? "D" : "F"	
+			);
 		
 		//misc
 		newInvoice.setDocumentStatusCode("A");
-		newInvoice.setDomesticOrForeignTransaction(
-			newInvoice.getTransactionCurrency().equals(DEFAULT_CURRENCY) ? "D" : "F"	
-		);
 		newInvoice.setDocumentVoidStatus("");
 		//newInvoice.set
 		return newInvoice;
@@ -163,8 +158,9 @@ public class ReceivableInvoiceService {
 	
 	private ReceivableInvoice setAccountInformation(ReceivableInvoice newInvoice) {
 		//TODO find out without hardcoding how to get the information
-		AutomaticAccountingInstructionPK aaiPk = new AutomaticAccountingInstructionPK(30000, "RC");
-		AutomaticAccountingInstruction aai = aaiRepo.findById(aaiPk).get();
+		AutomaticAccountingInstruction aai = aaiRepo.findByPkAaiCodeAndCompanyId("RC", newInvoice.getPk().getCompanyId())
+													.stream().findFirst()
+													.orElseThrow(() -> new ResourceNotFoundException("No AAI with code RC found for company with id " + newInvoice.getPk().getCompanyId()));
 		
 		newInvoice.setObjectAccountCode(aai.getObjectAccountCode());
 		newInvoice.setSubsidiaryCode(aai.getSubsidiaryCode());

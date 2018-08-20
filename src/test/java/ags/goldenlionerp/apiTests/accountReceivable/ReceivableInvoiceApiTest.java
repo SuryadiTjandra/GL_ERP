@@ -23,6 +23,7 @@ import ags.goldenlionerp.apiTests.ApiTestBase;
 import ags.goldenlionerp.application.addresses.address.AddressBookMaster;
 import ags.goldenlionerp.application.addresses.address.AddressBookRepository;
 import ags.goldenlionerp.application.ar.invoice.ReceivableInvoicePK;
+import ags.goldenlionerp.application.setups.company.CompanyRepository;
 import ags.goldenlionerp.application.setups.nextnumber.NextNumberService;
 import ags.goldenlionerp.application.setups.paymentterm.PaymentTerm;
 import ags.goldenlionerp.application.setups.paymentterm.PaymentTermRepository;
@@ -32,6 +33,7 @@ public class ReceivableInvoiceApiTest extends ApiTestBase<ReceivableInvoicePK> {
 	@Autowired NextNumberService nnServ;
 	@Autowired PaymentTermRepository ptcRepo;
 	@Autowired AddressBookRepository addrRepo;
+	@Autowired CompanyRepository compRepo;
 	
 	@Override
 	protected Map<String, Object> requestObject() throws Exception {
@@ -108,6 +110,7 @@ public class ReceivableInvoiceApiTest extends ApiTestBase<ReceivableInvoicePK> {
 	@Override
 	public void assertCreateWithPostResult(ResultActions action) throws Exception {
 		int nextRNumber = nnServ.peekAtNextNumber(newId().getCompanyId(), "R", YearMonth.now()).getNextSequence();
+		String compCur = compRepo.findById(newId().getCompanyId()).get().getCurrencyCodeBase();
 		
 		action
 			//primary key
@@ -134,7 +137,7 @@ public class ReceivableInvoiceApiTest extends ApiTestBase<ReceivableInvoicePK> {
 			.andExpect(jsonPath("$.closedDate").isEmpty())
 			.andExpect(jsonPath("$.openAmount").value(requestObject.getOrDefault("netAmount", 0)))
 			.andExpect(jsonPath("$.foreignExtendedAmount").value(requestObject.getOrDefault("foreignExtendedAmount", 0)))
-			.andExpect(jsonPath("$.baseCurrency").value(requestObject.getOrDefault("baseCurrency", requestObject.get("transactionCurrency"))))
+			.andExpect(jsonPath("$.baseCurrency").value(requestObject.getOrDefault("baseCurrency", compCur)))
 			.andExpect(jsonPath("$.taxCode").value(requestObject.getOrDefault("taxCode", "")))
 			.andExpect(jsonPath("$.documentStatusCode").value("A"))
 			.andExpect(jsonPath("$.documentVoidStatus").isEmpty())
@@ -156,9 +159,10 @@ public class ReceivableInvoiceApiTest extends ApiTestBase<ReceivableInvoicePK> {
 		assertDocumentOrderInfo(result);
 		assertOriginalDocumentInfo(result);
 		
-		String currency = JsonPath.read(result, "$.transactionCurrency");
+		String currencyTr = JsonPath.read(result, "$.transactionCurrency");
+		String currencyBs = JsonPath.read(result, "$.baseCurrency");
 		assertEquals(
-			currency.equals("IDR") ? "D" : "F",
+			currencyTr.equals(currencyBs) ? "D" : "F",
 			JsonPath.read(result, "$.domesticOrForeignTransaction")	
 		);
 		
