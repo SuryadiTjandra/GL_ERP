@@ -6,6 +6,7 @@ import static org.junit.Assert.assertThat;
 import static org.junit.Assume.assumeTrue;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import java.io.Serializable;
@@ -25,6 +26,7 @@ import org.springframework.test.annotation.Rollback;
 import org.springframework.test.web.servlet.ResultActions;
 
 import com.jayway.jsonpath.JsonPath;
+import com.jayway.jsonpath.PathNotFoundException;
 
 import ags.goldenlionerp.util.UpdateResultAssertion;
 import ags.goldenlionerp.util.ResultAssertion;
@@ -148,6 +150,43 @@ public abstract class ApiTestBase<ID extends Serializable> extends ApiTestBaseOl
 		);
 	}
 	
+	protected void assertLinks(ResultActions action) throws Exception {
+		action
+			.andExpect(jsonPath("$._links").exists())
+			.andExpect(jsonPath("$._links.self").exists())
+			.andExpect(jsonPath("$._links.self.href").exists());
+		
+		String res1 = action.andReturn().getResponse().getContentAsString();
+		
+		String selfLink = JsonPath.read(res1, "$._links.self.href");
+		String res2 = performer.performGet(selfLink)
+					.andExpect(status().isOk())
+					.andReturn().getResponse().getContentAsString();
+		assertEquals(res1, res2);
+	}
+	
+	protected void assertLinksCollection(ResultActions action) throws Exception {
+		action
+			.andExpect(jsonPath("$._embedded.._links").exists())
+			.andExpect(jsonPath("$._embedded.._links.self").exists())
+			.andExpect(jsonPath("$._embedded.._links.self.href").exists())
+			.andExpect(jsonPath("$._links.self.href").exists());
+			
+		//if "page" path doesn't exist, then stop assertion
+		try {
+			String res = action.andReturn().getResponse().getContentAsString();
+			JsonPath.read(res, "$.page");
+		} catch (PathNotFoundException ex) {
+			return;
+		}
+		
+		action
+			.andExpect(jsonPath("$.page.size").exists())
+			.andExpect(jsonPath("$.page.totalElements").exists())
+			.andExpect(jsonPath("$.page.totalPages").exists())
+			.andExpect(jsonPath("$.page.number").exists());
+	}
+	
 	@Override @Test
 	public void getTestSingle() throws Exception {
 		String existingIdStr = WebIdUtil.toWebId(existingId);
@@ -156,6 +195,7 @@ public abstract class ApiTestBase<ID extends Serializable> extends ApiTestBaseOl
 				.andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON));
 
 		assertGetSingleResult(action);
+		assertLinks(action);
 	}
 	
 	public abstract void assertGetSingleResult(ResultActions action) throws Exception;
@@ -163,10 +203,12 @@ public abstract class ApiTestBase<ID extends Serializable> extends ApiTestBaseOl
 	@Override @Test
 	public void getTestCollection() throws Exception {
 		ResultActions action = performer.performGet(baseUrl())
+				.andDo(print())
 				.andExpect(status().isOk())
 				.andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON));
 			
 		assertGetCollectionResult(action);	
+		assertLinksCollection(action);
 	}
 	
 	public abstract void assertGetCollectionResult(ResultActions action) throws Exception;
@@ -193,6 +235,7 @@ public abstract class ApiTestBase<ID extends Serializable> extends ApiTestBaseOl
 
 	public void assertCreateWithPostResultOuter(ResultActions action) throws Exception {
 		assertCreateWithPostResult(action);
+		assertLinks(action);
 		String getRes = action.andReturn().getResponse().getContentAsString();
 		assertCreationInfo(getRes);
 	}
@@ -221,6 +264,7 @@ public abstract class ApiTestBase<ID extends Serializable> extends ApiTestBaseOl
 	
 	public void assertUpdateWithPatchResultOuter(ResultActions action, String beforeUpdateJson) throws Exception {
 		assertUpdateWithPatchResult(action, beforeUpdateJson);
+		assertLinks(action);
 		String getRes = action.andReturn().getResponse().getContentAsString();
 		assertUpdateInfo(getRes, beforeUpdateJson);
 	}
