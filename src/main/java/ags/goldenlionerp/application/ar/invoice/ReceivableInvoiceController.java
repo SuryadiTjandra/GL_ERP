@@ -2,11 +2,14 @@ package ags.goldenlionerp.application.ar.invoice;
 
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.Objects;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort;
+import org.springframework.data.rest.webmvc.PersistentEntityResource;
 import org.springframework.data.rest.webmvc.PersistentEntityResourceAssembler;
 import org.springframework.data.rest.webmvc.RepositoryRestController;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
@@ -84,9 +87,10 @@ public class ReceivableInvoiceController {
 		Page<ReceivableInvoice> page = includeVoided ?
 				repo.findAllIncludeVoided(pageable.getPageable()):
 				repo.findAll(pageable.getPageable());
+		Page<Object> objPage = page.map(e -> (Object) e);
 				
-		PagedResourcesAssembler<ReceivableInvoice> pagedAssembler = new PagedResourcesAssembler<>(null, null);
-		return pagedAssembler.toResource(page);
+		PagedResourcesAssembler<Object> pagedAssembler = new PagedResourcesAssembler<>(null, null);
+		return pagedAssembler.toResource(objPage, assembler);
 		//return assembler.toFullResource(list);
 	}
 	

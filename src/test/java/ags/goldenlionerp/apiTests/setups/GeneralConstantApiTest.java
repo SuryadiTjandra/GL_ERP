@@ -117,6 +117,12 @@ public class GeneralConstantApiTest extends ApiTestBase<String> {
 		//because there's only one general constants, so getting the collection is the same as getting the single result
 		assertGetSingleResult(action);
 	}
+	
+	@Override
+	protected void assertLinksCollection(ResultActions action) throws Exception {
+		//because there's only one general constants, so getting the collection is the same as getting the single result
+		super.assertLinks(action);
+	}
 
 	
 

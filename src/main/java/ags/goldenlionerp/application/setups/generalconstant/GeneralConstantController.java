@@ -2,7 +2,10 @@ package ags.goldenlionerp.application.setups.generalconstant;
 
 import java.beans.IntrospectionException;
 import java.lang.reflect.InvocationTargetException;
+
+import org.springframework.data.rest.webmvc.PersistentEntityResourceAssembler;
 import org.springframework.data.rest.webmvc.RepositoryRestController;
+import org.springframework.hateoas.Resource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.ModelMap;
@@ -19,9 +22,9 @@ public class GeneralConstantController {
 
 	
 	@GetMapping("/generalConstant")
-	public ResponseEntity<GeneralConstant> get() {
+	public ResponseEntity<Resource<?>> get(PersistentEntityResourceAssembler assembler) {
 		GeneralConstant gc = GeneralConstant.getInstance();
-		return new ResponseEntity<>(gc, HttpStatus.OK);
+		return new ResponseEntity<>(assembler.toFullResource(gc), HttpStatus.OK);
 	}
 	
 	@PostMapping("/generalConstant")
