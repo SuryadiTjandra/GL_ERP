@@ -14,7 +14,7 @@ import org.springframework.data.rest.core.annotation.RestResource;
 @RepositoryRestResource(collectionResourceRel="invoices", path="invoices")
 public interface ReceivableInvoiceRepository extends PagingAndSortingRepository<ReceivableInvoice, ReceivableInvoicePK> {
 
-	Collection<ReceivableInvoice> findByPkInvoiceNumber(int invoiceNo);
+	Collection<ReceivableInvoice> findByPkCompanyIdAndPkInvoiceNumber(String companyId, int invoiceNo);
 	
 	@Query("SELECT inv FROM ReceivableInvoice AS inv")
 	Page<ReceivableInvoice> findAllIncludeVoided(Pageable pageable);

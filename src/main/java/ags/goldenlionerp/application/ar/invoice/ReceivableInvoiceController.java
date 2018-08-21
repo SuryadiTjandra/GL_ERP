@@ -54,7 +54,9 @@ public class ReceivableInvoiceController {
 		
 		ReceivableInvoice createdInvoice = service.create(invoiceRequest);
 		Resource<?> invAsResource = assembler.toFullResource(createdInvoice);
-		URI createdLink = new URI(links.linkToSingleResource(ReceivableInvoice.class, createdInvoice.getId()).getHref());
+		URI createdLink = URI.create(
+				links.linkToSingleResource(ReceivableInvoice.class, createdInvoice.getId()).getHref()
+			);
 		return ResponseEntity.created(createdLink).body(invAsResource);
 	}
 	

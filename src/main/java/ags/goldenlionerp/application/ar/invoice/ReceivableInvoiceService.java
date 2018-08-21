@@ -61,7 +61,7 @@ public class ReceivableInvoiceService {
 			invNo = Integer.parseInt(nextNumber);
 		}
 		
-		int maxSeq = repo.findByPkInvoiceNumber(invNo)
+		int maxSeq = repo.findByPkCompanyIdAndPkInvoiceNumber(pk.getCompanyId(), invNo)
 							.stream()
 							.mapToInt(ri -> ri.getPk().getInvoiceSequence())
 							.max().orElse(0);
