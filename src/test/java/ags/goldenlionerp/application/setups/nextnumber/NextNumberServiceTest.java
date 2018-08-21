@@ -66,7 +66,7 @@ public class NextNumberServiceTest {
 		assertEquals("P", nn.getPk().getDocumentOrBatchType());
 		assertEquals(9999, nn.getPk().getYear());
 		assertEquals(1, nn.getPk().getMonth());
-		assertEquals(163, nn.getNextSequence());
+		assertEquals(168, nn.getNextSequence());
 	}
 	
 	@Test @Rollback
