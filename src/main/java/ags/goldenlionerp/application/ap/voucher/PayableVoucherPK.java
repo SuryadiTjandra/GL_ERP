@@ -19,7 +19,7 @@ public class PayableVoucherPK implements Serializable {
 	@Column(name="PVDOCITY")
 	private String voucherType;
 	
-	@Column(name="PVDOCISEQ")
+	@Column(name="PVDOCISQ")
 	private int voucherSequence;
 
 	@SuppressWarnings("unused")
@@ -47,6 +47,10 @@ public class PayableVoucherPK implements Serializable {
 
 	public int getVoucherSequence() {
 		return voucherSequence;
+	}
+	
+	public String toString() {
+		return new PayableVoucherIDConverter().toRequestId(this, this.getClass());
 	}
 
 	@Override
