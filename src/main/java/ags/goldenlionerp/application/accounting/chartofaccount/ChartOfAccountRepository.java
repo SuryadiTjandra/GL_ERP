@@ -1,4 +1,4 @@
-package ags.goldenlionerp.masterdata.chartofaccount;
+package ags.goldenlionerp.application.accounting.chartofaccount;
 
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;

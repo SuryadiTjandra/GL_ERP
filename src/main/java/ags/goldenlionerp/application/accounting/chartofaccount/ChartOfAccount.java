@@ -1,4 +1,4 @@
-package ags.goldenlionerp.masterdata.chartofaccount;
+package ags.goldenlionerp.application.accounting.chartofaccount;
 
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;

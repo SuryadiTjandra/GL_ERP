@@ -18,9 +18,9 @@ import org.hibernate.annotations.NotFoundAction;
 
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
 
+import ags.goldenlionerp.application.accounting.accountmaster.AccountMaster;
+import ags.goldenlionerp.application.accounting.chartofaccount.ChartOfAccount;
 import ags.goldenlionerp.entities.DatabaseEntity;
-import ags.goldenlionerp.masterdata.accountmaster.AccountMaster;
-import ags.goldenlionerp.masterdata.chartofaccount.ChartOfAccount;
 @Entity
 @Table(name="T0015")
 @AttributeOverrides({

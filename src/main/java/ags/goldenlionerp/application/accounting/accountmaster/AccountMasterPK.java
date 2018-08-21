@@ -1,4 +1,4 @@
-package ags.goldenlionerp.masterdata.accountmaster;
+package ags.goldenlionerp.application.accounting.accountmaster;
 
 import java.io.Serializable;
 

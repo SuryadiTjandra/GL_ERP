@@ -1,4 +1,4 @@
-package ags.goldenlionerp.masterdata.chartofaccount;
+package ags.goldenlionerp.application.accounting.chartofaccount;
 
 import org.springframework.data.rest.webmvc.RepositoryRestController;
 import org.springframework.http.HttpStatus;

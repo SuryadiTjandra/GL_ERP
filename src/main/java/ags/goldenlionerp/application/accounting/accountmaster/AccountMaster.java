@@ -1,4 +1,4 @@
-package ags.goldenlionerp.masterdata.accountmaster;
+package ags.goldenlionerp.application.accounting.accountmaster;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
@@ -16,11 +16,11 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
 
+import ags.goldenlionerp.application.accounting.chartofaccount.ChartOfAccount;
 import ags.goldenlionerp.application.setups.businessunit.BusinessUnit;
 import ags.goldenlionerp.application.setups.company.Company;
 import ags.goldenlionerp.entities.DatabaseEntityUtil;
 import ags.goldenlionerp.entities.TransactionDatabaseEntityImpl;
-import ags.goldenlionerp.masterdata.chartofaccount.ChartOfAccount;
 @Entity
 @Table(name="T0901")
 @AttributeOverrides({
