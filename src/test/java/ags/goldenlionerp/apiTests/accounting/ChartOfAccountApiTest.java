@@ -1,4 +1,4 @@
-package ags.goldenlionerp.apiTests.finance;
+package ags.goldenlionerp.apiTests.accounting;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 
