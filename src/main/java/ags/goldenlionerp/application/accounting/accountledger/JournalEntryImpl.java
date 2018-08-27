@@ -205,16 +205,16 @@ public class JournalEntryImpl extends DatabaseEntity<JournalEntryPK> implements 
 	@Override
 	public LocalDateTime getInputDateTime() {
 		LocalDateTime dt = entries.get(0).getInputDateTime();
-		if (entries.stream().anyMatch(ae -> !ae.getInputDateTime().equals(dt)))
-			throw new IllegalStateException("Not all entries created at the same time");
+		//if (entries.stream().anyMatch(ae -> !ae.getInputDateTime().to.equals(dt)))
+		//	throw new IllegalStateException("Not all entries created at the same time");
 		return dt;
 	}
 	
 	@Override
 	public LocalDateTime getLastUpdateDateTime() {
 		LocalDateTime dt = entries.get(0).getLastUpdateDateTime();
-		if (entries.stream().anyMatch(ae -> !ae.getLastUpdateDateTime().equals(dt)))
-			throw new IllegalStateException("Not all entries updated at the same time");
+		//if (entries.stream().anyMatch(ae -> !ae.getLastUpdateDateTime().equals(dt)))
+		//	throw new IllegalStateException("Not all entries updated at the same time");
 		return dt;
 	}
 

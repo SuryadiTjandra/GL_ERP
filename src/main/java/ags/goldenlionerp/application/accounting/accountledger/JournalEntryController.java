@@ -10,10 +10,12 @@ import org.springframework.hateoas.Link;
 import org.springframework.hateoas.Resource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @RepositoryRestController
@@ -25,7 +27,8 @@ public class JournalEntryController {
 	@Autowired
 	private JournalEntryIdConverter conv;
 	@Autowired
-	private RepositoryRestConfiguration config;
+	private JournalEntryService service;
+
 	
 	@RequestMapping(path="/{id}", method= {RequestMethod.PATCH, RequestMethod.PUT})
 	public ResponseEntity<?> noUpdateAllowed() {
@@ -33,13 +36,22 @@ public class JournalEntryController {
 	}
 	
 	@GetMapping("/{id}") @ResponseBody
-	public Resource<?> getSingle(HttpServletRequest request, @PathVariable("id") String id){
+	public Resource<?> getSingle(HttpServletRequest request, 
+			@PathVariable("id") String id, 
+			@RequestParam(name="includeVoided", defaultValue="false") boolean includeVoided){
 		JournalEntryPK pk = (JournalEntryPK) conv.fromRequestId(id, JournalEntryPK.class);
-		JournalEntry journal = repo.findById(pk)
+		JournalEntry journal = (includeVoided ? repo.findIncludeVoided(pk) : repo.findById(pk))
 									.orElseThrow(() -> new ResourceNotFoundException());
 		
 		Link link = new Link(request.getRequestURL().toString());
 		Resource<JournalEntry> jourRes = new Resource<>(journal, link);
 		return jourRes;
+	}
+	
+	@DeleteMapping("/{id}")
+	public ResponseEntity<?> voidDocument(@PathVariable("id") String id){
+		JournalEntryPK pk = (JournalEntryPK) conv.fromRequestId(id, JournalEntryPK.class);
+		service.voidEntry(pk);
+		return ResponseEntity.noContent().build();
 	}
 }

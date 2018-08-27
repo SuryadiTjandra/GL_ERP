@@ -116,9 +116,9 @@ public class AccountingEntry extends DatabaseEntity<AccountingEntryPK> implement
 	@Column(name="ALIPST")
 	private String interconnectionPostingStatus;
 	
+	//@Column(name="ALDVS")
+	//private String documentVoidStatus;
 	@Column(name="ALDVS")
-	private String documentVoidStatus;
-	@Column(name="ALDVS", insertable=false, updatable=false)
 	@Convert(converter=VoidedAttributeConverter.class)
 	private boolean voided;
 	
@@ -291,9 +291,9 @@ public class AccountingEntry extends DatabaseEntity<AccountingEntryPK> implement
 		return interconnectionPostingStatus;
 	}
 
-	public String getDocumentVoidStatus() {
-		return documentVoidStatus;
-	}
+	//public String getDocumentVoidStatus() {
+	//	return documentVoidStatus;
+	//}
 
 	public int getCurrentAccountingPeriod() {
 		return currentAccountingPeriod;
@@ -467,9 +467,9 @@ public class AccountingEntry extends DatabaseEntity<AccountingEntryPK> implement
 		this.interconnectionPostingStatus = interconnectionPostingStatus;
 	}
 
-	void setDocumentVoidStatus(String documentVoidStatus) {
-		this.documentVoidStatus = documentVoidStatus;
-	}
+	//void setDocumentVoidStatus(String documentVoidStatus) {
+	//	this.documentVoidStatus = documentVoidStatus;
+	//}
 
 	void setCurrentAccountingPeriod(int currentAccountingPeriod) {
 		this.currentAccountingPeriod = currentAccountingPeriod;
@@ -533,7 +533,8 @@ public class AccountingEntry extends DatabaseEntity<AccountingEntryPK> implement
 	}
 	
 	public void voidDocument() {
-		this.documentVoidStatus = "V";
+		//this.documentVoidStatus = "V";
+		this.voided = true;
 	}
 	
 
