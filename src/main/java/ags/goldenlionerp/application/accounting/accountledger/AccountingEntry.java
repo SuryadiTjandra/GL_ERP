@@ -27,16 +27,16 @@ import ags.goldenlionerp.entities.Voidable;
 	@AttributeOverride(name="lastUpdateTime", column=@Column(name="ALTMLU")),
 	@AttributeOverride(name="computerId", column=@Column(name="ALCID")),
 })
-public class AccountLedger extends DatabaseEntity<AccountLedgerPK> implements Voidable{
+public class AccountingEntry extends DatabaseEntity<AccountingEntryPK> implements Voidable{
 
 	@EmbeddedId
-	private AccountLedgerPK pk;
+	private AccountingEntryPK pk;
 	
 	@Column(name="ALBUID")
 	private String businessUnitId = "";
 	
 	@Column(name="ALICU")
-	private String batchNumber = "";
+	private int batchNumber;
 	
 	@Column(name="ALICUT")
 	private String batchType = "";
@@ -171,11 +171,11 @@ public class AccountLedger extends DatabaseEntity<AccountLedgerPK> implements Vo
 	private String recordId = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyyMMdd"));
 	
 	@Override
-	public AccountLedgerPK getId() {
+	public AccountingEntryPK getId() {
 		return getPk();
 	}
 
-	public AccountLedgerPK getPk() {
+	public AccountingEntryPK getPk() {
 		return pk;
 	}
 
@@ -183,7 +183,7 @@ public class AccountLedger extends DatabaseEntity<AccountLedgerPK> implements Vo
 		return businessUnitId;
 	}
 
-	public String getBatchNumber() {
+	public int getBatchNumber() {
 		return batchNumber;
 	}
 
@@ -351,7 +351,7 @@ public class AccountLedger extends DatabaseEntity<AccountLedgerPK> implements Vo
 		return deleteNotAllowed;
 	}
 
-	void setPk(AccountLedgerPK pk) {
+	void setPk(AccountingEntryPK pk) {
 		this.pk = pk;
 	}
 
@@ -359,7 +359,7 @@ public class AccountLedger extends DatabaseEntity<AccountLedgerPK> implements Vo
 		this.businessUnitId = businessUnitId;
 	}
 
-	void setBatchNumber(String batchNumber) {
+	void setBatchNumber(int batchNumber) {
 		this.batchNumber = batchNumber;
 	}
 

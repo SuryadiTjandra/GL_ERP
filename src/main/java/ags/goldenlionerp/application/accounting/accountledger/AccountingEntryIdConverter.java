@@ -6,11 +6,11 @@ import org.springframework.data.rest.webmvc.spi.BackendIdConverter;
 import org.springframework.stereotype.Component;
 
 @Component
-public class AccountLedgerIdConverter implements BackendIdConverter {
+public class AccountingEntryIdConverter implements BackendIdConverter {
 
 	@Override
 	public boolean supports(Class<?> delimiter) {
-		return AccountLedger.class.equals(delimiter);
+		return AccountingEntry.class.equals(delimiter);
 	}
 
 	@Override
@@ -18,7 +18,7 @@ public class AccountLedgerIdConverter implements BackendIdConverter {
 		if (id == null) return null;
 		
 		String[] ids = id.split("_");
-		return new AccountLedgerPK(
+		return new AccountingEntryPK(
 				ids[0],
 				Integer.parseInt(ids[1]),
 				ids[2],
@@ -29,7 +29,7 @@ public class AccountLedgerIdConverter implements BackendIdConverter {
 
 	@Override
 	public String toRequestId(Serializable id, Class<?> entityType) {
-		AccountLedgerPK pk = (AccountLedgerPK) id;
+		AccountingEntryPK pk = (AccountingEntryPK) id;
 		return String.join("_", 
 				pk.getCompanyId(),
 				String.valueOf(pk.getDocumentNumber()),

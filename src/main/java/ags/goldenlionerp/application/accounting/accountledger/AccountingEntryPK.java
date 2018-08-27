@@ -6,7 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 @Embeddable
-public class AccountLedgerPK implements Serializable{
+public class AccountingEntryPK implements Serializable{
 
 	private static final long serialVersionUID = -3442666377908845506L;
 
@@ -26,9 +26,9 @@ public class AccountLedgerPK implements Serializable{
 	private String ledgerType;
 	
 	@SuppressWarnings("unused")
-	private AccountLedgerPK() {}
+	private AccountingEntryPK() {}
 
-	public AccountLedgerPK(String companyId, int documentNumber, String documentType, int documentSequence,
+	public AccountingEntryPK(String companyId, int documentNumber, String documentType, int documentSequence,
 			String ledgerType) {
 		super();
 		this.companyId = companyId;
@@ -59,7 +59,7 @@ public class AccountLedgerPK implements Serializable{
 	}
 	
 	public String toString() {
-		return new AccountLedgerIdConverter().toRequestId(this, AccountLedgerPK.class);
+		return new AccountingEntryIdConverter().toRequestId(this, AccountingEntryPK.class);
 	}
 
 	@Override
@@ -82,7 +82,7 @@ public class AccountLedgerPK implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		AccountLedgerPK other = (AccountLedgerPK) obj;
+		AccountingEntryPK other = (AccountingEntryPK) obj;
 		if (companyId == null) {
 			if (other.companyId != null)
 				return false;
