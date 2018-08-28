@@ -57,8 +57,7 @@ public class ReceivableInvoiceService {
 		
 		int invNo = pk.getInvoiceNumber();
 		if (invNo == 0) {
-			String nextNumber = nnServ.findNextDocumentNumber(pk.getCompanyId(), DOCUMENT_TYPE_INVOICE, YearMonth.now());
-			invNo = Integer.parseInt(nextNumber);
+			invNo = nnServ.findNextDocumentNumber(pk.getCompanyId(), DOCUMENT_TYPE_INVOICE, YearMonth.now());
 		}
 		
 		int maxSeq = repo.findByPkCompanyIdAndPkInvoiceNumber(pk.getCompanyId(), invNo)

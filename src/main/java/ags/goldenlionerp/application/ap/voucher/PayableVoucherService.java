@@ -58,8 +58,7 @@ public class PayableVoucherService {
 		
 		int invNo = pk.getVoucherNumber();
 		if (invNo == 0) {
-			String nextNumber = nnServ.findNextDocumentNumber(pk.getCompanyId(), DOCUMENT_TYPE_VOUCHER, YearMonth.now());
-			invNo = Integer.parseInt(nextNumber);
+			invNo = nnServ.findNextDocumentNumber(pk.getCompanyId(), DOCUMENT_TYPE_VOUCHER, YearMonth.now());
 		}
 		
 		int maxSeq = repo.findByPkCompanyIdAndPkVoucherNumber(pk.getCompanyId(), invNo)

@@ -243,7 +243,7 @@ public class PayableVoucherApiTest extends ApiTestBase<PayableVoucherPK> {
 	@Test @Rollback
 	public void createTestNoInvoiceNumber() throws Exception {
 		requestObject.remove("voucherNumber");
-		String nextDocNo = nnServ.peekAtNextDocumentNumber(newId().getCompanyId(), "PV", YearMonth.now());
+		int nextDocNo = nnServ.peekAtNextDocumentNumber(newId().getCompanyId(), "PV", YearMonth.now());
 		
 		ResultActions action = performer.performPost(baseUrl, requestObject)
 					.andExpect(status().isCreated());

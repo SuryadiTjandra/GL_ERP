@@ -64,7 +64,7 @@ public class NextNumberService {
 		
 	}
 	
-	public String peekAtNextDocumentNumber(String companyId, String docBType, YearMonth yearMonth) {
+	public int peekAtNextDocumentNumber(String companyId, String docBType, YearMonth yearMonth) {
 		NextNumberConstant nc = conRepo.findById(docBType)
 				.orElse(NextNumberConstant.defaultSetting());
 		NextNumber nn = peekAtNextNumber(companyId, docBType, yearMonth);
@@ -72,7 +72,7 @@ public class NextNumberService {
 		return toDocumentNumber(nn, nc.getIncludeYearInNextNumber(), nc.getIncludeMonthInNextNumber());
 	}
 	
-	public String findNextDocumentNumber(String companyId, String docBType, YearMonth yearMonth) {
+	public int findNextDocumentNumber(String companyId, String docBType, YearMonth yearMonth) {
 		NextNumberConstant nc = conRepo.findById(docBType)
 								.orElse(NextNumberConstant.defaultSetting());
 		NextNumber nn = findNextNumber(companyId, docBType, yearMonth);
@@ -130,7 +130,7 @@ public class NextNumberService {
 		return pk;
 	}
 	
-	private String toDocumentNumber(NextNumber nn, boolean includeYear, boolean includeMonth) {
+	private int toDocumentNumber(NextNumber nn, boolean includeYear, boolean includeMonth) {
 		StringBuilder sb = new StringBuilder();
 		if (includeYear) {
 			sb.append(formatNumber(nn.getPk().getYear(), 2));
@@ -139,7 +139,7 @@ public class NextNumberService {
 			sb.append(formatNumber(nn.getPk().getMonth(), 2));
 		}
 		sb.append(formatNumber(nn.getNextSequence(), 5));
-		return sb.toString();
+		return Integer.valueOf(sb.toString());
 	}
 	
 	private String formatNumber(int number, int length) {

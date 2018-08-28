@@ -246,7 +246,7 @@ public class ReceivableInvoiceApiTest extends ApiTestBase<ReceivableInvoicePK> {
 	@Test @Rollback
 	public void createTestNoInvoiceNumber() throws Exception {
 		requestObject.remove("invoiceNumber");
-		String nextDocNo = nnServ.peekAtNextDocumentNumber(newId().getCompanyId(), "RI", YearMonth.now());
+		int nextDocNo = nnServ.peekAtNextDocumentNumber(newId().getCompanyId(), "RI", YearMonth.now());
 		
 		ResultActions action = performer.performPost(baseUrl, requestObject)
 					.andExpect(status().isCreated());

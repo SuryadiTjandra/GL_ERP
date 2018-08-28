@@ -87,41 +87,41 @@ public class NextNumberServiceTest {
 	
 	@Test @Rollback
 	public void testDocumentNo_CM() {
-		String docNo = service.findNextDocumentNumber("11000", "BK", YearMonth.of(2018, 4));
-		assertEquals("180400013", docNo);
+		int docNo = service.findNextDocumentNumber("11000", "BK", YearMonth.of(2018, 4));
+		assertEquals(180400013, docNo);
 	}
 	
 	@Test @Rollback
 	public void testDocumentNo_CM_NotExisting() {
-		String docNo = service.findNextDocumentNumber("11000", "BK", YearMonth.of(2018, 5));
-		assertEquals("180500001", docNo);
+		int docNo = service.findNextDocumentNumber("11000", "BK", YearMonth.of(2018, 5));
+		assertEquals(180500001, docNo);
 	}
 	
 	@Test @Rollback
 	public void testDocumentNo_CY() {
 		assumeTrue(false); //TODO skip first because not sure how behavior should be implemented
-		String docNo = service.findNextDocumentNumber("11000", "RP", YearMonth.of(2018, 4));
+		int docNo = service.findNextDocumentNumber("11000", "RP", YearMonth.of(2018, 4));
 		assertEquals("????", docNo);
 	}
 	
 	@Test @Rollback
 	public void testDocumentNo_NR() {
 		assumeTrue(false); //TODO skip first because not sure how behavior should be implemented
-		String docNo = service.findNextDocumentNumber("11000", "P", YearMonth.of(2018, 4));
+		int docNo = service.findNextDocumentNumber("11000", "P", YearMonth.of(2018, 4));
 		assertEquals("????", docNo);
 	}
 
 	@Test @Rollback
 	public void testDocumentNo_YR() {
 		assumeTrue(false); //TODO skip first because not sure how behavior should be implemented
-		String docNo = service.findNextDocumentNumber("11000", "??", YearMonth.of(2018, 4));
+		int docNo = service.findNextDocumentNumber("11000", "??", YearMonth.of(2018, 4));
 		assertEquals("????", docNo);
 	}
 	
 	@Test @Rollback
 	public void testDocumentNo_MO() {
 		assumeTrue(false); //TODO skip first because not sure how behavior should be implemented
-		String docNo = service.findNextDocumentNumber("11000", "??", YearMonth.of(2018, 4));
+		int docNo = service.findNextDocumentNumber("11000", "??", YearMonth.of(2018, 4));
 		assertEquals("????", docNo);
 	}
 }
