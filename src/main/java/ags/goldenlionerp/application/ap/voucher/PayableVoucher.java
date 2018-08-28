@@ -574,10 +574,6 @@ public class PayableVoucher extends DatabaseEntity<PayableVoucherPK> implements 
 		this.documentVoidStatus = documentVoidStatus;
 	}
 
-	void setVoided(Boolean voided) {
-		this.voided = voided;
-	}
-
 	void setGlClass(String glClass) {
 		this.glClass = glClass;
 	}
