@@ -14,6 +14,9 @@ public class JournalEntryPK implements Serializable{
 	
 	private String ledgerType;
 
+	@SuppressWarnings("unused")
+	private JournalEntryPK() {}
+	
 	public JournalEntryPK(String companyId, int documentNumber, String documentType, String ledgerType) {
 		super();
 		this.companyId = companyId;
@@ -38,6 +41,7 @@ public class JournalEntryPK implements Serializable{
 		return ledgerType;
 	}
 	
+
 	@Override
 	public String toString() {
 		return new JournalEntryIdConverter().toRequestId(this, JournalEntryPK.class);

@@ -246,9 +246,4 @@ public class JournalEntryImpl extends DatabaseEntity<JournalEntryPK> implements 
 		return total.compareTo(ZERO) == 0;
 	}
 	
-	void setBaseCurrency(String baseCurrency) {
-		this.entries.forEach(ae -> ae.setBaseCurrency(baseCurrency));
-	}
-
-	
 }

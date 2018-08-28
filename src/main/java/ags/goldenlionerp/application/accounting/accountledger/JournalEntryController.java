@@ -3,7 +3,6 @@ package ags.goldenlionerp.application.accounting.accountledger;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.RepositoryRestController;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.hateoas.Link;
@@ -13,10 +12,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import ags.goldenlionerp.exceptions.ResourceAlreadyExistsException;
 
 @RepositoryRestController
 @RequestMapping("/api/journalEntries/")
@@ -53,5 +56,14 @@ public class JournalEntryController {
 		JournalEntryPK pk = (JournalEntryPK) conv.fromRequestId(id, JournalEntryPK.class);
 		service.voidEntry(pk);
 		return ResponseEntity.noContent().build();
+	}
+	
+	@PostMapping
+	public ResponseEntity<?> postJournal(@RequestBody JournalEntryRequest request){
+		if (repo.findIncludeVoided(request.getId()).isPresent()) {
+			throw new ResourceAlreadyExistsException("Journal Entry", request.getId());
+		}
+		
+		return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 	}
 }
