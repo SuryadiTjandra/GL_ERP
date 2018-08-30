@@ -17,6 +17,6 @@ public class PurchaseOrderController {
 	
 	@DeleteMapping("/purchaseOrders/{id}")
 	public ResponseEntity<?> delete(){
-		return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+		return new ResponseEntity<>(HttpStatus.METHOD_NOT_ALLOWED);
 	}
 }

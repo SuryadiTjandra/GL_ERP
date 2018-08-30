@@ -86,6 +86,13 @@ public class PurchaseOrderApiTest extends ApiTestBase<PurchaseOrderPK> {
 		performer.performPatch(baseUrl + existingId, requestObject)
 				.andExpect(status().isMethodNotAllowed());
 	}
+	
+	@Override
+	public void deleteTest() throws Exception {
+		assumeExists(baseUrl + existingId);
+		performer.performDelete(baseUrl + existingId)
+				.andExpect(status().isMethodNotAllowed());
+	}
 
 	@Override
 	public void assertUpdateWithPatchResult(ResultActions action, String beforeUpdateJson) throws Exception {
