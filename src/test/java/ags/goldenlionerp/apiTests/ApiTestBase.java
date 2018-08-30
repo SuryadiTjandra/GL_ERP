@@ -23,6 +23,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.test.annotation.Rollback;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.web.servlet.ResultActions;
 
 import com.jayway.jsonpath.JsonPath;
@@ -42,6 +43,7 @@ import ags.goldenlionerp.util.refresh.JpaRefresher;
  * @param <ID>
  */
 @Import(ApiTestBase.TestConfig.class)
+@TestPropertySource("classpath:test.properties")
 public abstract class ApiTestBase<ID extends Serializable> extends ApiTestBaseOld<ID>{
 	
 	protected MockMvcPerformer performer;
