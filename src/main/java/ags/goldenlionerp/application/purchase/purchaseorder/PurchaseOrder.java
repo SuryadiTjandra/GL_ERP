@@ -139,8 +139,7 @@ public class PurchaseOrder extends DatabaseEntity<PurchaseOrderPK> {
 	
 	@Override
 	public PurchaseOrderPK getId() {
-		// TODO Auto-generated method stub
-		return null;
+		return getPk();
 	}
 
 	public PurchaseOrderPK getPk() {

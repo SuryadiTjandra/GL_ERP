@@ -52,6 +52,11 @@ public class PurchaseDetailPK implements Serializable{
 	}
 
 	@Override
+	public String toString() {
+		return String.join("_", companyId, String.valueOf(purchaseOrderNumber), purchaseOrderType, String.valueOf(purchaseOrderSequence));
+	}
+	
+	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
