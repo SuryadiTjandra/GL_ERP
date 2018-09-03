@@ -1,7 +1,6 @@
 package ags.goldenlionerp.application.setups.taxcode;
 
 import java.math.BigDecimal;
-import java.sql.Timestamp;
 import java.time.LocalDate;
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;
@@ -32,7 +31,7 @@ public class TaxRule extends DatabaseEntity<TaxRulePK>{
 	private TaxRulePK pk;
 	
 	@Column(name="TSEXPDT", nullable=false)
-	private Timestamp expiredDate;
+	private LocalDate expiredDate;
 	
 	@Column(name="TSDESB1")
 	private String description = "";
@@ -83,7 +82,7 @@ public class TaxRule extends DatabaseEntity<TaxRulePK>{
 	}
 
 	public LocalDate getExpiredDate() {
-		return expiredDate.toLocalDateTime().toLocalDate();
+		return expiredDate;//.toLocalDateTime().toLocalDate();
 	}
 
 	public String getDescription() {
@@ -163,7 +162,7 @@ public class TaxRule extends DatabaseEntity<TaxRulePK>{
 	}
 
 	void setExpiredDate(LocalDate expiredDate) {
-		this.expiredDate = Timestamp.valueOf(expiredDate.atStartOfDay());
+		this.expiredDate = expiredDate;//Timestamp.valueOf(expiredDate.atStartOfDay());
 	}
 
 	void setDescription(String description) {

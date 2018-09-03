@@ -35,6 +35,6 @@ public interface TaxRuleRepository extends CrudRepository<TaxRule, TaxRulePK> {
 	 * Not supposed to be called from any code except from inside findActiveTaxRuleAt method
 	 */
 	@RestResource(exported=false)
-	@Query("SELECT tax FROM TaxRule tax WHERE tax.pk.taxCode = ?1 AND tax.pk.effectiveDate <= ?2 AND tax.expiredDate > date")
+	@Query("SELECT tax FROM TaxRule tax WHERE tax.pk.taxCode = ?1 AND tax.pk.effectiveDate <= ?2 AND tax.expiredDate > ?2")
 	List<TaxRule> findPossibleActiveTaxRules(String taxCode, LocalDate date, Pageable pageable);
 }

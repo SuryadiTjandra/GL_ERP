@@ -1,7 +1,6 @@
 package ags.goldenlionerp.application.setups.taxcode;
 
 import java.io.Serializable;
-import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -20,7 +19,7 @@ public class TaxRulePK implements Serializable {
 	private String taxCode;
 	
 	@Column(name="TSEFDT", nullable=false)
-	private Timestamp effectiveDate;
+	private LocalDate effectiveDate;
 
 	@SuppressWarnings("unused")
 	private TaxRulePK() {}
@@ -31,7 +30,7 @@ public class TaxRulePK implements Serializable {
 			@JsonProperty("effectiveDate") LocalDate effectiveDate) {
 		super();
 		this.taxCode = taxCode;
-		this.effectiveDate = Timestamp.valueOf(effectiveDate.atStartOfDay());
+		this.effectiveDate = effectiveDate;//Timestamp.valueOf(effectiveDate.atStartOfDay());
 	}
 
 	public String getTaxCode() {
@@ -39,7 +38,7 @@ public class TaxRulePK implements Serializable {
 	}
 
 	public LocalDate getEffectiveDate() {
-		return effectiveDate.toLocalDateTime().toLocalDate();
+		return effectiveDate;//.toLocalDateTime().toLocalDate();
 	}
 
 	
