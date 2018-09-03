@@ -2,6 +2,7 @@ package ags.goldenlionerp.application.purchase.purchaseorder;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.Collections;
 import java.util.List;
 
 import javax.persistence.AttributeOverride;
@@ -12,6 +13,8 @@ import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
 
 import ags.goldenlionerp.entities.DatabaseEntity;
@@ -136,6 +139,12 @@ public class PurchaseOrder extends DatabaseEntity<PurchaseOrderPK> {
 	
 	@OneToMany(mappedBy="order")
 	private List<PurchaseDetail> details;
+	
+	@JsonCreator //this ensures a PurchaseOrder always have list of details
+	public PurchaseOrder(@JsonProperty("details") List<PurchaseDetail> details) {
+		if (details == null) details = Collections.emptyList();
+		this.details = details;
+	}
 	
 	@Override
 	public PurchaseOrderPK getId() {
@@ -288,58 +297,80 @@ public class PurchaseOrder extends DatabaseEntity<PurchaseOrderPK> {
 
 	void setPk(PurchaseOrderPK pk) {
 		this.pk = pk;
+		for (int i = 0; i < this.details.size(); i++) {
+			PurchaseDetailPK detPk = new PurchaseDetailPK(
+					pk.getCompanyId(), 
+					pk.getPurchaseOrderNumber(),
+					pk.getPurchaseOrderType(), 
+					(i+1) * 10
+				);
+			this.details.get(i).setPk(detPk);
+		}
 	}
 
 	void setBusinessUnitId(String businessUnitId) {
 		this.businessUnitId = businessUnitId;
+		this.details.forEach(det -> det.setBusinessUnitId(businessUnitId));
 	}
 
 	void setVendorId(String vendorId) {
 		this.vendorId = vendorId;
+		this.details.forEach(det -> det.setVendorId(vendorId));
 	}
 
 	void setReceiverId(String receiverId) {
 		this.receiverId = receiverId;
+		this.details.forEach(det -> det.setReceiverId(receiverId));
 	}
 
 	void setCustomerId(String customerId) {
 		this.customerId = customerId;
+		this.details.forEach(det -> det.setCustomerId(customerId));
 	}
 
 	void setBaseCurrency(String baseCurrency) {
 		this.baseCurrency = baseCurrency;
+		this.details.forEach(det -> det.setBaseCurrency(baseCurrency));
 	}
 
 	void setTransactionCurrency(String transactionCurrency) {
 		this.transactionCurrency = transactionCurrency;
+		this.details.forEach(det -> det.setTransactionCurrency(transactionCurrency));
 	}
 
 	void setExchangeRate(BigDecimal exchangeRate) {
 		this.exchangeRate = exchangeRate;
+		this.details.forEach(det -> det.setExchangeRate(exchangeRate));
 	}
 
 	void setOrderDate(LocalDate orderDate) {
 		this.orderDate = orderDate;
+		this.details.forEach(det -> det.setOrderDate(orderDate));
 	}
 
 	void setRequestDate(LocalDate requestDate) {
 		this.requestDate = requestDate;
+		this.details.forEach(det -> det.setRequestDate(requestDate));
 	}
 
 	void setPromisedDeliveryDate(LocalDate promisedDeliveryDate) {
 		this.promisedDeliveryDate = promisedDeliveryDate;
+		this.details.forEach(det -> det.setPromisedDeliveryDate(promisedDeliveryDate));
 	}
 
 	void setReceiptDate(LocalDate receiptDate) {
 		this.receiptDate = receiptDate;
+		this.details.forEach(det-> det.setReceiptDate(receiptDate));
 	}
 
 	void setClosedDate(LocalDate closedDate) {
 		this.closedDate = closedDate;
+		this.details.forEach(det -> det.setClosedDate(closedDate));
 	}
 
 	void setGlDate(LocalDate glDate) {
 		this.glDate = glDate;
+		this.details.forEach(det -> det.setGlDate(glDate));
 	}
 
 	void setDescription(String description) {
@@ -348,26 +379,32 @@ public class PurchaseOrder extends DatabaseEntity<PurchaseOrderPK> {
 
 	void setPaymentTermCode(String paymentTermCode) {
 		this.paymentTermCode = paymentTermCode;
+		this.details.forEach(det -> det.setPaymentTermCode(paymentTermCode));
 	}
 
 	void setTaxCode(String taxCode) {
 		this.taxCode = taxCode;
+		this.details.forEach(det -> det.setTaxCode(taxCode));
 	}
 
-	void setTaxAllowance(Boolean taxAllowance) {
+	void setTaxAllowance(boolean taxAllowance) {
 		this.taxAllowance = taxAllowance;
+		this.details.forEach(det -> det.setTaxAllowance(taxAllowance));
 	}
 
 	void setTaxRate(BigDecimal taxRate) {
 		this.taxRate = taxRate;
+		this.details.forEach(det -> det.setTaxRate(taxRate));
 	}
 
 	void setDiscountCode(String discountCode) {
 		this.discountCode = discountCode;
+		this.details.forEach(det -> det.setDiscountCode(discountCode));
 	}
 
 	void setDiscountRate(BigDecimal discountRate) {
 		this.discountRate = discountRate;
+		this.details.forEach(det -> det.setDiscountRate(discountRate));
 	}
 
 	void setLastStatus(String lastStatus) {
@@ -380,10 +417,12 @@ public class PurchaseOrder extends DatabaseEntity<PurchaseOrderPK> {
 
 	void setProjectId(String projectId) {
 		this.projectId = projectId;
+		this.details.forEach(det -> det.setProjectId(projectId));
 	}
 
 	void setApprovalCode(String approvalCode) {
 		this.approvalCode = approvalCode;
+		this.details.forEach(det -> det.setApprovalCode(approvalCode));
 	}
 
 	void setImportDeclarationNumber(String importDeclarationNumber) {
@@ -424,6 +463,7 @@ public class PurchaseOrder extends DatabaseEntity<PurchaseOrderPK> {
 
 	void setObjectId(String objectId) {
 		this.objectId = objectId;
+		this.details.forEach(det -> det.setObjectId(objectId));
 	}
 
 	void setDetails(List<PurchaseDetail> details) {
