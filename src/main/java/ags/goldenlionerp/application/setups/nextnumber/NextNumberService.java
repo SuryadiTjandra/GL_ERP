@@ -104,7 +104,7 @@ public class NextNumberService {
 		NextNumber nn = new NextNumber();
 		nn.setPk(pk);
 		nn.setNextSequence(nc.getResetNumber());
-		return repo.save(nn);
+		return nn;
 	}
 
 	private NextNumberPK constructPk(NextNumberConstant nc, String companyId, String docBType, int year, int month) {

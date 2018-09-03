@@ -1,6 +1,8 @@
 package ags.goldenlionerp.masterdata.itemmaster;
 
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;
@@ -13,6 +15,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import ags.goldenlionerp.entities.TransactionSynchronizedDatabaseEntityImpl;
+import ags.goldenlionerp.masterdata.itemLocation.ItemLocation;
 import ags.goldenlionerp.masterdata.itembranchinfo.ItemBranchInfo;
 
 @Entity
@@ -99,6 +102,9 @@ public class ItemMaster extends TransactionSynchronizedDatabaseEntityImpl<String
 	
 	@OneToMany(mappedBy="itemMaster", fetch=FetchType.LAZY)
 	private List<ItemBranchInfo> itemBranchInfos;
+	
+	@OneToMany(mappedBy="item", fetch=FetchType.LAZY)
+	private List<ItemLocation> itemLocations;
 
 	public String getItemCode() {
 		return itemCode;
@@ -279,12 +285,14 @@ public class ItemMaster extends TransactionSynchronizedDatabaseEntityImpl<String
 	public List<ItemBranchInfo> getItemBranchInfos() {
 		return itemBranchInfos;
 	}
+	
+	public List<ItemLocation> getItemLocations() {
+		return itemLocations;
+	}
 
 	@Override
 	public String getId() {
 		return getItemCode();
 	}
-	
-	
 
 }

@@ -86,7 +86,7 @@ public class ItemMasterApiTest extends ApiTestBase<String> {
 		action
 		.andExpect(jsonPath("$._embedded.items[1].itemCodeShort").value(82))
 		.andExpect(jsonPath("$._embedded.items.length()").value(20))
-		.andExpect(jsonPath("$.page.totalElements").value(1403));
+		.andExpect(jsonPath("$.page.totalElements").value(1404));
 		
 	}
 
