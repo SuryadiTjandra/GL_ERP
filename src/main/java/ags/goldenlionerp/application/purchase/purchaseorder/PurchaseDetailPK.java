@@ -20,14 +20,14 @@ public class PurchaseDetailPK implements Serializable{
 	private String purchaseOrderType;
 	
 	@Column(name="ODDOCOSQ")
-	private String purchaseOrderSequence;
+	private int purchaseOrderSequence;
 
 	
 	@SuppressWarnings("unused")
 	private PurchaseDetailPK() {}
 	
 	public PurchaseDetailPK(String companyId, int purchaseOrderNumber, String purchaseOrderType,
-			String purchaseOrderSequence) {
+			int purchaseOrderSequence) {
 		super();
 		this.companyId = companyId;
 		this.purchaseOrderNumber = purchaseOrderNumber;
@@ -47,7 +47,7 @@ public class PurchaseDetailPK implements Serializable{
 		return purchaseOrderType;
 	}
 
-	public String getPurchaseOrderSequence() {
+	public int getPurchaseOrderSequence() {
 		return purchaseOrderSequence;
 	}
 
@@ -55,14 +55,14 @@ public class PurchaseDetailPK implements Serializable{
 	public String toString() {
 		return String.join("_", companyId, String.valueOf(purchaseOrderNumber), purchaseOrderType, String.valueOf(purchaseOrderSequence));
 	}
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((companyId == null) ? 0 : companyId.hashCode());
 		result = prime * result + purchaseOrderNumber;
-		result = prime * result + ((purchaseOrderSequence == null) ? 0 : purchaseOrderSequence.hashCode());
+		result = prime * result + purchaseOrderSequence;
 		result = prime * result + ((purchaseOrderType == null) ? 0 : purchaseOrderType.hashCode());
 		return result;
 	}
@@ -83,10 +83,7 @@ public class PurchaseDetailPK implements Serializable{
 			return false;
 		if (purchaseOrderNumber != other.purchaseOrderNumber)
 			return false;
-		if (purchaseOrderSequence == null) {
-			if (other.purchaseOrderSequence != null)
-				return false;
-		} else if (!purchaseOrderSequence.equals(other.purchaseOrderSequence))
+		if (purchaseOrderSequence != other.purchaseOrderSequence)
 			return false;
 		if (purchaseOrderType == null) {
 			if (other.purchaseOrderType != null)
