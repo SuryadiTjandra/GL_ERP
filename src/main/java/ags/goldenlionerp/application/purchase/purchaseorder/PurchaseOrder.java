@@ -7,6 +7,7 @@ import java.util.List;
 
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
@@ -129,16 +130,20 @@ public class PurchaseOrder extends DatabaseEntity<PurchaseOrderPK> {
 	private String vehicleType;
 	
 	@Column(name="OHDESC1")
-	private String description1;
+	private String vehicleDescription;
 	
 	@Column(name="OHDESC2")
-	private String description2;
+	private String vehicleDescription2;
 	
 	@Column(name="OHOBID")
 	private String objectId;
 	
-	@OneToMany(mappedBy="order")
+	@OneToMany(mappedBy="order", cascade= {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
 	private List<PurchaseDetail> details;
+	
+	@SuppressWarnings("unused")
+	private PurchaseOrder() {
+	}
 	
 	@JsonCreator //this ensures a PurchaseOrder always have list of details
 	public PurchaseOrder(@JsonProperty("details") List<PurchaseDetail> details) {
@@ -279,14 +284,6 @@ public class PurchaseOrder extends DatabaseEntity<PurchaseOrderPK> {
 		return vehicleType;
 	}
 
-	public String getDescription1() {
-		return description1;
-	}
-
-	public String getDescription2() {
-		return description2;
-	}
-
 	public String getObjectId() {
 		return objectId;
 	}
@@ -409,10 +406,12 @@ public class PurchaseOrder extends DatabaseEntity<PurchaseOrderPK> {
 
 	void setLastStatus(String lastStatus) {
 		this.lastStatus = lastStatus;
+		this.details.forEach(det -> det.setLastStatus(lastStatus));
 	}
 
 	void setNextStatus(String nextStatus) {
 		this.nextStatus = nextStatus;
+		this.details.forEach(det -> det.setNextStatus(nextStatus));
 	}
 
 	void setProjectId(String projectId) {
@@ -453,14 +452,6 @@ public class PurchaseOrder extends DatabaseEntity<PurchaseOrderPK> {
 		this.vehicleType = vehicleType;
 	}
 
-	void setDescription1(String description1) {
-		this.description1 = description1;
-	}
-
-	void setDescription2(String description2) {
-		this.description2 = description2;
-	}
-
 	void setObjectId(String objectId) {
 		this.objectId = objectId;
 		this.details.forEach(det -> det.setObjectId(objectId));
@@ -468,6 +459,38 @@ public class PurchaseOrder extends DatabaseEntity<PurchaseOrderPK> {
 
 	void setDetails(List<PurchaseDetail> details) {
 		this.details = details;
+	}
+	
+	public BigDecimal getGrossCost() {
+		return this.details.stream()
+				.map(PurchaseDetail::getExtendedCost)
+				.reduce(BigDecimal.ZERO, BigDecimal::add);
+	}
+	
+	public BigDecimal getTotalUnitDiscountAmount() {
+		return this.details.stream()
+				.map(PurchaseDetail::getUnitDiscountAmount)
+				.reduce(BigDecimal.ZERO, BigDecimal::add);
+	}
+	
+	public BigDecimal getCostAfterUnitDiscount() {
+		return this.getGrossCost().subtract(this.getTotalUnitDiscountAmount());
+	}
+
+	public String getVehicleDescription() {
+		return vehicleDescription;
+	}
+
+	public String getVehicleDescription2() {
+		return vehicleDescription2;
+	}
+
+	void setVehicleDescription(String vehicleDescription) {
+		this.vehicleDescription = vehicleDescription;
+	}
+
+	void setVehicleDescription2(String vehicleDescription2) {
+		this.vehicleDescription2 = vehicleDescription2;
 	}
 
 }

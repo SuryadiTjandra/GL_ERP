@@ -1,6 +1,7 @@
 package ags.goldenlionerp.application.purchase.purchaseorder;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDate;
 
 import javax.persistence.AttributeOverride;
@@ -185,19 +186,19 @@ public class PurchaseDetail extends DatabaseEntity<PurchaseDetailPK>{
 	private Boolean taxAllowance;
 	
 	@Column(name="ODTAXRT", precision=19, scale=15)
-	private BigDecimal taxRate;
+	private BigDecimal taxRate  = BigDecimal.ZERO;
 	
 	@Column(name="ODDCCD")
 	private String discountCode;
 	
 	@Column(name="ODDCRT", precision=19, scale=15)
-	private BigDecimal discountRate;
+	private BigDecimal discountRate = BigDecimal.ZERO;
 	
 	@Column(name="ODUDC")
 	private String unitDiscountCode;
 	
 	@Column(name="ODUDF", precision=19, scale=15)
-	private BigDecimal unitDiscountRate;
+	private BigDecimal unitDiscountRate  = BigDecimal.ZERO;
 	
 	@Column(name="ODPJID")
 	private String projectId;
@@ -252,6 +253,7 @@ public class PurchaseDetail extends DatabaseEntity<PurchaseDetailPK>{
 		@AttributeOverride(name="deliveryOrderNumber", column=@Column(name="ODVR04")),
 		@AttributeOverride(name="sealNumber", column=@Column(name="ODVR05"))
 	})
+	@JsonUnwrapped
 	private References references = References.builder().build();
 	
 	@Embedded
@@ -262,6 +264,7 @@ public class PurchaseDetail extends DatabaseEntity<PurchaseDetailPK>{
 		//@AttributeOverride(name="integratedReference4", column=@Column(name="ODIR04")),
 		//@AttributeOverride(name="integratedReference5", column=@Column(name="ODIR05")),
 	})
+	@JsonUnwrapped
 	private IntegratedReferences integratedReferences = IntegratedReferences.builder().build();
 	
 	@Embedded
@@ -272,6 +275,7 @@ public class PurchaseDetail extends DatabaseEntity<PurchaseDetailPK>{
 		//@AttributeOverride(name="purchaseOption4", column=@Column(name="ODPO04")),
 		//@AttributeOverride(name="purchaseOption5", column=@Column(name="ODPO05")), etc
 	})
+	@JsonUnwrapped
 	private PurchaseOptions purchaseOptions = PurchaseOptions.builder().build();
 	
 	@Column(name="ODOTT")
@@ -585,6 +589,10 @@ public class PurchaseDetail extends DatabaseEntity<PurchaseDetailPK>{
 	public PurchaseOrder getOrder() {
 		return order;
 	}
+	
+	public boolean isExtended() {
+		return this.extendedUnitOfMeasure != null && !this.extendedUnitOfMeasure.isEmpty();
+	}
 
 	void setPk(PurchaseDetailPK pk) {
 		this.pk = pk;
@@ -882,6 +890,15 @@ public class PurchaseDetail extends DatabaseEntity<PurchaseDetailPK>{
 		this.order = order;
 	}
 	
+	public BigDecimal getUnitDiscountAmount() {
+		return this.getExtendedCost()
+				.multiply(this.getUnitDiscountRate())
+				.divide(BigDecimal.valueOf(100))
+				.setScale(2, RoundingMode.HALF_UP);
+	}
 	
+	public BigDecimal getCostAfterUnitDiscount() {
+		return this.getExtendedCost().subtract(this.getUnitDiscountAmount());
+	}
 
 }

@@ -1,6 +1,9 @@
 package ags.goldenlionerp.application.setups.discount;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.util.Arrays;
+import java.util.List;
 
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;
@@ -172,5 +175,50 @@ public class DiscountMaster extends DatabaseEntity<String> {
 		return getDiscountCode();
 	}
 	
+	public List<BigDecimal> getDiscountPercentages() {
+		return Arrays.asList(
+				discountPercentage1, 
+				discountPercentage2, 
+				discountPercentage3, 
+				discountPercentage4, 
+				discountPercentage5
+			);
+	}
 	
+	public List<BigDecimal> getDiscountAmounts(){
+		return Arrays.asList(
+				discountAmount1, 
+				discountAmount2, 
+				discountAmount3, 
+				discountAmount4, 
+				discountAmount5
+			);
+	}
+	
+	/**
+	 * Calculate how much amount will be discounted if this discount is applied to the specified amount.
+	 * @param amount - the amount to be discounted
+	 * @return the discount amount
+	 */
+	public BigDecimal calculateDiscountAmount(BigDecimal amount) {
+		BigDecimal discountAmount = amount;
+		
+		for (int i = 0; i < getDiscountPercentages().size(); i++) {
+			BigDecimal percDisc = getDiscountPercentages().get(i).multiply(amount).divide(BigDecimal.valueOf(100));
+			BigDecimal amtDisc = getDiscountAmounts().get(i);
+			discountAmount = discountAmount.subtract(percDisc).subtract(amtDisc);
+		}
+		return amount.subtract(discountAmount);
+	}
+	
+	/**
+	 * Calculate the percentage of the discount if this discount is applied to the specified amount.
+	 * @param amount - the amount to be discounted
+	 * @return the discount percentage
+	 */
+	public BigDecimal calculateDiscountPercentage(BigDecimal amount) {
+		return calculateDiscountAmount(amount)
+				.multiply(BigDecimal.valueOf(100))
+				.divide(amount, 15, RoundingMode.HALF_UP);
+	}
 }

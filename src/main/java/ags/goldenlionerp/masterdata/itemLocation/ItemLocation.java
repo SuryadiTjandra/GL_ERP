@@ -150,6 +150,10 @@ public class ItemLocation extends TransactionDatabaseEntityImpl<ItemLocationPK>{
 		this.quantities = quantities;
 	}
 
+	public boolean isPrimary() {
+		return this.locationStatus.equals("P");
+	}
+	
 	@Override
 	public ItemLocationPK getId() {
 		return getPk();
