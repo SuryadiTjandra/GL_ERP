@@ -14,7 +14,6 @@ import org.springframework.stereotype.Service;
 
 import ags.goldenlionerp.application.addresses.address.AddressBookMaster;
 import ags.goldenlionerp.application.addresses.address.AddressBookRepository;
-import ags.goldenlionerp.application.ap.setting.AccountPayableSetting;
 import ags.goldenlionerp.application.item.uomconversion.UomConversionService;
 import ags.goldenlionerp.application.setups.company.Company;
 import ags.goldenlionerp.application.setups.company.CompanyRepository;
@@ -44,7 +43,6 @@ public class PurchaseOrderService {
 		poRequest = setInfoFromCompany(poRequest);
 		poRequest = setInfoFromVendor(poRequest);
 		poRequest = setInfoFromItems(poRequest);
-		//poRequest = setCurrencies(poRequest);
 		poRequest = setDates(poRequest);
 		poRequest = setCostsAndQuantities(poRequest);
 		poRequest = setDiscountInfo(poRequest);
@@ -140,26 +138,6 @@ public class PurchaseOrderService {
 		return poDetail;
 	}
 	
-	/*private PurchaseOrder setCurrencies(PurchaseOrder poRequest) {
-		String coId = poRequest.getPk().getCompanyId();
-		Company company = compRepo.findById(coId)
-										.orElseThrow(() -> new ResourceNotFoundException("Company with id " + coId + " does not exist."));
-		String baseCur = company.getCurrencyCodeBase();
-		
-		String tranCur = poRequest.getTransactionCurrency();
-		if (tranCur == null || tranCur.isEmpty()) {
-			AddressBookMaster vendor = addrRepo.findById(poRequest.getVendorId())
-											.filter(ven -> ven.getAccountPayable() == true)
-											.filter(ven -> ven.getApSetting().isPresent())
-											.orElseThrow(() -> new ResourceNotFoundException("Business partner with id " + poRequest.getVendorId() + " either does not exist or is not a vendor"));
-			tranCur = vendor.getApSetting().get().getCurrencyCodeTransaction();
-		}
-		
-		poRequest.setBaseCurrency(baseCur);
-		poRequest.setTransactionCurrency(tranCur);
-		return poRequest;
-	}*/
-	
 	private PurchaseOrder setDates(PurchaseOrder poRequest) {
 		LocalDate orderDate = poRequest.getOrderDate();
 		if (poRequest.getRequestDate() == null)
@@ -186,10 +164,7 @@ public class PurchaseOrderService {
 		poDetail.setCancelledQuantity(BigDecimal.ZERO);
 		poDetail.setOpenQuantity(poDetail.getQuantity());
 		
-		//primary quantity
-		//ItemMaster item = itemRepo.findById(poDetail.getItemNumber())
-		//					.orElseThrow(() -> new ResourceNotFoundException("Item with id " + poDetail.getItemNumber() + " does not exist"));
-		String primaryUom = poDetail.getPrimaryUnitOfMeasure();//item.getUnitsOfMeasure().getPrimaryUnitOfMeasure();
+		String primaryUom = poDetail.getPrimaryUnitOfMeasure();
 		poDetail.setPrimaryUnitOfMeasure(primaryUom);
 		
 		if (poDetail.getUnitOfMeasure() == null || poDetail.getUnitOfMeasure().isEmpty()) {
@@ -205,10 +180,6 @@ public class PurchaseOrderService {
 		
 		poDetail.setPrimaryOrderQuantity(primaryQty);
 		poDetail.setUnitConversionFactor(ucf);
-		
-		//secondary quantity
-		//String secondaryUom = item.getUnitsOfMeasure().getSecondaryUnitOfMeasure();
-		//poDetail.setSecondaryUnitOfMeasure(secondaryUom);
 		
 		//extended quantity
 		if (poDetail.isExtended()) {

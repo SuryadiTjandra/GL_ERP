@@ -1,6 +1,5 @@
 package ags.goldenlionerp.apiTests.purchase;
 
-import static org.junit.Assert.fail;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -19,7 +18,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.web.servlet.ResultActions;
 
-import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.jayway.jsonpath.JsonPath;
 
 import ags.goldenlionerp.apiTests.ApiTestBase;
@@ -345,10 +343,10 @@ public class PurchaseOrderApiTest extends ApiTestBase<PurchaseOrderPK> {
 	}
 	
 	
-	private Object calculateDiscount() {
+	/*private Object calculateDiscount() {
 		// TODO Auto-generated method stub
 		return null;
-	}
+	}*/
 
 	@Override @Test @Rollback
 	public void updateTestWithPatch() throws Exception {
