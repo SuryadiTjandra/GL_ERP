@@ -8,6 +8,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -18,6 +19,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.web.servlet.ResultActions;
 
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.jayway.jsonpath.JsonPath;
 
 import ags.goldenlionerp.apiTests.ApiTestBase;
@@ -42,7 +44,7 @@ public class PurchaseOrderApiTest extends ApiTestBase<PurchaseOrderPK> {
 	
 	@Override
 	protected Map<String, Object> requestObject() throws Exception {
-		Map<String, Object> map = new HashMap<>();
+		Map<String, Object> map = new LinkedHashMap<>();
 		map.put("companyId", newId().getCompanyId());
 		map.put("purchaseOrderNumber", newId().getPurchaseOrderNumber());
 		map.put("purchaseOrderType", newId().getPurchaseOrderType());
@@ -53,13 +55,20 @@ public class PurchaseOrderApiTest extends ApiTestBase<PurchaseOrderPK> {
 		map.put("vendorId", "1015");
 		map.put("receiverId", "1015");
 		map.put("exchangeRate", 1);
-		map.put("taxCode", "NOTAX");
+		map.put("taxCode", "INCL");
 		map.put("description", "testtest");
+		
+		map.put("discountCode", "R1000");
+		map.put("importDeclarationNumber", "111111");
+		map.put("importDeclarationDate", LocalDate.now().plusDays(3).toString());
+		map.put("vehicleRegistrationNumber", "222222");
+		map.put("vehicleDescription", "vehicledesc");
+		map.put("vehicleDescription2", "vehicledesc2");
 		
 		Map<String, Object> det0 = new HashMap<>();
 		det0.put("itemNumber", "ACC.BATERAI - CMOS			");
 		det0.put("locationId", "ABC.1.2.3");
-		det0.put("orderQuantity", 10);
+		det0.put("quantity", 10);
 		//det0.put("extendedUnitOfMeasure", "CM");
 		det0.put("unitCost", BigDecimal.valueOf(50.0));
 		//det0.put("extendedUnitCost", BigDecimal.valueOf(30));
@@ -72,11 +81,11 @@ public class PurchaseOrderApiTest extends ApiTestBase<PurchaseOrderPK> {
 		
 		Map<String, Object> det1 = new HashMap<>();
 		det1.put("itemNumber", "TEST2");
-		det1.put("orderQuantity", 10);
+		det1.put("quantity", 10);
 		det1.put("unitOfMeasure", "IN");
 		det1.put("extendedUnitOfMeasure", "CM");
 		det1.put("unitCost", BigDecimal.valueOf(30));
-		det1.put("extendedUnitCost", BigDecimal.valueOf(50));
+		det1.put("extendedUnitCost", BigDecimal.valueOf(50.0));
 		det1.put("unitDiscountCode", "D00");
 		//det1.put("jobNo")
 		det1.put("landedCostRule", "LOC");
@@ -87,12 +96,6 @@ public class PurchaseOrderApiTest extends ApiTestBase<PurchaseOrderPK> {
 		List<Map<String, Object>> details = Arrays.asList(det0, det1);
 		map.put("details", details);
 		
-		map.put("discountCode", "R1000");
-		map.put("importDeclarationNumber", "111111");
-		map.put("importDeclarationDate", LocalDate.now().plusDays(3).toString());
-		map.put("vehicleRegistrationNumber", "222222");
-		map.put("vehicleDescription", "vehicledesc");
-		map.put("vehicleDescription2", "vehicledesc2");
 		return map;
 	}
 
@@ -179,16 +182,16 @@ public class PurchaseOrderApiTest extends ApiTestBase<PurchaseOrderPK> {
 			.andExpect(jsonPath("$.paymentTermCode").value(requestObject.getOrDefault("paymentTermCode", addr.getApSetting().get().getPaymentTermCode())))
 			.andExpect(jsonPath("$.taxCode").value(requestObject.getOrDefault("taxCode", "")))
 			.andExpect(jsonPath("$.taxAllowance").value(tax.map(TaxRule::getTaxAllowance).orElse(false)))
-			//.andExpect(jsonPath("$.taxPercentage").value(taxRate))
+			.andExpect(jsonPath("$.taxRate").value(10.0))
 			.andExpect(jsonPath("$.discountCode").value(requestObject.getOrDefault("discountCode", "")))
-			//.andExpect(jsonPath("$.discountRate").value(requestObject.getOrDefault("discountRate", calculateDiscount())))
+			.andExpect(jsonPath("$.discountRate", Matchers.closeTo(60.864273, 0.0001)))//).valuerequestObject.getOrDefault("discountRate", calculateDiscount())))
 			.andExpect(jsonPath("$.lastStatus").value("220")) //from where?
-			.andExpect(jsonPath("$.nextStatus").value("400")) //from whrre?
+			.andExpect(jsonPath("$.nextStatus").value("400")) //from where?
 			.andExpect(jsonPath("$.importDeclarationNumber").value(requestObject.getOrDefault("importDeclarationNumber", "")))
 			.andExpect(jsonPath("$.importDeclarationDate").value(requestObject.getOrDefault("importDeclarationDate", LocalDate.MIN)))
-			.andExpect(jsonPath("$.portOfDeparture").value(requestObject.getOrDefault("portOfDeparture", "")))
-			.andExpect(jsonPath("$.portOfArrival").value(requestObject.getOrDefault("portOfArrival", "")))
-			.andExpect(jsonPath("$.vehicleRegistrationNumber").value(requestObject.getOrDefault("vehicleRegistrationType", "")))
+			.andExpect(jsonPath("$.portOfDepartureId").value(requestObject.getOrDefault("portOfDepartureId", "")))
+			.andExpect(jsonPath("$.portOfArrivalId").value(requestObject.getOrDefault("portOfArrivalId", "")))
+			.andExpect(jsonPath("$.vehicleRegistrationNumber").value(requestObject.getOrDefault("vehicleRegistrationNumber", "")))
 			.andExpect(jsonPath("$.vehicleType").value(requestObject.getOrDefault("vehicleType", "")))
 			.andExpect(jsonPath("$.vehicleDescription").value(requestObject.getOrDefault("vehicleDescription", "")))
 			.andExpect(jsonPath("$.vehicleDescription2").value(requestObject.getOrDefault("vehicleDescription2", "")));
@@ -202,11 +205,11 @@ public class PurchaseOrderApiTest extends ApiTestBase<PurchaseOrderPK> {
 		ItemLocation primLoc0 = item0.getItemLocations().stream()
 								.filter(il -> il.getPk().getBusinessUnitId().equals(requestObject.get("businessUnit")))
 								.filter(il -> il.getLocationStatus() == "P")
-								.findAny().get();
+								.findAny().orElse(null);
 		ItemLocation primLoc1 = item1.getItemLocations().stream()
 								.filter(il -> il.getPk().getBusinessUnitId().equals(requestObject.get("businessUnit")))
 								.filter(il -> il.getLocationStatus() == "P")
-								.findAny().get();
+								.findAny().orElse(null);
 		
 		action
 			.andExpect(jsonPath("$.details[0].companyId").value(newId.getCompanyId()))
@@ -228,13 +231,13 @@ public class PurchaseOrderApiTest extends ApiTestBase<PurchaseOrderPK> {
 			.andExpect(jsonPath("$.details[1].customerId").value(requestObject.getOrDefault("customerId", "")))
 			
 			.andExpect(jsonPath("$.details[0].itemNumber").value(det0.get("itemNumber")))
-			.andExpect(jsonPath("$.details[0].locationId").value(det0.getOrDefault("locationId", primLoc0.getPk().getLocationId())))
-			.andExpect(jsonPath("$.details[0].serialLotNumber").value(det0.getOrDefault("serialLotNumber", primLoc0.getPk().getSerialLotNo())))
+			.andExpect(jsonPath("$.details[0].locationId").value(det0.getOrDefault("locationId", primLoc0 != null ? primLoc0.getPk().getLocationId() : "")))
+			.andExpect(jsonPath("$.details[0].serialLotNumber").value(det0.getOrDefault("serialLotNumber", primLoc0 != null ? primLoc0.getPk().getSerialLotNo() : "")))
 			.andExpect(jsonPath("$.details[0].description").value(item0.getDescription()))
 			.andExpect(jsonPath("$.details[0].lineType").value(item0.getTransactionType()))
 			.andExpect(jsonPath("$.details[1].itemNumber").value(det1.get("itemNumber")))
-			.andExpect(jsonPath("$.details[1].locationId").value(det1.getOrDefault("locationId", primLoc1.getPk().getLocationId())))
-			.andExpect(jsonPath("$.details[1].serialLotNumber").value(det1.getOrDefault("serialLotNumber", primLoc1.getPk().getSerialLotNo())))
+			.andExpect(jsonPath("$.details[1].locationId").value(det1.getOrDefault("locationId", primLoc1 != null ? primLoc1.getPk().getLocationId() : "")))
+			.andExpect(jsonPath("$.details[1].serialLotNumber").value(det1.getOrDefault("serialLotNumber", primLoc1 != null ? primLoc1.getPk().getSerialLotNo() : "")))
 			.andExpect(jsonPath("$.details[1].description").value(item1.getDescription()))
 			.andExpect(jsonPath("$.details[1].lineType").value(item1.getTransactionType()))
 			
@@ -263,9 +266,9 @@ public class PurchaseOrderApiTest extends ApiTestBase<PurchaseOrderPK> {
 			.andExpect(jsonPath("$.details[1].cancelledQuantity").value(0))
 			.andExpect(jsonPath("$.details[1].returnedQuantity").value(0))
 			.andExpect(jsonPath("$.details[1].openQuantity").value(det1.get("quantity")))
-			.andExpect(jsonPath("$.details[1].unitConversionFactor").value(0.083333333))
-			.andExpect(jsonPath("$.details[1].extendedUnitConversionFactor").value(0.032808398))
-			.andExpect(jsonPath("$.details[1].primaryOrderQuantity").value(0.83333/*det1.get("quantity")*/))
+			.andExpect(jsonPath("$.details[1].unitConversionFactor", Matchers.closeTo(0.083333333, 0.001)))
+			.andExpect(jsonPath("$.details[1].extendedUnitConversionFactor", Matchers.closeTo(0.032808398, 0.001)))
+			.andExpect(jsonPath("$.details[1].primaryOrderQuantity", Matchers.closeTo(0.83333, 0.001)))
 			.andExpect(jsonPath("$.details[1].primaryUnitOfMeasure").value(item1.getUnitsOfMeasure().getPrimaryUnitOfMeasure()))
 			//.andExpect(jsonPath("$.details[1].secondaryOrderQuantity").value(matcher))
 			.andExpect(jsonPath("$.details[1].secondaryUnitOfMeasure").value(item1.getUnitsOfMeasure().getSecondaryUnitOfMeasure()))
@@ -274,7 +277,7 @@ public class PurchaseOrderApiTest extends ApiTestBase<PurchaseOrderPK> {
 			.andExpect(jsonPath("$.details[0].extendedUnitCost").value(0))
 			.andExpect(jsonPath("$.details[0].extendedCost").value(500.00))
 			.andExpect(jsonPath("$.details[1].unitCost").value(127))
-			.andExpect(jsonPath("$.details[1].extendedUnitCost").value(det0.get("extendedUnitCost")))
+			.andExpect(jsonPath("$.details[1].extendedUnitCost").value(det1.get("extendedUnitCost")))
 			.andExpect(jsonPath("$.details[1].extendedCost").value(1270.00))
 			
 			.andExpect(jsonPath("$.details[0].baseCurrency").value(comp.getCurrencyCodeBase()))
@@ -284,8 +287,8 @@ public class PurchaseOrderApiTest extends ApiTestBase<PurchaseOrderPK> {
 			.andExpect(jsonPath("$.details[1].transactionCurrency").value(requestObject.getOrDefault("transactionCurrency", addr.getApSetting().get().getCurrencyCodeTransaction())))
 			.andExpect(jsonPath("$.details[1].exchangeRate").value(requestObject.getOrDefault("exchangeRate", 1.00)))
 			
-			.andExpect(jsonPath("$.details[0].taxableAmount").value(0))
-			.andExpect(jsonPath("$.details[1].taxableAmount").value(0))
+			.andExpect(jsonPath("$.details[0].taxAmount", Matchers.closeTo(45.454545, 0.01)))
+			.andExpect(jsonPath("$.details[1].taxAmount", Matchers.closeTo(103.90909, 0.01)))
 			
 			.andExpect(jsonPath("$.details[0].glClass").value(item0.getGlClass()))
 			.andExpect(jsonPath("$.details[1].glClass").value(item0.getGlClass()))
@@ -310,20 +313,20 @@ public class PurchaseOrderApiTest extends ApiTestBase<PurchaseOrderPK> {
 			.andExpect(jsonPath("$.details[0].paymentTermCode").value(requestObject.getOrDefault("paymentTermCode", addr.getApSetting().get().getPaymentTermCode())))
 			.andExpect(jsonPath("$.details[0].taxCode").value(requestObject.getOrDefault("taxCode", "")))
 			.andExpect(jsonPath("$.details[0].taxAllowance").value(tax.map(TaxRule::getTaxAllowance).orElse(false)))
-			//.andExpect(jsonPath("$.details[0].taxPercentage").value(taxRate))
-			.andExpect(jsonPath("$.details[0].$discountCode").value(requestObject.getOrDefault("discountCode", "")))
-			//.andExpect(jsonPath("$.details[0].discountRate").value(requestObject.getOrDefault("discountRate", calculateDiscount())))
-			.andExpect(jsonPath("$.details[0].$unitDiscountCode").value(det0.getOrDefault("unitDiscountCode", "")))
-			//.andExpect(jsonPath("$.details[0].$unitDiscountRate").value(requestObject.getOrDefault("discountCode", "")))
+			.andExpect(jsonPath("$.details[0].taxRate").value(10))
+			.andExpect(jsonPath("$.details[0].discountCode").value(requestObject.getOrDefault("discountCode", "")))
+			.andExpect(jsonPath("$.details[0].discountRate", Matchers.closeTo(60.864273, 0.0001)))//).value(requestObject.getOrDefault("discountRate", calculateDiscount())))
+			.andExpect(jsonPath("$.details[0].unitDiscountCode").value(det0.getOrDefault("unitDiscountCode", "")))
+			.andExpect(jsonPath("$.details[0].unitDiscountRate").value(0))//requestObject.getOrDefault("discountCode", "")))
 			
 			.andExpect(jsonPath("$.details[1].paymentTermCode").value(requestObject.getOrDefault("paymentTermCode", addr.getApSetting().get().getPaymentTermCode())))
 			.andExpect(jsonPath("$.details[1].taxCode").value(requestObject.getOrDefault("taxCode", "")))
 			.andExpect(jsonPath("$.details[1].taxAllowance").value(tax.map(TaxRule::getTaxAllowance).orElse(false)))
-			//.andExpect(jsonPath("$.details[1].taxPercentage").value(taxRate))
+			.andExpect(jsonPath("$.details[1].taxRate").value(10))
 			.andExpect(jsonPath("$.details[1].discountCode").value(requestObject.getOrDefault("discountCode", "")))
-			//.andExpect(jsonPath("$.details[1].discountRate").value(requestObject.getOrDefault("discountRate", calculateDiscount())))
-			.andExpect(jsonPath("$.details[1].$unitDiscountCode").value(det1.getOrDefault("unitDiscountCode", "")))
-			//.andExpect(jsonPath("$.details[1].$unitDiscountRate").value(requestObject.getOrDefault("discountCode", "")))		
+			.andExpect(jsonPath("$.details[1].discountRate", Matchers.closeTo(60.864273, 0.0001)))//).value(requestObject.getOrDefault("discountRate", calculateDiscount())))
+			.andExpect(jsonPath("$.details[1].unitDiscountCode").value(det1.getOrDefault("unitDiscountCode", "")))
+			.andExpect(jsonPath("$.details[1].unitDiscountRate").value(10))//requestObject.getOrDefault("discountCode", "")))		
 			
 			.andExpect(jsonPath("$.details[0].landedCostRule").value(det0.getOrDefault("landedCostRule" ,"")))
 			.andExpect(jsonPath("$.details[0].containerSize").value(det0.getOrDefault("containerSize", "")))
@@ -336,8 +339,8 @@ public class PurchaseOrderApiTest extends ApiTestBase<PurchaseOrderPK> {
 			;
 			
 			String json = action.andReturn().getResponse().getContentAsString();
-			assertCreationInfo(JsonPath.read(json, "$.details[0]"));
-			assertCreationInfo(JsonPath.read(json, "$.details[1]"));
+			assertCreationInfo(mapper.writeValueAsString(JsonPath.read(json, "$.details[0]")));
+			assertCreationInfo(mapper.writeValueAsString(JsonPath.read(json, "$.details[1]")));
 			
 	}
 	
