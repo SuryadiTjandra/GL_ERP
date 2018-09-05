@@ -29,6 +29,7 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-data-rest')
 	//compile('org.springframework.boot:spring-boot-starter-hateoas')
 	compile('org.springframework.boot:spring-boot-starter-security')
+	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
 	//compile('org.springframework.boot:spring-boot-starter-web')
 	compile("org.springframework.boot:spring-boot-devtools")
 	//compile("com.fasterxml.jackson.datatype:jackson-datatype-hibernate5:2.9.0")
