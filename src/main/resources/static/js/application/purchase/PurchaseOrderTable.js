@@ -1,11 +1,23 @@
+import RefreshButton from "../../baseComponents/buttons/RefreshButton.js";
+import ViewButton from "../../baseComponents/buttons/ViewButton.js";
+
 var table = {
+	components: {
+		RefreshButton, ViewButton
+	},
 	template:`
-	<div>
+	<b-container fluid>
 		<!-- pagination -->
 		<b-row>
-			<b-col><span class="align-bottom text-muted font-weight-light font-italic"> 
-				{{startPos}} - {{endPos}} (Total: {{totalElements}})
-			</span></b-col>
+			<b-col>
+				<RefreshButton @refresh-click="onRefresh"></RefreshButton>
+			</b-col>
+			<b-col class="text-right align-bottom">
+				<span 
+					v-if="totalElements > 0"
+					class="text-muted font-weight-light font-italic mt-3"> 
+					{{startPos}} - {{endPos}} (Total: {{totalElements}})
+				</span></b-col>
 			<b-col>
 				<b-pagination
 					align="right"
@@ -23,9 +35,14 @@ var table = {
 			:fields="fields"
 			:per-page="pageSize"
 			:busy="isBusy">
+			
+			<template slot="actions" slot-scope="data">
+				<ViewButton @view-click="onItemView(data.item, $event.target)">
+				</ViewButton>
+			</template>
 		</b-table>
 		
-	</div>
+	</b-container>
 	`,
 	props: {
 		apiUrl: String,
@@ -37,7 +54,12 @@ var table = {
 	data: function(){
 		return {
 			//table data
-			fields: [{
+			fields: [
+				{
+					key: 'actions',
+					label:" "
+				},
+				{
 					key: 'companyId',
 					label: 'Company'
 				},{
@@ -79,19 +101,37 @@ var table = {
 		}
 	},
 	methods:{		
-		
+		onRefresh: function(){
+			this.loadData(this.createParamObject(
+				this.currentPage,
+				this.currentSize,
+				this.sortBy,
+				this.sortDir
+			))
+		},
 		onPaginationChange: function(page){
-			let paramObj = {
-				page: page - 1,
-				size: this.pageSize,
-			};
-			if (this.sortBy !== null){
-				paramObj.sort = this.sortBy + "," + this.sortDir;
-			}
-			
-			this.loadData(paramObj)
+			this.loadData(this.createParamObject(
+				page - 1, 
+				this.pageSize, 
+				this.sortBy, 
+				this.sortDir
+			));
+		},
+		onItemView: function(viewedItem){
+			alert("View clicked for item " + viewedItem.purchaseOrderNumber);
 		},
 		
+		//normal methods to use in other methods
+		createParamObject: function(page, size, sortBy, sortDir){
+			let paramObj = {
+				page: page,
+				size: size,
+			};
+			if (sortBy !== null){
+				paramObj.sort = sortBy + "," + sortDir;
+			}
+			return paramObj;
+		},
 		loadData: function(param){
 			let paramStr = Object.keys(param).map(key => key + '=' + param[key]).join('&');
 			this.isBusy = true;

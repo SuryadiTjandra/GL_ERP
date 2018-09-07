@@ -14,12 +14,14 @@ var PurchaseOrderPage = {
 	},
 	template: `
 		<b-container fluid>
-			<CreateButton @create-click="createButtonClicked">
-			</CreateButton>
-			
-			<PurchaseOrderTable :apiUrl="apiUrl" :loadOnCreate="true">
-			</PurchaseOrderTable>
-			
+			<b-row><b-col>
+				<CreateButton @create-click="createButtonClicked">
+				</CreateButton>
+			</b-col></b-row>
+			<b-row>
+				<PurchaseOrderTable :apiUrl="apiUrl" :loadOnCreate="true">
+				</PurchaseOrderTable>
+			</b-row>
 		</b-container>
 	`,
 	methods: {
