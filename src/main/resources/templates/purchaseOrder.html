@@ -2,9 +2,46 @@
 <html>
 <head xmlns:th="http://www.thymeleaf.org">
 	<meta charset="UTF-8">
-	<title>Insert title here</title>
+	<title>Purchase Order</title>
+	
+	<link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap/dist/css/bootstrap.min.css"/>
+	<link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css"/>
+	<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css"/>
+	
+	
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.1/axios.min.js"></script>
+	<script src="https://unpkg.com/vuetable-2@1.6.0"></script>
+	<script src="//unpkg.com/babel-polyfill@latest/dist/polyfill.min.js"></script>
+	<script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
+	
 </head>
 <body>
-	PurchaseOrder
+	<div id="app">
+		<basic-wireframe>
+			<h4>Purchase Order</h4>
+			<purchase-order-page>
+			
+			</purchase-order-page>
+		</basic-wireframe>
+	</div>
+	
+	<script crossorigin type="module">
+	
+		import BasicWireframe from "./js/baseComponents/wireframes/BasicWireframe.js";
+		import PurchaseOrderPage from "./js/application/purchase/PurchaseOrderPage.js";
+		Vue.use(Vuetable);
+
+		new Vue({
+			el: "#app",
+			components: {
+				'basic-wireframe': BasicWireframe,
+				'purchase-order-page': PurchaseOrderPage
+			},
+			data: {
+				text:'test'
+			}
+		});
+	</script>
 </body>
 </html>
