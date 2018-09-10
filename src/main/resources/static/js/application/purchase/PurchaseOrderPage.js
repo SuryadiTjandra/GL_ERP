@@ -38,6 +38,7 @@ var PurchaseOrderPage = {
 				v-model="modalVisible" 
 				:mode="modalMode"
 				:item="modalItem"
+				@ok="onModalOk"
 				>
 			</PurchaseOrderModal>
 		</div>
@@ -58,6 +59,24 @@ var PurchaseOrderPage = {
 			this.modalItem = item;
 			this.modalMode = "edit";
 			this.modalVisible = true;
+		},
+		onModalOk: function(itemLink, formItem){
+			const method = this.modalMode == "add" ? "POST" : "PATCH";
+			const link = this.modalMode == "add" ? this.apiUrl : itemLink;
+			
+			const csrfHeader = document.getElementsByName("_csrf_header")[0].getAttribute("content");
+			const csrfToken = document.getElementsByName("_csrf")[0].getAttribute("content");				
+			let headers = new Headers();
+			headers.append(csrfHeader, csrfToken);
+			headers.append('Content-Type', 'application/json');
+			
+			fetch(link, {
+				method: method,
+				body: JSON.stringify(formItem),
+				headers: headers
+			})
+			.then(res => res.json())
+			.then(res => alert(res));
 		}
 		
 	}

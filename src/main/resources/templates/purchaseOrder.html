@@ -2,6 +2,9 @@
 <html>
 <head xmlns:th="http://www.thymeleaf.org">
 	<meta charset="UTF-8">
+	<meta name="_csrf" th:content="${_csrf.token}"/>
+	<meta name="_csrf_header" th:content="${_csrf.headerName}"/>
+	
 	<title>Purchase Order</title>
 	
 	<link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap/dist/css/bootstrap.min.css"/>

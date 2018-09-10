@@ -16,7 +16,8 @@ var PurchaseOrderModal = {
 			:title="title"		
 			:ok-disabled="!editable"	
 			:visible="visible"
-			@change="$emit('change', $event)">
+			@change="$emit('change', $event)"
+			@ok="$emit('ok', itemLink, buildFormItem())">
 			
 			<b-form-input
 				type="text"
@@ -52,6 +53,11 @@ var PurchaseOrderModal = {
 		}
 	},
 	methods:{
+		buildFormItem: function(){
+			return {
+				purchaseOrderNumber: this.purchaseOrderNumber
+			}
+		}
 	}
 };
 
