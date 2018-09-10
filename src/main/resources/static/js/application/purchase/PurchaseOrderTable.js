@@ -1,9 +1,10 @@
 import RefreshButton from "../../baseComponents/buttons/RefreshButton.js";
 import ViewButton from "../../baseComponents/buttons/ViewButton.js";
+import EditButton from "../../baseComponents/buttons/EditButton.js";
 
 var table = {
 	components: {
-		RefreshButton, ViewButton
+		RefreshButton, ViewButton, EditButton
 	},
 	template:`
 	<b-container fluid>
@@ -39,6 +40,8 @@ var table = {
 			<template slot="actions" slot-scope="data">
 				<ViewButton @view-click="onItemView(data.item, $event.target)">
 				</ViewButton>
+				<EditButton @edit-click="onItemEdit(data.item, $event.target)">
+				</EditButton>
 			</template>
 		</b-table>
 		
@@ -117,8 +120,13 @@ var table = {
 				this.sortDir
 			));
 		},
-		onItemView: function(viewedItem){
-			alert("View clicked for item " + viewedItem.purchaseOrderNumber);
+		onItemView: function(item){
+			this.$emit('view-item', item);
+			//alert("View clicked for item " + viewedItem.purchaseOrderNumber);
+		},
+		onItemEdit: function(item){
+			this.$emit('edit-item', item);
+			//alert("View clicked for item " + viewedItem.purchaseOrderNumber);
 		},
 		
 		//normal methods to use in other methods
