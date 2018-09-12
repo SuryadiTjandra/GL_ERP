@@ -57,9 +57,8 @@ var PurchaseOrderPage = {
 	`,
 	methods: {
 		onCreateItem: function(event){
-			this.formItem = null;
+			this.formItem = this.defaultItem;
 			this.formMode = "add";
-			//this.modalVisible = true;
 			this.formVisible = true;
 		},
 		onViewItem: function(item){

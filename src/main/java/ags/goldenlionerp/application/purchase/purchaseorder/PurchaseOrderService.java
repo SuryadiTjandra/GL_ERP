@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.time.YearMonth;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -307,5 +308,16 @@ public class PurchaseOrderService {
 		poRequest.setNextStatus("400"); //from where?
 		
 		return poRequest;
+	}
+	
+	public PurchaseOrder getDefaultPurchaseOrder(String appParamCode) {
+		//TODO actually fetch values from DB, not hardcode
+		PurchaseOrderPK pk = new PurchaseOrderPK("11000", 0, "OP");
+		PurchaseOrder po = new PurchaseOrder(Collections.emptyList());
+		po.setPk(pk);
+		po.setBusinessUnitId("110");
+		po.setLastStatus("220");
+		po.setNextStatus("400");
+		return po;
 	}
 }

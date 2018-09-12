@@ -23,14 +23,17 @@
 	<div id="app">
 		<basic-wireframe>
 			<h4>Purchase Order</h4>
-			<purchase-order-page>
+			<purchase-order-page :default-item="defaultItem">
 			
 			</purchase-order-page>
 		</basic-wireframe>
 	</div>
 	
+	<script th:inline="javascript">
+		var defaultItem = /*[[${defaultItem}]]*/ {};
+	</script>
 	<script crossorigin type="module">
-	
+		
 		import BasicWireframe from "./js/baseComponents/wireframes/BasicWireframe.js";
 		import PurchaseOrderPage from "./js/application/purchase/PurchaseOrderPage.js";
 		Vue.use(Vuetable);
@@ -42,7 +45,8 @@
 				'purchase-order-page': PurchaseOrderPage
 			},
 			data: {
-				text:'test'
+				text:'test',
+				defaultItem: defaultItem
 			}
 		});
 	</script>
