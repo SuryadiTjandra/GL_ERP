@@ -1,16 +1,18 @@
 import RefreshButton from "../../baseComponents/buttons/RefreshButton.js";
 import ViewButton from "../../baseComponents/buttons/ViewButton.js";
 import EditButton from "../../baseComponents/buttons/EditButton.js";
+import CreateButton from "../../baseComponents/buttons/CreateButton.js";
 
 var table = {
 	components: {
-		RefreshButton, ViewButton, EditButton
+		CreateButton, RefreshButton, ViewButton, EditButton
 	},
 	template:`
 	<b-container fluid>
 		<!-- pagination -->
 		<b-row>
 			<b-col>
+				<CreateButton @create-click="onCreate"></CreateButton>
 				<RefreshButton @refresh-click="onRefresh"></RefreshButton>
 			</b-col>
 			<b-col class="text-right align-bottom">
@@ -120,13 +122,14 @@ var table = {
 				this.sortDir
 			));
 		},
+		onCreate: function(){
+			this.$emit('create-clicked')
+		},
 		onItemView: function(item){
-			this.$emit('view-item', item);
-			//alert("View clicked for item " + viewedItem.purchaseOrderNumber);
+			this.$emit('view-clicked', item);
 		},
 		onItemEdit: function(item){
-			this.$emit('edit-item', item);
-			//alert("View clicked for item " + viewedItem.purchaseOrderNumber);
+			this.$emit('edit-clicked', item);
 		},
 		
 		//normal methods to use in other methods
