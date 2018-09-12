@@ -1,39 +1,40 @@
 import CreateButton from "../../baseComponents/buttons/CreateButton.js";
 //import VuetablePaginationBootstrap from "../../baseComponents/table/VuetablePaginationBootstrap.js";
 import PurchaseOrderTable from "./PurchaseOrderTable.js";
-import PurchaseOrderModal from "./PurchaseOrderModal.js"
+import PurchaseOrderModal from "./PurchaseOrderModal.js";
+import PurchaseOrderForm from "./PurchaseOrderForm.js";
 
 var PurchaseOrderPage = {
+	props: ['defaultItem'],
 	data: function(){
 		return {
 			apiUrl: "/api/purchaseOrders",
 			
 			modalVisible: false,
 			modalMode: "add",
-			modalItem: null
+			modalItem: null,
+			
+			formVisible: false,
+			formMode: "add",
+			formItem: {}
 		}
 	},
 	components:{
-		CreateButton,
-		PurchaseOrderTable,
-		PurchaseOrderModal
+		CreateButton, PurchaseOrderTable, PurchaseOrderModal, PurchaseOrderForm
 	},
 	template: `
 		<div>
-			<b-container fluid>
-				<b-row><b-col>
-					<CreateButton @create-click="createButtonClicked">
-					</CreateButton>
-				</b-col></b-row>
-				<b-row>
+			<transition name="fade">
+				<b-container fluid v-show="!formVisible">
 					<PurchaseOrderTable 
 						:apiUrl="apiUrl" 
 						:loadOnCreate="true"
-						@view-item="onViewItem"
-						@edit-item="onEditItem">
+						@create-clicked="onCreateItem"
+						@view-clicked="onViewItem"
+						@edit-clicked="onEditItem">
 					</PurchaseOrderTable>
-				</b-row>
-			</b-container>
+				</b-container>
+			</transition>
 			<PurchaseOrderModal 
 				v-model="modalVisible" 
 				:mode="modalMode"
@@ -41,24 +42,35 @@ var PurchaseOrderPage = {
 				@ok="onModalOk"
 				>
 			</PurchaseOrderModal>
+			<transition name="fade">
+				<b-container fluid v-show="formVisible">
+					<PurchaseOrderForm
+						:mode="formMode"
+						:item="formItem"
+						@cancel="onFormCancel"
+						@save="onFormSave">
+					
+					</PurchaseOrderForm>
+				</b-container>
+			</transition>
 		</div>
 	`,
 	methods: {
-		createButtonClicked: function(event){
-			//alert("Create Button cliked!");
-			this.modalItem = null;
-			this.modalMode = "add";
-			this.modalVisible = true;
+		onCreateItem: function(event){
+			this.formItem = null;
+			this.formMode = "add";
+			//this.modalVisible = true;
+			this.formVisible = true;
 		},
 		onViewItem: function(item){
-			this.modalItem = item;
-			this.modalMode = "view";
-			this.modalVisible = true;
+			this.formItem = item;
+			this.formMode = "view";
+			this.formVisible = true;
 		},
 		onEditItem: function(item){
-			this.modalItem = item;
-			this.modalMode = "edit";
-			this.modalVisible = true;
+			this.formItem = item;
+			this.formMode = "edit";
+			this.formVisible = true;
 		},
 		onModalOk: function(itemLink, formItem){
 			const method = this.modalMode == "add" ? "POST" : "PATCH";
@@ -77,6 +89,12 @@ var PurchaseOrderPage = {
 			})
 			.then(res => res.json())
 			.then(res => alert(res));
+		},
+		onFormCancel: function(){
+			this.formVisible = false
+		},
+		onFormSave: function(){
+			this.formVisible = false
 		}
 		
 	}
