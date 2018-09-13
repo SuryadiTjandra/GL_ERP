@@ -23,7 +23,7 @@ var PurchaseOrderPage = {
 		CreateButton, PurchaseOrderTable, PurchaseOrderModal, PurchaseOrderForm
 	},
 	template: `
-		<b-container-fluid>
+		<b-container fluid>
 			<transition name="fade">
 				<div v-show="!formVisible">
 					<PurchaseOrderTable 

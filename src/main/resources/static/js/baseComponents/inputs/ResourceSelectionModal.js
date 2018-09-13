@@ -5,11 +5,11 @@ var ResourceSelectionModal = {
 	},
 	props:['visible','resourceMetadata'],
 	template:`
-	<b-modal :visible="visible" @change="$emit('change',$event)"
+	<b-modal :visible="visible" @change="$emit('change',$event)" size="lg"
 		@ok="onOk"
 		@show="onShow">
 	
-		<b-table hover
+		<b-table hover small
 			:fields="fields"
 			:busy="isBusy"
 			:items="items"

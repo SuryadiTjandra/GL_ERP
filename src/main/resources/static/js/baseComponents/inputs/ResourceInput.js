@@ -46,7 +46,7 @@ var ResourceInput = {
 		onRemoveSelected: function(){
 			this.selected = {};
 			this.$emit('input', null, null);
-			this.$emit('change', selected[this.idPath], selected)
+			this.$emit('change', null, null);
 		},
 		onPick: function(){
 			this.modalVisible = true;
@@ -58,11 +58,19 @@ var ResourceInput = {
 		}
 	},
 	watch:{
-		selectedId : function(newSelectedId){
-			if (newSelectedId == null || 
-				newSelectedId.trim().length === 0 ||
-				newSelectedId === this.selected[this.idPath])
+		selectedId : function(newSelectedId, oldSelectedId){
+			if (newSelectedId == oldSelectedId){
 				return;
+			}
+			
+			if (newSelectedId == null || 
+				newSelectedId.trim().length === 0 ){
+				
+				this.selected = {};
+				this.$emit('input', null, null);
+				return;
+			} 
+				
 			
 			let url = this.resourceMetadata.apiUrl + "/" + newSelectedId;
 			fetch(url)
