@@ -20,6 +20,12 @@ public interface TaxRuleRepository extends CrudRepository<TaxRule, TaxRulePK> {
 		return findActiveTaxRuleAt(taxCode, LocalDate.now());
 	}
 	
+	default List<TaxRule> findActiveTaxRules(){
+		return findActiveTaxRulesAt(LocalDate.now());
+	}
+	
+	@Query("SELECT tax FROM TaxRule tax WHERE tax.pk.effectiveDate <= ?1 AND tax.expiredDate > ?1")
+	List<TaxRule> findActiveTaxRulesAt(LocalDate date);
 	
 	default Optional<TaxRule> findActiveTaxRuleAt(String taxCode, LocalDate date){
 		Pageable pageable =  PageRequest.of(0, 1, Direction.ASC, "pk.effectiveDate");

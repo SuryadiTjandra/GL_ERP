@@ -242,5 +242,17 @@ public class TaxRule extends DatabaseEntity<TaxRulePK>{
 		return getPk();
 	}
 	
+	public boolean isActive() {
+		return isActiveAt(LocalDate.now());
+	}
+	
+	public boolean isActiveAt(LocalDate date) {
+		LocalDate effDt = this.pk.getEffectiveDate();
+		LocalDate expDt = this.getExpiredDate();
+		
+		return (date.isAfter(effDt) || date.isEqual(effDt))
+			&& date.isBefore(expDt);
+	}
+	
 	
 }
