@@ -1,11 +1,11 @@
 var DataCodeInput = {
-	props: ['productCode', 'systemCode', 'required', 'readOnly', 'selected'],
+	props: ['productCode', 'systemCode', 'required', 'readOnly', 'selected', 'size'],
 	model:{
 		prop:"selected",
 		event:"change"
 	},
 	template: `
-		<b-form-select 	:required="required"
+		<b-form-select 	:required="required" :size="size"
 			v-model="selected" 
 			:readOnly="readOnly"
 			:options="options" 
