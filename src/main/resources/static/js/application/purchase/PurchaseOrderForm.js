@@ -78,7 +78,7 @@ var PurchaseOrderForm = {
 								dataPath:'addresses', 
 								idPath:'addressNumber', 
 								descPath:'name'}"
-							@input="onVendorChange"
+							@change="onVendorChange"
 							>
 						</ResourceInput>
 					</b-form-group>
@@ -91,7 +91,7 @@ var PurchaseOrderForm = {
 								dataPath:'addresses', 
 								idPath:'addressNumber', 
 								descPath:'name'}"
-							@input="onReceiverChange"
+							@change="onReceiverChange"
 							>
 						</ResourceInput>
 						<p class="mb-0">{{receiver == null ? "" : receiver.currentAddress.address1}}</p>
@@ -150,7 +150,7 @@ var PurchaseOrderForm = {
 					</b-form-group>
 					<b-form-group label="Customer" label-size="sm" horizontal label-text-align="right">
 						<ResourceInput size="sm"
-							v-model="formItem.vendorId"
+							v-model="formItem.customerId"
 							:readOnly="!editable"
 							:resourceMetadata="{
 								apiUrl:'/api/addresses',
@@ -171,8 +171,8 @@ var PurchaseOrderForm = {
 		data: function(){
 			return {
 				formItem: {},
-				vendor: {currentAddress:{address1:"ABC", address2:"DEF", address3:"GHI", address4:"JKL"}},
-				receiver: {currentAddress:{address1:"ABC", address2:"DEF", address3:"GHI", address4:"JKL"}}
+				vendor: null,
+				receiver: null
 			}
 		},
 		computed: {
@@ -201,7 +201,7 @@ var PurchaseOrderForm = {
 			}
 		},
 		methods: {
-			onVendorChange: function(vendorId, vendor){				
+			onVendorChange: async function(vendorId, vendor){				
 				this.formItem.vendorId = vendorId;
 				this.vendor = vendor;
 				if (vendor == null)
@@ -211,16 +211,15 @@ var PurchaseOrderForm = {
 					this.formItem.receiverId = vendorId;
 					this.receiver = vendor;
 				}
+				
+				let apSetting = await AJAXPerformer.getAsJson(vendor._links.apSetting.href);				
 				if (this.formItem.transactionCurrency == null){
-					AJAXPerformer.getAsJson(vendor._links.apSetting.href)
-						.then(res => this.formItem.transactionCurrency = res.currencyCodeTransaction)
-					//this.formItem.transactionCurrency = vendor.apSetting.currencyCodeTransaction;
+					this.formItem.transactionCurrency = apSetting.currencyCodeTransaction;
 				}
 					
-				if (this.formItem.paymentTermCode == null)
-					AJAXPerformer.getAsJson(vendor._links.apSetting.href)
-						.then(res => this.formItem.paymentTermCode = res.paymentTermCode)
-					//this.formItem.paymentTermCode = vendor.apSetting.paymentTermCode;
+				if (this.formItem.paymentTermCode == null){
+					this.formItem.paymentTermCode = apSetting.paymentTermCode;
+				}
 				
 			},
 			onReceiverChange: function(receiverId, receiver){
