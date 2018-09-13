@@ -5,9 +5,9 @@ var DataCodeInput = {
 		event:"change"
 	},
 	template: `
-		<b-form-select 	:required="required" :size="size"
+		<b-form-select 	:required="required" :size="size" 
 			v-model="selected" 
-			:readOnly="readOnly"
+			:disabled="readOnly"
 			:options="options" 
 			@change="$emit('change', $event)" >
 		</b-form-select>

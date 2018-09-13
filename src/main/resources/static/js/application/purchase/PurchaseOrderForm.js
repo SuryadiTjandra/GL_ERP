@@ -20,15 +20,17 @@ var PurchaseOrderForm = {
 			<b-form-row>
 				<b-col cols="6">
 					<b-form-group label="No. Order" horizontal label-size="sm">
-						<b-form-input placeholder="Nomor Order" type="number" required size="sm" style="display:inline"
+						<b-form-input placeholder="Nomor Order" type="number" required size="sm" style="width:65%;display:inline"
 							v-model="formItem.purchaseOrderNumber" 
 							:readOnly="!editable"
 							>
 						</b-form-input>
-						<DataCodeInput required productCode="00" systemCode="DT" size="sm"  style="display:inline"
+						<DataCodeInput required productCode="00" systemCode="DT" size="sm"  style="width:30%;display:inline"
 							v-model="formItem.purchaseOrderType"
 							:readOnly="!editable">
 						</DataCodeInput>
+					</b-form-group>
+					<b-form-group label="Unit Kerja" horizontal label-size="sm">
 						<ResourceInput  style="display:inline" size="sm"
 							v-model="formItem.companyId"
 							:readOnly="!editable"
@@ -71,12 +73,8 @@ var PurchaseOrderForm = {
 						</b-form-input>
 					</b-form-group>
 				</b-col>
-				<b-col cols="3">
-					<b-form-group label="Supplier" label-size="sm">
-						<!--<b-form-input type="text" size="sm"
-							v-model="formItem.vendorId"
-							:readOnly="!editable">
-						</b-form-input>-->
+				<b-col>
+					<b-form-group label="Supplier" label-size="sm" horizontal>
 						<ResourceInput size="sm"
 							v-model="formItem.vendorId"
 							:readOnly="!editable"
@@ -88,19 +86,8 @@ var PurchaseOrderForm = {
 							@input="onVendorChange"
 							>
 						</ResourceInput>
-						<p class="mb-0">{{vendor == null ? "" : vendor.currentAddress.address1}}</p>
-						<p class="mb-0">{{vendor == null ? "" : vendor.currentAddress.address2}}</p>
-						<p class="mb-0">{{vendor == null ? "" : vendor.currentAddress.address3}}</p>
-						<p class="mb-0">{{vendor == null ? "" : vendor.currentAddress.address4}}</p>
 					</b-form-group>
-				</b-col>
-				<b-col cols="3">
-					<b-form-group label="Alamat Kirim" label-size="sm">
-						<!--<b-form-input type="text" size="sm"
-							id="xxx"
-							v-model="formItem.receiverId"
-							:readOnly="!editable">
-						</b-form-input>-->
+					<b-form-group label="Alamat Kirim" label-size="sm" horizontal>
 						<ResourceInput size="sm"
 							v-model="formItem.receiverId"
 							:readOnly="!editable"
@@ -120,8 +107,8 @@ var PurchaseOrderForm = {
 				</b-col>
 			</b-form-row>
 			<b-form-row>
-				<b-button variant="secondary" @click="$emit('cancel')">Cancel</b-button>
-				<b-button variant="primary" @click="$emit('save', formItem)">Save</b-button>
+				<b-button variant="secondary" @click="$emit('cancel')">Kembali</b-button>
+				<b-button variant="primary" @click="$emit('save', formItem)" v-if="editable">Simpan</b-button>
 			</b-form-row>
 		</b-form>
 		`,

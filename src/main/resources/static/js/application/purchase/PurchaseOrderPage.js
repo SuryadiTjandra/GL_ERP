@@ -23,9 +23,9 @@ var PurchaseOrderPage = {
 		CreateButton, PurchaseOrderTable, PurchaseOrderModal, PurchaseOrderForm
 	},
 	template: `
-		<div>
+		<b-container-fluid>
 			<transition name="fade">
-				<b-container fluid v-show="!formVisible">
+				<div v-show="!formVisible">
 					<PurchaseOrderTable 
 						:apiUrl="apiUrl" 
 						:loadOnCreate="true"
@@ -33,7 +33,7 @@ var PurchaseOrderPage = {
 						@view-clicked="onViewItem"
 						@edit-clicked="onEditItem">
 					</PurchaseOrderTable>
-				</b-container>
+				</div>
 			</transition>
 			<PurchaseOrderModal 
 				v-model="modalVisible" 
@@ -53,7 +53,7 @@ var PurchaseOrderPage = {
 					</PurchaseOrderForm>
 				</b-container>
 			</transition>
-		</div>
+		</b-container>
 	`,
 	methods: {
 		onCreateItem: function(event){
