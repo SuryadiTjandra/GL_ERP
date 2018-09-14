@@ -132,7 +132,7 @@ public class PurchaseOrderService {
 											.orElse(null);
 			if (primLocation != null) {
 				poDetail.setLocationId(primLocation.getPk().getLocationId());
-				poDetail.setSerialLotNumber(primLocation.getPk().getSerialLotNo());
+				poDetail.setSerialLotNo(primLocation.getPk().getSerialLotNo());
 			}
 		}
 		

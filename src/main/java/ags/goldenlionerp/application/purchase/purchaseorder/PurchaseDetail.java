@@ -57,7 +57,7 @@ public class PurchaseDetail extends DatabaseEntity<PurchaseDetailPK>{
 	private String locationId;
 	
 	@Column(name="ODSNLOT")
-	private String serialLotNumber;
+	private String serialLotNo;
 	
 	@Column(name="ODDESB1")
 	private String description;
@@ -322,8 +322,8 @@ public class PurchaseDetail extends DatabaseEntity<PurchaseDetailPK>{
 		return locationId;
 	}
 
-	public String getSerialLotNumber() {
-		return serialLotNumber;
+	public String getSerialLotNo() {
+		return serialLotNo;
 	}
 
 	public String getDescription() {
@@ -622,8 +622,8 @@ public class PurchaseDetail extends DatabaseEntity<PurchaseDetailPK>{
 		this.locationId = locationId;
 	}
 
-	void setSerialLotNumber(String serialLotNumber) {
-		this.serialLotNumber = serialLotNumber;
+	void setSerialLotNo(String serialLotNo) {
+		this.serialLotNo = serialLotNo;
 	}
 
 	void setDescription(String description) {
