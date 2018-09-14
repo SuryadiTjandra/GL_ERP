@@ -1,4 +1,5 @@
 import ResourceSelectionModal from "./ResourceSelectionModal.js";
+import AJAXPerformer from "/js/util/AJAXPerformer.js"
 
 var ResourceInput = {
 	components: {ResourceSelectionModal},
@@ -39,7 +40,7 @@ var ResourceInput = {
 			idPath: this.resourceMetadata.idPath,
 			descPath: this.resourceMetadata.descPath,
 			
-			modalVisible: false,
+			modalVisible: false
 		}
 	},
 	methods: {
@@ -81,6 +82,14 @@ var ResourceInput = {
 				});
 				
 		}
+	},
+	created: function(){
+		if (this.selectedId == null || this.selectedId.trim().length === 0)
+			return;
+		
+		let url = this.resourceMetadata.apiUrl + "/" + this.selectedId;
+		AJAXPerformer.getAsJson(url)
+			.then(res => this.selected = res);
 	}
 };
 

@@ -206,7 +206,7 @@ var form = {
 				
 			},
 			onReceiverChange: function(receiverId, receiver){
-				this.receiverId = receiverId;
+				this.formItem.receiverId = receiverId;
 				this.receiver = receiver;
 			}
 		}
