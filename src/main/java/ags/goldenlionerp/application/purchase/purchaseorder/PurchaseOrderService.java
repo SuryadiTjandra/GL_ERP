@@ -108,8 +108,8 @@ public class PurchaseOrderService {
 	}
 	
 	private PurchaseDetail setInfoFromItem(PurchaseDetail poDetail) {
-		ItemMaster item = itemRepo.findById(poDetail.getItemNumber())
-				.orElseThrow(() -> new ResourceNotFoundException("Item with id " + poDetail.getItemNumber() + " does not exist"));
+		ItemMaster item = itemRepo.findById(poDetail.getItemCode())
+				.orElseThrow(() -> new ResourceNotFoundException("Item with id " + poDetail.getItemCode() + " does not exist"));
 		
 		String primaryUom = item.getUnitsOfMeasure().getPrimaryUnitOfMeasure();
 		poDetail.setPrimaryUnitOfMeasure(primaryUom);
@@ -173,7 +173,7 @@ public class PurchaseOrderService {
 		}
 		
 		BigDecimal ucf = uomServ.findConversionValue(
-				poDetail.getItemNumber(), 
+				poDetail.getItemCode(), 
 				poDetail.getUnitOfMeasure(),
 				primaryUom
 			);
@@ -185,7 +185,7 @@ public class PurchaseOrderService {
 		//extended quantity
 		if (poDetail.isExtended()) {
 			BigDecimal extConv = uomServ.findConversionValue(
-				poDetail.getItemNumber(), 
+				poDetail.getItemCode(), 
 				poDetail.getUnitOfMeasure(),
 				poDetail.getExtendedUnitOfMeasure()
 			);
@@ -193,7 +193,7 @@ public class PurchaseOrderService {
 			poDetail.setExtendedQuantity(extQty);
 			
 			BigDecimal extUcf = uomServ.findConversionValue(
-				poDetail.getItemNumber(), 
+				poDetail.getItemCode(), 
 				poDetail.getExtendedUnitOfMeasure(),
 				poDetail.getPrimaryUnitOfMeasure()
 			);

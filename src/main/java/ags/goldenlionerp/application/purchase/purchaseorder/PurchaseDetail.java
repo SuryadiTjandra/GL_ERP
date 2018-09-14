@@ -51,7 +51,7 @@ public class PurchaseDetail extends DatabaseEntity<PurchaseDetailPK>{
 	private String customerId;
 	
 	@Column(name="ODINUM")
-	private String itemNumber;
+	private String itemCode;
 	
 	@Column(name="ODLOCID")
 	private String locationId;
@@ -314,8 +314,8 @@ public class PurchaseDetail extends DatabaseEntity<PurchaseDetailPK>{
 		return customerId;
 	}
 
-	public String getItemNumber() {
-		return itemNumber;
+	public String getItemCode() {
+		return itemCode;
 	}
 
 	public String getLocationId() {
@@ -614,8 +614,8 @@ public class PurchaseDetail extends DatabaseEntity<PurchaseDetailPK>{
 		this.customerId = customerId;
 	}
 
-	void setItemNumber(String itemNumber) {
-		this.itemNumber = itemNumber;
+	void setItemCode(String itemCode) {
+		this.itemCode = itemCode;
 	}
 
 	void setLocationId(String locationId) {
