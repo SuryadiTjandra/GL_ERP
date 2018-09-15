@@ -74,6 +74,29 @@ var itemList = {
 						</b-input>
 					</b-input-group>
 				</template>
+				
+				<template slot="unitDiscountInfo" slot-scope="detail">
+					<ResourceInput size="sm" 
+						:selectedId="detail.item.unitDiscountCode"
+						:resourceMetadata="{
+							apiUrl:'/api/discounts',
+							dataPath:'discounts',
+							idPath:'discountCode',
+							descPath:'description'
+						}">
+					</ResourceInput>
+					<span>{{formatNumber(detail.item.unitDiscountRate, 2)}} %</span></br>
+					<span>{{formatNumber(detail.item.unitDiscountRate * detail.item.extendedCost / 100, 5)}}</span>
+				</template>
+				
+				<template slot="bottom-row" slot-scope="row">
+					<td v-for="field in row.fields">
+						<template v-if="field.key === 'totalCostInfo'">
+							<p class="text-right">{{totalExtendedCost}}</p>
+						</template>
+					</td>
+					
+				</template>
 			</b-table>
 		`,
 		data: function(){
@@ -83,7 +106,7 @@ var itemList = {
 					'quantityInfo',
 					'unitCostInfo',
 					'totalCostInfo',
-					'unitDiscountCode',
+					'unitDiscountInfo',
 				],
 				priceModeByUnit: []
 				
@@ -98,10 +121,15 @@ var itemList = {
 					this.$emit('update', newDetails)
 				}
 		
+			},
+			totalExtendedCost: function(){
+				return this.formDetails ?
+						this.formDetails.map(det => det.extendedCost).reduce( (a,b) => a + b):
+						0;
 			}
 		},
 		methods: {
-			formatNumber: function(number, maxDecimalPlace){
+			formatNumber: function(number, maxDecimalPlace=5){
 				if (!number.toString().includes("."))
 					return number;
 				
