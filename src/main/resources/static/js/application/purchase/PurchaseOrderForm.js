@@ -19,7 +19,7 @@ var PurchaseOrderForm = {
 		},
 		template: `
 		<b-form @submit.prevent.stop="onSubmit" novalidate :validated="validated">
-		<b-tabs>
+		<b-tabs v-model="activeTab">
 			<b-tab title="Info">
 				</br>
 				<BasicForm :editable="editable" v-model="formItem">
@@ -44,7 +44,8 @@ var PurchaseOrderForm = {
 		data: function(){
 			return {
 				formItem: {},
-				validated: false
+				validated: false,
+				activeTab: 0
 			}
 		},
 		computed: {
@@ -71,6 +72,10 @@ var PurchaseOrderForm = {
 				if (this.formItem.purchaseOrderNumber == 0){
 					this.formItem.purchaseOrderNumber = null
 				}
+				delete(this.formItem.inputUserId);
+				delete(this.formItem.lastUpdateUserId);
+				delete(this.formItem.inputDateTime);
+				delete(this.formItem.lastUpdateDateTime);
 			}
 		},
 		methods: {
@@ -102,8 +107,17 @@ var PurchaseOrderForm = {
 			onSubmit: function(event){
 				this.validated = true;
 				let form = event.target;
+				
+				
 				if (form.checkValidity()){
-					this.$emit('save', this.formItem);
+					if (this.formItem.details == null || this.formItem.details.length == 0){
+						alert("Daftar item tidak boleh kosong!");
+						this.activeTab = 1;
+					} else {
+						this.$emit('save', this.formItem);
+					}
+				}else {
+					this.activeTab = 0;
 				}
 			}
 		}
