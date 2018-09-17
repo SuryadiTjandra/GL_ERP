@@ -83,7 +83,6 @@ var PurchaseOrderPage = {
 			this.formItem = {};
 		},
 		onFormSave: function(formItem){
-			this.formVisible = false;
 			
 			const method = this.formMode == "add" ? "POST" : "PATCH";
 			const link = this.formMode == "add" ? this.apiUrl : formItem._links.self.href;
