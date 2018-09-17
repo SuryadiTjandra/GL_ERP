@@ -10,10 +10,6 @@ var PurchaseOrderPage = {
 		return {
 			apiUrl: "/api/purchaseOrders",
 			
-			modalVisible: false,
-			modalMode: "add",
-			modalItem: null,
-			
 			formVisible: false,
 			formMode: "add",
 			formItem: {}
@@ -35,13 +31,6 @@ var PurchaseOrderPage = {
 					</PurchaseOrderTable>
 				</div>
 			</transition>
-			<PurchaseOrderModal 
-				v-model="modalVisible" 
-				:mode="modalMode"
-				:item="modalItem"
-				@ok="onModalOk"
-				>
-			</PurchaseOrderModal>
 			<transition name="fade">
 				<b-container fluid v-show="formVisible">
 					<PurchaseOrderForm
@@ -90,10 +79,34 @@ var PurchaseOrderPage = {
 			.then(res => alert(res));
 		},
 		onFormCancel: function(){
-			this.formVisible = false
+			this.formVisible = false;
+			this.formItem = {};
 		},
-		onFormSave: function(){
-			this.formVisible = false
+		onFormSave: function(formItem){
+			this.formVisible = false;
+			
+			const method = this.formMode == "add" ? "POST" : "PATCH";
+			const link = this.formMode == "add" ? this.apiUrl : formItem._links.self.href;
+			
+			const csrfHeader = document.getElementsByName("_csrf_header")[0].getAttribute("content");
+			const csrfToken = document.getElementsByName("_csrf")[0].getAttribute("content");				
+			let headers = new Headers();
+			headers.append(csrfHeader, csrfToken);
+			headers.append('Content-Type', 'application/json');
+			
+			fetch(link, {
+				method: method,
+				body: JSON.stringify(formItem),
+				headers: headers
+			})
+			.then(res => res.ok ? 
+						res.json() : 
+						Promise.reject("Error: " + res.status + " " + res.statusText))
+			.then(res => {
+				alert(res);
+				this.formVisible = false;
+			})
+			.catch(err => alert(err));
 		}
 		
 	}
