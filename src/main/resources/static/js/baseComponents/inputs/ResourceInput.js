@@ -12,6 +12,7 @@ var ResourceInput = {
 	<div>
 		<b-input-group :size="size">
 			<b-form-input type="text" :required="required"
+				@focus.native.stop.prevent="$event.target.blur()"
 				:value="selected[descPath]">
 			</b-form-input>
 			

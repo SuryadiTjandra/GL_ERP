@@ -102,7 +102,7 @@ var PurchaseOrderPage = {
 						res.json() : 
 						Promise.reject("Error: " + res.status + " " + res.statusText))
 			.then(res => {
-				alert(res);
+				alert("Purchase Order created");
 				this.formVisible = false;
 				this.formItem = {};
 			})

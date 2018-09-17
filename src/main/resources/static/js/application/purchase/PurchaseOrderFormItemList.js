@@ -106,14 +106,19 @@ var itemList = {
 				
 				<template slot="bottom-row" slot-scope="row">
 					<td v-for="field in row.fields">
-						<template v-if="field.key === 'totalCostInfo'">
+						<template v-if="field.key === 'action'">
+							<b-button variant="outline-success" @click="onAddNewRow" size="sm"
+								style="padding:0; border-color:transparent;">
+								<span class="oi oi-plus"></span>
+							</b-button>
+						</template>
+						<template v-if-else="field.key === 'totalCostInfo'">
 							<p class="text-right mr-2">{{totalExtendedCost > 0 ? totalExtendedCost : ''}}</p>
 						</template>
 					</td>
 					
 				</template>
 			</b-table>
-			<b-button variant="success" @click="onAddNewRow">Baru</b-button>
 		</div>
 		`,
 		data: function(){
