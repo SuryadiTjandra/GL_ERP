@@ -3,7 +3,7 @@ import AJAXPerformer from "/js/util/AJAXPerformer.js"
 
 var ResourceInput = {
 	components: {ResourceSelectionModal},
-	props: ['resourceMetadata', 'readOnly', 'selectedId', 'size'],
+	props: ['resourceMetadata', 'readOnly', 'selectedId', 'size', 'required'],
 	model:{
 		prop:'selectedId',
 		event:'input'
@@ -11,7 +11,7 @@ var ResourceInput = {
 	template: `
 	<div>
 		<b-input-group :size="size">
-			<b-form-input type="text" readonly
+			<b-form-input type="text" :required="required"
 				:value="selected[descPath]">
 			</b-form-input>
 			

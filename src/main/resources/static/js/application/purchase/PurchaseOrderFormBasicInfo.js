@@ -19,11 +19,11 @@ var form = {
 			editable: Boolean
 		},
 		template: `
-		<b-form>
+		<div>
 			<b-form-row>
 				<b-col cols="6">
 					<b-form-group label="No. Order" horizontal label-size="sm" label-text-align="right">
-						<b-form-input placeholder="Nomor Order" type="number" required size="sm" style="width:65%;display:inline"
+						<b-form-input placeholder="Nomor Order" type="number" size="sm" style="width:65%;display:inline"
 							v-model="formItem.purchaseOrderNumber" 
 							:readOnly="!editable"
 							>
@@ -34,7 +34,7 @@ var form = {
 						</DataCodeInput>
 					</b-form-group>
 					<b-form-group label="Unit Usaha" horizontal label-size="sm" label-text-align="right">
-						<ResourceInput  style="display:inline" size="sm"
+						<ResourceInput  style="display:inline" size="sm" required
 							v-model="formItem.companyId"
 							:readOnly="!editable"
 							:resourceMetadata="{
@@ -46,7 +46,7 @@ var form = {
 						</ResourceInput>
 					</b-form-group>
 					<b-form-group label="Unit Kerja" horizontal label-size="sm" label-text-align="right">
-						<ResourceInput size="sm"
+						<ResourceInput size="sm" required
 							v-model="formItem.businessUnitId"
 							:readOnly="!editable"
 							:resourceMetadata="{
@@ -72,7 +72,7 @@ var form = {
 				</b-col>
 				<b-col>
 					<b-form-group label="Supplier" label-size="sm" horizontal label-text-align="right">
-						<ResourceInput size="sm"
+						<ResourceInput size="sm" required
 							v-model="formItem.vendorId"
 							:readOnly="!editable"
 							:resourceMetadata="{
@@ -106,13 +106,13 @@ var form = {
 			<b-form-row>
 				<b-col>
 					<b-form-group label="Mata Uang" label-size="sm" horizontal label-text-align="right">
-						<DataCodeInput productCode="00" systemCode="CC" size="sm"
+						<DataCodeInput productCode="00" systemCode="CC" size="sm" required
 							v-model="formItem.transactionCurrency"
 							:readOnly="!editable">
 						</DataCodeInput>
 					</b-form-group>
 					<b-form-group label="Tipe Pembayaran" label-size="sm" horizontal label-text-align="right">
-						<ResourceInput size="sm"
+						<ResourceInput size="sm" required
 							v-model="formItem.paymentTermCode"
 							:readOnly="!editable"
 							:resourceMetadata="{
@@ -132,7 +132,7 @@ var form = {
 				</b-col>
 				<b-col>
 					<b-form-group label="Kurs" label-size="sm" horizontal label-text-align="right">
-						<b-input type="number" size="sm" placeholder="Kurs"
+						<b-input type="number" size="sm" placeholder="Kurs" required
 							:readOnly="!editable"
 							:formatter="num => Number(num).toFixed(2)"
 							v-model="formItem.exchangeRate">
@@ -164,8 +164,7 @@ var form = {
 					</b-form-group>
 				</b-col>
 			</b-form-row>
-			
-		</b-form>
+		</div>
 		`,
 		data: function(){
 			return {

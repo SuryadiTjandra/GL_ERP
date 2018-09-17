@@ -105,6 +105,7 @@ var PurchaseOrderPage = {
 			.then(res => {
 				alert(res);
 				this.formVisible = false;
+				this.formItem = {};
 			})
 			.catch(err => alert(err));
 		}

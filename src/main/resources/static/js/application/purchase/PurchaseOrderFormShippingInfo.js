@@ -18,7 +18,7 @@ var ShippingForm = {
 			editable: Boolean
 		},
 		template: `
-		<b-form>
+		<div>
 			<b-form-row>
 				<b-col cols="6">
 					<b-form-group label="Nomor P.I.B." horizontal label-size="sm" label-text-align="right">
@@ -88,7 +88,7 @@ var ShippingForm = {
 					</b-form-group>
 				</b-col>
 			</b-form-row>
-		</b-form>
+		</div>
 		`,
 		computed: {
 			formItem:{

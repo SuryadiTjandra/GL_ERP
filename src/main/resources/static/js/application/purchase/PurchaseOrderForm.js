@@ -18,7 +18,7 @@ var PurchaseOrderForm = {
 			}
 		},
 		template: `
-		<div>
+		<b-form @submit.prevent.stop="onSubmit" novalidate :validated="validated">
 		<b-tabs>
 			<b-tab title="Info">
 				</br>
@@ -38,14 +38,13 @@ var PurchaseOrderForm = {
 		</b-tabs>
 		</br>
 		<b-button variant="secondary" @click="$emit('cancel')">Kembali</b-button>
-		<b-button type="submit" variant="primary" @click="$emit('save', formItem)" v-if="editable">Simpan</b-button>
-		</div>
+		<b-button type="submit" variant="primary"  v-if="editable">Simpan</b-button>
+		</b-form>
 		`,
 		data: function(){
 			return {
 				formItem: {},
-				vendor: null,
-				receiver: null
+				validated: false
 			}
 		},
 		computed: {
@@ -68,6 +67,7 @@ var PurchaseOrderForm = {
 			item: function(item){
 				//deepcopy to prevent change in forms to affect property item
 				this.formItem = JSON.parse(JSON.stringify(item));
+				this.validated = false;
 				if (this.formItem.purchaseOrderNumber == 0){
 					this.formItem.purchaseOrderNumber = null
 				}
@@ -98,6 +98,13 @@ var PurchaseOrderForm = {
 			onReceiverChange: function(receiverId, receiver){
 				this.receiverId = receiverId;
 				this.receiver = receiver;
+			},
+			onSubmit: function(event){
+				this.validated = true;
+				let form = event.target;
+				if (form.checkValidity()){
+					this.$emit('save', this.formItem);
+				}
 			}
 		}
 }
