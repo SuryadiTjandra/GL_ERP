@@ -1,10 +1,11 @@
 import BasicForm from "./PurchaseOrderFormBasicInfo.js";
 import ItemForm from "./PurchaseOrderFormItemList.js";
+import ShippingForm from "./PurchaseOrderFormShippingInfo.js";
 import AJAXPerformer from "/js/util/AJAXPerformer.js";
 
 var PurchaseOrderForm = {
 		components: {
-			BasicForm, ItemForm
+			BasicForm, ItemForm, ShippingForm
 		},
 		props: {
 			item: {
@@ -30,12 +31,14 @@ var PurchaseOrderForm = {
 				</ItemForm>
 			</b-tab>
 			<b-tab title="Shipping">
-				Shipping
+				</br>
+				<ShippingForm v-model="formItem" :editable="editable">
+				</ShippingForm>
 			</b-tab>
 		</b-tabs>
-
+		</br>
 		<b-button variant="secondary" @click="$emit('cancel')">Kembali</b-button>
-		<b-button variant="primary" @click="$emit('save', formItem)" v-if="editable">Simpan</b-button>
+		<b-button type="submit" variant="primary" @click="$emit('save', formItem)" v-if="editable">Simpan</b-button>
 		</div>
 		`,
 		data: function(){
