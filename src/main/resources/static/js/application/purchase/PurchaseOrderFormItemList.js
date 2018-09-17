@@ -1,10 +1,11 @@
 import ResourceInput from "/js/baseComponents/inputs/ResourceInput.js";
 import DataCodeInput from "/js/baseComponents/inputs/DataCodeInput.js";
+import VoidButton from "/js/baseComponents/buttons/VoidButton.js";
 import AJAXPerformer from "/js/util/AJAXPerformer.js";
 
 var itemList = {
 		components: {
-			ResourceInput, DataCodeInput
+			ResourceInput, DataCodeInput, VoidButton
 		},
 		props: ['details'],
 		model: {
@@ -12,7 +13,13 @@ var itemList = {
 			event: 'update',
 		},
 		template:`
-			<b-table :fields="fields" :items="formDetails" small fixed>
+		<div>
+			<b-table :fields="fields" :items="formDetails" small responsive showEmpty>
+				<template slot="action" slot-scope="detail">
+					<VoidButton @void-click="onVoidDetail(detail.item, detail.index)">
+					</VoidButton>
+				</template>
+				
 				<template slot="itemInfo" slot-scope="detail">
 					<ResourceInput :selectedId="detail.item.itemCode" size="sm" 
 						:resourceMetadata="{
@@ -27,86 +34,109 @@ var itemList = {
 				</template>
 				
 				<template slot="quantityInfo" slot-scope="detail">
-					<b-input type="number" size="sm"
-						v-model="detail.item.quantity" 
-						:formatter="num => formatNumber(num, 5)" lazy-formatter
-						style="display:inline; width:70%; text-align:right"
-						@change="onQuantityChange(detail.item, detail.index, ...arguments)">
-					</b-input>
-					<DataCodeInput productCode="00" systemCode="UM" size="sm" 
-						v-model="detail.item.unitOfMeasure"
-						style="display:inline; width:25%">
-					</DataCodeInput>
+					<template v-if="detail.item.itemCode != null">
+						<b-input type="number" size="sm"
+							v-model="detail.item.quantity" 
+							:formatter="num => formatNumber(num, 5)" lazy-formatter
+							style="display:inline; width:50%; text-align:right;"
+							@change="onQuantityChange(detail.item, detail.index, ...arguments)">
+						</b-input>
+						<DataCodeInput productCode="00" systemCode="UM" size="sm" 
+							v-model="detail.item.unitOfMeasure"
+							style="display:inline; width:45%">
+						</DataCodeInput>
+					</template>
 				</template>
 				
 				<template slot="unitCostInfo" slot-scope="detail">
-					<b-input-group size="sm">
-						<b-input-group-prepend is-text>
-							 <input type="radio" 
-							 	:checked="priceModeByUnit[detail.index]" 
-							 	@click="$set(priceModeByUnit, detail.index, true)">
-							 </input>
-						</b-input-group-prepend>
-						
-						<b-input type="number" :readonly="!priceModeByUnit[detail.index]"
-							v-model="detail.item.unitCost" 
-							:formatter="num => formatNumber(num, 5)" lazy-formatter
-							style="text-align:right"
-							@change="onUnitCostChange(detail.item, ...arguments)">
-						</b-input>
-					</b-input-group>
+					<template v-if="detail.item.itemCode != null">
+						<b-input-group size="sm">
+							<b-input-group-prepend is-text>
+								 <input type="radio" 
+								 	:checked="priceModeByUnit[detail.index]" 
+								 	@click="$set(priceModeByUnit, detail.index, true)">
+								 </input>
+							</b-input-group-prepend>
+							
+							<b-input type="number" :readonly="!priceModeByUnit[detail.index]"
+								v-model="detail.item.unitCost" 
+								:formatter="num => formatNumber(num, 5)" lazy-formatter
+								style="text-align:right"
+								@change="onUnitCostChange(detail.item, ...arguments)">
+							</b-input>
+						</b-input-group>
+					</template>
 				</template>
 				
 				<template slot="totalCostInfo" slot-scope="detail">
-					<b-input-group size="sm">
-						<b-input-group-prepend is-text>
-							 <input type="radio" 
-							 	:checked="!priceModeByUnit[detail.index]"
-							 	@click="$set(priceModeByUnit, detail.index, false)">
-							 </input>
-						</b-input-group-prepend>
-						
-						<b-input type="number" :readonly="priceModeByUnit[detail.index]"
-							v-model="detail.item.extendedCost" 
-							:formatter="num => formatNumber(num, 5)" lazy-formatter
-							style="text-align:right"
-							@change="onExtendedCostChange(detail.item, ...arguments)">
-						</b-input>
-					</b-input-group>
+					<template v-if="detail.item.itemCode != null">
+						<b-input-group size="sm">
+							<b-input-group-prepend is-text>
+								 <input type="radio" 
+								 	:checked="!priceModeByUnit[detail.index]"
+								 	@click="$set(priceModeByUnit, detail.index, false)">
+								 </input>
+							</b-input-group-prepend>
+							
+							<b-input type="number" :readonly="priceModeByUnit[detail.index]"
+								v-model="detail.item.extendedCost" 
+								:formatter="num => formatNumber(num, 5)" lazy-formatter
+								style="text-align:right"
+								@change="onExtendedCostChange(detail.item, ...arguments)">
+							</b-input>
+						</b-input-group>
+						</template>
 				</template>
 				
 				<template slot="unitDiscountInfo" slot-scope="detail">
-					<ResourceInput size="sm" 
-						:selectedId="detail.item.unitDiscountCode"
-						:resourceMetadata="{
-							apiUrl:'/api/discounts',
-							dataPath:'discounts',
-							idPath:'discountCode',
-							descPath:'description'
-						}">
-					</ResourceInput>
-					<span>{{formatNumber(detail.item.unitDiscountRate, 2)}} %</span></br>
-					<span>{{formatNumber(detail.item.unitDiscountRate * detail.item.extendedCost / 100, 5)}}</span>
+					<template v-if="detail.item.itemCode != null">
+						<ResourceInput size="sm" 
+							:selectedId="detail.item.unitDiscountCode"
+							:resourceMetadata="{
+								apiUrl:'/api/discounts',
+								dataPath:'discounts',
+								idPath:'discountCode',
+								descPath:'description'
+							}">
+						</ResourceInput>
+						<span>{{formatNumber(detail.item.unitDiscountRate, 2)}} %</span></br>
+						<span>{{formatNumber(detail.item.unitDiscountRate * detail.item.extendedCost / 100, 5)}}</span>
+						</template>
 				</template>
 				
 				<template slot="bottom-row" slot-scope="row">
 					<td v-for="field in row.fields">
 						<template v-if="field.key === 'totalCostInfo'">
-							<p class="text-right">{{totalExtendedCost}}</p>
+							<p class="text-right mr-2">{{totalExtendedCost > 0 ? totalExtendedCost : ''}}</p>
 						</template>
 					</td>
 					
 				</template>
 			</b-table>
+			<b-button variant="success" @click="onAddNewRow">Baru</b-button>
+		</div>
 		`,
 		data: function(){
 			return {
 				fields: [
-					'itemInfo',
-					'quantityInfo',
-					'unitCostInfo',
-					'totalCostInfo',
-					'unitDiscountInfo',
+					{
+						key:'action', label:'', thStyle:{width:'3%'}
+					},
+					{
+						key:'itemInfo', label: 'Item', thStyle:{width:'32%'}
+					},
+					{
+						key:'quantityInfo', label: 'Qty', thStyle:{width:'15%'}
+					},
+					{
+						key:'unitCostInfo', label:'Unit Cost', thStyle:{width:'16.667%'}
+					},
+					{
+						key:'totalCostInfo', label: 'Total Cost', thStyle:{width:'16.667%'}
+					},
+					{
+						key:'unitDiscountInfo', label: 'Discount', thStyle:{width:'16.667%'}
+					}
 				],
 				priceModeByUnit: []
 				
@@ -123,13 +153,17 @@ var itemList = {
 		
 			},
 			totalExtendedCost: function(){
-				return this.formDetails ?
-						this.formDetails.map(det => det.extendedCost).reduce( (a,b) => a + b):
-						0;
+				let res = this.formDetails ?
+							this.formDetails.map(det => det.extendedCost).reduce( ((a,b) => a + b), 0):
+							0;
+				return Number.isNaN(Number(res)) ? 0 : res;
 			}
 		},
 		methods: {
 			formatNumber: function(number, maxDecimalPlace=5){
+				if (number == null)
+					return 0;
+				
 				if (!number.toString().includes("."))
 					return number;
 				
@@ -140,7 +174,7 @@ var itemList = {
 					return number;
 			},
 			
-			onItemChange: async function(sequence, itemCode, item){
+			onItemChange: async function(detail, itemCode, item){
 				
 				detail.itemCode = itemCode;
 				detail.description = item.description;
@@ -174,6 +208,29 @@ var itemList = {
 			onExtendedCostChange: function(detail, extendedCost){
 				let unitCost = Number(extendedCost) / Number(detail.quantity);
 				detail.unitCost = this.formatNumber(unitCost);
+			},
+			onAddNewRow: function(){
+				this.formDetails.push(this.defaultDetail());
+			},
+			onVoidDetail: function(detail, index){
+				if (detail.purchaseOrderNumber == null || detail.purchaseOrderNumber == 0){
+					this.formDetails.splice(index, 1);
+				} else {
+					if(confirm("Batalkan item order ini?")){
+						//TODO
+					}
+				}
+			},
+			
+			defaultDetail: function(){
+				return {
+					itemCode: null,
+					quantity: 1,
+					unitCost: 0,
+					extendedCost: 0,
+					unitDiscountCode: null,
+					unitDiscountRate: 0
+				}
 			}
 		},
 		watch: {
