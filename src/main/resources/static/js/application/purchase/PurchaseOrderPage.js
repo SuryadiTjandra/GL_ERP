@@ -1,7 +1,6 @@
 import CreateButton from "../../baseComponents/buttons/CreateButton.js";
 //import VuetablePaginationBootstrap from "../../baseComponents/table/VuetablePaginationBootstrap.js";
 import PurchaseOrderTable from "./PurchaseOrderTable.js";
-import PurchaseOrderModal from "./PurchaseOrderModal.js";
 import PurchaseOrderForm from "./PurchaseOrderForm.js";
 
 var PurchaseOrderPage = {
@@ -16,7 +15,7 @@ var PurchaseOrderPage = {
 		}
 	},
 	components:{
-		CreateButton, PurchaseOrderTable, PurchaseOrderModal, PurchaseOrderForm
+		CreateButton, PurchaseOrderTable, PurchaseOrderForm
 	},
 	template: `
 		<b-container fluid>
