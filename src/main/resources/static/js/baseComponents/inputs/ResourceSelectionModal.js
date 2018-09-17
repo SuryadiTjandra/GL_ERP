@@ -9,6 +9,14 @@ var ResourceSelectionModal = {
 		@ok="onOk"
 		@show="onShow">
 	
+		<b-pagination
+			align="right"
+			:value="currentPagePlus"
+			:total-rows="totalElements"
+			:per-page="pageSize"
+			@change="onPaginationChange"
+		>					
+		</b-pagination>
 		<b-table hover small
 			:fields="fields"
 			:busy="isBusy"
@@ -37,7 +45,7 @@ var ResourceSelectionModal = {
 			fields: ["checkbox", this.resourceMetadata.idPath, this.resourceMetadata.descPath],
 			
 			totalElements: 0,
-			currentPage: 1,
+			currentPage: 0,
 			pageSize: 0,
 			
 			isBusy: false
@@ -51,26 +59,48 @@ var ResourceSelectionModal = {
 			this.$emit('ok', this.selected);
 		},
 		onShow: function(){
-			this.loadData();
+			this.loadData({});
 		},
 		onItemSelect: function(item){
 			this.selected = item;
 		},
+		onPaginationChange: function(page){
+			this.loadData(this.createParamObject(
+				page - 1, 
+				this.pageSize, 
+				this.sortBy, 
+				this.sortDir
+			));
+		},
 
-		loadData: function(){
-			fetch(this.apiUrl + "?size=1000")
-			.then(result => result.json())
-			.then (result => {
-				this.items = result._embedded[this.dataPath];
-				//this.currentPage = result.page.number;
-				//this.totalElements = result.page.totalElements;
-				//this.pageSize = result.page.size;
-			})
-			.catch(error => alert(error))
-			.finally(() => {
-				this.isBusy = false
-			})
-		}
+		loadData: function(param){
+			let paramStr = Object.keys(param).map(key => key + '=' + param[key]).join('&');
+			this.isBusy = true;
+			
+			fetch(this.apiUrl + "?" + paramStr)
+				.then(result => result.json())
+				.then (result => {
+					this.items = result._embedded[this.dataPath];
+					this.currentPage = result.page.number;
+					this.totalElements = result.page.totalElements;
+					this.pageSize = result.page.size;
+				})
+				.catch(error => alert(error))
+				.finally(() => {
+					this.isBusy = false
+				})
+		},
+		createParamObject: function(page, size, sortBy, sortDir){
+			let paramObj = {
+				page: page,
+				size: size,
+			};
+			if (sortBy !== null){
+				paramObj.sort = sortBy + "," + sortDir;
+			}
+			return paramObj;
+		},
+		
 	}
 };
 
