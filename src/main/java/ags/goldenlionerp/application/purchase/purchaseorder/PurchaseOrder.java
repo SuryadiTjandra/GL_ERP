@@ -2,6 +2,7 @@ package ags.goldenlionerp.application.purchase.purchaseorder;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -143,11 +144,12 @@ public class PurchaseOrder extends DatabaseEntity<PurchaseOrderPK> {
 	
 	@SuppressWarnings("unused")
 	private PurchaseOrder() {
+		details = new ArrayList<>();
 	}
 	
-	@JsonCreator //this ensures a PurchaseOrder always have list of details
-	public PurchaseOrder(@JsonProperty("details") List<PurchaseDetail> details) {
-		if (details == null) details = Collections.emptyList();
+	//@JsonCreator //this ensures a PurchaseOrder always have list of details
+	public PurchaseOrder(/*@JsonProperty("details")*/ List<PurchaseDetail> details) {
+		if (details == null) details = new ArrayList<>();
 		this.details = details;
 	}
 	
