@@ -17,6 +17,8 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
 
+import ags.goldenlionerp.application.purchase.IntegratedReferences;
+import ags.goldenlionerp.application.purchase.References;
 import ags.goldenlionerp.entities.DatabaseEntity;
 
 @Entity
@@ -455,66 +457,176 @@ public class SalesOrder extends DatabaseEntity<SalesOrderPK>{
 
 	void setPk(SalesOrderPK pk) {
 		this.pk = pk;
+		for (int i = 0; i < this.details.size(); i++) {
+			SalesDetailPK detPk = new SalesDetailPK(
+					pk.getCompanyId(), 
+					pk.getSalesOrderNumber(),
+					pk.getSalesOrderType(), 
+					(i+1) * 10
+				);
+			this.details.get(i).setPk(detPk);
+		}
 	}
 
 	void setBusinessUnitId(String businessUnitId) {
 		this.businessUnitId = businessUnitId;
-	}
-
-	void setCustomerId(String customerId) {
-		this.customerId = customerId;
+		this.details.forEach(det -> det.setBusinessUnitId(businessUnitId));
 	}
 
 	void setReceiverId(String receiverId) {
 		this.receiverId = receiverId;
+		this.details.forEach(det -> det.setReceiverId(receiverId));
 	}
 
+	void setCustomerId(String customerId) {
+		this.customerId = customerId;
+		this.details.forEach(det -> det.setCustomerId(customerId));
+	}
+	
 	void setExpeditionId(String expeditionId) {
 		this.expeditionId = expeditionId;
+		this.details.forEach(det -> det.setExpeditionId(expeditionId));
 	}
-
+	
 	void setPayerId(String payerId) {
 		this.payerId = payerId;
+		this.details.forEach(det -> det.setPayerId(payerId));
 	}
-
+	
 	void setSalesmanId(String salesmanId) {
 		this.salesmanId = salesmanId;
+		this.details.forEach(det -> det.setSalesmanId(salesmanId));
 	}
 
 	void setBaseCurrency(String baseCurrency) {
 		this.baseCurrency = baseCurrency;
+		this.details.forEach(det -> det.setBaseCurrency(baseCurrency));
 	}
 
 	void setTransactionCurrency(String transactionCurrency) {
 		this.transactionCurrency = transactionCurrency;
+		this.details.forEach(det -> det.setTransactionCurrency(transactionCurrency));
 	}
 
 	void setExchangeRate(BigDecimal exchangeRate) {
 		this.exchangeRate = exchangeRate;
+		this.details.forEach(det -> det.setExchangeRate(exchangeRate));
 	}
 
 	void setOrderDate(LocalDate orderDate) {
 		this.orderDate = orderDate;
+		this.details.forEach(det -> det.setOrderDate(orderDate));
 	}
 
 	void setRequestDate(LocalDate requestDate) {
 		this.requestDate = requestDate;
+		this.details.forEach(det -> det.setRequestDate(requestDate));
 	}
 
 	void setPromisedDeliveryDate(LocalDate promisedDeliveryDate) {
 		this.promisedDeliveryDate = promisedDeliveryDate;
+		this.details.forEach(det -> det.setPromisedDeliveryDate(promisedDeliveryDate));
 	}
 
 	void setDeliveryDate(LocalDate deliveryDate) {
 		this.deliveryDate = deliveryDate;
+		this.details.forEach(det-> det.setDeliveryDate(deliveryDate));
 	}
 
 	void setClosedDate(LocalDate closedDate) {
 		this.closedDate = closedDate;
+		this.details.forEach(det -> det.setClosedDate(closedDate));
 	}
 
 	void setGlDate(LocalDate glDate) {
 		this.glDate = glDate;
+		this.details.forEach(det -> det.setGlDate(glDate));
+	}
+
+	void setDescription(String description) {
+		this.description = description;
+	}
+
+	void setPaymentTermCode(String paymentTermCode) {
+		this.paymentTermCode = paymentTermCode;
+		this.details.forEach(det -> det.setPaymentTermCode(paymentTermCode));
+	}
+
+	void setTaxCode(String taxCode) {
+		this.taxCode = taxCode;
+		this.details.forEach(det -> det.setTaxCode(taxCode));
+	}
+
+	void setTaxAllowance(boolean taxAllowance) {
+		this.taxAllowance = taxAllowance;
+		this.details.forEach(det -> det.setTaxAllowance(taxAllowance));
+	}
+
+	void setTaxRate(BigDecimal taxRate) {
+		this.taxRate = taxRate;
+		this.details.forEach(det -> det.setTaxRate(taxRate));
+	}
+
+	void setDiscountCode(String discountCode) {
+		this.discountCode = discountCode;
+		this.details.forEach(det -> det.setDiscountCode(discountCode));
+	}
+
+	void setDiscountRate(BigDecimal discountRate) {
+		this.discountRate = discountRate;
+		this.details.forEach(det -> det.setDiscountRate(discountRate));
+	}
+
+	void setLastStatus(String lastStatus) {
+		this.lastStatus = lastStatus;
+		this.details.forEach(det -> det.setLastStatus(lastStatus));
+	}
+
+	void setNextStatus(String nextStatus) {
+		this.nextStatus = nextStatus;
+		this.details.forEach(det -> det.setNextStatus(nextStatus));
+	}
+
+	void setProjectId(String projectId) {
+		this.projectId = projectId;
+		this.details.forEach(det -> det.setProjectId(projectId));
+	}
+
+	void setExportDeclarationNumber(String exportDeclarationNumber) {
+		this.exportDeclarationNumber = exportDeclarationNumber;
+	}
+
+	void setExportDeclarationDate(LocalDate exportDeclarationDate) {
+		this.exportDeclarationDate = exportDeclarationDate;
+	}
+
+	void setConditionOfTransport(String conditionOfTransport) {
+		this.conditionOfTransport = conditionOfTransport;
+	}
+
+	void setPortOfDepartureId(String portOfDepartureId) {
+		this.portOfDepartureId = portOfDepartureId;
+	}
+
+	void setPortOfArrivalId(String portOfArrivalId) {
+		this.portOfArrivalId = portOfArrivalId;
+	}
+
+	void setVehicleRegistrationNumber(String vehicleRegistrationNumber) {
+		this.details.forEach(det -> det.setVehicleRegistrationNumber(vehicleRegistrationNumber));
+	}
+
+	void setVehicleType(String vehicleType) {
+		this.details.forEach(det -> det.setVehicleType(vehicleType));
+	}
+
+	void setObjectId(String objectId) {
+		this.objectId = objectId;
+		this.details.forEach(det -> det.setObjectId(objectId));
+	}
+
+	void setDetails(List<SalesDetail> details) {
+		this.details = details;
 	}
 
 	void setEstimatedTimeOfDeparture(LocalDateTime estimatedTimeOfDeparture) {
@@ -545,44 +657,9 @@ public class SalesOrder extends DatabaseEntity<SalesOrderPK>{
 		this.dateOfDocking = dateOfDocking;
 	}
 
-	void setDescription(String description) {
-		this.description = description;
-	}
-
-	void setPaymentTermCode(String paymentTermCode) {
-		this.paymentTermCode = paymentTermCode;
-	}
-
-	void setTaxCode(String taxCode) {
-		this.taxCode = taxCode;
-	}
-
-	void setTaxAllowance(Boolean taxAllowance) {
-		this.taxAllowance = taxAllowance;
-	}
-
-	void setTaxRate(BigDecimal taxRate) {
-		this.taxRate = taxRate;
-	}
-
 	void setGuestServiceChargeRate(BigDecimal guestServiceChargeRate) {
 		this.guestServiceChargeRate = guestServiceChargeRate;
-	}
-
-	void setDiscountCode(String discountCode) {
-		this.discountCode = discountCode;
-	}
-
-	void setDiscountRate(BigDecimal discountRate) {
-		this.discountRate = discountRate;
-	}
-
-	void setLastStatus(String lastStatus) {
-		this.lastStatus = lastStatus;
-	}
-
-	void setNextStatus(String nextStatus) {
-		this.nextStatus = nextStatus;
+		this.details.forEach(det -> det.setGuestServiceChargeRate(guestServiceChargeRate));
 	}
 
 	void setCustomerOrderNumber(int customerOrderNumber) {
@@ -595,14 +672,12 @@ public class SalesOrder extends DatabaseEntity<SalesOrderPK>{
 
 	void setOriginalOrderNumber(int originalOrderNumber) {
 		this.originalOrderNumber = originalOrderNumber;
+		this.details.forEach(det -> det.setOriginalDocumentNumber(originalOrderNumber));
 	}
 
 	void setOriginalOrderDate(LocalDate originalOrderDate) {
 		this.originalOrderDate = originalOrderDate;
-	}
-
-	void setProjectId(String projectId) {
-		this.projectId = projectId;
+		this.details.forEach(det -> det.setOriginalDocumentDate(originalOrderDate));
 	}
 
 	void setTagId(String tagId) {
@@ -611,26 +686,16 @@ public class SalesOrder extends DatabaseEntity<SalesOrderPK>{
 
 	void setProfitCenterId(String profitCenterId) {
 		this.profitCenterId = profitCenterId;
+		this.details.forEach(det -> det.setProfitCenterId(profitCenterId));
 	}
 
 	void setHoldCode(String holdCode) {
 		this.holdCode = holdCode;
-	}
-
-	void setPortOfDepartureId(String portOfDepartureId) {
-		this.portOfDepartureId = portOfDepartureId;
-	}
-
-	void setPortOfArrivalId(String portOfArrivalId) {
-		this.portOfArrivalId = portOfArrivalId;
+		this.details.forEach(det -> det.setHoldCode(holdCode));
 	}
 
 	void setFreightHandlingCode(String freightHandlingCode) {
 		this.freightHandlingCode = freightHandlingCode;
-	}
-
-	void setConditionOfTransport(String conditionOfTransport) {
-		this.conditionOfTransport = conditionOfTransport;
 	}
 
 	void setShipmentCodition(String shipmentCodition) {
@@ -639,14 +704,6 @@ public class SalesOrder extends DatabaseEntity<SalesOrderPK>{
 
 	void setShippingMethod(String shippingMethod) {
 		this.shippingMethod = shippingMethod;
-	}
-
-	void setExportDeclarationNumber(String exportDeclarationNumber) {
-		this.exportDeclarationNumber = exportDeclarationNumber;
-	}
-
-	void setExportDeclarationDate(LocalDate exportDeclarationDate) {
-		this.exportDeclarationDate = exportDeclarationDate;
 	}
 
 	void setFreightBillingNumber(String freightBillingNumber) {
@@ -667,6 +724,7 @@ public class SalesOrder extends DatabaseEntity<SalesOrderPK>{
 
 	void setPartnerRepresentativeId(String partnerRepresentativeId) {
 		this.partnerRepresentativeId = partnerRepresentativeId;
+		this.details.forEach(det -> det.setPartnerRepresentativeId(partnerRepresentativeId));
 	}
 
 	void setUserReservedDate1(LocalDate userReservedDate1) {
@@ -676,17 +734,35 @@ public class SalesOrder extends DatabaseEntity<SalesOrderPK>{
 	void setUserReservedDate2(LocalDate userReservedDate2) {
 		this.userReservedDate2 = userReservedDate2;
 	}
-
-	void setObjectId(String objectId) {
-		this.objectId = objectId;
-	}
-
-	void setDetails(List<SalesDetail> details) {
-		this.details = details;
+	
+	@JsonUnwrapped
+	public References getReferences() {
+		if (this.details.isEmpty()) return References.builder().build();
+		return this.details.get(0).getReferences();
 	}
 	
-
+	@JsonUnwrapped
+	public IntegratedReferences getIntegratedReferences() {
+		if (this.details.isEmpty()) return IntegratedReferences.builder().build();
+		return this.details.get(0).getIntegratedReferences();
+	}
 	
+	
+	/*public BigDecimal getGrossCost() {
+		return this.details.stream()
+				.map(SalesDetail::getExtendedCost)
+				.reduce(BigDecimal.ZERO, BigDecimal::add);
+	}
+	
+	public BigDecimal getTotalUnitDiscountAmount() {
+		return this.details.stream()
+				.map(PurchaseDetail::getUnitDiscountAmount)
+				.reduce(BigDecimal.ZERO, BigDecimal::add);
+	}
+	
+	public BigDecimal getCostAfterUnitDiscount() {
+		return this.getGrossCost().subtract(this.getTotalUnitDiscountAmount());
+	}*/
 	
 	
 }
