@@ -3,7 +3,6 @@ package ags.goldenlionerp.application.purchase.purchaseorder;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import javax.persistence.AttributeOverride;
@@ -15,8 +14,6 @@ import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
 
 import ags.goldenlionerp.entities.DatabaseEntity;
