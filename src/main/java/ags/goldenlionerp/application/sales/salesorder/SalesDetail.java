@@ -1,6 +1,7 @@
 package ags.goldenlionerp.application.sales.salesorder;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDate;
 
 import javax.persistence.AttributeOverride;
@@ -712,6 +713,10 @@ public class SalesDetail extends DatabaseEntity<SalesDetailPK>{
 	public SalesOrder getOrder() {
 		return order;
 	}
+	
+	public boolean isExtended() {
+		return this.extendedUnitOfMeasure != null && !this.extendedUnitOfMeasure.isEmpty();
+	}
 
 	void setPk(SalesDetailPK pk) {
 		this.pk = pk;
@@ -1073,4 +1078,14 @@ public class SalesDetail extends DatabaseEntity<SalesDetailPK>{
 		this.order = order;
 	}
 
+	public BigDecimal getUnitDiscountAmount() {
+		return this.getExtendedPrice()
+				.multiply(this.getUnitDiscountRate())
+				.divide(BigDecimal.valueOf(100))
+				.setScale(2, RoundingMode.HALF_UP);
+	}
+	
+	public BigDecimal getPriceAfterUnitDiscount() {
+		return this.getExtendedPrice().subtract(this.getUnitDiscountAmount());
+	}
 }

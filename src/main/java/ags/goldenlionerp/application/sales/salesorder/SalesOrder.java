@@ -747,22 +747,21 @@ public class SalesOrder extends DatabaseEntity<SalesOrderPK>{
 		return this.details.get(0).getIntegratedReferences();
 	}
 	
-	
-	/*public BigDecimal getGrossCost() {
+	public BigDecimal getGrossPrice() {
 		return this.details.stream()
-				.map(SalesDetail::getExtendedCost)
+				.map(SalesDetail::getExtendedPrice)
 				.reduce(BigDecimal.ZERO, BigDecimal::add);
 	}
 	
 	public BigDecimal getTotalUnitDiscountAmount() {
 		return this.details.stream()
-				.map(PurchaseDetail::getUnitDiscountAmount)
+				.map(SalesDetail::getUnitDiscountAmount)
 				.reduce(BigDecimal.ZERO, BigDecimal::add);
 	}
 	
-	public BigDecimal getCostAfterUnitDiscount() {
-		return this.getGrossCost().subtract(this.getTotalUnitDiscountAmount());
-	}*/
+	public BigDecimal getPriceAfterUnitDiscount() {
+		return this.getGrossPrice().subtract(this.getTotalUnitDiscountAmount());
+	}
 	
 	
 }
