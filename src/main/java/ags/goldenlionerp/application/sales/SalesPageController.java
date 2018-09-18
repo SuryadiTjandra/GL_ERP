@@ -14,6 +14,6 @@ public class SalesPageController {
 	
 	@GetMapping("/salesOrder")
 	public ModelAndView purchaseOrderPage(@RequestParam(name="appParam", required=false) String appParamCode) {
-		return new ModelAndView("salesOrder", "defaultItem", new SalesOrder());
+		return new ModelAndView("salesOrder", "defaultItem", new SalesOrder(null));
 	}
 }
