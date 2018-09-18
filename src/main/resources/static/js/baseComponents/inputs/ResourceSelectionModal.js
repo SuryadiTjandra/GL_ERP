@@ -9,7 +9,7 @@ var ResourceSelectionModal = {
 		@ok="onOk"
 		@show="onShow">
 	
-		<b-pagination
+		<b-pagination v-if="usePagination"
 			align="right"
 			:value="currentPagePlus"
 			:total-rows="totalElements"
@@ -44,6 +44,7 @@ var ResourceSelectionModal = {
 			
 			fields: ["checkbox", this.resourceMetadata.idPath, this.resourceMetadata.descPath],
 			
+			usePagination: true,
 			totalElements: 0,
 			currentPage: 0,
 			pageSize: 0,
@@ -81,9 +82,15 @@ var ResourceSelectionModal = {
 				.then(result => result.json())
 				.then (result => {
 					this.items = result._embedded[this.dataPath];
-					this.currentPage = result.page.number;
-					this.totalElements = result.page.totalElements;
-					this.pageSize = result.page.size;
+					
+					if (result.page){
+						this.usePagination = true;
+						this.currentPage = result.page.number;
+						this.totalElements = result.page.totalElements;
+						this.pageSize = result.page.size;
+					}else{
+						this.usePagination = false;
+					}
 				})
 				.catch(error => alert(error))
 				.finally(() => {

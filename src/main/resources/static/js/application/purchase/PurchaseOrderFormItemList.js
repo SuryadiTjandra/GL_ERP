@@ -112,7 +112,7 @@ var itemList = {
 								<span class="oi oi-plus"></span>
 							</b-button>
 						</template>
-						<template v-if-else="field.key === 'totalCostInfo'">
+						<template v-else-if="field.key === 'totalCostInfo'">
 							<p class="text-right mr-2">{{totalExtendedCost > 0 ? totalExtendedCost : ''}}</p>
 						</template>
 					</td>
@@ -159,7 +159,7 @@ var itemList = {
 			},
 			totalExtendedCost: function(){
 				let res = this.formDetails ?
-							this.formDetails.map(det => det.extendedCost).reduce( ((a,b) => a + b), 0):
+							this.formDetails.map(det => Number(det.extendedCost)).reduce( ((a,b) => a + b), 0):
 							0;
 				return Number.isNaN(Number(res)) ? 0 : res;
 			}
@@ -180,6 +180,8 @@ var itemList = {
 			},
 			
 			onItemChange: async function(detail, itemCode, item){
+				if (item == null)
+					item = {};
 				
 				detail.itemCode = itemCode;
 				detail.description = item.description;
