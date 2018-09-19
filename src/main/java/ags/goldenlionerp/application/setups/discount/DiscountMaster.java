@@ -201,6 +201,9 @@ public class DiscountMaster extends DatabaseEntity<String> {
 	 * @return the discount amount
 	 */
 	public BigDecimal calculateDiscountAmount(BigDecimal amount) {
+		if (amount.compareTo(BigDecimal.ZERO) == 0)
+			return BigDecimal.ZERO;
+		
 		BigDecimal discountAmount = amount;
 		
 		for (int i = 0; i < getDiscountPercentages().size(); i++) {
@@ -217,6 +220,9 @@ public class DiscountMaster extends DatabaseEntity<String> {
 	 * @return the discount percentage
 	 */
 	public BigDecimal calculateDiscountPercentage(BigDecimal amount) {
+		if (amount.compareTo(BigDecimal.ZERO) == 0)
+			return BigDecimal.ZERO;
+		
 		return calculateDiscountAmount(amount)
 				.multiply(BigDecimal.valueOf(100))
 				.divide(amount, 15, RoundingMode.HALF_UP);

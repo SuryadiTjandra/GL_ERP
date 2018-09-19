@@ -1,11 +1,12 @@
 import ResourceInput from "/js/baseComponents/inputs/ResourceInput.js";
+import DiscountInput from "/js/baseComponents/inputs/DiscountInput.js";
 import DataCodeInput from "/js/baseComponents/inputs/DataCodeInput.js";
 import VoidButton from "/js/baseComponents/buttons/VoidButton.js";
 import AJAXPerformer from "/js/util/AJAXPerformer.js";
 
 var itemList = {
 		components: {
-			ResourceInput, DataCodeInput, VoidButton
+			ResourceInput, DataCodeInput, VoidButton, DiscountInput
 		},
 		props: ['details'],
 		model: {
@@ -90,18 +91,11 @@ var itemList = {
 				
 				<template slot="unitDiscountInfo" slot-scope="detail">
 					<template v-if="detail.item.itemCode != null">
-						<ResourceInput size="sm" 
-							:selectedId="detail.item.unitDiscountCode"
-							:resourceMetadata="{
-								apiUrl:'/api/discounts',
-								dataPath:'discounts',
-								idPath:'discountCode',
-								descPath:'description'
-							}">
-						</ResourceInput>
-						<span>{{formatNumber(detail.item.unitDiscountRate, 2)}} %</span></br>
-						<span>{{formatNumber(detail.item.unitDiscountRate * detail.item.extendedCost / 100, 5)}}</span>
-						</template>
+						<DiscountInput size="sm" showDetail
+							v-model="detail.item.unitDiscountCode"
+							:amount="detail.item.extendedCost">
+						</DiscountInput>
+					</template>
 				</template>
 				
 				<template slot="bottom-row" slot-scope="row">

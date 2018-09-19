@@ -1,8 +1,9 @@
 import ResourceInput from "/js/baseComponents/inputs/ResourceInput.js";
+import DiscountInput from "/js/baseComponents/inputs/DiscountInput.js";
 
 var Summary = {
 	components: {
-		ResourceInput
+		ResourceInput, DiscountInput
 	},
 	props: ['formItem'],
 	model: {
@@ -37,13 +38,10 @@ var Summary = {
 					Discount Nota
 				</b-col>
 				<b-col cols="3">
-					<ResourceInput v-model="formItem.discountCode" size="sm" 
-						:resourceMetadata="{
-							apiUrl:'/api/discounts',
-							dataPath:'discounts',
-							idPath:'discountCode',
-							descPath:'description'
-						}"
+					<DiscountInput size="sm" 
+						:discountCode="formItem.discountCode" 
+						:amount="brutto - itemDiscount"
+						@change="onDiscountChange"
 					>
 					
 					</ResourceInput>
@@ -123,6 +121,12 @@ var Summary = {
 		},
 		netto: function(){
 			return (this.taxable - this.taxAmount).toFixed(2);
+		}
+	},
+	methods: {
+		onDiscountChange: function(discCode, disc, discCalc){
+			this.formItem.discountCode = discCode;
+			this.formItem.discountRate = discCalc.discountRate;
 		}
 	}
 }
