@@ -221,4 +221,13 @@ public class DiscountMaster extends DatabaseEntity<String> {
 				.multiply(BigDecimal.valueOf(100))
 				.divide(amount, 15, RoundingMode.HALF_UP);
 	}
+	
+	public DiscountCalculationResult calculateDiscount(BigDecimal amount) {
+		return new DiscountCalculationResult(
+				amount,
+				this.discountCode,
+				calculateDiscountPercentage(amount),
+				calculateDiscountAmount(amount)
+			);
+	}
 }

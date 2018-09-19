@@ -54,7 +54,8 @@ public class DiscountApiTest extends ApiTestBase<String> {
 			.andExpect(jsonPath("$.discountAmount2").value(0))
 			.andExpect(jsonPath("$.discountAmount3").value(0))
 			.andExpect(jsonPath("$.discountAmount4").value(0))
-			.andExpect(jsonPath("$.discountAmount5").value(0));
+			.andExpect(jsonPath("$.discountAmount5").value(0))
+			.andExpect(jsonPath("$._links.calculate.href").exists());
 	}
 
 	@Override
