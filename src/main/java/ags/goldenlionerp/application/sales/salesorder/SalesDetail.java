@@ -146,11 +146,11 @@ public class SalesDetail extends DatabaseEntity<SalesDetailPK>{
 	@Column(name="SDTAXAM", precision=19, scale=5)
 	private BigDecimal taxAmount;
 	
-	@Column(name="SDFUC", precision=19, scale=7)
-	private BigDecimal foreignUnitCost;
+	@Column(name="SDFUP", precision=19, scale=7)
+	private BigDecimal foreignUnitPrice;
 	
-	@Column(name="SDFEC", precision=19, scale=5)
-	private BigDecimal foreignExtendedCost;
+	@Column(name="SDFEP", precision=19, scale=5)
+	private BigDecimal foreignExtendedPrice;
 
 	@Column(name="SDFTB", precision=19, scale=5)
 	private BigDecimal foreignTaxBase;
@@ -245,43 +245,43 @@ public class SalesDetail extends DatabaseEntity<SalesDetailPK>{
 	@Column(name="SDRLDOCSQ")
 	private int relatedDocumentSequence;
 	
-	@Column(name="ODSLRC1")
+	@Column(name="SDSLRC1")
 	private String serverOperatorCode;
 	
-	//@Column(name="ODSLRC2")
+	//@Column(name="SDSLRC2")
 	//private String salesReportingCode;
 	
-	//@Column(name="ODSLRC3")
+	//@Column(name="SDSLRC3")
 	//private String salesReportingCode;
 	
-	//@Column(name="ODSLRC4")
+	//@Column(name="SDSLRC4")
 	//private String salesReportingCode;
 	
-	//@Column(name="ODSLRC5")
+	//@Column(name="SDSLRC5")
 	//private String salesReportingCode;
 	
-	@Column(name="ODITC01")
+	@Column(name="SDITC01")
 	private String categoryCode;
 	
-	@Column(name="ODITC02")
+	@Column(name="SDITC02")
 	private String brandCode;
 	
-	@Column(name="ODITC03")
+	@Column(name="SDITC03")
 	private String typeCode;
 	
-	//@Column(name="ODITC04")
+	//@Column(name="SDITC04")
 	//private String categoryCode4;
 	
-	@Column(name="ODITC05")
+	@Column(name="SDITC05")
 	private String landedCostRule;
 	
 	@Embedded
 	@AttributeOverrides({
-		@AttributeOverride(name="containerSize", column=@Column(name="SDPO01")),
-		@AttributeOverride(name="stuffingType", column=@Column(name="SDPO02")),
-		@AttributeOverride(name="containerLoadType", column=@Column(name="SDPO03")),
-		//@AttributeOverride(name="purchaseOption4", column=@Column(name="SDPO04")),
-		//@AttributeOverride(name="purchaseOption5", column=@Column(name="SDPO05")), etc
+		@AttributeOverride(name="containerSize", column=@Column(name="SDSO01")),
+		@AttributeOverride(name="stuffingType", column=@Column(name="SDSO02")),
+		@AttributeOverride(name="containerLoadType", column=@Column(name="SDSO03")),
+		//@AttributeOverride(name="purchaseOption4", column=@Column(name="SDSO04")),
+		//@AttributeOverride(name="purchaseOption5", column=@Column(name="SDSO05")), etc
 	})
 	@JsonUnwrapped
 	private SalesOptions salesOptions = SalesOptions.builder().build();
@@ -317,7 +317,7 @@ public class SalesDetail extends DatabaseEntity<SalesDetailPK>{
 	@Column(name="SDVHTY")
 	private String vehicleType;
 	
-	@Column(name="SDQTYWY", precision=19, scale=5)
+	@Column(name="SDQTYWT", precision=19, scale=5)
 	private BigDecimal weightQuantity;
 	
 	@Column(name="SDUOMW")
@@ -329,10 +329,10 @@ public class SalesDetail extends DatabaseEntity<SalesDetailPK>{
 	@Column(name="SDUOMV")
 	private String volumeUnitOfMeasure;
 	
-	@Column(name="SDURN1")
+	@Column(name="SDURNB1")
 	private int userReservedNumber1;
 	
-	@Column(name="SDURN2")
+	@Column(name="SDURNB2")
 	private int userReservedNumber2;
 	
 	@Column(name="SDOTT")
@@ -500,14 +500,6 @@ public class SalesDetail extends DatabaseEntity<SalesDetailPK>{
 
 	public BigDecimal getTaxAmount() {
 		return taxAmount;
-	}
-
-	public BigDecimal getForeignUnitCost() {
-		return foreignUnitCost;
-	}
-
-	public BigDecimal getForeignExtendedCost() {
-		return foreignExtendedCost;
 	}
 
 	public BigDecimal getForeignTaxBase() {
@@ -866,14 +858,6 @@ public class SalesDetail extends DatabaseEntity<SalesDetailPK>{
 		this.taxAmount = taxAmount;
 	}
 
-	void setForeignUnitCost(BigDecimal foreignUnitCost) {
-		this.foreignUnitCost = foreignUnitCost;
-	}
-
-	void setForeignExtendedCost(BigDecimal foreignExtendedCost) {
-		this.foreignExtendedCost = foreignExtendedCost;
-	}
-
 	void setForeignTaxBase(BigDecimal foreignTaxBase) {
 		this.foreignTaxBase = foreignTaxBase;
 	}
@@ -1087,5 +1071,21 @@ public class SalesDetail extends DatabaseEntity<SalesDetailPK>{
 	
 	public BigDecimal getPriceAfterUnitDiscount() {
 		return this.getExtendedPrice().subtract(this.getUnitDiscountAmount());
+	}
+
+	public BigDecimal getForeignUnitPrice() {
+		return foreignUnitPrice;
+	}
+
+	public BigDecimal getForeignExtendedPrice() {
+		return foreignExtendedPrice;
+	}
+
+	void setForeignUnitPrice(BigDecimal foreignUnitPrice) {
+		this.foreignUnitPrice = foreignUnitPrice;
+	}
+
+	void setForeignExtendedPrice(BigDecimal foreignExtendedPrice) {
+		this.foreignExtendedPrice = foreignExtendedPrice;
 	}
 }

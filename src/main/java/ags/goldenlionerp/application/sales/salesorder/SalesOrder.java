@@ -134,7 +134,7 @@ public class SalesOrder extends DatabaseEntity<SalesOrderPK>{
 	private String nextStatus;
 	
 	@Column(name="SHCSDOCNO")
-	private int customerOrderNumber;
+	private String customerOrderNumber;
 	
 	@Column(name="SHCSDOCDT")
 	private LocalDate customerOrderDate;
@@ -355,7 +355,7 @@ public class SalesOrder extends DatabaseEntity<SalesOrderPK>{
 		return nextStatus;
 	}
 
-	public int getCustomerOrderNumber() {
+	public String getCustomerOrderNumber() {
 		return customerOrderNumber;
 	}
 
@@ -662,7 +662,7 @@ public class SalesOrder extends DatabaseEntity<SalesOrderPK>{
 		this.details.forEach(det -> det.setGuestServiceChargeRate(guestServiceChargeRate));
 	}
 
-	void setCustomerOrderNumber(int customerOrderNumber) {
+	void setCustomerOrderNumber(String customerOrderNumber) {
 		this.customerOrderNumber = customerOrderNumber;
 	}
 

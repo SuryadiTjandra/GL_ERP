@@ -19,7 +19,7 @@ public class SalesDetailPK implements Serializable {
 	@Column(name="SDDOCOTY")
 	private String salesOrderType;
 	
-	@Column(name="SDDOCOSEQ")
+	@Column(name="SDDOCOSQ")
 	private int salesOrderSequence;
 
 	@SuppressWarnings("unused")
