@@ -83,16 +83,16 @@ public class SalesOrder extends DatabaseEntity<SalesOrderPK>{
 	private LocalDate glDate;
 	
 	@Column(name="SHETD")
-	private LocalDateTime estimatedTimeOfDeparture;
+	private LocalDate estimatedTimeOfDeparture;
 	
 	@Column(name="SHETA")
-	private LocalDateTime estimatedTimeOfArrival;
+	private LocalDate estimatedTimeOfArrival;
 	
 	@Column(name="SHATD")
-	private LocalDateTime actualTimeOfDeparture;
+	private LocalDate actualTimeOfDeparture;
 	
 	@Column(name="SHATA")
-	private LocalDateTime actualTimeOfArrival;
+	private LocalDate actualTimeOfArrival;
 	
 	@Column(name="SHDOL")
 	private LocalDate dateOfLoading;
@@ -170,7 +170,7 @@ public class SalesOrder extends DatabaseEntity<SalesOrderPK>{
 	private String conditionOfTransport;
 	
 	@Column(name="SHSHCN")
-	private String shipmentCodition;
+	private String shipmentCondition;
 	
 	@Column(name="SHSHMT")
 	private String shippingMethod;
@@ -287,19 +287,19 @@ public class SalesOrder extends DatabaseEntity<SalesOrderPK>{
 		return glDate;
 	}
 
-	public LocalDateTime getEstimatedTimeOfDeparture() {
+	public LocalDate getEstimatedTimeOfDeparture() {
 		return estimatedTimeOfDeparture;
 	}
 
-	public LocalDateTime getEstimatedTimeOfArrival() {
+	public LocalDate getEstimatedTimeOfArrival() {
 		return estimatedTimeOfArrival;
 	}
 
-	public LocalDateTime getActualTimeOfDeparture() {
+	public LocalDate getActualTimeOfDeparture() {
 		return actualTimeOfDeparture;
 	}
 
-	public LocalDateTime getActualTimeOfArrival() {
+	public LocalDate getActualTimeOfArrival() {
 		return actualTimeOfArrival;
 	}
 
@@ -403,8 +403,8 @@ public class SalesOrder extends DatabaseEntity<SalesOrderPK>{
 		return conditionOfTransport;
 	}
 
-	public String getShipmentCodition() {
-		return shipmentCodition;
+	public String getShipmentCondition() {
+		return shipmentCondition;
 	}
 
 	public String getShippingMethod() {
@@ -629,19 +629,19 @@ public class SalesOrder extends DatabaseEntity<SalesOrderPK>{
 		this.details = details;
 	}
 
-	void setEstimatedTimeOfDeparture(LocalDateTime estimatedTimeOfDeparture) {
+	void setEstimatedTimeOfDeparture(LocalDate estimatedTimeOfDeparture) {
 		this.estimatedTimeOfDeparture = estimatedTimeOfDeparture;
 	}
 
-	void setEstimatedTimeOfArrival(LocalDateTime estimatedTimeOfArrival) {
+	void setEstimatedTimeOfArrival(LocalDate estimatedTimeOfArrival) {
 		this.estimatedTimeOfArrival = estimatedTimeOfArrival;
 	}
 
-	void setActualTimeOfDeparture(LocalDateTime actualTimeOfDeparture) {
+	void setActualTimeOfDeparture(LocalDate actualTimeOfDeparture) {
 		this.actualTimeOfDeparture = actualTimeOfDeparture;
 	}
 
-	void setActualTimeOfArrival(LocalDateTime actualTimeOfArrival) {
+	void setActualTimeOfArrival(LocalDate actualTimeOfArrival) {
 		this.actualTimeOfArrival = actualTimeOfArrival;
 	}
 
@@ -698,8 +698,8 @@ public class SalesOrder extends DatabaseEntity<SalesOrderPK>{
 		this.freightHandlingCode = freightHandlingCode;
 	}
 
-	void setShipmentCodition(String shipmentCodition) {
-		this.shipmentCodition = shipmentCodition;
+	void setShipmentCondition(String shipmentCodition) {
+		this.shipmentCondition = shipmentCodition;
 	}
 
 	void setShippingMethod(String shippingMethod) {
