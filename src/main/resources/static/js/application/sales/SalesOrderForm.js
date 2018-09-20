@@ -1,12 +1,12 @@
 import BasicForm from "./SalesOrderFormBasicInfo.js";
 import ItemForm from "./SalesOrderFormItemList.js";
 import ShippingForm from "./SalesOrderFormShippingInfo.js";
-//import Summary from "./PurchaseOrderSummary.js";
+import Summary from "./SalesOrderSummary.js";
 import AJAXPerformer from "/js/util/AJAXPerformer.js";
 
 var SalesOrderForm = {
 		components: {
-			BasicForm, ItemForm, ShippingForm//, Summary
+			BasicForm, ItemForm, ShippingForm, Summary
 		},
 		props: {
 			item: {
@@ -36,11 +36,11 @@ var SalesOrderForm = {
 				<ShippingForm v-model="formItem" :editable="editable">
 				</ShippingForm>
 			</b-tab>
-			<!--<b-tab title="Summary">
+			<b-tab title="Summary">
 				</br>
 				<Summary v-model="formItem" :editable="editable">
 				</Summary>
-			</b-tab>-->
+			</b-tab><!---->
 		</b-tabs>
 		</br>
 		<b-button variant="secondary" @click="$emit('cancel')">Kembali</b-button>
