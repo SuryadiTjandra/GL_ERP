@@ -90,7 +90,10 @@ var ResourceInput = {
 		
 		let url = this.resourceMetadata.apiUrl + "/" + this.selectedId;
 		AJAXPerformer.getAsJson(url)
-			.then(res => this.selected = res);
+			.then(res => {
+				this.selected = res;
+				this.$emit('input', this.selected[this.idPath], this.selected);
+			})
 	}
 };
 

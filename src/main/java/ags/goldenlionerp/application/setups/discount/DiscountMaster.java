@@ -207,7 +207,7 @@ public class DiscountMaster extends DatabaseEntity<String> {
 		BigDecimal discountAmount = amount;
 		
 		for (int i = 0; i < getDiscountPercentages().size(); i++) {
-			BigDecimal percDisc = getDiscountPercentages().get(i).multiply(amount).divide(BigDecimal.valueOf(100));
+			BigDecimal percDisc = getDiscountPercentages().get(i).multiply(discountAmount).divide(BigDecimal.valueOf(100));
 			BigDecimal amtDisc = getDiscountAmounts().get(i);
 			discountAmount = discountAmount.subtract(percDisc).subtract(amtDisc);
 		}

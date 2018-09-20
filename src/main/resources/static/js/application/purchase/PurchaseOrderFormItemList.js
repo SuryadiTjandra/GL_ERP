@@ -92,7 +92,8 @@ var itemList = {
 				<template slot="unitDiscountInfo" slot-scope="detail">
 					<template v-if="detail.item.itemCode != null">
 						<DiscountInput size="sm" showDetail
-							v-model="detail.item.unitDiscountCode"
+							:discountCode="detail.item.unitDiscountCode"
+							@change="onUnitDiscountChange(detail.item, ...arguments)"
 							:amount="detail.item.extendedCost">
 						</DiscountInput>
 					</template>
@@ -210,6 +211,11 @@ var itemList = {
 				let unitCost = Number(extendedCost) / Number(detail.quantity);
 				detail.unitCost = this.formatNumber(unitCost);
 			},
+			onUnitDiscountChange: function(detail, discCode, disc, discCalc){
+				detail.unitDiscountCode = discCode;
+				detail.unitDiscountRate = discCalc != null ? discCalc.discountRate : 0;
+			},
+			
 			onAddNewRow: function(){
 				this.formDetails.push(this.defaultDetail());
 			},

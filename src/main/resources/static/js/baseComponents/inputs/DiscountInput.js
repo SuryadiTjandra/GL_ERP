@@ -21,7 +21,7 @@ var DiscountInput = {
 					idPath:'discountCode',
 					descPath:'description'
 				}"
-				@change="onChange">
+				@input="onInput">
 			</ResourceInput>
 			<template v-if="showDetail == true && discountCode != null && discountCode.length > 0">
 				<span>{{discountRate}} %</span></br>
@@ -37,7 +37,7 @@ var DiscountInput = {
 			}
 		},
 		methods: {
-			onChange: function(discCode, disc){
+			onInput: function(discCode, disc){
 				if (disc == null){
 					this.setData({});
 					this.$emit('change', discCode, disc, null);
@@ -57,8 +57,11 @@ var DiscountInput = {
 					.then(res => res.json())
 			},
 			setData: function(obj){
-				this.discountAmount = Number(obj.discountAmount).toFixed(2);
-				this.discountRate = Number(obj.discountRate).toFixed(2);
+				let amt = Number(obj.discountAmount);
+				this.discountAmount = Number.isNaN(amt) ? 0.00 : amt.toFixed(2);
+
+				let rate = Number(obj.discountRate);
+				this.discountRate = Number.isNaN(rate) ? 0.00 : rate.toFixed(2);
 			}
 		},
 		watch: {

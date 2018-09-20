@@ -19,7 +19,7 @@ var Summary = {
 					Brutto
 				</b-col>
 				<b-col class="text-right">
-					{{brutto}}
+					{{brutto.toFixed(2)}}
 				</b-col>
 			</b-row>
 			<b-row class="my-3">
@@ -27,10 +27,10 @@ var Summary = {
 					Discount Item
 				</b-col>
 				<b-col cols="4" class="text-right">
-					{{itemDiscountRate}}%
+					{{itemDiscountRate.toFixed(2)}}%
 				</b-col>
 				<b-col cols="4" class="text-right">
-					{{itemDiscount}}
+					{{itemDiscount.toFixed(2)}}
 				</b-col>
 			</b-row>
 			<b-row class="my-3">
@@ -44,13 +44,13 @@ var Summary = {
 						@change="onDiscountChange"
 					>
 					
-					</ResourceInput>
+					</DiscountInput>
 				</b-col>
 				<b-col cols="2" class="text-right">
-					{{orderDiscountRate}}%
+					{{orderDiscountRate.toFixed(2)}}%
 				</b-col>
 				<b-col cols="4" class="text-right">
-					{{orderDiscount}}
+					{{orderDiscount.toFixed(2)}}
 				</b-col>
 			</b-row>
 			<b-row class="my-3">
@@ -58,7 +58,7 @@ var Summary = {
 					D.P.P.
 				</b-col>
 				<b-col cols="6" class="text-right">
-					{{taxable}}
+					{{taxable.toFixed(2)}}
 				</b-col>
 			</b-row>
 			<b-row class="my-3">
@@ -66,7 +66,7 @@ var Summary = {
 					PPN
 				</b-col>
 				<b-col cols="6" class="text-right">
-					{{taxAmount}}
+					{{taxAmount.toFixed(2)}}
 				</b-col>
 			</b-row>
 			<b-row class="my-3">
@@ -74,7 +74,7 @@ var Summary = {
 					Total
 				</b-col>
 				<b-col cols="6" class="text-right">
-					{{netto}}
+					{{netto.toFixed(2)}}
 				</b-col>
 			</b-row>
 		</b-col>
@@ -87,46 +87,48 @@ var Summary = {
 			
 			return this.formItem.details
 					.map(det => det.extendedCost)
-					.reduce((a, b) => a + b, 0)
-					.toFixed(2);
+					.reduce((a, b) => a + b, 0);
 		},
 		itemDiscount: function(){
 			if (this.formItem.details == null) return 0.00;
 			
 			return this.formItem.details
 					.map(det => det.unitDiscountRate/100 * det.extendedCost)
-					.reduce((a, b) => a + b, 0)
-					.toFixed(2);
+					.reduce((a, b) => a + b, 0);
 		},
 		itemDiscountRate: function(){
 			if (this.formItem.details == null) return 0.00;
 			if (this.brutto == 0) return 0.00;
-			return (this.itemDiscount / this.brutto * 100).toFixed(2);
+			return this.itemDiscount / this.brutto * 100;
 		},
 		orderDiscount: function(){
 			let afterUnitDiscount = this.brutto - this.itemDiscount;
 			if (afterUnitDiscount == 0) return 0.00;
-			return (this.formItem.discountRate/100 * afterUnitDiscount).toFixed(2);
+			return this.formItem.discountRate/100 * afterUnitDiscount;
 		},
 		orderDiscountRate: function(){
 			if (this.formItem.discountRate == null) return 0.00;
-			return this.formItem.discountRate.toFixed(2);
-		},
-		taxable: function(){
-			return (this.brutto - this.itemDiscount - this.orderDiscount).toFixed(2);
+			return this.formItem.discountRate;
 		},
 		taxAmount: function(){
 			if (this.formItem.taxRate == null) return 0.00;
-			return (this.formItem.taxRate/100 * this.taxable).toFixed(2);
+			return this.formItem.taxRate/100 * this.taxable;
+		},
+		taxable: function(){
+			return this.formItem.taxAllowance == true ?
+					this.netto * 100/(100 + this.formItem.taxRate) :
+					this.brutto - this.itemDiscount - this.orderDiscount;
 		},
 		netto: function(){
-			return (this.taxable - this.taxAmount).toFixed(2);
+			return this.formItem.taxAllowance == true ?
+					this.brutto - this.itemDiscount - this.orderDiscount :
+					this.taxable + this.taxAmount;
 		}
 	},
 	methods: {
 		onDiscountChange: function(discCode, disc, discCalc){
 			this.formItem.discountCode = discCode;
-			this.formItem.discountRate = discCalc.discountRate;
+			this.formItem.discountRate = discCalc != null ? discCalc.discountRate : 0.00;
 		}
 	}
 }
