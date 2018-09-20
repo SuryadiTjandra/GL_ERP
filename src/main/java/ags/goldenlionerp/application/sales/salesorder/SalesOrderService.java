@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.time.YearMonth;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -15,8 +16,6 @@ import org.springframework.stereotype.Service;
 import ags.goldenlionerp.application.addresses.address.AddressBookMaster;
 import ags.goldenlionerp.application.addresses.address.AddressBookRepository;
 import ags.goldenlionerp.application.item.uomconversion.UomConversionService;
-import ags.goldenlionerp.application.purchase.purchaseorder.PurchaseDetail;
-import ags.goldenlionerp.application.purchase.purchaseorder.PurchaseOrderPK;
 import ags.goldenlionerp.application.setups.company.Company;
 import ags.goldenlionerp.application.setups.company.CompanyRepository;
 import ags.goldenlionerp.application.setups.discount.DiscountMaster;
@@ -312,6 +311,17 @@ public class SalesOrderService {
 			soRequest.setProfitCenterId(soRequest.getBusinessUnitId());
 		
 		return soRequest;
+	}
+	
+	public SalesOrder getDefaultSalesOrder(String appParamCode) {
+		//TODO actually fetch values from DB, not hardcode
+		SalesOrderPK pk = new SalesOrderPK("11000", 0, "SO");
+		SalesOrder po = new SalesOrder(Collections.emptyList());
+		po.setPk(pk);
+		po.setBusinessUnitId("110");
+		po.setLastStatus("520");
+		po.setNextStatus("560");
+		return po;
 	}
 
 }
