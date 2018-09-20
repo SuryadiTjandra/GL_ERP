@@ -87,14 +87,14 @@ var Summary = {
 			
 			return this.formItem.details
 					.map(det => det.extendedCost)
-					.reduce((a, b) => a + b, 0);
+					.reduce((a, b) => Number(a) + Number(b), 0);
 		},
 		itemDiscount: function(){
 			if (this.formItem.details == null) return 0.00;
 			
 			return this.formItem.details
 					.map(det => det.unitDiscountRate/100 * det.extendedCost)
-					.reduce((a, b) => a + b, 0);
+					.reduce((a, b) => Number(a) + Number(b), 0);
 		},
 		itemDiscountRate: function(){
 			if (this.formItem.details == null) return 0.00;

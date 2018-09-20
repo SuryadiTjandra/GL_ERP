@@ -94,7 +94,8 @@ var itemList = {
 						<DiscountInput size="sm" showDetail
 							:discountCode="detail.item.unitDiscountCode"
 							@change="onUnitDiscountChange(detail.item, ...arguments)"
-							:amount="detail.item.extendedCost">
+							:amount="detail.item.unitCost"
+							:quantity="detail.item.quantity">
 						</DiscountInput>
 					</template>
 				</template>

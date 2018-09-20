@@ -4,7 +4,11 @@ var DiscountInput = {
 		components: { ResourceInput },
 		props: {
 			discountCode : String,
-			amount: Number,
+			amount: [Number, String],
+			quantity: {
+				type: [Number, String],
+				default: 1
+			},
 			showDetail: Boolean
 		},
 		model: {
@@ -25,7 +29,7 @@ var DiscountInput = {
 			</ResourceInput>
 			<template v-if="showDetail == true && discountCode != null && discountCode.length > 0">
 				<span>{{discountRate}} %</span></br>
-				<span>{{discountAmount}}</span>
+				<span>{{discountAmount * quantity}}</span>
 			</template>
 		</div>
 		`,

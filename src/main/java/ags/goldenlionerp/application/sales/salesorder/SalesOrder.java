@@ -62,7 +62,7 @@ public class SalesOrder extends DatabaseEntity<SalesOrderPK>{
 	private String transactionCurrency;
 	
 	@Column(name="SHEXCRT", precision=19, scale=9)
-	private BigDecimal exchangeRate;
+	private BigDecimal exchangeRate = BigDecimal.ONE;
 	
 	@Column(name="SHORDT")
 	private LocalDate orderDate;
