@@ -226,13 +226,13 @@ var form = {
 					this.receiver = vendor;
 				}
 				
-				let apSetting = await AJAXPerformer.getAsJson(vendor._links.apSetting.href);				
+				let arSetting = await AJAXPerformer.getAsJson(vendor._links.arSetting.href);				
 				if (this.formItem.transactionCurrency == null){
-					this.formItem.transactionCurrency = apSetting.currencyCodeTransaction;
+					this.formItem.transactionCurrency = arSetting.currencyCodeTransaction;
 				}
 					
 				if (this.formItem.paymentTermCode == null){
-					this.formItem.paymentTermCode = apSetting.paymentTermCode;
+					this.formItem.paymentTermCode = arSetting.paymentTermCode;
 				}
 				
 			},

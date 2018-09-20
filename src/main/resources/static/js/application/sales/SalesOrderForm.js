@@ -1,12 +1,12 @@
 import BasicForm from "./SalesOrderFormBasicInfo.js";
-//import ItemForm from "./SalesOrderFormItemList.js";
+import ItemForm from "./SalesOrderFormItemList.js";
 //import ShippingForm from "./PurchaseOrderFormShippingInfo.js";
 //import Summary from "./PurchaseOrderSummary.js";
 import AJAXPerformer from "/js/util/AJAXPerformer.js";
 
 var SalesOrderForm = {
 		components: {
-			BasicForm//, ItemForm, ShippingForm, Summary
+			BasicForm, ItemForm//, ShippingForm, Summary
 		},
 		props: {
 			item: {
@@ -26,12 +26,12 @@ var SalesOrderForm = {
 				<BasicForm :editable="editable" v-model="formItem">
 				</BasicForm>
 			</b-tab>
-			<!--<b-tab title="Items">
+			<b-tab title="Items">
 				</br>
 				<ItemForm v-model="formItem.details">
 				</ItemForm>
 			</b-tab>
-			<b-tab title="Shipping">
+			<!--<b-tab title="Shipping">
 				</br>
 				<ShippingForm v-model="formItem" :editable="editable">
 				</ShippingForm>
