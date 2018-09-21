@@ -150,7 +150,8 @@ var form = {
 					</b-form-group>
 					<b-form-group label="Tipe PPN" label-size="sm" horizontal label-text-align="right">
 						<ResourceInput size="sm"
-							v-model="formItem.taxCode"
+							:selectedId="formItem.taxCode"
+							@input="onTaxInput"
 							:readOnly="!editable"
 							:resourceMetadata="{
 								apiUrl:'/api/taxRules',
@@ -235,10 +236,21 @@ var form = {
 					this.formItem.paymentTermCode = arSetting.paymentTermCode;
 				}
 				
+				if (this.formItem.taxCode == null){
+					this.formItem.taxCode = arSetting.taxCode;
+				}
+				
 			},
 			onReceiverChange: function(receiverId, receiver){
 				this.formItem.receiverId = receiverId;
 				this.receiver = receiver;
+			},
+			onTaxInput: function(taxCode, taxRule){
+				this.formItem.taxCode = taxCode;
+				this.formItem.taxRate = taxRule == null ? 0 : taxRule.taxPercentage1 + 
+					taxRule.taxPercentage2 + taxRule.taxPercentage3 + 
+					taxRule.taxPercentage4 + taxRule.taxPercentage5;
+				this.formItem.taxAllowance = taxRule == null ? false : taxRule.taxAllowance;
 			}
 		}
 };
