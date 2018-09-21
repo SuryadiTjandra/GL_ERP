@@ -16,6 +16,7 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
 
+import ags.goldenlionerp.application.purchase.OrderStatus;
 import ags.goldenlionerp.entities.DatabaseEntity;
 
 @Entity
@@ -492,4 +493,11 @@ public class PurchaseOrder extends DatabaseEntity<PurchaseOrderPK> {
 		this.vehicleDescription2 = vehicleDescription2;
 	}
 
+	public OrderStatus getStatus() {
+		//TODO
+		if (details.stream().map(det -> det.getStatus()).allMatch(st -> st.equals(OrderStatus.CANCELLED)))
+			return OrderStatus.CANCELLED;
+		else
+			return OrderStatus.OPEN;
+	}
 }

@@ -321,4 +321,20 @@ public class PurchaseOrderService {
 		po.setNextStatus("400");
 		return po;
 	}
+	
+	public PurchaseOrder updatePurchaseOrder(PurchaseOrder poRequest) {
+		
+		//cancel all details marked for cancel
+		List<PurchaseDetail> details = poRequest.getDetails();
+		for (PurchaseDetail det : details) {
+			if (det.isSetForVoid())
+				det.voidDocument();
+		}
+		
+		//only save detail changes, ignore changes to the order object
+		PurchaseOrder oldPo = repo.findById(poRequest.getPk())
+				.orElseThrow(() -> new ResourceNotFoundException());
+		oldPo.setDetails(poRequest.getDetails());
+		return repo.save(oldPo);
+	}
 }

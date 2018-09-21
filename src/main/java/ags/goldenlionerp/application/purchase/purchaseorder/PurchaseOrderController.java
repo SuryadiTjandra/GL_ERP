@@ -9,6 +9,7 @@ import org.springframework.data.rest.webmvc.support.RepositoryEntityLinks;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,9 +26,21 @@ public class PurchaseOrderController {
 	@Autowired
 	private RepositoryEntityLinks links;
 
-	@RequestMapping(path="/purchaseOrders/{id}", method= {RequestMethod.PATCH, RequestMethod.PUT})
+	//@RequestMapping(path="/purchaseOrders/{id}", method= {RequestMethod.PATCH, RequestMethod.PUT})
 	public ResponseEntity<?> noUpdateAllowed() {
 		return new ResponseEntity<>(HttpStatus.METHOD_NOT_ALLOWED);
+	}
+	
+	@PatchMapping("/purchaseOrders/{id}")
+	public ResponseEntity<?> updatePurchaseOrder(@RequestBody PurchaseOrder poRequest,
+			PersistentEntityResourceAssembler assembler){
+		
+		PurchaseOrder po = service.updatePurchaseOrder(poRequest);
+		
+		URI location = URI.create(links.linkToSingleResource(PurchaseOrder.class, po.getId()).getHref());
+		
+		return ResponseEntity.created(location).body(assembler.toFullResource(po));
+		
 	}
 	
 	@DeleteMapping("/purchaseOrders/{id}")
