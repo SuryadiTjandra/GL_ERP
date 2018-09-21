@@ -42,9 +42,10 @@ var PurchaseOrderForm = {
 				</Summary>
 			</b-tab>
 		</b-tabs>
-		</br>
-		<b-button variant="secondary" @click="$emit('cancel')">Kembali</b-button>
-		<b-button type="submit" variant="primary"  v-if="editable">Simpan</b-button>
+		<b-form-row class="mt-2 mb-4">
+			<b-button variant="secondary" @click="$emit('cancel')" class="mx-2">Kembali</b-button>
+			<b-button type="submit" variant="primary"  v-if="editable" class="mx-2">Simpan</b-button>
+		</b-form-row>
 		</b-form>
 		`,
 		data: function(){

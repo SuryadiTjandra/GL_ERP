@@ -157,7 +157,7 @@ var itemList = {
 				let res = this.formDetails ?
 							this.formDetails.map(det => Number(det.extendedPrice)).reduce( ((a,b) => a + b), 0):
 							0;
-				return Number.isNaN(Number(res)) ? 0 : res;
+				return Number.isNaN(Number(res)) ? 0 : Number(res).toFixed(2);
 			}
 		},
 		methods: {

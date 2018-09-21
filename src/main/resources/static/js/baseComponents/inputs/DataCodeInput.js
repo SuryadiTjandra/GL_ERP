@@ -36,7 +36,7 @@ var DataCodeInput = {
 				text: r.dataCode + " (" + r.description + ")",
 				value: r.dataCode
 			}));
-			this.options;
+			this.options.unshift({ text: '', value: null});
 		});
 		
 	}

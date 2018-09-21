@@ -11,7 +11,7 @@ var ResourceInput = {
 	template: `
 	<div>
 		<b-input-group :size="size">
-			<b-form-input type="text" :required="required"
+			<b-form-input type="text" :required="required" :readOnly="readOnly"
 				@focus.native.stop.prevent="$event.target.blur()"
 				:value="selected[descPath]">
 			</b-form-input>
