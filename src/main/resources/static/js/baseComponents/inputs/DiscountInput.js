@@ -9,7 +9,8 @@ var DiscountInput = {
 				type: [Number, String],
 				default: 1
 			},
-			showDetail: Boolean
+			showDetail: Boolean,
+			readOnly: Boolean
 		},
 		model: {
 			prop:'discountCode',
@@ -18,6 +19,7 @@ var DiscountInput = {
 		template:`
 		<div>
 			<ResourceInput size="sm" 
+				:readOnly="readOnly"
 				:selectedId="discountCode"
 				:resourceMetadata="{
 					apiUrl:'/api/discounts',
