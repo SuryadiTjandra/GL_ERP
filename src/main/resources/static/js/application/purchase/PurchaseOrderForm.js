@@ -28,7 +28,7 @@ var PurchaseOrderForm = {
 			</b-tab>
 			<b-tab title="Items">
 				</br>
-				<ItemForm v-model="formItem.details">
+				<ItemForm v-model="formItem.details" @void="onVoidDetail" :editable="editable">
 				</ItemForm>
 			</b-tab>
 			<b-tab title="Shipping">
@@ -86,31 +86,6 @@ var PurchaseOrderForm = {
 			}
 		},
 		methods: {
-			onVendorChange: async function(vendorId, vendor){				
-				this.formItem.vendorId = vendorId;
-				this.vendor = vendor;
-				if (vendor == null)
-					return;
-				
-				if (this.receiver == null){
-					this.formItem.receiverId = vendorId;
-					this.receiver = vendor;
-				}
-				
-				let apSetting = await AJAXPerformer.getAsJson(vendor._links.apSetting.href);				
-				if (this.formItem.transactionCurrency == null){
-					this.formItem.transactionCurrency = apSetting.currencyCodeTransaction;
-				}
-					
-				if (this.formItem.paymentTermCode == null){
-					this.formItem.paymentTermCode = apSetting.paymentTermCode;
-				}
-				
-			},
-			onReceiverChange: function(receiverId, receiver){
-				this.receiverId = receiverId;
-				this.receiver = receiver;
-			},
 			onSubmit: function(event){
 				this.validated = true;
 				let form = event.target;
@@ -126,6 +101,14 @@ var PurchaseOrderForm = {
 				}else {
 					this.activeTab = 0;
 				}
+			},
+			onVoidDetail: function(detail){
+				detail.voided = true;
+				
+				let seq = detail.purchaseOrderSequence;
+				let oldDetIdx = this.formItem.details.findIndex(det => det.purchaseOrderSequence == seq);
+				this.formItem.details.splice(oldDetIdx, 1, detail);
+				
 			}
 		}
 }
