@@ -85,6 +85,9 @@ public class PurchaseOrderService {
 		if (poRequest.getPaymentTermCode() == null || poRequest.getPaymentTermCode().isEmpty()) {
 			poRequest.setPaymentTermCode(vendor.getApSetting().get().getPaymentTermCode());
 		}
+		if (poRequest.getTaxCode() == null || poRequest.getTaxCode().isEmpty()) {
+			poRequest.setTaxCode(vendor.getApSetting().get().getTaxCode());
+		}
 		if (poRequest.getReceiverId() == null || poRequest.getReceiverId().isEmpty()) {
 			poRequest.setReceiverId(poRequest.getVendorId());
 		}
@@ -166,8 +169,6 @@ public class PurchaseOrderService {
 		poDetail.setOpenQuantity(poDetail.getQuantity());
 		
 		String primaryUom = poDetail.getPrimaryUnitOfMeasure();
-		poDetail.setPrimaryUnitOfMeasure(primaryUom);
-		
 		if (poDetail.getUnitOfMeasure() == null || poDetail.getUnitOfMeasure().isEmpty()) {
 			poDetail.setUnitOfMeasure(primaryUom);
 		}

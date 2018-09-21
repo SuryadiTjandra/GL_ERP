@@ -251,7 +251,7 @@ public class SalesOrderService {
 		
 		//find the discount amount
 		DiscountMaster disc = discOpt.get();
-		BigDecimal amount = soDetail.getUnitCost();
+		BigDecimal amount = soDetail.getUnitPrice();
 		BigDecimal discountRate = disc.calculateDiscountPercentage(amount);
 		
 		soDetail.setUnitDiscountRate(discountRate);
