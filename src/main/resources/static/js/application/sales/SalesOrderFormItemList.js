@@ -8,21 +8,23 @@ var itemList = {
 		components: {
 			ResourceInput, DataCodeInput, VoidButton, DiscountInput
 		},
-		props: ['details'],
+		props: ['details', 'editable'],
 		model: {
 			prop: 'details',
 			event: 'update',
 		},
 		template:`
 		<div>
-			<b-table :fields="fields" :items="formDetails" small responsive showEmpty>
+			<b-table :fields="fields" :items="itemData" small responsive showEmpty>
 				<template slot="action" slot-scope="detail">
-					<VoidButton @void-click="onVoidDetail(detail.item, detail.index)">
+					<VoidButton v-if="editable && !detail.item.voided"
+						@void-click="onVoidDetail(detail.item, detail.index)">
 					</VoidButton>
 				</template>
 				
 				<template slot="itemInfo" slot-scope="detail">
 					<ResourceInput :selectedId="detail.item.itemCode" size="sm" 
+						:readOnly="!editable || detail.item.voided"
 						:resourceMetadata="{
 							apiUrl:'/api/items',
 							dataPath:'items',
@@ -36,13 +38,15 @@ var itemList = {
 				
 				<template slot="quantityInfo" slot-scope="detail">
 					<template v-if="detail.item.itemCode != null">
-						<b-input type="number" size="sm"
+						<b-input type="number" size="sm" 
+							:readOnly="!editable || detail.item.voided"
 							v-model="detail.item.quantity" 
 							:formatter="num => formatNumber(num, 5)" lazy-formatter
 							style="display:inline; width:50%; text-align:right;"
 							@change="onQuantityChange(detail.item, detail.index, ...arguments)">
 						</b-input>
 						<DataCodeInput productCode="00" systemCode="UM" size="sm" 
+							:readOnly="!editable || detail.item.voided"
 							v-model="detail.item.unitOfMeasure"
 							style="display:inline; width:45%">
 						</DataCodeInput>
@@ -51,15 +55,16 @@ var itemList = {
 				
 				<template slot="unitPriceInfo" slot-scope="detail">
 					<template v-if="detail.item.itemCode != null">
-						<b-input-group size="sm">
-							<b-input-group-prepend is-text>
+						<b-input-group size="sm" >
+							<b-input-group-prepend is-text v-if="editable && !detail.item.voided">
 								 <input type="radio" 
 								 	:checked="priceModeByUnit[detail.index]" 
 								 	@click="$set(priceModeByUnit, detail.index, true)">
 								 </input>
 							</b-input-group-prepend>
 							
-							<b-input type="number" :readonly="!priceModeByUnit[detail.index]"
+							<b-input type="number" 
+								:readonly="!priceModeByUnit[detail.index] || !editable || detail.item.voided"
 								v-model="detail.item.unitPrice" 
 								:formatter="num => formatNumber(num, 5)" lazy-formatter
 								style="text-align:right"
@@ -72,14 +77,15 @@ var itemList = {
 				<template slot="totalPriceInfo" slot-scope="detail">
 					<template v-if="detail.item.itemCode != null">
 						<b-input-group size="sm">
-							<b-input-group-prepend is-text>
+							<b-input-group-prepend is-text v-if="editable && !detail.item.voided">
 								 <input type="radio" 
 								 	:checked="!priceModeByUnit[detail.index]"
 								 	@click="$set(priceModeByUnit, detail.index, false)">
 								 </input>
 							</b-input-group-prepend>
 							
-							<b-input type="number" :readonly="priceModeByUnit[detail.index]"
+							<b-input type="number" 
+								:readonly="priceModeByUnit[detail.index] || !editable || detail.item.voided"
 								v-model="detail.item.extendedPrice" 
 								:formatter="num => formatNumber(num, 5)" lazy-formatter
 								style="text-align:right"
@@ -91,11 +97,12 @@ var itemList = {
 				
 				<template slot="unitDiscountInfo" slot-scope="detail">
 					<template v-if="detail.item.itemCode != null">
-						<DiscountInput size="sm" showDetail
+						<DiscountInput size="sm" showDetail 
+							:readOnly="!editable || detail.item.voided"
 							:discountCode="detail.item.unitDiscountCode"
 							@change="onUnitDiscountChange(detail.item, ...arguments)"
 							:amount="detail.item.unitPrice"
-							:quantity="detail.item.quantity"">
+							:quantity="detail.item.quantity">
 						</DiscountInput>
 					</template>
 				</template>
@@ -104,6 +111,7 @@ var itemList = {
 					<td v-for="field in row.fields">
 						<template v-if="field.key === 'action'">
 							<b-button variant="outline-success" @click="onAddNewRow" size="sm"
+								v-if="editable"
 								style="padding:0; border-color:transparent;">
 								<span class="oi oi-plus"></span>
 							</b-button>
@@ -153,11 +161,21 @@ var itemList = {
 				}
 		
 			},
+			itemData: function(){
+				if (this.formDetails == null) return [];
+				return this.formDetails.map(det => {
+					let variant = det.voided ? 'danger': '';
+					return Object.assign(det, { _rowVariant: variant});
+				})
+			},
 			totalExtendedPrice: function(){
 				let res = this.formDetails ?
-							this.formDetails.map(det => Number(det.extendedPrice)).reduce( ((a,b) => a + b), 0):
+							this.formDetails
+								.filter(det => !det.voided)
+								.map(det => Number(det.extendedPrice))
+								.reduce( ((a,b) => a + b), 0):
 							0;
-				return Number.isNaN(Number(res)) ? 0 : Number(res).toFixed(2);
+				return Number.isNaN(Number(res)) ? 0 : res;
 			}
 		},
 		methods: {
@@ -225,7 +243,7 @@ var itemList = {
 					this.formDetails.splice(index, 1);
 				} else {
 					if(confirm("Batalkan item order ini?")){
-						//TODO
+						this.$emit('void', detail);
 					}
 				}
 			},
