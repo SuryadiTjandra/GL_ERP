@@ -14,10 +14,14 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinColumns;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonSetter;
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
 
 import ags.goldenlionerp.application.purchase.IntegratedReferences;
+import ags.goldenlionerp.application.purchase.OrderStatus;
 import ags.goldenlionerp.application.purchase.References;
 import ags.goldenlionerp.application.sales.SalesOptions;
 import ags.goldenlionerp.entities.DatabaseEntity;
@@ -1087,5 +1091,36 @@ public class SalesDetail extends DatabaseEntity<SalesDetailPK>{
 
 	void setForeignExtendedPrice(BigDecimal foreignExtendedPrice) {
 		this.foreignExtendedPrice = foreignExtendedPrice;
+	}
+	
+	public OrderStatus getStatus() {
+		if (cancelledQuantity.doubleValue() > 0)
+			return OrderStatus.CANCELLED;
+		if (openQuantity.compareTo(quantity) == 0)
+			return OrderStatus.OPEN;
+		if (openQuantity.compareTo(BigDecimal.ZERO) == 0)
+			return OrderStatus.CLOSED;
+		
+		return OrderStatus.ETC;
+	}
+	
+	@JsonSetter("voided") @Transient
+	private boolean setForVoid;
+	
+	public boolean isSetForVoid() {
+		return setForVoid;
+	}
+	
+	@JsonGetter("voided")
+	public boolean isVoided() {
+		return this.getStatus().equals(OrderStatus.CANCELLED);
+	}
+	
+	void voidDocument() {
+		if (!this.getStatus().equals(OrderStatus.OPEN))
+			throw new IllegalStateException();
+		
+		this.cancelledQuantity = this.openQuantity;
+		this.openQuantity = BigDecimal.ZERO;
 	}
 }

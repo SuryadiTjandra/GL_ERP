@@ -9,11 +9,10 @@ import org.springframework.data.rest.webmvc.support.RepositoryEntityLinks;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-
 import ags.goldenlionerp.exceptions.ResourceAlreadyExistsException;
 
 @RepositoryRestController
@@ -26,9 +25,21 @@ public class SalesOrderController {
 	@Autowired
 	private SalesOrderService service;
 	
-	@RequestMapping(path="/salesOrders/{id}", method= {RequestMethod.PATCH, RequestMethod.PUT})
+	@PutMapping(path="/salesOrders/{id}")
 	public ResponseEntity<?> noUpdateAllowed() {
 		return new ResponseEntity<>(HttpStatus.METHOD_NOT_ALLOWED);
+	}
+	
+	@PatchMapping("/salesOrders/{id}")
+	public ResponseEntity<?> updateSalesOrder(@RequestBody SalesOrder poRequest,
+			PersistentEntityResourceAssembler assembler){
+		
+		SalesOrder po = service.updateSalesOrder(poRequest);
+		
+		URI location = URI.create(links.linkToSingleResource(SalesOrder.class, po.getId()).getHref());
+		
+		return ResponseEntity.created(location).body(assembler.toFullResource(po));
+		
 	}
 	
 	@DeleteMapping("/salesOrders/{id}")

@@ -324,4 +324,19 @@ public class SalesOrderService {
 		return po;
 	}
 
+	public SalesOrder updateSalesOrder(SalesOrder soRequest) {
+		//cancel all details marked for cancel
+		List<SalesDetail> details = soRequest.getDetails();
+		for (SalesDetail det : details) {
+			if (det.isSetForVoid())
+				det.voidDocument();
+		}
+		
+		//only save detail changes, ignore changes to the order object
+		SalesOrder oldPo = repo.findById(soRequest.getPk())
+				.orElseThrow(() -> new ResourceNotFoundException());
+		oldPo.setDetails(soRequest.getDetails());
+		return repo.save(oldPo);
+	}
+
 }

@@ -17,6 +17,7 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
 
 import ags.goldenlionerp.application.purchase.IntegratedReferences;
+import ags.goldenlionerp.application.purchase.OrderStatus;
 import ags.goldenlionerp.application.purchase.References;
 import ags.goldenlionerp.entities.DatabaseEntity;
 
@@ -626,6 +627,7 @@ public class SalesOrder extends DatabaseEntity<SalesOrderPK>{
 
 	void setDetails(List<SalesDetail> details) {
 		this.details = details;
+		syncDetails();
 	}
 
 	void setEstimatedTimeOfDeparture(LocalDate estimatedTimeOfDeparture) {
@@ -762,5 +764,48 @@ public class SalesOrder extends DatabaseEntity<SalesOrderPK>{
 		return this.getGrossPrice().subtract(this.getTotalUnitDiscountAmount());
 	}
 	
+	public void syncDetails() {
+		//setPk(pk);
+		setBusinessUnitId(businessUnitId);
+		setReceiverId(receiverId);
+		setCustomerId(customerId);
+		setExpeditionId(expeditionId);
+		setPayerId(payerId);
+		setSalesmanId(salesmanId);
+		setBaseCurrency(baseCurrency);
+		setTransactionCurrency(transactionCurrency);
+		setExchangeRate(exchangeRate);
+		setOrderDate(orderDate);
+		setRequestDate(requestDate);
+		setPromisedDeliveryDate(promisedDeliveryDate);
+		setDeliveryDate(deliveryDate);
+		setClosedDate(closedDate);
+		setGlDate(glDate);
+		setPaymentTermCode(paymentTermCode);
+		setTaxCode(taxCode);
+		setTaxAllowance(taxAllowance);
+		setTaxRate(taxRate);
+		setDiscountCode(discountCode);
+		setDiscountRate(discountRate);
+		setLastStatus(lastStatus);
+		setNextStatus(nextStatus);
+		setProjectId(projectId);
+		//setVehicleRegistrationNumber(vehicleRegistrationNumber);
+		//setVehicleType(vehicleType);
+		setObjectId(objectId);
+		setGuestServiceChargeRate(guestServiceChargeRate);
+		setOriginalOrderNumber(originalOrderNumber);
+		setOriginalOrderDate(originalOrderDate);
+		setProfitCenterId(profitCenterId);
+		setHoldCode(holdCode);
+		setPartnerRepresentativeId(partnerRepresentativeId);
+	}
 	
+	public OrderStatus getStatus() {
+		//TODO
+		if (details.stream().map(det -> det.getStatus()).allMatch(st -> st.equals(OrderStatus.CANCELLED)))
+			return OrderStatus.CANCELLED;
+		else
+			return OrderStatus.OPEN;
+	}
 }
