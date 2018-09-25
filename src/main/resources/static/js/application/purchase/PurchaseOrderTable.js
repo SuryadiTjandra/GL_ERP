@@ -33,11 +33,13 @@ var table = {
 			</b-col>
 		</b-row>
 		<!-- table -->
-		<b-table striped hover show-empty small responsive
+		<b-table striped hover show-empty small responsive no-local-sorting
 			:items="items" 
 			:fields="fields"
 			:per-page="pageSize"
-			:busy="isBusy">
+			:busy="isBusy"
+			@sort-changed="onSortChanged"
+			style="white-space:nowrap">
 			
 			<template slot="actions" slot-scope="data">
 				<ViewButton @view-click="onItemView(data.item, $event.target)">
@@ -66,14 +68,39 @@ var table = {
 				},
 				{
 					key: 'companyId',
-					label: 'Company'
+					label: 'Unit Usaha'
 				},{
 					key: 'purchaseOrderNumber',
-					label: 'Number'
+					label: 'Nomor Order',
+					sortable: true
 				}, {
-					key: 'purchaseOrderType',
-					label: 'Type'
-				}],
+					key: 'orderDate',
+					label: 'Tgl. Order',
+					formatter: (value) => new Date(value).toLocaleDateString()
+				},{
+					key: 'businessUnitId',
+					label: 'Unit Kerja'
+				},{
+					key:'vendorId',
+					label: 'Kode Supplier',
+				}, {
+					key: 'description',
+					label: 'Keterangan',
+					formatter: (value) => value.length > 50 ? 
+								value.substring(0, 47) + "..." : 
+								value
+				}, {
+					key: 'lastUpdateUserId',
+					label: 'User ID Ubah',
+					sortable: true
+				}, {
+					key: 'lastUpdateDateTime',
+					label: 'Waktu Ubah',
+					sortable:true,
+					formatter: (value) => new Date(value).toLocaleString()
+				}
+				
+				],
 			items: [],
 			
 			//pagination
@@ -109,7 +136,7 @@ var table = {
 		onRefresh: function(){
 			this.loadData(this.createParamObject(
 				this.currentPage,
-				this.currentSize,
+				this.pageSize,
 				this.sortBy,
 				this.sortDir
 			))
@@ -121,6 +148,19 @@ var table = {
 				this.sortBy, 
 				this.sortDir
 			));
+		},
+		onSortChanged: function(ctx){
+			if (["companyId", "purchaseOrderNumber"].includes(ctx.sortBy))
+				this.sortBy = "pk." + ctx.sortBy;
+			else
+				this.sortBy = ctx.sortBy;
+			this.sortDesc = !ctx.sortDesc;
+			this.loadData(this.createParamObject(
+				this.currentPage,
+				this.pageSize,
+				this.sortBy,
+				this.sortDir
+			))
 		},
 		onCreate: function(){
 			this.$emit('create-clicked')

@@ -37,7 +37,9 @@ var table = {
 			:items="items" 
 			:fields="fields"
 			:per-page="pageSize"
-			:busy="isBusy">
+			:busy="isBusy"
+			@sort-change="onSortChanged"
+			style="white-space:nowrap">
 			
 			<template slot="actions" slot-scope="data">
 				<ViewButton @view-click="onItemView(data.item, $event.target)">
@@ -69,11 +71,44 @@ var table = {
 					label: 'Company'
 				},{
 					key: 'salesOrderNumber',
-					label: 'Number'
+					label: 'No. Order',
+					sortable: true
 				}, {
-					key: 'salesOrderType',
-					label: 'Type'
-				}],
+					key: 'orderDate',
+					label: 'Tgl. Order',
+					sortable:true,
+					formatter: (value) => new Date(value).toLocaleDateString('id-ID')
+				},{
+					key: 'businessUnitId',
+					label: 'Unit Kerja'
+				},{
+					key:'customerId',
+					label: 'Kode Customer'
+				}, {
+					key:'customerOrderDate',
+					label: 'Tgl. PO Customer',
+					sortable:true,
+					formatter: (value) => new Date(value).toLocaleDateString('id-ID')
+				},{
+					key:'customerOrderNumber',
+					label: 'No. PO Customer',
+				},{
+					key: 'description',
+					label: 'Keterangan',
+					formatter: (value) => value.length > 50 ? 
+								value.substring(0, 47) + "..." : 
+								value
+				}, {
+					key: 'lastUpdateUserId',
+					label: 'User ID Ubah',
+					sortable: true
+				}, {
+					key: 'lastUpdateDateTime',
+					label: 'Waktu Ubah',
+					sortable:true,
+					formatter: (value) => new Date(value).toLocaleString()
+				}
+				],
 			items: [],
 			
 			//pagination
@@ -121,6 +156,19 @@ var table = {
 				this.sortBy, 
 				this.sortDir
 			));
+		},
+		onSortChanged: function(ctx){
+			if (["companyId", "salesOrderNumber"].includes(ctx.sortBy))
+				this.sortBy = "pk." + ctx.sortBy;
+			else
+				this.sortBy = ctx.sortBy;
+			this.sortDesc = !ctx.sortDesc;
+			this.loadData(this.createParamObject(
+				this.currentPage,
+				this.pageSize,
+				this.sortBy,
+				this.sortDir
+			))
 		},
 		onCreate: function(){
 			this.$emit('create-clicked')
