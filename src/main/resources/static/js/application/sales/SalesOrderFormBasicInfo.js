@@ -190,7 +190,6 @@ var form = {
 								dataPath:'addresses', 
 								idPath:'addressNumber', 
 								descPath:'name'}"
-							@change="onReceiverChange"
 							>
 						</ResourceInput>
 					</b-form-group>
