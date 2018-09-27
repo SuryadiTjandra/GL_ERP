@@ -195,7 +195,7 @@ var itemList = {
 			
 			onItemChange: async function(detail, itemCode, item){
 				if (item == null)
-					item = {};
+					item = { unitsOfMeasure: {}};
 				
 				detail.itemCode = itemCode;
 				detail.description = item.description;
