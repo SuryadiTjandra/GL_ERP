@@ -45,7 +45,7 @@ public class StandardUomConversionService {
 			nextAlrTra.addAll(alreadyTraversed);
 			nextAlrTra.add(nextFrom);
 
-			Optional<BigDecimal> res = findConversionValueInner(nextFrom, to, nextAcc, alreadyTraversed);
+			Optional<BigDecimal> res = findConversionValueInner(nextFrom, to, nextAcc, nextAlrTra);
 			if (res.isPresent())
 				return res;
 		}
