@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,6 +25,8 @@ public class SalesOrderController {
 	private RepositoryEntityLinks links;
 	@Autowired
 	private SalesOrderService service;
+	@Autowired
+	private SalesOrderIdConverter conv;
 	
 	@PutMapping(path="/salesOrders/{id}")
 	public ResponseEntity<?> noUpdateAllowed() {
@@ -31,14 +34,16 @@ public class SalesOrderController {
 	}
 	
 	@PatchMapping("/salesOrders/{id}")
-	public ResponseEntity<?> updateSalesOrder(@RequestBody SalesOrder poRequest,
+	public ResponseEntity<?> updateSalesOrder(@PathVariable("id") String id, @RequestBody SalesOrder soRequest,
 			PersistentEntityResourceAssembler assembler){
 		
-		SalesOrder po = service.updateSalesOrder(poRequest);
+		SalesOrderPK pk = (SalesOrderPK) conv.fromRequestId(id, SalesOrderPK.class);
+		soRequest.setPk(pk);
+		SalesOrder updatedSo = service.updateSalesOrder(soRequest);
 		
-		URI location = URI.create(links.linkToSingleResource(SalesOrder.class, po.getId()).getHref());
+		URI location = URI.create(links.linkToSingleResource(SalesOrder.class, updatedSo.getId()).getHref());
 		
-		return ResponseEntity.created(location).body(assembler.toFullResource(po));
+		return ResponseEntity.created(location).body(assembler.toFullResource(updatedSo));
 		
 	}
 	

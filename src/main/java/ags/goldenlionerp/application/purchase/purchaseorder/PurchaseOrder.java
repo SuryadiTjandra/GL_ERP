@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;
@@ -35,34 +36,34 @@ public class PurchaseOrder extends DatabaseEntity<PurchaseOrderPK> {
 	@EmbeddedId @JsonUnwrapped
 	private PurchaseOrderPK pk;
 	
-	@Column(name="OHBUID")
+	@Column(name="OHBUID", updatable = false)
 	private String businessUnitId;
 	
-	@Column(name="OHVNID")
+	@Column(name="OHVNID", updatable = false)
 	private String vendorId;
 	
-	@Column(name="OHSTID")
+	@Column(name="OHSTID", updatable = false)
 	private String receiverId;
 	
-	@Column(name="OHCSID")
+	@Column(name="OHCSID", updatable = false)
 	private String customerId;
 	
-	@Column(name="OHCRCB")
+	@Column(name="OHCRCB", updatable = false)
 	private String baseCurrency;
 	
-	@Column(name="OHCRCT")
+	@Column(name="OHCRCT", updatable = false)
 	private String transactionCurrency;
 	
-	@Column(name="OHEXCRT", precision=19, scale=9)
+	@Column(name="OHEXCRT", precision=19, scale=9, updatable=false)
 	private BigDecimal exchangeRate = BigDecimal.ONE;
 	
-	@Column(name="OHORDT")
+	@Column(name="OHORDT", updatable=false)
 	private LocalDate orderDate;
 	
 	@Column(name="OHRQDT")
 	private LocalDate requestDate;
 	
-	@Column(name="OHPDDT")
+	@Column(name="OHPDDT", updatable = false)
 	private LocalDate promisedDeliveryDate;
 	
 	@Column(name="OHRCDT")
@@ -77,16 +78,16 @@ public class PurchaseOrder extends DatabaseEntity<PurchaseOrderPK> {
 	@Column(name="OHDESB1")
 	private String description;
 	
-	@Column(name="OHPTC")
+	@Column(name="OHPTC", updatable =false)
 	private String paymentTermCode;
 	
-	@Column(name="OHTAXCD")
+	@Column(name="OHTAXCD", updatable = false)
 	private String taxCode;
 	
-	@Column(name="OHTAXAL")
+	@Column(name="OHTAXAL", updatable = false)
 	private Boolean taxAllowance;
 	
-	@Column(name="OHTAXRT", precision=19, scale=15)
+	@Column(name="OHTAXRT", precision=19, scale=15, updatable = false)
 	private BigDecimal taxRate;
 	
 	@Column(name="OHDCCD")
@@ -459,6 +460,7 @@ public class PurchaseOrder extends DatabaseEntity<PurchaseOrderPK> {
 
 	void setDetails(List<PurchaseDetail> details) {
 		this.details = details;
+		syncDetails();
 	}
 	
 	public BigDecimal getGrossCost() {
@@ -499,5 +501,32 @@ public class PurchaseOrder extends DatabaseEntity<PurchaseOrderPK> {
 			return OrderStatus.CANCELLED;
 		else
 			return OrderStatus.OPEN;
+	}
+	
+	void syncDetails() {
+		setBusinessUnitId(businessUnitId);
+		setVendorId(vendorId);
+		setReceiverId(receiverId);
+		setCustomerId(customerId);
+		setTransactionCurrency(transactionCurrency);
+		setBaseCurrency(baseCurrency);
+		setExchangeRate(exchangeRate);
+		setOrderDate(orderDate);
+		setReceiptDate(receiptDate);
+		setPromisedDeliveryDate(promisedDeliveryDate);
+		setRequestDate(requestDate);
+		setClosedDate(closedDate);
+		setGlDate(glDate);
+		setPaymentTermCode(paymentTermCode);
+		setTaxCode(taxCode);
+		setTaxAllowance(Optional.ofNullable(taxAllowance).orElse(false));
+		setTaxRate(taxRate);
+		setDiscountCode(discountCode);
+		setDiscountRate(discountRate);
+		setNextStatus(nextStatus);
+		setLastStatus(lastStatus);
+		setProjectId(projectId);
+		setApprovalCode(approvalCode);
+		setObjectId(objectId);
 	}
 }

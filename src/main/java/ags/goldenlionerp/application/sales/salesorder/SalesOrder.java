@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;
@@ -764,7 +765,7 @@ public class SalesOrder extends DatabaseEntity<SalesOrderPK>{
 		return this.getGrossPrice().subtract(this.getTotalUnitDiscountAmount());
 	}
 	
-	public void syncDetails() {
+	void syncDetails() {
 		//setPk(pk);
 		setBusinessUnitId(businessUnitId);
 		setReceiverId(receiverId);
@@ -783,7 +784,7 @@ public class SalesOrder extends DatabaseEntity<SalesOrderPK>{
 		setGlDate(glDate);
 		setPaymentTermCode(paymentTermCode);
 		setTaxCode(taxCode);
-		setTaxAllowance(taxAllowance);
+		setTaxAllowance(Optional.ofNullable(taxAllowance).orElse(false));
 		setTaxRate(taxRate);
 		setDiscountCode(discountCode);
 		setDiscountRate(discountRate);
