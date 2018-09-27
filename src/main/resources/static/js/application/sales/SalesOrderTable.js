@@ -2,54 +2,26 @@ import RefreshButton from "../../baseComponents/buttons/RefreshButton.js";
 import ViewButton from "../../baseComponents/buttons/ViewButton.js";
 import EditButton from "../../baseComponents/buttons/EditButton.js";
 import CreateButton from "../../baseComponents/buttons/CreateButton.js";
+import ResourceTable from "/js/baseComponents/tables/ResourceTable.js";
 
 var table = {
 	components: {
-		CreateButton, RefreshButton, ViewButton, EditButton
+		CreateButton, RefreshButton, ViewButton, EditButton, ResourceTable
 	},
 	template:`
-	<b-container fluid>
-		<!-- pagination -->
-		<b-row>
-			<b-col>
-				<CreateButton @create-click="onCreate"></CreateButton>
-				<RefreshButton @refresh-click="onRefresh"></RefreshButton>
-			</b-col>
-			<b-col class="text-right align-bottom">
-				<span 
-					v-if="totalElements > 0"
-					class="text-muted font-weight-light font-italic mt-3"> 
-					{{startPos}} - {{endPos}} (Total: {{totalElements}})
-				</span></b-col>
-			<b-col>
-				<b-pagination
-					align="right"
-					:value="currentPagePlus"
-					:total-rows="totalElements"
-					:per-page="pageSize"
-					@change="onPaginationChange"
-				>					
-				</b-pagination>
-			</b-col>
-		</b-row>
-		<!-- table -->
-		<b-table striped hover show-empty small responsive
-			:items="items" 
-			:fields="fields"
-			:per-page="pageSize"
-			:busy="isBusy"
-			@sort-change="onSortChanged"
-			style="white-space:nowrap">
-			
-			<template slot="actions" slot-scope="data">
-				<ViewButton @view-click="onItemView(data.item, $event.target)">
-				</ViewButton>
-				<EditButton @edit-click="onItemEdit(data.item, $event.target)">
-				</EditButton>
-			</template>
-		</b-table>
-		
-	</b-container>
+	<ResourceTable
+		:apiUrl="apiUrl"
+		resultPath="_embedded.salesOrders"
+		:fields="fields"
+		:primaryKeys="['companyId', 'salesOrderNumber', 'salesOrderType']"
+		:itemEditable="true"
+		:itemDeletable="false"
+		@create-clicked="onCreate"
+		@edit-clicked="onItemEdit"
+		@view-clicked="onItemView"
+		>
+	
+	</ResourceTable>
 	`,
 	props: {
 		apiUrl: String,
