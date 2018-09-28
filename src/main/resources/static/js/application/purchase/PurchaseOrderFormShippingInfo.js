@@ -36,18 +36,28 @@ var ShippingForm = {
 						</b-form-input>
 					</b-form-group>
 					<b-form-group label="Port of Departure" horizontal label-size="sm" label-text-align="right">
-						<b-form-input  type="date" size="sm"
-							v-model="formItem.importDeclarationNumber" 
+						<ResourceInput size="sm"
+							v-model="formItem.portOfDepartureId" 
 							:readOnly="!editable"
+							:resourceMetadata="{
+								apiUrl:'/api/addresses',
+								dataPath:'addresses', 
+								idPath:'addressNumber', 
+								descPath:'name'}"
 							>
-						</b-form-input>
+						</ResourceInput>
 					</b-form-group>
 					<b-form-group label="Port of Arrival" horizontal label-size="sm" label-text-align="right">
-						<b-form-input  type="date" size="sm"
-							v-model="formItem.importDeclarationNumber" 
+						<ResourceInput size="sm"
+							v-model="formItem.portOfArrivalId" 
 							:readOnly="!editable"
+							:resourceMetadata="{
+								apiUrl:'/api/addresses',
+								dataPath:'addresses', 
+								idPath:'addressNumber', 
+								descPath:'name'}"
 							>
-						</b-form-input>
+						</ResourceInput>
 					</b-form-group>
 					<b-form-group label="Vehicle Registration Number" horizontal label-size="sm" label-text-align="right">
 						<b-form-input  type="text" size="sm"
@@ -57,8 +67,8 @@ var ShippingForm = {
 						</b-form-input>
 					</b-form-group>
 					<b-form-group label="Vehicle Type" horizontal label-size="sm" label-text-align="right">
-						<b-form-input  type="date" size="sm"
-							v-model="formItem.importDeclarationNumber" 
+						<b-form-input  type="text" size="sm"
+							v-model="formItem.vehicleType" 
 							:readOnly="!editable"
 							>
 						</b-form-input>

@@ -95,7 +95,7 @@ var form = {
 								dataPath:'addresses', 
 								idPath:'addressNumber', 
 								descPath:'name'}"
-							@change="onVendorChange"
+							@update:item="onVendorChange"
 							>
 						</ResourceInput>
 					</b-form-group>
@@ -108,7 +108,7 @@ var form = {
 								dataPath:'addresses', 
 								idPath:'addressNumber', 
 								descPath:'name'}"
-							@change="onReceiverChange"
+							@update:item="onReceiverChange"
 							>
 						</ResourceInput>
 						<p class="mb-0">{{receiver == null ? "" : receiver.currentAddress.address1}}</p>
@@ -150,8 +150,8 @@ var form = {
 					</b-form-group>
 					<b-form-group label="Tipe PPN" label-size="sm" horizontal label-text-align="right">
 						<ResourceInput size="sm"
-							:selectedId="formItem.taxCode"
-							@input="onTaxInput"
+							v-model="formItem.taxCode"
+							@update:item="onTaxInput"
 							:readOnly="!editable"
 							:resourceMetadata="{
 								apiUrl:'/api/taxRules',
@@ -215,14 +215,13 @@ var form = {
 			}
 		},
 		methods: {
-			onVendorChange: async function(vendorId, vendor){				
-				this.formItem.vendorId = vendorId;
+			onVendorChange: async function(vendor){				
 				this.vendor = vendor;
 				if (vendor == null)
 					return;
 				
 				if (this.receiver == null){
-					this.formItem.receiverId = vendorId;
+					this.formItem.receiverId = vendor.addressNumber;
 					this.receiver = vendor;
 				}
 				
@@ -240,12 +239,10 @@ var form = {
 				}
 				
 			},
-			onReceiverChange: function(receiverId, receiver){
-				this.formItem.receiverId = receiverId;
+			onReceiverChange: function(receiver){
 				this.receiver = receiver;
 			},
-			onTaxInput: function(taxCode, taxRule){
-				this.formItem.taxCode = taxCode;
+			onTaxInput: function(taxRule){
 				this.formItem.taxRate = taxRule == null ? 0 : taxRule.taxPercentage1 + 
 					taxRule.taxPercentage2 + taxRule.taxPercentage3 + 
 					taxRule.taxPercentage4 + taxRule.taxPercentage5;

@@ -23,7 +23,7 @@ var itemList = {
 				</template>
 				
 				<template slot="itemInfo" slot-scope="detail">
-					<ResourceInput :selectedId="detail.item.itemCode" size="sm" 
+					<ResourceInput v-model="detail.item.itemCode" size="sm" 
 						:readOnly="!editable || detail.item.voided"
 						:resourceMetadata="{
 							apiUrl:'/api/items',
@@ -31,7 +31,7 @@ var itemList = {
 							idPath:'itemCode',
 							descPath:'itemCode'
 						}"
-						@input="onItemChange(detail.item, ...arguments)">
+						@update:item="onItemChange(detail.item, ...arguments)">
 					</ResourceInput>
 					<span>{{detail.item.description}}</span>
 				</template>
@@ -99,8 +99,8 @@ var itemList = {
 					<template v-if="detail.item.itemCode != null">
 						<DiscountInput size="sm" showDetail 
 							:readOnly="!editable || detail.item.voided"
-							:discountCode="detail.item.unitDiscountCode"
-							@change="onUnitDiscountChange(detail.item, ...arguments)"
+							v-model="detail.item.unitDiscountCode"
+							@update:calculation="onUnitDiscountCalcFinish(detail.item, ...arguments)"
 							:amount="detail.item.unitCost"
 							:quantity="detail.item.quantity">
 						</DiscountInput>
@@ -193,11 +193,11 @@ var itemList = {
 					return number;
 			},
 			
-			onItemChange: async function(detail, itemCode, item){
+			onItemChange: async function(detail, item){
 				if (item == null)
 					item = { unitsOfMeasure: {}};
 				
-				detail.itemCode = itemCode;
+				detail.itemCode = item.itemCode;
 				detail.description = item.description;
 				detail.primaryUnitOfMeasure = item.unitsOfMeasure.primaryUnitOfMeasure;
 				if (detail.unitOfMeasure == null || detail.unitOfMeasure === detail.primaryUnitOfMeasure)
@@ -230,11 +230,9 @@ var itemList = {
 				let unitCost = Number(extendedCost) / Number(detail.quantity);
 				detail.unitCost = this.formatNumber(unitCost);
 			},
-			onUnitDiscountChange: function(detail, discCode, disc, discCalc){
-				detail.unitDiscountCode = discCode;
+			onUnitDiscountCalcFinish: function(detail, discCalc){
 				detail.unitDiscountRate = discCalc != null ? discCalc.discountRate : 0;
-			},
-			
+			},			
 			onAddNewRow: function(){
 				this.formDetails.push(this.defaultDetail());
 			},

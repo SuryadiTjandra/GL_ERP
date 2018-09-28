@@ -39,9 +39,9 @@ var Summary = {
 				</b-col>
 				<b-col cols="3">
 					<DiscountInput size="sm" 
-						:discountCode="formItem.discountCode" 
 						:amount="brutto - itemDiscount"
-						@change="onDiscountChange"
+						v-model="formItem.discountCode"
+						@update:calculation="onDiscountCalcFinish"
 					>
 					
 					</DiscountInput>
@@ -126,8 +126,7 @@ var Summary = {
 		}
 	},
 	methods: {
-		onDiscountChange: function(discCode, disc, discCalc){
-			this.formItem.discountCode = discCode;
+		onDiscountCalcFinish: function(discCalc){
 			this.formItem.discountRate = discCalc != null ? discCalc.discountRate : 0.00;
 		}
 	}
