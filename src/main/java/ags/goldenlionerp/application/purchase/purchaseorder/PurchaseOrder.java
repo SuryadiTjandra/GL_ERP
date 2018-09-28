@@ -12,12 +12,16 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
 
 import ags.goldenlionerp.application.purchase.OrderStatus;
+import ags.goldenlionerp.application.setups.company.Company;
 import ags.goldenlionerp.entities.DatabaseEntity;
 
 @Entity
@@ -457,6 +461,22 @@ public class PurchaseOrder extends DatabaseEntity<PurchaseOrderPK> {
 		this.objectId = objectId;
 		this.details.forEach(det -> det.setObjectId(objectId));
 	}
+	
+	public String getVehicleDescription() {
+		return vehicleDescription;
+	}
+
+	public String getVehicleDescription2() {
+		return vehicleDescription2;
+	}
+
+	void setVehicleDescription(String vehicleDescription) {
+		this.vehicleDescription = vehicleDescription;
+	}
+
+	void setVehicleDescription2(String vehicleDescription2) {
+		this.vehicleDescription2 = vehicleDescription2;
+	}
 
 	void setDetails(List<PurchaseDetail> details) {
 		this.details = details;
@@ -477,22 +497,6 @@ public class PurchaseOrder extends DatabaseEntity<PurchaseOrderPK> {
 	
 	public BigDecimal getCostAfterUnitDiscount() {
 		return this.getGrossCost().subtract(this.getTotalUnitDiscountAmount());
-	}
-
-	public String getVehicleDescription() {
-		return vehicleDescription;
-	}
-
-	public String getVehicleDescription2() {
-		return vehicleDescription2;
-	}
-
-	void setVehicleDescription(String vehicleDescription) {
-		this.vehicleDescription = vehicleDescription;
-	}
-
-	void setVehicleDescription2(String vehicleDescription2) {
-		this.vehicleDescription2 = vehicleDescription2;
 	}
 
 	public OrderStatus getStatus() {
