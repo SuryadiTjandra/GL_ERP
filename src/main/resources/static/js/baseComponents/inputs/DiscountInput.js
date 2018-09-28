@@ -27,7 +27,9 @@ var DiscountInput = {
 					idPath:'discountCode',
 					descPath:'description'
 				}"
-				@input="onInput">
+				@change="$emit('change', $event)"
+				@update:item="onUpdateItem"
+			>
 			</ResourceInput>
 			<template v-if="showDetail == true && discountCode != null && discountCode.length > 0">
 				<span>{{discountRate}} %</span></br>
@@ -43,18 +45,19 @@ var DiscountInput = {
 			}
 		},
 		methods: {
-			onInput: function(discCode, disc){
-				if (disc == null){
+			onUpdateItem:function(discount){
+				this.$emit('update:item', discount);
+				if (discount == null){
 					this.setData({});
-					this.$emit('change', discCode, disc, null);
+					this.$emit('update:calculation', null);
 					return;
 				}
 				
-				this.calculateLink = disc._links.calculate.href;
+				this.calculateLink = discount._links.calculate.href;
 				this.fetchCalculation(this.calculateLink, this.amount)
 					.then(res => {
 						this.setData(res);
-						this.$emit('change', discCode, disc, res);
+						this.$emit('update:calculation', res);
 					});
 			},
 			

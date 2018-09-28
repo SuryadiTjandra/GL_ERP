@@ -6,7 +6,7 @@ var ResourceInput = {
 	props: ['resourceMetadata', 'readOnly', 'selectedId', 'size', 'required'],
 	model:{
 		prop:'selectedId',
-		event:'input'
+		event:'change'
 	},
 	template: `
 	<div>
@@ -47,16 +47,16 @@ var ResourceInput = {
 	methods: {
 		onRemoveSelected: function(){
 			this.selected = {};
-			this.$emit('input', null, null);
-			this.$emit('change', null, null);
+			this.$emit('update:item', null);
+			this.$emit('change', null);
 		},
 		onPick: function(){
 			this.modalVisible = true;
 		},
 		onModalOk: function(selected){
 			this.selected = selected;
-			this.$emit('input', selected[this.idPath], selected)
-			this.$emit('change', selected[this.idPath], selected)
+			this.$emit('update:item', selected)
+			this.$emit('change', selected[this.idPath])
 		}
 	},
 	watch:{
@@ -69,7 +69,7 @@ var ResourceInput = {
 				newSelectedId.trim().length === 0 ){
 				
 				this.selected = {};
-				this.$emit('input', null, null);
+				this.$emit('update:item', null);
 				return;
 			} 
 				
@@ -79,7 +79,7 @@ var ResourceInput = {
 				.then(res => res.json())
 				.then(res => {
 					this.selected = res;
-					this.$emit('input', this.selected[this.idPath], this.selected)
+					this.$emit('update:item', this.selected);
 				});
 				
 		}
@@ -92,7 +92,7 @@ var ResourceInput = {
 		AJAXPerformer.getAsJson(url)
 			.then(res => {
 				this.selected = res;
-				this.$emit('input', this.selected[this.idPath], this.selected);
+				this.$emit('update:item', this.selected);
 			})
 	}
 };
