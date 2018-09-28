@@ -23,7 +23,7 @@ var SalesOrderForm = {
 		<b-tabs v-model="activeTab">
 			<b-tab title="Info">
 				</br>
-				<BasicForm :editable="editable" v-model="formItem">
+				<BasicForm :editable="mode === 'add'" v-model="formItem">
 				</BasicForm>
 			</b-tab>
 			<b-tab title="Items">
