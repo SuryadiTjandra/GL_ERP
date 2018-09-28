@@ -38,13 +38,13 @@ public class SalesOrder extends DatabaseEntity<SalesOrderPK>{
 	@EmbeddedId @JsonUnwrapped
 	private SalesOrderPK pk;
 	
-	@Column(name="SHBUID")
+	@Column(name="SHBUID", updatable=false)
 	private String businessUnitId;
 	
-	@Column(name="SHCSID")
+	@Column(name="SHCSID", updatable=false)
 	private String customerId;
 	
-	@Column(name="SHSTID")
+	@Column(name="SHSTID", updatable=false)
 	private String receiverId;
 	
 	@Column(name="SHEXID")
@@ -56,19 +56,19 @@ public class SalesOrder extends DatabaseEntity<SalesOrderPK>{
 	@Column(name="SHSLID")
 	private String salesmanId;
 	
-	@Column(name="SHCRCB")
+	@Column(name="SHCRCB", updatable=false)
 	private String baseCurrency;
 	
-	@Column(name="SHCRCT")
+	@Column(name="SHCRCT", updatable=false)
 	private String transactionCurrency;
 	
-	@Column(name="SHEXCRT", precision=19, scale=9)
+	@Column(name="SHEXCRT", precision=19, scale=9, updatable=false)
 	private BigDecimal exchangeRate = BigDecimal.ONE;
 	
-	@Column(name="SHORDT")
+	@Column(name="SHORDT", updatable=false)
 	private LocalDate orderDate;
 	
-	@Column(name="SHRQDT")
+	@Column(name="SHRQDT", updatable=false)
 	private LocalDate requestDate;
 	
 	@Column(name="SHPDDT")
@@ -107,16 +107,16 @@ public class SalesOrder extends DatabaseEntity<SalesOrderPK>{
 	@Column(name="SHDESB1")
 	private String description;
 	
-	@Column(name="SHPTC")
+	@Column(name="SHPTC", updatable=false)
 	private String paymentTermCode;
 	
-	@Column(name="SHTAXCD")
+	@Column(name="SHTAXCD", updatable=false)
 	private String taxCode;
 	
-	@Column(name="SHTAXAL")
+	@Column(name="SHTAXAL", updatable=false)
 	private Boolean taxAllowance;
 	
-	@Column(name="SHTAXRT", precision=19, scale=15)
+	@Column(name="SHTAXRT", precision=19, scale=15, updatable=false)
 	private BigDecimal taxRate;
 	
 	@Column(name="SHGSCRT", precision=19, scale=15)
@@ -152,7 +152,7 @@ public class SalesOrder extends DatabaseEntity<SalesOrderPK>{
 	@Column(name="SHTAGID")
 	private String tagId;
 	
-	@Column(name="SHRBUID")
+	@Column(name="SHRBUID", updatable=false)
 	private String profitCenterId;
 	
 	@Column(name="SHHCOD")
