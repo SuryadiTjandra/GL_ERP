@@ -1,4 +1,5 @@
 import ResourceInput from "/js/baseComponents/inputs/ResourceInput.js";
+import ResourceInputUrl from "/js/baseComponents/inputs/ResourceInputUrl.js";
 import DiscountInput from "/js/baseComponents/inputs/DiscountInput.js";
 import DataCodeInput from "/js/baseComponents/inputs/DataCodeInput.js";
 import VoidButton from "/js/baseComponents/buttons/VoidButton.js";
@@ -6,7 +7,7 @@ import AJAXPerformer from "/js/util/AJAXPerformer.js";
 
 var itemList = {
 		components: {
-			ResourceInput, DataCodeInput, VoidButton, DiscountInput
+			ResourceInput, ResourceInputUrl, DataCodeInput, VoidButton, DiscountInput
 		},
 		props: ['details', 'editable'],
 		model: {
@@ -23,7 +24,7 @@ var itemList = {
 				</template>
 				
 				<template slot="itemInfo" slot-scope="detail">
-					<ResourceInput v-model="detail.item.itemCode" size="sm" 
+					<ResourceInputUrl v-model="detail.item._links.item.href" size="sm" 
 						:readOnly="!editable || detail.item.voided"
 						:resourceMetadata="{
 							apiUrl:'/api/items',
@@ -32,7 +33,7 @@ var itemList = {
 							descPath:'itemCode'
 						}"
 						@update:item="onItemChange(detail.item, ...arguments)">
-					</ResourceInput>
+					</ResourceInputUrl>
 					<span>{{detail.item.description}}</span>
 				</template>
 				
@@ -253,7 +254,12 @@ var itemList = {
 					unitCost: 0,
 					extendedCost: 0,
 					unitDiscountCode: null,
-					unitDiscountRate: 0
+					unitDiscountRate: 0,
+					_links: {
+						item: {
+							href: null
+						}
+					}
 				}
 			}
 		},

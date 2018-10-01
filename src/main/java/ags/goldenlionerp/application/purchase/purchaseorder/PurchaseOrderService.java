@@ -111,8 +111,14 @@ public class PurchaseOrderService {
 	}
 	
 	private PurchaseDetail setInfoFromItem(PurchaseDetail poDetail) {
-		ItemMaster item = itemRepo.findById(poDetail.getItemCode())
-				.orElseThrow(() -> new ResourceNotFoundException("Item with id " + poDetail.getItemCode() + " does not exist"));
+		ItemMaster item;
+		if (poDetail.getItem() == null) {
+			item = itemRepo.findById(poDetail.getItemCode())
+					.orElseThrow(() -> new ResourceNotFoundException("Item with id " + poDetail.getItemCode() + " does not exist"));
+		}else {
+			item = poDetail.getItem();
+			poDetail.setItemCode(item.getItemCode());
+		}
 		
 		String primaryUom = item.getUnitsOfMeasure().getPrimaryUnitOfMeasure();
 		poDetail.setPrimaryUnitOfMeasure(primaryUom);

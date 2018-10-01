@@ -10,6 +10,7 @@ import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinColumns;
 import javax.persistence.ManyToOne;
@@ -25,6 +26,7 @@ import ags.goldenlionerp.application.purchase.OrderStatus;
 import ags.goldenlionerp.application.purchase.References;
 import ags.goldenlionerp.application.sales.SalesOptions;
 import ags.goldenlionerp.entities.DatabaseEntity;
+import ags.goldenlionerp.masterdata.itemmaster.ItemMaster;
 
 @Entity
 @Table(name="T4211")
@@ -63,8 +65,11 @@ public class SalesDetail extends DatabaseEntity<SalesDetailPK>{
 	@Column(name="SDPRID")
 	private String partnerRepresentativeId;
 	
-	@Column(name="SDINUM")
+	@Column(name="SDINUM", nullable=false)
 	private String itemCode;
+	@JoinColumn(name="SDINUM", insertable=false, updatable=false, nullable=false)
+	@ManyToOne(fetch=FetchType.LAZY)
+	private ItemMaster item;
 	
 	@Column(name="SDLOCID")
 	private String locationId;
@@ -392,6 +397,10 @@ public class SalesDetail extends DatabaseEntity<SalesDetailPK>{
 
 	public String getItemCode() {
 		return itemCode;
+	}
+	
+	public ItemMaster getItem() {
+		return item;
 	}
 
 	public String getLocationId() {
@@ -748,6 +757,10 @@ public class SalesDetail extends DatabaseEntity<SalesDetailPK>{
 
 	void setItemCode(String itemCode) {
 		this.itemCode = itemCode;
+	}
+	
+	void setItem(ItemMaster item) {
+		this.item = item;
 	}
 
 	void setLocationId(String locationId) {

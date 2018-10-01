@@ -113,8 +113,14 @@ public class SalesOrderService {
 	}
 	
 	private SalesDetail setInfoFromItem(SalesDetail soDetail) {
-		ItemMaster item = itemRepo.findById(soDetail.getItemCode())
-				.orElseThrow(() -> new ResourceNotFoundException("Item with id " + soDetail.getItemCode() + " does not exist"));
+		ItemMaster item;
+		if (soDetail.getItem() == null) {
+			item = itemRepo.findById(soDetail.getItemCode())
+					.orElseThrow(() -> new ResourceNotFoundException("Item with id " + soDetail.getItemCode() + " does not exist"));
+		}else {
+			item = soDetail.getItem();
+			soDetail.setItemCode(item.getItemCode());
+		}
 		
 		String primaryUom = item.getUnitsOfMeasure().getPrimaryUnitOfMeasure();
 		soDetail.setPrimaryUnitOfMeasure(primaryUom);
