@@ -30,7 +30,8 @@ var itemList = {
 							apiUrl:'/api/items',
 							dataPath:'items',
 							idPath:'itemCode',
-							descPath:'itemCode'
+							descPath:'description',
+							displayPath: 'itemCode'
 						}"
 						@update:item="onItemChange(detail.item, ...arguments)">
 					</ResourceInputUrl>

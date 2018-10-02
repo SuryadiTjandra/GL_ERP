@@ -13,7 +13,7 @@ var ResourceInput = {
 		<b-input-group :size="size">
 			<b-form-input type="text" :required="required" :readOnly="readOnly"
 				@focus.native.stop.prevent="$event.target.blur()"
-				:value="selected[descPath]">
+				:value="selected[displayPath]">
 			</b-form-input>
 			
 			<b-input-group-append v-if="!readOnly">
@@ -39,7 +39,8 @@ var ResourceInput = {
 		return {
 			selected: {},
 			idPath: this.resourceMetadata.idPath,
-			descPath: this.resourceMetadata.descPath,
+			descPath: this.resourceMetadata.descPath || this.idPath,
+			displayPath: this.resourceMetadata.displayPath || this.descPath,
 			
 			modalVisible: false
 		}
