@@ -48,6 +48,11 @@ node {
 	npmWorkDir = file("${project.projectDir}/src/main/front")
 }
 
-task webpack(type:NpmTask, dependsOn: npmInstall){
+task runWebpack(type:NpmTask, dependsOn: npmInstall){
 	args = ['run', 'build']
+}
+
+task webpack(type:Copy, dependsOn: runWebpack){
+	from 'src/main/front/dist'
+	into 'src/main/resources/static/js'
 }
