@@ -36,11 +36,15 @@ var ResourceInput = {
 	</div>
 	`,
 	data: function(){
+		let idPath = this.resourceMetadata.idPath;
+		let descPath = this.resourceMetadata.descPath || idPath;
+		let displayPath = this.resourceMetadata.displayPath || descPath;
+		
 		return {
 			selected: {},
-			idPath: this.resourceMetadata.idPath,
-			descPath: this.resourceMetadata.descPath || this.idPath,
-			displayPath: this.resourceMetadata.displayPath || this.descPath,
+			idPath: idPath,
+			descPath: descPath,
+			displayPath: displayPath,
 			
 			modalVisible: false
 		}
