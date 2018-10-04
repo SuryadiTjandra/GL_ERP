@@ -1,6 +1,6 @@
-import DataCodeInput from "../../baseComponents/inputs/DataCodeInput.js";
-import ResourceInput from "../../baseComponents/inputs/ResourceInput.js";
-import AJAXPerformer from "/js/util/AJAXPerformer.js";
+import DataCodeInput from "baseComponents/inputs/DataCodeInput.js";
+import ResourceInput from "baseComponents/inputs/ResourceInput.js";
+import AJAXPerformer from "util/AJAXPerformer.js";
 
 var form = {
 		components: {

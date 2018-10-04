@@ -2,7 +2,7 @@ import BasicForm from "./SalesOrderFormBasicInfo.js";
 import ItemForm from "./SalesOrderFormItemList.js";
 import ShippingForm from "./SalesOrderFormShippingInfo.js";
 import Summary from "./SalesOrderSummary.js";
-import AJAXPerformer from "/js/util/AJAXPerformer.js";
+import AJAXPerformer from "util/AJAXPerformer.js";
 
 var SalesOrderForm = {
 		components: {

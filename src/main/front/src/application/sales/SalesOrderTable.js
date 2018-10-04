@@ -1,8 +1,8 @@
-import RefreshButton from "../../baseComponents/buttons/RefreshButton.js";
-import ViewButton from "../../baseComponents/buttons/ViewButton.js";
-import EditButton from "../../baseComponents/buttons/EditButton.js";
-import CreateButton from "../../baseComponents/buttons/CreateButton.js";
-import ResourceTable from "/js/baseComponents/tables/ResourceTable.js";
+import RefreshButton from "baseComponents/buttons/RefreshButton.js";
+import ViewButton from "baseComponents/buttons/ViewButton.js";
+import EditButton from "baseComponents/buttons/EditButton.js";
+import CreateButton from "baseComponents/buttons/CreateButton.js";
+import ResourceTable from "baseComponents/tables/ResourceTable.js";
 
 var table = {
 	components: {

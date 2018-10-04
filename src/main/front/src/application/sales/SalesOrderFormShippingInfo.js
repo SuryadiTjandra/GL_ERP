@@ -1,5 +1,5 @@
-import DataCodeInput from "/js/baseComponents/inputs/DataCodeInput.js";
-import ResourceInput from "/js/baseComponents/inputs/ResourceInput.js";
+import DataCodeInput from "baseComponents/inputs/DataCodeInput.js";
+import ResourceInput from "baseComponents/inputs/ResourceInput.js";
 
 var ShippingForm = {
 		components: {

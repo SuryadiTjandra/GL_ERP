@@ -1,9 +1,9 @@
-import ResourceInput from "/js/baseComponents/inputs/ResourceInput.js";
-import ResourceInputUrl from "/js/baseComponents/inputs/ResourceInputUrl.js";
-import DiscountInput from "/js/baseComponents/inputs/DiscountInput.js";
-import DataCodeInput from "/js/baseComponents/inputs/DataCodeInput.js";
-import VoidButton from "/js/baseComponents/buttons/VoidButton.js";
-import AJAXPerformer from "/js/util/AJAXPerformer.js";
+import ResourceInput from "baseComponents/inputs/ResourceInput.js";
+import ResourceInputUrl from "baseComponents/inputs/ResourceInputUrl.js";
+import DiscountInput from "baseComponents/inputs/DiscountInput.js";
+import DataCodeInput from "baseComponents/inputs/DataCodeInput.js";
+import VoidButton from "baseComponents/buttons/VoidButton.js";
+import AJAXPerformer from "util/AJAXPerformer.js";
 
 var itemList = {
 		components: {
@@ -31,7 +31,7 @@ var itemList = {
 							apiUrl:'/api/items',
 							dataPath:'items',
 							idPath:'itemCode',
-							descPath:'description'
+							descPath:'description',
 							displayPath:'itemCode'
 						}"
 						@update:item="onItemChange(detail.item, ...arguments)">

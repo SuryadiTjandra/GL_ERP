@@ -1,5 +1,4 @@
-import CreateButton from "../../baseComponents/buttons/CreateButton.js";
-//import VuetablePaginationBootstrap from "../../baseComponents/table/VuetablePaginationBootstrap.js";
+import CreateButton from "baseComponents/buttons/CreateButton.js";
 import SalesOrderTable from "./SalesOrderTable.js";
 import SalesOrderForm from "./SalesOrderForm.js";
 

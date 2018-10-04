@@ -1,5 +1,5 @@
-import ResourceInput from "/js/baseComponents/inputs/ResourceInput.js";
-import DiscountInput from "/js/baseComponents/inputs/DiscountInput.js";
+import ResourceInput from "baseComponents/inputs/ResourceInput.js";
+import DiscountInput from "baseComponents/inputs/DiscountInput.js";
 
 var Summary = {
 	components: {

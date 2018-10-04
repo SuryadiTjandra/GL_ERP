@@ -4,7 +4,7 @@ module.exports = {
   mode: 'development',
   entry: {
 	  purchaseOrder: './src/application/purchase/app.js',
-	  salesOrder: './src/application/sales/SalesOrderApp.js',
+	  salesOrder: './src/application/sales/app.js',
   },
   output: {
     filename: '[name].bundle.js',
