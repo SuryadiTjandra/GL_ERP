@@ -10,6 +10,10 @@ buildscript {
 	}
 }
 
+plugins {
+	 id "com.moowork.node" version "1.2.0"
+}
+
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
@@ -22,7 +26,6 @@ sourceCompatibility = 1.8
 repositories {
 	mavenCentral()
 }
-
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
@@ -37,4 +40,14 @@ dependencies {
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	testCompile('org.springframework.restdocs:spring-restdocs-mockmvc')
 	testCompile('org.springframework.security:spring-security-test')
+}
+
+node {
+	download = false
+	nodeModulesDir = file("${project.projectDir}/src/main/front")
+	npmWorkDir = file("${project.projectDir}/src/main/front")
+}
+
+task webpack(type:NpmTask, dependsOn: npmInstall){
+	args = ['run', 'build']
 }
