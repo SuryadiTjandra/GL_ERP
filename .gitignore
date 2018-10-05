@@ -3,6 +3,7 @@
 /bin/
 node_modules/
 !gradle/wrapper/gradle-wrapper.jar
+querydsl/
 
 *.class
 

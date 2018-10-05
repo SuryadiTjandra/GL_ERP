@@ -12,6 +12,7 @@ buildscript {
 
 plugins {
 	 id "com.moowork.node" version "1.2.0"
+	 id "com.ewerk.gradle.plugins.querydsl" version "1.0.9"
 }
 
 apply plugin: 'java'
@@ -36,6 +37,7 @@ dependencies {
 	//compile('org.springframework.boot:spring-boot-starter-web')
 	compile("org.springframework.boot:spring-boot-devtools")
 	//compile("com.fasterxml.jackson.datatype:jackson-datatype-hibernate5:2.9.0")
+	compile "com.querydsl:querydsl-jpa:4.1.2"
 	runtime('com.microsoft.sqlserver:mssql-jdbc')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	testCompile('org.springframework.restdocs:spring-restdocs-mockmvc')
@@ -46,6 +48,10 @@ node {
 	download = false
 	nodeModulesDir = file("${project.projectDir}/src/main/front")
 	npmWorkDir = file("${project.projectDir}/src/main/front")
+}
+
+querydsl {
+	jpa = true
 }
 
 task runWebpack(type:NpmTask, dependsOn: npmInstall){
