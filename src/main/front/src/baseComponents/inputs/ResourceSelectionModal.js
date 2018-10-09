@@ -1,32 +1,49 @@
+import startCase from "lodash/startCase";
+import SearchInput from "./SearchInput.js";
+
 var ResourceSelectionModal = {
+	components: {SearchInput},
 	model:{
 		prop:'visible',
 		event:'change'
 	},
 	props:['visible','resourceMetadata'],
 	template:`
-	<b-modal :visible="visible" @change="$emit('change',$event)" size="lg"
+	<b-modal :visible="visible" @change="$emit('change',$event)" size="lg" :hide-header="true"
 		@ok="onOk"
 		@show="onShow">
 	
-		<b-pagination v-if="usePagination"
-			align="right"
-			:value="currentPagePlus"
-			:total-rows="totalElements"
-			:per-page="pageSize"
-			@change="onPaginationChange"
-		>					
-		</b-pagination>
+		<b-row>
+			<b-col>
+				<SearchInput class="mb-4"
+					:searchValue.sync="searchValue"
+					:searchBy.sync="searchBy"
+					:searchByOptions="searchByOptions">
+				</SearchInput>
+			</b-col>
+			<b-col>
+				<b-pagination v-if="usePagination"
+					align="right"
+					:value="currentPagePlus"
+					:total-rows="totalElements"
+					:per-page="pageSize"
+					@change="onPaginationChange">					
+				</b-pagination>
+			</b-col>
+		</b-row>
+		
 		<b-table hover small
 			:fields="fields"
 			:busy="isBusy"
 			:items="items"
-			@row-clicked="onItemSelect">
+			@row-clicked="onItemSelect"
+			:filter="tableFilterFunction">
 			
 			<template slot="checkbox" slot-scope="data">
 				<b-form-checkbox 
 					:checked="selected == data.item"
-					@change="onItemSelect(data.item)">
+					@change="onItemSelect(data.item)"
+					state="null">
 				</b-form-checkbox>
 			</template>
 		</b-table>
@@ -43,6 +60,8 @@ var ResourceSelectionModal = {
 			apiUrl: this.resourceMetadata.apiUrl,
 			
 			fields: ["checkbox", this.resourceMetadata.idPath, this.resourceMetadata.descPath],
+			searchBy: this.resourceMetadata.idPath,
+			searchValue: null,
 			
 			usePagination: true,
 			totalElements: 0,
@@ -53,7 +72,17 @@ var ResourceSelectionModal = {
 		}
 	},
 	computed: {
-		currentPagePlus: function(){ return this.currentPage + 1}
+		currentPagePlus: function(){ return this.currentPage + 1},
+		searchByOptions: function(){
+			//return []
+			return [{
+				value: this.resourceMetadata.idPath,
+				text: startCase(this.resourceMetadata.idPath)
+			},{
+				value: this.resourceMetadata.descPath,
+				text: startCase(this.resourceMetadata.descPath)
+			}]
+		}
 	},
 	methods:{
 		onOk: function(){
@@ -97,7 +126,7 @@ var ResourceSelectionModal = {
 					this.isBusy = false
 				})
 		},
-		createParamObject: function(page, size, sortBy, sortDir){
+		createParamObject: function(page, size, sortBy, sortDir, searchObject){
 			let paramObj = {
 				page: page,
 				size: size,
@@ -105,9 +134,24 @@ var ResourceSelectionModal = {
 			if (sortBy !== null){
 				paramObj.sort = sortBy + "," + sortDir;
 			}
+			
+			if (this.searchValue != null){
+				paramObj[this.searchBy] = this.searchValue;
+			}
 			return paramObj;
 		},
 		
+		tableFilterFunction: function(item){
+			//if we use pagination, let the server handle the filtering
+			if (this.usePagination)
+				return true;
+			
+			//is search is empty, don't filter anything
+			if (this.searchValue == null || this.searchValue.trim().length == 0)
+				return true;
+			
+			return String(item[this.searchBy]).toUpperCase().includes(this.searchValue.toUpperCase());
+		}
 	}
 };
 
