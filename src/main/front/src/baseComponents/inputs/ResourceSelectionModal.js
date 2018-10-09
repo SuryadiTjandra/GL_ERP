@@ -84,14 +84,21 @@ var ResourceSelectionModal = {
 				text: startCase(this.resourceMetadata.descPath)
 			}]
 		},
-		useServerSideFilter: function(){ return this.usePagination}
+		useServerSideFilter: function(){ return this.usePagination},
+		searchObject: function(){
+			let searchObject = {};
+			if (this.searchValue != null && this.searchValue.trim().length > 0 && this.searchBy != null)
+				searchObject[this.searchBy] = this.searchValue;
+			return searchObject;
+		}
 	},
 	methods:{
 		onOk: function(){
 			this.$emit('ok', this.selected);
 		},
 		onShow: function(){
-			this.loadData({});
+			if (this.items == null || this.items.length == 0)
+				this.loadData({});
 		},
 		onItemSelect: function(item){
 			this.selected = item;
@@ -101,7 +108,8 @@ var ResourceSelectionModal = {
 				page - 1, 
 				this.pageSize, 
 				this.sortBy, 
-				this.sortDir
+				this.sortDir,
+				this.searchObject
 			));
 		},
 		onSearchUpdate: function(searchValue, searchBy){
@@ -109,16 +117,12 @@ var ResourceSelectionModal = {
 			if (!this.useServerSideFilter)
 				return;
 			
-			let searchObject = {};
-			if (searchValue != null && searchValue.trim().length > 0 && searchBy != null)
-				searchObject[searchBy] = searchValue;
-			
 			this.loadData(this.createParamObject(
-				this.currentPage,
+				0,
 				this.pageSize,
 				this.sortBy,
 				this.sortDir,
-				searchObject));
+				this.searchObject));
 		},
 
 		loadData: function(param){
