@@ -18,7 +18,8 @@ var ResourceSelectionModal = {
 				<SearchInput class="mb-4"
 					:searchValue.sync="searchValue"
 					:searchBy.sync="searchBy"
-					:searchByOptions="searchByOptions">
+					:searchByOptions="searchByOptions"
+					@update="onSearchUpdate">
 				</SearchInput>
 			</b-col>
 			<b-col>
@@ -82,7 +83,8 @@ var ResourceSelectionModal = {
 				value: this.resourceMetadata.descPath,
 				text: startCase(this.resourceMetadata.descPath)
 			}]
-		}
+		},
+		useServerSideFilter: function(){ return this.usePagination}
 	},
 	methods:{
 		onOk: function(){
@@ -101,6 +103,22 @@ var ResourceSelectionModal = {
 				this.sortBy, 
 				this.sortDir
 			));
+		},
+		onSearchUpdate: function(searchValue, searchBy){
+			//if we don't use server side filter, we let the table filter function do the filtering
+			if (!this.useServerSideFilter)
+				return;
+			
+			let searchObject = {};
+			if (searchValue != null && searchValue.trim().length > 0 && searchBy != null)
+				searchObject[searchBy] = searchValue;
+			
+			this.loadData(this.createParamObject(
+				this.currentPage,
+				this.pageSize,
+				this.sortBy,
+				this.sortDir,
+				searchObject));
 		},
 
 		loadData: function(param){
@@ -131,19 +149,19 @@ var ResourceSelectionModal = {
 				page: page,
 				size: size,
 			};
-			if (sortBy !== null){
+			if (sortBy != null){
 				paramObj.sort = sortBy + "," + sortDir;
 			}
 			
-			if (this.searchValue != null){
-				paramObj[this.searchBy] = this.searchValue;
+			if (this.useServerSideFilter){
+				paramObj = Object.assign(paramObj, searchObject);
 			}
 			return paramObj;
 		},
 		
 		tableFilterFunction: function(item){
-			//if we use pagination, let the server handle the filtering
-			if (this.usePagination)
+			//if we let the server handle the filtering, then no need to do anything
+			if (this.useServerSideFilter)
 				return true;
 			
 			//is search is empty, don't filter anything
