@@ -28,7 +28,11 @@ var SearchInput = {
 	},
 	template:`
 	<b-input-group :size="size">
-		<b-input type="text" v-model.lazy="searchValueInternal" placeholder="Search"></b-input>
+		<b-input type="text" 
+			:value="searchValueInternal"
+			@change="searchValueInternal = $event"
+			placeholder="Search">
+		</b-input>
 		<b-input-group-append>
 			<b-select v-model="searchByInternal" :options="searchOptionsInternal" size="sm">
 				<template v-if="useSearchByPlaceholder" slot="first">
