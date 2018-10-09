@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "build": "webpack --display-modules"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +15,7 @@
     "vue": "^2.5.17"
   },
   "devDependencies": {
+    "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^1.0.0",
     "style-loader": "^0.23.0",
     "vue-loader": "^15.4.2",

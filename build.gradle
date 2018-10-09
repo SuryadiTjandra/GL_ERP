@@ -54,11 +54,16 @@ querydsl {
 	jpa = true
 }
 
+task cleanJsFiles(type:Delete){
+	delete "src/main/resources/static/js"
+}
 task runWebpack(type:NpmTask, dependsOn: npmInstall){
 	args = ['run', 'build']
 }
-
-task webpack(type:Copy, dependsOn: runWebpack){
+task moveBundledJsFiles(type:Copy, dependsOn: [cleanJsFiles,runWebpack]){
 	from 'src/main/front/dist'
 	into 'src/main/resources/static/js'
+}
+task webpack(dependsOn: [moveBundledJsFiles]){
+
 }
