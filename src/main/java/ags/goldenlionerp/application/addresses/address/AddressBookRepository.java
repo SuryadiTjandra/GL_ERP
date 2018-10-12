@@ -9,7 +9,7 @@ import ags.goldenlionerp.basecomponents.QuerydslUsingBaseRepository;
 public interface AddressBookRepository extends 
 		PagingAndSortingRepository<AddressBookMaster, String>,
 		AddressCustomRepository,
-		QuerydslUsingBaseRepository<QAddressBookMaster>
+		QuerydslUsingBaseRepository<AddressBookMaster, QAddressBookMaster>
 {
 
 

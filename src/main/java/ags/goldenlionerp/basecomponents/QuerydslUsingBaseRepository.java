@@ -7,8 +7,8 @@ import org.springframework.data.querydsl.binding.QuerydslBindings;
 import com.querydsl.core.types.EntityPath;
 import com.querydsl.core.types.dsl.StringPath;
 
-public interface QuerydslUsingBaseRepository<T extends EntityPath<?>> 
-	extends QuerydslPredicateExecutor<T>, QuerydslBinderCustomizer<T>{
+public interface QuerydslUsingBaseRepository<S, T extends EntityPath<?>> 
+	extends QuerydslPredicateExecutor<S>, QuerydslBinderCustomizer<T>{
 
 	@Override
 	default void customize(QuerydslBindings bindings, T root) {
