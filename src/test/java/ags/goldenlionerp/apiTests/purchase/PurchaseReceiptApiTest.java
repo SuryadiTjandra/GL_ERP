@@ -1,15 +1,22 @@
 package ags.goldenlionerp.apiTests.purchase;
 
 import static org.junit.Assert.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import java.beans.BeanDescriptor;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.hamcrest.Matchers;
+import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.web.servlet.ResultActions;
+
+import com.jayway.jsonpath.JsonPath;
+import com.jayway.jsonpath.ReadContext;
 
 import ags.goldenlionerp.apiTests.ApiTestBase;
 import ags.goldenlionerp.application.purchase.purchasereceipt.PurchaseReceiptPK;
@@ -60,6 +67,36 @@ public class PurchaseReceiptApiTest extends ApiTestBase<PurchaseReceiptPK> {
 			.andExpect(jsonPath("$._embedded.purchaseReceipts").exists())
 			.andExpect(jsonPath("$._embedded.purchaseReceipts[0]._links.sameReceipt.href").exists())
 		;
+		
+	}
+	
+	@Test
+	public void getSameReceiptTest() throws Exception {
+		assumeExists(baseUrl + existingId);
+		
+		String receiptJson = performer.performGet(baseUrl + existingId)
+								.andReturn().getResponse().getContentAsString();
+		ReadContext ctx = JsonPath.parse(receiptJson);
+		String url = ctx.read("$._links.sameReceipt.href");
+		String sameBatchReceipts = performer.performGet(url)
+				.andDo(print())
+				.andExpect(status().isOk())
+				.andExpect(jsonPath("$._embedded.purchaseReceipts.length()").value(8))
+				.andExpect(jsonPath("$._embedded.purchaseReceipts[?(@.companyId != %s)]", (String) ctx.read("$.companyId") ).isEmpty())
+				.andExpect(jsonPath("$._embedded.purchaseReceipts[?(@.purchaseReceiptNumber != %d)]", (Integer) ctx.read("$.purchaseReceiptNumber") ).isEmpty())
+				.andExpect(jsonPath("$._embedded.purchaseReceipts[?(@.purchaseReceiptType != '%s')]", (String) ctx.read("$.purchaseReceiptType") ).isEmpty())
+				//.andExpect(jsonPath("$._embedded.purchaseReceipts[?(@.sequence == %d)]", (Integer) ctx.read("$.sequence") ).value()))
+				.andExpect(jsonPath("$._embedded.purchaseReceipts[?(@.batchNumber != %d)]", (Integer) ctx.read("$.batchNumber") ).isEmpty())
+				.andExpect(jsonPath("$._embedded.purchaseReceipts[?(@.businessUnitId != '%s')]", (String) ctx.read("$.businessUnitId") ).isEmpty())
+				.andExpect(jsonPath("$._embedded.purchaseReceipts[?(@.documentDate != '%s')]", (String) ctx.read("$.documentDate") ).isEmpty())
+				.andExpect(jsonPath("$._embedded.purchaseReceipts[?(@.vendorId != '%s')]", (String) ctx.read("$.vendorId") ).isEmpty())
+				.andExpect(jsonPath("$._embedded.purchaseReceipts[?(@.customerOrderNumber != '%s')]", (String) ctx.read("$.customerOrderNumber") ).isEmpty())
+				.andExpect(jsonPath("$._embedded.purchaseReceipts[?(@.userReservedText != '%s')]", (String) ctx.read("$.userReservedText") ).isEmpty())
+				.andReturn().getResponse().getContentAsString();
+		
+		String x = JsonPath.read(sameBatchReceipts, String.format("$._embedded.purchaseReceipts[?(@.sequence == %d)]", (Integer) ctx.read("$.sequence"))).toString();
+		assertTrue((Integer) JsonPath.read(x, "$.length()") == 1);
+		
 		
 	}
 
