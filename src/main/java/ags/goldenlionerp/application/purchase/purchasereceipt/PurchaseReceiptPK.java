@@ -19,7 +19,7 @@ public class PurchaseReceiptPK implements Serializable{
 	@Column(name="OVDOCTY")
 	private String purchaseReceiptType;
 	
-	@Column(name="OVDOSSQ")
+	@Column(name="OVDOCSQ")
 	private int sequence;
 
 	@SuppressWarnings("unused")

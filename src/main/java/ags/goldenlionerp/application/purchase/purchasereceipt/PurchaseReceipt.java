@@ -39,13 +39,13 @@ public class PurchaseReceipt extends DatabaseEntity<PurchaseReceiptPK>{
 	@EmbeddedId @JsonUnwrapped
 	private PurchaseReceiptPK pk;
 	
-	@Column(name="OVDOCDT")
+	@Column(name="OVDOCDT", nullable=false)
 	private LocalDate documentDate;
 	
 	@Column(name="OVMATC")
 	private String matchCode;
 	
-	@Column(name="OVBUID")
+	@Column(name="OVBUID", updatable=false, nullable=false)
 	private String businessUnitId;
 	
 	@Column(name="OVICU")
@@ -54,7 +54,7 @@ public class PurchaseReceipt extends DatabaseEntity<PurchaseReceiptPK>{
 	@Column(name="OVICUT")
 	private String batchType;
 	
-	@Column(name="OVVNID", updatable = false)
+	@Column(name="OVVNID", updatable = false, nullable=false)
 	private String vendorId;
 	
 	@Column(name="OVCRCB", updatable = false)
@@ -93,14 +93,14 @@ public class PurchaseReceipt extends DatabaseEntity<PurchaseReceiptPK>{
 	@Column(name="OVUCF", precision=19, scale=9)
 	private BigDecimal unitConversionFactor;
 	
-	@Column(name="OVPQOR", precision=19, scale=5)
-	private BigDecimal primaryOrderQuantity;
+	@Column(name="OVPQOT", precision=19, scale=5)
+	private BigDecimal primaryTransactionQuantity;
 	
 	@Column(name="OVUOM1")
 	private String primaryUnitOfMeasure;
 	
-	@Column(name="OVSQOR", precision=19, scale=5)
-	private BigDecimal secondaryOrderQuantity;
+	@Column(name="OVSQOT", precision=19, scale=5)
+	private BigDecimal secondaryTransactionQuantity;
 	
 	@Column(name="OVUOM2")
 	private String secondaryUnitOfMeasure;
@@ -210,7 +210,7 @@ public class PurchaseReceipt extends DatabaseEntity<PurchaseReceiptPK>{
 	@Column(name="OVORDOCSQ")
 	private int originalDocumentSequence;
 	
-	@Column(name="OVCSDOCNO")
+	@Column(name="OVCSDOCNO", nullable=false)
 	private String customerOrderNumber;
 	
 	@Column(name="OVCSDOCDT")
@@ -225,7 +225,7 @@ public class PurchaseReceipt extends DatabaseEntity<PurchaseReceiptPK>{
 	@Column(name="OVTAXINO")
 	private String taxInvoiceNumber;
 	
-	@Column(name="OVTAXIDR")
+	@Column(name="OVTAXIDT")
 	private LocalDate taxInvoiceDate;
 	
 	@Column(name="OVEXPDT")
@@ -388,16 +388,16 @@ public class PurchaseReceipt extends DatabaseEntity<PurchaseReceiptPK>{
 		return unitConversionFactor;
 	}
 
-	public BigDecimal getPrimaryOrderQuantity() {
-		return primaryOrderQuantity;
+	public BigDecimal getPrimaryTransactionQuantity() {
+		return primaryTransactionQuantity;
 	}
 
 	public String getPrimaryUnitOfMeasure() {
 		return primaryUnitOfMeasure;
 	}
 
-	public BigDecimal getSecondaryOrderQuantity() {
-		return secondaryOrderQuantity;
+	public BigDecimal getSecondaryTransactionQuantity() {
+		return secondaryTransactionQuantity;
 	}
 
 	public String getSecondaryUnitOfMeasure() {
@@ -716,16 +716,16 @@ public class PurchaseReceipt extends DatabaseEntity<PurchaseReceiptPK>{
 		this.unitConversionFactor = unitConversionFactor;
 	}
 
-	void setPrimaryOrderQuantity(BigDecimal primaryOrderQuantity) {
-		this.primaryOrderQuantity = primaryOrderQuantity;
+	void setPrimaryTransactionQuantity(BigDecimal primaryTransactionQuantity) {
+		this.primaryTransactionQuantity = primaryTransactionQuantity;
 	}
 
 	void setPrimaryUnitOfMeasure(String primaryUnitOfMeasure) {
 		this.primaryUnitOfMeasure = primaryUnitOfMeasure;
 	}
 
-	void setSecondaryOrderQuantity(BigDecimal secondaryOrderQuantity) {
-		this.secondaryOrderQuantity = secondaryOrderQuantity;
+	void setSecondaryTransactionQuantity(BigDecimal secondaryTransactionQuantity) {
+		this.secondaryTransactionQuantity = secondaryTransactionQuantity;
 	}
 
 	void setSecondaryUnitOfMeasure(String secondaryUnitOfMeasure) {

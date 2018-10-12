@@ -47,7 +47,7 @@ public class PurchaseReceiptApiTest extends ApiTestBase<PurchaseReceiptPK> {
 			.andExpect(jsonPath("$.vendorId").value("2814"))
 			.andExpect(jsonPath("$.customerOrderNumber").value("4522094772"))
 			.andExpect(jsonPath("$.itemCode").value("HP.LAPTOP-1XE24PA#AR6"))
-			.andExpect(jsonPath("$.quantithy").value(15.0))
+			.andExpect(jsonPath("$.quantity").value(15.0))
 			.andExpect(jsonPath("$.unitOfMeasure").value("UNT"));
 		
 	}
