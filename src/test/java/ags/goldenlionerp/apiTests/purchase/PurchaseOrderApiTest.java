@@ -64,7 +64,7 @@ public class PurchaseOrderApiTest extends ApiTestBase<PurchaseOrderPK> {
 		map.put("vehicleDescription2", "vehicledesc2");
 		
 		Map<String, Object> det0 = new HashMap<>();
-		det0.put("itemNumber", "ACC.BATERAI - CMOS			");
+		det0.put("itemCode", "ACC.BATERAI - CMOS			");
 		det0.put("locationId", "ABC.1.2.3");
 		det0.put("quantity", 10);
 		//det0.put("extendedUnitOfMeasure", "CM");
@@ -78,7 +78,7 @@ public class PurchaseOrderApiTest extends ApiTestBase<PurchaseOrderPK> {
 		//det0.put("containerLoadType", "LCL");
 		
 		Map<String, Object> det1 = new HashMap<>();
-		det1.put("itemNumber", "TEST2");
+		det1.put("itemCode", "TEST2");
 		det1.put("quantity", 10);
 		det1.put("unitOfMeasure", "IN");
 		det1.put("extendedUnitOfMeasure", "CM");
@@ -132,8 +132,8 @@ public class PurchaseOrderApiTest extends ApiTestBase<PurchaseOrderPK> {
 			.andExpect(jsonPath("$.customerId").value(""))
 			
 			.andExpect(jsonPath("$.details.length()").value(2))
-			.andExpect(jsonPath("$.details[0].itemNumber").value("BRT.LASER-MFCL2740DW"))
-			.andExpect(jsonPath("$.details[1].itemNumber").value("BRT.LASER-DCP1616NW"))
+			.andExpect(jsonPath("$.details[0].itemCode").value("BRT.LASER-MFCL2740DW"))
+			.andExpect(jsonPath("$.details[1].itemCode").value("BRT.LASER-DCP1616NW"))
 			.andExpect(jsonPath("$.details[0].locationId").value("GDU"))
 			.andExpect(jsonPath("$.details[1].locationId").value("GDU"))
 			.andExpect(jsonPath("$.details[0].orderQuantity").value(3))
@@ -198,8 +198,8 @@ public class PurchaseOrderApiTest extends ApiTestBase<PurchaseOrderPK> {
 		List<Map<String, Object>> list = (List<Map<String, Object>>) requestObject.get("details");
 		Map<String, Object> det0 = list.get(0);
 		Map<String, Object> det1 = list.get(1);
-		ItemMaster item0 = itemRepo.findById((String) det0.get("itemNumber")).get();
-		ItemMaster item1 = itemRepo.findById((String) det1.get("itemNumber")).get();
+		ItemMaster item0 = itemRepo.findById((String) det0.get("itemCode")).get();
+		ItemMaster item1 = itemRepo.findById((String) det1.get("itemCode")).get();
 		ItemLocation primLoc0 = item0.getItemLocations().stream()
 								.filter(il -> il.getPk().getBusinessUnitId().equals(requestObject.get("businessUnit")))
 								.filter(il -> il.getLocationStatus() == "P")
@@ -228,14 +228,14 @@ public class PurchaseOrderApiTest extends ApiTestBase<PurchaseOrderPK> {
 			.andExpect(jsonPath("$.details[1].receiverId").value(requestObject.getOrDefault("receiverId", requestObject.get("vendorId"))))
 			.andExpect(jsonPath("$.details[1].customerId").value(requestObject.getOrDefault("customerId", "")))
 			
-			.andExpect(jsonPath("$.details[0].itemNumber").value(det0.get("itemNumber")))
+			.andExpect(jsonPath("$.details[0].itemCode").value(det0.get("itemCode")))
 			.andExpect(jsonPath("$.details[0].locationId").value(det0.getOrDefault("locationId", primLoc0 != null ? primLoc0.getPk().getLocationId() : "")))
-			.andExpect(jsonPath("$.details[0].serialLotNumber").value(det0.getOrDefault("serialLotNumber", primLoc0 != null ? primLoc0.getPk().getSerialLotNo() : "")))
+			.andExpect(jsonPath("$.details[0].serialLotNo").value(det0.getOrDefault("serialLotNo", primLoc0 != null ? primLoc0.getPk().getSerialLotNo() : "")))
 			.andExpect(jsonPath("$.details[0].description").value(item0.getDescription()))
 			.andExpect(jsonPath("$.details[0].lineType").value(item0.getTransactionType()))
-			.andExpect(jsonPath("$.details[1].itemNumber").value(det1.get("itemNumber")))
+			.andExpect(jsonPath("$.details[1].itemCode").value(det1.get("itemCode")))
 			.andExpect(jsonPath("$.details[1].locationId").value(det1.getOrDefault("locationId", primLoc1 != null ? primLoc1.getPk().getLocationId() : "")))
-			.andExpect(jsonPath("$.details[1].serialLotNumber").value(det1.getOrDefault("serialLotNumber", primLoc1 != null ? primLoc1.getPk().getSerialLotNo() : "")))
+			.andExpect(jsonPath("$.details[1].serialLotNo").value(det1.getOrDefault("serialLotNo", primLoc1 != null ? primLoc1.getPk().getSerialLotNo() : "")))
 			.andExpect(jsonPath("$.details[1].description").value(item1.getDescription()))
 			.andExpect(jsonPath("$.details[1].lineType").value(item1.getTransactionType()))
 			
