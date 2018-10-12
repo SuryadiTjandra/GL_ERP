@@ -2,11 +2,13 @@ package ags.goldenlionerp.apiTests.purchase;
 
 import static org.junit.Assert.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import org.junit.Test;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.web.servlet.ResultActions;
 
 import ags.goldenlionerp.apiTests.ApiTestBase;
@@ -56,7 +58,7 @@ public class PurchaseReceiptApiTest extends ApiTestBase<PurchaseReceiptPK> {
 	public void assertGetCollectionResult(ResultActions action) throws Exception {
 		action
 			.andExpect(jsonPath("$._embedded.purchaseReceipts").exists())
-			.andExpect(jsonPath("$._embedded.purchaseReceipts[0]._li").exists())
+			.andExpect(jsonPath("$._embedded.purchaseReceipts[0]._links.sameReceipt.href").exists())
 		;
 		
 	}
@@ -71,6 +73,26 @@ public class PurchaseReceiptApiTest extends ApiTestBase<PurchaseReceiptPK> {
 	public void assertUpdateWithPatchResult(ResultActions action, String beforeUpdateJson) throws Exception {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	@Test @Rollback
+	public void updateTestWithPost() throws Exception {
+		assumeExists(baseUrl + existingId);
+		
+		requestObject.put("companyId", existingId.getCompanyId());
+		requestObject.put("purchaseReceiptNumber", existingId().getPurchaseReceiptNumber());
+		requestObject.put("purchaseReceiptType", existingId().getPurchaseReceiptType());
+		requestObject.put("sequence", existingId().getSequence());
+		
+		performer.performPost(baseUrl, requestObject)
+				.andExpect(status().isConflict());
+	}
+	
+	@Override
+	public void deleteTest() throws Exception {
+		assumeExists(baseUrl + existingId);
+		performer.performDelete(baseUrl + existingId())
+				.andExpect(status().isMethodNotAllowed());
 	}
 
 	
