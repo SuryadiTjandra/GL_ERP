@@ -31,7 +31,7 @@ public class StandardUomConversionService {
 		
 		Collection<StandardUomConversion> col1 = repo.findByUomFrom(from);
 		Collection<StandardUomConversion> col2 = repo.findByUomTo(from).stream()
-													.map(StandardUomConversion::getReverseConversion)
+													.map(StandardUomConversion::reverseConversion)
 													.collect(Collectors.toList());
 		Collection<StandardUomConversion> col = Stream.concat(col1.stream(), col2.stream())
 													.filter(suc -> !alreadyTraversed.contains(suc.getUomTo()))
@@ -63,7 +63,7 @@ public class StandardUomConversionService {
 		Optional<StandardUomConversion> swapped = repo.findById(new StandardUomConversionPK(to, from));
 		if (swapped.isPresent())
 			return swapped
-					.map(suc -> suc.getReverseConversion())
+					.map(suc -> suc.reverseConversion())
 					.map(suc -> suc.getConversionValue());
 		
 		return Optional.empty();

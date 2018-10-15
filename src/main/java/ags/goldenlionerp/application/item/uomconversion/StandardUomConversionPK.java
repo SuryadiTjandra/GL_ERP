@@ -32,6 +32,11 @@ public class StandardUomConversionPK implements Serializable{
 	public String getUomTo() {
 		return uomTo;
 	}
+	
+	@Override
+	public String toString() {
+		return new StandardUomConversionIdConverter().toRequestId(this, this.getClass());
+	}
 
 	@Override
 	public int hashCode() {
