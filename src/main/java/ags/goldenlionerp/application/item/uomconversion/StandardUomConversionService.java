@@ -17,9 +17,13 @@ import static java.math.BigDecimal.ONE;
 public class StandardUomConversionService {
 
 	@Autowired private StandardUomConversionRepository repo;
+	@Autowired(required=false)
+	private StandardUomConversionGraph graph;
 	
 	public Optional<BigDecimal> findConversionValue(String from, String to) {
-		return findConversionValueInner(from, to, BigDecimal.ONE, Arrays.asList(from));
+		return graph != null ?
+				graph.findConversionValue(from, to) :
+				findConversionValueInner(from, to, BigDecimal.ONE, Arrays.asList(from));
 	}
 	
 	private Optional<BigDecimal> findConversionValueInner(String from, String to, BigDecimal acc, Collection<String> alreadyTraversed) {

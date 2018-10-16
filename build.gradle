@@ -38,6 +38,7 @@ dependencies {
 	compile("org.springframework.boot:spring-boot-devtools")
 	//compile("com.fasterxml.jackson.datatype:jackson-datatype-hibernate5:2.9.0")
 	compile "com.querydsl:querydsl-jpa:4.1.2"
+	compile "com.google.guava:guava:26.0-jre"
 	runtime('com.microsoft.sqlserver:mssql-jdbc')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	testCompile('org.springframework.restdocs:spring-restdocs-mockmvc')
