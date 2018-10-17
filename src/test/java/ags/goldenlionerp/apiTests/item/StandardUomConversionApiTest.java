@@ -11,7 +11,7 @@ import org.springframework.test.annotation.Rollback;
 import org.springframework.test.web.servlet.ResultActions;
 
 import ags.goldenlionerp.apiTests.ApiTestBase;
-import ags.goldenlionerp.application.item.uomconversion.StandardUomConversionPK;
+import ags.goldenlionerp.application.item.uomconversion.standard.StandardUomConversionPK;
 
 public class StandardUomConversionApiTest extends ApiTestBase<StandardUomConversionPK>{
 

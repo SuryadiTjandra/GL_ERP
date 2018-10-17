@@ -1,4 +1,4 @@
-package ags.goldenlionerp.application.item.uomconversion;
+package ags.goldenlionerp.application.item.uomconversion.standard;
 
 import java.util.Collection;
 

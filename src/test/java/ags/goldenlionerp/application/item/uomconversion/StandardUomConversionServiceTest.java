@@ -12,6 +12,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
+import ags.goldenlionerp.application.item.uomconversion.standard.StandardUomConversionService;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @Transactional
