@@ -1,10 +1,13 @@
 package ags.goldenlionerp.apiTests.item;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import java.util.HashMap;
 import java.util.Map;
 
+import org.junit.Test;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.web.servlet.ResultActions;
 
 import ags.goldenlionerp.apiTests.ApiTestBase;
@@ -23,7 +26,7 @@ public class StandardUomConversionApiTest extends ApiTestBase<StandardUomConvers
 
 	@Override
 	protected String baseUrl() {
-		return "/api/uomconversions/";
+		return "/api/stduomconvs/";
 	}
 
 	@Override
@@ -48,7 +51,7 @@ public class StandardUomConversionApiTest extends ApiTestBase<StandardUomConvers
 	@Override
 	public void assertGetCollectionResult(ResultActions action) throws Exception {
 		action
-			.andExpect(jsonPath("$._embedded.uomconversions").exists());
+			.andExpect(jsonPath("$._embedded.standardUomConversions").exists());
 		
 	}
 
@@ -63,8 +66,29 @@ public class StandardUomConversionApiTest extends ApiTestBase<StandardUomConvers
 
 	@Override
 	public void assertUpdateWithPatchResult(ResultActions action, String beforeUpdateJson) throws Exception {
-		// TODO Auto-generated method stub
+		action
+			.andExpect(jsonPath("$.uomFrom").value(existingId.getUomFrom()))
+			.andExpect(jsonPath("$.uomTo").value(existingId.getUomTo()))
+			.andExpect(jsonPath("$.conversionValue").value(requestObject.get("conversionValue")));
 		
+	}
+	
+	@Test @Rollback
+	public void createTestWithPost_ExistingConversion() throws Exception {
+		StandardUomConversionPK pk = new StandardUomConversionPK("CM", "KM");
+		assumeNotExists(baseUrl + pk);
+		
+		requestObject.put("uomFrom", pk.getUomFrom());
+		requestObject.put("uomTo", pk.getUomTo());
+		requestObject.put("conversionValue", 12345678);
+		
+		performer.performPost(baseUrl, requestObject)
+				.andExpect(status().is4xxClientError());
+		
+		requestObject.put("conversionValue", 0.00001);
+		
+		performer.performPost(baseUrl, requestObject)
+				.andExpect(status().is2xxSuccessful());
 	}
 
 }
