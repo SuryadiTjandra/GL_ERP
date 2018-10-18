@@ -79,7 +79,7 @@ public class PurchaseReceipt extends DatabaseEntity<PurchaseReceiptPK>{
 	private String serialLotNo;
 	
 	@Column(name="OVDESB1")
-	private String description;
+	private String itemDescription;
 	
 	@Column(name="OVLNTY")
 	private String lineType;
@@ -299,7 +299,7 @@ public class PurchaseReceipt extends DatabaseEntity<PurchaseReceiptPK>{
 	private LocalDate importDeclarationDate;
 	
 	@Column(name="OVURTX")
-	private String userReservedText;
+	private String description;
 	
 	@Column(name="OVOBID")
 	private String objectId;
@@ -368,8 +368,8 @@ public class PurchaseReceipt extends DatabaseEntity<PurchaseReceiptPK>{
 		return serialLotNo;
 	}
 
-	public String getDescription() {
-		return description;
+	public String getItemDescription() {
+		return itemDescription;
 	}
 
 	public String getLineType() {
@@ -628,8 +628,8 @@ public class PurchaseReceipt extends DatabaseEntity<PurchaseReceiptPK>{
 		return importDeclarationDate;
 	}
 
-	public String getUserReservedText() {
-		return userReservedText;
+	public String getDescription() {
+		return description;
 	}
 
 	public String getObjectId() {
@@ -696,8 +696,8 @@ public class PurchaseReceipt extends DatabaseEntity<PurchaseReceiptPK>{
 		this.serialLotNo = serialLotNo;
 	}
 
-	void setDescription(String description) {
-		this.description = description;
+	void setItemDescription(String description) {
+		this.itemDescription = description;
 	}
 
 	void setLineType(String lineType) {
@@ -956,8 +956,8 @@ public class PurchaseReceipt extends DatabaseEntity<PurchaseReceiptPK>{
 		this.importDeclarationDate = importDeclarationDate;
 	}
 
-	void setUserReservedText(String userReservedText) {
-		this.userReservedText = userReservedText;
+	void setDescription(String userReservedText) {
+		this.description = userReservedText;
 	}
 
 	void setObjectId(String objectId) {
