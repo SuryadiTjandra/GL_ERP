@@ -41,11 +41,11 @@ public class ItemUomConversion extends SynchronizedDatabaseEntityImpl<ItemUomCon
 	@Column(name="UMUOMST")
 	private String uomStructure;
 	
-	@Column(name="UMDESA1")
-	private String uomFromDescription;
+	//@Column(name="UMDESA1")
+	//private String uomFromDescription;
 	
-	@Column(name="UMDESA2")
-	private String uomToDescription;
+	//@Column(name="UMDESA2")
+	//private String uomToDescription;
 	
 	@SuppressWarnings("unused")
 	private  ItemUomConversion() {}
@@ -92,24 +92,43 @@ public class ItemUomConversion extends SynchronizedDatabaseEntityImpl<ItemUomCon
 		return uomStructure;
 	}
 
-	public String getUomFromDescription() {
-		return uomFromDescription;
-	}
+	//public String getUomFromDescription() {
+	//	return uomFromDescription;
+	//}
 
-	public String getUomToDescription() {
-		return uomToDescription;
+	//public String getUomToDescription() {
+	//	return uomToDescription;
+	//}
+	void setItemCode(String itemCode) {
+		this.pk = new ItemUomConversionPK(itemCode, pk.getUomFrom(), pk.getUomTo());
+	}
+	
+	void setUomFrom(String uomFrom) {
+		this.pk = new ItemUomConversionPK(pk.getItemCode(), uomFrom, pk.getUomTo());
+	}
+	
+	void setUomTo(String uomTo) {
+		this.pk = new ItemUomConversionPK(pk.getItemCode(), pk.getUomFrom(), uomTo);
 	}
 
 	void setConversionValueToPrimary(BigDecimal conversionValueToPrimary) {
 		this.conversionValueToPrimary = conversionValueToPrimary;
 	}
 
-	void setUomFromDescription(String uomFromDescription) {
-		this.uomFromDescription = uomFromDescription;
+	void setConversionValue(BigDecimal conversionValue) {
+		this.conversionValue = conversionValue;
 	}
 
-	void setUomToDescription(String uomToDescription) {
-		this.uomToDescription = uomToDescription;
+	void setUomStructure(String uomStructure) {
+		this.uomStructure = uomStructure;
 	}
+
+	//void setUomFromDescription(String uomFromDescription) {
+	//	this.uomFromDescription = uomFromDescription;
+	//}
+
+	//void setUomToDescription(String uomToDescription) {
+	//	this.uomToDescription = uomToDescription;
+	//}
 
 }

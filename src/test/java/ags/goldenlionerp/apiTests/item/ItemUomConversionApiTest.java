@@ -3,9 +3,11 @@ package ags.goldenlionerp.apiTests.item;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.junit.Test;
 import org.springframework.test.web.servlet.ResultActions;
 
 import ags.goldenlionerp.apiTests.ApiTestBase;
@@ -45,8 +47,8 @@ public class ItemUomConversionApiTest extends ApiTestBase<ItemUomConversionPK> {
 			.andExpect(jsonPath("$.itemCode").value(existingId.getItemCode()))
 			.andExpect(jsonPath("$.uomFrom").value(existingId.getUomFrom()))
 			.andExpect(jsonPath("$.uomTo").value(existingId.getUomTo()))
-			.andExpect(jsonPath("$.uomFromDescription").value("Feet"))
-			.andExpect(jsonPath("$.uomToDescription").value("Centimeters"))
+			//.andExpect(jsonPath("$.uomFromDescription").value("Feet"))
+			//.andExpect(jsonPath("$.uomToDescription").value("Centimeters"))
 			.andExpect(jsonPath("$.conversionValue").value(50.0))
 			.andExpect(jsonPath("$.conversionValueToPrimary").value(1));
 		
@@ -66,8 +68,8 @@ public class ItemUomConversionApiTest extends ApiTestBase<ItemUomConversionPK> {
 			.andExpect(jsonPath("$.itemCode").value(newId.getItemCode()))
 			.andExpect(jsonPath("$.uomFrom").value(newId.getUomFrom()))
 			.andExpect(jsonPath("$.uomTo").value(newId.getUomTo()))
-			.andExpect(jsonPath("$.uomFromDescription").value("Barrels"))
-			.andExpect(jsonPath("$.uomToDescription").value("Unit"))
+			//.andExpect(jsonPath("$.uomFromDescription").value("Barrels"))
+			//.andExpect(jsonPath("$.uomToDescription").value("Unit"))
 			.andExpect(jsonPath("$.conversionValue").value(500.00))
 			.andExpect(jsonPath("$.conversionValueToPrimary").value(500.0))
 			.andExpect(jsonPath("$.uomStructure").value("2"));
@@ -80,12 +82,19 @@ public class ItemUomConversionApiTest extends ApiTestBase<ItemUomConversionPK> {
 			.andExpect(jsonPath("$.itemCode").value(existingId.getItemCode()))
 			.andExpect(jsonPath("$.uomFrom").value(existingId.getUomFrom()))
 			.andExpect(jsonPath("$.uomTo").value(existingId.getUomTo()))
-			.andExpect(jsonPath("$.uomFromDescription").value("Barrels"))
-			.andExpect(jsonPath("$.uomToDescription").value("Unit"))
+			//.andExpect(jsonPath("$.uomFromDescription").value("Barrels"))
+			//.andExpect(jsonPath("$.uomToDescription").value("Unit"))
 			.andExpect(jsonPath("$.conversionValue").value(500.00))
-			.andExpect(jsonPath("$.conversionValueToPrimary").value(500.0))
+			.andExpect(jsonPath("$.conversionValueToPrimary").value(BigDecimal.ONE.doubleValue()))
 			.andExpect(jsonPath("$.uomStructure").value("2"));
 		
+	}
+	
+	@Test
+	public void createPostTest_NoConversionToPrimary() throws Exception {
+		requestObject.put("uomTo", "CM");
+		performer.performPost(baseUrl, requestObject)
+				.andExpect(status().is4xxClientError());
 	}
 
 }

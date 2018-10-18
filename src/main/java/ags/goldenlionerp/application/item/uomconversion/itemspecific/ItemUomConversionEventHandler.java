@@ -3,6 +3,7 @@ package ags.goldenlionerp.application.item.uomconversion.itemspecific;
 import java.math.BigDecimal;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.rest.core.annotation.HandleBeforeCreate;
 import org.springframework.data.rest.core.annotation.HandleBeforeSave;
 import org.springframework.data.rest.core.annotation.RepositoryEventHandler;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
@@ -21,7 +22,7 @@ public class ItemUomConversionEventHandler {
 	@Autowired
 	private ItemMasterRepository itemRepo;
 	
-	@HandleBeforeSave
+	@HandleBeforeSave @HandleBeforeCreate
 	public void fillInfoBeforeSave(ItemUomConversion uomConv) {
 		ItemMaster item = itemRepo.findById(uomConv.getItemCode())
 									.orElseThrow(() -> new ResourceNotFoundException("Could not find item with code " + uomConv.getItemCode()));
