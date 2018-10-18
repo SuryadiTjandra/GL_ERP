@@ -43,6 +43,8 @@ public class StandardUomConversionGraph {
 	}
 	
 	public Optional<BigDecimal> findConversionValue(String from, String to) {
+		if (from.equals(to))
+			return Optional.of(ONE);
 		if (!graph.nodes().contains(from) || !graph.nodes().contains(to))
 			return Optional.empty();
 		
