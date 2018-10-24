@@ -181,15 +181,15 @@ public class PurchaseReceipt extends DatabaseEntity<PurchaseReceiptPK>{
 	private int invoiceSequence;
 	
 	@Column(name="OVDOCIDT")
-	private String invoiceDate;
+	private LocalDate invoiceDate;
 	
-	@Column(name="OVDOCONO")
+	@Column(name="OVDOCONO", nullable=false)
 	private int purchaseOrderNumber;
 	
-	@Column(name="OVDOCOTY")
+	@Column(name="OVDOCOTY", nullable=false)
 	private String purchaseOrderType;	
 	
-	@Column(name="OVDOCOSQ")
+	@Column(name="OVDOCOSQ", nullable=false)
 	private int purchaseOrderSequence;
 	
 	@JoinColumns({
@@ -504,7 +504,7 @@ public class PurchaseReceipt extends DatabaseEntity<PurchaseReceiptPK>{
 		return invoiceSequence;
 	}
 
-	public String getInvoiceDate() {
+	public LocalDate getInvoiceDate() {
 		return invoiceDate;
 	}
 
@@ -832,7 +832,7 @@ public class PurchaseReceipt extends DatabaseEntity<PurchaseReceiptPK>{
 		this.invoiceSequence = invoiceSequence;
 	}
 
-	void setInvoiceDate(String invoiceDate) {
+	void setInvoiceDate(LocalDate invoiceDate) {
 		this.invoiceDate = invoiceDate;
 	}
 
