@@ -343,4 +343,20 @@ public class PurchaseOrderService {
 		oldPo.setDetails(poRequest.getDetails());
 		return repo.save(oldPo);
 	}
+	
+	public void receiveOrder(String companyId, int purchaseOrderNumber, String purchaseOrderType, int sequence, BigDecimal receiveQuantity, String unitOfMeasure) {
+		PurchaseOrderPK pk = new PurchaseOrderPK(companyId, purchaseOrderNumber, purchaseOrderType);
+		PurchaseOrder order = repo.findById(pk)
+								.orElseThrow(() -> new ResourceNotFoundException("Could not find purchase order with id " + pk));
+		PurchaseDetail detail = order.getDetails().stream()
+								.filter(det -> det.getPk().getPurchaseOrderSequence() == sequence)
+								.findFirst().orElseThrow(() -> new ResourceNotFoundException("Could not find purchase order with id " + pk + " and sequence " + sequence));
+		
+		BigDecimal conversionValue = uomServ.findConversionValue(detail.getItemCode(), unitOfMeasure, detail.getUnitOfMeasure());
+		receiveQuantity = receiveQuantity.multiply(conversionValue);
+		
+		detail.setReceivedQuantity(detail.getReceivedQuantity().add(receiveQuantity));
+		detail.setOpenQuantity(detail.getOpenQuantity().subtract(receiveQuantity));
+		repo.save(order);
+	}
 }

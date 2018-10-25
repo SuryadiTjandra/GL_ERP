@@ -1,7 +1,6 @@
 package ags.goldenlionerp.apiTests.purchase;
 
 import static org.junit.Assert.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -16,10 +15,6 @@ import org.junit.Test;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.util.ObjectUtils;
-
-import com.google.common.base.Objects;
-import com.jayway.jsonpath.JsonPath;
-import com.jayway.jsonpath.ReadContext;
 
 import ags.goldenlionerp.apiTests.ApiTestBase;
 import ags.goldenlionerp.application.purchase.purchasereceipt.PurchaseReceiptPK;
@@ -154,9 +149,9 @@ public class PurchaseReceiptApiTest extends ApiTestBase<PurchaseReceiptPK> {
 		
 	}*/
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public void assertCreateWithPostResult(ResultActions action) throws Exception {
-		@SuppressWarnings("unchecked")
 		List<Map<String, Object>> requestDetails = (List<Map<String, Object>>) requestObject.get("details");
 		
 		action
@@ -299,6 +294,15 @@ public class PurchaseReceiptApiTest extends ApiTestBase<PurchaseReceiptPK> {
 			//.andExpect(jsonPath("$.details[1].importDeclarationDate").value(poDetails.get(1).get("importDeclarationDate")))
 			
 			;
+		
+		performer.performGet(((Map<String, Map<String, Object>>) poDetails.get(0).get("_links")).get("order").get("href").toString())
+				.andExpect(jsonPath("$.details[0].quantity").value(poDetails.get(0).get("quantity")))
+				.andExpect(jsonPath("$.details[0].receivedQuantity").value(requestDetails.get(0).get("quantity")))
+				.andExpect(jsonPath("$.details[0].openQuantity").value((double)poDetails.get(0).get("quantity") - (double)requestDetails.get(0).get("quantity")))
+				.andExpect(jsonPath("$.details[1].quantity").value(poDetails.get(1).get("quantity")))
+				.andExpect(jsonPath("$.details[1].receivedQuantity").value(requestDetails.get(1).get("quantity")))
+				.andExpect(jsonPath("$.details[1].openQuantity").value((double)poDetails.get(1).get("quantity") - (double)requestDetails.get(1).get("quantity")));
+		
 		fail();// TODO Auto-generated method stub
 		
 	}

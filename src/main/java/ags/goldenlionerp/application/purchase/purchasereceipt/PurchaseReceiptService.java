@@ -8,6 +8,8 @@ import java.time.YearMonth;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import static org.springframework.util.ObjectUtils.isEmpty;
 
 import com.google.common.collect.Lists;
@@ -17,6 +19,7 @@ import ags.goldenlionerp.application.purchase.purchaseorder.PurchaseDetail;
 import ags.goldenlionerp.application.purchase.purchaseorder.PurchaseOrder;
 import ags.goldenlionerp.application.purchase.purchaseorder.PurchaseOrderPK;
 import ags.goldenlionerp.application.purchase.purchaseorder.PurchaseOrderRepository;
+import ags.goldenlionerp.application.purchase.purchaseorder.PurchaseOrderService;
 import ags.goldenlionerp.application.setups.nextnumber.NextNumberService;
 
 @Service
@@ -29,17 +32,36 @@ public class PurchaseReceiptService {
 	@Autowired
 	private PurchaseOrderRepository orderRepo;
 	@Autowired
+	private PurchaseOrderService orderService;
+	@Autowired
 	private UomConversionService uomServ;
 
+	@Transactional
 	public PurchaseReceiptHeader createPurchaseReceipt(PurchaseReceiptHeader receiptHead) {
+		receiptHead = completePurchaseReceiptInfo(receiptHead);
+		receiptHead = new PurchaseReceiptHeader(
+							Lists.newArrayList(repo.saveAll(receiptHead.getDetails()))
+						);
+		
+		for (PurchaseReceipt rec : receiptHead.getDetails()) {
+			orderService.receiveOrder(rec.getPk().getCompanyId(), 
+					rec.getPurchaseOrderNumber(), 
+					rec.getPurchaseOrderType(), 
+					rec.getPurchaseOrderSequence(), 
+					rec.getQuantity(),
+					rec.getUnitOfMeasure());
+		}
+		
+		return receiptHead;
+	}
+	
+	public PurchaseReceiptHeader completePurchaseReceiptInfo(PurchaseReceiptHeader receiptHead) {
 		receiptHead = setDocumentAndBatchNumber(receiptHead);
 		receiptHead = setInfoFromPurchaseOrder(receiptHead);
 		
 		LocalDate docDate = receiptHead.getDocumentDate();
 		receiptHead.getDetails().forEach(d -> d.setReceiptDate(docDate));
-		return new PurchaseReceiptHeader(
-					Lists.newArrayList(repo.saveAll(receiptHead.getDetails()))
-				);
+		return receiptHead;
 	}
 
 	private PurchaseReceiptHeader setDocumentAndBatchNumber(PurchaseReceiptHeader receiptHead) {
