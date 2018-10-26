@@ -21,6 +21,7 @@ import ags.goldenlionerp.application.purchase.purchaseorder.PurchaseOrderPK;
 import ags.goldenlionerp.application.purchase.purchaseorder.PurchaseOrderRepository;
 import ags.goldenlionerp.application.purchase.purchaseorder.PurchaseOrderService;
 import ags.goldenlionerp.application.setups.nextnumber.NextNumberService;
+import ags.goldenlionerp.masterdata.lotmaster.LotMasterService;
 
 @Service
 public class PurchaseReceiptService {
@@ -35,6 +36,8 @@ public class PurchaseReceiptService {
 	private PurchaseOrderService orderService;
 	@Autowired
 	private UomConversionService uomServ;
+	@Autowired
+	private LotMasterService lotServ;
 
 	@Transactional
 	public PurchaseReceiptHeader createPurchaseReceipt(PurchaseReceiptHeader receiptHead) {
@@ -43,6 +46,7 @@ public class PurchaseReceiptService {
 							Lists.newArrayList(repo.saveAll(receiptHead.getDetails()))
 						);
 		
+		//let the order service receive the orders
 		for (PurchaseReceipt rec : receiptHead.getDetails()) {
 			orderService.receiveOrder(rec.getPk().getCompanyId(), 
 					rec.getPurchaseOrderNumber(), 
@@ -50,6 +54,20 @@ public class PurchaseReceiptService {
 					rec.getPurchaseOrderSequence(), 
 					rec.getQuantity(),
 					rec.getUnitOfMeasure());
+		}
+		
+		//create new lotmasters if the items has serial numbers
+		for (PurchaseReceipt rec : receiptHead.getDetails()) {
+			if (!rec.getItem().isSerialNumberRequired())
+				continue;
+			//check if quantity is integer
+			if (rec.getQuantity().stripTrailingZeros().scale() > 0)
+				throw new IllegalArgumentException("The quantity for this item must be an integer!");
+			//check if each item has a distinct serial number
+			if (rec.getQuantity().intValue() != rec.getSerialNumbers().size())
+				throw new IllegalArgumentException("Must input distinct serial number for each received item!");
+			
+			lotServ.createLotsWithSerialNumbers(rec.getBusinessUnitId(), rec.getItemCode(), rec.getSerialNumbers(), rec.getPk());
 		}
 		
 		return receiptHead;

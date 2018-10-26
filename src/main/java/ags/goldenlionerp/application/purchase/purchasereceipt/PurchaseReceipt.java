@@ -2,6 +2,8 @@ package ags.goldenlionerp.application.purchase.purchasereceipt;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;
@@ -14,6 +16,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinColumns;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
 
@@ -306,6 +309,9 @@ public class PurchaseReceipt extends DatabaseEntity<PurchaseReceiptPK>{
 	
 	@Column(name="OVRECID")
 	private String recordId;
+	
+	@Transient
+	private Set<String> serialNumbers = new HashSet<>();
 	
 	@Override
 	public PurchaseReceiptPK getId() {
@@ -966,6 +972,14 @@ public class PurchaseReceipt extends DatabaseEntity<PurchaseReceiptPK>{
 
 	void setRecordId(String recordId) {
 		this.recordId = recordId;
+	}
+
+	Set<String> getSerialNumbers() {
+		return serialNumbers;
+	}
+
+	void setSerialNumbers(Set<String> serialNumbers) {
+		this.serialNumbers = serialNumbers;
 	}
 	
 
