@@ -21,6 +21,7 @@ import ags.goldenlionerp.application.purchase.purchaseorder.PurchaseOrderPK;
 import ags.goldenlionerp.application.purchase.purchaseorder.PurchaseOrderRepository;
 import ags.goldenlionerp.application.purchase.purchaseorder.PurchaseOrderService;
 import ags.goldenlionerp.application.setups.nextnumber.NextNumberService;
+import ags.goldenlionerp.masterdata.itemmaster.ItemMasterRepository;
 import ags.goldenlionerp.masterdata.lotmaster.LotMasterService;
 
 @Service
@@ -38,27 +39,16 @@ public class PurchaseReceiptService {
 	private UomConversionService uomServ;
 	@Autowired
 	private LotMasterService lotServ;
+	@Autowired
+	private ItemMasterRepository itemRepo;
 
 	@Transactional
 	public PurchaseReceiptHeader createPurchaseReceipt(PurchaseReceiptHeader receiptHead) {
 		receiptHead = completePurchaseReceiptInfo(receiptHead);
-		receiptHead = new PurchaseReceiptHeader(
-							Lists.newArrayList(repo.saveAll(receiptHead.getDetails()))
-						);
-		
-		//let the order service receive the orders
-		for (PurchaseReceipt rec : receiptHead.getDetails()) {
-			orderService.receiveOrder(rec.getPk().getCompanyId(), 
-					rec.getPurchaseOrderNumber(), 
-					rec.getPurchaseOrderType(), 
-					rec.getPurchaseOrderSequence(), 
-					rec.getQuantity(),
-					rec.getUnitOfMeasure());
-		}
 		
 		//create new lotmasters if the items has serial numbers
 		for (PurchaseReceipt rec : receiptHead.getDetails()) {
-			if (!rec.getItem().isSerialNumberRequired())
+			if (!itemRepo.findById(rec.getItemCode()).get().isSerialNumberRequired())
 				continue;
 			//check if quantity is integer
 			if (rec.getQuantity().stripTrailingZeros().scale() > 0)
@@ -70,6 +60,19 @@ public class PurchaseReceiptService {
 			lotServ.createLotsWithSerialNumbers(rec.getBusinessUnitId(), rec.getItemCode(), rec.getSerialNumbers(), rec.getPk());
 		}
 		
+		//let the order service receive the orders
+		for (PurchaseReceipt rec : receiptHead.getDetails()) {
+			orderService.receiveOrder(rec.getPk().getCompanyId(), 
+					rec.getPurchaseOrderNumber(), 
+					rec.getPurchaseOrderType(), 
+					rec.getPurchaseOrderSequence(), 
+					rec.getQuantity(),
+					rec.getUnitOfMeasure());
+		}
+		
+		receiptHead = new PurchaseReceiptHeader(
+				Lists.newArrayList(repo.saveAll(receiptHead.getDetails()))
+			);
 		return receiptHead;
 	}
 	

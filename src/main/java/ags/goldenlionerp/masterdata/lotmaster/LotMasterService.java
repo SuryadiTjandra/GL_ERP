@@ -18,7 +18,7 @@ public class LotMasterService {
 	@Autowired
 	private LotMasterRepository repo;
 	
-	public Collection<LotMaster> createLotsWithSerialNumbers(String businessUnitId, String itemCode, Set<String> serialNumbers, @Nullable DocumentId creationDocument){
+	public Iterable<LotMaster> createLotsWithSerialNumbers(String businessUnitId, String itemCode, Set<String> serialNumbers, @Nullable DocumentId creationDocument){
 		Collection<LotMaster> lots = new ArrayList<>();
 		for (String serialNo: serialNumbers) {
 			LotMasterPK pk = new LotMasterPK(businessUnitId, itemCode, serialNo);

@@ -326,13 +326,13 @@ public class PurchaseReceiptApiTest extends ApiTestBase<PurchaseReceiptPK> {
 				.andExpect(jsonPath("$.details[1].openQuantity").value((double)poDetails.get(1).get("quantity") - (double)requestDetails.get(1).get("quantity")));
 		
 		//assert new lot masters are created
-		String lotUrl = "/api/lots?businessUnitId=" + requestObject.get("businessUnitId") + "&pk.itemCode=" + requestDetails.get(2).get("itemCode");
+		String lotUrl = "/api/lots?pk.businessUnitId=" + requestObject.get("businessUnitId") + "&pk.itemCode=" + poDetails.get(2).get("itemCode");
 		String[] serialNumbers = ((List<String>) requestDetails.get(2).get("serialNumbers")).toArray(new String[3]);
 		performer.performGet(lotUrl)
 				.andDo(print())
 				.andExpect(jsonPath("$._embedded.lots[*].serialLotNo").value(Matchers.hasItems(serialNumbers)))
 				.andExpect(jsonPath("$._embedded.lots.length()").value(3))
-				.andExpect(jsonPath("$._embedded.lots[0].itemCode").value(requestDetails.get(2).get("itemCode")))
+				.andExpect(jsonPath("$._embedded.lots[0].itemCode").value(poDetails.get(2).get("itemCode")))
 		;	
 		fail();// TODO Auto-generated method stub
 	}
