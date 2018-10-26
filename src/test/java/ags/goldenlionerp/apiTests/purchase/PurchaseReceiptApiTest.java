@@ -1,15 +1,18 @@
 package ags.goldenlionerp.apiTests.purchase;
 
 import static org.junit.Assert.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.hamcrest.Matchers;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.test.annotation.Rollback;
@@ -17,6 +20,7 @@ import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.util.ObjectUtils;
 
 import ags.goldenlionerp.apiTests.ApiTestBase;
+import ags.goldenlionerp.apiTests.item.LotMasterApiTest;
 import ags.goldenlionerp.application.purchase.purchasereceipt.PurchaseReceiptPK;
 
 public class PurchaseReceiptApiTest extends ApiTestBase<PurchaseReceiptPK> {
@@ -30,8 +34,16 @@ public class PurchaseReceiptApiTest extends ApiTestBase<PurchaseReceiptPK> {
 		super.setUp();
 		
 		PurchaseOrderApiTest poTest = new PurchaseOrderApiTest();
+		Map<String, Object> poReq = poTest.requestObject();
+		List<Map<String, Object>> poDets = new ArrayList<>((List<Map<String, Object>>) poReq.get("details"));
+		Map<String, Object> serialPoDet = new HashMap<>();
+		serialPoDet.put("itemCode", "ACC.BROTHER-LT6505");
+		serialPoDet.put("quantity", 5);
+		serialPoDet.put("unitCost", 100);
+		poDets.add(serialPoDet);
+		poReq.put("details", poDets);
 		
-		String createdPoUrl = performer.performPost(poTest.baseUrl(), poTest.requestObject())
+		String createdPoUrl = performer.performPost(poTest.baseUrl(), poReq)
 				.andExpect(status().is2xxSuccessful())
 				.andReturn().getResponse().getHeader("Location");
 		refreshData();
@@ -56,6 +68,15 @@ public class PurchaseReceiptApiTest extends ApiTestBase<PurchaseReceiptPK> {
 		detail1.put("purchaseOrderSequence", poDetails.get(1).get("purchaseOrderSequence"));
 		detail1.put("quantity", Double.parseDouble(poDetails.get(1).get("quantity").toString()));
 		details.add(detail1);
+		
+		Map<String, Object> detail2 = new HashMap<>();
+		detail2.put("purchaseOrderNumber", poDetails.get(2).get("purchaseOrderNumber"));
+		detail2.put("purchaseOrderType", poDetails.get(2).get("purchaseOrderType"));
+		detail2.put("purchaseOrderSequence", poDetails.get(2).get("purchaseOrderSequence"));
+		detail2.put("quantity", 3);
+		detail2.put("serialNumbers", Arrays.asList("SERNO1", "SERNO2", "SERNO3"));
+		details.add(detail2);
+		
 		requestObject.put("details", details);
 	}
 	
@@ -295,6 +316,7 @@ public class PurchaseReceiptApiTest extends ApiTestBase<PurchaseReceiptPK> {
 			
 			;
 		
+		//assert that the quantities on the purchase orders have been changed
 		performer.performGet(((Map<String, Map<String, Object>>) poDetails.get(0).get("_links")).get("order").get("href").toString())
 				.andExpect(jsonPath("$.details[0].quantity").value(poDetails.get(0).get("quantity")))
 				.andExpect(jsonPath("$.details[0].receivedQuantity").value(requestDetails.get(0).get("quantity")))
@@ -303,8 +325,16 @@ public class PurchaseReceiptApiTest extends ApiTestBase<PurchaseReceiptPK> {
 				.andExpect(jsonPath("$.details[1].receivedQuantity").value(requestDetails.get(1).get("quantity")))
 				.andExpect(jsonPath("$.details[1].openQuantity").value((double)poDetails.get(1).get("quantity") - (double)requestDetails.get(1).get("quantity")));
 		
+		//assert new lot masters are created
+		String lotUrl = "/api/lots?businessUnitId=" + requestObject.get("businessUnitId") + "&pk.itemCode=" + requestDetails.get(2).get("itemCode");
+		String[] serialNumbers = ((List<String>) requestDetails.get(2).get("serialNumbers")).toArray(new String[3]);
+		performer.performGet(lotUrl)
+				.andDo(print())
+				.andExpect(jsonPath("$._embedded.lots[*].serialLotNo").value(Matchers.hasItems(serialNumbers)))
+				.andExpect(jsonPath("$._embedded.lots.length()").value(3))
+				.andExpect(jsonPath("$._embedded.lots[0].itemCode").value(requestDetails.get(2).get("itemCode")))
+		;	
 		fail();// TODO Auto-generated method stub
-		
 	}
 
 	@Override
