@@ -14,6 +14,7 @@ import javax.persistence.Table;
 import ags.goldenlionerp.entities.TransactionSynchronizedDatabaseEntityImpl;
 import ags.goldenlionerp.masterdata.itemLocation.ItemLocation;
 import ags.goldenlionerp.masterdata.itembranchinfo.ItemBranchInfo;
+import ags.goldenlionerp.masterdata.lotmaster.LotMaster;
 
 @Entity
 @Table(name="T4101")
@@ -102,6 +103,9 @@ public class ItemMaster extends TransactionSynchronizedDatabaseEntityImpl<String
 	
 	@OneToMany(mappedBy="item", fetch=FetchType.LAZY)
 	private List<ItemLocation> itemLocations;
+	
+	@OneToMany(mappedBy="item", fetch=FetchType.LAZY)
+	private List<LotMaster> lots;
 
 	public String getItemCode() {
 		return itemCode;
@@ -285,6 +289,10 @@ public class ItemMaster extends TransactionSynchronizedDatabaseEntityImpl<String
 	
 	public List<ItemLocation> getItemLocations() {
 		return itemLocations;
+	}
+	
+	public List<LotMaster> getLots(){
+		return lots;
 	}
 
 	@Override
