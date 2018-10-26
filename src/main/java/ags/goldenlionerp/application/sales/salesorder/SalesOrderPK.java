@@ -5,8 +5,10 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
+import ags.goldenlionerp.entities.DocumentId;
+
 @Embeddable
-public class SalesOrderPK implements Serializable{
+public class SalesOrderPK implements Serializable, DocumentId{
 
 	private static final long serialVersionUID = -7914577149475922263L;
 
@@ -90,6 +92,16 @@ public class SalesOrderPK implements Serializable{
 		} else if (!salesOrderType.equals(other.salesOrderType))
 			return false;
 		return true;
+	}
+
+	@Override
+	public int getDocumentNumber() {
+		return getSalesOrderNumber();
+	}
+
+	@Override
+	public String getDocumentType() {
+		return getSalesOrderType();
 	}
 	
 	
