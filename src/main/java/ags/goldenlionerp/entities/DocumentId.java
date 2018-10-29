@@ -1,7 +1,8 @@
 package ags.goldenlionerp.entities;
 
+import java.io.Serializable;
 
-public interface DocumentId {
+public interface DocumentId extends Serializable{
 
 	public String getCompanyId();
 	
