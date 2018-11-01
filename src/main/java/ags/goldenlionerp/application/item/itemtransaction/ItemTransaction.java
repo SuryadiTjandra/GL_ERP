@@ -11,7 +11,7 @@ import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-import ags.goldenlionerp.entities.DocumentEntity;
+import ags.goldenlionerp.entities.DocumentDetailEntity;
 
 @Entity
 @Table(name="T4111")
@@ -24,7 +24,7 @@ import ags.goldenlionerp.entities.DocumentEntity;
 	@AttributeOverride(name="lastUpdateTime", column=@Column(name="ITTMLU")),
 	@AttributeOverride(name="computerId", column=@Column(name="ITCID")),
 })
-public class ItemTransaction extends DocumentEntity<ItemTransactionPK> {
+public class ItemTransaction extends DocumentDetailEntity<ItemTransactionPK> {
 
 	@EmbeddedId
 	private ItemTransactionPK pk;

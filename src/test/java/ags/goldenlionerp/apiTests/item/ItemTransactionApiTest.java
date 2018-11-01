@@ -39,24 +39,25 @@ public class ItemTransactionApiTest extends ApiTestBase<ItemTransactionPK>{
 	@Override
 	public void assertGetSingleResult(ResultActions action) throws Exception {
 		action
-			.andExpect(jsonPath("$.pk.companyId").value(existingId.getCompanyId()))
-			.andExpect(jsonPath("$.pk.documentNumber").value(existingId.getDocumentNumber()))
-			.andExpect(jsonPath("$.pk.documentType").value(existingId.getDocumentType()))
-			.andExpect(jsonPath("$.pk.sequence").value(existingId.getSequence()))
+			.andExpect(jsonPath("$.companyId").value(existingId.getCompanyId()))
+			.andExpect(jsonPath("$.documentNumber").value(existingId.getDocumentNumber()))
+			.andExpect(jsonPath("$.documentType").value(existingId.getDocumentType()))
+			.andExpect(jsonPath("$.details[3].sequence").value(existingId.getSequence()))
 			.andExpect(jsonPath("$.documentDate").value(LocalDate.of(2018, Month.APRIL, 8).toString()))
 			.andExpect(jsonPath("$.glDate").value(LocalDate.of(2018, Month.APRIL, 8).toString()))
 			.andExpect(jsonPath("$.businessUnitId").value("110"))
-			.andExpect(jsonPath("$.description").value("SALDO AWAL INVENTORY"))
-			.andExpect(jsonPath("$.itemCode").value(Matchers.equalToIgnoringWhiteSpace("ATK.AMPLOP - SAMSON D")))
-			.andExpect(jsonPath("$.locationId").value("GDU"))
-			.andExpect(jsonPath("$.serialLotNo").isEmpty())
-			.andExpect(jsonPath("$.itemDescription").value(Matchers.equalToIgnoringWhiteSpace("ATK Amplop Coklat Samson D")))
-			.andExpect(jsonPath("$.quantity").value(300.00))
-			.andExpect(jsonPath("$.unitOfMeasure").value("UNT"))
-			.andExpect(jsonPath("$.unitCost").value(325))
-			.andExpect(jsonPath("$.extendedCost").value(97500))
-			.andExpect(jsonPath("$.glClass").value("INFG"))
-			.andExpect(jsonPath("$.expiredDate").isEmpty())
+			
+			.andExpect(jsonPath("$.details[3].description").value("SALDO AWAL INVENTORY"))
+			.andExpect(jsonPath("$.details[3].itemCode").value(Matchers.equalToIgnoringWhiteSpace("ATK.AMPLOP - SAMSON D")))
+			.andExpect(jsonPath("$.details[3].locationId").value("GDU"))
+			.andExpect(jsonPath("$.details[3].serialLotNo").isEmpty())
+			.andExpect(jsonPath("$.details[3].itemDescription").value(Matchers.equalToIgnoringWhiteSpace("ATK Amplop Coklat Samson D")))
+			.andExpect(jsonPath("$.details[3].quantity").value(300.00))
+			.andExpect(jsonPath("$.details[3].unitOfMeasure").value("UNT"))
+			.andExpect(jsonPath("$.details[3].unitCost").value(325))
+			.andExpect(jsonPath("$.details[3].extendedCost").value(97500))
+			.andExpect(jsonPath("$.details[3].glClass").value("INFG"))
+			.andExpect(jsonPath("$.details[3].expiredDate").isEmpty())
 			;
 		
 	}
