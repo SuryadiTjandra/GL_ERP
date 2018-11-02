@@ -17,7 +17,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import com.jayway.jsonpath.JsonPath;
 
 import ags.goldenlionerp.apiTests.ApiTestBase;
-import ags.goldenlionerp.masterdata.lotmaster.LotMasterPK;
+import ags.goldenlionerp.application.item.lotmaster.LotMasterPK;
 
 public class LotMasterApiTest extends ApiTestBase<LotMasterPK> {
 

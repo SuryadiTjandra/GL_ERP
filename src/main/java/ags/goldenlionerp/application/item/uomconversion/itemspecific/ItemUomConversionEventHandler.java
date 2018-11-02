@@ -9,9 +9,9 @@ import org.springframework.data.rest.core.annotation.RepositoryEventHandler;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.stereotype.Component;
 
+import ags.goldenlionerp.application.item.itemmaster.ItemMaster;
+import ags.goldenlionerp.application.item.itemmaster.ItemMasterRepository;
 import ags.goldenlionerp.application.item.uomconversion.UomConversionService;
-import ags.goldenlionerp.masterdata.itemmaster.ItemMaster;
-import ags.goldenlionerp.masterdata.itemmaster.ItemMasterRepository;
 
 @Component
 @RepositoryEventHandler(ItemUomConversion.class)

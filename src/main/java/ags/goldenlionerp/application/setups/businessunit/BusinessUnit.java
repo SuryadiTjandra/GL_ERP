@@ -21,14 +21,14 @@ import org.springframework.data.rest.core.annotation.RestResource;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import ags.goldenlionerp.application.item.itembranchinfo.ItemBranchInfo;
+import ags.goldenlionerp.application.item.location.LocationMaster;
 import ags.goldenlionerp.application.setups.branchplantconstant.BranchPlantConstant;
 import ags.goldenlionerp.application.setups.company.Company;
 import ags.goldenlionerp.entities.DatabaseEntity;
 import ags.goldenlionerp.entities.previews.BusinessUnitPreview;
 import ags.goldenlionerp.entities.previews.CompanyPreview;
 import ags.goldenlionerp.entities.previews.Previews;
-import ags.goldenlionerp.masterdata.itembranchinfo.ItemBranchInfo;
-import ags.goldenlionerp.masterdata.location.LocationMaster;
 
 @Entity
 @Table(name="T0021")

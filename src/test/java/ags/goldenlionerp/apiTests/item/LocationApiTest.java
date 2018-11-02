@@ -15,8 +15,8 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import com.jayway.jsonpath.JsonPath;
 
 import ags.goldenlionerp.apiTests.ApiTestBase;
-import ags.goldenlionerp.masterdata.location.LocationMaster;
-import ags.goldenlionerp.masterdata.location.LocationMasterPK;
+import ags.goldenlionerp.application.item.location.LocationMaster;
+import ags.goldenlionerp.application.item.location.LocationMasterPK;
 
 public class LocationApiTest extends ApiTestBase<LocationMasterPK>{
 

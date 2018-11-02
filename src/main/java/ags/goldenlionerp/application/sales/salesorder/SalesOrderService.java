@@ -15,6 +15,9 @@ import org.springframework.stereotype.Service;
 
 import ags.goldenlionerp.application.addresses.address.AddressBookMaster;
 import ags.goldenlionerp.application.addresses.address.AddressBookRepository;
+import ags.goldenlionerp.application.item.itemLocation.ItemLocation;
+import ags.goldenlionerp.application.item.itemmaster.ItemMaster;
+import ags.goldenlionerp.application.item.itemmaster.ItemMasterRepository;
 import ags.goldenlionerp.application.item.uomconversion.UomConversionService;
 import ags.goldenlionerp.application.setups.company.Company;
 import ags.goldenlionerp.application.setups.company.CompanyRepository;
@@ -23,9 +26,6 @@ import ags.goldenlionerp.application.setups.discount.DiscountRepository;
 import ags.goldenlionerp.application.setups.nextnumber.NextNumberService;
 import ags.goldenlionerp.application.setups.taxcode.TaxRule;
 import ags.goldenlionerp.application.setups.taxcode.TaxRuleRepository;
-import ags.goldenlionerp.masterdata.itemLocation.ItemLocation;
-import ags.goldenlionerp.masterdata.itemmaster.ItemMaster;
-import ags.goldenlionerp.masterdata.itemmaster.ItemMasterRepository;
 
 @Service
 public class SalesOrderService {

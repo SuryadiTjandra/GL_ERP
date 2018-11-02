@@ -20,11 +20,11 @@ import javax.persistence.Transient;
 
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
 
+import ags.goldenlionerp.application.item.itemmaster.ItemMaster;
 import ags.goldenlionerp.application.purchase.PurchaseOptions;
 import ags.goldenlionerp.application.purchase.References;
 import ags.goldenlionerp.application.purchase.purchaseorder.PurchaseDetail;
 import ags.goldenlionerp.entities.DatabaseEntity;
-import ags.goldenlionerp.masterdata.itemmaster.ItemMaster;
 
 @Entity
 @Table(name="T4312")

@@ -11,7 +11,7 @@ import org.hamcrest.Matchers;
 import org.springframework.test.web.servlet.ResultActions;
 
 import ags.goldenlionerp.apiTests.ApiTestBase;
-import ags.goldenlionerp.application.item.itemtransaction.ItemTransactionPK;
+import ags.goldenlionerp.application.itemstock.itemtransaction.ItemTransactionPK;
 
 public class ItemTransactionApiTest extends ApiTestBase<ItemTransactionPK>{
 

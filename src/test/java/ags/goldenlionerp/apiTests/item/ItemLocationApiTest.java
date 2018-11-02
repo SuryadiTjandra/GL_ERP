@@ -12,7 +12,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import com.jayway.jsonpath.JsonPath;
 
 import ags.goldenlionerp.apiTests.ApiTestBase;
-import ags.goldenlionerp.masterdata.itemLocation.ItemLocationPK;
+import ags.goldenlionerp.application.item.itemLocation.ItemLocationPK;
 
 public class ItemLocationApiTest extends ApiTestBase<ItemLocationPK> {
 

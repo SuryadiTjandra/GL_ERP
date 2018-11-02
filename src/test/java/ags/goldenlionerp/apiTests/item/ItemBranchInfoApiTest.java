@@ -11,7 +11,7 @@ import org.springframework.test.web.servlet.ResultActions;
 import com.jayway.jsonpath.JsonPath;
 
 import ags.goldenlionerp.apiTests.ApiTestBase;
-import ags.goldenlionerp.masterdata.itembranchinfo.ItemBranchInfoPK;
+import ags.goldenlionerp.application.item.itembranchinfo.ItemBranchInfoPK;
 
 public class ItemBranchInfoApiTest extends ApiTestBase<ItemBranchInfoPK> {
 

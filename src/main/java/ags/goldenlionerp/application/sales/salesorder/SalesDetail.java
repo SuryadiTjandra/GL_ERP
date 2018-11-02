@@ -21,12 +21,12 @@ import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonSetter;
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
 
+import ags.goldenlionerp.application.item.itemmaster.ItemMaster;
 import ags.goldenlionerp.application.purchase.IntegratedReferences;
 import ags.goldenlionerp.application.purchase.OrderStatus;
 import ags.goldenlionerp.application.purchase.References;
 import ags.goldenlionerp.application.sales.SalesOptions;
 import ags.goldenlionerp.entities.DatabaseEntity;
-import ags.goldenlionerp.masterdata.itemmaster.ItemMaster;
 
 @Entity
 @Table(name="T4211")
