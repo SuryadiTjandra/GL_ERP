@@ -2,7 +2,7 @@ package ags.goldenlionerp.application.item.itemtransaction;
 
 import com.querydsl.core.types.Path;
 
-import ags.goldenlionerp.entities.DocumentDetailPredicates;
+import ags.goldenlionerp.documents.DocumentDetailPredicates;
 
 public class ItemTransactionPredicates extends DocumentDetailPredicates<ItemTransaction, ItemTransactionPK> {
 

@@ -11,7 +11,7 @@ import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-import ags.goldenlionerp.entities.DocumentDetailEntity;
+import ags.goldenlionerp.documents.DocumentDetailEntity;
 
 @Entity
 @Table(name="T4111")

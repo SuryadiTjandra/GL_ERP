@@ -10,7 +10,7 @@ import javax.annotation.Nullable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import ags.goldenlionerp.entities.DocumentId;
+import ags.goldenlionerp.documents.DocumentId;
 
 @Service
 public class LotMasterService {

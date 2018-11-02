@@ -5,7 +5,7 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
-import ags.goldenlionerp.entities.DocumentId;
+import ags.goldenlionerp.documents.DocumentId;
 
 @Embeddable
 public class SalesOrderPK implements Serializable, DocumentId{

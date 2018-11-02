@@ -1,4 +1,4 @@
-package ags.goldenlionerp.entities;
+package ags.goldenlionerp.documents;
 
 import javax.persistence.MappedSuperclass;
 

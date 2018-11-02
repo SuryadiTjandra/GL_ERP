@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.common.collect.Lists;
 
-import ags.goldenlionerp.entities.DocumentDetailPredicates;
-
 @RepositoryRestController
 @RequestMapping("/itemTransactions/")
 public class ItemTransactionController {

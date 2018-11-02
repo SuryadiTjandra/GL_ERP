@@ -1,7 +1,10 @@
-package ags.goldenlionerp.entities;
+package ags.goldenlionerp.documents;
 
 import com.querydsl.core.types.Path;
 import com.querydsl.core.types.Predicate;
+
+import ags.goldenlionerp.entities.QDocumentDetailEntity;
+import ags.goldenlionerp.entities.QDocumentDetailId;
 
 public abstract class DocumentDetailPredicates<T extends DocumentDetailEntity<ID>, ID extends DocumentDetailId>{
 	

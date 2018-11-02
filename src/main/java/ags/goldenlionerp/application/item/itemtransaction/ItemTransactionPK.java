@@ -3,7 +3,7 @@ package ags.goldenlionerp.application.item.itemtransaction;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
-import ags.goldenlionerp.entities.DocumentDetailId;
+import ags.goldenlionerp.documents.DocumentDetailId;
 
 @Embeddable
 public class ItemTransactionPK implements DocumentDetailId{
