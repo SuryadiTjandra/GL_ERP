@@ -2,16 +2,23 @@ package ags.goldenlionerp.application.itemstock.itemtransaction;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.Month;
 
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;
 import javax.persistence.Column;
+import javax.persistence.Convert;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonUnwrapped;
+
+import ags.goldenlionerp.application.ar.invoice.VoidedAttributeConverter;
 import ags.goldenlionerp.documents.DocumentDetailEntity;
+import ags.goldenlionerp.entities.DatabaseEntityUtil;
+import ags.goldenlionerp.entities.Voidable;
 
 @Entity
 @Table(name="T4111")
@@ -24,9 +31,9 @@ import ags.goldenlionerp.documents.DocumentDetailEntity;
 	@AttributeOverride(name="lastUpdateTime", column=@Column(name="ITTMLU")),
 	@AttributeOverride(name="computerId", column=@Column(name="ITCID")),
 })
-public class ItemTransaction extends DocumentDetailEntity<ItemTransactionPK> {
+public class ItemTransaction extends DocumentDetailEntity<ItemTransactionPK> implements Voidable{
 
-	@EmbeddedId
+	@EmbeddedId @JsonUnwrapped
 	private ItemTransactionPK pk;
 	
 	@Column(name="ITBUID")
@@ -42,7 +49,7 @@ public class ItemTransaction extends DocumentDetailEntity<ItemTransactionPK> {
 	private Month documentMonth;
 	
 	@Column(name="ITDOCYR")
-	private String documentYear;
+	private int documentYear;
 	
 	@Column(name="ITDOCDT")
 	private LocalDate documentDate;
@@ -138,13 +145,56 @@ public class ItemTransaction extends DocumentDetailEntity<ItemTransactionPK> {
 	private String inventoryTransactionType;
 	
 	@Column(name="ITDVS")
-	private String documentVoidStatus;
+	@Convert(converter=VoidedAttributeConverter.class)
+	private Boolean voided = false;
 	
 	@Column(name="ITOBID")
 	private String objectId;
 	
 	@Column(name="ITRECID")
 	private String recordId;
+
+	private ItemTransaction() {}
+	
+	private ItemTransaction(Builder builder) {
+		this.pk = builder.pk;
+		this.businessUnitId = builder.businessUnitId;
+		this.batchNumber = builder.batchNumber;
+		this.batchType = builder.batchType;
+		setDocumentDate(builder.documentDateTime.toLocalDate());
+		this.documentTime = DatabaseEntityUtil.toTimeString(builder.documentDateTime);
+		this.glDate = builder.glDate;
+		this.itemCode = builder.itemCode;
+		this.locationId = builder.locationId;
+		this.serialLotNo = builder.serialLotNo;
+		this.itemDescription = builder.itemDescription;
+		this.description = builder.description;
+		this.quantity = builder.quantity;
+		this.unitOfMeasure = builder.unitOfMeasure;
+		this.unitConversionFactor = builder.unitConversionFactor;
+		this.primaryTransactionQuantity = builder.primaryTransactionQuantity;
+		this.primaryUnitOfMeasure = builder.primaryUnitOfMeasure;
+		this.secondaryTransactionQuantity = builder.secondaryTransactionQuantity;
+		this.secondaryUnitOfMeasure = builder.secondaryUnitOfMeasure;
+		this.unitCost = builder.unitCost;
+		this.extendedCost = builder.extendedCost;
+		this.fromOrTo = builder.fromOrTo;
+		this.businessPartnerId = builder.businessPartnerId;
+		this.businessPartnerSearchType = builder.businessPartnerSearchType;
+		this.batchPostingStatus = builder.batchPostingStatus;
+		this.glClass = builder.glClass;
+		this.expiredDate = builder.expiredDate;
+		this.orderNumber = builder.orderNumber;
+		this.orderType = builder.orderType;
+		this.orderSequence = builder.orderSequence;
+		this.relatedDocumentNumber = builder.relatedDocumentNumber;
+		this.relatedDocumentType = builder.relatedDocumentType;
+		this.relatedDocumentSequence = builder.relatedDocumentSequence;
+		this.inventoryProcessingCode = builder.inventoryProcessingCode;
+		this.inventoryTransactionType = builder.inventoryTransactionType;
+		this.objectId = builder.objectId;
+		this.recordId = builder.recordId;
+	}
 	
 	@Override
 	public ItemTransactionPK getId() {
@@ -171,7 +221,7 @@ public class ItemTransaction extends DocumentDetailEntity<ItemTransactionPK> {
 		return documentMonth;
 	}
 
-	public String getDocumentYear() {
+	public int getDocumentYear() {
 		return documentYear;
 	}
 
@@ -299,8 +349,8 @@ public class ItemTransaction extends DocumentDetailEntity<ItemTransactionPK> {
 		return inventoryTransactionType;
 	}
 
-	public String getDocumentVoidStatus() {
-		return documentVoidStatus;
+	public boolean isVoided1() {
+		return voided;
 	}
 
 	public String getObjectId() {
@@ -327,16 +377,10 @@ public class ItemTransaction extends DocumentDetailEntity<ItemTransactionPK> {
 		this.batchType = batchType;
 	}
 
-	void setDocumentMonth(Month documentMonth) {
-		this.documentMonth = documentMonth;
-	}
-
-	void setDocumentYear(String documentYear) {
-		this.documentYear = documentYear;
-	}
-
 	void setDocumentDate(LocalDate documentDate) {
 		this.documentDate = documentDate;
+		this.documentYear = documentDate.getYear();
+		this.documentMonth = documentDate.getMonth();
 	}
 
 	void setDocumentTime(String documentTime) {
@@ -459,8 +503,8 @@ public class ItemTransaction extends DocumentDetailEntity<ItemTransactionPK> {
 		this.inventoryTransactionType = inventoryTransactionType;
 	}
 
-	void setDocumentVoidStatus(String documentVoidStatus) {
-		this.documentVoidStatus = documentVoidStatus;
+	void setVoided(boolean voided) {
+		this.voided = voided;
 	}
 
 	void setObjectId(String objectId) {
@@ -469,6 +513,248 @@ public class ItemTransaction extends DocumentDetailEntity<ItemTransactionPK> {
 
 	void setRecordId(String recordId) {
 		this.recordId = recordId;
+	}
+
+	/**
+	 * Creates builder to build {@link ItemTransaction}.
+	 * @return created builder
+	 */
+	public static Builder builder() {
+		return new Builder();
+	}
+
+	/**
+	 * Builder to build {@link ItemTransaction}.
+	 */
+	public static final class Builder {
+		private ItemTransactionPK pk;
+		private String businessUnitId;
+		private int batchNumber;
+		private String batchType;
+		private LocalDateTime documentDateTime;
+		private LocalDate glDate;
+		private String itemCode;
+		private String locationId;
+		private String serialLotNo;
+		private String itemDescription;
+		private String description;
+		private BigDecimal quantity;
+		private String unitOfMeasure;
+		private BigDecimal unitConversionFactor;
+		private BigDecimal primaryTransactionQuantity;
+		private String primaryUnitOfMeasure;
+		private BigDecimal secondaryTransactionQuantity;
+		private String secondaryUnitOfMeasure;
+		private BigDecimal unitCost;
+		private BigDecimal extendedCost;
+		private String fromOrTo;
+		private String businessPartnerId;
+		private String businessPartnerSearchType;
+		private String batchPostingStatus;
+		private String glClass;
+		private LocalDate expiredDate;
+		private int orderNumber;
+		private String orderType;
+		private int orderSequence;
+		private int relatedDocumentNumber;
+		private String relatedDocumentType;
+		private int relatedDocumentSequence;
+		private String inventoryProcessingCode;
+		private String inventoryTransactionType;
+		private String objectId;
+		private String recordId;
+
+		private Builder() {
+		}
+
+		public Builder(ItemTransactionPK pk) {
+			this.pk = pk;
+		}
+
+		public Builder businessUnitId(String businessUnitId) {
+			this.businessUnitId = businessUnitId;
+			return this;
+		}
+
+		public Builder batchNumber(int batchNumber) {
+			this.batchNumber = batchNumber;
+			return this;
+		}
+
+		public Builder batchType(String batchType) {
+			this.batchType = batchType;
+			return this;
+		}
+
+		public Builder documentDateTime(LocalDateTime documentDate) {
+			this.documentDateTime = documentDate;
+			return this;
+		}
+
+		public Builder glDate(LocalDate glDate) {
+			this.glDate = glDate;
+			return this;
+		}
+
+		public Builder itemCode(String itemCode) {
+			this.itemCode = itemCode;
+			return this;
+		}
+
+		public Builder locationId(String locationId) {
+			this.locationId = locationId;
+			return this;
+		}
+
+		public Builder serialLotNo(String serialLotNo) {
+			this.serialLotNo = serialLotNo;
+			return this;
+		}
+
+		public Builder itemDescription(String itemDescription) {
+			this.itemDescription = itemDescription;
+			return this;
+		}
+
+		public Builder description(String description) {
+			this.description = description;
+			return this;
+		}
+
+		public Builder quantity(BigDecimal quantity) {
+			this.quantity = quantity;
+			return this;
+		}
+
+		public Builder unitOfMeasure(String unitOfMeasure) {
+			this.unitOfMeasure = unitOfMeasure;
+			return this;
+		}
+
+		public Builder unitConversionFactor(BigDecimal unitConversionFactor) {
+			this.unitConversionFactor = unitConversionFactor;
+			return this;
+		}
+
+		public Builder primaryTransactionQuantity(BigDecimal primaryTransactionQuantity) {
+			this.primaryTransactionQuantity = primaryTransactionQuantity;
+			return this;
+		}
+
+		public Builder primaryUnitOfMeasure(String primaryUnitOfMeasure) {
+			this.primaryUnitOfMeasure = primaryUnitOfMeasure;
+			return this;
+		}
+
+		public Builder secondaryTransactionQuantity(BigDecimal secondaryTransactionQuantity) {
+			this.secondaryTransactionQuantity = secondaryTransactionQuantity;
+			return this;
+		}
+
+		public Builder secondaryUnitOfMeasure(String secondaryUnitOfMeasure) {
+			this.secondaryUnitOfMeasure = secondaryUnitOfMeasure;
+			return this;
+		}
+
+		public Builder unitCost(BigDecimal unitCost) {
+			this.unitCost = unitCost;
+			return this;
+		}
+
+		public Builder extendedCost(BigDecimal extendedCost) {
+			this.extendedCost = extendedCost;
+			return this;
+		}
+
+		public Builder fromOrTo(String fromOrTo) {
+			this.fromOrTo = fromOrTo;
+			return this;
+		}
+
+		public Builder businessPartnerId(String businessPartnerId) {
+			this.businessPartnerId = businessPartnerId;
+			return this;
+		}
+
+		public Builder businessPartnerSearchType(String businessPartnerSearchType) {
+			this.businessPartnerSearchType = businessPartnerSearchType;
+			return this;
+		}
+
+		public Builder batchPostingStatus(String batchPostingStatus) {
+			this.batchPostingStatus = batchPostingStatus;
+			return this;
+		}
+
+		public Builder glClass(String glClass) {
+			this.glClass = glClass;
+			return this;
+		}
+
+		public Builder expiredDate(LocalDate expiredDate) {
+			this.expiredDate = expiredDate;
+			return this;
+		}
+
+		public Builder orderNumber(int orderNumber) {
+			this.orderNumber = orderNumber;
+			return this;
+		}
+
+		public Builder orderType(String orderType) {
+			this.orderType = orderType;
+			return this;
+		}
+
+		public Builder orderSequence(int orderSequence) {
+			this.orderSequence = orderSequence;
+			return this;
+		}
+
+		public Builder relatedDocumentNumber(int relatedDocumentNumber) {
+			this.relatedDocumentNumber = relatedDocumentNumber;
+			return this;
+		}
+
+		public Builder relatedDocumentType(String relatedDocumentType) {
+			this.relatedDocumentType = relatedDocumentType;
+			return this;
+		}
+
+		public Builder relatedDocumentSequence(int relatedDocumentSequence) {
+			this.relatedDocumentSequence = relatedDocumentSequence;
+			return this;
+		}
+
+		public Builder inventoryProcessingCode(String inventoryProcessingCode) {
+			this.inventoryProcessingCode = inventoryProcessingCode;
+			return this;
+		}
+
+		public Builder inventoryTransactionType(String inventoryTransactionType) {
+			this.inventoryTransactionType = inventoryTransactionType;
+			return this;
+		}
+
+		public Builder objectId(String objectId) {
+			this.objectId = objectId;
+			return this;
+		}
+
+		public Builder recordId(String recordId) {
+			this.recordId = recordId;
+			return this;
+		}
+
+		public ItemTransaction build() {
+			return new ItemTransaction(this);
+		}
+	}
+
+	@Override
+	public boolean isVoided() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 	
 	
