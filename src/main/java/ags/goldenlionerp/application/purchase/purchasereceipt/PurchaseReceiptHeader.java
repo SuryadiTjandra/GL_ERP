@@ -1,13 +1,16 @@
 package ags.goldenlionerp.application.purchase.purchasereceipt;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Comparator;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-class PurchaseReceiptHeader {
+import ags.goldenlionerp.entities.DatabaseAuditable;
+
+class PurchaseReceiptHeader implements DatabaseAuditable{
 	
 	private List<PurchaseReceipt> details;
 	
@@ -116,6 +119,35 @@ class PurchaseReceiptHeader {
 	void setBatchType(String batchType) {
 		this.details.forEach(rec -> rec.setBatchType(batchType));
 	}
+
+	@Override
+	public String getInputUserId() {
+		return details.get(0).getInputUserId();
+	}
+
+	@Override
+	public LocalDateTime getInputDateTime() {
+		return details.get(0).getInputDateTime();
+	}
+
+	@Override
+	public String getLastUpdateUserId() {
+		return getLastUpdatedDetail().getLastUpdateUserId();
+	}
+
+	@Override
+	public LocalDateTime getLastUpdateDateTime() {
+		return getLastUpdatedDetail().getLastUpdateDateTime();
+	}
+
+	@Override
+	public String getComputerId() {
+		return getLastUpdatedDetail().getComputerId();
+	}
 	
-	
+	private PurchaseReceipt getLastUpdatedDetail() {
+		return details.stream()
+				.sorted(Comparator.comparing(PurchaseReceipt::getLastUpdateUserId))
+				.findFirst().get();
+	}
 }
