@@ -4,6 +4,8 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.time.YearMonth;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
@@ -23,9 +25,11 @@ import ags.goldenlionerp.application.purchase.purchaseorder.PurchaseOrderPK;
 import ags.goldenlionerp.application.purchase.purchaseorder.PurchaseOrderRepository;
 import ags.goldenlionerp.application.purchase.purchaseorder.PurchaseOrderService;
 import ags.goldenlionerp.application.setups.nextnumber.NextNumberService;
+import ags.goldenlionerp.connectors.ModuleConnected;
+import ags.goldenlionerp.connectors.ModuleConnector;
 
 @Service
-public class PurchaseReceiptService {
+public class PurchaseReceiptService implements ModuleConnected<PurchaseReceipt>{
 	
 	@Autowired
 	private NextNumberService nnServ;
@@ -41,7 +45,13 @@ public class PurchaseReceiptService {
 	private LotMasterService lotServ;
 	@Autowired
 	private ItemMasterRepository itemRepo;
+	
+	private List<ModuleConnector<PurchaseReceipt, ?>> connectors = new ArrayList<>();
 
+	public void registerConnector(ModuleConnector<PurchaseReceipt, ?> connector) {
+		connectors.add(connector);
+	}
+	
 	@Transactional
 	public PurchaseReceiptHeader createPurchaseReceipt(PurchaseReceiptHeader receiptHead) {
 		receiptHead = completePurchaseReceiptInfo(receiptHead);
@@ -70,9 +80,14 @@ public class PurchaseReceiptService {
 					rec.getUnitOfMeasure());
 		}
 		
+		//handle optional operations after purchase receipt creation
+		for (ModuleConnector<PurchaseReceipt, ?> con: connectors) {
+			con.handleCreated(receiptHead.getDetails());
+		}
+		
 		receiptHead = new PurchaseReceiptHeader(
 				Lists.newArrayList(repo.saveAll(receiptHead.getDetails()))
-			);
+			);		
 		return receiptHead;
 	}
 	
