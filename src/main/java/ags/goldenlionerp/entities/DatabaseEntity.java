@@ -15,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @MappedSuperclass
 @JsonIgnoreProperties({"handler","hibernateLazyInitializer", "_links"})
-public abstract class DatabaseEntity<ID extends Serializable> implements Identifiable<ID>{
+public abstract class DatabaseEntity<ID extends Serializable> implements Identifiable<ID>, DatabaseAuditable{
 	
 	@Column(name="UID", updatable=false)
 	//@JsonProperty(access=Access.READ_ONLY)
