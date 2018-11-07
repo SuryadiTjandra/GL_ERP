@@ -73,7 +73,7 @@ public class PurchaseReceiptApiTest extends ApiTestBase<PurchaseReceiptPK> {
 		detail2.put("purchaseOrderNumber", poDetails.get(2).get("purchaseOrderNumber"));
 		detail2.put("purchaseOrderType", poDetails.get(2).get("purchaseOrderType"));
 		detail2.put("purchaseOrderSequence", poDetails.get(2).get("purchaseOrderSequence"));
-		detail2.put("quantity", 3);
+		detail2.put("quantity", 3.0);
 		detail2.put("serialNumbers", Arrays.asList("SERNO1", "SERNO2", "SERNO3"));
 		details.add(detail2);
 		
@@ -329,7 +329,7 @@ public class PurchaseReceiptApiTest extends ApiTestBase<PurchaseReceiptPK> {
 		String lotUrl = "/api/lots?pk.businessUnitId=" + requestObject.get("businessUnitId") + "&pk.itemCode=" + poDetails.get(2).get("itemCode");
 		String[] serialNumbers = ((List<String>) requestDetails.get(2).get("serialNumbers")).toArray(new String[3]);
 		performer.performGet(lotUrl)
-				.andDo(print())
+				//.andDo(print())
 				.andExpect(jsonPath("$._embedded.lots[*].serialLotNo").value(Matchers.hasItems(serialNumbers)))
 				.andExpect(jsonPath("$._embedded.lots.length()").value(3))
 				.andExpect(jsonPath("$._embedded.lots[0].itemCode").value(poDetails.get(2).get("itemCode")))
@@ -337,6 +337,7 @@ public class PurchaseReceiptApiTest extends ApiTestBase<PurchaseReceiptPK> {
 		
 		String itemtransUrl = "/api/itemTransactions/";
 		performer.performGet(itemtransUrl + newId())
+				.andDo(print())
 				.andExpect(jsonPath("$.details[0].companyId").value(requestObject.get("companyId")))
 				.andExpect(jsonPath("$.details[0].documentNumber").value(requestObject.get("purchaseReceiptNumber")))
 				.andExpect(jsonPath("$.details[0].documentType").value(requestObject.get("purchaseReceiptType")))
@@ -380,7 +381,10 @@ public class PurchaseReceiptApiTest extends ApiTestBase<PurchaseReceiptPK> {
 				.andExpect(jsonPath("$.details[1].secondaryTransactionQuantity").value(requestDetails.get(2).getOrDefault("secondaryTransactionQuantity", 0.0)))
 				.andExpect(jsonPath("$.details[1].secondaryUnitOfMeasure").value(poDetails.get(2).get("secondaryUnitOfMeasure")))
 				.andExpect(jsonPath("$.details[1].unitCost").value(poDetails.get(2).get("unitCost")))
-				.andExpect(jsonPath("$.details[1].extendedCost").value(((double)poDetails.get(2).get("unitCost")) * ((double) requestDetails.get(2).get("quantity"))))
+				.andExpect(jsonPath("$.details[1].extendedCost").value(
+						((double)poDetails.get(2).get("unitCost")) 
+						* 
+						((double) requestDetails.get(2).get("quantity"))))
 				.andExpect(jsonPath("$.details[1].businessPartnerId").value(requestObject.get("vendorId")))
 				.andExpect(jsonPath("$.details[1].fromOrTo").value("F"))
 				.andExpect(jsonPath("$.details[1].orderNumber").value(poDetails.get(2).get("purchaseOrderNumber")))
