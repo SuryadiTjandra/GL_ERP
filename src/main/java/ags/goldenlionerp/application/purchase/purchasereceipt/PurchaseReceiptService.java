@@ -58,7 +58,15 @@ public class PurchaseReceiptService implements ModuleConnected<PurchaseReceipt>{
 	public PurchaseReceiptHeader createPurchaseReceipt(PurchaseReceiptHeader receiptHead) {
 		receiptHead = setDocumentAndBatchNumber(receiptHead);
 		receiptHead = completePurchaseReceiptInfo(receiptHead);
+		handleCreation(receiptHead);
 		
+		receiptHead = new PurchaseReceiptHeader(
+				Lists.newArrayList(repo.saveAll(receiptHead.getDetails()))
+			);		
+		return receiptHead;
+	}
+	
+	private void handleCreation(PurchaseReceiptHeader receiptHead) {
 		//create new lotmasters if the items has serial numbers
 		for (PurchaseReceipt rec : receiptHead.getDetails()) {
 			if (!itemRepo.findById(rec.getItemCode()).get().isSerialNumberRequired())
@@ -87,11 +95,7 @@ public class PurchaseReceiptService implements ModuleConnected<PurchaseReceipt>{
 		for (ModuleConnector<PurchaseReceipt, ?> con: connectors) {
 			con.handleCreated(receiptHead.getDetails());
 		}
-		
-		receiptHead = new PurchaseReceiptHeader(
-				Lists.newArrayList(repo.saveAll(receiptHead.getDetails()))
-			);		
-		return receiptHead;
+				
 	}
 	
 	public PurchaseReceiptHeader completePurchaseReceiptInfo(PurchaseReceiptHeader receiptHead) {
@@ -224,7 +228,7 @@ public class PurchaseReceiptService implements ModuleConnected<PurchaseReceipt>{
 			)));
 		List<PurchaseReceiptPK> existingPks = existingReceiptHead.getDetails().stream().map(rec -> rec.getPk()).collect(Collectors.toList());	
 		
-		//create the new receipts
+		//select the new receipts from the request
 		List<PurchaseReceipt> newReceipts = receiptHead.getDetails().stream()
 											.filter(rec -> !existingPks.contains(rec.getPk()))
 											.collect(Collectors.toList());
@@ -264,6 +268,9 @@ public class PurchaseReceiptService implements ModuleConnected<PurchaseReceipt>{
 					maxSeq + 10*(i + 1));
 			unsequenceds.get(i).setPk(pk);
 		}
+		
+		//save the created receipts
+		handleCreation(receiptHead);
 		repo.saveAll(newReceiptHead.getDetails());
 		
 		return new PurchaseReceiptHeader(Lists.newArrayList(repo.findAll(
@@ -333,6 +340,7 @@ public class PurchaseReceiptService implements ModuleConnected<PurchaseReceipt>{
 			d.setLastStatus("499");
 			d.setNextStatus("999");
 		});
+		handleCreation(negatedReceiptHead);
 		repo.saveAll(negateReceipts);
 	}
 }

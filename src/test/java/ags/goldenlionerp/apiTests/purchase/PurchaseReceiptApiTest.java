@@ -341,6 +341,7 @@ public class PurchaseReceiptApiTest extends ApiTestBase<PurchaseReceiptPK> {
 		String itemtransUrl = "/api/itemTransactions/";
 		performer.performGet(itemtransUrl + newId())
 				.andDo(print())
+				.andExpect(jsonPath("$.details.length()").value(2))
 				.andExpect(jsonPath("$.details[0].companyId").value(requestObject.get("companyId")))
 				.andExpect(jsonPath("$.details[0].documentNumber").value(requestObject.get("purchaseReceiptNumber")))
 				.andExpect(jsonPath("$.details[0].documentType").value(requestObject.get("purchaseReceiptType")))
@@ -550,6 +551,30 @@ public class PurchaseReceiptApiTest extends ApiTestBase<PurchaseReceiptPK> {
 			//assert the voided receipt has its status changed
 				.andExpect(jsonPath("$.details[0].lastStatus").value("499"))
 				.andExpect(jsonPath("$.details[0].nextStatus").value("999"));
+		
+		//assert that the quantities on the purchase orders have been returned to its original quantities
+		performer.performGet(((Map<String, Map<String, Object>>) poDetails.get(0).get("_links")).get("order").get("href").toString())
+				.andExpect(jsonPath("$.details[0].quantity").value(poDetails.get(0).get("quantity")))
+				.andExpect(jsonPath("$.details[0].receivedQuantity").value(0.0))
+				.andExpect(jsonPath("$.details[0].openQuantity").value(poDetails.get(0).get("quantity")));
+		
+		//assert new item transactions with negative quantity has been created
+		String itemtransUrl = "/api/itemTransactions/";
+		performer.performGet(itemtransUrl + newId())
+				//.andDo(print())
+				.andExpect(jsonPath("$.details[2].companyId").value(requestObject.get("companyId")))
+				.andExpect(jsonPath("$.details[2].documentNumber").value(requestObject.get("purchaseReceiptNumber")))
+				.andExpect(jsonPath("$.details[2].documentType").value(requestObject.get("purchaseReceiptType")))
+				.andExpect(jsonPath("$.details[2].businessUnitId").value(requestObject.get("businessUnitId")))
+				.andExpect(jsonPath("$.details[2].documentDate").value(requestObject.get("documentDate").toString()))
+				.andExpect(jsonPath("$.details[2].glDate").value(requestObject.get("documentDate").toString()))
+				.andExpect(jsonPath("$.details[2].description").value(requestObject.get("description")))
+				.andExpect(jsonPath("$.details[2].sequence").value((requestDetails.size()+1) * 10))
+				.andExpect(jsonPath("$.details[2].quantity").value(-1 * (double)requestDetails.get(0).get("quantity")))
+				.andExpect(jsonPath("$.details[2].itemCode").value(poDetails.get(0).get("itemCode")))
+				.andExpect(jsonPath("$.details[2].locationId").value(poDetails.get(0).get("locationId")))
+				.andExpect(jsonPath("$.details[2].serialLotNo").value(poDetails.get(0).get("serialLotNo")))
+				.andExpect(jsonPath("$.details[2].itemDescription").value(poDetails.get(0).get("description")));
 	}
 	
 }

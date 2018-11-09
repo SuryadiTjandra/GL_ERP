@@ -993,6 +993,6 @@ public class PurchaseReceipt extends DocumentDetailEntity<PurchaseReceiptPK>{
 	
 	@JsonGetter("voided")
 	public boolean isVoided() {
-		return lastStatus.equals("999");
+		return lastStatus != null && lastStatus.equals("999");
 	}
 }
