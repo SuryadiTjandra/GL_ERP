@@ -1,6 +1,6 @@
 package ags.goldenlionerp.apiTests.purchase;
 
-import static org.junit.Assert.*;
+import static org.junit.Assume.assumeTrue;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -20,7 +20,6 @@ import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.util.ObjectUtils;
 
 import ags.goldenlionerp.apiTests.ApiTestBase;
-import ags.goldenlionerp.apiTests.item.LotMasterApiTest;
 import ags.goldenlionerp.application.purchase.purchasereceipt.PurchaseReceiptPK;
 
 public class PurchaseReceiptApiTest extends ApiTestBase<PurchaseReceiptPK> {
@@ -35,6 +34,8 @@ public class PurchaseReceiptApiTest extends ApiTestBase<PurchaseReceiptPK> {
 		
 		PurchaseOrderApiTest poTest = new PurchaseOrderApiTest();
 		Map<String, Object> poReq = poTest.requestObject();
+		poReq.put("vendorId", "2814");
+		
 		List<Map<String, Object>> poDets = new ArrayList<>((List<Map<String, Object>>) poReq.get("details"));
 		Map<String, Object> serialPoDet = new HashMap<>();
 		serialPoDet.put("itemCode", "ACC.BROTHER-LT6505");
@@ -89,7 +90,7 @@ public class PurchaseReceiptApiTest extends ApiTestBase<PurchaseReceiptPK> {
 		map.put("purchaseReceiptType", newId().getPurchaseReceiptType());
 		map.put("businessUnitId", "110");
 		map.put("documentDate", LocalDate.now());
-		map.put("vendorId", "1015");
+		map.put("vendorId", "2814");
 		map.put("customerOrderNumber", "11223344");
 		map.put("description", "TESTRECEIPT");
 		
@@ -124,6 +125,7 @@ public class PurchaseReceiptApiTest extends ApiTestBase<PurchaseReceiptPK> {
 			.andExpect(jsonPath("$.batchNumber").value(133))
 			.andExpect(jsonPath("$.vendorId").value("2814"))
 			.andExpect(jsonPath("$.customerOrderNumber").value("4522094772"))
+			.andExpect(jsonPath("$.documentDate").value(LocalDate.of(2018, 4, 27).toString()))
 			.andExpect(jsonPath("$.details[5].itemCode").value("HP.LAPTOP-1XE24PA#AR6"))
 			.andExpect(jsonPath("$.details[5].quantity").value(15.0))
 			.andExpect(jsonPath("$.details[5].unitOfMeasure").value("UNT"))
@@ -335,6 +337,7 @@ public class PurchaseReceiptApiTest extends ApiTestBase<PurchaseReceiptPK> {
 				.andExpect(jsonPath("$._embedded.lots[0].itemCode").value(poDetails.get(2).get("itemCode")))
 		;	
 		
+		//assert new item transactions are created for items with type stock
 		String itemtransUrl = "/api/itemTransactions/";
 		performer.performGet(itemtransUrl + newId())
 				.andDo(print())
@@ -394,10 +397,73 @@ public class PurchaseReceiptApiTest extends ApiTestBase<PurchaseReceiptPK> {
 		//fail();// TODO Auto-generated method stub
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public void assertUpdateWithPatchResult(ResultActions action, String beforeUpdateJson) throws Exception {
-		fail();// TODO Auto-generated method stub
+		//header and existing details are unchanged
+		action
+			.andExpect(jsonPath("$.details").exists())
+			.andExpect(jsonPath("$.companyId").value(existingId.getCompanyId()))
+			.andExpect(jsonPath("$.purchaseReceiptNumber").value(existingId.getPurchaseReceiptNumber()))
+			.andExpect(jsonPath("$.purchaseReceiptType").value(existingId.getPurchaseReceiptType()))
+			.andExpect(jsonPath("$.details[5].sequence").value(existingId.getSequence()))
+			.andExpect(jsonPath("$.businessUnitId").value("110"))
+			.andExpect(jsonPath("$.batchNumber").value(133))
+			.andExpect(jsonPath("$.vendorId").value("2814"))
+			.andExpect(jsonPath("$.customerOrderNumber").value("4522094772"))
+			.andExpect(jsonPath("$.documentDate").value(LocalDate.of(2018, 4, 27).toString()))
+			.andExpect(jsonPath("$.details[5].itemCode").value("HP.LAPTOP-1XE24PA#AR6"))
+			.andExpect(jsonPath("$.details[5].quantity").value(15.0))
+			.andExpect(jsonPath("$.details[5].unitOfMeasure").value("UNT"))
+			.andExpect(jsonPath("$.details[5]._links.self.href").exists());
 		
+		List<Map<String, Object>> requestDetails = (List<Map<String, Object>>) requestObject.get("details");
+		//requested details are added to the bottom of the detail list, with requested header info changed to match the existing header info
+		action
+			.andExpect(jsonPath("$.details.length()").value(11))
+			.andExpect(jsonPath("$.details[8].companyId").value(existingId.getCompanyId()))
+			.andExpect(jsonPath("$.details[8].purchaseReceiptNumber").value(existingId.getPurchaseReceiptNumber()))
+			.andExpect(jsonPath("$.details[8].purchaseReceiptType").value(existingId.getPurchaseReceiptType()))
+			.andExpect(jsonPath("$.details[8].sequence").value(90))
+			.andExpect(jsonPath("$.details[8].businessUnitId").value("110"))
+			.andExpect(jsonPath("$.details[8].batchNumber").value(133))
+			.andExpect(jsonPath("$.details[8].vendorId").value("2814"))
+			.andExpect(jsonPath("$.details[8].customerOrderNumber").value("4522094772"))
+		//other details match the request (+ completed fields)
+			.andExpect(jsonPath("$.details[8].purchaseOrderNumber").value(poDetails.get(0).get("purchaseOrderNumber")))
+			.andExpect(jsonPath("$.details[8].purchaseOrderType").value(poDetails.get(0).get("purchaseOrderType")))
+			.andExpect(jsonPath("$.details[8].purchaseOrderSequence").value(poDetails.get(0).get("purchaseOrderSequence")))
+			.andExpect(jsonPath("$.details[8].quantity").value(requestDetails.get(0).get("quantity")))
+			.andExpect(jsonPath("$.details[8].itemCode").value(poDetails.get(0).get("itemCode")))
+			.andExpect(jsonPath("$.details[8].baseCurrency").value(poDetails.get(0).get("baseCurrency")))
+			.andExpect(jsonPath("$.details[8].transactionCurrency").value(poDetails.get(0).get("transactionCurrency")))
+			.andExpect(jsonPath("$.details[8].exchangeRate").value(poDetails.get(0).get("exchangeRate")))
+			.andExpect(jsonPath("$.details[8].locationId").value(poDetails.get(0).get("locationId")))
+			.andExpect(jsonPath("$.details[8].serialLotNo").value(poDetails.get(0).get("serialLotNo")))
+			.andExpect(jsonPath("$.details[8].itemDescription").value(poDetails.get(0).get("description")))
+			.andExpect(jsonPath("$.details[8].lineType").value(poDetails.get(0).get("lineType")))
+			.andExpect(jsonPath("$.details[8].unitOfMeasure").value(requestDetails.get(0).getOrDefault("unitOfMeasure", poDetails.get(0).get("unitOfMeasure"))))
+			//.andExpect(jsonPath("$.detail[8].unitConversionFactor").value(poDetails.get(0).get("unitConversionFactor")))
+			//.andExpect(jsonPath("$.details[8].primaryTransactionQuantity").value(poDetails.get(0).get("primaryTransactionQuantity")))
+			.andExpect(jsonPath("$.details[8].primaryUnitOfMeasure").value(poDetails.get(0).get("primaryUnitOfMeasure")))
+			.andExpect(jsonPath("$.details[8].secondaryTransactionQuantity").value(requestDetails.get(0).getOrDefault("secondaryTransactionQuantity", 0.0)))
+			.andExpect(jsonPath("$.details[8].secondaryUnitOfMeasure").value(poDetails.get(0).get("secondaryUnitOfMeasure")))
+			.andExpect(jsonPath("$.details[8].unitCost").value(poDetails.get(0).get("unitCost")))
+			.andExpect(jsonPath("$.details[8].extendedCost").value(((double)poDetails.get(0).get("unitCost")) * ((double) requestDetails.get(0).get("quantity"))))
+			.andExpect(jsonPath("$.details[8].taxBase").value( ((double)requestDetails.get(0).get("quantity")) / ((double)poDetails.get(0).get("quantity")) * ((double)poDetails.get(0).get("taxBase")) ))
+			.andExpect(jsonPath("$.details[8].taxAmount").value( ((double)requestDetails.get(0).get("quantity")) / ((double)poDetails.get(0).get("quantity")) * ((double)poDetails.get(0).get("taxAmount")) ))
+			.andExpect(jsonPath("$.details[8].lastStatus").value("400"))
+			.andExpect(jsonPath("$.details[8].nextStatus").value(ObjectUtils.isEmpty(poDetails.get(0).get("landedCostRule")) ? "440" : "425" ))
+			//.andExpect(jsonPath("$.details[8].receiptDate").value(requestObject.computeIfPresent("documentDate", (k,v) -> v.toString())))
+			.andExpect(jsonPath("$.details[8].paymentTermCode").value(poDetails.get(0).get("paymentTermCode")))
+			.andExpect(jsonPath("$.details[8].taxCode").value(poDetails.get(0).get("taxCode")))
+			.andExpect(jsonPath("$.details[8].taxAllowance").value(poDetails.get(0).get("taxAllowance")))
+			.andExpect(jsonPath("$.details[8].taxRate").value(poDetails.get(0).get("taxRate")))
+			.andExpect(jsonPath("$.details[8].discountCode").value(poDetails.get(0).get("discountCode")))
+			.andExpect(jsonPath("$.details[8].discountRate").value(poDetails.get(0).get("discountRate")))
+			.andExpect(jsonPath("$.details[8].unitDiscountCode").value(poDetails.get(0).get("unitDiscountCode")))
+			.andExpect(jsonPath("$.details[8].unitDiscountRate").value(poDetails.get(0).get("unitDiscountRate")))
+		;
 	}
 	
 	@Test @Rollback
@@ -420,5 +486,70 @@ public class PurchaseReceiptApiTest extends ApiTestBase<PurchaseReceiptPK> {
 				.andExpect(status().isMethodNotAllowed());
 	}
 
+	@SuppressWarnings("unchecked")
+	@Test
+	public void voidReceiptTest() throws Exception {
+		//post new receipts
+		String location = performer.performPost(baseUrl, requestObject)
+							.andDo(res -> assumeTrue(res.getResponse().getStatus() >= 200 && res.getResponse().getStatus() < 300))
+							.andReturn().getResponse().getHeader("Location");
+		
+		refreshData();
+		
+		//void one of the receipt
+		List<Map<String, Object>> requestDetails = (List<Map<String, Object>>) requestObject.get("details");
+		requestDetails.get(0).put("sequence", 10);
+		requestDetails.get(0).put("voided", true);
+		requestDetails.get(1).put("sequence", 20);
+		requestDetails.get(2).put("sequence", 30);
+		
+		
+		performer.performPatch(location, requestObject)
+					.andExpect(status().is2xxSuccessful());
+		
+		refreshData();
+		
+		//assert creation of a new receipt, which is identical to the voided one, but has the negative amount
+		performer.performGet(location)
+				.andExpect(status().isOk())
+				.andExpect(jsonPath("$.details.length()").value(4))
+				.andExpect(jsonPath("$.details[3].sequence").value(40))
+				.andExpect(jsonPath("$.details[3].purchaseOrderNumber").value(poDetails.get(0).get("purchaseOrderNumber")))
+				.andExpect(jsonPath("$.details[3].purchaseOrderType").value(poDetails.get(0).get("purchaseOrderType")))
+				.andExpect(jsonPath("$.details[3].purchaseOrderSequence").value(poDetails.get(0).get("purchaseOrderSequence")))
+				.andExpect(jsonPath("$.details[3].quantity").value(Matchers.closeTo(-1 * (double)requestDetails.get(0).get("quantity"), 0.0001)))
+				.andExpect(jsonPath("$.details[3].itemCode").value(poDetails.get(0).get("itemCode")))
+				.andExpect(jsonPath("$.details[3].baseCurrency").value(poDetails.get(0).get("baseCurrency")))
+				.andExpect(jsonPath("$.details[3].transactionCurrency").value(poDetails.get(0).get("transactionCurrency")))
+				.andExpect(jsonPath("$.details[3].exchangeRate").value(poDetails.get(0).get("exchangeRate")))
+				.andExpect(jsonPath("$.details[3].locationId").value(poDetails.get(0).get("locationId")))
+				.andExpect(jsonPath("$.details[3].serialLotNo").value(poDetails.get(0).get("serialLotNo")))
+				.andExpect(jsonPath("$.details[3].itemDescription").value(poDetails.get(0).get("description")))
+				.andExpect(jsonPath("$.details[3].lineType").value(poDetails.get(0).get("lineType")))
+				.andExpect(jsonPath("$.details[3].unitOfMeasure").value(requestDetails.get(0).getOrDefault("unitOfMeasure", poDetails.get(0).get("unitOfMeasure"))))
+				//.andExpect(jsonPath("$.details[3].unitConversionFactor").value(poDetails.get(0).get("unitConversionFactor")))
+				//.andExpect(jsonPath("$.details[3].primaryTransactionQuantity").value(-1 * (double)poDetails.get(0).get("primaryTransactionQuantity")))
+				.andExpect(jsonPath("$.details[3].primaryUnitOfMeasure").value(poDetails.get(0).get("primaryUnitOfMeasure")))
+				.andExpect(jsonPath("$.details[3].secondaryTransactionQuantity").value(Matchers.closeTo(-1 * (double)requestDetails.get(0).getOrDefault("secondaryTransactionQuantity", 0.0), 0.0001)))
+				.andExpect(jsonPath("$.details[3].secondaryUnitOfMeasure").value(poDetails.get(0).get("secondaryUnitOfMeasure")))
+				.andExpect(jsonPath("$.details[3].unitCost").value(poDetails.get(0).get("unitCost")))
+				.andExpect(jsonPath("$.details[3].extendedCost").value(Matchers.closeTo(-1 * ((double)poDetails.get(0).get("unitCost")) * ((double) requestDetails.get(0).get("quantity")), 0.001)))
+				.andExpect(jsonPath("$.details[3].taxBase").value(Matchers.closeTo(-1 * ((double)requestDetails.get(0).get("quantity")) / ((double)poDetails.get(0).get("quantity")) * ((double)poDetails.get(0).get("taxBase")), 0.001 )))
+				.andExpect(jsonPath("$.details[3].taxAmount").value(Matchers.closeTo(-1 * ((double)requestDetails.get(0).get("quantity")) / ((double)poDetails.get(0).get("quantity")) * ((double)poDetails.get(0).get("taxAmount")), 0.001 )))
+				.andExpect(jsonPath("$.details[3].lastStatus").value("499"))
+				.andExpect(jsonPath("$.details[3].nextStatus").value("999"))
+				.andExpect(jsonPath("$.details[3].receiptDate").value(requestObject.computeIfPresent("documentDate", (k,v) -> v.toString())))
+				.andExpect(jsonPath("$.details[3].paymentTermCode").value(poDetails.get(0).get("paymentTermCode")))
+				.andExpect(jsonPath("$.details[3].taxCode").value(poDetails.get(0).get("taxCode")))
+				.andExpect(jsonPath("$.details[3].taxAllowance").value(poDetails.get(0).get("taxAllowance")))
+				.andExpect(jsonPath("$.details[3].taxRate").value(poDetails.get(0).get("taxRate")))
+				.andExpect(jsonPath("$.details[3].discountCode").value(poDetails.get(0).get("discountCode")))
+				.andExpect(jsonPath("$.details[3].discountRate").value(poDetails.get(0).get("discountRate")))
+				.andExpect(jsonPath("$.details[3].unitDiscountCode").value(poDetails.get(0).get("unitDiscountCode")))
+				.andExpect(jsonPath("$.details[3].unitDiscountRate").value(poDetails.get(0).get("unitDiscountRate")))
+			//assert the voided receipt has its status changed
+				.andExpect(jsonPath("$.details[0].lastStatus").value("499"))
+				.andExpect(jsonPath("$.details[0].nextStatus").value("999"));
+	}
 	
 }
