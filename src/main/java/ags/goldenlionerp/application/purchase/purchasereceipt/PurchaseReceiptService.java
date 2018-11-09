@@ -6,6 +6,8 @@ import java.time.LocalDate;
 import java.time.YearMonth;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
@@ -54,6 +56,7 @@ public class PurchaseReceiptService implements ModuleConnected<PurchaseReceipt>{
 	
 	@Transactional
 	public PurchaseReceiptHeader createPurchaseReceipt(PurchaseReceiptHeader receiptHead) {
+		receiptHead = setDocumentAndBatchNumber(receiptHead);
 		receiptHead = completePurchaseReceiptInfo(receiptHead);
 		
 		//create new lotmasters if the items has serial numbers
@@ -92,7 +95,6 @@ public class PurchaseReceiptService implements ModuleConnected<PurchaseReceipt>{
 	}
 	
 	public PurchaseReceiptHeader completePurchaseReceiptInfo(PurchaseReceiptHeader receiptHead) {
-		receiptHead = setDocumentAndBatchNumber(receiptHead);
 		receiptHead = setInfoFromPurchaseOrder(receiptHead);
 		
 		LocalDate docDate = receiptHead.getDocumentDate();
@@ -102,18 +104,24 @@ public class PurchaseReceiptService implements ModuleConnected<PurchaseReceipt>{
 
 	private PurchaseReceiptHeader setDocumentAndBatchNumber(PurchaseReceiptHeader receiptHead) {
 		String companyId = receiptHead.getCompanyId();
-		String type = "OV";
+		String type = "OV"; //TODO
+		YearMonth date = YearMonth.from(receiptHead.getDocumentDate());
 		int docNo = receiptHead.getPurchaseReceiptNumber() == 0 ?
-						nnServ.findNextDocumentNumber(companyId, type, YearMonth.now()):
+						nnServ.findNextDocumentNumber(companyId, type, date):
 						receiptHead.getPurchaseReceiptNumber();
 		
-		receiptHead.getDetails().forEach(d -> {
-			PurchaseReceiptPK pk = new PurchaseReceiptPK(companyId, docNo, type, d.getPk().getSequence());
+		for (int i = 0; i < receiptHead.getDetails().size(); i++) {
+			PurchaseReceipt d = receiptHead.getDetails().get(i);
+			PurchaseReceiptPK pk = new PurchaseReceiptPK(companyId, docNo, type, (i + 1)*10);
 			d.setPk(pk);
-		});
+		}
+		//receiptHead.getDetails().forEach(d -> {
+		//	PurchaseReceiptPK pk = new PurchaseReceiptPK(companyId, docNo, type, d.getPk().getSequence());
+		//	d.setPk(pk);
+		//});
 		
-		String batchType = "O";
-		int batchNo = nnServ.findNextDocumentNumber(companyId, batchType, YearMonth.now());
+		String batchType = "O"; //TODO
+		int batchNo = nnServ.findNextDocumentNumber(companyId, batchType, date);
 		receiptHead.setBatchNumber(batchNo);
 		receiptHead.setBatchType(batchType);
 							
@@ -132,6 +140,9 @@ public class PurchaseReceiptService implements ModuleConnected<PurchaseReceipt>{
 		PurchaseDetail pd = po.getDetails().stream().filter(d -> d.getPk().getPurchaseOrderSequence() == receipt.getPurchaseOrderSequence())
 								.findFirst()
 								.orElseThrow(() -> new ResourceNotFoundException("Could not find PurchaseOrder with id " + poPk + " and sequence " + receipt.getPurchaseOrderSequence()));
+		
+		if (!receipt.getVendorId().equals(pd.getVendorId()))
+			throw new PurchaseReceiptException("The vendor of the receipt does not match the vendor of the order");
 		
 		receipt.setBaseCurrency(pd.getBaseCurrency());
 		receipt.setTransactionCurrency(pd.getTransactionCurrency());
@@ -201,5 +212,127 @@ public class PurchaseReceiptService implements ModuleConnected<PurchaseReceipt>{
 		//rtax = rexcost/pdexcost * pdtax
 		receipt.setTaxAmount(receipt.getExtendedCost().divide(pd.getExtendedCost(), RoundingMode.HALF_UP).multiply(pd.getTaxAmount()));
 		return receipt;
+	}
+	
+	@Transactional
+	public PurchaseReceiptHeader updatePurchaseReceipt(PurchaseReceiptHeader receiptHead) {
+		voidReceipts(receiptHead);
+		
+		//get the existing receipts first
+		PurchaseReceiptHeader existingReceiptHead = new PurchaseReceiptHeader(Lists.newArrayList(repo.findAll(
+				PurchaseReceiptPredicates.getInstance().sameHeaderAs(receiptHead.getDetails().get(0))
+			)));
+		List<PurchaseReceiptPK> existingPks = existingReceiptHead.getDetails().stream().map(rec -> rec.getPk()).collect(Collectors.toList());	
+		
+		//create the new receipts
+		List<PurchaseReceipt> newReceipts = receiptHead.getDetails().stream()
+											.filter(rec -> !existingPks.contains(rec.getPk()))
+											.collect(Collectors.toList());
+		if (newReceipts.isEmpty())
+			return existingReceiptHead;
+		
+		PurchaseReceiptHeader newReceiptHead = new PurchaseReceiptHeader(
+				existingReceiptHead.getCompanyId(),
+				existingReceiptHead.getPurchaseReceiptNumber(),
+				existingReceiptHead.getPurchaseReceiptType(),
+				existingReceiptHead.getBusinessUnitId(),
+				existingReceiptHead.getDocumentDate(),
+				existingReceiptHead.getVendorId(),
+				existingReceiptHead.getCustomerOrderNumber(),
+				existingReceiptHead.getDescription(),				
+				newReceipts
+			);
+		newReceiptHead.setBatchNumber(existingReceiptHead.getBatchNumber());
+		newReceiptHead.setBatchType(existingReceiptHead.getBatchType());
+		//complete info for new receipts
+		newReceiptHead = completePurchaseReceiptInfo(newReceiptHead);
+		
+		List<PurchaseReceipt> allReceipts = Stream.of(existingReceiptHead.getDetails(), newReceiptHead.getDetails())
+												.flatMap(List::stream)
+												.collect(Collectors.toList());
+		//set sequence numbers for missing ones
+		int maxSeq = allReceipts.stream().mapToInt(rec -> rec.getPk().getSequence()).max().orElse(0);
+		List<PurchaseReceipt> unsequenceds = allReceipts.stream()
+												.filter(rec -> rec.getPk().getSequence() == 0)
+												.collect(Collectors.toList());
+		for (int i = 0; i < unsequenceds.size(); i++) {
+			PurchaseReceiptPK oldPk = unsequenceds.get(i).getPk();
+			PurchaseReceiptPK pk = new PurchaseReceiptPK(
+					oldPk.getCompanyId(), 
+					oldPk.getPurchaseReceiptNumber(), 
+					oldPk.getPurchaseReceiptType(), 
+					maxSeq + 10*(i + 1));
+			unsequenceds.get(i).setPk(pk);
+		}
+		repo.saveAll(newReceiptHead.getDetails());
+		
+		return new PurchaseReceiptHeader(Lists.newArrayList(repo.findAll(
+				PurchaseReceiptPredicates.getInstance().sameHeaderAs(receiptHead.getDetails().get(0))
+			)));
+	}
+
+	private void voidReceipts(PurchaseReceiptHeader receiptHead) {
+		List<PurchaseReceipt> toBeVoideds = receiptHead.getDetails().stream()
+												.filter(PurchaseReceipt::isToBeVoided)
+												.collect(Collectors.toList());
+		if (toBeVoideds.isEmpty())
+			return;
+		
+		//get the existing receipts first
+		PurchaseReceiptHeader existingReceiptHead = new PurchaseReceiptHeader(Lists.newArrayList(repo.findAll(
+				PurchaseReceiptPredicates.getInstance().sameHeaderAs(receiptHead.getDetails().get(0))
+			)));
+		
+		int i = 10;
+		List<PurchaseReceipt> negateReceipts = new ArrayList<>();;
+		for (PurchaseReceipt toBeVoided: toBeVoideds) {
+			//if the receipt is already voided then no need to void it again
+			if (toBeVoided.isVoided())
+				continue;
+			
+			PurchaseReceipt existing = existingReceiptHead.getDetails().stream()
+										.filter(det -> det.getPk().equals(toBeVoided.getPk()))
+										.findFirst()
+										.orElseThrow(() -> new PurchaseReceiptException("Cannot void a nonexistent receipt!"));
+			
+			int seq = receiptHead.getHighestSequence() + i;
+			i += 10;
+			
+			//create a copy of the current
+			PurchaseReceiptPK negatePk = new PurchaseReceiptPK(
+					existing.getPk().getCompanyId(), 
+					existing.getPk().getPurchaseReceiptNumber(), 
+					existing.getPk().getPurchaseReceiptType(), 
+					seq);
+			PurchaseReceipt negatedRec = new PurchaseReceipt();
+			negatedRec.setPk(negatePk);
+			negatedRec.setPurchaseOrderNumber(existing.getPurchaseOrderNumber());
+			negatedRec.setPurchaseOrderType(existing.getPurchaseOrderType());
+			negatedRec.setPurchaseOrderSequence(existing.getPurchaseOrderSequence());
+			negatedRec.setQuantity(existing.getQuantity().negate());
+			negateReceipts.add(negatedRec);
+			
+			existing.setLastStatus("499");
+			existing.setNextStatus("999");
+			repo.save(existing);
+		}
+		
+		PurchaseReceiptHeader negatedReceiptHead = new PurchaseReceiptHeader(
+				existingReceiptHead.getCompanyId(),
+				existingReceiptHead.getPurchaseReceiptNumber(),
+				existingReceiptHead.getPurchaseReceiptType(),
+				existingReceiptHead.getBusinessUnitId(),
+				existingReceiptHead.getDocumentDate(),
+				existingReceiptHead.getVendorId(),
+				existingReceiptHead.getCustomerOrderNumber(),
+				existingReceiptHead.getDescription(),				
+				negateReceipts
+			);
+		negatedReceiptHead = completePurchaseReceiptInfo(negatedReceiptHead);
+		negatedReceiptHead.getDetails().forEach(d -> {
+			d.setLastStatus("499");
+			d.setNextStatus("999");
+		});
+		repo.saveAll(negateReceipts);
 	}
 }

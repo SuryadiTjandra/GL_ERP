@@ -3,6 +3,7 @@ package ags.goldenlionerp.application.purchase.purchaseorder;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.LocalDate;
+import java.util.List;
 
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;
@@ -14,6 +15,7 @@ import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinColumns;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -26,6 +28,7 @@ import ags.goldenlionerp.application.purchase.IntegratedReferences;
 import ags.goldenlionerp.application.purchase.OrderStatus;
 import ags.goldenlionerp.application.purchase.PurchaseOptions;
 import ags.goldenlionerp.application.purchase.References;
+import ags.goldenlionerp.application.purchase.purchasereceipt.PurchaseReceipt;
 import ags.goldenlionerp.entities.DatabaseEntity;
 import ags.goldenlionerp.entities.Voidable;
 
@@ -298,6 +301,9 @@ public class PurchaseDetail extends DatabaseEntity<PurchaseDetailPK> implements 
 	})
 	@ManyToOne(optional=false)
 	private PurchaseOrder order;
+	
+	@OneToMany(mappedBy="purchaseDetail")
+	private List<PurchaseReceipt> receipts;
 	
 	@Override
 	public PurchaseDetailPK getId() {

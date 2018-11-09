@@ -17,6 +17,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -24,10 +25,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.common.collect.Lists;
+import com.querydsl.core.types.Predicate;
 
 import ags.goldenlionerp.exceptions.ResourceAlreadyExistsException;
-
-import static ags.goldenlionerp.application.purchase.purchasereceipt.PurchaseReceiptPredicates.*;
 
 @RepositoryRestController
 public class PurchaseReceiptController {
@@ -55,7 +55,7 @@ public class PurchaseReceiptController {
 		PurchaseReceipt receipt = repo.findById(pk)
 									.orElseThrow(() -> new ResourceNotFoundException());
 		
-		List<PurchaseReceipt> receipts = Lists.newArrayList(repo.findAll(sameReceiptNoAs(receipt)));
+		List<PurchaseReceipt> receipts = Lists.newArrayList(repo.findAll(PurchaseReceiptPredicates.getInstance().sameHeaderAs(receipt)));
 		PurchaseReceiptHeader header = new PurchaseReceiptHeader(receipts);
 		
 		return new PurchaseReceiptHeaderResource(header, assmbler);
@@ -71,7 +71,7 @@ public class PurchaseReceiptController {
 		PurchaseReceipt receipt = repo.findById(pk)
 									.orElseThrow(() -> new ResourceNotFoundException());
 		
-		Iterable<PurchaseReceipt> receipts = repo.findAll(sameReceiptNoAs(receipt));
+		Iterable<PurchaseReceipt> receipts = repo.findAll(PurchaseReceiptPredicates.getInstance().sameHeaderAs(receipt));
 		List<PersistentEntityResource> receiptResources = 
 				StreamSupport.stream(receipts.spliterator(), false)
 					.map(pr -> assembler.toResource(pr))
@@ -83,7 +83,8 @@ public class PurchaseReceiptController {
 	
 	@PostMapping("/purchaseReceipts")
 	public ResponseEntity<?> post(@RequestBody PurchaseReceiptHeader receiptHead, PersistentEntityResourceAssembler assembler){
-		if (repo.existsById(receiptHead.getDetails().get(0).getPk()))
+		Predicate pred = PurchaseReceiptPredicates.getInstance().sameHeaderAs(receiptHead.getDetails().get(0).getPk());
+		if (repo.exists(pred))
 			throw new ResourceAlreadyExistsException("purchaseReceipt", receiptHead.getDetails().get(0).getPk());
 		
 		receiptHead = service.createPurchaseReceipt(receiptHead);
@@ -92,6 +93,21 @@ public class PurchaseReceiptController {
 		
 		return ResponseEntity.created(resUri).body(headRes);
 		//return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+	}
+	
+	@PatchMapping("/purchaseReceipts/{id}")
+	public ResponseEntity<?> patch(@PathVariable("id") String id,
+			@RequestBody PurchaseReceiptHeader receiptHead, 
+			PersistentEntityResourceAssembler assembler){
+		PurchaseReceiptPK pk = (PurchaseReceiptPK) conv.fromRequestId(id, PurchaseReceipt.class);
+		if (!repo.existsById(pk))
+			throw new ResourceNotFoundException();
+		
+		receiptHead.setIdInfo(pk.getCompanyId(), pk.getPurchaseReceiptNumber(), pk.getPurchaseReceiptType());
+		
+		receiptHead = service.updatePurchaseReceipt(receiptHead);
+		PurchaseReceiptHeaderResource headRes = new PurchaseReceiptHeaderResource(receiptHead, assembler);
+		return ResponseEntity.ok(headRes);
 	}
 	
 	@ExceptionHandler(PurchaseReceiptException.class)

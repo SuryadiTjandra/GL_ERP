@@ -18,13 +18,15 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonSetter;
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
 
 import ags.goldenlionerp.application.item.itemmaster.ItemMaster;
 import ags.goldenlionerp.application.purchase.PurchaseOptions;
 import ags.goldenlionerp.application.purchase.References;
 import ags.goldenlionerp.application.purchase.purchaseorder.PurchaseDetail;
-import ags.goldenlionerp.entities.DatabaseEntity;
+import ags.goldenlionerp.documents.DocumentDetailEntity;
 
 @Entity
 @Table(name="T4312")
@@ -37,7 +39,7 @@ import ags.goldenlionerp.entities.DatabaseEntity;
 	@AttributeOverride(name="lastUpdateTime", column=@Column(name="OVTMLU")),
 	@AttributeOverride(name="computerId", column=@Column(name="OVCID")),
 })
-public class PurchaseReceipt extends DatabaseEntity<PurchaseReceiptPK>{
+public class PurchaseReceipt extends DocumentDetailEntity<PurchaseReceiptPK>{
 
 	@EmbeddedId @JsonUnwrapped
 	private PurchaseReceiptPK pk;
@@ -51,10 +53,10 @@ public class PurchaseReceipt extends DatabaseEntity<PurchaseReceiptPK>{
 	@Column(name="OVBUID", updatable=false, nullable=false)
 	private String businessUnitId;
 	
-	@Column(name="OVICU")
+	@Column(name="OVICU", updatable=false)
 	private int batchNumber;
 	
-	@Column(name="OVICUT")
+	@Column(name="OVICUT", updatable=false)
 	private String batchType;
 	
 	@Column(name="OVVNID", updatable = false, nullable=false)
@@ -69,7 +71,7 @@ public class PurchaseReceipt extends DatabaseEntity<PurchaseReceiptPK>{
 	@Column(name="OVEXCRT", precision=19, scale=9, updatable=false)
 	private BigDecimal exchangeRate = BigDecimal.ONE;
 	
-	@Column(name="OVINUM", nullable=false)
+	@Column(name="OVINUM", updatable=false, nullable=false)
 	private String itemCode;
 	@JoinColumn(name="OVINUM", insertable=false, updatable=false, nullable=false)
 	@ManyToOne(fetch=FetchType.LAZY, optional=false)
@@ -982,5 +984,15 @@ public class PurchaseReceipt extends DatabaseEntity<PurchaseReceiptPK>{
 		this.serialNumbers = serialNumbers;
 	}
 	
-
+	@JsonSetter("voided") @Transient
+	private boolean toBeVoided;
+	
+	public boolean isToBeVoided() {
+		return toBeVoided;
+	}
+	
+	@JsonGetter("voided")
+	public boolean isVoided() {
+		return lastStatus.equals("999");
+	}
 }

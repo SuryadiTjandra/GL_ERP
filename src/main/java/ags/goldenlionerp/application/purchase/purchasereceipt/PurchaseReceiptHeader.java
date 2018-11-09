@@ -4,8 +4,9 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Comparator;
 import java.util.List;
-
+import java.util.Optional;
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import ags.goldenlionerp.entities.DatabaseAuditable;
@@ -17,6 +18,7 @@ class PurchaseReceiptHeader implements DatabaseAuditable{
 	public PurchaseReceiptHeader(List<PurchaseReceipt> details) {
 		if (details == null || details.isEmpty())
 			throw new IllegalArgumentException("Cannot pass empty list as arguments!");
+		//setSequence(details);
 		this.details = details;
 		this.details.sort(Comparator.comparing(det -> det.getPk().getSequence()));
 	}
@@ -35,10 +37,8 @@ class PurchaseReceiptHeader implements DatabaseAuditable{
 			throw new IllegalArgumentException("Cannot pass empty list as arguments!");
 		this.details = details;
 		
-		for (int i = 0; i < details.size(); i++) {
-			PurchaseReceiptPK pk = new PurchaseReceiptPK(companyId, purchaseReceiptNumber, purchaseReceiptType, (i + 1) * 10);
-			details.get(i).setPk(pk);
-		}
+		setIdInfo(companyId, purchaseReceiptNumber, purchaseReceiptType);
+
 		
 		setBusinessUnitId(businessUnitId);
 		setDocumentDate(documentDate);
@@ -47,6 +47,49 @@ class PurchaseReceiptHeader implements DatabaseAuditable{
 		setDescription(description);
 
 	}
+	
+	@JsonIgnore
+	public int getHighestSequence() {
+		return this.details.stream()
+						.mapToInt(rec -> rec.getPk().getSequence())
+						.max().orElse(0);
+	}
+
+	/*private void setSequence(List<PurchaseReceipt> details2) {
+		if (details.stream().allMatch(det -> det.getPk().getSequence() != 0)) {
+			//if all details already have sequence numbers, then nothing to do
+			return;
+		} else if (details.stream().allMatch(det -> det.getPk().getSequence() == 0)) {
+			//if no details have sequence number 
+			for (int i = 0; i < details.size(); i++) {
+				PurchaseReceiptPK oldPk = details.get(i).getPk();
+				PurchaseReceiptPK pk = new PurchaseReceiptPK(
+						oldPk.getCompanyId(), 
+						oldPk.getPurchaseReceiptNumber(), 
+						oldPk.getPurchaseReceiptType(), 
+						(i + 1) * 10);
+				details.get(i).setPk(pk);
+			}
+			
+		} else {
+			//if mixed, continue sequence numbering from the highest count
+			int highestSeq = details.stream().mapToInt(det -> det.getPk().getSequence()).max().getAsInt();
+			List<PurchaseReceipt> unsequencedDetails = details.stream()
+					.filter(det -> det.getPk().getPurchaseReceiptNumber() == 0)
+					.collect(Collectors.toList());
+			
+			for (int i = 0; i < unsequencedDetails.size(); i++) {
+				PurchaseReceiptPK oldPk = unsequencedDetails.get(i).getPk();
+				PurchaseReceiptPK pk = new PurchaseReceiptPK(
+						oldPk.getCompanyId(), 
+						oldPk.getPurchaseReceiptNumber(), 
+						oldPk.getPurchaseReceiptType(), 
+						highestSeq + (i + 1) * 10);
+				unsequencedDetails.get(i).setPk(pk);
+			}
+		}
+		
+	}*/
 
 	public String getCompanyId() {
 		return details.get(0).getPk().getCompanyId();
@@ -147,7 +190,16 @@ class PurchaseReceiptHeader implements DatabaseAuditable{
 	
 	private PurchaseReceipt getLastUpdatedDetail() {
 		return details.stream()
-				.sorted(Comparator.comparing(PurchaseReceipt::getLastUpdateUserId))
+				.sorted(Comparator.comparing(PurchaseReceipt::getLastUpdateDateTime).reversed())
 				.findFirst().get();
+	}
+
+	void setIdInfo(String companyId, int purchaseReceiptNumber, String purchaseReceiptType) {
+		for (PurchaseReceipt rec: details) {
+			int sequence = Optional.ofNullable(rec.getPk())
+							.map(pk -> pk.getSequence()).orElse(0);
+			PurchaseReceiptPK pk = new PurchaseReceiptPK(companyId, purchaseReceiptNumber, purchaseReceiptType, sequence);
+			rec.setPk(pk);
+		}
 	}
 }

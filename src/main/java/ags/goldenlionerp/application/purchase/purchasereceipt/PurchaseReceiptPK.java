@@ -2,12 +2,15 @@ package ags.goldenlionerp.application.purchase.purchasereceipt;
 
 import java.io.Serializable;
 
+import javax.persistence.Access;
+import javax.persistence.AccessType;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 import ags.goldenlionerp.documents.DocumentDetailId;
 
 @Embeddable
+@Access(AccessType.FIELD)
 public class PurchaseReceiptPK implements Serializable, DocumentDetailId{
 
 	private static final long serialVersionUID = -6658403012584106513L;
@@ -16,10 +19,10 @@ public class PurchaseReceiptPK implements Serializable, DocumentDetailId{
 	private String companyId;
 	
 	@Column(name="OVDOCNO")
-	private int purchaseReceiptNumber;
+	private int documentNumber;
 	
 	@Column(name="OVDOCTY")
-	private String purchaseReceiptType;
+	private String documentType;
 	
 	@Column(name="OVDOCSQ")
 	private int sequence;
@@ -30,8 +33,8 @@ public class PurchaseReceiptPK implements Serializable, DocumentDetailId{
 	public PurchaseReceiptPK(String companyId, int purchaseReceiptNumber, String purchaseReceiptType, int sequence) {
 		super();
 		this.companyId = companyId;
-		this.purchaseReceiptNumber = purchaseReceiptNumber;
-		this.purchaseReceiptType = purchaseReceiptType;
+		this.documentNumber = purchaseReceiptNumber;
+		this.documentType = purchaseReceiptType;
 		this.sequence = sequence;
 	}
 
@@ -40,11 +43,11 @@ public class PurchaseReceiptPK implements Serializable, DocumentDetailId{
 	}
 
 	public int getPurchaseReceiptNumber() {
-		return purchaseReceiptNumber;
+		return documentNumber;
 	}
 
 	public String getPurchaseReceiptType() {
-		return purchaseReceiptType;
+		return documentType;
 	}
 
 	public int getSequence() {
@@ -60,8 +63,8 @@ public class PurchaseReceiptPK implements Serializable, DocumentDetailId{
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((companyId == null) ? 0 : companyId.hashCode());
-		result = prime * result + purchaseReceiptNumber;
-		result = prime * result + ((purchaseReceiptType == null) ? 0 : purchaseReceiptType.hashCode());
+		result = prime * result + documentNumber;
+		result = prime * result + ((documentType == null) ? 0 : documentType.hashCode());
 		result = prime * result + sequence;
 		return result;
 	}
@@ -80,12 +83,12 @@ public class PurchaseReceiptPK implements Serializable, DocumentDetailId{
 				return false;
 		} else if (!companyId.equals(other.companyId))
 			return false;
-		if (purchaseReceiptNumber != other.purchaseReceiptNumber)
+		if (documentNumber != other.documentNumber)
 			return false;
-		if (purchaseReceiptType == null) {
-			if (other.purchaseReceiptType != null)
+		if (documentType == null) {
+			if (other.documentType != null)
 				return false;
-		} else if (!purchaseReceiptType.equals(other.purchaseReceiptType))
+		} else if (!documentType.equals(other.documentType))
 			return false;
 		if (sequence != other.sequence)
 			return false;
@@ -100,9 +103,6 @@ public class PurchaseReceiptPK implements Serializable, DocumentDetailId{
 	@Override
 	public String getDocumentType() {
 		return getPurchaseReceiptType();
-	}
-
-	
-	
+	}	
 	
 }
