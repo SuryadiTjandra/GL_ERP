@@ -217,6 +217,9 @@ public class SalesOrderService {
 			soDetail.setExtendedPrice(extendedPrice);
 		}
 		
+		//TODO set item cost
+		//soDetail.setUnitCost(unitCost);
+		//soDetail.setExtendedCost(extendedCost);
 		
 		return soDetail;
 	}
