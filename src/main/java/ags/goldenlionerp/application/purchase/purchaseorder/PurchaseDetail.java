@@ -954,5 +954,7 @@ public class PurchaseDetail extends DatabaseEntity<PurchaseDetailPK> implements 
 		
 		this.cancelledQuantity = this.openQuantity;
 		this.openQuantity = BigDecimal.ZERO;
+		this.nextStatus = "999";
+		this.lastStatus = "499";
 	}
 }
