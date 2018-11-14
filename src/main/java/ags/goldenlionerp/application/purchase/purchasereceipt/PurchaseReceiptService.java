@@ -125,7 +125,7 @@ public class PurchaseReceiptService implements ModuleConnected<PurchaseReceipt>{
 		//});
 		
 		String batchType = "O"; //TODO
-		int batchNo = nnServ.findNextDocumentNumber(companyId, batchType, date);
+		int batchNo = nnServ.findNextNumber(companyId, batchType, date).getNextSequence();
 		receiptHead.setBatchNumber(batchNo);
 		receiptHead.setBatchType(batchType);
 							

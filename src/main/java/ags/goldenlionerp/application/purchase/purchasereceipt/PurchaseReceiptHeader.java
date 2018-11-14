@@ -41,7 +41,7 @@ class PurchaseReceiptHeader implements DatabaseAuditable{
 
 		
 		setBusinessUnitId(businessUnitId);
-		setDocumentDate(documentDate);
+		setDocumentDate(Optional.ofNullable(documentDate).orElse(LocalDate.now()));
 		setVendorId(vendorId);
 		setCustomerOrderNumber(customerOrderNumber);
 		setDescription(description);
