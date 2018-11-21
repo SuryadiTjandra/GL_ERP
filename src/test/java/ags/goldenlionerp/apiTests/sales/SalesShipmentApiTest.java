@@ -51,7 +51,7 @@ public class SalesShipmentApiTest extends ApiTestBase<SalesShipmentPK> {
 		det0.put("orderNumber", 181100001);
 		det0.put("orderType", "SO");
 		det0.put("orderSequence", 10);
-		det0.put("quantity", 10);
+		det0.put("quantity", 10.0);
 		details.add(det0);
 		
 		Map<String, Object> det1 = new HashMap<>();
@@ -66,8 +66,8 @@ public class SalesShipmentApiTest extends ApiTestBase<SalesShipmentPK> {
 		det2.put("orderNumber", 181100001);
 		det2.put("orderType", "SO");
 		det2.put("orderSequence", 30);
-		det2.put("quantity", 3);
-		det2.put("serialNumbers", Arrays.asList("serialNoA", "serialNoB", "serialNoC"));
+		det2.put("quantity", 3.0);
+		det2.put("serialOrLotNumbers", Arrays.asList("serialNoA", "serialNoB", "serialNoC"));
 		details.add(det2);
 		
 		map.put("details", details);
@@ -122,17 +122,16 @@ public class SalesShipmentApiTest extends ApiTestBase<SalesShipmentPK> {
 	@Override
 	public void assertCreateWithPostResult(ResultActions action) throws Exception {
 		int batchNo = nnServ.peekAtNextNumber(newId().getCompanyId(), "S", YearMonth.from((LocalDate) requestObject.getOrDefault("documentDate", LocalDate.now())))
-							.getNextSequence();
+							.getNextSequence() - 1; //minus one because it has already been incremented when creating
 		
 		action
 			.andExpect(jsonPath("$.companyId").value(newId().getCompanyId()))
 			.andExpect(jsonPath("$.documentNumber").value(newId().getDocumentNumber()))
 			.andExpect(jsonPath("$.documentType").value(newId().getDocumentType()))
-			.andExpect(jsonPath("$.sequence").value(newId().getSequence()))
-			.andExpect(jsonPath("$.documenDate").value(requestObject.get("documentDate").toString()))
+			.andExpect(jsonPath("$.documentDate").value(requestObject.getOrDefault("documentDate", LocalDate.now()).toString()))
 			.andExpect(jsonPath("$.businessUnitId").value(requestObject.get("businessUnitId")))
 			.andExpect(jsonPath("$.customerId").value(requestObject.get("customerId")))
-			.andExpect(jsonPath("$.receiverid").value(requestObject.getOrDefault("receiverId", requestObject.get("customerId"))))
+			.andExpect(jsonPath("$.receiverId").value(requestObject.getOrDefault("receiverId", requestObject.get("customerId"))))
 			.andExpect(jsonPath("$.description").value(requestObject.getOrDefault("description", "")))
 			.andExpect(jsonPath("$.batchType").value("S"))
 			.andExpect(jsonPath("$.batchNumber").value(batchNo));
@@ -141,7 +140,7 @@ public class SalesShipmentApiTest extends ApiTestBase<SalesShipmentPK> {
 		action
 			.andExpect(jsonPath("$.details[0].sequence").value("10"))
 			.andExpect(jsonPath("$.details[0].itemCode").value(soDetails.get(0).get("itemCode")))
-			.andExpect(jsonPath("$.details[0].itemDescription").value(soDetails.get(0).get("itemDescription")))
+			.andExpect(jsonPath("$.details[0].itemDescription").value(soDetails.get(0).get("description")))
 			.andExpect(jsonPath("$.details[0].locationId").value(requestDetails.get(0).getOrDefault("locationId", soDetails.get(0).get("locationId"))))
 			.andExpect(jsonPath("$.details[0].serialLotNo").value(requestDetails.get(0).getOrDefault("serialLotNo", soDetails.get(0).get("serialLotNo"))))
 			.andExpect(jsonPath("$.details[0].quantity").value(requestDetails.get(0).get("quantity")))
@@ -183,8 +182,8 @@ public class SalesShipmentApiTest extends ApiTestBase<SalesShipmentPK> {
 			//.andExpect(jsonPath("$.details[0].originalDocumentNumber").value(poDetails.get(0).get("serialLotNo")))
 			//.andExpect(jsonPath("$.details[0].originalDocumentType").value(poDetails.get(0).get("serialLotNo")))
 			//.andExpect(jsonPath("$.details[0].originalDocumentSequence").value(poDetails.get(0).get("exchangeRate")))
-			.andExpect(jsonPath("$.details[0].customerOrderNumber").value(requestObject.get("customerOrderNumber")))
-			.andExpect(jsonPath("$.details[0].customerOrderDate").value(requestObject.get("customerOrderDate")))
+			//.andExpect(jsonPath("$.details[0].customerOrderNumber").value(requestObject.get("customerOrderNumber")))
+			//.andExpect(jsonPath("$.details[0].customerOrderDate").value(requestObject.get("customerOrderDate")))
 			//.andExpect(jsonPath("$.details[0].vendorInvoiceNumber").value(poDetails.get(0).get("serialLotNo")))
 			//.andExpect(jsonPath("$.details[0].vendorInvoiceDate").value(poDetails.get(0).get("serialLotNo")))
 			.andExpect(jsonPath("$.details[0].taxInvoiceNumber").isEmpty())
@@ -194,13 +193,13 @@ public class SalesShipmentApiTest extends ApiTestBase<SalesShipmentPK> {
 		action
 			.andExpect(jsonPath("$.details[1].sequence").value("20"))
 			.andExpect(jsonPath("$.details[1].itemCode").value(soDetails.get(1).get("itemCode")))
-			.andExpect(jsonPath("$.details[1].itemDescription").value(soDetails.get(1).get("itemDescription")))
+			.andExpect(jsonPath("$.details[1].itemDescription").value(soDetails.get(1).get("description")))
 			.andExpect(jsonPath("$.details[1].locationId").value(requestDetails.get(1).getOrDefault("locationId", soDetails.get(1).get("locationId"))))
 			.andExpect(jsonPath("$.details[1].serialLotNo").value(requestDetails.get(1).getOrDefault("serialLotNo", soDetails.get(1).get("serialLotNo"))))
 			.andExpect(jsonPath("$.details[1].quantity").value(requestDetails.get(1).get("quantity")))
 			.andExpect(jsonPath("$.details[1].unitOfMeasure").value(requestDetails.get(1).getOrDefault("unitOfMeasure", soDetails.get(1).get("unitOfMeasure"))))
-			.andExpect(jsonPath("$.details[1].unitConversionFactor").value(Matchers.closeTo(3.281, 0.01)))
-			.andExpect(jsonPath("$.details[1].primaryTransactionQuantity").value(Matchers.closeTo(1.6405, 0.01)))
+			.andExpect(jsonPath("$.details[1].unitConversionFactor").value(Matchers.closeTo(3.2808, 0.01)))
+			.andExpect(jsonPath("$.details[1].primaryTransactionQuantity").value(Matchers.closeTo(1.6404, 0.01)))
 			.andExpect(jsonPath("$.details[1].primaryUnitOfMeasure").value(soDetails.get(1).get("primaryUnitOfMeasure")))
 			//.andExpect(jsonPath("$.details[1].secondaryTransactionQuantity").value(requestDetails.get(1).get("quantity")))
 			//.andExpect(jsonPath("$.details[1].secondaryUnitOfMeasure").value(soDetails.get(1).get("primaryUnitOfMeasure")))
@@ -212,9 +211,9 @@ public class SalesShipmentApiTest extends ApiTestBase<SalesShipmentPK> {
 			.andExpect(jsonPath("$.details[1].exchangeRate").value(soDetails.get(1).get("exchangeRate")))
 			.andExpect(jsonPath("$.details[1].lineType").value(soDetails.get(1).get("lineType")))
 			.andExpect(jsonPath("$.details[1].unitPrice").value(soDetails.get(1).get("unitPrice")))
-			.andExpect(jsonPath("$.details[1].extendedPrice").value(Matchers.closeTo(1.6405 / (double)soDetails.get(0).get("primaryTransactionQuantity") * (double)soDetails.get(1).get("extendedPrice"), 0.01)))
+			.andExpect(jsonPath("$.details[1].extendedPrice").value(Matchers.closeTo(1.6404 / (double)soDetails.get(1).get("primaryOrderQuantity") * (double)soDetails.get(1).get("extendedPrice"), 0.01)))
 			.andExpect(jsonPath("$.details[1].unitCost").value(soDetails.get(1).get("unitCost")))
-			.andExpect(jsonPath("$.details[1].extendedCost").value(Matchers.closeTo(1.6405 / (double)soDetails.get(0).get("primaryTransactionQuantity") * (double)soDetails.get(1).get("extendedCost"), 0.01)))
+			.andExpect(jsonPath("$.details[1].extendedCost").value(Matchers.closeTo(1.6404 / (double)soDetails.get(1).get("primaryOrderQuantity") * (double)soDetails.get(1).get("extendedCost"), 0.01)))
 			//.andExpect(jsonPath("$.details[1].taxBase").value(soDetails.get(1).get("taxBase")))
 			//.andExpect(jsonPath("$.details[1].taxAmount").value(soDetails.get(1).get("taxAmount")))
 			.andExpect(jsonPath("$.details[1].profitCenterId").value(soDetails.get(1).get("profitCenterId")))
@@ -236,8 +235,8 @@ public class SalesShipmentApiTest extends ApiTestBase<SalesShipmentPK> {
 			//.andExpect(jsonPath("$.details[1].originalDocumentNumber").value(poDetails.get(1).get("serialLotNo")))
 			//.andExpect(jsonPath("$.details[1].originalDocumentType").value(poDetails.get(1).get("serialLotNo")))
 			//.andExpect(jsonPath("$.details[1].originalDocumentSequence").value(poDetails.get(1).get("exchangeRate")))
-			.andExpect(jsonPath("$.details[1].customerOrderNumber").value(requestObject.get("customerOrderNumber")))
-			.andExpect(jsonPath("$.details[1].customerOrderDate").value(requestObject.get("customerOrderDate")))
+			//.andExpect(jsonPath("$.details[1].customerOrderNumber").value(requestObject.get("customerOrderNumber")))
+			//.andExpect(jsonPath("$.details[1].customerOrderDate").value(requestObject.get("customerOrderDate")))
 			//.andExpect(jsonPath("$.details[1].vendorInvoiceNumber").value(poDetails.get(1).get("serialLotNo")))
 			//.andExpect(jsonPath("$.details[1].vendorInvoiceDate").value(poDetails.get(1).get("serialLotNo")))
 			.andExpect(jsonPath("$.details[1].taxInvoiceNumber").isEmpty())
@@ -246,7 +245,7 @@ public class SalesShipmentApiTest extends ApiTestBase<SalesShipmentPK> {
 		action
 			.andExpect(jsonPath("$.details[2].sequence").value("30"))
 			.andExpect(jsonPath("$.details[2].itemCode").value(soDetails.get(2).get("itemCode")))
-			.andExpect(jsonPath("$.details[2].itemDescription").value(soDetails.get(2).get("itemDescription")))
+			.andExpect(jsonPath("$.details[2].itemDescription").value(soDetails.get(2).get("description")))
 			.andExpect(jsonPath("$.details[2].locationId").value(requestDetails.get(2).getOrDefault("locationId", soDetails.get(2).get("locationId"))))
 			.andExpect(jsonPath("$.details[2].serialLotNo").value(requestDetails.get(2).getOrDefault("serialLotNo", soDetails.get(2).get("serialLotNo"))))
 			.andExpect(jsonPath("$.details[2].quantity").value(requestDetails.get(2).get("quantity")))
@@ -264,9 +263,9 @@ public class SalesShipmentApiTest extends ApiTestBase<SalesShipmentPK> {
 			.andExpect(jsonPath("$.details[2].exchangeRate").value(soDetails.get(2).get("exchangeRate")))
 			.andExpect(jsonPath("$.details[2].lineType").value(soDetails.get(2).get("lineType")))
 			.andExpect(jsonPath("$.details[2].unitPrice").value(soDetails.get(2).get("unitPrice")))
-			.andExpect(jsonPath("$.details[2].extendedPrice").value(Matchers.closeTo(3 / (double)soDetails.get(0).get("primaryTransactionQuantity") * (double)soDetails.get(2).get("extendedPrice"), 0.01)))
+			.andExpect(jsonPath("$.details[2].extendedPrice").value(Matchers.closeTo(3 / (double)soDetails.get(2).get("primaryOrderQuantity") * (double)soDetails.get(2).get("extendedPrice"), 0.01)))
 			.andExpect(jsonPath("$.details[2].unitCost").value(soDetails.get(2).get("unitCost")))
-			.andExpect(jsonPath("$.details[2].extendedCost").value(Matchers.closeTo(3 / (double)soDetails.get(0).get("primaryTransactionQuantity") * (double)soDetails.get(2).get("extendedCost"), 0.01)))
+			.andExpect(jsonPath("$.details[2].extendedCost").value(Matchers.closeTo(3 / (double)soDetails.get(2).get("primaryOrderQuantity") * (double)soDetails.get(2).get("extendedCost"), 0.01)))
 			//.andExpect(jsonPath("$.details[2].taxBase").value(soDetails.get(2).get("taxBase")))
 			//.andExpect(jsonPath("$.details[2].taxAmount").value(soDetails.get(2).get("taxAmount")))
 			.andExpect(jsonPath("$.details[2].profitCenterId").value(soDetails.get(2).get("profitCenterId")))
@@ -288,8 +287,8 @@ public class SalesShipmentApiTest extends ApiTestBase<SalesShipmentPK> {
 			//.andExpect(jsonPath("$.details[2].originalDocumentNumber").value(poDetails.get(2).get("serialLotNo")))
 			//.andExpect(jsonPath("$.details[2].originalDocumentType").value(poDetails.get(2).get("serialLotNo")))
 			//.andExpect(jsonPath("$.details[2].originalDocumentSequence").value(poDetails.get(2).get("exchangeRate")))
-			.andExpect(jsonPath("$.details[2].customerOrderNumber").value(requestObject.get("customerOrderNumber")))
-			.andExpect(jsonPath("$.details[2].customerOrderDate").value(requestObject.get("customerOrderDate")))
+			//.andExpect(jsonPath("$.details[2].customerOrderNumber").value(requestObject.get("customerOrderNumber")))
+			//.andExpect(jsonPath("$.details[2].customerOrderDate").value(requestObject.get("customerOrderDate")))
 			//.andExpect(jsonPath("$.details[2].vendorInvoiceNumber").value(poDetails.get(2).get("serialLotNo")))
 			//.andExpect(jsonPath("$.details[2].vendorInvoiceDate").value(poDetails.get(2).get("serialLotNo")))
 			.andExpect(jsonPath("$.details[2].taxInvoiceNumber").isEmpty())
@@ -299,17 +298,17 @@ public class SalesShipmentApiTest extends ApiTestBase<SalesShipmentPK> {
 		performer.performGet(((Map<String, Map<String, Object>>) soDetails.get(0).get("_links")).get("order").get("href").toString())
 				.andExpect(jsonPath("$.details[0].quantity").value(soDetails.get(0).get("quantity")))
 				.andExpect(jsonPath("$.details[0].shippedQuantity").value(requestDetails.get(0).get("quantity")))
-				.andExpect(jsonPath("$.details[0].openQuantity").value((double)soDetails.get(0).get("quantity") - (double)requestDetails.get(0).get("shippedQuantity")))
+				.andExpect(jsonPath("$.details[0].openQuantity").value((double)soDetails.get(0).get("quantity") - (double)requestDetails.get(0).get("quantity")))
 				.andExpect(jsonPath("$.details[1].quantity").value(soDetails.get(1).get("quantity")))
 				.andExpect(jsonPath("$.details[1].shippedQuantity").value(Matchers.closeTo(39.37 * (double)requestDetails.get(1).get("quantity"), 0.001)))
-				.andExpect(jsonPath("$.details[1].openQuantity").value(Matchers.closeTo((double)soDetails.get(1).get("quantity") - 39.37 * (double)requestDetails.get(1).get("shippedQuantity"), 0.001)));
+				.andExpect(jsonPath("$.details[1].openQuantity").value(Matchers.closeTo((double)soDetails.get(1).get("quantity") - 39.37 * (double)requestDetails.get(1).get("quantity"), 0.001)));
 	
 		//assert the shipped serial numbers have their statuses changed
 		String lotUrl = "/api/lots?pk.businessUnitId=" + requestObject.get("businessUnitId") + "&pk.itemCode=" + soDetails.get(2).get("itemCode");
-		String[] serialNumbers = ((List<String>) requestDetails.get(2).get("serialNumbers")).toArray(new String[3]);
+		String[] serialNumbers = ((List<String>) requestDetails.get(2).get("serialOrLotNumbers")).toArray(new String[3]);
 		performer.performGet(lotUrl)
 				//.andDo(print())
-				.andExpect(jsonPath("$._embedded.lots[?(@.serialNumber in " + serialNumbers +")].lotStatusCode").value("[S, S, S]"))
+				.andExpect(jsonPath("$._embedded.lots[?(@.serialNumber in ['serialNoA', 'serialNoB', 'serialNoC'])].lotStatusCode").value(Matchers.contains("S", "S", "S")))
 				//.andExpect(jsonPath("$._embedded.lots.length()").value(3))
 				//.andExpect(jsonPath("$._embedded.lots[0].itemCode").value(soDetails.get(2).get("itemCode")))
 		;
