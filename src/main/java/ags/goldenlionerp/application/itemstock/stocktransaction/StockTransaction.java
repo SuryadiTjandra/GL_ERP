@@ -1,4 +1,4 @@
-package ags.goldenlionerp.application.itemstock.itemtransaction;
+package ags.goldenlionerp.application.itemstock.stocktransaction;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -31,10 +31,10 @@ import ags.goldenlionerp.entities.Voidable;
 	@AttributeOverride(name="lastUpdateTime", column=@Column(name="ITTMLU")),
 	@AttributeOverride(name="computerId", column=@Column(name="ITCID")),
 })
-public class ItemTransaction extends DocumentDetailEntity<ItemTransactionPK> implements Voidable{
+public class StockTransaction extends DocumentDetailEntity<StockTransactionPK> implements Voidable{
 
 	@EmbeddedId @JsonUnwrapped
-	private ItemTransactionPK pk;
+	private StockTransactionPK pk;
 	
 	@Column(name="ITBUID")
 	private String businessUnitId;
@@ -154,9 +154,9 @@ public class ItemTransaction extends DocumentDetailEntity<ItemTransactionPK> imp
 	@Column(name="ITRECID")
 	private String recordId;
 
-	private ItemTransaction() {}
+	private StockTransaction() {}
 	
-	private ItemTransaction(Builder builder) {
+	private StockTransaction(Builder builder) {
 		this.pk = builder.pk;
 		this.businessUnitId = builder.businessUnitId;
 		this.batchNumber = builder.batchNumber;
@@ -197,11 +197,11 @@ public class ItemTransaction extends DocumentDetailEntity<ItemTransactionPK> imp
 	}
 	
 	@Override
-	public ItemTransactionPK getId() {
+	public StockTransactionPK getId() {
 		return getPk();
 	}
 
-	public ItemTransactionPK getPk() {
+	public StockTransactionPK getPk() {
 		return pk;
 	}
 
@@ -361,7 +361,7 @@ public class ItemTransaction extends DocumentDetailEntity<ItemTransactionPK> imp
 		return recordId;
 	}
 
-	void setPk(ItemTransactionPK pk) {
+	void setPk(StockTransactionPK pk) {
 		this.pk = pk;
 	}
 
@@ -516,7 +516,7 @@ public class ItemTransaction extends DocumentDetailEntity<ItemTransactionPK> imp
 	}
 
 	/**
-	 * Creates builder to build {@link ItemTransaction}.
+	 * Creates builder to build {@link StockTransaction}.
 	 * @return created builder
 	 */
 	public static Builder builder() {
@@ -524,10 +524,10 @@ public class ItemTransaction extends DocumentDetailEntity<ItemTransactionPK> imp
 	}
 
 	/**
-	 * Builder to build {@link ItemTransaction}.
+	 * Builder to build {@link StockTransaction}.
 	 */
 	public static final class Builder {
-		private ItemTransactionPK pk;
+		private StockTransactionPK pk;
 		private String businessUnitId;
 		private int batchNumber;
 		private String batchType;
@@ -567,7 +567,7 @@ public class ItemTransaction extends DocumentDetailEntity<ItemTransactionPK> imp
 		private Builder() {
 		}
 
-		public Builder(ItemTransactionPK pk) {
+		public Builder(StockTransactionPK pk) {
 			this.pk = pk;
 		}
 
@@ -746,8 +746,8 @@ public class ItemTransaction extends DocumentDetailEntity<ItemTransactionPK> imp
 			return this;
 		}
 
-		public ItemTransaction build() {
-			return new ItemTransaction(this);
+		public StockTransaction build() {
+			return new StockTransaction(this);
 		}
 	}
 

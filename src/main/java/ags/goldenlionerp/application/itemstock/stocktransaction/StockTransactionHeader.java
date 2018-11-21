@@ -1,4 +1,4 @@
-package ags.goldenlionerp.application.itemstock.itemtransaction;
+package ags.goldenlionerp.application.itemstock.stocktransaction;
 
 import java.time.LocalDate;
 import java.util.Comparator;
@@ -7,12 +7,12 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class ItemTransactionHeader {
+public class StockTransactionHeader {
 
-	private List<ItemTransaction> details;
+	private List<StockTransaction> details;
 	
 	@JsonCreator
-	public ItemTransactionHeader(@JsonProperty("details") List<ItemTransaction> details,
+	public StockTransactionHeader(@JsonProperty("details") List<StockTransaction> details,
 			@JsonProperty("companyId") String companyId,
 			@JsonProperty("documentNumber") int documentNumber,
 			@JsonProperty("documentType") String documentType,
@@ -26,7 +26,7 @@ public class ItemTransactionHeader {
 		this.details = details;
 		
 		for (int i = 0; i < details.size(); i++) {
-			ItemTransactionPK pk = new ItemTransactionPK(companyId, documentNumber, documentType, (i + 1) * 10);
+			StockTransactionPK pk = new StockTransactionPK(companyId, documentNumber, documentType, (i + 1) * 10);
 			details.get(i).setPk(pk);
 		}
 		
@@ -36,14 +36,14 @@ public class ItemTransactionHeader {
 		setDescription(description);
 	}
 	
-	public ItemTransactionHeader(List<ItemTransaction> details) {
+	public StockTransactionHeader(List<StockTransaction> details) {
 		if (details == null || details.isEmpty())
 			throw new IllegalArgumentException("Cannot pass empty list as arguments!");
 		this.details = details;
 		this.details.sort(Comparator.comparing(det -> det.getPk().getSequence()));
 	}
 	
-	public List<ItemTransaction> getDetails(){
+	public List<StockTransaction> getDetails(){
 		return details;
 	}
 	

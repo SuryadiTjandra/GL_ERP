@@ -1,4 +1,4 @@
-package ags.goldenlionerp.application.itemstock.itemtransaction;
+package ags.goldenlionerp.application.itemstock.stocktransaction;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
@@ -6,7 +6,7 @@ import javax.persistence.Embeddable;
 import ags.goldenlionerp.documents.DocumentDetailId;
 
 @Embeddable
-public class ItemTransactionPK implements DocumentDetailId{
+public class StockTransactionPK implements DocumentDetailId{
 
 	private static final long serialVersionUID = -6837408006366743522L;
 
@@ -23,10 +23,10 @@ public class ItemTransactionPK implements DocumentDetailId{
 	private int sequence;
 
 	@SuppressWarnings("unused")
-	private ItemTransactionPK() {
+	private StockTransactionPK() {
 	}
 	
-	public ItemTransactionPK(String companyId, int documentNumber, String documentType, int sequence) {
+	public StockTransactionPK(String companyId, int documentNumber, String documentType, int sequence) {
 		super();
 		this.companyId = companyId;
 		this.documentNumber = documentNumber;
@@ -36,7 +36,7 @@ public class ItemTransactionPK implements DocumentDetailId{
 	
 	@Override
 	public String toString() {
-		return new ItemTransactionIdConverter().toRequestId(this, ItemTransaction.class);
+		return new StockTransactionIdConverter().toRequestId(this, StockTransaction.class);
 	}
 
 	public String getCompanyId() {

@@ -1,4 +1,4 @@
-package ags.goldenlionerp.application.itemstock.itemtransaction;
+package ags.goldenlionerp.application.itemstock.stocktransaction;
 
 import java.util.List;
 
@@ -15,21 +15,21 @@ import com.google.common.collect.Lists;
 
 @RepositoryRestController
 @RequestMapping("/itemTransactions/")
-public class ItemTransactionController {
+public class StockTransactionController {
 
-	@Autowired private ItemTransactionRepository repo;
-	@Autowired private ItemTransactionIdConverter conv;
+	@Autowired private StockTransactionRepository repo;
+	@Autowired private StockTransactionIdConverter conv;
 	
 	@GetMapping("/{id}") @ResponseBody
-	public Resource<ItemTransactionHeader> getItemTransaction(@PathVariable("id") String id){
-		ItemTransactionPK pk = (ItemTransactionPK) conv.fromRequestId(id, ItemTransaction.class);
-		List<ItemTransaction> transList = Lists.newArrayList(
-												repo.findAll(ItemTransactionPredicates.getInstance().sameHeaderAs(pk))
+	public Resource<StockTransactionHeader> getItemTransaction(@PathVariable("id") String id){
+		StockTransactionPK pk = (StockTransactionPK) conv.fromRequestId(id, StockTransaction.class);
+		List<StockTransaction> transList = Lists.newArrayList(
+												repo.findAll(StockTransactionPredicates.getInstance().sameHeaderAs(pk))
 											);
 		if (transList.isEmpty())
 			throw new ResourceNotFoundException();
 		
-		ItemTransactionHeader header = new ItemTransactionHeader(transList);
+		StockTransactionHeader header = new StockTransactionHeader(transList);
 		return new Resource<>(header);
 	}
 }

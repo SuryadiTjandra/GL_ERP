@@ -1,4 +1,4 @@
-package ags.goldenlionerp.apiTests.item;
+package ags.goldenlionerp.apiTests.itemstock;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 
@@ -11,9 +11,9 @@ import org.hamcrest.Matchers;
 import org.springframework.test.web.servlet.ResultActions;
 
 import ags.goldenlionerp.apiTests.ApiTestBase;
-import ags.goldenlionerp.application.itemstock.itemtransaction.ItemTransactionPK;
+import ags.goldenlionerp.application.itemstock.stocktransaction.StockTransactionPK;
 
-public class ItemTransactionApiTest extends ApiTestBase<ItemTransactionPK>{
+public class StockTransactionApiTest extends ApiTestBase<StockTransactionPK>{
 
 	@Override
 	protected Map<String, Object> requestObject() throws Exception {
@@ -27,13 +27,13 @@ public class ItemTransactionApiTest extends ApiTestBase<ItemTransactionPK>{
 	}
 
 	@Override
-	protected ItemTransactionPK existingId() {
-		return new ItemTransactionPK("11000", 180400001, "I0", 40);
+	protected StockTransactionPK existingId() {
+		return new StockTransactionPK("11000", 180400001, "I0", 40);
 	}
 
 	@Override
-	protected ItemTransactionPK newId() {
-		return new ItemTransactionPK("11000", 9999999, "IA", 10);
+	protected StockTransactionPK newId() {
+		return new StockTransactionPK("11000", 9999999, "IA", 10);
 	}
 
 	@Override

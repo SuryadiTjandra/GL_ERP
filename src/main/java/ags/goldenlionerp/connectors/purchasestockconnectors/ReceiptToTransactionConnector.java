@@ -3,20 +3,20 @@ package ags.goldenlionerp.connectors.purchasestockconnectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import ags.goldenlionerp.application.itemstock.itemtransaction.ItemTransaction;
-import ags.goldenlionerp.application.itemstock.itemtransaction.ItemTransactionPK;
-import ags.goldenlionerp.application.itemstock.itemtransaction.ItemTransactionService;
+import ags.goldenlionerp.application.itemstock.stocktransaction.StockTransaction;
+import ags.goldenlionerp.application.itemstock.stocktransaction.StockTransactionPK;
+import ags.goldenlionerp.application.itemstock.stocktransaction.StockTransactionService;
 import ags.goldenlionerp.application.purchase.purchasereceipt.PurchaseReceipt;
 import ags.goldenlionerp.application.purchase.purchasereceipt.PurchaseReceiptPK;
 import ags.goldenlionerp.application.purchase.purchasereceipt.PurchaseReceiptService;
 import ags.goldenlionerp.connectors.ModuleConnector;
 
 @Component
-public class ReceiptToTransactionConnector implements ModuleConnector<PurchaseReceipt, ItemTransaction> {
+public class ReceiptToTransactionConnector implements ModuleConnector<PurchaseReceipt, StockTransaction> {
 
-	private ItemTransactionService itServ;
+	private StockTransactionService itServ;
 	
-	public ReceiptToTransactionConnector(@Autowired PurchaseReceiptService prServ, @Autowired ItemTransactionService itServ) {
+	public ReceiptToTransactionConnector(@Autowired PurchaseReceiptService prServ, @Autowired StockTransactionService itServ) {
 		prServ.registerConnector(this);
 		this.itServ = itServ;
 	}
@@ -27,8 +27,8 @@ public class ReceiptToTransactionConnector implements ModuleConnector<PurchaseRe
 			return;
 		
 		PurchaseReceiptPK recPk = receipt.getPk();
-		ItemTransactionPK pk = new ItemTransactionPK(recPk.getCompanyId(), recPk.getDocumentNumber(), recPk.getDocumentType(), recPk.getSequence());
-		ItemTransaction it = new ItemTransaction.Builder(pk)
+		StockTransactionPK pk = new StockTransactionPK(recPk.getCompanyId(), recPk.getDocumentNumber(), recPk.getDocumentType(), recPk.getSequence());
+		StockTransaction it = new StockTransaction.Builder(pk)
 								.businessUnitId(receipt.getBusinessUnitId())
 								.batchNumber(receipt.getBatchNumber())
 								.batchType(receipt.getBatchType())
