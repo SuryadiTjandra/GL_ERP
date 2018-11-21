@@ -60,6 +60,8 @@ public class StockItemTransactionObserver implements ItemTransactionObserver {
 									.unitOfMeasure(transaction.getUnitOfMeasure())
 									.primaryTransactionQuantity(transaction.getPrimaryTransactionQuantity())
 									.primaryUnitOfMeasure(transaction.getPrimaryUnitOfMeasure())
+									.secondaryTransactionQuantity(transaction.getSecondaryTransactionQuantity())
+									.secondaryUnitOfMeasure(transaction.getSecondaryUnitOfMeasure())
 									.unitCost(transaction.getUnitCost())
 									.extendedCost(transaction.getExtendedCost())
 									.fromOrTo(transaction.isAdditive() ? "F" : "T")

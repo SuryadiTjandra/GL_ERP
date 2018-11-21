@@ -32,6 +32,10 @@ public interface ItemTransaction {
 	
 	public String getPrimaryUnitOfMeasure();
 	
+	public BigDecimal getSecondaryTransactionQuantity();
+	
+	public String getSecondaryUnitOfMeasure();
+	
 	public BigDecimal getUnitCost();
 	
 	default BigDecimal getExtendedCost() {

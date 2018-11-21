@@ -1,6 +1,8 @@
 package ags.goldenlionerp.application.sales.salesshipment;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
@@ -9,7 +11,9 @@ import org.springframework.util.ObjectUtils;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class SalesShipmentHeader {
+import ags.goldenlionerp.entities.DatabaseAuditable;
+
+public class SalesShipmentHeader implements DatabaseAuditable {
 
 	private List<SalesShipment> details;
 	
@@ -128,6 +132,37 @@ public class SalesShipmentHeader {
 
 	void setDetails(List<SalesShipment> details) {
 		this.details = details;
+	}
+
+	@Override
+	public String getInputUserId() {
+		return details.get(0).getInputUserId();
+	}
+
+	@Override
+	public LocalDateTime getInputDateTime() {
+		return details.get(0).getInputDateTime();
+	}
+
+	@Override
+	public String getLastUpdateUserId() {
+		return getLastUpdatedDetail().getLastUpdateUserId();
+	}
+
+	@Override
+	public LocalDateTime getLastUpdateDateTime() {
+		return getLastUpdatedDetail().getLastUpdateDateTime();
+	}
+
+	@Override
+	public String getComputerId() {
+		return getLastUpdatedDetail().getComputerId();
+	}
+	
+	private SalesShipment getLastUpdatedDetail() {
+		return details.stream()
+				.sorted(Comparator.comparing(SalesShipment::getLastUpdateDateTime).reversed())
+				.findFirst().get();
 	}
 	
 	

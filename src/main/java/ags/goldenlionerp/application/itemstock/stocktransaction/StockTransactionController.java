@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.google.common.collect.Lists;
 
 @RepositoryRestController
-@RequestMapping("/itemTransactions/")
+@RequestMapping("/stockTransactions/")
 public class StockTransactionController {
 
 	@Autowired private StockTransactionRepository repo;
