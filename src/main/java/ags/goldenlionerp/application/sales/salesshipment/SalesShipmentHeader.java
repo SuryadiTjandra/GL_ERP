@@ -4,6 +4,8 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.util.ObjectUtils;
+
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -34,9 +36,9 @@ public class SalesShipmentHeader {
 		this.details = details;
 		setIdInfo(companyId, documentNumber, documentType);
 		setBusinessUnitId(businessUnitId);
-		setDocumentDate(documentDate);
+		setDocumentDate(Optional.ofNullable(documentDate).orElse(LocalDate.now()));
 		setCustomerId(customerId);
-		setReceiverId(receiverId);
+		setReceiverId(ObjectUtils.isEmpty(receiverId) ? customerId : receiverId);
 		setDescription(description);
 	}
 	

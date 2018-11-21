@@ -81,6 +81,28 @@ public class LotMaster extends DatabaseEntity<LotMasterPK> {
 	@ManyToOne(fetch=FetchType.LAZY, optional=false)
 	private ItemMaster item;
 
+	private LotMaster(Builder builder) {
+		this.pk = builder.pk;
+		this.lotDescription = builder.lotDescription;
+		this.lotStatusCode = builder.lotStatusCode;
+		this.serialNumber = builder.serialNumber;
+		this.memoLot1 = builder.memoLot1;
+		this.memoLot2 = builder.memoLot2;
+		this.memoLot3 = builder.memoLot3;
+		this.expiredDate = builder.expiredDate;
+		this.bestBeforeDate = builder.bestBeforeDate;
+		this.baseOnDate = builder.baseOnDate;
+		this.lotEffectiveDate = builder.lotEffectiveDate;
+		this.onHandDate = builder.onHandDate;
+		this.closedDate = builder.closedDate;
+		this.businessUnit = builder.businessUnit;
+		this.item = builder.item;
+	}
+
+	LotMaster() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public LotMasterPK getPk() {
 		return pk;
 	}
@@ -197,6 +219,118 @@ public class LotMaster extends DatabaseEntity<LotMasterPK> {
 	public LotMasterPK getId() {
 		return getPk();
 	}
+
+	/**
+	 * Creates builder to build {@link LotMaster}.
+	 * @return created builder
+	 */
+	public static Builder builder() {
+		return new Builder();
+	}
+
+	/**
+	 * Builder to build {@link LotMaster}.
+	 */
+	public static final class Builder {
+		private LotMasterPK pk;
+		private String lotDescription;
+		private String lotStatusCode;
+		private String serialNumber;
+		private String memoLot1;
+		private String memoLot2;
+		private String memoLot3;
+		private Timestamp expiredDate;
+		private Timestamp bestBeforeDate;
+		private Timestamp baseOnDate;
+		private Timestamp lotEffectiveDate;
+		private Timestamp onHandDate;
+		private Timestamp closedDate;
+		private BusinessUnit businessUnit;
+		private ItemMaster item;
+
+		private Builder() {
+		}
+
+		public Builder pk(LotMasterPK pk) {
+			this.pk = pk;
+			return this;
+		}
+
+		public Builder lotDescription(String lotDescription) {
+			this.lotDescription = lotDescription;
+			return this;
+		}
+
+		public Builder lotStatusCode(String lotStatusCode) {
+			this.lotStatusCode = lotStatusCode;
+			return this;
+		}
+
+		public Builder serialNumber(String serialNumber) {
+			this.serialNumber = serialNumber;
+			return this;
+		}
+
+		public Builder memoLot1(String memoLot1) {
+			this.memoLot1 = memoLot1;
+			return this;
+		}
+
+		public Builder memoLot2(String memoLot2) {
+			this.memoLot2 = memoLot2;
+			return this;
+		}
+
+		public Builder memoLot3(String memoLot3) {
+			this.memoLot3 = memoLot3;
+			return this;
+		}
+
+		public Builder expiredDate(Timestamp expiredDate) {
+			this.expiredDate = expiredDate;
+			return this;
+		}
+
+		public Builder bestBeforeDate(Timestamp bestBeforeDate) {
+			this.bestBeforeDate = bestBeforeDate;
+			return this;
+		}
+
+		public Builder baseOnDate(Timestamp baseOnDate) {
+			this.baseOnDate = baseOnDate;
+			return this;
+		}
+
+		public Builder lotEffectiveDate(Timestamp lotEffectiveDate) {
+			this.lotEffectiveDate = lotEffectiveDate;
+			return this;
+		}
+
+		public Builder onHandDate(Timestamp onHandDate) {
+			this.onHandDate = onHandDate;
+			return this;
+		}
+
+		public Builder closedDate(Timestamp closedDate) {
+			this.closedDate = closedDate;
+			return this;
+		}
+
+		public Builder businessUnit(BusinessUnit businessUnit) {
+			this.businessUnit = businessUnit;
+			return this;
+		}
+
+		public Builder item(ItemMaster item) {
+			this.item = item;
+			return this;
+		}
+
+		public LotMaster build() {
+			return new LotMaster(this);
+		}
+	}
+	
 	
 	
 }

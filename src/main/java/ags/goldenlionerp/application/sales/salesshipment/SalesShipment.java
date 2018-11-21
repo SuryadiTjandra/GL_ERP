@@ -2,6 +2,11 @@ package ags.goldenlionerp.application.sales.salesshipment;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;
@@ -12,17 +17,24 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinColumns;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonSetter;
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
 
 import ags.goldenlionerp.application.item.itemmaster.ItemMaster;
+import ags.goldenlionerp.application.item.lotmaster.LotMaster;
+import ags.goldenlionerp.application.item.lotmaster.LotMasterPK;
 import ags.goldenlionerp.application.purchase.IntegratedReferences;
 import ags.goldenlionerp.application.purchase.References;
 import ags.goldenlionerp.application.sales.SalesOptions;
 import ags.goldenlionerp.application.sales.salesorder.SalesDetail;
 import ags.goldenlionerp.documents.DocumentDetailEntity;
+import ags.goldenlionerp.documents.ItemTransaction;
 
 @Entity
 @Table(name="T4212")
@@ -35,7 +47,7 @@ import ags.goldenlionerp.documents.DocumentDetailEntity;
 	@AttributeOverride(name="lastUpdateTime", column=@Column(name="SLTMLU")),
 	@AttributeOverride(name="computerId", column=@Column(name="SLCID")),
 })
-public class SalesShipment extends DocumentDetailEntity<SalesShipmentPK> {
+public class SalesShipment extends DocumentDetailEntity<SalesShipmentPK> implements ItemTransaction{
 
 	@EmbeddedId @JsonUnwrapped
 	private SalesShipmentPK pk;
@@ -198,6 +210,9 @@ public class SalesShipment extends DocumentDetailEntity<SalesShipmentPK> {
 	
 	@Column(name="SLDOCISQ")
 	private int invoiceSequence;
+	
+	@Column(name="SLDOCIDT")
+	private LocalDate invoiceDate;
 	
 	@Column(name="SLDOCONO")
 	private int orderNumber;
@@ -389,6 +404,21 @@ public class SalesShipment extends DocumentDetailEntity<SalesShipmentPK> {
 	@Column(name="SLRECID")
 	private String recordId;
 	
+	@ManyToMany
+	@JoinTable(name="Transaction_Serialnumbers", 
+		joinColumns = {
+				@JoinColumn(name="COID", referencedColumnName="SLCOID"),
+				@JoinColumn(name="DOCNO", referencedColumnName="SLDOCNO"),
+				@JoinColumn(name="DOCTY", referencedColumnName="SLDOCTY"),
+				@JoinColumn(name="DOCSQ", referencedColumnName="SLDOCSQ")
+		},
+		inverseJoinColumns = {
+				@JoinColumn(name="BUID", referencedColumnName="LTBUID"),
+				@JoinColumn(name="INUM", referencedColumnName="LTINUM"),
+				@JoinColumn(name="SNLOT", referencedColumnName="LTSNLOT")
+		})
+	private List<LotMaster> serialNumbers;
+	
 	@Override
 	public SalesShipmentPK getPk() {
 		return pk;
@@ -471,7 +501,8 @@ public class SalesShipment extends DocumentDetailEntity<SalesShipmentPK> {
 		return lineType;
 	}
 
-	public BigDecimal getQuantity() {
+	@JsonGetter("quantity")
+	public BigDecimal getTransactionQuantity() {
 		return quantity;
 	}
 
@@ -879,7 +910,8 @@ public class SalesShipment extends DocumentDetailEntity<SalesShipmentPK> {
 		this.lineType = lineType;
 	}
 
-	void setQuantity(BigDecimal quantity) {
+	@JsonSetter("quantity")
+	void setTransactionQuantity(BigDecimal quantity) {
 		this.quantity = quantity;
 	}
 
@@ -1209,6 +1241,36 @@ public class SalesShipment extends DocumentDetailEntity<SalesShipmentPK> {
 
 	void setRecordId(String recordId) {
 		this.recordId = recordId;
+	}
+
+	public LocalDate getInvoiceDate() {
+		return invoiceDate;
+	}
+
+	void setInvoiceDate(LocalDate invoiceDate) {
+		this.invoiceDate = invoiceDate;
+	}
+
+	@Override//TODO
+	public Collection<String> getSerialOrLotNumbers() {
+		if (serialNumbers == null) return Collections.emptyList();
+		return serialNumbers.stream().map(lm -> lm.getPk().getSerialLotNo()).collect(Collectors.toList());
+	}
+
+	//TODO
+	void setSerialOrLotNumbers(Collection<String> serialNumbers) {
+		this.serialNumbers = new ArrayList<>();
+		for (String sn : serialNumbers) {
+			LotMasterPK pk = new LotMasterPK(this.businessUnitId, this.itemCode, sn);
+			LotMaster lot = LotMaster.builder()
+								.pk(pk).build();
+			this.serialNumbers.add(lot);
+		}
+	}
+	
+	@Override
+	public boolean isAdditive() {
+		return false;
 	}
 	
 	

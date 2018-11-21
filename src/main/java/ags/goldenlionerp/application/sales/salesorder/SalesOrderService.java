@@ -347,5 +347,23 @@ public class SalesOrderService {
 		oldPo.setDetails(soRequest.getDetails());
 		return repo.save(oldPo);
 	}
+	
+	public void shipOrder(String companyId, int orderNumber, String orderType, int sequence, BigDecimal shippedQuantity, String unitOfMeasure) {
+		SalesOrder order = repo.findById(new SalesOrderPK(companyId, orderNumber, orderType))
+								.orElseThrow(() -> new ResourceNotFoundException());
+		SalesDetail detail = order.getDetails().stream()
+								.filter(det -> det.getPk().getSequence() == sequence)
+								.findFirst().orElseThrow(() -> new ResourceNotFoundException());
+		
+		BigDecimal conversion = uomServ.findConversionValue(detail.getItemCode(), unitOfMeasure, detail.getUnitOfMeasure());
+		shippedQuantity = conversion.multiply(shippedQuantity);
+		
+		detail.setShippedQuantity(detail.getShippedQuantity().add(shippedQuantity));
+		detail.setOpenQuantity(detail.getOpenQuantity().subtract(shippedQuantity));
+		if (detail.getOpenQuantity().doubleValue() < 0)
+			throw new IllegalStateException("Cannot ship more than the remaining quantity");
+		
+		repo.save(order);
+	}
 
 }
