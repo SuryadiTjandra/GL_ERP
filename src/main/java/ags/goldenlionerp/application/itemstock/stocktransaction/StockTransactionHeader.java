@@ -60,7 +60,7 @@ public class StockTransactionHeader {
 	}
 	
 	public LocalDate getDocumentDate() {
-		return details.get(0).getDocumentDate();
+		return details.get(0).getTransactionDate();
 	}
 	
 	public String getBusinessUnitId() {

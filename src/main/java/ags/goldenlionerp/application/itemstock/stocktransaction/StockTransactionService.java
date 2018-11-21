@@ -8,9 +8,9 @@ public class StockTransactionService {
 
 	@Autowired private StockTransactionRepository repo;
 	
-	public StockTransaction createItemTransaction(StockTransaction itRequest) {
+	public StockTransaction createStockTransaction(StockTransaction stRequest) {
 		//TODO others
-		return repo.save(itRequest);
+		return repo.save(stRequest);
 	}
 	
 }

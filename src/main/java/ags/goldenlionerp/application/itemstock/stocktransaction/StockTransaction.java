@@ -4,6 +4,11 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.Month;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;
@@ -11,12 +16,19 @@ import javax.persistence.Column;
 import javax.persistence.Convert;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
 
 import ags.goldenlionerp.application.ar.invoice.VoidedAttributeConverter;
+import ags.goldenlionerp.application.item.lotmaster.LotMaster;
+import ags.goldenlionerp.application.item.lotmaster.LotMasterPK;
 import ags.goldenlionerp.documents.DocumentDetailEntity;
+import ags.goldenlionerp.documents.ItemTransaction;
 import ags.goldenlionerp.entities.DatabaseEntityUtil;
 import ags.goldenlionerp.entities.Voidable;
 
@@ -31,7 +43,7 @@ import ags.goldenlionerp.entities.Voidable;
 	@AttributeOverride(name="lastUpdateTime", column=@Column(name="ITTMLU")),
 	@AttributeOverride(name="computerId", column=@Column(name="ITCID")),
 })
-public class StockTransaction extends DocumentDetailEntity<StockTransactionPK> implements Voidable{
+public class StockTransaction extends DocumentDetailEntity<StockTransactionPK> implements Voidable, ItemTransaction{
 
 	@EmbeddedId @JsonUnwrapped
 	private StockTransactionPK pk;
@@ -153,6 +165,21 @@ public class StockTransaction extends DocumentDetailEntity<StockTransactionPK> i
 	
 	@Column(name="ITRECID")
 	private String recordId;
+	
+	@ManyToMany
+	@JoinTable(name="Transaction_Serialnumbers", 
+		joinColumns = {
+				@JoinColumn(name="COID", referencedColumnName="ITCOID"),
+				@JoinColumn(name="DOCNO", referencedColumnName="ITDOCNO"),
+				@JoinColumn(name="DOCTY", referencedColumnName="ITDOCTY"),
+				@JoinColumn(name="DOCSQ", referencedColumnName="ITDOCSQ")
+		},
+		inverseJoinColumns = {
+				@JoinColumn(name="BUID", referencedColumnName="LTBUID"),
+				@JoinColumn(name="INUM", referencedColumnName="LTINUM"),
+				@JoinColumn(name="SNLOT", referencedColumnName="LTSNLOT")
+		})
+	private List<LotMaster> serialNumbers;
 
 	private StockTransaction() {}
 	
@@ -217,19 +244,19 @@ public class StockTransaction extends DocumentDetailEntity<StockTransactionPK> i
 		return batchType;
 	}
 
-	public Month getDocumentMonth() {
+	public Month getTransactionMonth() {
 		return documentMonth;
 	}
 
-	public int getDocumentYear() {
+	public int getTransactionYear() {
 		return documentYear;
 	}
 
-	public LocalDate getDocumentDate() {
+	public LocalDate getTransactionDate() {
 		return documentDate;
 	}
 
-	public String getDocumentTime() {
+	public String getTransactionTime() {
 		return documentTime;
 	}
 
@@ -257,7 +284,8 @@ public class StockTransaction extends DocumentDetailEntity<StockTransactionPK> i
 		return description;
 	}
 
-	public BigDecimal getQuantity() {
+	@JsonGetter("quantity")
+	public BigDecimal getTransactionQuantity() {
 		return quantity;
 	}
 
@@ -349,7 +377,7 @@ public class StockTransaction extends DocumentDetailEntity<StockTransactionPK> i
 		return inventoryTransactionType;
 	}
 
-	public boolean isVoided1() {
+	public boolean isVoided() {
 		return voided;
 	}
 
@@ -514,6 +542,29 @@ public class StockTransaction extends DocumentDetailEntity<StockTransactionPK> i
 	void setRecordId(String recordId) {
 		this.recordId = recordId;
 	}
+	
+	@Override//TODO
+	public Collection<String> getSerialOrLotNumbers() {
+		if (serialNumbers == null) return Collections.emptyList();
+		return serialNumbers.stream().map(lm -> lm.getPk().getSerialLotNo()).collect(Collectors.toList());
+	}
+
+	//TODO
+	void setSerialOrLotNumbers(Collection<String> serialNumbers) {
+		this.serialNumbers = new ArrayList<>();
+		for (String sn : serialNumbers) {
+			LotMasterPK pk = new LotMasterPK(this.businessUnitId, this.itemCode, sn);
+			LotMaster lot = LotMaster.builder()
+								.pk(pk).build();
+			this.serialNumbers.add(lot);
+		}
+	}
+
+	@Override
+	public boolean isAdditive() {
+		return true;
+	}
+
 
 	/**
 	 * Creates builder to build {@link StockTransaction}.
@@ -750,13 +801,5 @@ public class StockTransaction extends DocumentDetailEntity<StockTransactionPK> i
 			return new StockTransaction(this);
 		}
 	}
-
-	@Override
-	public boolean isVoided() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-	
-	
 
 }

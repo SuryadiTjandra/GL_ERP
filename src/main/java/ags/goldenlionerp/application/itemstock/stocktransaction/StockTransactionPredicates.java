@@ -2,7 +2,6 @@ package ags.goldenlionerp.application.itemstock.stocktransaction;
 
 import com.querydsl.core.types.Path;
 
-import ags.goldenlionerp.application.itemstock.itemtransaction.QItemTransaction;
 import ags.goldenlionerp.documents.DocumentDetailPredicates;
 
 public class StockTransactionPredicates extends DocumentDetailPredicates<StockTransaction, StockTransactionPK> {
@@ -11,7 +10,7 @@ public class StockTransactionPredicates extends DocumentDetailPredicates<StockTr
 	
 	public static StockTransactionPredicates getInstance() {
 		if (instance == null) {
-			instance = new StockTransactionPredicates(QItemTransaction.itemTransaction);
+			instance = new StockTransactionPredicates(QStockTransaction.stockTransaction);
 		}
 		return instance;
 	}

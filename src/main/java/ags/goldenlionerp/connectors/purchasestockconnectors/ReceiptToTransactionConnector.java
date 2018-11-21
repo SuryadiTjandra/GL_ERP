@@ -57,7 +57,7 @@ public class ReceiptToTransactionConnector implements ModuleConnector<PurchaseRe
 								.orderSequence(receipt.getPurchaseOrderSequence())
 								.build();
 		
-		itServ.createItemTransaction(it);
+		itServ.createStockTransaction(it);
 	}
 
 	@Override
