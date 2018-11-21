@@ -61,7 +61,7 @@ public class SalesShipmentHeader {
 	}
 
 	public LocalDate getDocumentDate() {
-		return details.get(0).getDocumentDate();
+		return details.get(0).getTransactionDate();
 	}
 	
 	public String getCustomerId() {

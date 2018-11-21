@@ -429,7 +429,7 @@ public class SalesShipment extends DocumentDetailEntity<SalesShipmentPK> impleme
 		return getPk();
 	}
 
-	public LocalDate getDocumentDate() {
+	public LocalDate getTransactionDate() {
 		return documentDate;
 	}
 
@@ -1271,6 +1271,11 @@ public class SalesShipment extends DocumentDetailEntity<SalesShipmentPK> impleme
 	@Override
 	public boolean isAdditive() {
 		return false;
+	}
+
+	@Override
+	public String getBusinessPartnerId() {
+		return getCustomerId();
 	}
 	
 	

@@ -8,11 +8,12 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Optional;
 
-import org.assertj.core.util.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.google.common.collect.Lists;
 
 import static org.springframework.util.ObjectUtils.isEmpty;
 

@@ -305,7 +305,7 @@ public class SalesShipmentApiTest extends ApiTestBase<SalesShipmentPK> {
 	
 		//assert the shipped serial numbers have their statuses changed
 		String lotUrl = "/api/lots?pk.businessUnitId=" + requestObject.get("businessUnitId") + "&pk.itemCode=" + soDetails.get(2).get("itemCode");
-		String[] serialNumbers = ((List<String>) requestDetails.get(2).get("serialOrLotNumbers")).toArray(new String[3]);
+		//String[] serialNumbers = ((List<String>) requestDetails.get(2).get("serialOrLotNumbers")).toArray(new String[3]);
 		performer.performGet(lotUrl)
 				//.andDo(print())
 				.andExpect(jsonPath("$._embedded.lots[?(@.serialNumber in ['serialNoA', 'serialNoB', 'serialNoC'])].lotStatusCode").value(Matchers.contains("S", "S", "S")))
