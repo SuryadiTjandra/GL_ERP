@@ -6,6 +6,7 @@ import java.time.LocalDate;
 import java.time.YearMonth;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -177,5 +178,51 @@ public class SalesShipmentService implements ItemTransactionService{
 			observers.forEach(observer -> observer.handleCreated(ship));
 		}
 		
+	}
+
+	@Transactional
+	public SalesShipmentHeader updateSalesShipment(SalesShipmentPK pk, SalesShipmentHeader patchRequest) {
+		SalesShipmentPredicates pred = SalesShipmentPredicates.getInstance();
+		List<SalesShipment> existingShipments = Lists.newArrayList(repo.findAll(pred.sameHeaderAs(pk)));
+		List<SalesShipment> newShipments = patchRequest.getDetails();
+		
+		newShipments.removeIf(ship -> existingShipments.stream()
+										.anyMatch(exShip -> exShip.getPk().equals(ship.getPk()))
+							);
+		if (newShipments.isEmpty())
+			return new SalesShipmentHeader(existingShipments);
+		
+		int maxSeq = Math.max(
+				existingShipments.stream().mapToInt(sh -> sh.getPk().getSequence()).max().orElse(0), 
+				newShipments.stream().mapToInt(sh -> sh.getPk().getSequence()).max().orElse(0)
+			);
+		for (int i = 0; i < newShipments.size(); i++) {
+			SalesShipmentPK oldPk = newShipments.get(i).getPk();
+			int seq = 10 * (maxSeq/10 + i + 1);
+			SalesShipmentPK newPk = new SalesShipmentPK(oldPk.getCompanyId(), oldPk.getDocumentNumber(), oldPk.getDocumentType(), seq);
+			newShipments.get(i).setPk(newPk);
+		}
+		
+		
+		SalesShipmentHeader existingHead = new SalesShipmentHeader(existingShipments);
+		SalesShipmentHeader newHead = new SalesShipmentHeader(
+				existingHead.getCompanyId(),
+				existingHead.getDocumentNumber(),
+				existingHead.getDocumentType(),
+				existingHead.getBusinessUnitId(),
+				existingHead.getDocumentDate(),
+				existingHead.getCustomerId(),
+				existingHead.getReceiverId(),
+				existingHead.getDescription(),
+				newShipments
+			);
+		newHead.setBatchNumber(existingHead.getBatchNumber());
+		newHead.setBatchType(existingHead.getBatchType());
+		completeShipmentInfo(newHead);
+		handleCreation(newHead);
+		repo.saveAll(newHead.getDetails());
+		return new SalesShipmentHeader(
+				Lists.newArrayList(repo.findAll(pred.sameHeaderAs(pk)))
+		);
 	}
 }

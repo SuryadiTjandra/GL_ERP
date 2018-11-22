@@ -12,6 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -65,5 +66,20 @@ public class SalesShipmentController {
 	@DeleteMapping("/{id}")
 	public ResponseEntity<?> delete(){
 		return new ResponseEntity<>(HttpStatus.METHOD_NOT_ALLOWED);
+	}
+	
+	@PatchMapping("/{id}")
+	public ResponseEntity<?> patch(@PathVariable("id") String id, 
+			@RequestBody SalesShipmentHeader patchRequest,
+			PersistentEntityResourceAssembler assembler){
+		SalesShipmentPK pk = (SalesShipmentPK) conv.fromRequestId(id, SalesShipment.class);
+		if (!repo.existsById(pk))
+			throw new ResourceNotFoundException();
+		
+		patchRequest.setIdInfo(pk.getCompanyId(), pk.getDocumentNumber(), pk.getDocumentType());
+		
+		SalesShipmentHeader shipment = serv.updateSalesShipment(pk, patchRequest);
+		SalesShipmentHeaderResource shipmentResource = new SalesShipmentHeaderResource(shipment, assembler);
+		return ResponseEntity.ok(shipmentResource);
 	}
 }
