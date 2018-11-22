@@ -21,6 +21,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonSetter;
@@ -1279,5 +1280,13 @@ public class SalesShipment extends DocumentDetailEntity<SalesShipmentPK> impleme
 	}
 	
 	
+	@JsonSetter("voided")
+	@Transient
+	boolean setForVoid;
+	
+	@JsonGetter("voided")
+	public boolean isVoided() {
+		return this.nextStatus.equals("999");
+	}
 
 }

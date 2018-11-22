@@ -8,6 +8,7 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
@@ -182,6 +183,8 @@ public class SalesShipmentService implements ItemTransactionService{
 
 	@Transactional
 	public SalesShipmentHeader updateSalesShipment(SalesShipmentPK pk, SalesShipmentHeader patchRequest) {
+		voidShipments(patchRequest);
+		
 		SalesShipmentPredicates pred = SalesShipmentPredicates.getInstance();
 		List<SalesShipment> existingShipments = Lists.newArrayList(repo.findAll(pred.sameHeaderAs(pk)));
 		List<SalesShipment> newShipments = patchRequest.getDetails();
@@ -224,5 +227,63 @@ public class SalesShipmentService implements ItemTransactionService{
 		return new SalesShipmentHeader(
 				Lists.newArrayList(repo.findAll(pred.sameHeaderAs(pk)))
 		);
+	}
+
+	private void voidShipments(SalesShipmentHeader patchRequest) {
+		List<SalesShipmentPK> toBeVoidedPks = patchRequest.getDetails().stream()
+											.filter(sh -> sh.setForVoid)
+											.map(SalesShipment::getPk)
+											.collect(Collectors.toList());
+		if (toBeVoidedPks.isEmpty())
+			return;
+		
+		List<SalesShipment> toBeVoideds = Lists.newArrayList(repo.findAllById(toBeVoidedPks));
+		toBeVoideds.forEach(sh -> {
+			sh.setLastStatus("980");
+			sh.setNextStatus("999");
+		});
+		repo.saveAll(toBeVoideds);
+		
+		List<SalesShipment> voideds = toBeVoideds.stream()
+										.map(sh -> {
+											SalesShipmentPK pk = new SalesShipmentPK(
+													sh.getPk().getCompanyId(),
+													sh.getPk().getDocumentNumber(),
+													sh.getPk().getDocumentType(),
+													sh.getPk().getSequence() + 1);
+											SalesShipment sh2 = new SalesShipment();
+											sh2.setPk(pk);
+											sh2.setOrderNumber(sh.getOrderNumber());
+											sh2.setOrderType(sh.getOrderType());
+											sh2.setOrderSequence(sh.getOrderSequence());
+											sh2.setSerialOrLotNumbers(sh.getSerialOrLotNumbers());
+											sh2.setTransactionQuantity(sh.getTransactionQuantity().negate());
+											sh2.setPrimaryTransactionQuantity(sh.getPrimaryTransactionQuantity().negate());
+											sh2.setExtendedCost(sh.getExtendedCost().negate());
+											sh2.setExtendedPrice(sh.getExtendedPrice().negate());
+											return sh2;
+										})
+										.collect(Collectors.toList());
+		
+		SalesShipment sample = toBeVoideds.get(0);
+		SalesShipmentHeader voidhead = new SalesShipmentHeader(
+				sample.getPk().getCompanyId(),
+				sample.getPk().getDocumentNumber(),
+				sample.getPk().getDocumentType(),
+				sample.getBusinessUnitId(),
+				sample.getTransactionDate(),
+				sample.getCustomerId(),
+				sample.getReceiverId(),
+				sample.getDescription(),
+				voideds);
+		completeShipmentInfo(voidhead);
+		voidhead.getDetails().forEach(sh -> {
+			sh.setLastStatus("980");
+			sh.setNextStatus("999");
+		});
+		handleCreation(voidhead);
+		
+		repo.saveAll(voideds);
+		
 	}
 }
