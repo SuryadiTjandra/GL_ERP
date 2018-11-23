@@ -199,6 +199,8 @@ public class PurchaseReceiptService implements ModuleConnected<PurchaseReceipt>{
 		receipt.setImportDeclarationNumber(pd.getOrder().getImportDeclarationNumber());
 		receipt.setImportDeclarationDate(pd.getOrder().getImportDeclarationDate());
 		
+		
+		receipt.setSerialOrLotNumbers(receipt.getSerialOrLotNumbers());
 		return receipt;
 	}
 

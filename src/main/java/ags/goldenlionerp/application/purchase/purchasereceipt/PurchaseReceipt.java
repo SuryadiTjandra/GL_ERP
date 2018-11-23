@@ -326,10 +326,10 @@ public class PurchaseReceipt extends DocumentDetailEntity<PurchaseReceiptPK> imp
 	@ManyToMany
 	@JoinTable(name="Transaction_Serialnumbers", 
 		joinColumns = {
-				@JoinColumn(name="COID", referencedColumnName="SLCOID"),
-				@JoinColumn(name="DOCNO", referencedColumnName="SLDOCNO"),
-				@JoinColumn(name="DOCTY", referencedColumnName="SLDOCTY"),
-				@JoinColumn(name="DOCSQ", referencedColumnName="SLDOCSQ")
+				@JoinColumn(name="COID", referencedColumnName="OVCOID"),
+				@JoinColumn(name="DOCNO", referencedColumnName="OVDOCNO"),
+				@JoinColumn(name="DOCTY", referencedColumnName="OVDOCTY"),
+				@JoinColumn(name="DOCSQ", referencedColumnName="OVDOCSQ")
 		},
 		inverseJoinColumns = {
 				@JoinColumn(name="BUID", referencedColumnName="LTBUID"),
