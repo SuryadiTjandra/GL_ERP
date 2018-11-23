@@ -18,8 +18,6 @@ import static org.springframework.util.ObjectUtils.isEmpty;
 
 import com.google.common.collect.Lists;
 
-import ags.goldenlionerp.application.item.itemmaster.ItemMasterRepository;
-import ags.goldenlionerp.application.item.lotmaster.LotMasterService;
 import ags.goldenlionerp.application.item.uomconversion.UomConversionService;
 import ags.goldenlionerp.application.purchase.purchaseorder.PurchaseDetail;
 import ags.goldenlionerp.application.purchase.purchaseorder.PurchaseOrder;
@@ -27,11 +25,11 @@ import ags.goldenlionerp.application.purchase.purchaseorder.PurchaseOrderPK;
 import ags.goldenlionerp.application.purchase.purchaseorder.PurchaseOrderRepository;
 import ags.goldenlionerp.application.purchase.purchaseorder.PurchaseOrderService;
 import ags.goldenlionerp.application.setups.nextnumber.NextNumberService;
-import ags.goldenlionerp.connectors.ModuleConnected;
-import ags.goldenlionerp.connectors.ModuleConnector;
+import ags.goldenlionerp.documents.ItemTransactionObserver;
+import ags.goldenlionerp.documents.ItemTransactionService;
 
 @Service
-public class PurchaseReceiptService implements ModuleConnected<PurchaseReceipt>{
+public class PurchaseReceiptService implements ItemTransactionService{
 	
 	@Autowired
 	private NextNumberService nnServ;
@@ -43,15 +41,12 @@ public class PurchaseReceiptService implements ModuleConnected<PurchaseReceipt>{
 	private PurchaseOrderService orderService;
 	@Autowired
 	private UomConversionService uomServ;
-	@Autowired
-	private LotMasterService lotServ;
-	@Autowired
-	private ItemMasterRepository itemRepo;
 	
-	private List<ModuleConnector<PurchaseReceipt, ?>> connectors = new ArrayList<>();
+	private List<ItemTransactionObserver> observers = new ArrayList<>();
 
-	public void registerConnector(ModuleConnector<PurchaseReceipt, ?> connector) {
-		connectors.add(connector);
+	@Override
+	public void registerObserver(ItemTransactionObserver observer) {
+		observers.add(observer);
 	}
 	
 	@Transactional
@@ -67,20 +62,6 @@ public class PurchaseReceiptService implements ModuleConnected<PurchaseReceipt>{
 	}
 	
 	private void handleCreation(PurchaseReceiptHeader receiptHead) {
-		//create new lotmasters if the items has serial numbers
-		for (PurchaseReceipt rec : receiptHead.getDetails()) {
-			if (!itemRepo.findById(rec.getItemCode()).get().isSerialNumberRequired())
-				continue;
-			//check if quantity is integer
-			if (rec.getTransactionQuantity().stripTrailingZeros().scale() > 0)
-				throw new IllegalArgumentException("The quantity for this item must be an integer!");
-			//check if each item has a distinct serial number
-			if (rec.getTransactionQuantity().intValue() != rec.getSerialOrLotNumbers().size())
-				throw new IllegalArgumentException("Must input distinct serial number for each received item!");
-			
-			lotServ.createLotsWithSerialNumbers(rec.getBusinessUnitId(), rec.getItemCode(), rec.getSerialOrLotNumbers(), rec.getPk());
-		}
-		
 		//let the order service receive the orders
 		for (PurchaseReceipt rec : receiptHead.getDetails()) {
 			orderService.receiveOrder(rec.getPk().getCompanyId(), 
@@ -89,13 +70,10 @@ public class PurchaseReceiptService implements ModuleConnected<PurchaseReceipt>{
 					rec.getOrderSequence(), 
 					rec.getTransactionQuantity(),
 					rec.getUnitOfMeasure());
+			//handle optional operations after purchase receipt creation
+			observers.forEach(observer -> observer.handleCreated(rec));
 		}
-		
-		//handle optional operations after purchase receipt creation
-		for (ModuleConnector<PurchaseReceipt, ?> con: connectors) {
-			con.handleCreated(receiptHead.getDetails());
-		}
-				
+			
 	}
 	
 	public PurchaseReceiptHeader completePurchaseReceiptInfo(PurchaseReceiptHeader receiptHead) {
@@ -119,10 +97,6 @@ public class PurchaseReceiptService implements ModuleConnected<PurchaseReceipt>{
 			PurchaseReceiptPK pk = new PurchaseReceiptPK(companyId, docNo, type, (i + 1)*10);
 			d.setPk(pk);
 		}
-		//receiptHead.getDetails().forEach(d -> {
-		//	PurchaseReceiptPK pk = new PurchaseReceiptPK(companyId, docNo, type, d.getPk().getSequence());
-		//	d.setPk(pk);
-		//});
 		
 		String batchType = "O"; //TODO
 		int batchNo = nnServ.findNextNumber(companyId, batchType, date).getNextSequence();
@@ -345,4 +319,5 @@ public class PurchaseReceiptService implements ModuleConnected<PurchaseReceipt>{
 		handleCreation(negatedReceiptHead);
 		repo.saveAll(negateReceipts);
 	}
+
 }
