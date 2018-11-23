@@ -19,6 +19,8 @@ import org.springframework.test.annotation.Rollback;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.util.ObjectUtils;
 
+import com.jayway.jsonpath.JsonPath;
+
 import ags.goldenlionerp.apiTests.ApiTestBase;
 import ags.goldenlionerp.application.purchase.purchasereceipt.PurchaseReceiptPK;
 
@@ -328,10 +330,11 @@ public class PurchaseReceiptApiTest extends ApiTestBase<PurchaseReceiptPK> {
 				.andExpect(jsonPath("$.details[1].openQuantity").value((double)poDetails.get(1).get("quantity") - (double)requestDetails.get(1).get("quantity")));
 		
 		//assert new lot masters are created
-		String lotUrl = "/api/lots?pk.businessUnitId=" + requestObject.get("businessUnitId") + "&pk.itemCode=" + poDetails.get(2).get("itemCode");
+		String lotUrl = JsonPath.read(action.andReturn().getResponse().getContentAsString(), "$.details[3]._links.serialNumbers");
+				//"/api/lots?pk.businessUnitId=" + requestObject.get("businessUnitId") + "&pk.itemCode=" + poDetails.get(2).get("itemCode");
 		String[] serialNumbers = ((List<String>) requestDetails.get(2).get("serialNumbers")).toArray(new String[3]);
 		performer.performGet(lotUrl)
-				//.andDo(print())
+				.andDo(print())
 				.andExpect(jsonPath("$._embedded.lots[*].serialLotNo").value(Matchers.hasItems(serialNumbers)))
 				.andExpect(jsonPath("$._embedded.lots.length()").value(3))
 				.andExpect(jsonPath("$._embedded.lots[0].itemCode").value(poDetails.get(2).get("itemCode")))
@@ -559,14 +562,14 @@ public class PurchaseReceiptApiTest extends ApiTestBase<PurchaseReceiptPK> {
 				.andExpect(jsonPath("$.details[0].openQuantity").value(poDetails.get(0).get("quantity")));
 		
 		//assert new item transactions with negative quantity has been created
-		String itemtransUrl = "/api/itemTransactions/";
+		String itemtransUrl = "/api/stockTransactions/";
 		performer.performGet(itemtransUrl + newId())
-				//.andDo(print())
+				.andDo(print())
 				.andExpect(jsonPath("$.details[2].companyId").value(requestObject.get("companyId")))
 				.andExpect(jsonPath("$.details[2].documentNumber").value(requestObject.get("purchaseReceiptNumber")))
 				.andExpect(jsonPath("$.details[2].documentType").value(requestObject.get("purchaseReceiptType")))
 				.andExpect(jsonPath("$.details[2].businessUnitId").value(requestObject.get("businessUnitId")))
-				.andExpect(jsonPath("$.details[2].documentDate").value(requestObject.get("documentDate").toString()))
+				.andExpect(jsonPath("$.details[2].transactionDate").value(requestObject.get("documentDate").toString()))
 				.andExpect(jsonPath("$.details[2].glDate").value(requestObject.get("documentDate").toString()))
 				.andExpect(jsonPath("$.details[2].description").value(requestObject.get("description")))
 				.andExpect(jsonPath("$.details[2].sequence").value((requestDetails.size()+1) * 10))

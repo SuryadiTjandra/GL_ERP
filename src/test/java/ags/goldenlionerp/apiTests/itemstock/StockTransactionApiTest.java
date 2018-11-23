@@ -23,7 +23,7 @@ public class StockTransactionApiTest extends ApiTestBase<StockTransactionPK>{
 
 	@Override
 	protected String baseUrl() {
-		return "/api/itemTransactions/";
+		return "/api/stockTransactions/";
 	}
 
 	@Override
