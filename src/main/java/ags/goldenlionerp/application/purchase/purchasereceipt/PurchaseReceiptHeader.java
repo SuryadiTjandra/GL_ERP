@@ -108,7 +108,7 @@ class PurchaseReceiptHeader implements DatabaseAuditable{
 	}
 
 	public LocalDate getDocumentDate() {
-		return details.get(0).getDocumentDate();
+		return details.get(0).getTransactionDate();
 	}
 
 	public String getVendorId() {
@@ -140,7 +140,7 @@ class PurchaseReceiptHeader implements DatabaseAuditable{
 	}
 
 	void setDocumentDate(LocalDate documentDate) {
-		this.details.forEach(rec -> rec.setDocumentDate(documentDate));
+		this.details.forEach(rec -> rec.setTransactionDate(documentDate));
 	}
 
 	void setVendorId(String vendorId) {

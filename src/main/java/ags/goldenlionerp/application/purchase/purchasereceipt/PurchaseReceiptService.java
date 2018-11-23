@@ -72,22 +72,22 @@ public class PurchaseReceiptService implements ModuleConnected<PurchaseReceipt>{
 			if (!itemRepo.findById(rec.getItemCode()).get().isSerialNumberRequired())
 				continue;
 			//check if quantity is integer
-			if (rec.getQuantity().stripTrailingZeros().scale() > 0)
+			if (rec.getTransactionQuantity().stripTrailingZeros().scale() > 0)
 				throw new IllegalArgumentException("The quantity for this item must be an integer!");
 			//check if each item has a distinct serial number
-			if (rec.getQuantity().intValue() != rec.getSerialNumbers().size())
+			if (rec.getTransactionQuantity().intValue() != rec.getSerialOrLotNumbers().size())
 				throw new IllegalArgumentException("Must input distinct serial number for each received item!");
 			
-			lotServ.createLotsWithSerialNumbers(rec.getBusinessUnitId(), rec.getItemCode(), rec.getSerialNumbers(), rec.getPk());
+			lotServ.createLotsWithSerialNumbers(rec.getBusinessUnitId(), rec.getItemCode(), rec.getSerialOrLotNumbers(), rec.getPk());
 		}
 		
 		//let the order service receive the orders
 		for (PurchaseReceipt rec : receiptHead.getDetails()) {
 			orderService.receiveOrder(rec.getPk().getCompanyId(), 
-					rec.getPurchaseOrderNumber(), 
-					rec.getPurchaseOrderType(), 
-					rec.getPurchaseOrderSequence(), 
-					rec.getQuantity(),
+					rec.getOrderNumber(), 
+					rec.getOrderType(), 
+					rec.getOrderSequence(), 
+					rec.getTransactionQuantity(),
 					rec.getUnitOfMeasure());
 		}
 		
@@ -138,12 +138,12 @@ public class PurchaseReceiptService implements ModuleConnected<PurchaseReceipt>{
 	}
 
 	private PurchaseReceipt setInfoFromPurchaseDetail(PurchaseReceipt receipt) {
-		PurchaseOrderPK poPk = new PurchaseOrderPK(receipt.getPk().getCompanyId(), receipt.getPurchaseOrderNumber(), receipt.getPurchaseOrderType());
+		PurchaseOrderPK poPk = new PurchaseOrderPK(receipt.getPk().getCompanyId(), receipt.getOrderNumber(), receipt.getOrderType());
 		PurchaseOrder po = orderRepo.findById(poPk)
 								.orElseThrow(() -> new ResourceNotFoundException("Could not find PurchaseOrder with id " + poPk));
-		PurchaseDetail pd = po.getDetails().stream().filter(d -> d.getPk().getPurchaseOrderSequence() == receipt.getPurchaseOrderSequence())
+		PurchaseDetail pd = po.getDetails().stream().filter(d -> d.getPk().getPurchaseOrderSequence() == receipt.getOrderSequence())
 								.findFirst()
-								.orElseThrow(() -> new ResourceNotFoundException("Could not find PurchaseOrder with id " + poPk + " and sequence " + receipt.getPurchaseOrderSequence()));
+								.orElseThrow(() -> new ResourceNotFoundException("Could not find PurchaseOrder with id " + poPk + " and sequence " + receipt.getOrderSequence()));
 		
 		if (!receipt.getVendorId().equals(pd.getVendorId()))
 			throw new PurchaseReceiptException("The vendor of the receipt does not match the vendor of the order");
@@ -207,11 +207,11 @@ public class PurchaseReceiptService implements ModuleConnected<PurchaseReceipt>{
 		
 		BigDecimal ucf = uomServ.findConversionValue(receipt.getItemCode(), receipt.getUnitOfMeasure(), receipt.getPrimaryUnitOfMeasure());
 		receipt.setUnitConversionFactor(ucf);
-		receipt.setPrimaryTransactionQuantity(receipt.getQuantity().multiply(ucf));
+		receipt.setPrimaryTransactionQuantity(receipt.getTransactionQuantity().multiply(ucf));
 		
 		BigDecimal pdToReceipt = uomServ.findConversionValue(receipt.getItemCode(), pd.getUnitOfMeasure(), receipt.getUnitOfMeasure());
 		receipt.setUnitCost(pdToReceipt.multiply(pd.getUnitCost()));
-		receipt.setExtendedCost(receipt.getUnitCost().multiply(receipt.getQuantity()));
+		receipt.setExtendedCost(receipt.getUnitCost().multiply(receipt.getTransactionQuantity()));
 		
 		//rtax = rexcost/pdexcost * pdtax
 		receipt.setTaxAmount(receipt.getExtendedCost().divide(pd.getExtendedCost(), RoundingMode.HALF_UP).multiply(pd.getTaxAmount()));
@@ -313,10 +313,10 @@ public class PurchaseReceiptService implements ModuleConnected<PurchaseReceipt>{
 					seq);
 			PurchaseReceipt negatedRec = new PurchaseReceipt();
 			negatedRec.setPk(negatePk);
-			negatedRec.setPurchaseOrderNumber(existing.getPurchaseOrderNumber());
-			negatedRec.setPurchaseOrderType(existing.getPurchaseOrderType());
-			negatedRec.setPurchaseOrderSequence(existing.getPurchaseOrderSequence());
-			negatedRec.setQuantity(existing.getQuantity().negate());
+			negatedRec.setOrderNumber(existing.getOrderNumber());
+			negatedRec.setOrderType(existing.getOrderType());
+			negatedRec.setOrderSequence(existing.getOrderSequence());
+			negatedRec.setTransactionQuantity(existing.getTransactionQuantity().negate());
 			negateReceipts.add(negatedRec);
 			
 			existing.setLastStatus("499");

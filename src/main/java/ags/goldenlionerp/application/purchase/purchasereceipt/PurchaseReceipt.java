@@ -2,8 +2,11 @@ package ags.goldenlionerp.application.purchase.purchasereceipt;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;
@@ -14,6 +17,8 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinColumns;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
@@ -23,10 +28,13 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
 
 import ags.goldenlionerp.application.item.itemmaster.ItemMaster;
+import ags.goldenlionerp.application.item.lotmaster.LotMaster;
+import ags.goldenlionerp.application.item.lotmaster.LotMasterPK;
 import ags.goldenlionerp.application.purchase.PurchaseOptions;
 import ags.goldenlionerp.application.purchase.References;
 import ags.goldenlionerp.application.purchase.purchaseorder.PurchaseDetail;
 import ags.goldenlionerp.documents.DocumentDetailEntity;
+import ags.goldenlionerp.documents.ItemTransaction;
 
 @Entity
 @Table(name="T4312")
@@ -39,7 +47,7 @@ import ags.goldenlionerp.documents.DocumentDetailEntity;
 	@AttributeOverride(name="lastUpdateTime", column=@Column(name="OVTMLU")),
 	@AttributeOverride(name="computerId", column=@Column(name="OVCID")),
 })
-public class PurchaseReceipt extends DocumentDetailEntity<PurchaseReceiptPK>{
+public class PurchaseReceipt extends DocumentDetailEntity<PurchaseReceiptPK> implements ItemTransaction{
 
 	@EmbeddedId @JsonUnwrapped
 	private PurchaseReceiptPK pk;
@@ -189,13 +197,13 @@ public class PurchaseReceipt extends DocumentDetailEntity<PurchaseReceiptPK>{
 	private LocalDate invoiceDate;
 	
 	@Column(name="OVDOCONO", nullable=false)
-	private int purchaseOrderNumber;
+	private int orderNumber;
 	
 	@Column(name="OVDOCOTY", nullable=false)
-	private String purchaseOrderType;	
+	private String orderType;	
 	
 	@Column(name="OVDOCOSQ", nullable=false)
-	private int purchaseOrderSequence;
+	private int orderSequence;
 	
 	@JoinColumns({
 		@JoinColumn(name="OVCOID", referencedColumnName="ODCOID", insertable=false, updatable=false),
@@ -312,8 +320,23 @@ public class PurchaseReceipt extends DocumentDetailEntity<PurchaseReceiptPK>{
 	@Column(name="OVRECID")
 	private String recordId;
 	
-	@Transient
-	private Set<String> serialNumbers = new HashSet<>();
+	//@Transient
+	//private Set<String> serialNumbers = new HashSet<>();
+	
+	@ManyToMany
+	@JoinTable(name="Transaction_Serialnumbers", 
+		joinColumns = {
+				@JoinColumn(name="COID", referencedColumnName="SLCOID"),
+				@JoinColumn(name="DOCNO", referencedColumnName="SLDOCNO"),
+				@JoinColumn(name="DOCTY", referencedColumnName="SLDOCTY"),
+				@JoinColumn(name="DOCSQ", referencedColumnName="SLDOCSQ")
+		},
+		inverseJoinColumns = {
+				@JoinColumn(name="BUID", referencedColumnName="LTBUID"),
+				@JoinColumn(name="INUM", referencedColumnName="LTINUM"),
+				@JoinColumn(name="SNLOT", referencedColumnName="LTSNLOT")
+		})
+	private List<LotMaster> serialNumbers;
 	
 	@Override
 	public PurchaseReceiptPK getId() {
@@ -324,7 +347,7 @@ public class PurchaseReceipt extends DocumentDetailEntity<PurchaseReceiptPK>{
 		return pk;
 	}
 
-	public LocalDate getDocumentDate() {
+	public LocalDate getTransactionDate() {
 		return documentDate;
 	}
 
@@ -384,7 +407,8 @@ public class PurchaseReceipt extends DocumentDetailEntity<PurchaseReceiptPK>{
 		return lineType;
 	}
 
-	public BigDecimal getQuantity() {
+	@JsonGetter("quantity")
+	public BigDecimal getTransactionQuantity() {
 		return quantity;
 	}
 
@@ -516,16 +540,16 @@ public class PurchaseReceipt extends DocumentDetailEntity<PurchaseReceiptPK>{
 		return invoiceDate;
 	}
 
-	public int getPurchaseOrderNumber() {
-		return purchaseOrderNumber;
+	public int getOrderNumber() {
+		return orderNumber;
 	}
 
-	public String getPurchaseOrderType() {
-		return purchaseOrderType;
+	public String getOrderType() {
+		return orderType;
 	}
 
-	public int getPurchaseOrderSequence() {
-		return purchaseOrderSequence;
+	public int getOrderSequence() {
+		return orderSequence;
 	}
 
 	public PurchaseDetail getPurchaseDetail() {
@@ -652,7 +676,7 @@ public class PurchaseReceipt extends DocumentDetailEntity<PurchaseReceiptPK>{
 		this.pk = pk;
 	}
 
-	void setDocumentDate(LocalDate documentDate) {
+	void setTransactionDate(LocalDate documentDate) {
 		this.documentDate = documentDate;
 	}
 
@@ -712,7 +736,8 @@ public class PurchaseReceipt extends DocumentDetailEntity<PurchaseReceiptPK>{
 		this.lineType = lineType;
 	}
 
-	void setQuantity(BigDecimal quantity) {
+	@JsonSetter("quantity")
+	void setTransactionQuantity(BigDecimal quantity) {
 		this.quantity = quantity;
 	}
 
@@ -844,16 +869,16 @@ public class PurchaseReceipt extends DocumentDetailEntity<PurchaseReceiptPK>{
 		this.invoiceDate = invoiceDate;
 	}
 
-	void setPurchaseOrderNumber(int purchaseOrderNumber) {
-		this.purchaseOrderNumber = purchaseOrderNumber;
+	void setOrderNumber(int purchaseOrderNumber) {
+		this.orderNumber = purchaseOrderNumber;
 	}
 
-	void setPurchaseOrderType(String purchaseOrderType) {
-		this.purchaseOrderType = purchaseOrderType;
+	void setOrderType(String purchaseOrderType) {
+		this.orderType = purchaseOrderType;
 	}
 
-	void setPurchaseOrderSequence(int purchaseOrderSequence) {
-		this.purchaseOrderSequence = purchaseOrderSequence;
+	void setOrderSequence(int purchaseOrderSequence) {
+		this.orderSequence = purchaseOrderSequence;
 	}
 
 	void setPurchaseDetail(PurchaseDetail purchaseDetail) {
@@ -975,14 +1000,6 @@ public class PurchaseReceipt extends DocumentDetailEntity<PurchaseReceiptPK>{
 	void setRecordId(String recordId) {
 		this.recordId = recordId;
 	}
-
-	Set<String> getSerialNumbers() {
-		return serialNumbers;
-	}
-
-	void setSerialNumbers(Set<String> serialNumbers) {
-		this.serialNumbers = serialNumbers;
-	}
 	
 	@JsonSetter("voided") @Transient
 	private boolean toBeVoided;
@@ -994,5 +1011,32 @@ public class PurchaseReceipt extends DocumentDetailEntity<PurchaseReceiptPK>{
 	@JsonGetter("voided")
 	public boolean isVoided() {
 		return lastStatus != null && lastStatus.equals("999");
+	}
+	
+	@Override//TODO
+	public Collection<String> getSerialOrLotNumbers() {
+		if (serialNumbers == null) return Collections.emptyList();
+		return serialNumbers.stream().map(lm -> lm.getPk().getSerialLotNo()).collect(Collectors.toList());
+	}
+
+	//TODO
+	void setSerialOrLotNumbers(Collection<String> serialNumbers) {
+		this.serialNumbers = new ArrayList<>();
+		for (String sn : serialNumbers) {
+			LotMasterPK pk = new LotMasterPK(this.businessUnitId, this.itemCode, sn);
+			LotMaster lot = LotMaster.builder()
+								.pk(pk).build();
+			this.serialNumbers.add(lot);
+		}
+	}
+
+	@Override
+	public String getBusinessPartnerId() {
+		return getVendorId();
+	}
+
+	@Override
+	public boolean isAdditive() {
+		return true;
 	}
 }

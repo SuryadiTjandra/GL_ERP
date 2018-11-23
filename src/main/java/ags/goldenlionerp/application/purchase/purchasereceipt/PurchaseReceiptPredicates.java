@@ -18,11 +18,5 @@ public class PurchaseReceiptPredicates extends DocumentDetailPredicates<Purchase
 			instance = new PurchaseReceiptPredicates(QPurchaseReceipt.purchaseReceipt);
 		return instance;
 	}
-	
-	public Predicate voidReceiptOf(PurchaseReceipt receipt) {
-		QPurchaseReceipt rec = QPurchaseReceipt.purchaseReceipt;
-		return rec.purchaseDetail.eq(receipt.getPurchaseDetail())
-			.and(rec.quantity.eq(receipt.getQuantity().negate()));
-	}
 
 }
