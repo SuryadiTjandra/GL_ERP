@@ -26,33 +26,47 @@ public class LotMasterTransactionObserver implements ItemTransactionObserver {
 	}
 	
 	@Override
-	public void handleCreated(ItemTransaction transaction) {
+	public void handleCreation(ItemTransaction transaction) {
 		ItemMaster item = itemRepo.findById(transaction.getItemCode())
 								.orElseThrow(() -> new ResourceNotFoundException());
 		//if item doesn't need to be tracked, then do nothing
 		if (!item.isInventoryLotCreation() && !item.isSerialNumberRequired())
 			return;
 		
-		int qty = transaction.getTransactionQuantity().intValue();
-		
 		//if the provided serial numbers don't match the quantity, then throw an exception
-		if (Math.abs(qty) != transaction.getSerialOrLotNumbers().size())
+		if (transaction.getTransactionQuantity().intValue() != transaction.getSerialOrLotNumbers().size())
 			throw new IllegalArgumentException("How many serial numbers provided must match quantity!");
 
 		
-		if (qty > 0 && transaction.isAdditive()) {
+		if (transaction.isAdditive()) {
 			service.createLotsWithSerialNumbers(
 					transaction.getBusinessUnitId(), 
 					transaction.getItemCode(), 
 					transaction.getSerialOrLotNumbers(), 
 					transaction.getId());
-		} else if (qty < 0 && transaction.isAdditive()) {
-			service.deleteLotsWithSerialNumbers(
-					transaction.getBusinessUnitId(), 
+		} else {
+			service.markLotsAsUsed(transaction.getBusinessUnitId(), 
 					transaction.getItemCode(), 
 					transaction.getSerialOrLotNumbers());
-		} else if (qty > 0 && !transaction.isAdditive()) {
-			service.markLotsAsUsed(transaction.getBusinessUnitId(), 
+		}
+	}
+
+	@Override
+	public void handleVoidation(ItemTransaction transaction) {
+		ItemMaster item = itemRepo.findById(transaction.getItemCode())
+							.orElseThrow(() -> new ResourceNotFoundException());
+		//if item doesn't need to be tracked, then do nothing
+		if (!item.isInventoryLotCreation() && !item.isSerialNumberRequired())
+			return;
+		
+		//if the provided serial numbers don't match the quantity, then throw an exception
+		if (transaction.getTransactionQuantity().intValue() != transaction.getSerialOrLotNumbers().size())
+			throw new IllegalArgumentException("How many serial numbers provided must match quantity!");
+
+		
+		if (transaction.isAdditive()) {
+			service.deleteLotsWithSerialNumbers(
+					transaction.getBusinessUnitId(), 
 					transaction.getItemCode(), 
 					transaction.getSerialOrLotNumbers());
 		} else {
@@ -60,6 +74,7 @@ public class LotMasterTransactionObserver implements ItemTransactionObserver {
 					transaction.getItemCode(), 
 					transaction.getSerialOrLotNumbers());
 		}
+		
 	}
 
 }

@@ -29,7 +29,7 @@ public class StockItemTransactionObserver implements ItemTransactionObserver {
 	}
 	
 	@Override
-	public void handleCreated(ItemTransaction transaction) {
+	public void handleCreation(ItemTransaction transaction) {
 		//prevent infinite creation loop
 		if (transaction instanceof StockTransaction)
 			return;
@@ -71,6 +71,52 @@ public class StockItemTransactionObserver implements ItemTransactionObserver {
 									.orderType(transaction.getOrderType())
 									.build();
 		service.createStockTransaction(stock);
+	}
+
+	@Override
+	public void handleVoidation(ItemTransaction transaction) {
+		//prevent infinite creation loop
+		if (transaction instanceof StockTransaction)
+			return;
+		
+		ItemMaster item = itemRepo.findById(transaction.getItemCode())
+							.orElseThrow(() -> new ResourceNotFoundException());
+		
+		//if item isn't a stock item, do nothing
+		if (!item.getTransactionType().equals("S"))
+			return;
+		
+		DocumentDetailId transPk = transaction.getId();
+		StockTransactionPK pk = new StockTransactionPK(
+				transPk.getCompanyId(), 
+				transPk.getDocumentNumber(), 
+				transPk.getDocumentType(), 
+				transPk.getSequence() + 1);
+		
+		StockTransaction stock = new StockTransaction.Builder(pk)
+									.businessUnitId(transaction.getBusinessUnitId())
+									.businessPartnerId(transaction.getBusinessPartnerId())
+									.documentDateTime(transaction.getTransactionDate().atStartOfDay())
+									.glDate(transaction.getTransactionDate())
+									.itemCode(item.getItemCode())
+									.itemDescription(item.getDescription())
+									.locationId(transaction.getLocationId())
+									.quantity(transaction.getTransactionQuantity().negate())
+									.unitOfMeasure(transaction.getUnitOfMeasure())
+									.primaryTransactionQuantity(transaction.getPrimaryTransactionQuantity())
+									.primaryUnitOfMeasure(transaction.getPrimaryUnitOfMeasure())
+									.secondaryTransactionQuantity(transaction.getSecondaryTransactionQuantity())
+									.secondaryUnitOfMeasure(transaction.getSecondaryUnitOfMeasure())
+									.unitCost(transaction.getUnitCost())
+									.extendedCost(transaction.getExtendedCost().negate())
+									.fromOrTo(transaction.isAdditive() ? "F" : "T")
+									.glClass(item.getGlClass())
+									.orderNumber(transaction.getOrderNumber())
+									.orderSequence(transaction.getOrderSequence())
+									.orderType(transaction.getOrderType())
+									.build();
+		service.createStockTransaction(stock);
+		
 	}
 
 }
