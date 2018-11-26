@@ -23,7 +23,6 @@ import ags.goldenlionerp.application.item.uomconversion.UomConversionService;
 import ags.goldenlionerp.application.sales.salesorder.SalesDetail;
 import ags.goldenlionerp.application.sales.salesorder.SalesOrderPK;
 import ags.goldenlionerp.application.sales.salesorder.SalesOrderRepository;
-import ags.goldenlionerp.application.sales.salesorder.SalesOrderService;
 import ags.goldenlionerp.application.setups.nextnumber.NextNumberService;
 import ags.goldenlionerp.documents.ItemTransactionObserver;
 import ags.goldenlionerp.documents.ItemTransactionService;
@@ -35,7 +34,6 @@ public class SalesShipmentService implements ItemTransactionService{
 	private SalesShipmentRepository repo;
 	@Autowired private NextNumberService nnServ;
 	@Autowired private SalesOrderRepository orderRepo;
-	@Autowired private SalesOrderService orderServ;
 	@Autowired private UomConversionService uomServ;
 
 	private Collection<ItemTransactionObserver> observers = new HashSet<>();
@@ -169,14 +167,7 @@ public class SalesShipmentService implements ItemTransactionService{
 	
 	private void handleCreation(SalesShipmentHeader shipmentRequest) {
 		for (SalesShipment ship: shipmentRequest.getDetails()) {
-			orderServ.shipOrder(ship.getPk().getCompanyId(), 
-					ship.getOrderNumber(), 
-					ship.getOrderType(), 
-					ship.getOrderSequence(), 
-					ship.getTransactionQuantity(), 
-					ship.getUnitOfMeasure());
-			
-			observers.forEach(observer -> observer.handleCreated(ship));
+			observers.forEach(observer -> observer.handleCreation(ship));
 		}
 		
 	}
@@ -241,6 +232,7 @@ public class SalesShipmentService implements ItemTransactionService{
 		toBeVoideds.forEach(sh -> {
 			sh.setLastStatus("980");
 			sh.setNextStatus("999");
+			observers.forEach(obs -> obs.handleVoidation(sh));
 		});
 		repo.saveAll(toBeVoideds);
 		
@@ -281,7 +273,6 @@ public class SalesShipmentService implements ItemTransactionService{
 			sh.setLastStatus("980");
 			sh.setNextStatus("999");
 		});
-		handleCreation(voidhead);
 		
 		repo.saveAll(voideds);
 		

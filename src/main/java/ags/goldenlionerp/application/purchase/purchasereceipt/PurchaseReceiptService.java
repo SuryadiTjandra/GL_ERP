@@ -23,7 +23,6 @@ import ags.goldenlionerp.application.purchase.purchaseorder.PurchaseDetail;
 import ags.goldenlionerp.application.purchase.purchaseorder.PurchaseOrder;
 import ags.goldenlionerp.application.purchase.purchaseorder.PurchaseOrderPK;
 import ags.goldenlionerp.application.purchase.purchaseorder.PurchaseOrderRepository;
-import ags.goldenlionerp.application.purchase.purchaseorder.PurchaseOrderService;
 import ags.goldenlionerp.application.setups.nextnumber.NextNumberService;
 import ags.goldenlionerp.documents.ItemTransactionObserver;
 import ags.goldenlionerp.documents.ItemTransactionService;
@@ -37,8 +36,6 @@ public class PurchaseReceiptService implements ItemTransactionService{
 	private PurchaseReceiptRepository repo;
 	@Autowired
 	private PurchaseOrderRepository orderRepo;
-	@Autowired
-	private PurchaseOrderService orderService;
 	@Autowired
 	private UomConversionService uomServ;
 	
@@ -62,16 +59,8 @@ public class PurchaseReceiptService implements ItemTransactionService{
 	}
 	
 	private void handleCreation(PurchaseReceiptHeader receiptHead) {
-		//let the order service receive the orders
 		for (PurchaseReceipt rec : receiptHead.getDetails()) {
-			orderService.receiveOrder(rec.getPk().getCompanyId(), 
-					rec.getOrderNumber(), 
-					rec.getOrderType(), 
-					rec.getOrderSequence(), 
-					rec.getTransactionQuantity(),
-					rec.getUnitOfMeasure());
-			//handle optional operations after purchase receipt creation
-			observers.forEach(observer -> observer.handleCreated(rec));
+			observers.forEach(observer -> observer.handleCreation(rec));
 		}
 			
 	}
@@ -266,8 +255,7 @@ public class PurchaseReceiptService implements ItemTransactionService{
 				PurchaseReceiptPredicates.getInstance().sameHeaderAs(receiptHead.getDetails().get(0))
 			)));
 		
-		int i = 10;
-		List<PurchaseReceipt> negateReceipts = new ArrayList<>();;
+		List<PurchaseReceipt> negateReceipts = new ArrayList<>();
 		for (PurchaseReceipt toBeVoided: toBeVoideds) {
 			//if the receipt is already voided then no need to void it again
 			if (toBeVoided.isVoided())
@@ -278,15 +266,12 @@ public class PurchaseReceiptService implements ItemTransactionService{
 										.findFirst()
 										.orElseThrow(() -> new PurchaseReceiptException("Cannot void a nonexistent receipt!"));
 			
-			int seq = receiptHead.getHighestSequence() + i;
-			i += 10;
-			
 			//create a copy of the current
 			PurchaseReceiptPK negatePk = new PurchaseReceiptPK(
 					existing.getPk().getCompanyId(), 
 					existing.getPk().getPurchaseReceiptNumber(), 
 					existing.getPk().getPurchaseReceiptType(), 
-					seq);
+					existing.getPk().getSequence() + 1);
 			PurchaseReceipt negatedRec = new PurchaseReceipt();
 			negatedRec.setPk(negatePk);
 			negatedRec.setOrderNumber(existing.getOrderNumber());
@@ -297,6 +282,7 @@ public class PurchaseReceiptService implements ItemTransactionService{
 			
 			existing.setLastStatus("499");
 			existing.setNextStatus("999");
+			observers.forEach(obs -> obs.handleVoidation(existing));
 			repo.save(existing);
 		}
 		
@@ -316,7 +302,7 @@ public class PurchaseReceiptService implements ItemTransactionService{
 			d.setLastStatus("499");
 			d.setNextStatus("999");
 		});
-		handleCreation(negatedReceiptHead);
+		//handleCreation(negatedReceiptHead);
 		repo.saveAll(negateReceipts);
 	}
 
