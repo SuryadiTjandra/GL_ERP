@@ -5,7 +5,9 @@ module.exports = {
   mode: 'development',
   entry: {
 	  purchaseOrder: './src/application/purchase/purchaseOrder/app.js',
+	  purchaseReceipt: './src/application/purchase/purchaseReceipt/app.js',
 	  salesOrder: './src/application/sales/salesOrder/app.js',
+	  salesShipment: './src/application/sales/salesShipment/app.js',
   },
   output: {
     filename: '[name].bundle.js',
