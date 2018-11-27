@@ -5,7 +5,9 @@ import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.time.YearMonth;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -304,6 +306,17 @@ public class PurchaseReceiptService implements ItemTransactionService{
 		});
 		//handleCreation(negatedReceiptHead);
 		repo.saveAll(negateReceipts);
+	}
+
+	public Object getDefaultPurchaseReceipt(String appParamCode) {
+		Map<String, Object> map = new HashMap<>();
+		map.put("companyId", "11000");
+		map.put("documentType", "OV");
+		map.put("businessUnitId", "110");
+		map.put("nextStatus", "440");
+		map.put("lastStatus", "400");
+		map.put("transactionDate", LocalDate.now());
+		return map;
 	}
 
 }

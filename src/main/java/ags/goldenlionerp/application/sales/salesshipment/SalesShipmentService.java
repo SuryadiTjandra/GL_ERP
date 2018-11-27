@@ -5,8 +5,10 @@ import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.time.YearMonth;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -276,5 +278,16 @@ public class SalesShipmentService implements ItemTransactionService{
 		
 		repo.saveAll(voideds);
 		
+	}
+
+	public Object getDefaultSalesShipment(String appParamCode) {
+		Map<String, Object> map = new HashMap<>();
+		map.put("companyId", "11000");
+		map.put("documentType", "SI");
+		map.put("businessUnitId", "110");
+		map.put("nextStatus", "580");
+		map.put("lastStatus", "560");
+		map.put("transactionDate", LocalDate.now());
+		return map;
 	}
 }
