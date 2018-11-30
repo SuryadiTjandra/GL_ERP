@@ -9,7 +9,11 @@
     </template>
 
     <template slot="form">
-      <div>HI</div>
+      <PurchaseReceiptForm
+        v-bind="standardFormProps"
+        v-on="standardFormListeners">
+
+      </PurchaseReceiptForm>
     </template>
   </BasePage>
 </template>
@@ -18,16 +22,17 @@
 import BasePage from 'baseComponents/pages/TableAndFormPage';
 import pageMixin from 'baseComponents/pages/TableAndFormPageMixin';
 import PurchaseReceiptTable from './PurchaseReceiptTable';
+import PurchaseReceiptForm from "./PurchaseReceiptForm";
 
 export default {
-  components: {BasePage, PurchaseReceiptTable},
+  components: {BasePage, PurchaseReceiptTable, PurchaseReceiptForm},
   mixins: [pageMixin],
   props: {
     defaultItem: Object
   },
   data: function(){
     return {
-      
+
     }
   }
 }
