@@ -56,6 +56,7 @@ querydsl {
 }
 
 task cleanJsFiles(type:Delete){
+	delete "src/main/front/dist"
 	delete "src/main/resources/static/js"
 }
 task runWebpack(type:NpmTask, dependsOn: npmInstall){
