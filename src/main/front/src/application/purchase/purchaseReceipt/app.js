@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import BootstrapVue from 'bootstrap-vue'
-import App from './PurchaseReceiptApp.js';
+import App from './PurchaseReceiptApp';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 
