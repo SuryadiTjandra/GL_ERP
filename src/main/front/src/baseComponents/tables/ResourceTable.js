@@ -1,8 +1,8 @@
-import RefreshButton from "baseComponents/buttons/RefreshButton.js";
-import ViewButton from "baseComponents/buttons/ViewButton.js";
-import EditButton from "baseComponents/buttons/EditButton.js";
-import CreateButton from "baseComponents/buttons/CreateButton.js";
-import DeleteButton from "baseComponents/buttons/DeleteButton.js";
+import RefreshButton from "baseComponents/buttons/RefreshButton";
+import ViewButton from "baseComponents/buttons/ViewButton";
+import EditButton from "baseComponents/buttons/EditButton";
+import CreateButton from "baseComponents/buttons/CreateButton";
+import DeleteButton from "baseComponents/buttons/DeleteButton";
 import {extractPath} from "util/PathExtractor.js";
 
 var ResourceTable = {
@@ -12,14 +12,14 @@ var ResourceTable = {
 		props: {
 			apiUrl: String,
 			resultPath: String,
-			
+
 			loadOnCreate: {
 				type: Boolean,
 				default: true
 			},
 			fields: Array,
 			primaryKeys: Array,
-			
+
 			itemEditable: {type: Boolean, default:true},
 			itemDeletable: {type: Boolean, default:true}
 		},
@@ -32,9 +32,9 @@ var ResourceTable = {
 					<RefreshButton @refresh-click="onRefresh"></RefreshButton>
 				</b-col>
 				<b-col class="text-right align-bottom">
-					<span 
+					<span
 						v-if="totalElements > 0"
-						class="text-muted font-weight-light font-italic mt-3"> 
+						class="text-muted font-weight-light font-italic mt-3">
 						{{startPos}} - {{endPos}} (Total: {{totalElements}})
 					</span></b-col>
 				<b-col>
@@ -44,19 +44,19 @@ var ResourceTable = {
 						:total-rows="totalElements"
 						:per-page="pageSize"
 						@change="onPaginationChange"
-					>					
+					>
 					</b-pagination>
 				</b-col>
 			</b-row>
 			<!-- table -->
 			<b-table striped hover show-empty small responsive no-local-sorting
-				:items="items" 
+				:items="items"
 				:fields="fields"
 				:per-page="pageSize"
 				:busy="isBusy"
 				@sort-changed="onSortChanged"
 				style="white-space:nowrap">
-				
+
 				<template slot="actions" slot-scope="data">
 					<ViewButton @view-click="onItemView(data.item, $event.target)">
 					</ViewButton>
@@ -66,21 +66,21 @@ var ResourceTable = {
 					</DeleteButton>
 				</template>
 			</b-table>
-			
+
 		</b-container>
 		`,
 		data: function(){
 			return {
 				//table data
 				items: [],
-				
+
 				//pagination
 				currentPage: 1,
 				pageSize: 20,
 				totalElements: 0,
 				sortBy: null,
 				sortDesc: false,
-				
+
 				//etc
 				isBusy: false
 			}
@@ -88,7 +88,7 @@ var ResourceTable = {
 		computed: {
 			currentPagePlus: function(){
 				//this property is because b-pagination is 1-based, while the server page data is 0-based
-				return this.currentPage + 1; 
+				return this.currentPage + 1;
 			},
 			startPos: function(){
 				return (this.pageSize * this.currentPage)  + 1;
@@ -103,7 +103,7 @@ var ResourceTable = {
 				return this.sortDesc ? "desc" : "asc";
 			}
 		},
-		methods:{		
+		methods:{
 			onRefresh: function(){
 				this.loadData(this.createParamObject(
 					this.currentPage,
@@ -114,9 +114,9 @@ var ResourceTable = {
 			},
 			onPaginationChange: function(page){
 				this.loadData(this.createParamObject(
-					page - 1, 
-					this.pageSize, 
-					this.sortBy, 
+					page - 1,
+					this.pageSize,
+					this.sortBy,
 					this.sortDir
 				));
 			},
@@ -142,7 +142,7 @@ var ResourceTable = {
 			onItemEdit: function(item){
 				this.$emit('edit-clicked', item);
 			},
-			
+
 			//normal methods to use in other methods
 			createParamObject: function(page, size, sortBy, sortDir){
 				let paramObj = {
@@ -157,7 +157,7 @@ var ResourceTable = {
 			loadData: function(param){
 				let paramStr = Object.keys(param).map(key => key + '=' + param[key]).join('&');
 				this.isBusy = true;
-				
+
 				fetch(this.apiUrl + "?" + paramStr)
 					.then(result => result.json())
 					.then (result => {
@@ -171,7 +171,7 @@ var ResourceTable = {
 						this.isBusy = false
 					})
 			}
-			
+
 
 		},
 		created: function(){
