@@ -1,5 +1,5 @@
 <template>
-	<b-form @submit.prevent.stop="emit('submit', $event)" novalidate :validated="validated">
+	<b-form @submit.prevent.stop="$emit('submit', $event)" novalidate :validated="validated">
     <slot></slot>
     <b-form-row class="mt-2 mb-4">
       <b-button variant="secondary" @click="$emit('cancel')" class="mx-2">Kembali</b-button>
