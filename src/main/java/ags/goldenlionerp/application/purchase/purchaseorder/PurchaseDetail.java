@@ -302,7 +302,7 @@ public class PurchaseDetail extends DatabaseEntity<PurchaseDetailPK> implements 
 	@ManyToOne(optional=false)
 	private PurchaseOrder order;
 	
-	@OneToMany(mappedBy="purchaseDetail")
+	@OneToMany(mappedBy="orderDetail")
 	private List<PurchaseReceipt> receipts;
 	
 	@Override

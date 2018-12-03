@@ -70,7 +70,7 @@ public class PurchaseReceiptService implements ItemTransactionService{
 	public PurchaseReceiptHeader completePurchaseReceiptInfo(PurchaseReceiptHeader receiptHead) {
 		receiptHead = setInfoFromPurchaseOrder(receiptHead);
 		
-		LocalDate docDate = receiptHead.getDocumentDate();
+		LocalDate docDate = receiptHead.getTransactionDate();
 		receiptHead.getDetails().forEach(d -> d.setReceiptDate(docDate));
 		return receiptHead;
 	}
@@ -78,10 +78,10 @@ public class PurchaseReceiptService implements ItemTransactionService{
 	private PurchaseReceiptHeader setDocumentAndBatchNumber(PurchaseReceiptHeader receiptHead) {
 		String companyId = receiptHead.getCompanyId();
 		String type = "OV"; //TODO
-		YearMonth date = YearMonth.from(receiptHead.getDocumentDate());
-		int docNo = receiptHead.getPurchaseReceiptNumber() == 0 ?
+		YearMonth date = YearMonth.from(receiptHead.getTransactionDate());
+		int docNo = receiptHead.getDocumentNumber() == 0 ?
 						nnServ.findNextDocumentNumber(companyId, type, date):
-						receiptHead.getPurchaseReceiptNumber();
+						receiptHead.getDocumentNumber();
 		
 		for (int i = 0; i < receiptHead.getDetails().size(); i++) {
 			PurchaseReceipt d = receiptHead.getDetails().get(i);
@@ -204,10 +204,10 @@ public class PurchaseReceiptService implements ItemTransactionService{
 		
 		PurchaseReceiptHeader newReceiptHead = new PurchaseReceiptHeader(
 				existingReceiptHead.getCompanyId(),
-				existingReceiptHead.getPurchaseReceiptNumber(),
-				existingReceiptHead.getPurchaseReceiptType(),
+				existingReceiptHead.getDocumentNumber(),
+				existingReceiptHead.getDocumentType(),
 				existingReceiptHead.getBusinessUnitId(),
-				existingReceiptHead.getDocumentDate(),
+				existingReceiptHead.getTransactionDate(),
 				existingReceiptHead.getVendorId(),
 				existingReceiptHead.getCustomerOrderNumber(),
 				existingReceiptHead.getDescription(),				
@@ -290,10 +290,10 @@ public class PurchaseReceiptService implements ItemTransactionService{
 		
 		PurchaseReceiptHeader negatedReceiptHead = new PurchaseReceiptHeader(
 				existingReceiptHead.getCompanyId(),
-				existingReceiptHead.getPurchaseReceiptNumber(),
-				existingReceiptHead.getPurchaseReceiptType(),
+				existingReceiptHead.getDocumentNumber(),
+				existingReceiptHead.getDocumentType(),
 				existingReceiptHead.getBusinessUnitId(),
-				existingReceiptHead.getDocumentDate(),
+				existingReceiptHead.getTransactionDate(),
 				existingReceiptHead.getVendorId(),
 				existingReceiptHead.getCustomerOrderNumber(),
 				existingReceiptHead.getDescription(),				

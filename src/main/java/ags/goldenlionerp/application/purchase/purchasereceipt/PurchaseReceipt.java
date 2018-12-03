@@ -212,7 +212,7 @@ public class PurchaseReceipt extends DocumentDetailEntity<PurchaseReceiptPK> imp
 		@JoinColumn(name="OVDOCOSQ", referencedColumnName="ODDOCOSQ", insertable=false, updatable=false),
 	})
 	@ManyToOne(fetch=FetchType.LAZY, optional=false)
-	private PurchaseDetail purchaseDetail;
+	private PurchaseDetail orderDetail;
 	
 	@Column(name="OVORDOCNO")
 	private int originalDocumentNumber;
@@ -552,8 +552,8 @@ public class PurchaseReceipt extends DocumentDetailEntity<PurchaseReceiptPK> imp
 		return orderSequence;
 	}
 
-	public PurchaseDetail getPurchaseDetail() {
-		return purchaseDetail;
+	public PurchaseDetail getOrderDetail() {
+		return orderDetail;
 	}
 
 	public int getOriginalDocumentNumber() {
@@ -881,8 +881,8 @@ public class PurchaseReceipt extends DocumentDetailEntity<PurchaseReceiptPK> imp
 		this.orderSequence = purchaseOrderSequence;
 	}
 
-	void setPurchaseDetail(PurchaseDetail purchaseDetail) {
-		this.purchaseDetail = purchaseDetail;
+	void setOrderDetail(PurchaseDetail orderDetail) {
+		this.orderDetail = orderDetail;
 	}
 
 	void setOriginalDocumentNumber(int originalDocumentNumber) {

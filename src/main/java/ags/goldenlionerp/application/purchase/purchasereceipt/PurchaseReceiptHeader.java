@@ -95,11 +95,11 @@ class PurchaseReceiptHeader implements DatabaseAuditable{
 		return details.get(0).getPk().getCompanyId();
 	}
 
-	public int getPurchaseReceiptNumber() {
+	public int getDocumentNumber() {
 		return details.get(0).getPk().getPurchaseReceiptNumber();
 	}
 
-	public String getPurchaseReceiptType() {
+	public String getDocumentType() {
 		return details.get(0).getPk().getPurchaseReceiptType();
 	}
 
@@ -107,7 +107,7 @@ class PurchaseReceiptHeader implements DatabaseAuditable{
 		return details.get(0).getBusinessUnitId();
 	}
 
-	public LocalDate getDocumentDate() {
+	public LocalDate getTransactionDate() {
 		return details.get(0).getTransactionDate();
 	}
 
