@@ -4,41 +4,57 @@
     :validate="validated"
     @submit="onFormSubmit"
     @cancel="$emit('cancel')">
-    <PurchaseReceiptFormHeader :formItem="formItem2" :editable="editable">
+    <PurchaseReceiptFormHeader :formItem="formItem" :editable="editable">
     </PurchaseReceiptFormHeader>
 
-    <PurchaseReceiptFormDetailList :details="formItem2.details">
+    <PurchaseReceiptFormDetailList :details="formItem.details" :editable="editable && formItem.vendorId != null" @new-detail="onNewDetail">
     </PurchaseReceiptFormDetailList>
+
+    <PurchaseOrderSelector
+      :param="{vendorId: formItem.vendorId, status:'OPEN'}"
+      :visible.sync="poSelectorVisible"
+      :excluded="formItem.details"
+      @select-orders="onSelectOrders">
+    </PurchaseOrderSelector>
   </StandardForm>
 </template>
 
 <script>
 import StandardForm from "baseComponents/forms/StandardFormTemplate";
-import formMixin from "baseComponents/forms/StandardFormMixin"
-import PurchaseReceiptFormHeader from "./PurchaseReceiptFormHeader"
-import PurchaseReceiptFormDetailList from "./PurchaseReceiptFormDetailList"
+import formMixin from "baseComponents/forms/StandardFormMixin";
+import PurchaseReceiptFormHeader from "./PurchaseReceiptFormHeader";
+import PurchaseReceiptFormDetailList from "./PurchaseReceiptFormDetailList";
+import PurchaseOrderSelector from "./PurchaseOrderSelector";
 
 export default {
-  components: {StandardForm, PurchaseReceiptFormHeader, PurchaseReceiptFormDetailList},
+  components: {StandardForm, PurchaseReceiptFormHeader, PurchaseReceiptFormDetailList, PurchaseOrderSelector},
   mixins: [formMixin],
-  methods: {
-    onFormSubmit(){
-      alert("submit");
-    }
-  },
   data: function(){
     return {
-      formItem2: {}
+      poSelectorVisible: false
     }
   },
-  watch: {
-    formItem: function(item){
-      if (item == null)
-        this.formItem2 == null;
-
-      fetch(item._links.self.href)
-        .then(res => res.json())
-        .then(res => this.formItem2 = res);
+  methods: {
+    onSelectOrders(selectedOrders){
+      let newReceipts = selectedOrders.map(
+        order => ({
+          companyId: this.formItem.companyId,
+          orderNumber: order.purchaseOrderNumber,
+          orderType: order.purchaseOrderType,
+          orderSequence: order.purchaseOrderSequence,
+          itemCode: order.itemCode,
+          itemDescription: order.itemDescription,
+          quantity: order.openQuantity,
+          unitOfMeasure: order.unitOfMeasure
+        })
+      );
+      this.formItem.details.push(...newReceipts);
+    },
+    onFormSubmit(){
+      alert("submit");
+    },
+    onNewDetail(){
+      this.poSelectorVisible = true;
     }
   }
 }
