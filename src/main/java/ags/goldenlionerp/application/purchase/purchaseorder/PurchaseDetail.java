@@ -73,7 +73,7 @@ public class PurchaseDetail extends DatabaseEntity<PurchaseDetailPK> implements 
 	private String serialLotNo;
 	
 	@Column(name="ODDESB1")
-	private String description;
+	private String itemDescription;
 	
 	@Column(name="ODLNTY")
 	private String lineType;
@@ -346,8 +346,8 @@ public class PurchaseDetail extends DatabaseEntity<PurchaseDetailPK> implements 
 		return serialLotNo;
 	}
 
-	public String getDescription() {
-		return description;
+	public String getItemDescription() {
+		return itemDescription;
 	}
 
 	public String getLineType() {
@@ -650,8 +650,8 @@ public class PurchaseDetail extends DatabaseEntity<PurchaseDetailPK> implements 
 		this.serialLotNo = serialLotNo;
 	}
 
-	void setDescription(String description) {
-		this.description = description;
+	void setItemDescription(String description) {
+		this.itemDescription = description;
 	}
 
 	void setLineType(String lineType) {
@@ -928,7 +928,7 @@ public class PurchaseDetail extends DatabaseEntity<PurchaseDetailPK> implements 
 	public OrderStatus getStatus() {
 		if (cancelledQuantity.doubleValue() > 0)
 			return OrderStatus.CANCELLED;
-		if (openQuantity.compareTo(quantity) == 0)
+		if (openQuantity.compareTo(BigDecimal.ZERO) > 0)
 			return OrderStatus.OPEN;
 		if (openQuantity.compareTo(BigDecimal.ZERO) == 0)
 			return OrderStatus.CLOSED;

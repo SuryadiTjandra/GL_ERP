@@ -118,7 +118,7 @@ public class PurchaseReceiptService implements ItemTransactionService{
 		receipt.setExchangeRate(pd.getExchangeRate());
 		
 		receipt.setItemCode(pd.getItemCode());
-		receipt.setItemDescription(pd.getDescription());
+		receipt.setItemDescription(pd.getItemDescription());
 		receipt.setLineType(pd.getLineType());
 		
 		if (isEmpty(receipt.getLocationId()))

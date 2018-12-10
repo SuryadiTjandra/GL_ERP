@@ -130,7 +130,7 @@ public class PurchaseOrderService {
 		poDetail.setSecondaryUnitOfMeasure(secondaryUom);
 		
 		poDetail.setGlClass(item.getGlClass());
-		poDetail.setDescription(item.getDescription());
+		poDetail.setItemDescription(item.getDescription());
 		poDetail.setLineType(item.getTransactionType());
 		
 		if (poDetail.getLocationId() == null || poDetail.getLocationId().isEmpty()) {
