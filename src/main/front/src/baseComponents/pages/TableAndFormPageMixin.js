@@ -22,13 +22,13 @@ export default {
       this.formMode = "add";
       this.formVisible = true;
     },
-    onViewItem: function(item){
-      this.formItem = item;
+    onViewItem: async function(item){
+      this.formItem = await this.fetchFormItem(item);
       this.formMode = "view";
       this.formVisible = true;
     },
-    onEditItem: function(item){
-      this.formItem = item;
+    onEditItem: async function(item){
+      this.formItem = await this.fetchFormItem(item);
       this.formMode = "edit";
       this.formVisible = true;
     },
@@ -61,6 +61,11 @@ export default {
         this.formItem = {};
       })
       .catch(err => alert(err));
+    },
+
+    fetchFormItem: async function(item){
+      let res = await fetch(item._links.self.href);
+      return await res.json();
     }
   },
   computed: {
