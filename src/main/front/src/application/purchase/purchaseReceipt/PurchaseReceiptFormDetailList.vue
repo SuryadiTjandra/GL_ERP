@@ -1,5 +1,5 @@
 <template>
-  <b-table :fields="fields" :items="detailData" small responsive showEmpty>
+  <b-table :fields="fields" :items="detailDataWithVariant" small responsive showEmpty>
     <template slot="action" slot-scope="detail">
       <VoidButton v-if="editable && !detail.item.voided"
         @void-click="onVoidDetail(detail.item, detail.index)">
@@ -69,13 +69,29 @@ export default {
     }
   },
   computed: {
-    detailData: function(){
-      return this.details;
+    detailData: {
+      get: function(){
+        return this.details;
+      },
+      set: function(details){
+        this.$emit("update:details", details);
+      }
+    },
+    detailDataWithVariant(){
+      if (this.detailData == null)
+        return [];
+      return this.detailData.map(detail => Object.assign(detail, { _rowVariant: detail.voided? "danger" : ''} ));
     }
   },
   methods: {
-    onVoidDetail(item){
-      alert(item + " voided")
+    onVoidDetail(item, index){
+      if (item.inputUserId == null || item.inputDateTime == null){
+        this.detailData.splice(index, 1);
+      } else {
+        if (confirm("Void transaksi ini?")){
+          this.$emit("void-detail", item);
+        }
+      }
     },
     onAddNewRow(){
       //alert("new row");

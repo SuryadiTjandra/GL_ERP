@@ -1010,7 +1010,7 @@ public class PurchaseReceipt extends DocumentDetailEntity<PurchaseReceiptPK> imp
 	
 	@JsonGetter("voided")
 	public boolean isVoided() {
-		return lastStatus != null && lastStatus.equals("999");
+		return nextStatus != null && nextStatus.equals("999");
 	}
 	
 	@Override//TODO

@@ -24,8 +24,14 @@ import isEqual from "lodash/isEqual";
 
 export default {
   props: {
-    param: Object,
-    excluded: Array,
+    param: {
+      type:Object,
+      default(){ return {}; }
+    },
+    excluded:{
+      type: Array,
+      default(){return []; }
+    },
     visible: Boolean
   },
   data: function(){

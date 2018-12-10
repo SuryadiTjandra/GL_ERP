@@ -7,7 +7,11 @@
     <PurchaseReceiptFormHeader :formItem="formItem" :editable="editable">
     </PurchaseReceiptFormHeader>
 
-    <PurchaseReceiptFormDetailList :details="formItem.details" :editable="editable && formItem.vendorId != null" @new-detail="onNewDetail">
+    <PurchaseReceiptFormDetailList
+      :details.sync="formItem.details"
+      :editable="editable && formItem.vendorId != null"
+      @new-detail="onNewDetail"
+      @void-detail="onVoidDetail">
     </PurchaseReceiptFormDetailList>
 
     <PurchaseOrderSelector
@@ -55,6 +59,9 @@ export default {
     },
     onNewDetail(){
       this.poSelectorVisible = true;
+    },
+    onVoidDetail(detail){
+      detail.voided = true;
     }
   }
 }
