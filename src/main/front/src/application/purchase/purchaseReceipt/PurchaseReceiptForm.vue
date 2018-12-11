@@ -49,13 +49,21 @@ export default {
           itemCode: order.itemCode,
           itemDescription: order.itemDescription,
           quantity: order.openQuantity,
-          unitOfMeasure: order.unitOfMeasure
+          unitOfMeasure: order.unitOfMeasure,
+          serialOrLotNumbers: [],
+          _links: {
+            item: {
+              href: order._links.item.href
+            }
+          }
         })
       );
-      this.formItem.details.push(...newReceipts);
+      this.formItem.details = this.formItem.details.concat(newReceipts);
+      //this.formItem.details.push(...newReceipts);
     },
     onFormSubmit(){
-      alert("submit");
+      this.$emit('save', this.formItem);
+      //alert("submit");
     },
     onNewDetail(){
       this.poSelectorVisible = true;

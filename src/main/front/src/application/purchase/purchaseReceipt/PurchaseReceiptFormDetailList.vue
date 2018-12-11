@@ -28,6 +28,26 @@
       </template>
     </template>
 
+    <template slot="serialOrLotNumbers" slot-scope="detail">
+      <template v-if="useSerialOrLotNumbers[detail.index] && editable && !detail.item.voided">
+        <template v-for="n in Math.max(detail.item.quantity, detail.item.serialOrLotNumbers.length)">
+          <b-input-group>
+            <b-input type="text" size="sm"
+              v-model="detail.item.serialOrLotNumbers[n-1]"
+              :state="n <= detail.item.quantity
+                      && detail.item.serialOrLotNumbers[n-1] != null
+                      && detail.item.serialOrLotNumbers[n-1].length > 0">
+            </b-input>
+            <b-input-group-append v-if="n > detail.item.quantity">
+              <VoidButton @void-click="onRemoveSerialNo(detail.item, n-1)"></VoidButton>
+            </b-input-group-append>
+          </b-input-group>
+        </template>
+      </template>
+      <template v-else-if="useSerialOrLotNumbers[detail.index]">{{detail.item.serialOrLotNumbers}}</template>
+      <template v-else>N/A</template>
+    </template>
+
     <template slot="bottom-row" slot-scope="row">
       <td v-for="field in row.fields">
         <template v-if="field.key === 'action'">
@@ -63,9 +83,13 @@ export default {
         }, {
           key:'itemInfo', label: 'Item', thStyle:{width:'32%'}
         }, {
-          key:'quantityInfo', label: 'Qty', thStyle:{width:'15%'}
+          key:'quantityInfo', label: 'Qty', thStyle: {width:'32%'}
+        }, {
+          key:'serialOrLotNumbers', label: 'Serial/Lot Numbers'
         }
-      ]
+      ],
+
+      useSerialOrLotNumbers: []
     }
   },
   computed: {
@@ -96,6 +120,26 @@ export default {
     onAddNewRow(){
       //alert("new row");
       this.$emit("new-detail")
+    },
+    onRemoveSerialNo(detail, index){
+      detail.serialOrLotNumbers.splice(index, 1);
+    },
+    onAddSerialNo(detail, newSerialNo){
+      if (newSerialNo != null && newSerialNo.length > 0)
+        detail.serialOrLotNumbers.push(newSerialNo);
+    }
+  },
+  watch: {
+    detailData: async function(newDetails, oldDetails){
+      for (let i = 0; i < newDetails.length; i++){
+        if (oldDetails!= null && oldDetails[i] != null && newDetails[i].itemCode === oldDetails[i].itemCode)
+          continue;
+
+        let item = await fetch(newDetails[i]._links.item.href);
+        item = await item.json();
+        this.$set(this.useSerialOrLotNumbers, i, item.serialNumberRequired);
+        //this.useSerialOrLotNumbers[i] = item.serialNumberRequired;
+      }
     }
   }
 }

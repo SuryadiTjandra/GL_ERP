@@ -248,6 +248,7 @@ public class PurchaseReceiptService implements ItemTransactionService{
 	private void voidReceipts(PurchaseReceiptHeader receiptHead) {
 		List<PurchaseReceipt> toBeVoideds = receiptHead.getDetails().stream()
 												.filter(PurchaseReceipt::isToBeVoided)
+												.filter(pr -> !pr.isVoided()) //if the receipt is already voided then no need to void it again
 												.collect(Collectors.toList());
 		if (toBeVoideds.isEmpty())
 			return;
@@ -259,10 +260,6 @@ public class PurchaseReceiptService implements ItemTransactionService{
 		
 		List<PurchaseReceipt> negateReceipts = new ArrayList<>();
 		for (PurchaseReceipt toBeVoided: toBeVoideds) {
-			//if the receipt is already voided then no need to void it again
-			if (toBeVoided.isVoided())
-				continue;
-			
 			PurchaseReceipt existing = existingReceiptHead.getDetails().stream()
 										.filter(det -> det.getPk().equals(toBeVoided.getPk()))
 										.findFirst()
