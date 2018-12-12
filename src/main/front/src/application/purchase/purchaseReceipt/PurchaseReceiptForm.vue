@@ -17,7 +17,7 @@
     <PurchaseOrderSelector
       :param="{vendorId: formItem.vendorId, status:'OPEN'}"
       :visible.sync="poSelectorVisible"
-      :excluded="formItem.details"
+      :excluded="formItem.details | notVoided"
       @select-orders="onSelectOrders">
     </PurchaseOrderSelector>
   </StandardForm>
@@ -70,6 +70,13 @@ export default {
     },
     onVoidDetail(detail){
       detail.voided = true;
+    }
+  },
+  filters: {
+    notVoided(details){
+      if (details == null)
+        return [];
+      return details.filter(d => !d.voided)
     }
   }
 }

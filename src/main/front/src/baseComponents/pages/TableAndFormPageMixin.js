@@ -11,7 +11,7 @@ export default {
   },
   data: function(){
     return {
-      formItem: {},
+      formItem: this.defaultItem,
       formMode: "add",
       formVisible: false
     }
@@ -34,7 +34,7 @@ export default {
     },
     onFormCancel: function(){
       this.formVisible = false;
-      this.formItem = {};
+      this.formItem = this.defaultItem;
     },
     onFormSave: function(formItem){
 

@@ -5,6 +5,7 @@ import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.time.YearMonth;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -237,11 +238,11 @@ public class PurchaseReceiptService implements ItemTransactionService{
 		}
 		
 		//save the created receipts
-		handleCreation(receiptHead);
+		handleCreation(newReceiptHead);
 		repo.saveAll(newReceiptHead.getDetails());
 		
 		return new PurchaseReceiptHeader(Lists.newArrayList(repo.findAll(
-				PurchaseReceiptPredicates.getInstance().sameHeaderAs(receiptHead.getDetails().get(0))
+				PurchaseReceiptPredicates.getInstance().sameHeaderAs(newReceiptHead.getDetails().get(0))
 			)));
 	}
 
@@ -313,6 +314,7 @@ public class PurchaseReceiptService implements ItemTransactionService{
 		map.put("nextStatus", "440");
 		map.put("lastStatus", "400");
 		map.put("transactionDate", LocalDate.now());
+		map.put("details", Collections.emptyList());
 		return map;
 	}
 

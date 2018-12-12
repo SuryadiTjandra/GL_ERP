@@ -71,7 +71,8 @@ export default {
   components: { VoidButton, DataCodeInput},
   props: {
     details: {
-      type: Array
+      type: Array,
+      required: true
     },
     editable: Boolean
   },
@@ -81,9 +82,9 @@ export default {
         {
           key:'action', label:'', thStyle:{width:'3%'}
         }, {
-          key:'itemInfo', label: 'Item', thStyle:{width:'32%'}
+          key:'itemInfo', label: 'Item', thStyle:{width:'45%'}
         }, {
-          key:'quantityInfo', label: 'Qty', thStyle: {width:'32%'}
+          key:'quantityInfo', label: 'Qty', thStyle: {width:'40%'}
         }, {
           key:'serialOrLotNumbers', label: 'Serial/Lot Numbers'
         }
@@ -130,7 +131,7 @@ export default {
     }
   },
   watch: {
-    detailData: async function(newDetails, oldDetails){
+    details: async function(newDetails, oldDetails){
       for (let i = 0; i < newDetails.length; i++){
         if (oldDetails!= null && oldDetails[i] != null && newDetails[i].itemCode === oldDetails[i].itemCode)
           continue;
