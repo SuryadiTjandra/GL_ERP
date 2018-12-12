@@ -54,7 +54,7 @@
       </b-form-group>
     </b-col>
     <b-col cols="4">
-      <b-form-group label="Tanggal Order" horizontal label-size="sm" label-text-align="right">
+      <b-form-group label="Tanggal Terima" horizontal label-size="sm" label-text-align="right">
         <b-form-input type="date" required size="sm"
           v-model="formItem.transactionDate"
           :readOnly="!editable">
