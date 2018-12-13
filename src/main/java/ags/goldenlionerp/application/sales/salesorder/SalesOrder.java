@@ -16,6 +16,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
+import com.querydsl.core.annotations.QueryInit;
 
 import ags.goldenlionerp.application.purchase.IntegratedReferences;
 import ags.goldenlionerp.application.purchase.OrderStatus;
@@ -802,7 +803,10 @@ public class SalesOrder extends DatabaseEntity<SalesOrderPK>{
 		setPartnerRepresentativeId(partnerRepresentativeId);
 	}
 	
+	@QueryInit("status")
 	public OrderStatus getStatus() {
+		if (details.stream().map(det -> det.getStatus()).anyMatch(st -> st.equals(OrderStatus.OPEN)))
+			return OrderStatus.OPEN;
 		//TODO
 		if (details.stream().map(det -> det.getStatus()).allMatch(st -> st.equals(OrderStatus.CANCELLED)))
 			return OrderStatus.CANCELLED;
