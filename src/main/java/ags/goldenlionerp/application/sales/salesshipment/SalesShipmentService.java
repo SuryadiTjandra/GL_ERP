@@ -226,6 +226,7 @@ public class SalesShipmentService implements ItemTransactionService{
 	private void voidShipments(SalesShipmentHeader patchRequest) {
 		List<SalesShipmentPK> toBeVoidedPks = patchRequest.getDetails().stream()
 											.filter(sh -> sh.setForVoid)
+											.filter(sh -> !sh.isVoided()) //if already voided then no need to void it again
 											.map(SalesShipment::getPk)
 											.collect(Collectors.toList());
 		if (toBeVoidedPks.isEmpty())
