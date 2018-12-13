@@ -132,7 +132,7 @@ public class SalesOrderService {
 		soDetail.setSecondaryUnitOfMeasure(secondaryUom);
 		
 		soDetail.setGlClass(item.getGlClass());
-		soDetail.setDescription(item.getDescription());
+		soDetail.setItemDescription(item.getDescription());
 		soDetail.setLineType(item.getTransactionType());
 		
 		if (soDetail.getLocationId() == null || soDetail.getLocationId().isEmpty()) {

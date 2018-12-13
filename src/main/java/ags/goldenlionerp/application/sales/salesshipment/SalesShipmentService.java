@@ -98,7 +98,7 @@ public class SalesShipmentService implements ItemTransactionService{
 		
 		
 		shipment.setItemCode(sd.getItemCode());
-		shipment.setItemDescription(sd.getDescription());
+		shipment.setItemDescription(sd.getItemDescription());
 		shipment.setLineType(sd.getLineType());
 		if (isEmpty(shipment.getLocationId()))
 			shipment.setLocationId(sd.getLocationId());

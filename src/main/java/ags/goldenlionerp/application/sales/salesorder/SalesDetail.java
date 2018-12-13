@@ -78,7 +78,7 @@ public class SalesDetail extends DatabaseEntity<SalesDetailPK>{
 	private String serialLotNo;
 	
 	@Column(name="SDDESB1")
-	private String description;
+	private String itemDescription;
 	
 	@Column(name="SDLNTY")
 	private String lineType;
@@ -411,8 +411,8 @@ public class SalesDetail extends DatabaseEntity<SalesDetailPK>{
 		return serialLotNo;
 	}
 
-	public String getDescription() {
-		return description;
+	public String getItemDescription() {
+		return itemDescription;
 	}
 
 	public String getLineType() {
@@ -771,8 +771,8 @@ public class SalesDetail extends DatabaseEntity<SalesDetailPK>{
 		this.serialLotNo = serialLotNo;
 	}
 
-	void setDescription(String description) {
-		this.description = description;
+	void setItemDescription(String description) {
+		this.itemDescription = description;
 	}
 
 	void setLineType(String lineType) {
