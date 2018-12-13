@@ -59,7 +59,7 @@ public class SalesShipmentService implements ItemTransactionService{
 	private SalesShipmentHeader setDocumentAndBatchNumber(SalesShipmentHeader shipmentRequest) {
 		String companyId = shipmentRequest.getCompanyId();
 		String docTy = "SI";
-		LocalDate docDt = Optional.ofNullable(shipmentRequest.getDocumentDate()).orElse(LocalDate.now());
+		LocalDate docDt = Optional.ofNullable(shipmentRequest.getTransactionDate()).orElse(LocalDate.now());
 		int docNo = shipmentRequest.getDocumentNumber() != 0 ?
 						shipmentRequest.getDocumentNumber() :
 						nnServ.findNextDocumentNumber(companyId, docTy, YearMonth.from(docDt));
@@ -207,7 +207,7 @@ public class SalesShipmentService implements ItemTransactionService{
 				existingHead.getDocumentNumber(),
 				existingHead.getDocumentType(),
 				existingHead.getBusinessUnitId(),
-				existingHead.getDocumentDate(),
+				existingHead.getTransactionDate(),
 				existingHead.getCustomerId(),
 				existingHead.getReceiverId(),
 				existingHead.getDescription(),

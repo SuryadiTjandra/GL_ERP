@@ -1286,7 +1286,7 @@ public class SalesShipment extends DocumentDetailEntity<SalesShipmentPK> impleme
 	
 	@JsonGetter("voided")
 	public boolean isVoided() {
-		return this.nextStatus.equals("999");
+		return this.nextStatus != null && this.nextStatus.equals("999");
 	}
 
 }

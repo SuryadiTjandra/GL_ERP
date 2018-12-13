@@ -200,7 +200,7 @@ public class PurchaseReceiptApiTest extends ApiTestBase<PurchaseReceiptPK> {
 			.andExpect(jsonPath("$.details[0].exchangeRate").value(poDetails.get(0).get("exchangeRate")))
 			.andExpect(jsonPath("$.details[0].locationId").value(poDetails.get(0).get("locationId")))
 			.andExpect(jsonPath("$.details[0].serialLotNo").value(poDetails.get(0).get("serialLotNo")))
-			.andExpect(jsonPath("$.details[0].itemDescription").value(poDetails.get(0).get("description")))
+			.andExpect(jsonPath("$.details[0].itemDescription").value(poDetails.get(0).get("itemDescription")))
 			.andExpect(jsonPath("$.details[0].lineType").value(poDetails.get(0).get("lineType")))
 			.andExpect(jsonPath("$.details[0].unitOfMeasure").value(requestDetails.get(0).getOrDefault("unitOfMeasure", poDetails.get(0).get("unitOfMeasure"))))
 			//.andExpect(jsonPath("$.details[0].unitConversionFactor").value(poDetails.get(0).get("unitConversionFactor")))
@@ -263,7 +263,7 @@ public class PurchaseReceiptApiTest extends ApiTestBase<PurchaseReceiptPK> {
 			.andExpect(jsonPath("$.details[1].exchangeRate").value(poDetails.get(1).get("exchangeRate")))
 			.andExpect(jsonPath("$.details[1].locationId").value(poDetails.get(1).get("locationId")))
 			.andExpect(jsonPath("$.details[1].serialLotNo").value(poDetails.get(1).get("serialLotNo")))
-			.andExpect(jsonPath("$.details[1].itemDescription").value(poDetails.get(1).get("description")))
+			.andExpect(jsonPath("$.details[1].itemDescription").value(poDetails.get(1).get("itemDescription")))
 			.andExpect(jsonPath("$.details[1].lineType").value(poDetails.get(1).get("lineType")))
 			.andExpect(jsonPath("$.details[1].unitOfMeasure").value(requestDetails.get(1).getOrDefault("unitOfMeasure", poDetails.get(1).get("unitOfMeasure"))))
 			//.andExpect(jsonPath("$.details[1].unitConversionFactor").value(poDetails.get(1).get("unitConversionFactor")))
@@ -357,7 +357,7 @@ public class PurchaseReceiptApiTest extends ApiTestBase<PurchaseReceiptPK> {
 				.andExpect(jsonPath("$.details[0].itemCode").value(poDetails.get(0).get("itemCode")))
 				.andExpect(jsonPath("$.details[0].locationId").value(poDetails.get(0).get("locationId")))
 				.andExpect(jsonPath("$.details[0].serialLotNo").value(poDetails.get(0).get("serialLotNo")))
-				.andExpect(jsonPath("$.details[0].itemDescription").value(poDetails.get(0).get("description")))
+				.andExpect(jsonPath("$.details[0].itemDescription").value(poDetails.get(0).get("itemDescription")))
 				.andExpect(jsonPath("$.details[0].unitOfMeasure").value(requestDetails.get(0).getOrDefault("unitOfMeasure", poDetails.get(0).get("unitOfMeasure"))))
 				.andExpect(jsonPath("$.details[0].primaryUnitOfMeasure").value(poDetails.get(0).get("primaryUnitOfMeasure")))
 				.andExpect(jsonPath("$.details[0].secondaryTransactionQuantity").value(requestDetails.get(0).getOrDefault("secondaryTransactionQuantity", 0.0)))
@@ -382,7 +382,7 @@ public class PurchaseReceiptApiTest extends ApiTestBase<PurchaseReceiptPK> {
 				.andExpect(jsonPath("$.details[1].itemCode").value(poDetails.get(2).get("itemCode")))
 				.andExpect(jsonPath("$.details[1].locationId").value(poDetails.get(2).get("locationId")))
 				.andExpect(jsonPath("$.details[1].serialLotNo").value(poDetails.get(2).get("serialLotNo")))
-				.andExpect(jsonPath("$.details[1].itemDescription").value(poDetails.get(2).get("description")))
+				.andExpect(jsonPath("$.details[1].itemDescription").value(poDetails.get(2).get("itemDescription")))
 				.andExpect(jsonPath("$.details[1].unitOfMeasure").value(requestDetails.get(2).getOrDefault("unitOfMeasure", poDetails.get(2).get("unitOfMeasure"))))
 				.andExpect(jsonPath("$.details[1].primaryUnitOfMeasure").value(poDetails.get(2).get("primaryUnitOfMeasure")))
 				.andExpect(jsonPath("$.details[1].secondaryTransactionQuantity").value(requestDetails.get(2).getOrDefault("secondaryTransactionQuantity", 0.0)))
@@ -444,7 +444,7 @@ public class PurchaseReceiptApiTest extends ApiTestBase<PurchaseReceiptPK> {
 			.andExpect(jsonPath("$.details[8].exchangeRate").value(poDetails.get(0).get("exchangeRate")))
 			.andExpect(jsonPath("$.details[8].locationId").value(poDetails.get(0).get("locationId")))
 			.andExpect(jsonPath("$.details[8].serialLotNo").value(poDetails.get(0).get("serialLotNo")))
-			.andExpect(jsonPath("$.details[8].itemDescription").value(poDetails.get(0).get("description")))
+			.andExpect(jsonPath("$.details[8].itemDescription").value(poDetails.get(0).get("itemDescription")))
 			.andExpect(jsonPath("$.details[8].lineType").value(poDetails.get(0).get("lineType")))
 			.andExpect(jsonPath("$.details[8].unitOfMeasure").value(requestDetails.get(0).getOrDefault("unitOfMeasure", poDetails.get(0).get("unitOfMeasure"))))
 			//.andExpect(jsonPath("$.detail[8].unitConversionFactor").value(poDetails.get(0).get("unitConversionFactor")))
@@ -528,7 +528,7 @@ public class PurchaseReceiptApiTest extends ApiTestBase<PurchaseReceiptPK> {
 				.andExpect(jsonPath("$.details[1].exchangeRate").value(poDetails.get(0).get("exchangeRate")))
 				.andExpect(jsonPath("$.details[1].locationId").value(poDetails.get(0).get("locationId")))
 				.andExpect(jsonPath("$.details[1].serialLotNo").value(poDetails.get(0).get("serialLotNo")))
-				.andExpect(jsonPath("$.details[1].itemDescription").value(poDetails.get(0).get("description")))
+				.andExpect(jsonPath("$.details[1].itemDescription").value(poDetails.get(0).get("itemDescription")))
 				.andExpect(jsonPath("$.details[1].lineType").value(poDetails.get(0).get("lineType")))
 				.andExpect(jsonPath("$.details[1].unitOfMeasure").value(requestDetails.get(0).getOrDefault("unitOfMeasure", poDetails.get(0).get("unitOfMeasure"))))
 				//.andExpect(jsonPath("$.details[1].unitConversionFactor").value(poDetails.get(0).get("unitConversionFactor")))
@@ -577,7 +577,7 @@ public class PurchaseReceiptApiTest extends ApiTestBase<PurchaseReceiptPK> {
 				.andExpect(jsonPath("$.details[1].itemCode").value(poDetails.get(0).get("itemCode")))
 				.andExpect(jsonPath("$.details[1].locationId").value(poDetails.get(0).get("locationId")))
 				.andExpect(jsonPath("$.details[1].serialLotNo").value(poDetails.get(0).get("serialLotNo")))
-				.andExpect(jsonPath("$.details[1].itemDescription").value(poDetails.get(0).get("description")));
+				.andExpect(jsonPath("$.details[1].itemDescription").value(poDetails.get(0).get("itemDescription")));
 	}
 	
 }

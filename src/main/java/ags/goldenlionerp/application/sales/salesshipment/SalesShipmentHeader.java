@@ -28,7 +28,7 @@ public class SalesShipmentHeader implements DatabaseAuditable {
 			@JsonProperty("documentNumber")int documentNumber,
 			@JsonProperty("documentType")String documentType,
 			@JsonProperty("businessUnitId")String businessUnitId,
-			@JsonProperty("documentDate")LocalDate documentDate,
+			@JsonProperty("transactionDate")LocalDate documentDate,
 			@JsonProperty("customerId")String customerId,
 			@JsonProperty("receiverId")String receiverId,
 			@JsonProperty("description")String description,
@@ -64,7 +64,7 @@ public class SalesShipmentHeader implements DatabaseAuditable {
 		return details.get(0).getBusinessUnitId();
 	}
 
-	public LocalDate getDocumentDate() {
+	public LocalDate getTransactionDate() {
 		return details.get(0).getTransactionDate();
 	}
 	

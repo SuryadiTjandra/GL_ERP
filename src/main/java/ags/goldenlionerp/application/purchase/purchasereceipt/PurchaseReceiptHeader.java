@@ -28,7 +28,7 @@ class PurchaseReceiptHeader implements DatabaseAuditable{
 			@JsonProperty("documentNumber")int purchaseReceiptNumber, 
 			@JsonProperty("documentType")String purchaseReceiptType,
 			@JsonProperty("businessUnit")String businessUnitId, 
-			@JsonProperty("documentDate")LocalDate documentDate, 
+			@JsonProperty("transactionDate")LocalDate documentDate, 
 			@JsonProperty("vendorId")String vendorId, 
 			@JsonProperty("customerOrderNumber")String customerOrderNumber,
 			@JsonProperty("description")String description, 
