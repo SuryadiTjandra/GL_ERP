@@ -58,7 +58,7 @@ export default {
       .then(res => {
         alert("Sales Order created");
         this.formVisible = false;
-        this.formItem = {};
+        this.formItem = this.defaultItem;
       })
       .catch(err => alert(err));
     },
