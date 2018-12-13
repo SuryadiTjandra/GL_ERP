@@ -11,7 +11,7 @@ export default {
   },
   data: function(){
     return {
-      formItem: {},
+      formItem: JSON.parse(JSON.stringify(this.item)),
       validated: false,
       activeTab: 0
     }

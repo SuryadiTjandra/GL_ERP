@@ -5,6 +5,7 @@ import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.time.YearMonth;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -288,6 +289,7 @@ public class SalesShipmentService implements ItemTransactionService{
 		map.put("nextStatus", "580");
 		map.put("lastStatus", "560");
 		map.put("transactionDate", LocalDate.now());
+		map.put("details", Collections.emptyList());
 		return map;
 	}
 }
