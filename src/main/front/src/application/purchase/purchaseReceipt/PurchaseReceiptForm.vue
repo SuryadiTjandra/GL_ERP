@@ -4,7 +4,7 @@
     :validate="validated"
     @submit="onFormSubmit"
     @cancel="$emit('cancel')">
-    <PurchaseReceiptFormHeader :formItem="formItem" :editable="editable">
+    <PurchaseReceiptFormHeader :formItem="formItem" :editable="editable && this.mode != 'edit'">
     </PurchaseReceiptFormHeader>
 
     <PurchaseReceiptFormDetailList

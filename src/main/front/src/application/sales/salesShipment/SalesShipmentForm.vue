@@ -7,8 +7,9 @@
 
     <SalesShipmentFormHeader
       :formItem="formItem"
-      :editable="editable">
+      :editable="editable  && this.mode != 'edit'">
     </SalesShipmentFormHeader>
+
     <SalesShipmentFormDetailList
       :details="formItem.details"
       :editable="editable && formItem.customerId != null"
@@ -16,6 +17,7 @@
       @void-detail="onVoidDetail"
       >
     </SalesShipmentFormDetailList>
+    
     <OrderSelector
       apiUrl="/api/salesOrders/"
       apiResultPath="_embedded.salesOrders"

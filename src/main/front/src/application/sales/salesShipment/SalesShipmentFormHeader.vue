@@ -43,6 +43,7 @@
       <b-form-group label="Customer" label-size="sm" horizontal label-text-align="right">
         <ResourceInput size="sm" required
           v-model="formItem.customerId"
+          @change="onCustomerChangeId"
           :readOnly="!editable"
           :resourceMetadata="{
             apiUrl:'/api/addresses',
@@ -57,6 +58,7 @@
       <b-form-group label="Penerima" label-size="sm" horizontal label-text-align="right">
         <ResourceInput size="sm" required
           v-model="formItem.receiverId"
+          @update:item="onReceiverChange"
           :readOnly="!editable"
           :resourceMetadata="{
             apiUrl:'/api/addresses',
@@ -86,6 +88,10 @@
         </b-input>
       </b-form-group>
     </b-col>
+    <b-col cols="1"></b-col> <!--padding-->
+    <b-col>
+      {{this.receiverAddress}}
+    </b-col>
   </b-form-row>
 </div>
 </template>
@@ -98,6 +104,27 @@ export default {
   props: {
     formItem: Object,
     editable: Boolean
+  },
+  data: function(){
+    return {
+      receiverAddress: ""
+    }
+  },
+  methods: {
+    onCustomerChangeId(customerId){
+      if (this.formItem.receiverId == null){
+        this.formItem.receiverId = customerId;
+      }
+    },
+    onReceiverChange(receiver){
+      if (receiver == null)
+        this.receiverAddress = "";
+
+      let addr = receiver.currentAddress;
+      this.receiverAddress = [addr.address1, addr.address2, addr.address3, addr.address4]
+                              .filter(ad => ad != null && ad.length > 0)
+                              .join(", ");
+    }
   }
 }
 </script>
