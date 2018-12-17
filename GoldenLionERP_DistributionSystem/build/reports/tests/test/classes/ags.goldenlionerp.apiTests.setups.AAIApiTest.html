@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class ags.goldenlionerp.apiTests.setups.AAIApiTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class ags.goldenlionerp.apiTests.setups.AAIApiTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/ags.goldenlionerp.apiTests.setups.html">ags.goldenlionerp.apiTests.setups</a> &gt; AAIApiTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">7</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.375s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">createTestWithPost</td>
+<td>0.053s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">createTestWithPut</td>
+<td>0.013s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">deleteTest</td>
+<td>0.023s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getTestCollection</td>
+<td>0.083s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getTestSingle</td>
+<td>0.046s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">updateTestWithPatch</td>
+<td>0.115s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">updateTestWithPut</td>
+<td>0.042s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>2018-12-14 17:35:54.064  INFO 9212 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [ags.goldenlionerp.apiTests.setups.AAIApiTest], using SpringBootContextLoader
+2018-12-14 17:35:54.064  INFO 9212 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [ags.goldenlionerp.apiTests.setups.AAIApiTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2018-12-14 17:35:54.064  INFO 9212 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [ags.goldenlionerp.apiTests.setups.AAIApiTest]: AAIApiTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2018-12-14 17:35:54.079  INFO 9212 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration ags.goldenlionerp.GoldenLionErpApplication for test class ags.goldenlionerp.apiTests.setups.AAIApiTest
+2018-12-14 17:35:54.079  INFO 9212 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-12-14 17:35:54.079  INFO 9212 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@69ecb49, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@4ff752fc, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@43cd2591, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@51d191e8, org.springframework.test.context.support.DirtiesContextTestExecutionListener@21e5dc18, org.springframework.test.context.transaction.TransactionalTestExecutionListener@54f01a6a, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7ebb4cc8, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@2338cc26, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@2cb2c145, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@78c5adf3, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@5cbc732f, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@3980cd62, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@3828bfe, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@567d1448]
+2018-12-14 17:35:54.095  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@2f2ae128 testClass = AAIApiTest, testInstance = ags.goldenlionerp.apiTests.setups.AAIApiTest@610e0576, testMethod = updateTestWithPatch@AAIApiTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@6d40640b testClass = AAIApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@53447757 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:54.095  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:54.095  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:54.095  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+Hibernate: select automatica0_.aiaaid as aiaaid1_5_0_, automatica0_.aiseq as aiseq2_5_0_, automatica0_.aicid as aicid3_5_0_, automatica0_.aidtin as aidtin4_5_0_, automatica0_.aitmin as aitmin5_5_0_, automatica0_.aiuid as aiuid6_5_0_, automatica0_.aidtlu as aidtlu7_5_0_, automatica0_.aitmlu as aitmlu8_5_0_, automatica0_.aiuidm as aiuidm9_5_0_, automatica0_.aiobj as aiobj17_5_0_, automatica0_.aibuid as aibuid10_5_0_, automatica0_.aicoid as aicoid11_5_0_, automatica0_.aisub as aisub18_5_0_, automatica0_.aidesb1 as aidesb12_5_0_, automatica0_.aidesb2 as aidesb13_5_0_, automatica0_.aidesb3 as aidesb14_5_0_, automatica0_.aidesb4 as aidesb15_5_0_, automatica0_.aidesb5 as aidesb16_5_0_ from t0015 automatica0_ where automatica0_.aiaaid=? and automatica0_.aiseq=?
+Hibernate: select chartofacc0_.oaobj as oaobj1_25_0_, chartofacc0_.oacid as oacid2_25_0_, chartofacc0_.oadtin as oadtin3_25_0_, chartofacc0_.oatmin as oatmin4_25_0_, chartofacc0_.oauid as oauid5_25_0_, chartofacc0_.oadtlu as oadtlu6_25_0_, chartofacc0_.oatmlu as oatmlu7_25_0_, chartofacc0_.oauidm as oauidm8_25_0_, chartofacc0_.oablc as oablc9_25_0_, chartofacc0_.oacoid as oacoid10_25_0_, chartofacc0_.oadesb1 as oadesb11_25_0_, chartofacc0_.oadesc1 as oadesc12_25_0_, chartofacc0_.oalod as oalod13_25_0_, chartofacc0_.oapec as oapec14_25_0_ from t0900 chartofacc0_ where chartofacc0_.oaobj=?
+Hibernate: select company0_.cncoid as cncoid1_9_0_, company0_.cncid as cncid2_9_0_, company0_.cndtin as cndtin3_9_0_, company0_.cntmin as cntmin4_9_0_, company0_.cnuid as cnuid5_9_0_, company0_.cndtlu as cndtlu6_9_0_, company0_.cntmlu as cntmlu7_9_0_, company0_.cnuidm as cnuidm8_9_0_, company0_.cnanum as cnanum9_9_0_, company0_.cncrcb as cncrcb10_9_0_, company0_.cncap as cncap11_9_0_, company0_.cncfy as cncfy12_9_0_, company0_.cncip as cncip13_9_0_, company0_.cncpp as cncpp14_9_0_, company0_.cncrp as cncrp15_9_0_, company0_.cndesb1 as cndesb16_9_0_, company0_.cnfdp as cnfdp17_9_0_ from t0020 company0_ where company0_.cncoid=?
+Hibernate: select accountmas0_.ambuid as ambuid1_26_0_, accountmas0_.amcoid as amcoid2_26_0_, accountmas0_.amobj as amobj3_26_0_, accountmas0_.amsub as amsub4_26_0_, accountmas0_.amcid as amcid5_26_0_, accountmas0_.amdtin as amdtin6_26_0_, accountmas0_.amtmin as amtmin7_26_0_, accountmas0_.amuid as amuid8_26_0_, accountmas0_.amdtlu as amdtlu9_26_0_, accountmas0_.amtmlu as amtmlu10_26_0_, accountmas0_.amuidm as amuidm11_26_0_, accountmas0_.amdtlt as amdtlt12_26_0_, accountmas0_.amacid as amacid13_26_0_, accountmas0_.amblc as amblc14_26_0_, accountmas0_.ambpc as ambpc15_26_0_, accountmas0_.amglc01 as amglc16_26_0_, accountmas0_.amglc02 as amglc17_26_0_, accountmas0_.amglc03 as amglc18_26_0_, accountmas0_.amglc04 as amglc19_26_0_, accountmas0_.amglc05 as amglc20_26_0_, accountmas0_.amcrct as amcrct21_26_0_, accountmas0_.amdesb1 as amdesb22_26_0_, accountmas0_.amtmlt as amtmlt23_26_0_, accountmas0_.amlod as amlod24_26_0_, accountmas0_.ammac as ammac25_26_0_, accountmas0_.amoan as amoan26_26_0_, accountmas0_.ampec as ampec27_26_0_ from t0901 accountmas0_ where accountmas0_.ambuid=? and accountmas0_.amcoid=? and accountmas0_.amobj=? and accountmas0_.amsub=?
+Hibernate: update t0015 set aicid=?, aidtlu=?, aitmlu=?, aiuidm=?, aibuid=?, aicoid=?, aidesb1=?, aidesb2=?, aidesb3=?, aidesb4=?, aidesb5=?, aiobj=?, aisub=? where aiaaid=? and aiseq=?
+Hibernate: select automatica0_.aiaaid as aiaaid1_5_0_, automatica0_.aiseq as aiseq2_5_0_, automatica0_.aicid as aicid3_5_0_, automatica0_.aidtin as aidtin4_5_0_, automatica0_.aitmin as aitmin5_5_0_, automatica0_.aiuid as aiuid6_5_0_, automatica0_.aidtlu as aidtlu7_5_0_, automatica0_.aitmlu as aitmlu8_5_0_, automatica0_.aiuidm as aiuidm9_5_0_, automatica0_.aiobj as aiobj17_5_0_, automatica0_.aibuid as aibuid10_5_0_, automatica0_.aicoid as aicoid11_5_0_, automatica0_.aisub as aisub18_5_0_, automatica0_.aidesb1 as aidesb12_5_0_, automatica0_.aidesb2 as aidesb13_5_0_, automatica0_.aidesb3 as aidesb14_5_0_, automatica0_.aidesb4 as aidesb15_5_0_, automatica0_.aidesb5 as aidesb16_5_0_ from t0015 automatica0_ where automatica0_.aiaaid=? and automatica0_.aiseq=?
+Hibernate: select chartofacc0_.oaobj as oaobj1_25_0_, chartofacc0_.oacid as oacid2_25_0_, chartofacc0_.oadtin as oadtin3_25_0_, chartofacc0_.oatmin as oatmin4_25_0_, chartofacc0_.oauid as oauid5_25_0_, chartofacc0_.oadtlu as oadtlu6_25_0_, chartofacc0_.oatmlu as oatmlu7_25_0_, chartofacc0_.oauidm as oauidm8_25_0_, chartofacc0_.oablc as oablc9_25_0_, chartofacc0_.oacoid as oacoid10_25_0_, chartofacc0_.oadesb1 as oadesb11_25_0_, chartofacc0_.oadesc1 as oadesc12_25_0_, chartofacc0_.oalod as oalod13_25_0_, chartofacc0_.oapec as oapec14_25_0_ from t0900 chartofacc0_ where chartofacc0_.oaobj=?
+Hibernate: select company0_.cncoid as cncoid1_9_0_, company0_.cncid as cncid2_9_0_, company0_.cndtin as cndtin3_9_0_, company0_.cntmin as cntmin4_9_0_, company0_.cnuid as cnuid5_9_0_, company0_.cndtlu as cndtlu6_9_0_, company0_.cntmlu as cntmlu7_9_0_, company0_.cnuidm as cnuidm8_9_0_, company0_.cnanum as cnanum9_9_0_, company0_.cncrcb as cncrcb10_9_0_, company0_.cncap as cncap11_9_0_, company0_.cncfy as cncfy12_9_0_, company0_.cncip as cncip13_9_0_, company0_.cncpp as cncpp14_9_0_, company0_.cncrp as cncrp15_9_0_, company0_.cndesb1 as cndesb16_9_0_, company0_.cnfdp as cnfdp17_9_0_ from t0020 company0_ where company0_.cncoid=?
+Hibernate: select accountmas0_.ambuid as ambuid1_26_0_, accountmas0_.amcoid as amcoid2_26_0_, accountmas0_.amobj as amobj3_26_0_, accountmas0_.amsub as amsub4_26_0_, accountmas0_.amcid as amcid5_26_0_, accountmas0_.amdtin as amdtin6_26_0_, accountmas0_.amtmin as amtmin7_26_0_, accountmas0_.amuid as amuid8_26_0_, accountmas0_.amdtlu as amdtlu9_26_0_, accountmas0_.amtmlu as amtmlu10_26_0_, accountmas0_.amuidm as amuidm11_26_0_, accountmas0_.amdtlt as amdtlt12_26_0_, accountmas0_.amacid as amacid13_26_0_, accountmas0_.amblc as amblc14_26_0_, accountmas0_.ambpc as ambpc15_26_0_, accountmas0_.amglc01 as amglc16_26_0_, accountmas0_.amglc02 as amglc17_26_0_, accountmas0_.amglc03 as amglc18_26_0_, accountmas0_.amglc04 as amglc19_26_0_, accountmas0_.amglc05 as amglc20_26_0_, accountmas0_.amcrct as amcrct21_26_0_, accountmas0_.amdesb1 as amdesb22_26_0_, accountmas0_.amtmlt as amtmlt23_26_0_, accountmas0_.amlod as amlod24_26_0_, accountmas0_.ammac as ammac25_26_0_, accountmas0_.amoan as amoan26_26_0_, accountmas0_.ampec as ampec27_26_0_ from t0901 accountmas0_ where accountmas0_.ambuid=? and accountmas0_.amcoid=? and accountmas0_.amobj=? and accountmas0_.amsub=?
+2018-12-14 17:35:54.204  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@2f2ae128 testClass = AAIApiTest, testInstance = ags.goldenlionerp.apiTests.setups.AAIApiTest@610e0576, testMethod = updateTestWithPatch@AAIApiTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@6d40640b testClass = AAIApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@53447757 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+2018-12-14 17:35:54.204  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@2f2ae128 testClass = AAIApiTest, testInstance = ags.goldenlionerp.apiTests.setups.AAIApiTest@11a3d18c, testMethod = updateTestWithPut@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@6d40640b testClass = AAIApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@53447757 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:54.204  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:54.204  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:54.220  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 16 ms
+Hibernate: select automatica0_.aiaaid as aiaaid1_5_0_, automatica0_.aiseq as aiseq2_5_0_, automatica0_.aicid as aicid3_5_0_, automatica0_.aidtin as aidtin4_5_0_, automatica0_.aitmin as aitmin5_5_0_, automatica0_.aiuid as aiuid6_5_0_, automatica0_.aidtlu as aidtlu7_5_0_, automatica0_.aitmlu as aitmlu8_5_0_, automatica0_.aiuidm as aiuidm9_5_0_, automatica0_.aiobj as aiobj17_5_0_, automatica0_.aibuid as aibuid10_5_0_, automatica0_.aicoid as aicoid11_5_0_, automatica0_.aisub as aisub18_5_0_, automatica0_.aidesb1 as aidesb12_5_0_, automatica0_.aidesb2 as aidesb13_5_0_, automatica0_.aidesb3 as aidesb14_5_0_, automatica0_.aidesb4 as aidesb15_5_0_, automatica0_.aidesb5 as aidesb16_5_0_ from t0015 automatica0_ where automatica0_.aiaaid=? and automatica0_.aiseq=?
+Hibernate: select chartofacc0_.oaobj as oaobj1_25_0_, chartofacc0_.oacid as oacid2_25_0_, chartofacc0_.oadtin as oadtin3_25_0_, chartofacc0_.oatmin as oatmin4_25_0_, chartofacc0_.oauid as oauid5_25_0_, chartofacc0_.oadtlu as oadtlu6_25_0_, chartofacc0_.oatmlu as oatmlu7_25_0_, chartofacc0_.oauidm as oauidm8_25_0_, chartofacc0_.oablc as oablc9_25_0_, chartofacc0_.oacoid as oacoid10_25_0_, chartofacc0_.oadesb1 as oadesb11_25_0_, chartofacc0_.oadesc1 as oadesc12_25_0_, chartofacc0_.oalod as oalod13_25_0_, chartofacc0_.oapec as oapec14_25_0_ from t0900 chartofacc0_ where chartofacc0_.oaobj=?
+Hibernate: select company0_.cncoid as cncoid1_9_0_, company0_.cncid as cncid2_9_0_, company0_.cndtin as cndtin3_9_0_, company0_.cntmin as cntmin4_9_0_, company0_.cnuid as cnuid5_9_0_, company0_.cndtlu as cndtlu6_9_0_, company0_.cntmlu as cntmlu7_9_0_, company0_.cnuidm as cnuidm8_9_0_, company0_.cnanum as cnanum9_9_0_, company0_.cncrcb as cncrcb10_9_0_, company0_.cncap as cncap11_9_0_, company0_.cncfy as cncfy12_9_0_, company0_.cncip as cncip13_9_0_, company0_.cncpp as cncpp14_9_0_, company0_.cncrp as cncrp15_9_0_, company0_.cndesb1 as cndesb16_9_0_, company0_.cnfdp as cnfdp17_9_0_ from t0020 company0_ where company0_.cncoid=?
+Hibernate: select accountmas0_.ambuid as ambuid1_26_0_, accountmas0_.amcoid as amcoid2_26_0_, accountmas0_.amobj as amobj3_26_0_, accountmas0_.amsub as amsub4_26_0_, accountmas0_.amcid as amcid5_26_0_, accountmas0_.amdtin as amdtin6_26_0_, accountmas0_.amtmin as amtmin7_26_0_, accountmas0_.amuid as amuid8_26_0_, accountmas0_.amdtlu as amdtlu9_26_0_, accountmas0_.amtmlu as amtmlu10_26_0_, accountmas0_.amuidm as amuidm11_26_0_, accountmas0_.amdtlt as amdtlt12_26_0_, accountmas0_.amacid as amacid13_26_0_, accountmas0_.amblc as amblc14_26_0_, accountmas0_.ambpc as ambpc15_26_0_, accountmas0_.amglc01 as amglc16_26_0_, accountmas0_.amglc02 as amglc17_26_0_, accountmas0_.amglc03 as amglc18_26_0_, accountmas0_.amglc04 as amglc19_26_0_, accountmas0_.amglc05 as amglc20_26_0_, accountmas0_.amcrct as amcrct21_26_0_, accountmas0_.amdesb1 as amdesb22_26_0_, accountmas0_.amtmlt as amtmlt23_26_0_, accountmas0_.amlod as amlod24_26_0_, accountmas0_.ammac as ammac25_26_0_, accountmas0_.amoan as amoan26_26_0_, accountmas0_.ampec as ampec27_26_0_ from t0901 accountmas0_ where accountmas0_.ambuid=? and accountmas0_.amcoid=? and accountmas0_.amobj=? and accountmas0_.amsub=?
+2018-12-14 17:35:54.251  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@2f2ae128 testClass = AAIApiTest, testInstance = ags.goldenlionerp.apiTests.setups.AAIApiTest@11a3d18c, testMethod = updateTestWithPut@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@6d40640b testClass = AAIApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@53447757 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+2018-12-14 17:35:54.251  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@2f2ae128 testClass = AAIApiTest, testInstance = ags.goldenlionerp.apiTests.setups.AAIApiTest@191c6a2f, testMethod = getTestSingle@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@6d40640b testClass = AAIApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@53447757 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:54.251  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:54.251  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:54.267  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 16 ms
+Hibernate: select automatica0_.aiaaid as aiaaid1_5_0_, automatica0_.aiseq as aiseq2_5_0_, automatica0_.aicid as aicid3_5_0_, automatica0_.aidtin as aidtin4_5_0_, automatica0_.aitmin as aitmin5_5_0_, automatica0_.aiuid as aiuid6_5_0_, automatica0_.aidtlu as aidtlu7_5_0_, automatica0_.aitmlu as aitmlu8_5_0_, automatica0_.aiuidm as aiuidm9_5_0_, automatica0_.aiobj as aiobj17_5_0_, automatica0_.aibuid as aibuid10_5_0_, automatica0_.aicoid as aicoid11_5_0_, automatica0_.aisub as aisub18_5_0_, automatica0_.aidesb1 as aidesb12_5_0_, automatica0_.aidesb2 as aidesb13_5_0_, automatica0_.aidesb3 as aidesb14_5_0_, automatica0_.aidesb4 as aidesb15_5_0_, automatica0_.aidesb5 as aidesb16_5_0_ from t0015 automatica0_ where automatica0_.aiaaid=? and automatica0_.aiseq=?
+Hibernate: select chartofacc0_.oaobj as oaobj1_25_0_, chartofacc0_.oacid as oacid2_25_0_, chartofacc0_.oadtin as oadtin3_25_0_, chartofacc0_.oatmin as oatmin4_25_0_, chartofacc0_.oauid as oauid5_25_0_, chartofacc0_.oadtlu as oadtlu6_25_0_, chartofacc0_.oatmlu as oatmlu7_25_0_, chartofacc0_.oauidm as oauidm8_25_0_, chartofacc0_.oablc as oablc9_25_0_, chartofacc0_.oacoid as oacoid10_25_0_, chartofacc0_.oadesb1 as oadesb11_25_0_, chartofacc0_.oadesc1 as oadesc12_25_0_, chartofacc0_.oalod as oalod13_25_0_, chartofacc0_.oapec as oapec14_25_0_ from t0900 chartofacc0_ where chartofacc0_.oaobj=?
+Hibernate: select company0_.cncoid as cncoid1_9_0_, company0_.cncid as cncid2_9_0_, company0_.cndtin as cndtin3_9_0_, company0_.cntmin as cntmin4_9_0_, company0_.cnuid as cnuid5_9_0_, company0_.cndtlu as cndtlu6_9_0_, company0_.cntmlu as cntmlu7_9_0_, company0_.cnuidm as cnuidm8_9_0_, company0_.cnanum as cnanum9_9_0_, company0_.cncrcb as cncrcb10_9_0_, company0_.cncap as cncap11_9_0_, company0_.cncfy as cncfy12_9_0_, company0_.cncip as cncip13_9_0_, company0_.cncpp as cncpp14_9_0_, company0_.cncrp as cncrp15_9_0_, company0_.cndesb1 as cndesb16_9_0_, company0_.cnfdp as cnfdp17_9_0_ from t0020 company0_ where company0_.cncoid=?
+Hibernate: select accountmas0_.ambuid as ambuid1_26_0_, accountmas0_.amcoid as amcoid2_26_0_, accountmas0_.amobj as amobj3_26_0_, accountmas0_.amsub as amsub4_26_0_, accountmas0_.amcid as amcid5_26_0_, accountmas0_.amdtin as amdtin6_26_0_, accountmas0_.amtmin as amtmin7_26_0_, accountmas0_.amuid as amuid8_26_0_, accountmas0_.amdtlu as amdtlu9_26_0_, accountmas0_.amtmlu as amtmlu10_26_0_, accountmas0_.amuidm as amuidm11_26_0_, accountmas0_.amdtlt as amdtlt12_26_0_, accountmas0_.amacid as amacid13_26_0_, accountmas0_.amblc as amblc14_26_0_, accountmas0_.ambpc as ambpc15_26_0_, accountmas0_.amglc01 as amglc16_26_0_, accountmas0_.amglc02 as amglc17_26_0_, accountmas0_.amglc03 as amglc18_26_0_, accountmas0_.amglc04 as amglc19_26_0_, accountmas0_.amglc05 as amglc20_26_0_, accountmas0_.amcrct as amcrct21_26_0_, accountmas0_.amdesb1 as amdesb22_26_0_, accountmas0_.amtmlt as amtmlt23_26_0_, accountmas0_.amlod as amlod24_26_0_, accountmas0_.ammac as ammac25_26_0_, accountmas0_.amoan as amoan26_26_0_, accountmas0_.ampec as ampec27_26_0_ from t0901 accountmas0_ where accountmas0_.ambuid=? and accountmas0_.amcoid=? and accountmas0_.amobj=? and accountmas0_.amsub=?
+2018-12-14 17:35:54.298  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@2f2ae128 testClass = AAIApiTest, testInstance = ags.goldenlionerp.apiTests.setups.AAIApiTest@191c6a2f, testMethod = getTestSingle@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@6d40640b testClass = AAIApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@53447757 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+2018-12-14 17:35:54.298  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@2f2ae128 testClass = AAIApiTest, testInstance = ags.goldenlionerp.apiTests.setups.AAIApiTest@3095701d, testMethod = getTestCollection@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@6d40640b testClass = AAIApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@53447757 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:54.298  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:54.298  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:54.314  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 16 ms
+Hibernate: select TOP(?) automatica0_.aiaaid as aiaaid1_5_, automatica0_.aiseq as aiseq2_5_, automatica0_.aicid as aicid3_5_, automatica0_.aidtin as aidtin4_5_, automatica0_.aitmin as aitmin5_5_, automatica0_.aiuid as aiuid6_5_, automatica0_.aidtlu as aidtlu7_5_, automatica0_.aitmlu as aitmlu8_5_, automatica0_.aiuidm as aiuidm9_5_, automatica0_.aiobj as aiobj17_5_, automatica0_.aibuid as aibuid10_5_, automatica0_.aicoid as aicoid11_5_, automatica0_.aisub as aisub18_5_, automatica0_.aidesb1 as aidesb12_5_, automatica0_.aidesb2 as aidesb13_5_, automatica0_.aidesb3 as aidesb14_5_, automatica0_.aidesb4 as aidesb15_5_, automatica0_.aidesb5 as aidesb16_5_ from t0015 automatica0_
+Hibernate: select chartofacc0_.oaobj as oaobj1_25_0_, chartofacc0_.oacid as oacid2_25_0_, chartofacc0_.oadtin as oadtin3_25_0_, chartofacc0_.oatmin as oatmin4_25_0_, chartofacc0_.oauid as oauid5_25_0_, chartofacc0_.oadtlu as oadtlu6_25_0_, chartofacc0_.oatmlu as oatmlu7_25_0_, chartofacc0_.oauidm as oauidm8_25_0_, chartofacc0_.oablc as oablc9_25_0_, chartofacc0_.oacoid as oacoid10_25_0_, chartofacc0_.oadesb1 as oadesb11_25_0_, chartofacc0_.oadesc1 as oadesc12_25_0_, chartofacc0_.oalod as oalod13_25_0_, chartofacc0_.oapec as oapec14_25_0_ from t0900 chartofacc0_ where chartofacc0_.oaobj=?
+Hibernate: select accountmas0_.ambuid as ambuid1_26_0_, accountmas0_.amcoid as amcoid2_26_0_, accountmas0_.amobj as amobj3_26_0_, accountmas0_.amsub as amsub4_26_0_, accountmas0_.amcid as amcid5_26_0_, accountmas0_.amdtin as amdtin6_26_0_, accountmas0_.amtmin as amtmin7_26_0_, accountmas0_.amuid as amuid8_26_0_, accountmas0_.amdtlu as amdtlu9_26_0_, accountmas0_.amtmlu as amtmlu10_26_0_, accountmas0_.amuidm as amuidm11_26_0_, accountmas0_.amdtlt as amdtlt12_26_0_, accountmas0_.amacid as amacid13_26_0_, accountmas0_.amblc as amblc14_26_0_, accountmas0_.ambpc as ambpc15_26_0_, accountmas0_.amglc01 as amglc16_26_0_, accountmas0_.amglc02 as amglc17_26_0_, accountmas0_.amglc03 as amglc18_26_0_, accountmas0_.amglc04 as amglc19_26_0_, accountmas0_.amglc05 as amglc20_26_0_, accountmas0_.amcrct as amcrct21_26_0_, accountmas0_.amdesb1 as amdesb22_26_0_, accountmas0_.amtmlt as amtmlt23_26_0_, accountmas0_.amlod as amlod24_26_0_, accountmas0_.ammac as ammac25_26_0_, accountmas0_.amoan as amoan26_26_0_, accountmas0_.ampec as ampec27_26_0_ from t0901 accountmas0_ where accountmas0_.ambuid=? and accountmas0_.amcoid=? and accountmas0_.amobj=? and accountmas0_.amsub=?
+Hibernate: select chartofacc0_.oaobj as oaobj1_25_0_, chartofacc0_.oacid as oacid2_25_0_, chartofacc0_.oadtin as oadtin3_25_0_, chartofacc0_.oatmin as oatmin4_25_0_, chartofacc0_.oauid as oauid5_25_0_, chartofacc0_.oadtlu as oadtlu6_25_0_, chartofacc0_.oatmlu as oatmlu7_25_0_, chartofacc0_.oauidm as oauidm8_25_0_, chartofacc0_.oablc as oablc9_25_0_, chartofacc0_.oacoid as oacoid10_25_0_, chartofacc0_.oadesb1 as oadesb11_25_0_, chartofacc0_.oadesc1 as oadesc12_25_0_, chartofacc0_.oalod as oalod13_25_0_, chartofacc0_.oapec as oapec14_25_0_ from t0900 chartofacc0_ where chartofacc0_.oaobj=?
+Hibernate: select company0_.cncoid as cncoid1_9_0_, company0_.cncid as cncid2_9_0_, company0_.cndtin as cndtin3_9_0_, company0_.cntmin as cntmin4_9_0_, company0_.cnuid as cnuid5_9_0_, company0_.cndtlu as cndtlu6_9_0_, company0_.cntmlu as cntmlu7_9_0_, company0_.cnuidm as cnuidm8_9_0_, company0_.cnanum as cnanum9_9_0_, company0_.cncrcb as cncrcb10_9_0_, company0_.cncap as cncap11_9_0_, company0_.cncfy as cncfy12_9_0_, company0_.cncip as cncip13_9_0_, company0_.cncpp as cncpp14_9_0_, company0_.cncrp as cncrp15_9_0_, company0_.cndesb1 as cndesb16_9_0_, company0_.cnfdp as cnfdp17_9_0_ from t0020 company0_ where company0_.cncoid=?
+Hibernate: select accountmas0_.ambuid as ambuid1_26_0_, accountmas0_.amcoid as amcoid2_26_0_, accountmas0_.amobj as amobj3_26_0_, accountmas0_.amsub as amsub4_26_0_, accountmas0_.amcid as amcid5_26_0_, accountmas0_.amdtin as amdtin6_26_0_, accountmas0_.amtmin as amtmin7_26_0_, accountmas0_.amuid as amuid8_26_0_, accountmas0_.amdtlu as amdtlu9_26_0_, accountmas0_.amtmlu as amtmlu10_26_0_, accountmas0_.amuidm as amuidm11_26_0_, accountmas0_.amdtlt as amdtlt12_26_0_, accountmas0_.amacid as amacid13_26_0_, accountmas0_.amblc as amblc14_26_0_, accountmas0_.ambpc as ambpc15_26_0_, accountmas0_.amglc01 as amglc16_26_0_, accountmas0_.amglc02 as amglc17_26_0_, accountmas0_.amglc03 as amglc18_26_0_, accountmas0_.amglc04 as amglc19_26_0_, accountmas0_.amglc05 as amglc20_26_0_, accountmas0_.amcrct as amcrct21_26_0_, accountmas0_.amdesb1 as amdesb22_26_0_, accountmas0_.amtmlt as amtmlt23_26_0_, accountmas0_.amlod as amlod24_26_0_, accountmas0_.ammac as ammac25_26_0_, accountmas0_.amoan as amoan26_26_0_, accountmas0_.ampec as ampec27_26_0_ from t0901 accountmas0_ where accountmas0_.ambuid=? and accountmas0_.amcoid=? and accountmas0_.amobj=? and accountmas0_.amsub=?
+Hibernate: select chartofacc0_.oaobj as oaobj1_25_0_, chartofacc0_.oacid as oacid2_25_0_, chartofacc0_.oadtin as oadtin3_25_0_, chartofacc0_.oatmin as oatmin4_25_0_, chartofacc0_.oauid as oauid5_25_0_, chartofacc0_.oadtlu as oadtlu6_25_0_, chartofacc0_.oatmlu as oatmlu7_25_0_, chartofacc0_.oauidm as oauidm8_25_0_, chartofacc0_.oablc as oablc9_25_0_, chartofacc0_.oacoid as oacoid10_25_0_, chartofacc0_.oadesb1 as oadesb11_25_0_, chartofacc0_.oadesc1 as oadesc12_25_0_, chartofacc0_.oalod as oalod13_25_0_, chartofacc0_.oapec as oapec14_25_0_ from t0900 chartofacc0_ where chartofacc0_.oaobj=?
+Hibernate: select accountmas0_.ambuid as ambuid1_26_0_, accountmas0_.amcoid as amcoid2_26_0_, accountmas0_.amobj as amobj3_26_0_, accountmas0_.amsub as amsub4_26_0_, accountmas0_.amcid as amcid5_26_0_, accountmas0_.amdtin as amdtin6_26_0_, accountmas0_.amtmin as amtmin7_26_0_, accountmas0_.amuid as amuid8_26_0_, accountmas0_.amdtlu as amdtlu9_26_0_, accountmas0_.amtmlu as amtmlu10_26_0_, accountmas0_.amuidm as amuidm11_26_0_, accountmas0_.amdtlt as amdtlt12_26_0_, accountmas0_.amacid as amacid13_26_0_, accountmas0_.amblc as amblc14_26_0_, accountmas0_.ambpc as ambpc15_26_0_, accountmas0_.amglc01 as amglc16_26_0_, accountmas0_.amglc02 as amglc17_26_0_, accountmas0_.amglc03 as amglc18_26_0_, accountmas0_.amglc04 as amglc19_26_0_, accountmas0_.amglc05 as amglc20_26_0_, accountmas0_.amcrct as amcrct21_26_0_, accountmas0_.amdesb1 as amdesb22_26_0_, accountmas0_.amtmlt as amtmlt23_26_0_, accountmas0_.amlod as amlod24_26_0_, accountmas0_.ammac as ammac25_26_0_, accountmas0_.amoan as amoan26_26_0_, accountmas0_.ampec as ampec27_26_0_ from t0901 accountmas0_ where accountmas0_.ambuid=? and accountmas0_.amcoid=? and accountmas0_.amobj=? and accountmas0_.amsub=?
+Hibernate: select chartofacc0_.oaobj as oaobj1_25_0_, chartofacc0_.oacid as oacid2_25_0_, chartofacc0_.oadtin as oadtin3_25_0_, chartofacc0_.oatmin as oatmin4_25_0_, chartofacc0_.oauid as oauid5_25_0_, chartofacc0_.oadtlu as oadtlu6_25_0_, chartofacc0_.oatmlu as oatmlu7_25_0_, chartofacc0_.oauidm as oauidm8_25_0_, chartofacc0_.oablc as oablc9_25_0_, chartofacc0_.oacoid as oacoid10_25_0_, chartofacc0_.oadesb1 as oadesb11_25_0_, chartofacc0_.oadesc1 as oadesc12_25_0_, chartofacc0_.oalod as oalod13_25_0_, chartofacc0_.oapec as oapec14_25_0_ from t0900 chartofacc0_ where chartofacc0_.oaobj=?
+Hibernate: select accountmas0_.ambuid as ambuid1_26_0_, accountmas0_.amcoid as amcoid2_26_0_, accountmas0_.amobj as amobj3_26_0_, accountmas0_.amsub as amsub4_26_0_, accountmas0_.amcid as amcid5_26_0_, accountmas0_.amdtin as amdtin6_26_0_, accountmas0_.amtmin as amtmin7_26_0_, accountmas0_.amuid as amuid8_26_0_, accountmas0_.amdtlu as amdtlu9_26_0_, accountmas0_.amtmlu as amtmlu10_26_0_, accountmas0_.amuidm as amuidm11_26_0_, accountmas0_.amdtlt as amdtlt12_26_0_, accountmas0_.amacid as amacid13_26_0_, accountmas0_.amblc as amblc14_26_0_, accountmas0_.ambpc as ambpc15_26_0_, accountmas0_.amglc01 as amglc16_26_0_, accountmas0_.amglc02 as amglc17_26_0_, accountmas0_.amglc03 as amglc18_26_0_, accountmas0_.amglc04 as amglc19_26_0_, accountmas0_.amglc05 as amglc20_26_0_, accountmas0_.amcrct as amcrct21_26_0_, accountmas0_.amdesb1 as amdesb22_26_0_, accountmas0_.amtmlt as amtmlt23_26_0_, accountmas0_.amlod as amlod24_26_0_, accountmas0_.ammac as ammac25_26_0_, accountmas0_.amoan as amoan26_26_0_, accountmas0_.ampec as ampec27_26_0_ from t0901 accountmas0_ where accountmas0_.ambuid=? and accountmas0_.amcoid=? and accountmas0_.amobj=? and accountmas0_.amsub=?
+Hibernate: select chartofacc0_.oaobj as oaobj1_25_0_, chartofacc0_.oacid as oacid2_25_0_, chartofacc0_.oadtin as oadtin3_25_0_, chartofacc0_.oatmin as oatmin4_25_0_, chartofacc0_.oauid as oauid5_25_0_, chartofacc0_.oadtlu as oadtlu6_25_0_, chartofacc0_.oatmlu as oatmlu7_25_0_, chartofacc0_.oauidm as oauidm8_25_0_, chartofacc0_.oablc as oablc9_25_0_, chartofacc0_.oacoid as oacoid10_25_0_, chartofacc0_.oadesb1 as oadesb11_25_0_, chartofacc0_.oadesc1 as oadesc12_25_0_, chartofacc0_.oalod as oalod13_25_0_, chartofacc0_.oapec as oapec14_25_0_ from t0900 chartofacc0_ where chartofacc0_.oaobj=?
+Hibernate: select accountmas0_.ambuid as ambuid1_26_0_, accountmas0_.amcoid as amcoid2_26_0_, accountmas0_.amobj as amobj3_26_0_, accountmas0_.amsub as amsub4_26_0_, accountmas0_.amcid as amcid5_26_0_, accountmas0_.amdtin as amdtin6_26_0_, accountmas0_.amtmin as amtmin7_26_0_, accountmas0_.amuid as amuid8_26_0_, accountmas0_.amdtlu as amdtlu9_26_0_, accountmas0_.amtmlu as amtmlu10_26_0_, accountmas0_.amuidm as amuidm11_26_0_, accountmas0_.amdtlt as amdtlt12_26_0_, accountmas0_.amacid as amacid13_26_0_, accountmas0_.amblc as amblc14_26_0_, accountmas0_.ambpc as ambpc15_26_0_, accountmas0_.amglc01 as amglc16_26_0_, accountmas0_.amglc02 as amglc17_26_0_, accountmas0_.amglc03 as amglc18_26_0_, accountmas0_.amglc04 as amglc19_26_0_, accountmas0_.amglc05 as amglc20_26_0_, accountmas0_.amcrct as amcrct21_26_0_, accountmas0_.amdesb1 as amdesb22_26_0_, accountmas0_.amtmlt as amtmlt23_26_0_, accountmas0_.amlod as amlod24_26_0_, accountmas0_.ammac as ammac25_26_0_, accountmas0_.amoan as amoan26_26_0_, accountmas0_.ampec as ampec27_26_0_ from t0901 accountmas0_ where accountmas0_.ambuid=? and accountmas0_.amcoid=? and accountmas0_.amobj=? and accountmas0_.amsub=?
+Hibernate: select chartofacc0_.oaobj as oaobj1_25_0_, chartofacc0_.oacid as oacid2_25_0_, chartofacc0_.oadtin as oadtin3_25_0_, chartofacc0_.oatmin as oatmin4_25_0_, chartofacc0_.oauid as oauid5_25_0_, chartofacc0_.oadtlu as oadtlu6_25_0_, chartofacc0_.oatmlu as oatmlu7_25_0_, chartofacc0_.oauidm as oauidm8_25_0_, chartofacc0_.oablc as oablc9_25_0_, chartofacc0_.oacoid as oacoid10_25_0_, chartofacc0_.oadesb1 as oadesb11_25_0_, chartofacc0_.oadesc1 as oadesc12_25_0_, chartofacc0_.oalod as oalod13_25_0_, chartofacc0_.oapec as oapec14_25_0_ from t0900 chartofacc0_ where chartofacc0_.oaobj=?
+Hibernate: select accountmas0_.ambuid as ambuid1_26_0_, accountmas0_.amcoid as amcoid2_26_0_, accountmas0_.amobj as amobj3_26_0_, accountmas0_.amsub as amsub4_26_0_, accountmas0_.amcid as amcid5_26_0_, accountmas0_.amdtin as amdtin6_26_0_, accountmas0_.amtmin as amtmin7_26_0_, accountmas0_.amuid as amuid8_26_0_, accountmas0_.amdtlu as amdtlu9_26_0_, accountmas0_.amtmlu as amtmlu10_26_0_, accountmas0_.amuidm as amuidm11_26_0_, accountmas0_.amdtlt as amdtlt12_26_0_, accountmas0_.amacid as amacid13_26_0_, accountmas0_.amblc as amblc14_26_0_, accountmas0_.ambpc as ambpc15_26_0_, accountmas0_.amglc01 as amglc16_26_0_, accountmas0_.amglc02 as amglc17_26_0_, accountmas0_.amglc03 as amglc18_26_0_, accountmas0_.amglc04 as amglc19_26_0_, accountmas0_.amglc05 as amglc20_26_0_, accountmas0_.amcrct as amcrct21_26_0_, accountmas0_.amdesb1 as amdesb22_26_0_, accountmas0_.amtmlt as amtmlt23_26_0_, accountmas0_.amlod as amlod24_26_0_, accountmas0_.ammac as ammac25_26_0_, accountmas0_.amoan as amoan26_26_0_, accountmas0_.ampec as ampec27_26_0_ from t0901 accountmas0_ where accountmas0_.ambuid=? and accountmas0_.amcoid=? and accountmas0_.amobj=? and accountmas0_.amsub=?
+Hibernate: select chartofacc0_.oaobj as oaobj1_25_0_, chartofacc0_.oacid as oacid2_25_0_, chartofacc0_.oadtin as oadtin3_25_0_, chartofacc0_.oatmin as oatmin4_25_0_, chartofacc0_.oauid as oauid5_25_0_, chartofacc0_.oadtlu as oadtlu6_25_0_, chartofacc0_.oatmlu as oatmlu7_25_0_, chartofacc0_.oauidm as oauidm8_25_0_, chartofacc0_.oablc as oablc9_25_0_, chartofacc0_.oacoid as oacoid10_25_0_, chartofacc0_.oadesb1 as oadesb11_25_0_, chartofacc0_.oadesc1 as oadesc12_25_0_, chartofacc0_.oalod as oalod13_25_0_, chartofacc0_.oapec as oapec14_25_0_ from t0900 chartofacc0_ where chartofacc0_.oaobj=?
+Hibernate: select accountmas0_.ambuid as ambuid1_26_0_, accountmas0_.amcoid as amcoid2_26_0_, accountmas0_.amobj as amobj3_26_0_, accountmas0_.amsub as amsub4_26_0_, accountmas0_.amcid as amcid5_26_0_, accountmas0_.amdtin as amdtin6_26_0_, accountmas0_.amtmin as amtmin7_26_0_, accountmas0_.amuid as amuid8_26_0_, accountmas0_.amdtlu as amdtlu9_26_0_, accountmas0_.amtmlu as amtmlu10_26_0_, accountmas0_.amuidm as amuidm11_26_0_, accountmas0_.amdtlt as amdtlt12_26_0_, accountmas0_.amacid as amacid13_26_0_, accountmas0_.amblc as amblc14_26_0_, accountmas0_.ambpc as ambpc15_26_0_, accountmas0_.amglc01 as amglc16_26_0_, accountmas0_.amglc02 as amglc17_26_0_, accountmas0_.amglc03 as amglc18_26_0_, accountmas0_.amglc04 as amglc19_26_0_, accountmas0_.amglc05 as amglc20_26_0_, accountmas0_.amcrct as amcrct21_26_0_, accountmas0_.amdesb1 as amdesb22_26_0_, accountmas0_.amtmlt as amtmlt23_26_0_, accountmas0_.amlod as amlod24_26_0_, accountmas0_.ammac as ammac25_26_0_, accountmas0_.amoan as amoan26_26_0_, accountmas0_.ampec as ampec27_26_0_ from t0901 accountmas0_ where accountmas0_.ambuid=? and accountmas0_.amcoid=? and accountmas0_.amobj=? and accountmas0_.amsub=?
+Hibernate: select chartofacc0_.oaobj as oaobj1_25_0_, chartofacc0_.oacid as oacid2_25_0_, chartofacc0_.oadtin as oadtin3_25_0_, chartofacc0_.oatmin as oatmin4_25_0_, chartofacc0_.oauid as oauid5_25_0_, chartofacc0_.oadtlu as oadtlu6_25_0_, chartofacc0_.oatmlu as oatmlu7_25_0_, chartofacc0_.oauidm as oauidm8_25_0_, chartofacc0_.oablc as oablc9_25_0_, chartofacc0_.oacoid as oacoid10_25_0_, chartofacc0_.oadesb1 as oadesb11_25_0_, chartofacc0_.oadesc1 as oadesc12_25_0_, chartofacc0_.oalod as oalod13_25_0_, chartofacc0_.oapec as oapec14_25_0_ from t0900 chartofacc0_ where chartofacc0_.oaobj=?
+Hibernate: select accountmas0_.ambuid as ambuid1_26_0_, accountmas0_.amcoid as amcoid2_26_0_, accountmas0_.amobj as amobj3_26_0_, accountmas0_.amsub as amsub4_26_0_, accountmas0_.amcid as amcid5_26_0_, accountmas0_.amdtin as amdtin6_26_0_, accountmas0_.amtmin as amtmin7_26_0_, accountmas0_.amuid as amuid8_26_0_, accountmas0_.amdtlu as amdtlu9_26_0_, accountmas0_.amtmlu as amtmlu10_26_0_, accountmas0_.amuidm as amuidm11_26_0_, accountmas0_.amdtlt as amdtlt12_26_0_, accountmas0_.amacid as amacid13_26_0_, accountmas0_.amblc as amblc14_26_0_, accountmas0_.ambpc as ambpc15_26_0_, accountmas0_.amglc01 as amglc16_26_0_, accountmas0_.amglc02 as amglc17_26_0_, accountmas0_.amglc03 as amglc18_26_0_, accountmas0_.amglc04 as amglc19_26_0_, accountmas0_.amglc05 as amglc20_26_0_, accountmas0_.amcrct as amcrct21_26_0_, accountmas0_.amdesb1 as amdesb22_26_0_, accountmas0_.amtmlt as amtmlt23_26_0_, accountmas0_.amlod as amlod24_26_0_, accountmas0_.ammac as ammac25_26_0_, accountmas0_.amoan as amoan26_26_0_, accountmas0_.ampec as ampec27_26_0_ from t0901 accountmas0_ where accountmas0_.ambuid=? and accountmas0_.amcoid=? and accountmas0_.amobj=? and accountmas0_.amsub=?
+Hibernate: select chartofacc0_.oaobj as oaobj1_25_0_, chartofacc0_.oacid as oacid2_25_0_, chartofacc0_.oadtin as oadtin3_25_0_, chartofacc0_.oatmin as oatmin4_25_0_, chartofacc0_.oauid as oauid5_25_0_, chartofacc0_.oadtlu as oadtlu6_25_0_, chartofacc0_.oatmlu as oatmlu7_25_0_, chartofacc0_.oauidm as oauidm8_25_0_, chartofacc0_.oablc as oablc9_25_0_, chartofacc0_.oacoid as oacoid10_25_0_, chartofacc0_.oadesb1 as oadesb11_25_0_, chartofacc0_.oadesc1 as oadesc12_25_0_, chartofacc0_.oalod as oalod13_25_0_, chartofacc0_.oapec as oapec14_25_0_ from t0900 chartofacc0_ where chartofacc0_.oaobj=?
+Hibernate: select accountmas0_.ambuid as ambuid1_26_0_, accountmas0_.amcoid as amcoid2_26_0_, accountmas0_.amobj as amobj3_26_0_, accountmas0_.amsub as amsub4_26_0_, accountmas0_.amcid as amcid5_26_0_, accountmas0_.amdtin as amdtin6_26_0_, accountmas0_.amtmin as amtmin7_26_0_, accountmas0_.amuid as amuid8_26_0_, accountmas0_.amdtlu as amdtlu9_26_0_, accountmas0_.amtmlu as amtmlu10_26_0_, accountmas0_.amuidm as amuidm11_26_0_, accountmas0_.amdtlt as amdtlt12_26_0_, accountmas0_.amacid as amacid13_26_0_, accountmas0_.amblc as amblc14_26_0_, accountmas0_.ambpc as ambpc15_26_0_, accountmas0_.amglc01 as amglc16_26_0_, accountmas0_.amglc02 as amglc17_26_0_, accountmas0_.amglc03 as amglc18_26_0_, accountmas0_.amglc04 as amglc19_26_0_, accountmas0_.amglc05 as amglc20_26_0_, accountmas0_.amcrct as amcrct21_26_0_, accountmas0_.amdesb1 as amdesb22_26_0_, accountmas0_.amtmlt as amtmlt23_26_0_, accountmas0_.amlod as amlod24_26_0_, accountmas0_.ammac as ammac25_26_0_, accountmas0_.amoan as amoan26_26_0_, accountmas0_.ampec as ampec27_26_0_ from t0901 accountmas0_ where accountmas0_.ambuid=? and accountmas0_.amcoid=? and accountmas0_.amobj=? and accountmas0_.amsub=?
+Hibernate: select chartofacc0_.oaobj as oaobj1_25_0_, chartofacc0_.oacid as oacid2_25_0_, chartofacc0_.oadtin as oadtin3_25_0_, chartofacc0_.oatmin as oatmin4_25_0_, chartofacc0_.oauid as oauid5_25_0_, chartofacc0_.oadtlu as oadtlu6_25_0_, chartofacc0_.oatmlu as oatmlu7_25_0_, chartofacc0_.oauidm as oauidm8_25_0_, chartofacc0_.oablc as oablc9_25_0_, chartofacc0_.oacoid as oacoid10_25_0_, chartofacc0_.oadesb1 as oadesb11_25_0_, chartofacc0_.oadesc1 as oadesc12_25_0_, chartofacc0_.oalod as oalod13_25_0_, chartofacc0_.oapec as oapec14_25_0_ from t0900 chartofacc0_ where chartofacc0_.oaobj=?
+Hibernate: select accountmas0_.ambuid as ambuid1_26_0_, accountmas0_.amcoid as amcoid2_26_0_, accountmas0_.amobj as amobj3_26_0_, accountmas0_.amsub as amsub4_26_0_, accountmas0_.amcid as amcid5_26_0_, accountmas0_.amdtin as amdtin6_26_0_, accountmas0_.amtmin as amtmin7_26_0_, accountmas0_.amuid as amuid8_26_0_, accountmas0_.amdtlu as amdtlu9_26_0_, accountmas0_.amtmlu as amtmlu10_26_0_, accountmas0_.amuidm as amuidm11_26_0_, accountmas0_.amdtlt as amdtlt12_26_0_, accountmas0_.amacid as amacid13_26_0_, accountmas0_.amblc as amblc14_26_0_, accountmas0_.ambpc as ambpc15_26_0_, accountmas0_.amglc01 as amglc16_26_0_, accountmas0_.amglc02 as amglc17_26_0_, accountmas0_.amglc03 as amglc18_26_0_, accountmas0_.amglc04 as amglc19_26_0_, accountmas0_.amglc05 as amglc20_26_0_, accountmas0_.amcrct as amcrct21_26_0_, accountmas0_.amdesb1 as amdesb22_26_0_, accountmas0_.amtmlt as amtmlt23_26_0_, accountmas0_.amlod as amlod24_26_0_, accountmas0_.ammac as ammac25_26_0_, accountmas0_.amoan as amoan26_26_0_, accountmas0_.ampec as ampec27_26_0_ from t0901 accountmas0_ where accountmas0_.ambuid=? and accountmas0_.amcoid=? and accountmas0_.amobj=? and accountmas0_.amsub=?
+Hibernate: select chartofacc0_.oaobj as oaobj1_25_0_, chartofacc0_.oacid as oacid2_25_0_, chartofacc0_.oadtin as oadtin3_25_0_, chartofacc0_.oatmin as oatmin4_25_0_, chartofacc0_.oauid as oauid5_25_0_, chartofacc0_.oadtlu as oadtlu6_25_0_, chartofacc0_.oatmlu as oatmlu7_25_0_, chartofacc0_.oauidm as oauidm8_25_0_, chartofacc0_.oablc as oablc9_25_0_, chartofacc0_.oacoid as oacoid10_25_0_, chartofacc0_.oadesb1 as oadesb11_25_0_, chartofacc0_.oadesc1 as oadesc12_25_0_, chartofacc0_.oalod as oalod13_25_0_, chartofacc0_.oapec as oapec14_25_0_ from t0900 chartofacc0_ where chartofacc0_.oaobj=?
+Hibernate: select accountmas0_.ambuid as ambuid1_26_0_, accountmas0_.amcoid as amcoid2_26_0_, accountmas0_.amobj as amobj3_26_0_, accountmas0_.amsub as amsub4_26_0_, accountmas0_.amcid as amcid5_26_0_, accountmas0_.amdtin as amdtin6_26_0_, accountmas0_.amtmin as amtmin7_26_0_, accountmas0_.amuid as amuid8_26_0_, accountmas0_.amdtlu as amdtlu9_26_0_, accountmas0_.amtmlu as amtmlu10_26_0_, accountmas0_.amuidm as amuidm11_26_0_, accountmas0_.amdtlt as amdtlt12_26_0_, accountmas0_.amacid as amacid13_26_0_, accountmas0_.amblc as amblc14_26_0_, accountmas0_.ambpc as ambpc15_26_0_, accountmas0_.amglc01 as amglc16_26_0_, accountmas0_.amglc02 as amglc17_26_0_, accountmas0_.amglc03 as amglc18_26_0_, accountmas0_.amglc04 as amglc19_26_0_, accountmas0_.amglc05 as amglc20_26_0_, accountmas0_.amcrct as amcrct21_26_0_, accountmas0_.amdesb1 as amdesb22_26_0_, accountmas0_.amtmlt as amtmlt23_26_0_, accountmas0_.amlod as amlod24_26_0_, accountmas0_.ammac as ammac25_26_0_, accountmas0_.amoan as amoan26_26_0_, accountmas0_.ampec as ampec27_26_0_ from t0901 accountmas0_ where accountmas0_.ambuid=? and accountmas0_.amcoid=? and accountmas0_.amobj=? and accountmas0_.amsub=?
+Hibernate: select chartofacc0_.oaobj as oaobj1_25_0_, chartofacc0_.oacid as oacid2_25_0_, chartofacc0_.oadtin as oadtin3_25_0_, chartofacc0_.oatmin as oatmin4_25_0_, chartofacc0_.oauid as oauid5_25_0_, chartofacc0_.oadtlu as oadtlu6_25_0_, chartofacc0_.oatmlu as oatmlu7_25_0_, chartofacc0_.oauidm as oauidm8_25_0_, chartofacc0_.oablc as oablc9_25_0_, chartofacc0_.oacoid as oacoid10_25_0_, chartofacc0_.oadesb1 as oadesb11_25_0_, chartofacc0_.oadesc1 as oadesc12_25_0_, chartofacc0_.oalod as oalod13_25_0_, chartofacc0_.oapec as oapec14_25_0_ from t0900 chartofacc0_ where chartofacc0_.oaobj=?
+Hibernate: select accountmas0_.ambuid as ambuid1_26_0_, accountmas0_.amcoid as amcoid2_26_0_, accountmas0_.amobj as amobj3_26_0_, accountmas0_.amsub as amsub4_26_0_, accountmas0_.amcid as amcid5_26_0_, accountmas0_.amdtin as amdtin6_26_0_, accountmas0_.amtmin as amtmin7_26_0_, accountmas0_.amuid as amuid8_26_0_, accountmas0_.amdtlu as amdtlu9_26_0_, accountmas0_.amtmlu as amtmlu10_26_0_, accountmas0_.amuidm as amuidm11_26_0_, accountmas0_.amdtlt as amdtlt12_26_0_, accountmas0_.amacid as amacid13_26_0_, accountmas0_.amblc as amblc14_26_0_, accountmas0_.ambpc as ambpc15_26_0_, accountmas0_.amglc01 as amglc16_26_0_, accountmas0_.amglc02 as amglc17_26_0_, accountmas0_.amglc03 as amglc18_26_0_, accountmas0_.amglc04 as amglc19_26_0_, accountmas0_.amglc05 as amglc20_26_0_, accountmas0_.amcrct as amcrct21_26_0_, accountmas0_.amdesb1 as amdesb22_26_0_, accountmas0_.amtmlt as amtmlt23_26_0_, accountmas0_.amlod as amlod24_26_0_, accountmas0_.ammac as ammac25_26_0_, accountmas0_.amoan as amoan26_26_0_, accountmas0_.ampec as ampec27_26_0_ from t0901 accountmas0_ where accountmas0_.ambuid=? and accountmas0_.amcoid=? and accountmas0_.amobj=? and accountmas0_.amsub=?
+Hibernate: select chartofacc0_.oaobj as oaobj1_25_0_, chartofacc0_.oacid as oacid2_25_0_, chartofacc0_.oadtin as oadtin3_25_0_, chartofacc0_.oatmin as oatmin4_25_0_, chartofacc0_.oauid as oauid5_25_0_, chartofacc0_.oadtlu as oadtlu6_25_0_, chartofacc0_.oatmlu as oatmlu7_25_0_, chartofacc0_.oauidm as oauidm8_25_0_, chartofacc0_.oablc as oablc9_25_0_, chartofacc0_.oacoid as oacoid10_25_0_, chartofacc0_.oadesb1 as oadesb11_25_0_, chartofacc0_.oadesc1 as oadesc12_25_0_, chartofacc0_.oalod as oalod13_25_0_, chartofacc0_.oapec as oapec14_25_0_ from t0900 chartofacc0_ where chartofacc0_.oaobj=?
+Hibernate: select accountmas0_.ambuid as ambuid1_26_0_, accountmas0_.amcoid as amcoid2_26_0_, accountmas0_.amobj as amobj3_26_0_, accountmas0_.amsub as amsub4_26_0_, accountmas0_.amcid as amcid5_26_0_, accountmas0_.amdtin as amdtin6_26_0_, accountmas0_.amtmin as amtmin7_26_0_, accountmas0_.amuid as amuid8_26_0_, accountmas0_.amdtlu as amdtlu9_26_0_, accountmas0_.amtmlu as amtmlu10_26_0_, accountmas0_.amuidm as amuidm11_26_0_, accountmas0_.amdtlt as amdtlt12_26_0_, accountmas0_.amacid as amacid13_26_0_, accountmas0_.amblc as amblc14_26_0_, accountmas0_.ambpc as ambpc15_26_0_, accountmas0_.amglc01 as amglc16_26_0_, accountmas0_.amglc02 as amglc17_26_0_, accountmas0_.amglc03 as amglc18_26_0_, accountmas0_.amglc04 as amglc19_26_0_, accountmas0_.amglc05 as amglc20_26_0_, accountmas0_.amcrct as amcrct21_26_0_, accountmas0_.amdesb1 as amdesb22_26_0_, accountmas0_.amtmlt as amtmlt23_26_0_, accountmas0_.amlod as amlod24_26_0_, accountmas0_.ammac as ammac25_26_0_, accountmas0_.amoan as amoan26_26_0_, accountmas0_.ampec as ampec27_26_0_ from t0901 accountmas0_ where accountmas0_.ambuid=? and accountmas0_.amcoid=? and accountmas0_.amobj=? and accountmas0_.amsub=?
+Hibernate: select chartofacc0_.oaobj as oaobj1_25_0_, chartofacc0_.oacid as oacid2_25_0_, chartofacc0_.oadtin as oadtin3_25_0_, chartofacc0_.oatmin as oatmin4_25_0_, chartofacc0_.oauid as oauid5_25_0_, chartofacc0_.oadtlu as oadtlu6_25_0_, chartofacc0_.oatmlu as oatmlu7_25_0_, chartofacc0_.oauidm as oauidm8_25_0_, chartofacc0_.oablc as oablc9_25_0_, chartofacc0_.oacoid as oacoid10_25_0_, chartofacc0_.oadesb1 as oadesb11_25_0_, chartofacc0_.oadesc1 as oadesc12_25_0_, chartofacc0_.oalod as oalod13_25_0_, chartofacc0_.oapec as oapec14_25_0_ from t0900 chartofacc0_ where chartofacc0_.oaobj=?
+Hibernate: select accountmas0_.ambuid as ambuid1_26_0_, accountmas0_.amcoid as amcoid2_26_0_, accountmas0_.amobj as amobj3_26_0_, accountmas0_.amsub as amsub4_26_0_, accountmas0_.amcid as amcid5_26_0_, accountmas0_.amdtin as amdtin6_26_0_, accountmas0_.amtmin as amtmin7_26_0_, accountmas0_.amuid as amuid8_26_0_, accountmas0_.amdtlu as amdtlu9_26_0_, accountmas0_.amtmlu as amtmlu10_26_0_, accountmas0_.amuidm as amuidm11_26_0_, accountmas0_.amdtlt as amdtlt12_26_0_, accountmas0_.amacid as amacid13_26_0_, accountmas0_.amblc as amblc14_26_0_, accountmas0_.ambpc as ambpc15_26_0_, accountmas0_.amglc01 as amglc16_26_0_, accountmas0_.amglc02 as amglc17_26_0_, accountmas0_.amglc03 as amglc18_26_0_, accountmas0_.amglc04 as amglc19_26_0_, accountmas0_.amglc05 as amglc20_26_0_, accountmas0_.amcrct as amcrct21_26_0_, accountmas0_.amdesb1 as amdesb22_26_0_, accountmas0_.amtmlt as amtmlt23_26_0_, accountmas0_.amlod as amlod24_26_0_, accountmas0_.ammac as ammac25_26_0_, accountmas0_.amoan as amoan26_26_0_, accountmas0_.ampec as ampec27_26_0_ from t0901 accountmas0_ where accountmas0_.ambuid=? and accountmas0_.amcoid=? and accountmas0_.amobj=? and accountmas0_.amsub=?
+Hibernate: select chartofacc0_.oaobj as oaobj1_25_0_, chartofacc0_.oacid as oacid2_25_0_, chartofacc0_.oadtin as oadtin3_25_0_, chartofacc0_.oatmin as oatmin4_25_0_, chartofacc0_.oauid as oauid5_25_0_, chartofacc0_.oadtlu as oadtlu6_25_0_, chartofacc0_.oatmlu as oatmlu7_25_0_, chartofacc0_.oauidm as oauidm8_25_0_, chartofacc0_.oablc as oablc9_25_0_, chartofacc0_.oacoid as oacoid10_25_0_, chartofacc0_.oadesb1 as oadesb11_25_0_, chartofacc0_.oadesc1 as oadesc12_25_0_, chartofacc0_.oalod as oalod13_25_0_, chartofacc0_.oapec as oapec14_25_0_ from t0900 chartofacc0_ where chartofacc0_.oaobj=?
+Hibernate: select accountmas0_.ambuid as ambuid1_26_0_, accountmas0_.amcoid as amcoid2_26_0_, accountmas0_.amobj as amobj3_26_0_, accountmas0_.amsub as amsub4_26_0_, accountmas0_.amcid as amcid5_26_0_, accountmas0_.amdtin as amdtin6_26_0_, accountmas0_.amtmin as amtmin7_26_0_, accountmas0_.amuid as amuid8_26_0_, accountmas0_.amdtlu as amdtlu9_26_0_, accountmas0_.amtmlu as amtmlu10_26_0_, accountmas0_.amuidm as amuidm11_26_0_, accountmas0_.amdtlt as amdtlt12_26_0_, accountmas0_.amacid as amacid13_26_0_, accountmas0_.amblc as amblc14_26_0_, accountmas0_.ambpc as ambpc15_26_0_, accountmas0_.amglc01 as amglc16_26_0_, accountmas0_.amglc02 as amglc17_26_0_, accountmas0_.amglc03 as amglc18_26_0_, accountmas0_.amglc04 as amglc19_26_0_, accountmas0_.amglc05 as amglc20_26_0_, accountmas0_.amcrct as amcrct21_26_0_, accountmas0_.amdesb1 as amdesb22_26_0_, accountmas0_.amtmlt as amtmlt23_26_0_, accountmas0_.amlod as amlod24_26_0_, accountmas0_.ammac as ammac25_26_0_, accountmas0_.amoan as amoan26_26_0_, accountmas0_.ampec as ampec27_26_0_ from t0901 accountmas0_ where accountmas0_.ambuid=? and accountmas0_.amcoid=? and accountmas0_.amobj=? and accountmas0_.amsub=?
+Hibernate: select chartofacc0_.oaobj as oaobj1_25_0_, chartofacc0_.oacid as oacid2_25_0_, chartofacc0_.oadtin as oadtin3_25_0_, chartofacc0_.oatmin as oatmin4_25_0_, chartofacc0_.oauid as oauid5_25_0_, chartofacc0_.oadtlu as oadtlu6_25_0_, chartofacc0_.oatmlu as oatmlu7_25_0_, chartofacc0_.oauidm as oauidm8_25_0_, chartofacc0_.oablc as oablc9_25_0_, chartofacc0_.oacoid as oacoid10_25_0_, chartofacc0_.oadesb1 as oadesb11_25_0_, chartofacc0_.oadesc1 as oadesc12_25_0_, chartofacc0_.oalod as oalod13_25_0_, chartofacc0_.oapec as oapec14_25_0_ from t0900 chartofacc0_ where chartofacc0_.oaobj=?
+Hibernate: select accountmas0_.ambuid as ambuid1_26_0_, accountmas0_.amcoid as amcoid2_26_0_, accountmas0_.amobj as amobj3_26_0_, accountmas0_.amsub as amsub4_26_0_, accountmas0_.amcid as amcid5_26_0_, accountmas0_.amdtin as amdtin6_26_0_, accountmas0_.amtmin as amtmin7_26_0_, accountmas0_.amuid as amuid8_26_0_, accountmas0_.amdtlu as amdtlu9_26_0_, accountmas0_.amtmlu as amtmlu10_26_0_, accountmas0_.amuidm as amuidm11_26_0_, accountmas0_.amdtlt as amdtlt12_26_0_, accountmas0_.amacid as amacid13_26_0_, accountmas0_.amblc as amblc14_26_0_, accountmas0_.ambpc as ambpc15_26_0_, accountmas0_.amglc01 as amglc16_26_0_, accountmas0_.amglc02 as amglc17_26_0_, accountmas0_.amglc03 as amglc18_26_0_, accountmas0_.amglc04 as amglc19_26_0_, accountmas0_.amglc05 as amglc20_26_0_, accountmas0_.amcrct as amcrct21_26_0_, accountmas0_.amdesb1 as amdesb22_26_0_, accountmas0_.amtmlt as amtmlt23_26_0_, accountmas0_.amlod as amlod24_26_0_, accountmas0_.ammac as ammac25_26_0_, accountmas0_.amoan as amoan26_26_0_, accountmas0_.ampec as ampec27_26_0_ from t0901 accountmas0_ where accountmas0_.ambuid=? and accountmas0_.amcoid=? and accountmas0_.amobj=? and accountmas0_.amsub=?
+Hibernate: select chartofacc0_.oaobj as oaobj1_25_0_, chartofacc0_.oacid as oacid2_25_0_, chartofacc0_.oadtin as oadtin3_25_0_, chartofacc0_.oatmin as oatmin4_25_0_, chartofacc0_.oauid as oauid5_25_0_, chartofacc0_.oadtlu as oadtlu6_25_0_, chartofacc0_.oatmlu as oatmlu7_25_0_, chartofacc0_.oauidm as oauidm8_25_0_, chartofacc0_.oablc as oablc9_25_0_, chartofacc0_.oacoid as oacoid10_25_0_, chartofacc0_.oadesb1 as oadesb11_25_0_, chartofacc0_.oadesc1 as oadesc12_25_0_, chartofacc0_.oalod as oalod13_25_0_, chartofacc0_.oapec as oapec14_25_0_ from t0900 chartofacc0_ where chartofacc0_.oaobj=?
+Hibernate: select accountmas0_.ambuid as ambuid1_26_0_, accountmas0_.amcoid as amcoid2_26_0_, accountmas0_.amobj as amobj3_26_0_, accountmas0_.amsub as amsub4_26_0_, accountmas0_.amcid as amcid5_26_0_, accountmas0_.amdtin as amdtin6_26_0_, accountmas0_.amtmin as amtmin7_26_0_, accountmas0_.amuid as amuid8_26_0_, accountmas0_.amdtlu as amdtlu9_26_0_, accountmas0_.amtmlu as amtmlu10_26_0_, accountmas0_.amuidm as amuidm11_26_0_, accountmas0_.amdtlt as amdtlt12_26_0_, accountmas0_.amacid as amacid13_26_0_, accountmas0_.amblc as amblc14_26_0_, accountmas0_.ambpc as ambpc15_26_0_, accountmas0_.amglc01 as amglc16_26_0_, accountmas0_.amglc02 as amglc17_26_0_, accountmas0_.amglc03 as amglc18_26_0_, accountmas0_.amglc04 as amglc19_26_0_, accountmas0_.amglc05 as amglc20_26_0_, accountmas0_.amcrct as amcrct21_26_0_, accountmas0_.amdesb1 as amdesb22_26_0_, accountmas0_.amtmlt as amtmlt23_26_0_, accountmas0_.amlod as amlod24_26_0_, accountmas0_.ammac as ammac25_26_0_, accountmas0_.amoan as amoan26_26_0_, accountmas0_.ampec as ampec27_26_0_ from t0901 accountmas0_ where accountmas0_.ambuid=? and accountmas0_.amcoid=? and accountmas0_.amobj=? and accountmas0_.amsub=?
+Hibernate: select chartofacc0_.oaobj as oaobj1_25_0_, chartofacc0_.oacid as oacid2_25_0_, chartofacc0_.oadtin as oadtin3_25_0_, chartofacc0_.oatmin as oatmin4_25_0_, chartofacc0_.oauid as oauid5_25_0_, chartofacc0_.oadtlu as oadtlu6_25_0_, chartofacc0_.oatmlu as oatmlu7_25_0_, chartofacc0_.oauidm as oauidm8_25_0_, chartofacc0_.oablc as oablc9_25_0_, chartofacc0_.oacoid as oacoid10_25_0_, chartofacc0_.oadesb1 as oadesb11_25_0_, chartofacc0_.oadesc1 as oadesc12_25_0_, chartofacc0_.oalod as oalod13_25_0_, chartofacc0_.oapec as oapec14_25_0_ from t0900 chartofacc0_ where chartofacc0_.oaobj=?
+Hibernate: select accountmas0_.ambuid as ambuid1_26_0_, accountmas0_.amcoid as amcoid2_26_0_, accountmas0_.amobj as amobj3_26_0_, accountmas0_.amsub as amsub4_26_0_, accountmas0_.amcid as amcid5_26_0_, accountmas0_.amdtin as amdtin6_26_0_, accountmas0_.amtmin as amtmin7_26_0_, accountmas0_.amuid as amuid8_26_0_, accountmas0_.amdtlu as amdtlu9_26_0_, accountmas0_.amtmlu as amtmlu10_26_0_, accountmas0_.amuidm as amuidm11_26_0_, accountmas0_.amdtlt as amdtlt12_26_0_, accountmas0_.amacid as amacid13_26_0_, accountmas0_.amblc as amblc14_26_0_, accountmas0_.ambpc as ambpc15_26_0_, accountmas0_.amglc01 as amglc16_26_0_, accountmas0_.amglc02 as amglc17_26_0_, accountmas0_.amglc03 as amglc18_26_0_, accountmas0_.amglc04 as amglc19_26_0_, accountmas0_.amglc05 as amglc20_26_0_, accountmas0_.amcrct as amcrct21_26_0_, accountmas0_.amdesb1 as amdesb22_26_0_, accountmas0_.amtmlt as amtmlt23_26_0_, accountmas0_.amlod as amlod24_26_0_, accountmas0_.ammac as ammac25_26_0_, accountmas0_.amoan as amoan26_26_0_, accountmas0_.ampec as ampec27_26_0_ from t0901 accountmas0_ where accountmas0_.ambuid=? and accountmas0_.amcoid=? and accountmas0_.amobj=? and accountmas0_.amsub=?
+Hibernate: select chartofacc0_.oaobj as oaobj1_25_0_, chartofacc0_.oacid as oacid2_25_0_, chartofacc0_.oadtin as oadtin3_25_0_, chartofacc0_.oatmin as oatmin4_25_0_, chartofacc0_.oauid as oauid5_25_0_, chartofacc0_.oadtlu as oadtlu6_25_0_, chartofacc0_.oatmlu as oatmlu7_25_0_, chartofacc0_.oauidm as oauidm8_25_0_, chartofacc0_.oablc as oablc9_25_0_, chartofacc0_.oacoid as oacoid10_25_0_, chartofacc0_.oadesb1 as oadesb11_25_0_, chartofacc0_.oadesc1 as oadesc12_25_0_, chartofacc0_.oalod as oalod13_25_0_, chartofacc0_.oapec as oapec14_25_0_ from t0900 chartofacc0_ where chartofacc0_.oaobj=?
+Hibernate: select accountmas0_.ambuid as ambuid1_26_0_, accountmas0_.amcoid as amcoid2_26_0_, accountmas0_.amobj as amobj3_26_0_, accountmas0_.amsub as amsub4_26_0_, accountmas0_.amcid as amcid5_26_0_, accountmas0_.amdtin as amdtin6_26_0_, accountmas0_.amtmin as amtmin7_26_0_, accountmas0_.amuid as amuid8_26_0_, accountmas0_.amdtlu as amdtlu9_26_0_, accountmas0_.amtmlu as amtmlu10_26_0_, accountmas0_.amuidm as amuidm11_26_0_, accountmas0_.amdtlt as amdtlt12_26_0_, accountmas0_.amacid as amacid13_26_0_, accountmas0_.amblc as amblc14_26_0_, accountmas0_.ambpc as ambpc15_26_0_, accountmas0_.amglc01 as amglc16_26_0_, accountmas0_.amglc02 as amglc17_26_0_, accountmas0_.amglc03 as amglc18_26_0_, accountmas0_.amglc04 as amglc19_26_0_, accountmas0_.amglc05 as amglc20_26_0_, accountmas0_.amcrct as amcrct21_26_0_, accountmas0_.amdesb1 as amdesb22_26_0_, accountmas0_.amtmlt as amtmlt23_26_0_, accountmas0_.amlod as amlod24_26_0_, accountmas0_.ammac as ammac25_26_0_, accountmas0_.amoan as amoan26_26_0_, accountmas0_.ampec as ampec27_26_0_ from t0901 accountmas0_ where accountmas0_.ambuid=? and accountmas0_.amcoid=? and accountmas0_.amobj=? and accountmas0_.amsub=?
+Hibernate: select chartofacc0_.oaobj as oaobj1_25_0_, chartofacc0_.oacid as oacid2_25_0_, chartofacc0_.oadtin as oadtin3_25_0_, chartofacc0_.oatmin as oatmin4_25_0_, chartofacc0_.oauid as oauid5_25_0_, chartofacc0_.oadtlu as oadtlu6_25_0_, chartofacc0_.oatmlu as oatmlu7_25_0_, chartofacc0_.oauidm as oauidm8_25_0_, chartofacc0_.oablc as oablc9_25_0_, chartofacc0_.oacoid as oacoid10_25_0_, chartofacc0_.oadesb1 as oadesb11_25_0_, chartofacc0_.oadesc1 as oadesc12_25_0_, chartofacc0_.oalod as oalod13_25_0_, chartofacc0_.oapec as oapec14_25_0_ from t0900 chartofacc0_ where chartofacc0_.oaobj=?
+Hibernate: select accountmas0_.ambuid as ambuid1_26_0_, accountmas0_.amcoid as amcoid2_26_0_, accountmas0_.amobj as amobj3_26_0_, accountmas0_.amsub as amsub4_26_0_, accountmas0_.amcid as amcid5_26_0_, accountmas0_.amdtin as amdtin6_26_0_, accountmas0_.amtmin as amtmin7_26_0_, accountmas0_.amuid as amuid8_26_0_, accountmas0_.amdtlu as amdtlu9_26_0_, accountmas0_.amtmlu as amtmlu10_26_0_, accountmas0_.amuidm as amuidm11_26_0_, accountmas0_.amdtlt as amdtlt12_26_0_, accountmas0_.amacid as amacid13_26_0_, accountmas0_.amblc as amblc14_26_0_, accountmas0_.ambpc as ambpc15_26_0_, accountmas0_.amglc01 as amglc16_26_0_, accountmas0_.amglc02 as amglc17_26_0_, accountmas0_.amglc03 as amglc18_26_0_, accountmas0_.amglc04 as amglc19_26_0_, accountmas0_.amglc05 as amglc20_26_0_, accountmas0_.amcrct as amcrct21_26_0_, accountmas0_.amdesb1 as amdesb22_26_0_, accountmas0_.amtmlt as amtmlt23_26_0_, accountmas0_.amlod as amlod24_26_0_, accountmas0_.ammac as ammac25_26_0_, accountmas0_.amoan as amoan26_26_0_, accountmas0_.ampec as ampec27_26_0_ from t0901 accountmas0_ where accountmas0_.ambuid=? and accountmas0_.amcoid=? and accountmas0_.amobj=? and accountmas0_.amsub=?
+Hibernate: select count(automatica0_.aiaaid) as col_0_0_ from t0015 automatica0_
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/aai/
+       Parameters = {}
+          Headers = {Accept=[application/json]}
+             Body = &lt;no character encoding set&gt;
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@1fc4f165, SPRING_SECURITY_CONTEXT=org.springframework.security.core.context.SecurityContextImpl@475fcd89: Authentication: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@475fcd89: Principal: org.springframework.security.core.userdetails.User@f02988d6: Username: username; Password: [PROTECTED]; Enabled: true; AccountNonExpired: true; credentialsNonExpired: true; AccountNonLocked: true; Not granted any authorities; Credentials: [PROTECTED]; Authenticated: true; Details: null; Not granted any authorities}
+
+Handler:
+             Type = org.springframework.data.rest.webmvc.RepositoryEntityController
+           Method = public org.springframework.hateoas.Resources&lt;?&gt; org.springframework.data.rest.webmvc.RepositoryEntityController.getCollectionResource(org.springframework.data.rest.webmvc.RootResourceInformation,org.springframework.data.rest.webmvc.support.DefaultedPageable,org.springframework.data.domain.Sort,org.springframework.data.rest.webmvc.PersistentEntityResourceAssembler) throws org.springframework.data.rest.webmvc.ResourceNotFoundException,org.springframework.web.HttpRequestMethodNotSupportedException
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Type=[application/json;charset=UTF-8], X-Content-Type-Options=[nosniff], X-XSS-Protection=[1; mode=block], Cache-Control=[no-cache, no-store, max-age=0, must-revalidate], Pragma=[no-cache], Expires=[0], X-Frame-Options=[DENY]}
+     Content type = application/json;charset=UTF-8
+             Body = {
+  &quot;_embedded&quot; : {
+    &quot;automaticAccountingInstructions&quot; : [ {
+      &quot;inputUserId&quot; : &quot;QSA&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;QSA&quot;,
+      &quot;computerId&quot; : &quot;WINXPL7P5&quot;,
+      &quot;sequence&quot; : 10000,
+      &quot;aaiCode&quot; : &quot;GLA000&quot;,
+      &quot;description1&quot; : &quot;General Purpose&quot;,
+      &quot;description2&quot; : &quot;&quot;,
+      &quot;description3&quot; : &quot;&quot;,
+      &quot;description4&quot; : &quot;&quot;,
+      &quot;description5&quot; : &quot;&quot;,
+      &quot;companyId&quot; : &quot;00000&quot;,
+      &quot;businessUnitId&quot; : &quot;&quot;,
+      &quot;objectAccountCode&quot; : &quot;&quot;,
+      &quot;subsidiaryCode&quot; : &quot;&quot;,
+      &quot;lastUpdateDateTime&quot; : &quot;2009-06-23T14:42:57&quot;,
+      &quot;inputDateTime&quot; : &quot;2005-08-22T00:05:38&quot;,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/10000_GLA000&quot;
+        },
+        &quot;automaticAccountingInstruction&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/10000_GLA000&quot;
+        },
+        &quot;accountMaster&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/10000_GLA000/accountMaster&quot;
+        },
+        &quot;account&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/10000_GLA000/account&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;QSA&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;QSA&quot;,
+      &quot;computerId&quot; : &quot;WIN7UL7P5&quot;,
+      &quot;sequence&quot; : 11000,
+      &quot;aaiCode&quot; : &quot;GLA100&quot;,
+      &quot;description1&quot; : &quot;Aktiva Lancar&quot;,
+      &quot;description2&quot; : &quot;Aktiva&quot;,
+      &quot;description3&quot; : &quot;&quot;,
+      &quot;description4&quot; : &quot;&quot;,
+      &quot;description5&quot; : &quot;&quot;,
+      &quot;companyId&quot; : &quot;00000&quot;,
+      &quot;businessUnitId&quot; : &quot;&quot;,
+      &quot;objectAccountCode&quot; : &quot;100000&quot;,
+      &quot;subsidiaryCode&quot; : &quot;&quot;,
+      &quot;lastUpdateDateTime&quot; : &quot;2017-12-18T09:11:44&quot;,
+      &quot;inputDateTime&quot; : &quot;2002-12-27T00:00:00&quot;,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/11000_GLA100&quot;
+        },
+        &quot;automaticAccountingInstruction&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/11000_GLA100&quot;
+        },
+        &quot;accountMaster&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/11000_GLA100/accountMaster&quot;
+        },
+        &quot;account&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/11000_GLA100/account&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;QSA&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;QSA&quot;,
+      &quot;computerId&quot; : &quot;WIN7UL7P5&quot;,
+      &quot;sequence&quot; : 11500,
+      &quot;aaiCode&quot; : &quot;GLA200&quot;,
+      &quot;description1&quot; : &quot;Aktiva Tidak Lancar&quot;,
+      &quot;description2&quot; : &quot;Aktiva&quot;,
+      &quot;description3&quot; : &quot;&quot;,
+      &quot;description4&quot; : &quot;&quot;,
+      &quot;description5&quot; : &quot;&quot;,
+      &quot;companyId&quot; : &quot;00000&quot;,
+      &quot;businessUnitId&quot; : &quot;&quot;,
+      &quot;objectAccountCode&quot; : &quot;120000&quot;,
+      &quot;subsidiaryCode&quot; : &quot;&quot;,
+      &quot;lastUpdateDateTime&quot; : &quot;2017-12-18T09:12:57&quot;,
+      &quot;inputDateTime&quot; : &quot;2009-05-16T21:31:37&quot;,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/11500_GLA200&quot;
+        },
+        &quot;automaticAccountingInstruction&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/11500_GLA200&quot;
+        },
+        &quot;accountMaster&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/11500_GLA200/accountMaster&quot;
+        },
+        &quot;account&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/11500_GLA200/account&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;QSA&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;QSA&quot;,
+      &quot;computerId&quot; : &quot;WIN7UL7P5&quot;,
+      &quot;sequence&quot; : 11600,
+      &quot;aaiCode&quot; : &quot;GLP300&quot;,
+      &quot;description1&quot; : &quot;Hutang&quot;,
+      &quot;description2&quot; : &quot;Passiva&quot;,
+      &quot;description3&quot; : &quot;&quot;,
+      &quot;description4&quot; : &quot;&quot;,
+      &quot;description5&quot; : &quot;&quot;,
+      &quot;companyId&quot; : &quot;00000&quot;,
+      &quot;businessUnitId&quot; : &quot;&quot;,
+      &quot;objectAccountCode&quot; : &quot;200000&quot;,
+      &quot;subsidiaryCode&quot; : &quot;&quot;,
+      &quot;lastUpdateDateTime&quot; : &quot;2017-12-18T09:12:05&quot;,
+      &quot;inputDateTime&quot; : &quot;2005-08-21T23:12:42&quot;,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/11600_GLP300&quot;
+        },
+        &quot;automaticAccountingInstruction&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/11600_GLP300&quot;
+        },
+        &quot;accountMaster&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/11600_GLP300/accountMaster&quot;
+        },
+        &quot;account&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/11600_GLP300/account&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;QSA&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;QSA&quot;,
+      &quot;computerId&quot; : &quot;WIN7UL7P5&quot;,
+      &quot;sequence&quot; : 11700,
+      &quot;aaiCode&quot; : &quot;GLP400&quot;,
+      &quot;description1&quot; : &quot;Modal&quot;,
+      &quot;description2&quot; : &quot;Passiva&quot;,
+      &quot;description3&quot; : &quot;&quot;,
+      &quot;description4&quot; : &quot;&quot;,
+      &quot;description5&quot; : &quot;&quot;,
+      &quot;companyId&quot; : &quot;00000&quot;,
+      &quot;businessUnitId&quot; : &quot;&quot;,
+      &quot;objectAccountCode&quot; : &quot;300000&quot;,
+      &quot;subsidiaryCode&quot; : &quot;&quot;,
+      &quot;lastUpdateDateTime&quot; : &quot;2017-12-18T09:12:09&quot;,
+      &quot;inputDateTime&quot; : &quot;2005-08-22T00:13:03&quot;,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/11700_GLP400&quot;
+        },
+        &quot;automaticAccountingInstruction&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/11700_GLP400&quot;
+        },
+        &quot;accountMaster&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/11700_GLP400/accountMaster&quot;
+        },
+        &quot;account&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/11700_GLP400/account&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;QSA&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;QSA&quot;,
+      &quot;computerId&quot; : &quot;WIN7UL7P5&quot;,
+      &quot;sequence&quot; : 12000,
+      &quot;aaiCode&quot; : &quot;GLR500&quot;,
+      &quot;description1&quot; : &quot;Pendapatan&quot;,
+      &quot;description2&quot; : &quot;Pendapatan&quot;,
+      &quot;description3&quot; : &quot;&quot;,
+      &quot;description4&quot; : &quot;&quot;,
+      &quot;description5&quot; : &quot;&quot;,
+      &quot;companyId&quot; : &quot;00000&quot;,
+      &quot;businessUnitId&quot; : &quot;&quot;,
+      &quot;objectAccountCode&quot; : &quot;400000&quot;,
+      &quot;subsidiaryCode&quot; : &quot;&quot;,
+      &quot;lastUpdateDateTime&quot; : &quot;2017-12-18T09:12:11&quot;,
+      &quot;inputDateTime&quot; : &quot;2006-12-29T19:03:45&quot;,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/12000_GLR500&quot;
+        },
+        &quot;automaticAccountingInstruction&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/12000_GLR500&quot;
+        },
+        &quot;accountMaster&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/12000_GLR500/accountMaster&quot;
+        },
+        &quot;account&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/12000_GLR500/account&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;QSA&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;QSA&quot;,
+      &quot;computerId&quot; : &quot;WIN7UL7P5&quot;,
+      &quot;sequence&quot; : 12100,
+      &quot;aaiCode&quot; : &quot;GLC600&quot;,
+      &quot;description1&quot; : &quot;C.O.G.S&quot;,
+      &quot;description2&quot; : &quot;Harga Pokok Penjualan&quot;,
+      &quot;description3&quot; : &quot;&quot;,
+      &quot;description4&quot; : &quot;&quot;,
+      &quot;description5&quot; : &quot;&quot;,
+      &quot;companyId&quot; : &quot;00000&quot;,
+      &quot;businessUnitId&quot; : &quot;&quot;,
+      &quot;objectAccountCode&quot; : &quot;510000&quot;,
+      &quot;subsidiaryCode&quot; : &quot;&quot;,
+      &quot;lastUpdateDateTime&quot; : &quot;2017-12-18T09:13:07&quot;,
+      &quot;inputDateTime&quot; : &quot;2006-12-29T19:03:58&quot;,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/12100_GLC600&quot;
+        },
+        &quot;automaticAccountingInstruction&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/12100_GLC600&quot;
+        },
+        &quot;accountMaster&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/12100_GLC600/accountMaster&quot;
+        },
+        &quot;account&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/12100_GLC600/account&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;QSA&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;QSA&quot;,
+      &quot;computerId&quot; : &quot;WIN7UL7P5&quot;,
+      &quot;sequence&quot; : 12300,
+      &quot;aaiCode&quot; : &quot;GLE700&quot;,
+      &quot;description1&quot; : &quot;Biaya (Produksi, Administrasi, dan Umum)&quot;,
+      &quot;description2&quot; : &quot;Biaya Administrasi &amp; Umum&quot;,
+      &quot;description3&quot; : &quot;&quot;,
+      &quot;description4&quot; : &quot;&quot;,
+      &quot;description5&quot; : &quot;&quot;,
+      &quot;companyId&quot; : &quot;00000&quot;,
+      &quot;businessUnitId&quot; : &quot;&quot;,
+      &quot;objectAccountCode&quot; : &quot;600000&quot;,
+      &quot;subsidiaryCode&quot; : &quot;&quot;,
+      &quot;lastUpdateDateTime&quot; : &quot;2017-12-18T09:13:11&quot;,
+      &quot;inputDateTime&quot; : &quot;2006-12-29T19:08:52&quot;,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/12300_GLE700&quot;
+        },
+        &quot;automaticAccountingInstruction&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/12300_GLE700&quot;
+        },
+        &quot;accountMaster&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/12300_GLE700/accountMaster&quot;
+        },
+        &quot;account&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/12300_GLE700/account&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;QSA&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;QSA&quot;,
+      &quot;computerId&quot; : &quot;WIN7UL7P5&quot;,
+      &quot;sequence&quot; : 12400,
+      &quot;aaiCode&quot; : &quot;GLO800&quot;,
+      &quot;description1&quot; : &quot;Pendapatan &amp; Biaya Lain-lain&quot;,
+      &quot;description2&quot; : &quot;Beban &amp; Pendapatan Lain2&quot;,
+      &quot;description3&quot; : &quot;&quot;,
+      &quot;description4&quot; : &quot;&quot;,
+      &quot;description5&quot; : &quot;&quot;,
+      &quot;companyId&quot; : &quot;00000&quot;,
+      &quot;businessUnitId&quot; : &quot;&quot;,
+      &quot;objectAccountCode&quot; : &quot;700000&quot;,
+      &quot;subsidiaryCode&quot; : &quot;&quot;,
+      &quot;lastUpdateDateTime&quot; : &quot;2017-12-18T09:13:14&quot;,
+      &quot;inputDateTime&quot; : &quot;2006-12-29T19:08:56&quot;,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/12400_GLO800&quot;
+        },
+        &quot;automaticAccountingInstruction&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/12400_GLO800&quot;
+        },
+        &quot;accountMaster&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/12400_GLO800/accountMaster&quot;
+        },
+        &quot;account&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/12400_GLO800/account&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;QSA&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;QSA&quot;,
+      &quot;computerId&quot; : &quot;WIN7UL7P5&quot;,
+      &quot;sequence&quot; : 12900,
+      &quot;aaiCode&quot; : &quot;GLX999&quot;,
+      &quot;description1&quot; : &quot;G/L Offset Account&quot;,
+      &quot;description2&quot; : &quot;G/L Offset Account&quot;,
+      &quot;description3&quot; : &quot;&quot;,
+      &quot;description4&quot; : &quot;&quot;,
+      &quot;description5&quot; : &quot;&quot;,
+      &quot;companyId&quot; : &quot;00000&quot;,
+      &quot;businessUnitId&quot; : &quot;&quot;,
+      &quot;objectAccountCode&quot; : &quot;900000&quot;,
+      &quot;subsidiaryCode&quot; : &quot;&quot;,
+      &quot;lastUpdateDateTime&quot; : &quot;2017-12-18T09:13:17&quot;,
+      &quot;inputDateTime&quot; : &quot;2006-12-29T19:17:41&quot;,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/12900_GLX999&quot;
+        },
+        &quot;automaticAccountingInstruction&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/12900_GLX999&quot;
+        },
+        &quot;accountMaster&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/12900_GLX999/accountMaster&quot;
+        },
+        &quot;account&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/12900_GLX999/account&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;QSA&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;ANTHONI&quot;,
+      &quot;computerId&quot; : &quot;DESKTOP-ID3Q1HG&quot;,
+      &quot;sequence&quot; : 15000,
+      &quot;aaiCode&quot; : &quot;GXG01&quot;,
+      &quot;description1&quot; : &quot;Kas dan Setara Kas - Awal&quot;,
+      &quot;description2&quot; : &quot;&quot;,
+      &quot;description3&quot; : &quot;&quot;,
+      &quot;description4&quot; : &quot;&quot;,
+      &quot;description5&quot; : &quot;&quot;,
+      &quot;companyId&quot; : &quot;00000&quot;,
+      &quot;businessUnitId&quot; : &quot;&quot;,
+      &quot;objectAccountCode&quot; : &quot;111000&quot;,
+      &quot;subsidiaryCode&quot; : &quot;&quot;,
+      &quot;lastUpdateDateTime&quot; : &quot;2018-03-27T17:10:22&quot;,
+      &quot;inputDateTime&quot; : &quot;2006-12-29T20:20:55&quot;,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/15000_GXG01&quot;
+        },
+        &quot;automaticAccountingInstruction&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/15000_GXG01&quot;
+        },
+        &quot;accountMaster&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/15000_GXG01/accountMaster&quot;
+        },
+        &quot;account&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/15000_GXG01/account&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;QSA&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;ANTHONI&quot;,
+      &quot;computerId&quot; : &quot;DESKTOP-9TRIRBU&quot;,
+      &quot;sequence&quot; : 15100,
+      &quot;aaiCode&quot; : &quot;GXG02&quot;,
+      &quot;description1&quot; : &quot;Kas dan Setara Kas - Akhir&quot;,
+      &quot;description2&quot; : &quot;&quot;,
+      &quot;description3&quot; : &quot;&quot;,
+      &quot;description4&quot; : &quot;&quot;,
+      &quot;description5&quot; : &quot;&quot;,
+      &quot;companyId&quot; : &quot;00000&quot;,
+      &quot;businessUnitId&quot; : &quot;&quot;,
+      &quot;objectAccountCode&quot; : &quot;617002&quot;,
+      &quot;subsidiaryCode&quot; : &quot;&quot;,
+      &quot;lastUpdateDateTime&quot; : &quot;2018-04-06T16:47:03&quot;,
+      &quot;inputDateTime&quot; : &quot;2006-12-29T20:21:10&quot;,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/15100_GXG02&quot;
+        },
+        &quot;automaticAccountingInstruction&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/15100_GXG02&quot;
+        },
+        &quot;accountMaster&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/15100_GXG02/accountMaster&quot;
+        },
+        &quot;account&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/15100_GXG02/account&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;QSA&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;QSA&quot;,
+      &quot;computerId&quot; : &quot;WIN7UL7P5&quot;,
+      &quot;sequence&quot; : 15195,
+      &quot;aaiCode&quot; : &quot;GXG85&quot;,
+      &quot;description1&quot; : &quot;Temporary Account&quot;,
+      &quot;description2&quot; : &quot;Ayat Silang&quot;,
+      &quot;description3&quot; : &quot;&quot;,
+      &quot;description4&quot; : &quot;&quot;,
+      &quot;description5&quot; : &quot;&quot;,
+      &quot;companyId&quot; : &quot;00000&quot;,
+      &quot;businessUnitId&quot; : &quot;&quot;,
+      &quot;objectAccountCode&quot; : &quot;119999&quot;,
+      &quot;subsidiaryCode&quot; : &quot;&quot;,
+      &quot;lastUpdateDateTime&quot; : &quot;2017-12-18T09:13:40&quot;,
+      &quot;inputDateTime&quot; : &quot;2017-08-17T12:37:46&quot;,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/15195_GXG85&quot;
+        },
+        &quot;automaticAccountingInstruction&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/15195_GXG85&quot;
+        },
+        &quot;accountMaster&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/15195_GXG85/accountMaster&quot;
+        },
+        &quot;account&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/15195_GXG85/account&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;QSA&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;QSA&quot;,
+      &quot;computerId&quot; : &quot;WIN7UL7P5&quot;,
+      &quot;sequence&quot; : 15200,
+      &quot;aaiCode&quot; : &quot;GXG90&quot;,
+      &quot;description1&quot; : &quot;L/R Tahun Lalu&quot;,
+      &quot;description2&quot; : &quot;&quot;,
+      &quot;description3&quot; : &quot;&quot;,
+      &quot;description4&quot; : &quot;&quot;,
+      &quot;description5&quot; : &quot;&quot;,
+      &quot;companyId&quot; : &quot;00000&quot;,
+      &quot;businessUnitId&quot; : &quot;&quot;,
+      &quot;objectAccountCode&quot; : &quot;331000&quot;,
+      &quot;subsidiaryCode&quot; : &quot;&quot;,
+      &quot;lastUpdateDateTime&quot; : &quot;2017-12-18T09:13:50&quot;,
+      &quot;inputDateTime&quot; : &quot;2009-08-11T09:59:38&quot;,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/15200_GXG90&quot;
+        },
+        &quot;automaticAccountingInstruction&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/15200_GXG90&quot;
+        },
+        &quot;accountMaster&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/15200_GXG90/accountMaster&quot;
+        },
+        &quot;account&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/15200_GXG90/account&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;QSA&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;QSA&quot;,
+      &quot;computerId&quot; : &quot;WIN7UL7P5&quot;,
+      &quot;sequence&quot; : 15210,
+      &quot;aaiCode&quot; : &quot;GXG95&quot;,
+      &quot;description1&quot; : &quot;L/R Tahun Berjalan&quot;,
+      &quot;description2&quot; : &quot;&quot;,
+      &quot;description3&quot; : &quot;&quot;,
+      &quot;description4&quot; : &quot;&quot;,
+      &quot;description5&quot; : &quot;&quot;,
+      &quot;companyId&quot; : &quot;00000&quot;,
+      &quot;businessUnitId&quot; : &quot;&quot;,
+      &quot;objectAccountCode&quot; : &quot;332000&quot;,
+      &quot;subsidiaryCode&quot; : &quot;&quot;,
+      &quot;lastUpdateDateTime&quot; : &quot;2017-12-18T09:13:52&quot;,
+      &quot;inputDateTime&quot; : &quot;2009-08-11T10:00:04&quot;,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/15210_GXG95&quot;
+        },
+        &quot;automaticAccountingInstruction&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/15210_GXG95&quot;
+        },
+        &quot;accountMaster&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/15210_GXG95/accountMaster&quot;
+        },
+        &quot;account&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/15210_GXG95/account&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;QSA&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;QSA&quot;,
+      &quot;computerId&quot; : &quot;WIN7UL7P5&quot;,
+      &quot;sequence&quot; : 15220,
+      &quot;aaiCode&quot; : &quot;GXG99&quot;,
+      &quot;description1&quot; : &quot;L/R Bulan Ini&quot;,
+      &quot;description2&quot; : &quot;&quot;,
+      &quot;description3&quot; : &quot;&quot;,
+      &quot;description4&quot; : &quot;&quot;,
+      &quot;description5&quot; : &quot;&quot;,
+      &quot;companyId&quot; : &quot;00000&quot;,
+      &quot;businessUnitId&quot; : &quot;&quot;,
+      &quot;objectAccountCode&quot; : &quot;333000&quot;,
+      &quot;subsidiaryCode&quot; : &quot;&quot;,
+      &quot;lastUpdateDateTime&quot; : &quot;2017-12-18T09:14:03&quot;,
+      &quot;inputDateTime&quot; : &quot;2009-08-11T10:00:35&quot;,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/15220_GXG99&quot;
+        },
+        &quot;automaticAccountingInstruction&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/15220_GXG99&quot;
+        },
+        &quot;accountMaster&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/15220_GXG99/accountMaster&quot;
+        },
+        &quot;account&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/15220_GXG99/account&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;QSA&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;QSA&quot;,
+      &quot;computerId&quot; : &quot;WIN7UL7P5&quot;,
+      &quot;sequence&quot; : 20000,
+      &quot;aaiCode&quot; : &quot;FA01&quot;,
+      &quot;description1&quot; : &quot;Aktiva Tetap - Awal&quot;,
+      &quot;description2&quot; : &quot;&quot;,
+      &quot;description3&quot; : &quot;&quot;,
+      &quot;description4&quot; : &quot;&quot;,
+      &quot;description5&quot; : &quot;&quot;,
+      &quot;companyId&quot; : &quot;00000&quot;,
+      &quot;businessUnitId&quot; : &quot;&quot;,
+      &quot;objectAccountCode&quot; : &quot;121110&quot;,
+      &quot;subsidiaryCode&quot; : &quot;&quot;,
+      &quot;lastUpdateDateTime&quot; : &quot;2017-12-18T09:14:15&quot;,
+      &quot;inputDateTime&quot; : &quot;2006-12-29T20:18:41&quot;,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/20000_FA01&quot;
+        },
+        &quot;automaticAccountingInstruction&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/20000_FA01&quot;
+        },
+        &quot;accountMaster&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/20000_FA01/accountMaster&quot;
+        },
+        &quot;account&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/20000_FA01/account&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;QSA&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;QSA&quot;,
+      &quot;computerId&quot; : &quot;WIN7UL7P5&quot;,
+      &quot;sequence&quot; : 20100,
+      &quot;aaiCode&quot; : &quot;FA02&quot;,
+      &quot;description1&quot; : &quot;Aktiva Tetap - Akhir&quot;,
+      &quot;description2&quot; : &quot;&quot;,
+      &quot;description3&quot; : &quot;&quot;,
+      &quot;description4&quot; : &quot;&quot;,
+      &quot;description5&quot; : &quot;&quot;,
+      &quot;companyId&quot; : &quot;00000&quot;,
+      &quot;businessUnitId&quot; : &quot;&quot;,
+      &quot;objectAccountCode&quot; : &quot;121140&quot;,
+      &quot;subsidiaryCode&quot; : &quot;&quot;,
+      &quot;lastUpdateDateTime&quot; : &quot;2017-12-18T09:14:22&quot;,
+      &quot;inputDateTime&quot; : &quot;2006-12-29T20:19:02&quot;,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/20100_FA02&quot;
+        },
+        &quot;automaticAccountingInstruction&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/20100_FA02&quot;
+        },
+        &quot;accountMaster&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/20100_FA02/accountMaster&quot;
+        },
+        &quot;account&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/20100_FA02/account&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;QSA&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;QSA&quot;,
+      &quot;computerId&quot; : &quot;WIN7UL7P5&quot;,
+      &quot;sequence&quot; : 20200,
+      &quot;aaiCode&quot; : &quot;FA03&quot;,
+      &quot;description1&quot; : &quot;Akumulasi Penyusutan - Awal&quot;,
+      &quot;description2&quot; : &quot;&quot;,
+      &quot;description3&quot; : &quot;&quot;,
+      &quot;description4&quot; : &quot;&quot;,
+      &quot;description5&quot; : &quot;&quot;,
+      &quot;companyId&quot; : &quot;00000&quot;,
+      &quot;businessUnitId&quot; : &quot;&quot;,
+      &quot;objectAccountCode&quot; : &quot;121220&quot;,
+      &quot;subsidiaryCode&quot; : &quot;&quot;,
+      &quot;lastUpdateDateTime&quot; : &quot;2017-12-18T09:14:29&quot;,
+      &quot;inputDateTime&quot; : &quot;2006-12-29T20:19:24&quot;,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/20200_FA03&quot;
+        },
+        &quot;automaticAccountingInstruction&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/20200_FA03&quot;
+        },
+        &quot;accountMaster&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/20200_FA03/accountMaster&quot;
+        },
+        &quot;account&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/20200_FA03/account&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;QSA&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;QSA&quot;,
+      &quot;computerId&quot; : &quot;WIN7UL7P5&quot;,
+      &quot;sequence&quot; : 20300,
+      &quot;aaiCode&quot; : &quot;FA04&quot;,
+      &quot;description1&quot; : &quot;Akumulasi Penyusutan - Akhir&quot;,
+      &quot;description2&quot; : &quot;&quot;,
+      &quot;description3&quot; : &quot;&quot;,
+      &quot;description4&quot; : &quot;&quot;,
+      &quot;description5&quot; : &quot;&quot;,
+      &quot;companyId&quot; : &quot;00000&quot;,
+      &quot;businessUnitId&quot; : &quot;&quot;,
+      &quot;objectAccountCode&quot; : &quot;121240&quot;,
+      &quot;subsidiaryCode&quot; : &quot;&quot;,
+      &quot;lastUpdateDateTime&quot; : &quot;2017-12-18T09:14:37&quot;,
+      &quot;inputDateTime&quot; : &quot;2006-12-29T20:20:19&quot;,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/20300_FA04&quot;
+        },
+        &quot;automaticAccountingInstruction&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/20300_FA04&quot;
+        },
+        &quot;accountMaster&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/20300_FA04/accountMaster&quot;
+        },
+        &quot;account&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/aai/20300_FA04/account&quot;
+        }
+      }
+    } ]
+  },
+  &quot;_links&quot; : {
+    &quot;first&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/aai?page=0&amp;size=20&quot;
+    },
+    &quot;self&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/aai{?page,size,sort}&quot;,
+      &quot;templated&quot; : true
+    },
+    &quot;next&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/aai?page=1&amp;size=20&quot;
+    },
+    &quot;last&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/aai?page=3&amp;size=20&quot;
+    },
+    &quot;profile&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/profile/aai&quot;
+    },
+    &quot;search&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/aai/search&quot;
+    }
+  },
+  &quot;page&quot; : {
+    &quot;size&quot; : 20,
+    &quot;totalElements&quot; : 67,
+    &quot;totalPages&quot; : 4,
+    &quot;number&quot; : 0
+  }
+}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2018-12-14 17:35:54.376  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@2f2ae128 testClass = AAIApiTest, testInstance = ags.goldenlionerp.apiTests.setups.AAIApiTest@3095701d, testMethod = getTestCollection@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@6d40640b testClass = AAIApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@53447757 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+2018-12-14 17:35:54.392  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@2f2ae128 testClass = AAIApiTest, testInstance = ags.goldenlionerp.apiTests.setups.AAIApiTest@496a0384, testMethod = createTestWithPut@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@6d40640b testClass = AAIApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@53447757 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:54.393  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:54.393  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:54.393  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+Hibernate: select automatica0_.aiaaid as aiaaid1_5_0_, automatica0_.aiseq as aiseq2_5_0_, automatica0_.aicid as aicid3_5_0_, automatica0_.aidtin as aidtin4_5_0_, automatica0_.aitmin as aitmin5_5_0_, automatica0_.aiuid as aiuid6_5_0_, automatica0_.aidtlu as aidtlu7_5_0_, automatica0_.aitmlu as aitmlu8_5_0_, automatica0_.aiuidm as aiuidm9_5_0_, automatica0_.aiobj as aiobj17_5_0_, automatica0_.aibuid as aibuid10_5_0_, automatica0_.aicoid as aicoid11_5_0_, automatica0_.aisub as aisub18_5_0_, automatica0_.aidesb1 as aidesb12_5_0_, automatica0_.aidesb2 as aidesb13_5_0_, automatica0_.aidesb3 as aidesb14_5_0_, automatica0_.aidesb4 as aidesb15_5_0_, automatica0_.aidesb5 as aidesb16_5_0_ from t0015 automatica0_ where automatica0_.aiaaid=? and automatica0_.aiseq=?
+2018-12-14 17:35:54.393  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@2f2ae128 testClass = AAIApiTest, testInstance = ags.goldenlionerp.apiTests.setups.AAIApiTest@496a0384, testMethod = createTestWithPut@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@6d40640b testClass = AAIApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@53447757 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+2018-12-14 17:35:54.393  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@2f2ae128 testClass = AAIApiTest, testInstance = ags.goldenlionerp.apiTests.setups.AAIApiTest@2b861241, testMethod = deleteTest@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@6d40640b testClass = AAIApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@53447757 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:54.393  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:54.393  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:54.409  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 16 ms
+Hibernate: select automatica0_.aiaaid as aiaaid1_5_0_, automatica0_.aiseq as aiseq2_5_0_, automatica0_.aicid as aicid3_5_0_, automatica0_.aidtin as aidtin4_5_0_, automatica0_.aitmin as aitmin5_5_0_, automatica0_.aiuid as aiuid6_5_0_, automatica0_.aidtlu as aidtlu7_5_0_, automatica0_.aitmlu as aitmlu8_5_0_, automatica0_.aiuidm as aiuidm9_5_0_, automatica0_.aiobj as aiobj17_5_0_, automatica0_.aibuid as aibuid10_5_0_, automatica0_.aicoid as aicoid11_5_0_, automatica0_.aisub as aisub18_5_0_, automatica0_.aidesb1 as aidesb12_5_0_, automatica0_.aidesb2 as aidesb13_5_0_, automatica0_.aidesb3 as aidesb14_5_0_, automatica0_.aidesb4 as aidesb15_5_0_, automatica0_.aidesb5 as aidesb16_5_0_ from t0015 automatica0_ where automatica0_.aiaaid=? and automatica0_.aiseq=?
+Hibernate: select chartofacc0_.oaobj as oaobj1_25_0_, chartofacc0_.oacid as oacid2_25_0_, chartofacc0_.oadtin as oadtin3_25_0_, chartofacc0_.oatmin as oatmin4_25_0_, chartofacc0_.oauid as oauid5_25_0_, chartofacc0_.oadtlu as oadtlu6_25_0_, chartofacc0_.oatmlu as oatmlu7_25_0_, chartofacc0_.oauidm as oauidm8_25_0_, chartofacc0_.oablc as oablc9_25_0_, chartofacc0_.oacoid as oacoid10_25_0_, chartofacc0_.oadesb1 as oadesb11_25_0_, chartofacc0_.oadesc1 as oadesc12_25_0_, chartofacc0_.oalod as oalod13_25_0_, chartofacc0_.oapec as oapec14_25_0_ from t0900 chartofacc0_ where chartofacc0_.oaobj=?
+Hibernate: select company0_.cncoid as cncoid1_9_0_, company0_.cncid as cncid2_9_0_, company0_.cndtin as cndtin3_9_0_, company0_.cntmin as cntmin4_9_0_, company0_.cnuid as cnuid5_9_0_, company0_.cndtlu as cndtlu6_9_0_, company0_.cntmlu as cntmlu7_9_0_, company0_.cnuidm as cnuidm8_9_0_, company0_.cnanum as cnanum9_9_0_, company0_.cncrcb as cncrcb10_9_0_, company0_.cncap as cncap11_9_0_, company0_.cncfy as cncfy12_9_0_, company0_.cncip as cncip13_9_0_, company0_.cncpp as cncpp14_9_0_, company0_.cncrp as cncrp15_9_0_, company0_.cndesb1 as cndesb16_9_0_, company0_.cnfdp as cnfdp17_9_0_ from t0020 company0_ where company0_.cncoid=?
+Hibernate: select accountmas0_.ambuid as ambuid1_26_0_, accountmas0_.amcoid as amcoid2_26_0_, accountmas0_.amobj as amobj3_26_0_, accountmas0_.amsub as amsub4_26_0_, accountmas0_.amcid as amcid5_26_0_, accountmas0_.amdtin as amdtin6_26_0_, accountmas0_.amtmin as amtmin7_26_0_, accountmas0_.amuid as amuid8_26_0_, accountmas0_.amdtlu as amdtlu9_26_0_, accountmas0_.amtmlu as amtmlu10_26_0_, accountmas0_.amuidm as amuidm11_26_0_, accountmas0_.amdtlt as amdtlt12_26_0_, accountmas0_.amacid as amacid13_26_0_, accountmas0_.amblc as amblc14_26_0_, accountmas0_.ambpc as ambpc15_26_0_, accountmas0_.amglc01 as amglc16_26_0_, accountmas0_.amglc02 as amglc17_26_0_, accountmas0_.amglc03 as amglc18_26_0_, accountmas0_.amglc04 as amglc19_26_0_, accountmas0_.amglc05 as amglc20_26_0_, accountmas0_.amcrct as amcrct21_26_0_, accountmas0_.amdesb1 as amdesb22_26_0_, accountmas0_.amtmlt as amtmlt23_26_0_, accountmas0_.amlod as amlod24_26_0_, accountmas0_.ammac as ammac25_26_0_, accountmas0_.amoan as amoan26_26_0_, accountmas0_.ampec as ampec27_26_0_ from t0901 accountmas0_ where accountmas0_.ambuid=? and accountmas0_.amcoid=? and accountmas0_.amobj=? and accountmas0_.amsub=?
+2018-12-14 17:35:54.424  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@2f2ae128 testClass = AAIApiTest, testInstance = ags.goldenlionerp.apiTests.setups.AAIApiTest@2b861241, testMethod = deleteTest@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@6d40640b testClass = AAIApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@53447757 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+2018-12-14 17:35:54.424  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@2f2ae128 testClass = AAIApiTest, testInstance = ags.goldenlionerp.apiTests.setups.AAIApiTest@29d22ed8, testMethod = createTestWithPost@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@6d40640b testClass = AAIApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@53447757 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:54.424  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:54.424  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:54.424  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+Hibernate: select automatica0_.aiaaid as aiaaid1_5_0_, automatica0_.aiseq as aiseq2_5_0_, automatica0_.aicid as aicid3_5_0_, automatica0_.aidtin as aidtin4_5_0_, automatica0_.aitmin as aitmin5_5_0_, automatica0_.aiuid as aiuid6_5_0_, automatica0_.aidtlu as aidtlu7_5_0_, automatica0_.aitmlu as aitmlu8_5_0_, automatica0_.aiuidm as aiuidm9_5_0_, automatica0_.aiobj as aiobj17_5_0_, automatica0_.aibuid as aibuid10_5_0_, automatica0_.aicoid as aicoid11_5_0_, automatica0_.aisub as aisub18_5_0_, automatica0_.aidesb1 as aidesb12_5_0_, automatica0_.aidesb2 as aidesb13_5_0_, automatica0_.aidesb3 as aidesb14_5_0_, automatica0_.aidesb4 as aidesb15_5_0_, automatica0_.aidesb5 as aidesb16_5_0_ from t0015 automatica0_ where automatica0_.aiaaid=? and automatica0_.aiseq=?
+Hibernate: select automatica0_.aiaaid as aiaaid1_5_0_, automatica0_.aiseq as aiseq2_5_0_, automatica0_.aicid as aicid3_5_0_, automatica0_.aidtin as aidtin4_5_0_, automatica0_.aitmin as aitmin5_5_0_, automatica0_.aiuid as aiuid6_5_0_, automatica0_.aidtlu as aidtlu7_5_0_, automatica0_.aitmlu as aitmlu8_5_0_, automatica0_.aiuidm as aiuidm9_5_0_, automatica0_.aiobj as aiobj17_5_0_, automatica0_.aibuid as aibuid10_5_0_, automatica0_.aicoid as aicoid11_5_0_, automatica0_.aisub as aisub18_5_0_, automatica0_.aidesb1 as aidesb12_5_0_, automatica0_.aidesb2 as aidesb13_5_0_, automatica0_.aidesb3 as aidesb14_5_0_, automatica0_.aidesb4 as aidesb15_5_0_, automatica0_.aidesb5 as aidesb16_5_0_ from t0015 automatica0_ where automatica0_.aiaaid=? and automatica0_.aiseq=?
+Hibernate: insert into t0015 (aicid, aidtin, aitmin, aiuid, aidtlu, aitmlu, aiuidm, aibuid, aicoid, aidesb1, aidesb2, aidesb3, aidesb4, aidesb5, aiobj, aisub, aiaaid, aiseq) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: select automatica0_.aiaaid as aiaaid1_5_0_, automatica0_.aiseq as aiseq2_5_0_, automatica0_.aicid as aicid3_5_0_, automatica0_.aidtin as aidtin4_5_0_, automatica0_.aitmin as aitmin5_5_0_, automatica0_.aiuid as aiuid6_5_0_, automatica0_.aidtlu as aidtlu7_5_0_, automatica0_.aitmlu as aitmlu8_5_0_, automatica0_.aiuidm as aiuidm9_5_0_, automatica0_.aiobj as aiobj17_5_0_, automatica0_.aibuid as aibuid10_5_0_, automatica0_.aicoid as aicoid11_5_0_, automatica0_.aisub as aisub18_5_0_, automatica0_.aidesb1 as aidesb12_5_0_, automatica0_.aidesb2 as aidesb13_5_0_, automatica0_.aidesb3 as aidesb14_5_0_, automatica0_.aidesb4 as aidesb15_5_0_, automatica0_.aidesb5 as aidesb16_5_0_ from t0015 automatica0_ where automatica0_.aiaaid=? and automatica0_.aiseq=?
+Hibernate: select chartofacc0_.oaobj as oaobj1_25_0_, chartofacc0_.oacid as oacid2_25_0_, chartofacc0_.oadtin as oadtin3_25_0_, chartofacc0_.oatmin as oatmin4_25_0_, chartofacc0_.oauid as oauid5_25_0_, chartofacc0_.oadtlu as oadtlu6_25_0_, chartofacc0_.oatmlu as oatmlu7_25_0_, chartofacc0_.oauidm as oauidm8_25_0_, chartofacc0_.oablc as oablc9_25_0_, chartofacc0_.oacoid as oacoid10_25_0_, chartofacc0_.oadesb1 as oadesb11_25_0_, chartofacc0_.oadesc1 as oadesc12_25_0_, chartofacc0_.oalod as oalod13_25_0_, chartofacc0_.oapec as oapec14_25_0_ from t0900 chartofacc0_ where chartofacc0_.oaobj=?
+Hibernate: select company0_.cncoid as cncoid1_9_0_, company0_.cncid as cncid2_9_0_, company0_.cndtin as cndtin3_9_0_, company0_.cntmin as cntmin4_9_0_, company0_.cnuid as cnuid5_9_0_, company0_.cndtlu as cndtlu6_9_0_, company0_.cntmlu as cntmlu7_9_0_, company0_.cnuidm as cnuidm8_9_0_, company0_.cnanum as cnanum9_9_0_, company0_.cncrcb as cncrcb10_9_0_, company0_.cncap as cncap11_9_0_, company0_.cncfy as cncfy12_9_0_, company0_.cncip as cncip13_9_0_, company0_.cncpp as cncpp14_9_0_, company0_.cncrp as cncrp15_9_0_, company0_.cndesb1 as cndesb16_9_0_, company0_.cnfdp as cnfdp17_9_0_ from t0020 company0_ where company0_.cncoid=?
+Hibernate: select accountmas0_.ambuid as ambuid1_26_0_, accountmas0_.amcoid as amcoid2_26_0_, accountmas0_.amobj as amobj3_26_0_, accountmas0_.amsub as amsub4_26_0_, accountmas0_.amcid as amcid5_26_0_, accountmas0_.amdtin as amdtin6_26_0_, accountmas0_.amtmin as amtmin7_26_0_, accountmas0_.amuid as amuid8_26_0_, accountmas0_.amdtlu as amdtlu9_26_0_, accountmas0_.amtmlu as amtmlu10_26_0_, accountmas0_.amuidm as amuidm11_26_0_, accountmas0_.amdtlt as amdtlt12_26_0_, accountmas0_.amacid as amacid13_26_0_, accountmas0_.amblc as amblc14_26_0_, accountmas0_.ambpc as ambpc15_26_0_, accountmas0_.amglc01 as amglc16_26_0_, accountmas0_.amglc02 as amglc17_26_0_, accountmas0_.amglc03 as amglc18_26_0_, accountmas0_.amglc04 as amglc19_26_0_, accountmas0_.amglc05 as amglc20_26_0_, accountmas0_.amcrct as amcrct21_26_0_, accountmas0_.amdesb1 as amdesb22_26_0_, accountmas0_.amtmlt as amtmlt23_26_0_, accountmas0_.amlod as amlod24_26_0_, accountmas0_.ammac as ammac25_26_0_, accountmas0_.amoan as amoan26_26_0_, accountmas0_.ampec as ampec27_26_0_ from t0901 accountmas0_ where accountmas0_.ambuid=? and accountmas0_.amcoid=? and accountmas0_.amobj=? and accountmas0_.amsub=?
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/aai/12345_TESTTEST
+       Parameters = {}
+          Headers = {Accept=[application/json]}
+             Body = &lt;no character encoding set&gt;
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@5dfea3c3, SPRING_SECURITY_CONTEXT=org.springframework.security.core.context.SecurityContextImpl@475fcd89: Authentication: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@475fcd89: Principal: org.springframework.security.core.userdetails.User@f02988d6: Username: username; Password: [PROTECTED]; Enabled: true; AccountNonExpired: true; credentialsNonExpired: true; AccountNonLocked: true; Not granted any authorities; Credentials: [PROTECTED]; Authenticated: true; Details: null; Not granted any authorities}
+
+Handler:
+             Type = org.springframework.data.rest.webmvc.RepositoryEntityController
+           Method = public org.springframework.http.ResponseEntity&lt;org.springframework.hateoas.Resource&lt;?&gt;&gt; org.springframework.data.rest.webmvc.RepositoryEntityController.getItemResource(org.springframework.data.rest.webmvc.RootResourceInformation,java.io.Serializable,org.springframework.data.rest.webmvc.PersistentEntityResourceAssembler,org.springframework.http.HttpHeaders) throws org.springframework.web.HttpRequestMethodNotSupportedException
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Type=[application/json;charset=UTF-8], X-Content-Type-Options=[nosniff], X-XSS-Protection=[1; mode=block], Cache-Control=[no-cache, no-store, max-age=0, must-revalidate], Pragma=[no-cache], Expires=[0], X-Frame-Options=[DENY]}
+     Content type = application/json;charset=UTF-8
+             Body = {
+  &quot;inputUserId&quot; : &quot;username&quot;,
+  &quot;lastUpdateUserId&quot; : &quot;username&quot;,
+  &quot;computerId&quot; : &quot;username&quot;,
+  &quot;sequence&quot; : 12345,
+  &quot;aaiCode&quot; : &quot;TESTTEST&quot;,
+  &quot;description1&quot; : &quot;Test description&quot;,
+  &quot;description2&quot; : &quot;Test description 2&quot;,
+  &quot;description3&quot; : &quot;&quot;,
+  &quot;description4&quot; : &quot;&quot;,
+  &quot;description5&quot; : &quot;&quot;,
+  &quot;companyId&quot; : &quot;11000&quot;,
+  &quot;businessUnitId&quot; : &quot;100&quot;,
+  &quot;objectAccountCode&quot; : &quot;111110&quot;,
+  &quot;subsidiaryCode&quot; : &quot;&quot;,
+  &quot;lastUpdateDateTime&quot; : &quot;2018-12-14T17:35:54&quot;,
+  &quot;inputDateTime&quot; : &quot;2018-12-14T17:35:54&quot;,
+  &quot;_links&quot; : {
+    &quot;self&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/aai/12345_TESTTEST&quot;
+    },
+    &quot;automaticAccountingInstruction&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/aai/12345_TESTTEST&quot;
+    },
+    &quot;accountMaster&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/aai/12345_TESTTEST/accountMaster&quot;
+    },
+    &quot;account&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/aai/12345_TESTTEST/account&quot;
+    }
+  }
+}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2018-12-14 17:35:54.471  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@2f2ae128 testClass = AAIApiTest, testInstance = ags.goldenlionerp.apiTests.setups.AAIApiTest@29d22ed8, testMethod = createTestWithPost@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@6d40640b testClass = AAIApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@53447757 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 4.2.1</a> at 14 Dec, 2018 5:36:06 PM</p>
+</div>
+</div>
+</body>
+</html>

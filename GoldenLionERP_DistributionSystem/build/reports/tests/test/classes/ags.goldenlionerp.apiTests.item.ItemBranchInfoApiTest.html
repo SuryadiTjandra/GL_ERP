@@ -1,0 +1,1824 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/ags.goldenlionerp.apiTests.item.html">ags.goldenlionerp.apiTests.item</a> &gt; ItemBranchInfoApiTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">7</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">1.123s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">createTestWithPost</td>
+<td>0.255s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">createTestWithPut</td>
+<td>0.075s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">deleteTest</td>
+<td>0.106s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getTestCollection</td>
+<td>0.146s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getTestSingle</td>
+<td>0.140s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">updateTestWithPatch</td>
+<td>0.315s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">updateTestWithPut</td>
+<td>0.086s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>2018-12-14 17:35:26.365  INFO 9212 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest], using SpringBootContextLoader
+2018-12-14 17:35:26.365  INFO 9212 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2018-12-14 17:35:26.365  INFO 9212 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest]: ItemBranchInfoApiTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2018-12-14 17:35:26.380  INFO 9212 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration ags.goldenlionerp.GoldenLionErpApplication for test class ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest
+2018-12-14 17:35:26.380  INFO 9212 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-12-14 17:35:26.380  INFO 9212 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@529f098e, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@6e2ef99d, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@36812556, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@e59f228, org.springframework.test.context.support.DirtiesContextTestExecutionListener@24a04914, org.springframework.test.context.transaction.TransactionalTestExecutionListener@3d5bae0c, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@2cf8764, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@4346eda7, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@6508f432, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@5431d51, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@7b494e3a, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@f96af21, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@2d1d6385, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@30a95ae2]
+2018-12-14 17:35:26.411  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@1c24488 testClass = ItemBranchInfoApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest@17360c6b, testMethod = updateTestWithPatch@ItemBranchInfoApiTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7d94b1bb testClass = ItemBranchInfoApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4c3186fa key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:26.411  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:26.411  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:26.411  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+Hibernate: select itembranch0_.ibbuid as ibbuid1_32_0_, itembranch0_.ibinum as ibinum2_32_0_, itembranch0_.ibcid as ibcid3_32_0_, itembranch0_.ibdtin as ibdtin4_32_0_, itembranch0_.ibtmin as ibtmin5_32_0_, itembranch0_.ibuid as ibuid6_32_0_, itembranch0_.ibdtlu as ibdtlu7_32_0_, itembranch0_.ibtmlu as ibtmlu8_32_0_, itembranch0_.ibuidm as ibuidm9_32_0_, itembranch0_.ibdtls as ibdtls10_32_0_, itembranch0_.ibctm as ibctm11_32_0_, itembranch0_.ibitc02 as ibitc12_32_0_, itembranch0_.ibitc01 as ibitc13_32_0_, itembranch0_.ibitc10 as ibitc14_32_0_, itembranch0_.ibitc04 as ibitc15_32_0_, itembranch0_.ibitc06 as ibitc16_32_0_, itembranch0_.ibitc07 as ibitc17_32_0_, itembranch0_.ibitc08 as ibitc18_32_0_, itembranch0_.ibitc09 as ibitc19_32_0_, itembranch0_.ibitc05 as ibitc20_32_0_, itembranch0_.ibslrc0 as ibslrc21_32_0_, itembranch0_.ibslrc1 as ibslrc22_32_0_, itembranch0_.ibslrc2 as ibslrc23_32_0_, itembranch0_.ibslrc3 as ibslrc24_32_0_, itembranch0_.ibslrc4 as ibslrc25_32_0_, itembranch0_.ibslrc5 as ibslrc26_32_0_, itembranch0_.ibslrc6 as ibslrc27_32_0_, itembranch0_.ibslrc7 as ibslrc28_32_0_, itembranch0_.ibslrc8 as ibslrc29_32_0_, itembranch0_.ibslrc9 as ibslrc30_32_0_, itembranch0_.ibitc03 as ibitc31_32_0_, itembranch0_.ibglcls as ibglcls32_32_0_, itembranch0_.ibilc as ibilc33_32_0_, itembranch0_.ibipg as ibipg34_32_0_, itembranch0_.iblsc as iblsc35_32_0_, itembranch0_.ibmaxroq as ibmaxro36_32_0_, itembranch0_.ibminroq as ibminro37_32_0_, itembranch0_.ibbpid as ibbpid38_32_0_, itembranch0_.ibcsid as ibcsid39_32_0_, itembranch0_.ibudf as ibudf40_32_0_, itembranch0_.ibpmmf as ibpmmf41_32_0_, itembranch0_.ibrbii as ibrbii42_32_0_, itembranch0_.ibrbim as ibrbim43_32_0_, itembranch0_.ibrbis as ibrbis44_32_0_, itembranch0_.ibvnid as ibvnid45_32_0_, itembranch0_.ibtaxpc as ibtaxpc46_32_0_, itembranch0_.ibtaxsc as ibtaxsc47_32_0_, itembranch0_.ibplg as ibplg48_32_0_, itembranch0_.ibrop as ibrop49_32_0_, itembranch0_.ibroq as ibroq50_32_0_, itembranch0_.ibsfstk as ibsfstk51_32_0_, itembranch0_.ibsnr as ibsnr52_32_0_, itembranch0_.ibskty as ibskty53_32_0_, itembranch0_.iblnty as iblnty54_32_0_ from t41011 itembranch0_ where itembranch0_.ibbuid=? and itembranch0_.ibinum=?
+Hibernate: update t41011 set ibcid=?, ibdtlu=?, ibtmlu=?, ibuidm=?, ibdtls=?, ibctm=?, ibitc02=?, ibitc01=?, ibitc10=?, ibitc04=?, ibitc06=?, ibitc07=?, ibitc08=?, ibitc09=?, ibitc05=?, ibslrc0=?, ibslrc1=?, ibslrc2=?, ibslrc3=?, ibslrc4=?, ibslrc5=?, ibslrc6=?, ibslrc7=?, ibslrc8=?, ibslrc9=?, ibitc03=?, ibglcls=?, ibilc=?, ibipg=?, iblsc=?, ibmaxroq=?, ibminroq=?, ibbpid=?, ibcsid=?, ibudf=?, ibpmmf=?, ibrbii=?, ibrbim=?, ibrbis=?, ibvnid=?, ibtaxpc=?, ibtaxsc=?, ibplg=?, ibrop=?, ibroq=?, ibsfstk=?, ibsnr=?, ibskty=?, iblnty=? where ibbuid=? and ibinum=?
+Hibernate: select itembranch0_.ibbuid as ibbuid1_32_0_, itembranch0_.ibinum as ibinum2_32_0_, itembranch0_.ibcid as ibcid3_32_0_, itembranch0_.ibdtin as ibdtin4_32_0_, itembranch0_.ibtmin as ibtmin5_32_0_, itembranch0_.ibuid as ibuid6_32_0_, itembranch0_.ibdtlu as ibdtlu7_32_0_, itembranch0_.ibtmlu as ibtmlu8_32_0_, itembranch0_.ibuidm as ibuidm9_32_0_, itembranch0_.ibdtls as ibdtls10_32_0_, itembranch0_.ibctm as ibctm11_32_0_, itembranch0_.ibitc02 as ibitc12_32_0_, itembranch0_.ibitc01 as ibitc13_32_0_, itembranch0_.ibitc10 as ibitc14_32_0_, itembranch0_.ibitc04 as ibitc15_32_0_, itembranch0_.ibitc06 as ibitc16_32_0_, itembranch0_.ibitc07 as ibitc17_32_0_, itembranch0_.ibitc08 as ibitc18_32_0_, itembranch0_.ibitc09 as ibitc19_32_0_, itembranch0_.ibitc05 as ibitc20_32_0_, itembranch0_.ibslrc0 as ibslrc21_32_0_, itembranch0_.ibslrc1 as ibslrc22_32_0_, itembranch0_.ibslrc2 as ibslrc23_32_0_, itembranch0_.ibslrc3 as ibslrc24_32_0_, itembranch0_.ibslrc4 as ibslrc25_32_0_, itembranch0_.ibslrc5 as ibslrc26_32_0_, itembranch0_.ibslrc6 as ibslrc27_32_0_, itembranch0_.ibslrc7 as ibslrc28_32_0_, itembranch0_.ibslrc8 as ibslrc29_32_0_, itembranch0_.ibslrc9 as ibslrc30_32_0_, itembranch0_.ibitc03 as ibitc31_32_0_, itembranch0_.ibglcls as ibglcls32_32_0_, itembranch0_.ibilc as ibilc33_32_0_, itembranch0_.ibipg as ibipg34_32_0_, itembranch0_.iblsc as iblsc35_32_0_, itembranch0_.ibmaxroq as ibmaxro36_32_0_, itembranch0_.ibminroq as ibminro37_32_0_, itembranch0_.ibbpid as ibbpid38_32_0_, itembranch0_.ibcsid as ibcsid39_32_0_, itembranch0_.ibudf as ibudf40_32_0_, itembranch0_.ibpmmf as ibpmmf41_32_0_, itembranch0_.ibrbii as ibrbii42_32_0_, itembranch0_.ibrbim as ibrbim43_32_0_, itembranch0_.ibrbis as ibrbis44_32_0_, itembranch0_.ibvnid as ibvnid45_32_0_, itembranch0_.ibtaxpc as ibtaxpc46_32_0_, itembranch0_.ibtaxsc as ibtaxsc47_32_0_, itembranch0_.ibplg as ibplg48_32_0_, itembranch0_.ibrop as ibrop49_32_0_, itembranch0_.ibroq as ibroq50_32_0_, itembranch0_.ibsfstk as ibsfstk51_32_0_, itembranch0_.ibsnr as ibsnr52_32_0_, itembranch0_.ibskty as ibskty53_32_0_, itembranch0_.iblnty as iblnty54_32_0_ from t41011 itembranch0_ where itembranch0_.ibbuid=? and itembranch0_.ibinum=?
+2018-12-14 17:35:26.724  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@1c24488 testClass = ItemBranchInfoApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest@17360c6b, testMethod = updateTestWithPatch@ItemBranchInfoApiTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7d94b1bb testClass = ItemBranchInfoApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4c3186fa key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+2018-12-14 17:35:26.724  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@1c24488 testClass = ItemBranchInfoApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest@295b36b3, testMethod = updateTestWithPut@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7d94b1bb testClass = ItemBranchInfoApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4c3186fa key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:26.724  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:26.724  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:26.724  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+Hibernate: select itembranch0_.ibbuid as ibbuid1_32_0_, itembranch0_.ibinum as ibinum2_32_0_, itembranch0_.ibcid as ibcid3_32_0_, itembranch0_.ibdtin as ibdtin4_32_0_, itembranch0_.ibtmin as ibtmin5_32_0_, itembranch0_.ibuid as ibuid6_32_0_, itembranch0_.ibdtlu as ibdtlu7_32_0_, itembranch0_.ibtmlu as ibtmlu8_32_0_, itembranch0_.ibuidm as ibuidm9_32_0_, itembranch0_.ibdtls as ibdtls10_32_0_, itembranch0_.ibctm as ibctm11_32_0_, itembranch0_.ibitc02 as ibitc12_32_0_, itembranch0_.ibitc01 as ibitc13_32_0_, itembranch0_.ibitc10 as ibitc14_32_0_, itembranch0_.ibitc04 as ibitc15_32_0_, itembranch0_.ibitc06 as ibitc16_32_0_, itembranch0_.ibitc07 as ibitc17_32_0_, itembranch0_.ibitc08 as ibitc18_32_0_, itembranch0_.ibitc09 as ibitc19_32_0_, itembranch0_.ibitc05 as ibitc20_32_0_, itembranch0_.ibslrc0 as ibslrc21_32_0_, itembranch0_.ibslrc1 as ibslrc22_32_0_, itembranch0_.ibslrc2 as ibslrc23_32_0_, itembranch0_.ibslrc3 as ibslrc24_32_0_, itembranch0_.ibslrc4 as ibslrc25_32_0_, itembranch0_.ibslrc5 as ibslrc26_32_0_, itembranch0_.ibslrc6 as ibslrc27_32_0_, itembranch0_.ibslrc7 as ibslrc28_32_0_, itembranch0_.ibslrc8 as ibslrc29_32_0_, itembranch0_.ibslrc9 as ibslrc30_32_0_, itembranch0_.ibitc03 as ibitc31_32_0_, itembranch0_.ibglcls as ibglcls32_32_0_, itembranch0_.ibilc as ibilc33_32_0_, itembranch0_.ibipg as ibipg34_32_0_, itembranch0_.iblsc as iblsc35_32_0_, itembranch0_.ibmaxroq as ibmaxro36_32_0_, itembranch0_.ibminroq as ibminro37_32_0_, itembranch0_.ibbpid as ibbpid38_32_0_, itembranch0_.ibcsid as ibcsid39_32_0_, itembranch0_.ibudf as ibudf40_32_0_, itembranch0_.ibpmmf as ibpmmf41_32_0_, itembranch0_.ibrbii as ibrbii42_32_0_, itembranch0_.ibrbim as ibrbim43_32_0_, itembranch0_.ibrbis as ibrbis44_32_0_, itembranch0_.ibvnid as ibvnid45_32_0_, itembranch0_.ibtaxpc as ibtaxpc46_32_0_, itembranch0_.ibtaxsc as ibtaxsc47_32_0_, itembranch0_.ibplg as ibplg48_32_0_, itembranch0_.ibrop as ibrop49_32_0_, itembranch0_.ibroq as ibroq50_32_0_, itembranch0_.ibsfstk as ibsfstk51_32_0_, itembranch0_.ibsnr as ibsnr52_32_0_, itembranch0_.ibskty as ibskty53_32_0_, itembranch0_.iblnty as iblnty54_32_0_ from t41011 itembranch0_ where itembranch0_.ibbuid=? and itembranch0_.ibinum=?
+2018-12-14 17:35:26.802  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@1c24488 testClass = ItemBranchInfoApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest@295b36b3, testMethod = updateTestWithPut@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7d94b1bb testClass = ItemBranchInfoApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4c3186fa key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+2018-12-14 17:35:26.802  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@1c24488 testClass = ItemBranchInfoApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest@57da4708, testMethod = getTestSingle@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7d94b1bb testClass = ItemBranchInfoApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4c3186fa key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:26.802  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:26.802  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:26.818  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 16 ms
+Hibernate: select itembranch0_.ibbuid as ibbuid1_32_0_, itembranch0_.ibinum as ibinum2_32_0_, itembranch0_.ibcid as ibcid3_32_0_, itembranch0_.ibdtin as ibdtin4_32_0_, itembranch0_.ibtmin as ibtmin5_32_0_, itembranch0_.ibuid as ibuid6_32_0_, itembranch0_.ibdtlu as ibdtlu7_32_0_, itembranch0_.ibtmlu as ibtmlu8_32_0_, itembranch0_.ibuidm as ibuidm9_32_0_, itembranch0_.ibdtls as ibdtls10_32_0_, itembranch0_.ibctm as ibctm11_32_0_, itembranch0_.ibitc02 as ibitc12_32_0_, itembranch0_.ibitc01 as ibitc13_32_0_, itembranch0_.ibitc10 as ibitc14_32_0_, itembranch0_.ibitc04 as ibitc15_32_0_, itembranch0_.ibitc06 as ibitc16_32_0_, itembranch0_.ibitc07 as ibitc17_32_0_, itembranch0_.ibitc08 as ibitc18_32_0_, itembranch0_.ibitc09 as ibitc19_32_0_, itembranch0_.ibitc05 as ibitc20_32_0_, itembranch0_.ibslrc0 as ibslrc21_32_0_, itembranch0_.ibslrc1 as ibslrc22_32_0_, itembranch0_.ibslrc2 as ibslrc23_32_0_, itembranch0_.ibslrc3 as ibslrc24_32_0_, itembranch0_.ibslrc4 as ibslrc25_32_0_, itembranch0_.ibslrc5 as ibslrc26_32_0_, itembranch0_.ibslrc6 as ibslrc27_32_0_, itembranch0_.ibslrc7 as ibslrc28_32_0_, itembranch0_.ibslrc8 as ibslrc29_32_0_, itembranch0_.ibslrc9 as ibslrc30_32_0_, itembranch0_.ibitc03 as ibitc31_32_0_, itembranch0_.ibglcls as ibglcls32_32_0_, itembranch0_.ibilc as ibilc33_32_0_, itembranch0_.ibipg as ibipg34_32_0_, itembranch0_.iblsc as iblsc35_32_0_, itembranch0_.ibmaxroq as ibmaxro36_32_0_, itembranch0_.ibminroq as ibminro37_32_0_, itembranch0_.ibbpid as ibbpid38_32_0_, itembranch0_.ibcsid as ibcsid39_32_0_, itembranch0_.ibudf as ibudf40_32_0_, itembranch0_.ibpmmf as ibpmmf41_32_0_, itembranch0_.ibrbii as ibrbii42_32_0_, itembranch0_.ibrbim as ibrbim43_32_0_, itembranch0_.ibrbis as ibrbis44_32_0_, itembranch0_.ibvnid as ibvnid45_32_0_, itembranch0_.ibtaxpc as ibtaxpc46_32_0_, itembranch0_.ibtaxsc as ibtaxsc47_32_0_, itembranch0_.ibplg as ibplg48_32_0_, itembranch0_.ibrop as ibrop49_32_0_, itembranch0_.ibroq as ibroq50_32_0_, itembranch0_.ibsfstk as ibsfstk51_32_0_, itembranch0_.ibsnr as ibsnr52_32_0_, itembranch0_.ibskty as ibskty53_32_0_, itembranch0_.iblnty as iblnty54_32_0_ from t41011 itembranch0_ where itembranch0_.ibbuid=? and itembranch0_.ibinum=?
+2018-12-14 17:35:26.943  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@1c24488 testClass = ItemBranchInfoApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest@57da4708, testMethod = getTestSingle@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7d94b1bb testClass = ItemBranchInfoApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4c3186fa key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+2018-12-14 17:35:26.943  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@1c24488 testClass = ItemBranchInfoApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest@117a5c86, testMethod = getTestCollection@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7d94b1bb testClass = ItemBranchInfoApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4c3186fa key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:26.958  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:26.958  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:26.958  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+Hibernate: select TOP(?) itembranch0_.ibbuid as ibbuid1_32_, itembranch0_.ibinum as ibinum2_32_, itembranch0_.ibcid as ibcid3_32_, itembranch0_.ibdtin as ibdtin4_32_, itembranch0_.ibtmin as ibtmin5_32_, itembranch0_.ibuid as ibuid6_32_, itembranch0_.ibdtlu as ibdtlu7_32_, itembranch0_.ibtmlu as ibtmlu8_32_, itembranch0_.ibuidm as ibuidm9_32_, itembranch0_.ibdtls as ibdtls10_32_, itembranch0_.ibctm as ibctm11_32_, itembranch0_.ibitc02 as ibitc12_32_, itembranch0_.ibitc01 as ibitc13_32_, itembranch0_.ibitc10 as ibitc14_32_, itembranch0_.ibitc04 as ibitc15_32_, itembranch0_.ibitc06 as ibitc16_32_, itembranch0_.ibitc07 as ibitc17_32_, itembranch0_.ibitc08 as ibitc18_32_, itembranch0_.ibitc09 as ibitc19_32_, itembranch0_.ibitc05 as ibitc20_32_, itembranch0_.ibslrc0 as ibslrc21_32_, itembranch0_.ibslrc1 as ibslrc22_32_, itembranch0_.ibslrc2 as ibslrc23_32_, itembranch0_.ibslrc3 as ibslrc24_32_, itembranch0_.ibslrc4 as ibslrc25_32_, itembranch0_.ibslrc5 as ibslrc26_32_, itembranch0_.ibslrc6 as ibslrc27_32_, itembranch0_.ibslrc7 as ibslrc28_32_, itembranch0_.ibslrc8 as ibslrc29_32_, itembranch0_.ibslrc9 as ibslrc30_32_, itembranch0_.ibitc03 as ibitc31_32_, itembranch0_.ibglcls as ibglcls32_32_, itembranch0_.ibilc as ibilc33_32_, itembranch0_.ibipg as ibipg34_32_, itembranch0_.iblsc as iblsc35_32_, itembranch0_.ibmaxroq as ibmaxro36_32_, itembranch0_.ibminroq as ibminro37_32_, itembranch0_.ibbpid as ibbpid38_32_, itembranch0_.ibcsid as ibcsid39_32_, itembranch0_.ibudf as ibudf40_32_, itembranch0_.ibpmmf as ibpmmf41_32_, itembranch0_.ibrbii as ibrbii42_32_, itembranch0_.ibrbim as ibrbim43_32_, itembranch0_.ibrbis as ibrbis44_32_, itembranch0_.ibvnid as ibvnid45_32_, itembranch0_.ibtaxpc as ibtaxpc46_32_, itembranch0_.ibtaxsc as ibtaxsc47_32_, itembranch0_.ibplg as ibplg48_32_, itembranch0_.ibrop as ibrop49_32_, itembranch0_.ibroq as ibroq50_32_, itembranch0_.ibsfstk as ibsfstk51_32_, itembranch0_.ibsnr as ibsnr52_32_, itembranch0_.ibskty as ibskty53_32_, itembranch0_.iblnty as iblnty54_32_ from t41011 itembranch0_
+Hibernate: select count(itembranch0_.ibbuid) as col_0_0_ from t41011 itembranch0_
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/itembranches/
+       Parameters = {}
+          Headers = {Accept=[application/json]}
+             Body = &lt;no character encoding set&gt;
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@16fc8523, SPRING_SECURITY_CONTEXT=org.springframework.security.core.context.SecurityContextImpl@475fcd89: Authentication: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@475fcd89: Principal: org.springframework.security.core.userdetails.User@f02988d6: Username: username; Password: [PROTECTED]; Enabled: true; AccountNonExpired: true; credentialsNonExpired: true; AccountNonLocked: true; Not granted any authorities; Credentials: [PROTECTED]; Authenticated: true; Details: null; Not granted any authorities}
+
+Handler:
+             Type = org.springframework.data.rest.webmvc.RepositoryEntityController
+           Method = public org.springframework.hateoas.Resources&lt;?&gt; org.springframework.data.rest.webmvc.RepositoryEntityController.getCollectionResource(org.springframework.data.rest.webmvc.RootResourceInformation,org.springframework.data.rest.webmvc.support.DefaultedPageable,org.springframework.data.domain.Sort,org.springframework.data.rest.webmvc.PersistentEntityResourceAssembler) throws org.springframework.data.rest.webmvc.ResourceNotFoundException,org.springframework.web.HttpRequestMethodNotSupportedException
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Type=[application/json;charset=UTF-8], X-Content-Type-Options=[nosniff], X-XSS-Protection=[1; mode=block], Cache-Control=[no-cache, no-store, max-age=0, must-revalidate], Pragma=[no-cache], Expires=[0], X-Frame-Options=[DENY]}
+     Content type = application/json;charset=UTF-8
+             Body = {
+  &quot;_embedded&quot; : {
+    &quot;itembranches&quot; : [ {
+      &quot;inputUserId&quot; : &quot;QSA&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;ERWIN&quot;,
+      &quot;computerId&quot; : &quot;AYOOKLIK&quot;,
+      &quot;lastSynchronizedDate&quot; : null,
+      &quot;branchCode&quot; : &quot;110&quot;,
+      &quot;itemCode&quot; : &quot;ACC.APC-AR2400FP1&quot;,
+      &quot;stockingType&quot; : &quot;P&quot;,
+      &quot;glClass&quot; : &quot;INV&quot;,
+      &quot;transactionType&quot; : &quot;S&quot;,
+      &quot;reorderQty&quot; : 0.00000,
+      &quot;reorderPoint&quot; : 0.00000,
+      &quot;maximumReorderQty&quot; : 0.00000,
+      &quot;minimumReorderQty&quot; : 0.00000,
+      &quot;safetyStock&quot; : 0.00000,
+      &quot;commitmentMethod&quot; : &quot;2&quot;,
+      &quot;inventoryLotCreation&quot; : false,
+      &quot;serialNumberRequired&quot; : false,
+      &quot;lotStatusCode&quot; : &quot;&quot;,
+      &quot;itemPriceGroup&quot; : &quot;&quot;,
+      &quot;printerLocationGroup&quot; : &quot;&quot;,
+      &quot;parameters&quot; : {
+        &quot;discountFactor&quot; : 0E-15,
+        &quot;profitMarginMinimumFactor&quot; : 0.00000,
+        &quot;taxOnSalesCode&quot; : &quot;&quot;,
+        &quot;taxOnPurchaseCode&quot; : &quot;&quot;,
+        &quot;branchPlantId&quot; : &quot;&quot;,
+        &quot;customerId&quot; : &quot;&quot;,
+        &quot;supplierId&quot; : &quot;&quot;,
+        &quot;rankByInventorySales&quot; : &quot;&quot;,
+        &quot;rankByInventoryMargin&quot; : &quot;&quot;,
+        &quot;rankByInventoryInvestment&quot; : &quot;&quot;
+      },
+      &quot;dataGroups&quot; : {
+        &quot;categoryCode&quot; : &quot;&quot;,
+        &quot;brandCode&quot; : &quot;&quot;,
+        &quot;typeCode&quot; : &quot;&quot;,
+        &quot;categoryCode4&quot; : &quot;&quot;,
+        &quot;landedCostRule&quot; : &quot;&quot;,
+        &quot;categoryCode6&quot; : &quot;&quot;,
+        &quot;categoryCode7&quot; : &quot;&quot;,
+        &quot;categoryCode8&quot; : &quot;&quot;,
+        &quot;categoryCode9&quot; : &quot;&quot;,
+        &quot;categoryCode10&quot; : &quot;&quot;,
+        &quot;salesReportingCode1&quot; : &quot;&quot;,
+        &quot;salesReportingCode2&quot; : &quot;&quot;,
+        &quot;salesReportingCode3&quot; : &quot;&quot;,
+        &quot;salesReportingCode4&quot; : &quot;&quot;,
+        &quot;salesReportingCode5&quot; : &quot;&quot;,
+        &quot;salesReportingCode6&quot; : &quot;&quot;,
+        &quot;salesReportingCode7&quot; : &quot;&quot;,
+        &quot;salesReportingCode8&quot; : &quot;&quot;,
+        &quot;salesReportingCode9&quot; : &quot;&quot;,
+        &quot;salesReportingCode0&quot; : &quot;&quot;
+      },
+      &quot;branchCode&quot; : &quot;110&quot;,
+      &quot;itemCode&quot; : &quot;ACC.APC-AR2400FP1&quot;,
+      &quot;lastUpdateDateTime&quot; : &quot;2018-02-02T17:17:20&quot;,
+      &quot;inputDateTime&quot; : &quot;2017-10-30T00:00:00&quot;,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.APC-AR2400FP1&quot;
+        },
+        &quot;itemBranchInfo&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.APC-AR2400FP1&quot;
+        },
+        &quot;branch&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.APC-AR2400FP1/branch&quot;
+        },
+        &quot;itemMaster&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.APC-AR2400FP1/itemMaster&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;ANTHONI&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;ANTHONI&quot;,
+      &quot;computerId&quot; : &quot;DESKTOP-9TRIRBU&quot;,
+      &quot;lastSynchronizedDate&quot; : null,
+      &quot;branchCode&quot; : &quot;110&quot;,
+      &quot;itemCode&quot; : &quot;ACC.BATERAI - CMOS\t\t\t&quot;,
+      &quot;stockingType&quot; : &quot;P&quot;,
+      &quot;glClass&quot; : &quot;INFG&quot;,
+      &quot;transactionType&quot; : &quot;S&quot;,
+      &quot;reorderQty&quot; : 0.00000,
+      &quot;reorderPoint&quot; : 0.00000,
+      &quot;maximumReorderQty&quot; : 0.00000,
+      &quot;minimumReorderQty&quot; : 0.00000,
+      &quot;safetyStock&quot; : 0.00000,
+      &quot;commitmentMethod&quot; : &quot;2&quot;,
+      &quot;inventoryLotCreation&quot; : false,
+      &quot;serialNumberRequired&quot; : false,
+      &quot;lotStatusCode&quot; : &quot;&quot;,
+      &quot;itemPriceGroup&quot; : &quot;&quot;,
+      &quot;printerLocationGroup&quot; : &quot;&quot;,
+      &quot;parameters&quot; : {
+        &quot;discountFactor&quot; : 0E-15,
+        &quot;profitMarginMinimumFactor&quot; : 0.00000,
+        &quot;taxOnSalesCode&quot; : &quot;&quot;,
+        &quot;taxOnPurchaseCode&quot; : &quot;&quot;,
+        &quot;branchPlantId&quot; : &quot;&quot;,
+        &quot;customerId&quot; : &quot;&quot;,
+        &quot;supplierId&quot; : &quot;&quot;,
+        &quot;rankByInventorySales&quot; : &quot;&quot;,
+        &quot;rankByInventoryMargin&quot; : &quot;&quot;,
+        &quot;rankByInventoryInvestment&quot; : &quot;&quot;
+      },
+      &quot;dataGroups&quot; : {
+        &quot;categoryCode&quot; : &quot;&quot;,
+        &quot;brandCode&quot; : &quot;&quot;,
+        &quot;typeCode&quot; : &quot;&quot;,
+        &quot;categoryCode4&quot; : &quot;&quot;,
+        &quot;landedCostRule&quot; : &quot;&quot;,
+        &quot;categoryCode6&quot; : &quot;&quot;,
+        &quot;categoryCode7&quot; : &quot;&quot;,
+        &quot;categoryCode8&quot; : &quot;&quot;,
+        &quot;categoryCode9&quot; : &quot;&quot;,
+        &quot;categoryCode10&quot; : &quot;&quot;,
+        &quot;salesReportingCode1&quot; : &quot;&quot;,
+        &quot;salesReportingCode2&quot; : &quot;&quot;,
+        &quot;salesReportingCode3&quot; : &quot;&quot;,
+        &quot;salesReportingCode4&quot; : &quot;&quot;,
+        &quot;salesReportingCode5&quot; : &quot;&quot;,
+        &quot;salesReportingCode6&quot; : &quot;&quot;,
+        &quot;salesReportingCode7&quot; : &quot;&quot;,
+        &quot;salesReportingCode8&quot; : &quot;&quot;,
+        &quot;salesReportingCode9&quot; : &quot;&quot;,
+        &quot;salesReportingCode0&quot; : &quot;&quot;
+      },
+      &quot;branchCode&quot; : &quot;110&quot;,
+      &quot;itemCode&quot; : &quot;ACC.BATERAI - CMOS\t\t\t&quot;,
+      &quot;lastUpdateDateTime&quot; : &quot;2018-02-12T13:51:22&quot;,
+      &quot;inputDateTime&quot; : &quot;2018-02-12T13:51:22&quot;,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.BATERAI_-_CMOS_t_t_t&quot;
+        },
+        &quot;itemBranchInfo&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.BATERAI_-_CMOS_t_t_t&quot;
+        },
+        &quot;branch&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.BATERAI_-_CMOS_t_t_t/branch&quot;
+        },
+        &quot;itemMaster&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.BATERAI_-_CMOS_t_t_t/itemMaster&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;QSA&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;QSA&quot;,
+      &quot;computerId&quot; : &quot;LAPTOP-FHFRCCL6&quot;,
+      &quot;lastSynchronizedDate&quot; : null,
+      &quot;branchCode&quot; : &quot;110&quot;,
+      &quot;itemCode&quot; : &quot;ACC.BROTHER-LT6505&quot;,
+      &quot;stockingType&quot; : &quot;P&quot;,
+      &quot;glClass&quot; : &quot;INFG&quot;,
+      &quot;transactionType&quot; : &quot;S&quot;,
+      &quot;reorderQty&quot; : 0.00000,
+      &quot;reorderPoint&quot; : 0.00000,
+      &quot;maximumReorderQty&quot; : 0.00000,
+      &quot;minimumReorderQty&quot; : 0.00000,
+      &quot;safetyStock&quot; : 0.00000,
+      &quot;commitmentMethod&quot; : &quot;2&quot;,
+      &quot;inventoryLotCreation&quot; : false,
+      &quot;serialNumberRequired&quot; : true,
+      &quot;lotStatusCode&quot; : &quot;&quot;,
+      &quot;itemPriceGroup&quot; : &quot;&quot;,
+      &quot;printerLocationGroup&quot; : &quot;&quot;,
+      &quot;parameters&quot; : {
+        &quot;discountFactor&quot; : 0E-15,
+        &quot;profitMarginMinimumFactor&quot; : 0.00000,
+        &quot;taxOnSalesCode&quot; : &quot;&quot;,
+        &quot;taxOnPurchaseCode&quot; : &quot;&quot;,
+        &quot;branchPlantId&quot; : &quot;&quot;,
+        &quot;customerId&quot; : &quot;&quot;,
+        &quot;supplierId&quot; : &quot;&quot;,
+        &quot;rankByInventorySales&quot; : &quot;&quot;,
+        &quot;rankByInventoryMargin&quot; : &quot;&quot;,
+        &quot;rankByInventoryInvestment&quot; : &quot;&quot;
+      },
+      &quot;dataGroups&quot; : {
+        &quot;categoryCode&quot; : &quot;&quot;,
+        &quot;brandCode&quot; : &quot;&quot;,
+        &quot;typeCode&quot; : &quot;&quot;,
+        &quot;categoryCode4&quot; : &quot;&quot;,
+        &quot;landedCostRule&quot; : &quot;&quot;,
+        &quot;categoryCode6&quot; : &quot;&quot;,
+        &quot;categoryCode7&quot; : &quot;&quot;,
+        &quot;categoryCode8&quot; : &quot;&quot;,
+        &quot;categoryCode9&quot; : &quot;&quot;,
+        &quot;categoryCode10&quot; : &quot;&quot;,
+        &quot;salesReportingCode1&quot; : &quot;&quot;,
+        &quot;salesReportingCode2&quot; : &quot;&quot;,
+        &quot;salesReportingCode3&quot; : &quot;&quot;,
+        &quot;salesReportingCode4&quot; : &quot;&quot;,
+        &quot;salesReportingCode5&quot; : &quot;&quot;,
+        &quot;salesReportingCode6&quot; : &quot;&quot;,
+        &quot;salesReportingCode7&quot; : &quot;&quot;,
+        &quot;salesReportingCode8&quot; : &quot;&quot;,
+        &quot;salesReportingCode9&quot; : &quot;&quot;,
+        &quot;salesReportingCode0&quot; : &quot;&quot;
+      },
+      &quot;branchCode&quot; : &quot;110&quot;,
+      &quot;itemCode&quot; : &quot;ACC.BROTHER-LT6505&quot;,
+      &quot;lastUpdateDateTime&quot; : &quot;2018-10-26T14:57:47&quot;,
+      &quot;inputDateTime&quot; : &quot;2017-10-30T00:00:00&quot;,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.BROTHER-LT6505&quot;
+        },
+        &quot;itemBranchInfo&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.BROTHER-LT6505&quot;
+        },
+        &quot;branch&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.BROTHER-LT6505/branch&quot;
+        },
+        &quot;itemMaster&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.BROTHER-LT6505/itemMaster&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;QSA&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;ANTHONI&quot;,
+      &quot;computerId&quot; : &quot;DESKTOP-09OGK1M&quot;,
+      &quot;lastSynchronizedDate&quot; : null,
+      &quot;branchCode&quot; : &quot;110&quot;,
+      &quot;itemCode&quot; : &quot;ACC.BROTHER-MX4000&quot;,
+      &quot;stockingType&quot; : &quot;P&quot;,
+      &quot;glClass&quot; : &quot;INFG&quot;,
+      &quot;transactionType&quot; : &quot;S&quot;,
+      &quot;reorderQty&quot; : 0.00000,
+      &quot;reorderPoint&quot; : 0.00000,
+      &quot;maximumReorderQty&quot; : 0.00000,
+      &quot;minimumReorderQty&quot; : 0.00000,
+      &quot;safetyStock&quot; : 0.00000,
+      &quot;commitmentMethod&quot; : &quot;2&quot;,
+      &quot;inventoryLotCreation&quot; : false,
+      &quot;serialNumberRequired&quot; : false,
+      &quot;lotStatusCode&quot; : &quot;N&quot;,
+      &quot;itemPriceGroup&quot; : &quot;&quot;,
+      &quot;printerLocationGroup&quot; : &quot;&quot;,
+      &quot;parameters&quot; : {
+        &quot;discountFactor&quot; : 0E-15,
+        &quot;profitMarginMinimumFactor&quot; : 0.00000,
+        &quot;taxOnSalesCode&quot; : &quot;&quot;,
+        &quot;taxOnPurchaseCode&quot; : &quot;&quot;,
+        &quot;branchPlantId&quot; : &quot;&quot;,
+        &quot;customerId&quot; : &quot;&quot;,
+        &quot;supplierId&quot; : &quot;&quot;,
+        &quot;rankByInventorySales&quot; : &quot;&quot;,
+        &quot;rankByInventoryMargin&quot; : &quot;&quot;,
+        &quot;rankByInventoryInvestment&quot; : &quot;&quot;
+      },
+      &quot;dataGroups&quot; : {
+        &quot;categoryCode&quot; : &quot;&quot;,
+        &quot;brandCode&quot; : &quot;&quot;,
+        &quot;typeCode&quot; : &quot;&quot;,
+        &quot;categoryCode4&quot; : &quot;&quot;,
+        &quot;landedCostRule&quot; : &quot;&quot;,
+        &quot;categoryCode6&quot; : &quot;&quot;,
+        &quot;categoryCode7&quot; : &quot;&quot;,
+        &quot;categoryCode8&quot; : &quot;&quot;,
+        &quot;categoryCode9&quot; : &quot;&quot;,
+        &quot;categoryCode10&quot; : &quot;&quot;,
+        &quot;salesReportingCode1&quot; : &quot;&quot;,
+        &quot;salesReportingCode2&quot; : &quot;&quot;,
+        &quot;salesReportingCode3&quot; : &quot;&quot;,
+        &quot;salesReportingCode4&quot; : &quot;&quot;,
+        &quot;salesReportingCode5&quot; : &quot;&quot;,
+        &quot;salesReportingCode6&quot; : &quot;&quot;,
+        &quot;salesReportingCode7&quot; : &quot;&quot;,
+        &quot;salesReportingCode8&quot; : &quot;&quot;,
+        &quot;salesReportingCode9&quot; : &quot;&quot;,
+        &quot;salesReportingCode0&quot; : &quot;&quot;
+      },
+      &quot;branchCode&quot; : &quot;110&quot;,
+      &quot;itemCode&quot; : &quot;ACC.BROTHER-MX4000&quot;,
+      &quot;lastUpdateDateTime&quot; : &quot;2018-03-24T14:34:05&quot;,
+      &quot;inputDateTime&quot; : &quot;2017-10-30T00:00:00&quot;,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.BROTHER-MX4000&quot;
+        },
+        &quot;itemBranchInfo&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.BROTHER-MX4000&quot;
+        },
+        &quot;branch&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.BROTHER-MX4000/branch&quot;
+        },
+        &quot;itemMaster&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.BROTHER-MX4000/itemMaster&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;QSA&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;ANTHONI&quot;,
+      &quot;computerId&quot; : &quot;DESKTOP-09OGK1M&quot;,
+      &quot;lastSynchronizedDate&quot; : null,
+      &quot;branchCode&quot; : &quot;110&quot;,
+      &quot;itemCode&quot; : &quot;ACC.BROTHER-TT4000&quot;,
+      &quot;stockingType&quot; : &quot;P&quot;,
+      &quot;glClass&quot; : &quot;INFG&quot;,
+      &quot;transactionType&quot; : &quot;S&quot;,
+      &quot;reorderQty&quot; : 0.00000,
+      &quot;reorderPoint&quot; : 0.00000,
+      &quot;maximumReorderQty&quot; : 0.00000,
+      &quot;minimumReorderQty&quot; : 0.00000,
+      &quot;safetyStock&quot; : 0.00000,
+      &quot;commitmentMethod&quot; : &quot;2&quot;,
+      &quot;inventoryLotCreation&quot; : false,
+      &quot;serialNumberRequired&quot; : false,
+      &quot;lotStatusCode&quot; : &quot;N&quot;,
+      &quot;itemPriceGroup&quot; : &quot;&quot;,
+      &quot;printerLocationGroup&quot; : &quot;&quot;,
+      &quot;parameters&quot; : {
+        &quot;discountFactor&quot; : 0E-15,
+        &quot;profitMarginMinimumFactor&quot; : 0.00000,
+        &quot;taxOnSalesCode&quot; : &quot;&quot;,
+        &quot;taxOnPurchaseCode&quot; : &quot;&quot;,
+        &quot;branchPlantId&quot; : &quot;&quot;,
+        &quot;customerId&quot; : &quot;&quot;,
+        &quot;supplierId&quot; : &quot;&quot;,
+        &quot;rankByInventorySales&quot; : &quot;&quot;,
+        &quot;rankByInventoryMargin&quot; : &quot;&quot;,
+        &quot;rankByInventoryInvestment&quot; : &quot;&quot;
+      },
+      &quot;dataGroups&quot; : {
+        &quot;categoryCode&quot; : &quot;&quot;,
+        &quot;brandCode&quot; : &quot;&quot;,
+        &quot;typeCode&quot; : &quot;&quot;,
+        &quot;categoryCode4&quot; : &quot;&quot;,
+        &quot;landedCostRule&quot; : &quot;&quot;,
+        &quot;categoryCode6&quot; : &quot;&quot;,
+        &quot;categoryCode7&quot; : &quot;&quot;,
+        &quot;categoryCode8&quot; : &quot;&quot;,
+        &quot;categoryCode9&quot; : &quot;&quot;,
+        &quot;categoryCode10&quot; : &quot;&quot;,
+        &quot;salesReportingCode1&quot; : &quot;&quot;,
+        &quot;salesReportingCode2&quot; : &quot;&quot;,
+        &quot;salesReportingCode3&quot; : &quot;&quot;,
+        &quot;salesReportingCode4&quot; : &quot;&quot;,
+        &quot;salesReportingCode5&quot; : &quot;&quot;,
+        &quot;salesReportingCode6&quot; : &quot;&quot;,
+        &quot;salesReportingCode7&quot; : &quot;&quot;,
+        &quot;salesReportingCode8&quot; : &quot;&quot;,
+        &quot;salesReportingCode9&quot; : &quot;&quot;,
+        &quot;salesReportingCode0&quot; : &quot;&quot;
+      },
+      &quot;branchCode&quot; : &quot;110&quot;,
+      &quot;itemCode&quot; : &quot;ACC.BROTHER-TT4000&quot;,
+      &quot;lastUpdateDateTime&quot; : &quot;2018-03-24T14:34:18&quot;,
+      &quot;inputDateTime&quot; : &quot;2017-10-30T00:00:00&quot;,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.BROTHER-TT4000&quot;
+        },
+        &quot;itemBranchInfo&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.BROTHER-TT4000&quot;
+        },
+        &quot;branch&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.BROTHER-TT4000/branch&quot;
+        },
+        &quot;itemMaster&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.BROTHER-TT4000/itemMaster&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;QSA&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;QSA&quot;,
+      &quot;computerId&quot; : &quot;GLSERVER01&quot;,
+      &quot;lastSynchronizedDate&quot; : null,
+      &quot;branchCode&quot; : &quot;110&quot;,
+      &quot;itemCode&quot; : &quot;ACC.CD-CDBLANK&quot;,
+      &quot;stockingType&quot; : &quot;P&quot;,
+      &quot;glClass&quot; : &quot;INFG&quot;,
+      &quot;transactionType&quot; : &quot;S&quot;,
+      &quot;reorderQty&quot; : 0.00000,
+      &quot;reorderPoint&quot; : 0.00000,
+      &quot;maximumReorderQty&quot; : 0.00000,
+      &quot;minimumReorderQty&quot; : 0.00000,
+      &quot;safetyStock&quot; : 0.00000,
+      &quot;commitmentMethod&quot; : &quot;2&quot;,
+      &quot;inventoryLotCreation&quot; : false,
+      &quot;serialNumberRequired&quot; : false,
+      &quot;lotStatusCode&quot; : &quot;&quot;,
+      &quot;itemPriceGroup&quot; : &quot;&quot;,
+      &quot;printerLocationGroup&quot; : &quot;&quot;,
+      &quot;parameters&quot; : {
+        &quot;discountFactor&quot; : 0E-15,
+        &quot;profitMarginMinimumFactor&quot; : 0.00000,
+        &quot;taxOnSalesCode&quot; : &quot;&quot;,
+        &quot;taxOnPurchaseCode&quot; : &quot;&quot;,
+        &quot;branchPlantId&quot; : &quot;&quot;,
+        &quot;customerId&quot; : &quot;&quot;,
+        &quot;supplierId&quot; : &quot;&quot;,
+        &quot;rankByInventorySales&quot; : &quot;&quot;,
+        &quot;rankByInventoryMargin&quot; : &quot;&quot;,
+        &quot;rankByInventoryInvestment&quot; : &quot;&quot;
+      },
+      &quot;dataGroups&quot; : {
+        &quot;categoryCode&quot; : &quot;&quot;,
+        &quot;brandCode&quot; : &quot;&quot;,
+        &quot;typeCode&quot; : &quot;&quot;,
+        &quot;categoryCode4&quot; : &quot;&quot;,
+        &quot;landedCostRule&quot; : &quot;&quot;,
+        &quot;categoryCode6&quot; : &quot;&quot;,
+        &quot;categoryCode7&quot; : &quot;&quot;,
+        &quot;categoryCode8&quot; : &quot;&quot;,
+        &quot;categoryCode9&quot; : &quot;&quot;,
+        &quot;categoryCode10&quot; : &quot;&quot;,
+        &quot;salesReportingCode1&quot; : &quot;&quot;,
+        &quot;salesReportingCode2&quot; : &quot;&quot;,
+        &quot;salesReportingCode3&quot; : &quot;&quot;,
+        &quot;salesReportingCode4&quot; : &quot;&quot;,
+        &quot;salesReportingCode5&quot; : &quot;&quot;,
+        &quot;salesReportingCode6&quot; : &quot;&quot;,
+        &quot;salesReportingCode7&quot; : &quot;&quot;,
+        &quot;salesReportingCode8&quot; : &quot;&quot;,
+        &quot;salesReportingCode9&quot; : &quot;&quot;,
+        &quot;salesReportingCode0&quot; : &quot;&quot;
+      },
+      &quot;branchCode&quot; : &quot;110&quot;,
+      &quot;itemCode&quot; : &quot;ACC.CD-CDBLANK&quot;,
+      &quot;lastUpdateDateTime&quot; : &quot;2017-10-30T00:00:00&quot;,
+      &quot;inputDateTime&quot; : &quot;2017-10-30T00:00:00&quot;,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.CD-CDBLANK&quot;
+        },
+        &quot;itemBranchInfo&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.CD-CDBLANK&quot;
+        },
+        &quot;branch&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.CD-CDBLANK/branch&quot;
+        },
+        &quot;itemMaster&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.CD-CDBLANK/itemMaster&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;ANTHONI&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;ANTHONI&quot;,
+      &quot;computerId&quot; : &quot;DESKTOP-9TRIRBU&quot;,
+      &quot;lastSynchronizedDate&quot; : null,
+      &quot;branchCode&quot; : &quot;110&quot;,
+      &quot;itemCode&quot; : &quot;ACC.CHARGER-CHARGER&quot;,
+      &quot;stockingType&quot; : &quot;P&quot;,
+      &quot;glClass&quot; : &quot;INFG&quot;,
+      &quot;transactionType&quot; : &quot;S&quot;,
+      &quot;reorderQty&quot; : 0.00000,
+      &quot;reorderPoint&quot; : 0.00000,
+      &quot;maximumReorderQty&quot; : 0.00000,
+      &quot;minimumReorderQty&quot; : 0.00000,
+      &quot;safetyStock&quot; : 0.00000,
+      &quot;commitmentMethod&quot; : &quot;2&quot;,
+      &quot;inventoryLotCreation&quot; : false,
+      &quot;serialNumberRequired&quot; : false,
+      &quot;lotStatusCode&quot; : &quot;&quot;,
+      &quot;itemPriceGroup&quot; : &quot;&quot;,
+      &quot;printerLocationGroup&quot; : &quot;&quot;,
+      &quot;parameters&quot; : {
+        &quot;discountFactor&quot; : 0E-15,
+        &quot;profitMarginMinimumFactor&quot; : 0.00000,
+        &quot;taxOnSalesCode&quot; : &quot;&quot;,
+        &quot;taxOnPurchaseCode&quot; : &quot;&quot;,
+        &quot;branchPlantId&quot; : &quot;&quot;,
+        &quot;customerId&quot; : &quot;&quot;,
+        &quot;supplierId&quot; : &quot;&quot;,
+        &quot;rankByInventorySales&quot; : &quot;&quot;,
+        &quot;rankByInventoryMargin&quot; : &quot;&quot;,
+        &quot;rankByInventoryInvestment&quot; : &quot;&quot;
+      },
+      &quot;dataGroups&quot; : {
+        &quot;categoryCode&quot; : &quot;&quot;,
+        &quot;brandCode&quot; : &quot;&quot;,
+        &quot;typeCode&quot; : &quot;&quot;,
+        &quot;categoryCode4&quot; : &quot;&quot;,
+        &quot;landedCostRule&quot; : &quot;&quot;,
+        &quot;categoryCode6&quot; : &quot;&quot;,
+        &quot;categoryCode7&quot; : &quot;&quot;,
+        &quot;categoryCode8&quot; : &quot;&quot;,
+        &quot;categoryCode9&quot; : &quot;&quot;,
+        &quot;categoryCode10&quot; : &quot;&quot;,
+        &quot;salesReportingCode1&quot; : &quot;&quot;,
+        &quot;salesReportingCode2&quot; : &quot;&quot;,
+        &quot;salesReportingCode3&quot; : &quot;&quot;,
+        &quot;salesReportingCode4&quot; : &quot;&quot;,
+        &quot;salesReportingCode5&quot; : &quot;&quot;,
+        &quot;salesReportingCode6&quot; : &quot;&quot;,
+        &quot;salesReportingCode7&quot; : &quot;&quot;,
+        &quot;salesReportingCode8&quot; : &quot;&quot;,
+        &quot;salesReportingCode9&quot; : &quot;&quot;,
+        &quot;salesReportingCode0&quot; : &quot;&quot;
+      },
+      &quot;branchCode&quot; : &quot;110&quot;,
+      &quot;itemCode&quot; : &quot;ACC.CHARGER-CHARGER&quot;,
+      &quot;lastUpdateDateTime&quot; : &quot;2018-04-16T10:52:44&quot;,
+      &quot;inputDateTime&quot; : &quot;2018-04-16T10:52:44&quot;,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.CHARGER-CHARGER&quot;
+        },
+        &quot;itemBranchInfo&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.CHARGER-CHARGER&quot;
+        },
+        &quot;branch&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.CHARGER-CHARGER/branch&quot;
+        },
+        &quot;itemMaster&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.CHARGER-CHARGER/itemMaster&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;ANTHONI&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;ANTHONI&quot;,
+      &quot;computerId&quot; : &quot;DESKTOP-9TRIRBU&quot;,
+      &quot;lastSynchronizedDate&quot; : null,
+      &quot;branchCode&quot; : &quot;110&quot;,
+      &quot;itemCode&quot; : &quot;ACC.KABEL - KABEL POWER\t\t&quot;,
+      &quot;stockingType&quot; : &quot;P&quot;,
+      &quot;glClass&quot; : &quot;INFG&quot;,
+      &quot;transactionType&quot; : &quot;S&quot;,
+      &quot;reorderQty&quot; : 0.00000,
+      &quot;reorderPoint&quot; : 0.00000,
+      &quot;maximumReorderQty&quot; : 0.00000,
+      &quot;minimumReorderQty&quot; : 0.00000,
+      &quot;safetyStock&quot; : 0.00000,
+      &quot;commitmentMethod&quot; : &quot;2&quot;,
+      &quot;inventoryLotCreation&quot; : false,
+      &quot;serialNumberRequired&quot; : false,
+      &quot;lotStatusCode&quot; : &quot;&quot;,
+      &quot;itemPriceGroup&quot; : &quot;&quot;,
+      &quot;printerLocationGroup&quot; : &quot;&quot;,
+      &quot;parameters&quot; : {
+        &quot;discountFactor&quot; : 0E-15,
+        &quot;profitMarginMinimumFactor&quot; : 0.00000,
+        &quot;taxOnSalesCode&quot; : &quot;&quot;,
+        &quot;taxOnPurchaseCode&quot; : &quot;&quot;,
+        &quot;branchPlantId&quot; : &quot;&quot;,
+        &quot;customerId&quot; : &quot;&quot;,
+        &quot;supplierId&quot; : &quot;&quot;,
+        &quot;rankByInventorySales&quot; : &quot;&quot;,
+        &quot;rankByInventoryMargin&quot; : &quot;&quot;,
+        &quot;rankByInventoryInvestment&quot; : &quot;&quot;
+      },
+      &quot;dataGroups&quot; : {
+        &quot;categoryCode&quot; : &quot;&quot;,
+        &quot;brandCode&quot; : &quot;&quot;,
+        &quot;typeCode&quot; : &quot;&quot;,
+        &quot;categoryCode4&quot; : &quot;&quot;,
+        &quot;landedCostRule&quot; : &quot;&quot;,
+        &quot;categoryCode6&quot; : &quot;&quot;,
+        &quot;categoryCode7&quot; : &quot;&quot;,
+        &quot;categoryCode8&quot; : &quot;&quot;,
+        &quot;categoryCode9&quot; : &quot;&quot;,
+        &quot;categoryCode10&quot; : &quot;&quot;,
+        &quot;salesReportingCode1&quot; : &quot;&quot;,
+        &quot;salesReportingCode2&quot; : &quot;&quot;,
+        &quot;salesReportingCode3&quot; : &quot;&quot;,
+        &quot;salesReportingCode4&quot; : &quot;&quot;,
+        &quot;salesReportingCode5&quot; : &quot;&quot;,
+        &quot;salesReportingCode6&quot; : &quot;&quot;,
+        &quot;salesReportingCode7&quot; : &quot;&quot;,
+        &quot;salesReportingCode8&quot; : &quot;&quot;,
+        &quot;salesReportingCode9&quot; : &quot;&quot;,
+        &quot;salesReportingCode0&quot; : &quot;&quot;
+      },
+      &quot;branchCode&quot; : &quot;110&quot;,
+      &quot;itemCode&quot; : &quot;ACC.KABEL - KABEL POWER\t\t&quot;,
+      &quot;lastUpdateDateTime&quot; : &quot;2018-02-12T13:49:34&quot;,
+      &quot;inputDateTime&quot; : &quot;2018-02-12T13:49:34&quot;,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.KABEL_-_KABEL_POWER_t_t&quot;
+        },
+        &quot;itemBranchInfo&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.KABEL_-_KABEL_POWER_t_t&quot;
+        },
+        &quot;branch&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.KABEL_-_KABEL_POWER_t_t/branch&quot;
+        },
+        &quot;itemMaster&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.KABEL_-_KABEL_POWER_t_t/itemMaster&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;DEBBY&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;DEBBY&quot;,
+      &quot;computerId&quot; : &quot;DESKTOP-9TRIRBU&quot;,
+      &quot;lastSynchronizedDate&quot; : null,
+      &quot;branchCode&quot; : &quot;110&quot;,
+      &quot;itemCode&quot; : &quot;ACC.KABEL - UTP AMP&quot;,
+      &quot;stockingType&quot; : &quot;P&quot;,
+      &quot;glClass&quot; : &quot;INFG&quot;,
+      &quot;transactionType&quot; : &quot;S&quot;,
+      &quot;reorderQty&quot; : 0.00000,
+      &quot;reorderPoint&quot; : 0.00000,
+      &quot;maximumReorderQty&quot; : 0.00000,
+      &quot;minimumReorderQty&quot; : 0.00000,
+      &quot;safetyStock&quot; : 0.00000,
+      &quot;commitmentMethod&quot; : &quot;2&quot;,
+      &quot;inventoryLotCreation&quot; : false,
+      &quot;serialNumberRequired&quot; : false,
+      &quot;lotStatusCode&quot; : &quot;&quot;,
+      &quot;itemPriceGroup&quot; : &quot;&quot;,
+      &quot;printerLocationGroup&quot; : &quot;&quot;,
+      &quot;parameters&quot; : {
+        &quot;discountFactor&quot; : 0E-15,
+        &quot;profitMarginMinimumFactor&quot; : 0.00000,
+        &quot;taxOnSalesCode&quot; : &quot;&quot;,
+        &quot;taxOnPurchaseCode&quot; : &quot;&quot;,
+        &quot;branchPlantId&quot; : &quot;&quot;,
+        &quot;customerId&quot; : &quot;&quot;,
+        &quot;supplierId&quot; : &quot;&quot;,
+        &quot;rankByInventorySales&quot; : &quot;&quot;,
+        &quot;rankByInventoryMargin&quot; : &quot;&quot;,
+        &quot;rankByInventoryInvestment&quot; : &quot;&quot;
+      },
+      &quot;dataGroups&quot; : {
+        &quot;categoryCode&quot; : &quot;&quot;,
+        &quot;brandCode&quot; : &quot;&quot;,
+        &quot;typeCode&quot; : &quot;&quot;,
+        &quot;categoryCode4&quot; : &quot;&quot;,
+        &quot;landedCostRule&quot; : &quot;&quot;,
+        &quot;categoryCode6&quot; : &quot;&quot;,
+        &quot;categoryCode7&quot; : &quot;&quot;,
+        &quot;categoryCode8&quot; : &quot;&quot;,
+        &quot;categoryCode9&quot; : &quot;&quot;,
+        &quot;categoryCode10&quot; : &quot;&quot;,
+        &quot;salesReportingCode1&quot; : &quot;&quot;,
+        &quot;salesReportingCode2&quot; : &quot;&quot;,
+        &quot;salesReportingCode3&quot; : &quot;&quot;,
+        &quot;salesReportingCode4&quot; : &quot;&quot;,
+        &quot;salesReportingCode5&quot; : &quot;&quot;,
+        &quot;salesReportingCode6&quot; : &quot;&quot;,
+        &quot;salesReportingCode7&quot; : &quot;&quot;,
+        &quot;salesReportingCode8&quot; : &quot;&quot;,
+        &quot;salesReportingCode9&quot; : &quot;&quot;,
+        &quot;salesReportingCode0&quot; : &quot;&quot;
+      },
+      &quot;branchCode&quot; : &quot;110&quot;,
+      &quot;itemCode&quot; : &quot;ACC.KABEL - UTP AMP&quot;,
+      &quot;lastUpdateDateTime&quot; : &quot;2018-02-28T14:34:31&quot;,
+      &quot;inputDateTime&quot; : &quot;2018-02-28T14:34:31&quot;,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.KABEL_-_UTP_AMP&quot;
+        },
+        &quot;itemBranchInfo&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.KABEL_-_UTP_AMP&quot;
+        },
+        &quot;branch&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.KABEL_-_UTP_AMP/branch&quot;
+        },
+        &quot;itemMaster&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.KABEL_-_UTP_AMP/itemMaster&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;DEBBY&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;DEBBY&quot;,
+      &quot;computerId&quot; : &quot;DESKTOP-9TRIRBU&quot;,
+      &quot;lastSynchronizedDate&quot; : null,
+      &quot;branchCode&quot; : &quot;110&quot;,
+      &quot;itemCode&quot; : &quot;ACC.KEYBOARD - K120\t\t\t&quot;,
+      &quot;stockingType&quot; : &quot;P&quot;,
+      &quot;glClass&quot; : &quot;INFG&quot;,
+      &quot;transactionType&quot; : &quot;S&quot;,
+      &quot;reorderQty&quot; : 0.00000,
+      &quot;reorderPoint&quot; : 0.00000,
+      &quot;maximumReorderQty&quot; : 0.00000,
+      &quot;minimumReorderQty&quot; : 0.00000,
+      &quot;safetyStock&quot; : 0.00000,
+      &quot;commitmentMethod&quot; : &quot;2&quot;,
+      &quot;inventoryLotCreation&quot; : false,
+      &quot;serialNumberRequired&quot; : false,
+      &quot;lotStatusCode&quot; : &quot;&quot;,
+      &quot;itemPriceGroup&quot; : &quot;&quot;,
+      &quot;printerLocationGroup&quot; : &quot;&quot;,
+      &quot;parameters&quot; : {
+        &quot;discountFactor&quot; : 0E-15,
+        &quot;profitMarginMinimumFactor&quot; : 0.00000,
+        &quot;taxOnSalesCode&quot; : &quot;&quot;,
+        &quot;taxOnPurchaseCode&quot; : &quot;&quot;,
+        &quot;branchPlantId&quot; : &quot;&quot;,
+        &quot;customerId&quot; : &quot;&quot;,
+        &quot;supplierId&quot; : &quot;&quot;,
+        &quot;rankByInventorySales&quot; : &quot;&quot;,
+        &quot;rankByInventoryMargin&quot; : &quot;&quot;,
+        &quot;rankByInventoryInvestment&quot; : &quot;&quot;
+      },
+      &quot;dataGroups&quot; : {
+        &quot;categoryCode&quot; : &quot;&quot;,
+        &quot;brandCode&quot; : &quot;&quot;,
+        &quot;typeCode&quot; : &quot;&quot;,
+        &quot;categoryCode4&quot; : &quot;&quot;,
+        &quot;landedCostRule&quot; : &quot;&quot;,
+        &quot;categoryCode6&quot; : &quot;&quot;,
+        &quot;categoryCode7&quot; : &quot;&quot;,
+        &quot;categoryCode8&quot; : &quot;&quot;,
+        &quot;categoryCode9&quot; : &quot;&quot;,
+        &quot;categoryCode10&quot; : &quot;&quot;,
+        &quot;salesReportingCode1&quot; : &quot;&quot;,
+        &quot;salesReportingCode2&quot; : &quot;&quot;,
+        &quot;salesReportingCode3&quot; : &quot;&quot;,
+        &quot;salesReportingCode4&quot; : &quot;&quot;,
+        &quot;salesReportingCode5&quot; : &quot;&quot;,
+        &quot;salesReportingCode6&quot; : &quot;&quot;,
+        &quot;salesReportingCode7&quot; : &quot;&quot;,
+        &quot;salesReportingCode8&quot; : &quot;&quot;,
+        &quot;salesReportingCode9&quot; : &quot;&quot;,
+        &quot;salesReportingCode0&quot; : &quot;&quot;
+      },
+      &quot;branchCode&quot; : &quot;110&quot;,
+      &quot;itemCode&quot; : &quot;ACC.KEYBOARD - K120\t\t\t&quot;,
+      &quot;lastUpdateDateTime&quot; : &quot;2018-02-28T15:16:14&quot;,
+      &quot;inputDateTime&quot; : &quot;2018-02-28T15:16:14&quot;,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.KEYBOARD_-_K120_t_t_t&quot;
+        },
+        &quot;itemBranchInfo&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.KEYBOARD_-_K120_t_t_t&quot;
+        },
+        &quot;branch&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.KEYBOARD_-_K120_t_t_t/branch&quot;
+        },
+        &quot;itemMaster&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.KEYBOARD_-_K120_t_t_t/itemMaster&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;QSA&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;QSA&quot;,
+      &quot;computerId&quot; : &quot;GLSERVER01&quot;,
+      &quot;lastSynchronizedDate&quot; : null,
+      &quot;branchCode&quot; : &quot;110&quot;,
+      &quot;itemCode&quot; : &quot;ACC.LOGITECH-PAKETAN&quot;,
+      &quot;stockingType&quot; : &quot;P&quot;,
+      &quot;glClass&quot; : &quot;INFG&quot;,
+      &quot;transactionType&quot; : &quot;S&quot;,
+      &quot;reorderQty&quot; : 0.00000,
+      &quot;reorderPoint&quot; : 0.00000,
+      &quot;maximumReorderQty&quot; : 0.00000,
+      &quot;minimumReorderQty&quot; : 0.00000,
+      &quot;safetyStock&quot; : 0.00000,
+      &quot;commitmentMethod&quot; : &quot;2&quot;,
+      &quot;inventoryLotCreation&quot; : false,
+      &quot;serialNumberRequired&quot; : false,
+      &quot;lotStatusCode&quot; : &quot;&quot;,
+      &quot;itemPriceGroup&quot; : &quot;&quot;,
+      &quot;printerLocationGroup&quot; : &quot;&quot;,
+      &quot;parameters&quot; : {
+        &quot;discountFactor&quot; : 0E-15,
+        &quot;profitMarginMinimumFactor&quot; : 0.00000,
+        &quot;taxOnSalesCode&quot; : &quot;&quot;,
+        &quot;taxOnPurchaseCode&quot; : &quot;&quot;,
+        &quot;branchPlantId&quot; : &quot;&quot;,
+        &quot;customerId&quot; : &quot;&quot;,
+        &quot;supplierId&quot; : &quot;&quot;,
+        &quot;rankByInventorySales&quot; : &quot;&quot;,
+        &quot;rankByInventoryMargin&quot; : &quot;&quot;,
+        &quot;rankByInventoryInvestment&quot; : &quot;&quot;
+      },
+      &quot;dataGroups&quot; : {
+        &quot;categoryCode&quot; : &quot;&quot;,
+        &quot;brandCode&quot; : &quot;&quot;,
+        &quot;typeCode&quot; : &quot;&quot;,
+        &quot;categoryCode4&quot; : &quot;&quot;,
+        &quot;landedCostRule&quot; : &quot;&quot;,
+        &quot;categoryCode6&quot; : &quot;&quot;,
+        &quot;categoryCode7&quot; : &quot;&quot;,
+        &quot;categoryCode8&quot; : &quot;&quot;,
+        &quot;categoryCode9&quot; : &quot;&quot;,
+        &quot;categoryCode10&quot; : &quot;&quot;,
+        &quot;salesReportingCode1&quot; : &quot;&quot;,
+        &quot;salesReportingCode2&quot; : &quot;&quot;,
+        &quot;salesReportingCode3&quot; : &quot;&quot;,
+        &quot;salesReportingCode4&quot; : &quot;&quot;,
+        &quot;salesReportingCode5&quot; : &quot;&quot;,
+        &quot;salesReportingCode6&quot; : &quot;&quot;,
+        &quot;salesReportingCode7&quot; : &quot;&quot;,
+        &quot;salesReportingCode8&quot; : &quot;&quot;,
+        &quot;salesReportingCode9&quot; : &quot;&quot;,
+        &quot;salesReportingCode0&quot; : &quot;&quot;
+      },
+      &quot;branchCode&quot; : &quot;110&quot;,
+      &quot;itemCode&quot; : &quot;ACC.LOGITECH-PAKETAN&quot;,
+      &quot;lastUpdateDateTime&quot; : &quot;2017-10-30T00:00:00&quot;,
+      &quot;inputDateTime&quot; : &quot;2017-10-30T00:00:00&quot;,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.LOGITECH-PAKETAN&quot;
+        },
+        &quot;itemBranchInfo&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.LOGITECH-PAKETAN&quot;
+        },
+        &quot;branch&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.LOGITECH-PAKETAN/branch&quot;
+        },
+        &quot;itemMaster&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.LOGITECH-PAKETAN/itemMaster&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;DEBBY&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;DEBBY&quot;,
+      &quot;computerId&quot; : &quot;DESKTOP-9TRIRBU&quot;,
+      &quot;lastSynchronizedDate&quot; : null,
+      &quot;branchCode&quot; : &quot;110&quot;,
+      &quot;itemCode&quot; : &quot;ACC.MOUSE - B100\t\t\t&quot;,
+      &quot;stockingType&quot; : &quot;P&quot;,
+      &quot;glClass&quot; : &quot;INFG&quot;,
+      &quot;transactionType&quot; : &quot;S&quot;,
+      &quot;reorderQty&quot; : 0.00000,
+      &quot;reorderPoint&quot; : 0.00000,
+      &quot;maximumReorderQty&quot; : 0.00000,
+      &quot;minimumReorderQty&quot; : 0.00000,
+      &quot;safetyStock&quot; : 0.00000,
+      &quot;commitmentMethod&quot; : &quot;2&quot;,
+      &quot;inventoryLotCreation&quot; : false,
+      &quot;serialNumberRequired&quot; : false,
+      &quot;lotStatusCode&quot; : &quot;&quot;,
+      &quot;itemPriceGroup&quot; : &quot;&quot;,
+      &quot;printerLocationGroup&quot; : &quot;&quot;,
+      &quot;parameters&quot; : {
+        &quot;discountFactor&quot; : 0E-15,
+        &quot;profitMarginMinimumFactor&quot; : 0.00000,
+        &quot;taxOnSalesCode&quot; : &quot;&quot;,
+        &quot;taxOnPurchaseCode&quot; : &quot;&quot;,
+        &quot;branchPlantId&quot; : &quot;&quot;,
+        &quot;customerId&quot; : &quot;&quot;,
+        &quot;supplierId&quot; : &quot;&quot;,
+        &quot;rankByInventorySales&quot; : &quot;&quot;,
+        &quot;rankByInventoryMargin&quot; : &quot;&quot;,
+        &quot;rankByInventoryInvestment&quot; : &quot;&quot;
+      },
+      &quot;dataGroups&quot; : {
+        &quot;categoryCode&quot; : &quot;&quot;,
+        &quot;brandCode&quot; : &quot;&quot;,
+        &quot;typeCode&quot; : &quot;&quot;,
+        &quot;categoryCode4&quot; : &quot;&quot;,
+        &quot;landedCostRule&quot; : &quot;&quot;,
+        &quot;categoryCode6&quot; : &quot;&quot;,
+        &quot;categoryCode7&quot; : &quot;&quot;,
+        &quot;categoryCode8&quot; : &quot;&quot;,
+        &quot;categoryCode9&quot; : &quot;&quot;,
+        &quot;categoryCode10&quot; : &quot;&quot;,
+        &quot;salesReportingCode1&quot; : &quot;&quot;,
+        &quot;salesReportingCode2&quot; : &quot;&quot;,
+        &quot;salesReportingCode3&quot; : &quot;&quot;,
+        &quot;salesReportingCode4&quot; : &quot;&quot;,
+        &quot;salesReportingCode5&quot; : &quot;&quot;,
+        &quot;salesReportingCode6&quot; : &quot;&quot;,
+        &quot;salesReportingCode7&quot; : &quot;&quot;,
+        &quot;salesReportingCode8&quot; : &quot;&quot;,
+        &quot;salesReportingCode9&quot; : &quot;&quot;,
+        &quot;salesReportingCode0&quot; : &quot;&quot;
+      },
+      &quot;branchCode&quot; : &quot;110&quot;,
+      &quot;itemCode&quot; : &quot;ACC.MOUSE - B100\t\t\t&quot;,
+      &quot;lastUpdateDateTime&quot; : &quot;2018-02-28T15:18:54&quot;,
+      &quot;inputDateTime&quot; : &quot;2018-02-28T15:18:54&quot;,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.MOUSE_-_B100_t_t_t&quot;
+        },
+        &quot;itemBranchInfo&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.MOUSE_-_B100_t_t_t&quot;
+        },
+        &quot;branch&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.MOUSE_-_B100_t_t_t/branch&quot;
+        },
+        &quot;itemMaster&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.MOUSE_-_B100_t_t_t/itemMaster&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;DEBBY&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;DEBBY&quot;,
+      &quot;computerId&quot; : &quot;DESKTOP-9TRIRBU&quot;,
+      &quot;lastSynchronizedDate&quot; : null,
+      &quot;branchCode&quot; : &quot;110&quot;,
+      &quot;itemCode&quot; : &quot;ACC.MOUSE - MOUSE M221\t\t\t&quot;,
+      &quot;stockingType&quot; : &quot;P&quot;,
+      &quot;glClass&quot; : &quot;INFG&quot;,
+      &quot;transactionType&quot; : &quot;S&quot;,
+      &quot;reorderQty&quot; : 0.00000,
+      &quot;reorderPoint&quot; : 0.00000,
+      &quot;maximumReorderQty&quot; : 0.00000,
+      &quot;minimumReorderQty&quot; : 0.00000,
+      &quot;safetyStock&quot; : 0.00000,
+      &quot;commitmentMethod&quot; : &quot;2&quot;,
+      &quot;inventoryLotCreation&quot; : false,
+      &quot;serialNumberRequired&quot; : false,
+      &quot;lotStatusCode&quot; : &quot;&quot;,
+      &quot;itemPriceGroup&quot; : &quot;&quot;,
+      &quot;printerLocationGroup&quot; : &quot;&quot;,
+      &quot;parameters&quot; : {
+        &quot;discountFactor&quot; : 0E-15,
+        &quot;profitMarginMinimumFactor&quot; : 0.00000,
+        &quot;taxOnSalesCode&quot; : &quot;&quot;,
+        &quot;taxOnPurchaseCode&quot; : &quot;&quot;,
+        &quot;branchPlantId&quot; : &quot;&quot;,
+        &quot;customerId&quot; : &quot;&quot;,
+        &quot;supplierId&quot; : &quot;&quot;,
+        &quot;rankByInventorySales&quot; : &quot;&quot;,
+        &quot;rankByInventoryMargin&quot; : &quot;&quot;,
+        &quot;rankByInventoryInvestment&quot; : &quot;&quot;
+      },
+      &quot;dataGroups&quot; : {
+        &quot;categoryCode&quot; : &quot;&quot;,
+        &quot;brandCode&quot; : &quot;&quot;,
+        &quot;typeCode&quot; : &quot;&quot;,
+        &quot;categoryCode4&quot; : &quot;&quot;,
+        &quot;landedCostRule&quot; : &quot;&quot;,
+        &quot;categoryCode6&quot; : &quot;&quot;,
+        &quot;categoryCode7&quot; : &quot;&quot;,
+        &quot;categoryCode8&quot; : &quot;&quot;,
+        &quot;categoryCode9&quot; : &quot;&quot;,
+        &quot;categoryCode10&quot; : &quot;&quot;,
+        &quot;salesReportingCode1&quot; : &quot;&quot;,
+        &quot;salesReportingCode2&quot; : &quot;&quot;,
+        &quot;salesReportingCode3&quot; : &quot;&quot;,
+        &quot;salesReportingCode4&quot; : &quot;&quot;,
+        &quot;salesReportingCode5&quot; : &quot;&quot;,
+        &quot;salesReportingCode6&quot; : &quot;&quot;,
+        &quot;salesReportingCode7&quot; : &quot;&quot;,
+        &quot;salesReportingCode8&quot; : &quot;&quot;,
+        &quot;salesReportingCode9&quot; : &quot;&quot;,
+        &quot;salesReportingCode0&quot; : &quot;&quot;
+      },
+      &quot;branchCode&quot; : &quot;110&quot;,
+      &quot;itemCode&quot; : &quot;ACC.MOUSE - MOUSE M221\t\t\t&quot;,
+      &quot;lastUpdateDateTime&quot; : &quot;2018-02-28T14:46:50&quot;,
+      &quot;inputDateTime&quot; : &quot;2018-02-28T14:46:50&quot;,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.MOUSE_-_MOUSE_M221_t_t_t&quot;
+        },
+        &quot;itemBranchInfo&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.MOUSE_-_MOUSE_M221_t_t_t&quot;
+        },
+        &quot;branch&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.MOUSE_-_MOUSE_M221_t_t_t/branch&quot;
+        },
+        &quot;itemMaster&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.MOUSE_-_MOUSE_M221_t_t_t/itemMaster&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;QSA&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;LUDY&quot;,
+      &quot;computerId&quot; : &quot;LUDY-LAPPIE&quot;,
+      &quot;lastSynchronizedDate&quot; : null,
+      &quot;branchCode&quot; : &quot;110&quot;,
+      &quot;itemCode&quot; : &quot;ACC.MOUSE-B100&quot;,
+      &quot;stockingType&quot; : &quot;P&quot;,
+      &quot;glClass&quot; : &quot;INFG&quot;,
+      &quot;transactionType&quot; : &quot;S&quot;,
+      &quot;reorderQty&quot; : 0.00000,
+      &quot;reorderPoint&quot; : 0.00000,
+      &quot;maximumReorderQty&quot; : 0.00000,
+      &quot;minimumReorderQty&quot; : 0.00000,
+      &quot;safetyStock&quot; : 0.00000,
+      &quot;commitmentMethod&quot; : &quot;2&quot;,
+      &quot;inventoryLotCreation&quot; : false,
+      &quot;serialNumberRequired&quot; : false,
+      &quot;lotStatusCode&quot; : &quot;&quot;,
+      &quot;itemPriceGroup&quot; : &quot;&quot;,
+      &quot;printerLocationGroup&quot; : &quot;&quot;,
+      &quot;parameters&quot; : {
+        &quot;discountFactor&quot; : 0E-15,
+        &quot;profitMarginMinimumFactor&quot; : 0.00000,
+        &quot;taxOnSalesCode&quot; : &quot;&quot;,
+        &quot;taxOnPurchaseCode&quot; : &quot;&quot;,
+        &quot;branchPlantId&quot; : &quot;&quot;,
+        &quot;customerId&quot; : &quot;&quot;,
+        &quot;supplierId&quot; : &quot;&quot;,
+        &quot;rankByInventorySales&quot; : &quot;&quot;,
+        &quot;rankByInventoryMargin&quot; : &quot;&quot;,
+        &quot;rankByInventoryInvestment&quot; : &quot;&quot;
+      },
+      &quot;dataGroups&quot; : {
+        &quot;categoryCode&quot; : &quot;&quot;,
+        &quot;brandCode&quot; : &quot;&quot;,
+        &quot;typeCode&quot; : &quot;&quot;,
+        &quot;categoryCode4&quot; : &quot;&quot;,
+        &quot;landedCostRule&quot; : &quot;&quot;,
+        &quot;categoryCode6&quot; : &quot;&quot;,
+        &quot;categoryCode7&quot; : &quot;&quot;,
+        &quot;categoryCode8&quot; : &quot;&quot;,
+        &quot;categoryCode9&quot; : &quot;&quot;,
+        &quot;categoryCode10&quot; : &quot;&quot;,
+        &quot;salesReportingCode1&quot; : &quot;&quot;,
+        &quot;salesReportingCode2&quot; : &quot;&quot;,
+        &quot;salesReportingCode3&quot; : &quot;&quot;,
+        &quot;salesReportingCode4&quot; : &quot;&quot;,
+        &quot;salesReportingCode5&quot; : &quot;&quot;,
+        &quot;salesReportingCode6&quot; : &quot;&quot;,
+        &quot;salesReportingCode7&quot; : &quot;&quot;,
+        &quot;salesReportingCode8&quot; : &quot;&quot;,
+        &quot;salesReportingCode9&quot; : &quot;&quot;,
+        &quot;salesReportingCode0&quot; : &quot;&quot;
+      },
+      &quot;branchCode&quot; : &quot;110&quot;,
+      &quot;itemCode&quot; : &quot;ACC.MOUSE-B100&quot;,
+      &quot;lastUpdateDateTime&quot; : &quot;2017-12-04T14:59:10&quot;,
+      &quot;inputDateTime&quot; : &quot;2017-10-30T00:00:00&quot;,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.MOUSE-B100&quot;
+        },
+        &quot;itemBranchInfo&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.MOUSE-B100&quot;
+        },
+        &quot;branch&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.MOUSE-B100/branch&quot;
+        },
+        &quot;itemMaster&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.MOUSE-B100/itemMaster&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;DEBBY&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;DEBBY&quot;,
+      &quot;computerId&quot; : &quot;DESKTOP-9TRIRBU&quot;,
+      &quot;lastSynchronizedDate&quot; : null,
+      &quot;branchCode&quot; : &quot;110&quot;,
+      &quot;itemCode&quot; : &quot;ACC.PAPER - HVS SIDU FOLI&quot;,
+      &quot;stockingType&quot; : &quot;P&quot;,
+      &quot;glClass&quot; : &quot;INFG&quot;,
+      &quot;transactionType&quot; : &quot;S&quot;,
+      &quot;reorderQty&quot; : 0.00000,
+      &quot;reorderPoint&quot; : 0.00000,
+      &quot;maximumReorderQty&quot; : 0.00000,
+      &quot;minimumReorderQty&quot; : 0.00000,
+      &quot;safetyStock&quot; : 0.00000,
+      &quot;commitmentMethod&quot; : &quot;2&quot;,
+      &quot;inventoryLotCreation&quot; : false,
+      &quot;serialNumberRequired&quot; : false,
+      &quot;lotStatusCode&quot; : &quot;&quot;,
+      &quot;itemPriceGroup&quot; : &quot;&quot;,
+      &quot;printerLocationGroup&quot; : &quot;&quot;,
+      &quot;parameters&quot; : {
+        &quot;discountFactor&quot; : 0E-15,
+        &quot;profitMarginMinimumFactor&quot; : 0.00000,
+        &quot;taxOnSalesCode&quot; : &quot;&quot;,
+        &quot;taxOnPurchaseCode&quot; : &quot;&quot;,
+        &quot;branchPlantId&quot; : &quot;&quot;,
+        &quot;customerId&quot; : &quot;&quot;,
+        &quot;supplierId&quot; : &quot;&quot;,
+        &quot;rankByInventorySales&quot; : &quot;&quot;,
+        &quot;rankByInventoryMargin&quot; : &quot;&quot;,
+        &quot;rankByInventoryInvestment&quot; : &quot;&quot;
+      },
+      &quot;dataGroups&quot; : {
+        &quot;categoryCode&quot; : &quot;&quot;,
+        &quot;brandCode&quot; : &quot;&quot;,
+        &quot;typeCode&quot; : &quot;&quot;,
+        &quot;categoryCode4&quot; : &quot;&quot;,
+        &quot;landedCostRule&quot; : &quot;&quot;,
+        &quot;categoryCode6&quot; : &quot;&quot;,
+        &quot;categoryCode7&quot; : &quot;&quot;,
+        &quot;categoryCode8&quot; : &quot;&quot;,
+        &quot;categoryCode9&quot; : &quot;&quot;,
+        &quot;categoryCode10&quot; : &quot;&quot;,
+        &quot;salesReportingCode1&quot; : &quot;&quot;,
+        &quot;salesReportingCode2&quot; : &quot;&quot;,
+        &quot;salesReportingCode3&quot; : &quot;&quot;,
+        &quot;salesReportingCode4&quot; : &quot;&quot;,
+        &quot;salesReportingCode5&quot; : &quot;&quot;,
+        &quot;salesReportingCode6&quot; : &quot;&quot;,
+        &quot;salesReportingCode7&quot; : &quot;&quot;,
+        &quot;salesReportingCode8&quot; : &quot;&quot;,
+        &quot;salesReportingCode9&quot; : &quot;&quot;,
+        &quot;salesReportingCode0&quot; : &quot;&quot;
+      },
+      &quot;branchCode&quot; : &quot;110&quot;,
+      &quot;itemCode&quot; : &quot;ACC.PAPER - HVS SIDU FOLI&quot;,
+      &quot;lastUpdateDateTime&quot; : &quot;2018-03-01T11:53:59&quot;,
+      &quot;inputDateTime&quot; : &quot;2018-03-01T11:53:59&quot;,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.PAPER_-_HVS_SIDU_FOLI&quot;
+        },
+        &quot;itemBranchInfo&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.PAPER_-_HVS_SIDU_FOLI&quot;
+        },
+        &quot;branch&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.PAPER_-_HVS_SIDU_FOLI/branch&quot;
+        },
+        &quot;itemMaster&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.PAPER_-_HVS_SIDU_FOLI/itemMaster&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;ANTHONI&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;ANTHONI&quot;,
+      &quot;computerId&quot; : &quot;DESKTOP-9TRIRBU&quot;,
+      &quot;lastSynchronizedDate&quot; : null,
+      &quot;branchCode&quot; : &quot;110&quot;,
+      &quot;itemCode&quot; : &quot;ACC.PROC - PASTA PROCESSO&quot;,
+      &quot;stockingType&quot; : &quot;P&quot;,
+      &quot;glClass&quot; : &quot;INFG&quot;,
+      &quot;transactionType&quot; : &quot;S&quot;,
+      &quot;reorderQty&quot; : 0.00000,
+      &quot;reorderPoint&quot; : 0.00000,
+      &quot;maximumReorderQty&quot; : 0.00000,
+      &quot;minimumReorderQty&quot; : 0.00000,
+      &quot;safetyStock&quot; : 0.00000,
+      &quot;commitmentMethod&quot; : &quot;2&quot;,
+      &quot;inventoryLotCreation&quot; : false,
+      &quot;serialNumberRequired&quot; : false,
+      &quot;lotStatusCode&quot; : &quot;&quot;,
+      &quot;itemPriceGroup&quot; : &quot;&quot;,
+      &quot;printerLocationGroup&quot; : &quot;&quot;,
+      &quot;parameters&quot; : {
+        &quot;discountFactor&quot; : 0E-15,
+        &quot;profitMarginMinimumFactor&quot; : 0.00000,
+        &quot;taxOnSalesCode&quot; : &quot;&quot;,
+        &quot;taxOnPurchaseCode&quot; : &quot;&quot;,
+        &quot;branchPlantId&quot; : &quot;&quot;,
+        &quot;customerId&quot; : &quot;&quot;,
+        &quot;supplierId&quot; : &quot;&quot;,
+        &quot;rankByInventorySales&quot; : &quot;&quot;,
+        &quot;rankByInventoryMargin&quot; : &quot;&quot;,
+        &quot;rankByInventoryInvestment&quot; : &quot;&quot;
+      },
+      &quot;dataGroups&quot; : {
+        &quot;categoryCode&quot; : &quot;&quot;,
+        &quot;brandCode&quot; : &quot;&quot;,
+        &quot;typeCode&quot; : &quot;&quot;,
+        &quot;categoryCode4&quot; : &quot;&quot;,
+        &quot;landedCostRule&quot; : &quot;&quot;,
+        &quot;categoryCode6&quot; : &quot;&quot;,
+        &quot;categoryCode7&quot; : &quot;&quot;,
+        &quot;categoryCode8&quot; : &quot;&quot;,
+        &quot;categoryCode9&quot; : &quot;&quot;,
+        &quot;categoryCode10&quot; : &quot;&quot;,
+        &quot;salesReportingCode1&quot; : &quot;&quot;,
+        &quot;salesReportingCode2&quot; : &quot;&quot;,
+        &quot;salesReportingCode3&quot; : &quot;&quot;,
+        &quot;salesReportingCode4&quot; : &quot;&quot;,
+        &quot;salesReportingCode5&quot; : &quot;&quot;,
+        &quot;salesReportingCode6&quot; : &quot;&quot;,
+        &quot;salesReportingCode7&quot; : &quot;&quot;,
+        &quot;salesReportingCode8&quot; : &quot;&quot;,
+        &quot;salesReportingCode9&quot; : &quot;&quot;,
+        &quot;salesReportingCode0&quot; : &quot;&quot;
+      },
+      &quot;branchCode&quot; : &quot;110&quot;,
+      &quot;itemCode&quot; : &quot;ACC.PROC - PASTA PROCESSO&quot;,
+      &quot;lastUpdateDateTime&quot; : &quot;2018-02-12T13:52:34&quot;,
+      &quot;inputDateTime&quot; : &quot;2018-02-12T13:52:34&quot;,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.PROC_-_PASTA_PROCESSO&quot;
+        },
+        &quot;itemBranchInfo&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.PROC_-_PASTA_PROCESSO&quot;
+        },
+        &quot;branch&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.PROC_-_PASTA_PROCESSO/branch&quot;
+        },
+        &quot;itemMaster&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.PROC_-_PASTA_PROCESSO/itemMaster&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;ANTHONI&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;ANTHONI&quot;,
+      &quot;computerId&quot; : &quot;DESKTOP-9TRIRBU&quot;,
+      &quot;lastSynchronizedDate&quot; : null,
+      &quot;branchCode&quot; : &quot;110&quot;,
+      &quot;itemCode&quot; : &quot;ACC.RIBBON - LABEL&quot;,
+      &quot;stockingType&quot; : &quot;P&quot;,
+      &quot;glClass&quot; : &quot;INFG&quot;,
+      &quot;transactionType&quot; : &quot;S&quot;,
+      &quot;reorderQty&quot; : 0.00000,
+      &quot;reorderPoint&quot; : 0.00000,
+      &quot;maximumReorderQty&quot; : 0.00000,
+      &quot;minimumReorderQty&quot; : 0.00000,
+      &quot;safetyStock&quot; : 0.00000,
+      &quot;commitmentMethod&quot; : &quot;2&quot;,
+      &quot;inventoryLotCreation&quot; : false,
+      &quot;serialNumberRequired&quot; : false,
+      &quot;lotStatusCode&quot; : &quot;&quot;,
+      &quot;itemPriceGroup&quot; : &quot;&quot;,
+      &quot;printerLocationGroup&quot; : &quot;&quot;,
+      &quot;parameters&quot; : {
+        &quot;discountFactor&quot; : 0E-15,
+        &quot;profitMarginMinimumFactor&quot; : 0.00000,
+        &quot;taxOnSalesCode&quot; : &quot;&quot;,
+        &quot;taxOnPurchaseCode&quot; : &quot;&quot;,
+        &quot;branchPlantId&quot; : &quot;&quot;,
+        &quot;customerId&quot; : &quot;&quot;,
+        &quot;supplierId&quot; : &quot;&quot;,
+        &quot;rankByInventorySales&quot; : &quot;&quot;,
+        &quot;rankByInventoryMargin&quot; : &quot;&quot;,
+        &quot;rankByInventoryInvestment&quot; : &quot;&quot;
+      },
+      &quot;dataGroups&quot; : {
+        &quot;categoryCode&quot; : &quot;&quot;,
+        &quot;brandCode&quot; : &quot;&quot;,
+        &quot;typeCode&quot; : &quot;&quot;,
+        &quot;categoryCode4&quot; : &quot;&quot;,
+        &quot;landedCostRule&quot; : &quot;&quot;,
+        &quot;categoryCode6&quot; : &quot;&quot;,
+        &quot;categoryCode7&quot; : &quot;&quot;,
+        &quot;categoryCode8&quot; : &quot;&quot;,
+        &quot;categoryCode9&quot; : &quot;&quot;,
+        &quot;categoryCode10&quot; : &quot;&quot;,
+        &quot;salesReportingCode1&quot; : &quot;&quot;,
+        &quot;salesReportingCode2&quot; : &quot;&quot;,
+        &quot;salesReportingCode3&quot; : &quot;&quot;,
+        &quot;salesReportingCode4&quot; : &quot;&quot;,
+        &quot;salesReportingCode5&quot; : &quot;&quot;,
+        &quot;salesReportingCode6&quot; : &quot;&quot;,
+        &quot;salesReportingCode7&quot; : &quot;&quot;,
+        &quot;salesReportingCode8&quot; : &quot;&quot;,
+        &quot;salesReportingCode9&quot; : &quot;&quot;,
+        &quot;salesReportingCode0&quot; : &quot;&quot;
+      },
+      &quot;branchCode&quot; : &quot;110&quot;,
+      &quot;itemCode&quot; : &quot;ACC.RIBBON - LABEL&quot;,
+      &quot;lastUpdateDateTime&quot; : &quot;2018-02-07T17:35:52&quot;,
+      &quot;inputDateTime&quot; : &quot;2018-02-07T17:35:52&quot;,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.RIBBON_-_LABEL&quot;
+        },
+        &quot;itemBranchInfo&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.RIBBON_-_LABEL&quot;
+        },
+        &quot;branch&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.RIBBON_-_LABEL/branch&quot;
+        },
+        &quot;itemMaster&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.RIBBON_-_LABEL/itemMaster&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;QSA&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;QSA&quot;,
+      &quot;computerId&quot; : &quot;AYOOKLIK&quot;,
+      &quot;lastSynchronizedDate&quot; : null,
+      &quot;branchCode&quot; : &quot;110&quot;,
+      &quot;itemCode&quot; : &quot;ACC.RIBBON - LABEL 55&quot;,
+      &quot;stockingType&quot; : &quot;P&quot;,
+      &quot;glClass&quot; : &quot;INFG&quot;,
+      &quot;transactionType&quot; : &quot;S&quot;,
+      &quot;reorderQty&quot; : 0.00000,
+      &quot;reorderPoint&quot; : 0.00000,
+      &quot;maximumReorderQty&quot; : 0.00000,
+      &quot;minimumReorderQty&quot; : 0.00000,
+      &quot;safetyStock&quot; : 0.00000,
+      &quot;commitmentMethod&quot; : &quot;2&quot;,
+      &quot;inventoryLotCreation&quot; : false,
+      &quot;serialNumberRequired&quot; : false,
+      &quot;lotStatusCode&quot; : &quot;&quot;,
+      &quot;itemPriceGroup&quot; : &quot;&quot;,
+      &quot;printerLocationGroup&quot; : &quot;&quot;,
+      &quot;parameters&quot; : {
+        &quot;discountFactor&quot; : 0E-15,
+        &quot;profitMarginMinimumFactor&quot; : 0.00000,
+        &quot;taxOnSalesCode&quot; : &quot;&quot;,
+        &quot;taxOnPurchaseCode&quot; : &quot;&quot;,
+        &quot;branchPlantId&quot; : &quot;&quot;,
+        &quot;customerId&quot; : &quot;&quot;,
+        &quot;supplierId&quot; : &quot;&quot;,
+        &quot;rankByInventorySales&quot; : &quot;&quot;,
+        &quot;rankByInventoryMargin&quot; : &quot;&quot;,
+        &quot;rankByInventoryInvestment&quot; : &quot;&quot;
+      },
+      &quot;dataGroups&quot; : {
+        &quot;categoryCode&quot; : &quot;&quot;,
+        &quot;brandCode&quot; : &quot;&quot;,
+        &quot;typeCode&quot; : &quot;&quot;,
+        &quot;categoryCode4&quot; : &quot;&quot;,
+        &quot;landedCostRule&quot; : &quot;&quot;,
+        &quot;categoryCode6&quot; : &quot;&quot;,
+        &quot;categoryCode7&quot; : &quot;&quot;,
+        &quot;categoryCode8&quot; : &quot;&quot;,
+        &quot;categoryCode9&quot; : &quot;&quot;,
+        &quot;categoryCode10&quot; : &quot;&quot;,
+        &quot;salesReportingCode1&quot; : &quot;&quot;,
+        &quot;salesReportingCode2&quot; : &quot;&quot;,
+        &quot;salesReportingCode3&quot; : &quot;&quot;,
+        &quot;salesReportingCode4&quot; : &quot;&quot;,
+        &quot;salesReportingCode5&quot; : &quot;&quot;,
+        &quot;salesReportingCode6&quot; : &quot;&quot;,
+        &quot;salesReportingCode7&quot; : &quot;&quot;,
+        &quot;salesReportingCode8&quot; : &quot;&quot;,
+        &quot;salesReportingCode9&quot; : &quot;&quot;,
+        &quot;salesReportingCode0&quot; : &quot;&quot;
+      },
+      &quot;branchCode&quot; : &quot;110&quot;,
+      &quot;itemCode&quot; : &quot;ACC.RIBBON - LABEL 55&quot;,
+      &quot;lastUpdateDateTime&quot; : &quot;2018-02-24T09:25:20&quot;,
+      &quot;inputDateTime&quot; : &quot;2018-02-24T09:25:20&quot;,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.RIBBON_-_LABEL_55&quot;
+        },
+        &quot;itemBranchInfo&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.RIBBON_-_LABEL_55&quot;
+        },
+        &quot;branch&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.RIBBON_-_LABEL_55/branch&quot;
+        },
+        &quot;itemMaster&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.RIBBON_-_LABEL_55/itemMaster&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;ANTHONI&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;ANTHONI&quot;,
+      &quot;computerId&quot; : &quot;DESKTOP-9TRIRBU&quot;,
+      &quot;lastSynchronizedDate&quot; : null,
+      &quot;branchCode&quot; : &quot;110&quot;,
+      &quot;itemCode&quot; : &quot;ACC.RIBBON WAX RESIN&quot;,
+      &quot;stockingType&quot; : &quot;P&quot;,
+      &quot;glClass&quot; : &quot;INFG&quot;,
+      &quot;transactionType&quot; : &quot;S&quot;,
+      &quot;reorderQty&quot; : 0.00000,
+      &quot;reorderPoint&quot; : 0.00000,
+      &quot;maximumReorderQty&quot; : 0.00000,
+      &quot;minimumReorderQty&quot; : 0.00000,
+      &quot;safetyStock&quot; : 0.00000,
+      &quot;commitmentMethod&quot; : &quot;2&quot;,
+      &quot;inventoryLotCreation&quot; : false,
+      &quot;serialNumberRequired&quot; : false,
+      &quot;lotStatusCode&quot; : &quot;&quot;,
+      &quot;itemPriceGroup&quot; : &quot;&quot;,
+      &quot;printerLocationGroup&quot; : &quot;&quot;,
+      &quot;parameters&quot; : {
+        &quot;discountFactor&quot; : 0E-15,
+        &quot;profitMarginMinimumFactor&quot; : 0.00000,
+        &quot;taxOnSalesCode&quot; : &quot;&quot;,
+        &quot;taxOnPurchaseCode&quot; : &quot;&quot;,
+        &quot;branchPlantId&quot; : &quot;&quot;,
+        &quot;customerId&quot; : &quot;&quot;,
+        &quot;supplierId&quot; : &quot;&quot;,
+        &quot;rankByInventorySales&quot; : &quot;&quot;,
+        &quot;rankByInventoryMargin&quot; : &quot;&quot;,
+        &quot;rankByInventoryInvestment&quot; : &quot;&quot;
+      },
+      &quot;dataGroups&quot; : {
+        &quot;categoryCode&quot; : &quot;&quot;,
+        &quot;brandCode&quot; : &quot;&quot;,
+        &quot;typeCode&quot; : &quot;&quot;,
+        &quot;categoryCode4&quot; : &quot;&quot;,
+        &quot;landedCostRule&quot; : &quot;&quot;,
+        &quot;categoryCode6&quot; : &quot;&quot;,
+        &quot;categoryCode7&quot; : &quot;&quot;,
+        &quot;categoryCode8&quot; : &quot;&quot;,
+        &quot;categoryCode9&quot; : &quot;&quot;,
+        &quot;categoryCode10&quot; : &quot;&quot;,
+        &quot;salesReportingCode1&quot; : &quot;&quot;,
+        &quot;salesReportingCode2&quot; : &quot;&quot;,
+        &quot;salesReportingCode3&quot; : &quot;&quot;,
+        &quot;salesReportingCode4&quot; : &quot;&quot;,
+        &quot;salesReportingCode5&quot; : &quot;&quot;,
+        &quot;salesReportingCode6&quot; : &quot;&quot;,
+        &quot;salesReportingCode7&quot; : &quot;&quot;,
+        &quot;salesReportingCode8&quot; : &quot;&quot;,
+        &quot;salesReportingCode9&quot; : &quot;&quot;,
+        &quot;salesReportingCode0&quot; : &quot;&quot;
+      },
+      &quot;branchCode&quot; : &quot;110&quot;,
+      &quot;itemCode&quot; : &quot;ACC.RIBBON WAX RESIN&quot;,
+      &quot;lastUpdateDateTime&quot; : &quot;2018-02-07T17:27:40&quot;,
+      &quot;inputDateTime&quot; : &quot;2018-02-07T17:27:40&quot;,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.RIBBON_WAX_RESIN&quot;
+        },
+        &quot;itemBranchInfo&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.RIBBON_WAX_RESIN&quot;
+        },
+        &quot;branch&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.RIBBON_WAX_RESIN/branch&quot;
+        },
+        &quot;itemMaster&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.RIBBON_WAX_RESIN/itemMaster&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;ANTHONI&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;ANTHONI&quot;,
+      &quot;computerId&quot; : &quot;DESKTOP-9TRIRBU&quot;,
+      &quot;lastSynchronizedDate&quot; : null,
+      &quot;branchCode&quot; : &quot;110&quot;,
+      &quot;itemCode&quot; : &quot;ACC.SECURE BOX-CASH DRAWE&quot;,
+      &quot;stockingType&quot; : &quot;P&quot;,
+      &quot;glClass&quot; : &quot;INFG&quot;,
+      &quot;transactionType&quot; : &quot;S&quot;,
+      &quot;reorderQty&quot; : 0.00000,
+      &quot;reorderPoint&quot; : 0.00000,
+      &quot;maximumReorderQty&quot; : 0.00000,
+      &quot;minimumReorderQty&quot; : 0.00000,
+      &quot;safetyStock&quot; : 0.00000,
+      &quot;commitmentMethod&quot; : &quot;2&quot;,
+      &quot;inventoryLotCreation&quot; : false,
+      &quot;serialNumberRequired&quot; : false,
+      &quot;lotStatusCode&quot; : &quot;&quot;,
+      &quot;itemPriceGroup&quot; : &quot;&quot;,
+      &quot;printerLocationGroup&quot; : &quot;&quot;,
+      &quot;parameters&quot; : {
+        &quot;discountFactor&quot; : 0E-15,
+        &quot;profitMarginMinimumFactor&quot; : 0.00000,
+        &quot;taxOnSalesCode&quot; : &quot;&quot;,
+        &quot;taxOnPurchaseCode&quot; : &quot;&quot;,
+        &quot;branchPlantId&quot; : &quot;&quot;,
+        &quot;customerId&quot; : &quot;&quot;,
+        &quot;supplierId&quot; : &quot;&quot;,
+        &quot;rankByInventorySales&quot; : &quot;&quot;,
+        &quot;rankByInventoryMargin&quot; : &quot;&quot;,
+        &quot;rankByInventoryInvestment&quot; : &quot;&quot;
+      },
+      &quot;dataGroups&quot; : {
+        &quot;categoryCode&quot; : &quot;&quot;,
+        &quot;brandCode&quot; : &quot;&quot;,
+        &quot;typeCode&quot; : &quot;&quot;,
+        &quot;categoryCode4&quot; : &quot;&quot;,
+        &quot;landedCostRule&quot; : &quot;&quot;,
+        &quot;categoryCode6&quot; : &quot;&quot;,
+        &quot;categoryCode7&quot; : &quot;&quot;,
+        &quot;categoryCode8&quot; : &quot;&quot;,
+        &quot;categoryCode9&quot; : &quot;&quot;,
+        &quot;categoryCode10&quot; : &quot;&quot;,
+        &quot;salesReportingCode1&quot; : &quot;&quot;,
+        &quot;salesReportingCode2&quot; : &quot;&quot;,
+        &quot;salesReportingCode3&quot; : &quot;&quot;,
+        &quot;salesReportingCode4&quot; : &quot;&quot;,
+        &quot;salesReportingCode5&quot; : &quot;&quot;,
+        &quot;salesReportingCode6&quot; : &quot;&quot;,
+        &quot;salesReportingCode7&quot; : &quot;&quot;,
+        &quot;salesReportingCode8&quot; : &quot;&quot;,
+        &quot;salesReportingCode9&quot; : &quot;&quot;,
+        &quot;salesReportingCode0&quot; : &quot;&quot;
+      },
+      &quot;branchCode&quot; : &quot;110&quot;,
+      &quot;itemCode&quot; : &quot;ACC.SECURE BOX-CASH DRAWE&quot;,
+      &quot;lastUpdateDateTime&quot; : &quot;2018-04-09T13:29:44&quot;,
+      &quot;inputDateTime&quot; : &quot;2018-04-09T13:22:34&quot;,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.SECURE_BOX-CASH_DRAWE&quot;
+        },
+        &quot;itemBranchInfo&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.SECURE_BOX-CASH_DRAWE&quot;
+        },
+        &quot;branch&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.SECURE_BOX-CASH_DRAWE/branch&quot;
+        },
+        &quot;itemMaster&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.SECURE_BOX-CASH_DRAWE/itemMaster&quot;
+        }
+      }
+    } ]
+  },
+  &quot;_links&quot; : {
+    &quot;first&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/itembranches?page=0&amp;size=20&quot;
+    },
+    &quot;self&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/itembranches{?page,size,sort}&quot;,
+      &quot;templated&quot; : true
+    },
+    &quot;next&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/itembranches?page=1&amp;size=20&quot;
+    },
+    &quot;last&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/itembranches?page=150&amp;size=20&quot;
+    },
+    &quot;profile&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/profile/itembranches&quot;
+    }
+  },
+  &quot;page&quot; : {
+    &quot;size&quot; : 20,
+    &quot;totalElements&quot; : 3008,
+    &quot;totalPages&quot; : 151,
+    &quot;number&quot; : 0
+  }
+}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2018-12-14 17:35:27.101  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@1c24488 testClass = ItemBranchInfoApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest@117a5c86, testMethod = getTestCollection@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7d94b1bb testClass = ItemBranchInfoApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4c3186fa key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+2018-12-14 17:35:27.103  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@1c24488 testClass = ItemBranchInfoApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest@65f496d1, testMethod = createTestWithPut@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7d94b1bb testClass = ItemBranchInfoApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4c3186fa key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:27.104  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:27.104  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:27.110  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 6 ms
+Hibernate: select itembranch0_.ibbuid as ibbuid1_32_0_, itembranch0_.ibinum as ibinum2_32_0_, itembranch0_.ibcid as ibcid3_32_0_, itembranch0_.ibdtin as ibdtin4_32_0_, itembranch0_.ibtmin as ibtmin5_32_0_, itembranch0_.ibuid as ibuid6_32_0_, itembranch0_.ibdtlu as ibdtlu7_32_0_, itembranch0_.ibtmlu as ibtmlu8_32_0_, itembranch0_.ibuidm as ibuidm9_32_0_, itembranch0_.ibdtls as ibdtls10_32_0_, itembranch0_.ibctm as ibctm11_32_0_, itembranch0_.ibitc02 as ibitc12_32_0_, itembranch0_.ibitc01 as ibitc13_32_0_, itembranch0_.ibitc10 as ibitc14_32_0_, itembranch0_.ibitc04 as ibitc15_32_0_, itembranch0_.ibitc06 as ibitc16_32_0_, itembranch0_.ibitc07 as ibitc17_32_0_, itembranch0_.ibitc08 as ibitc18_32_0_, itembranch0_.ibitc09 as ibitc19_32_0_, itembranch0_.ibitc05 as ibitc20_32_0_, itembranch0_.ibslrc0 as ibslrc21_32_0_, itembranch0_.ibslrc1 as ibslrc22_32_0_, itembranch0_.ibslrc2 as ibslrc23_32_0_, itembranch0_.ibslrc3 as ibslrc24_32_0_, itembranch0_.ibslrc4 as ibslrc25_32_0_, itembranch0_.ibslrc5 as ibslrc26_32_0_, itembranch0_.ibslrc6 as ibslrc27_32_0_, itembranch0_.ibslrc7 as ibslrc28_32_0_, itembranch0_.ibslrc8 as ibslrc29_32_0_, itembranch0_.ibslrc9 as ibslrc30_32_0_, itembranch0_.ibitc03 as ibitc31_32_0_, itembranch0_.ibglcls as ibglcls32_32_0_, itembranch0_.ibilc as ibilc33_32_0_, itembranch0_.ibipg as ibipg34_32_0_, itembranch0_.iblsc as iblsc35_32_0_, itembranch0_.ibmaxroq as ibmaxro36_32_0_, itembranch0_.ibminroq as ibminro37_32_0_, itembranch0_.ibbpid as ibbpid38_32_0_, itembranch0_.ibcsid as ibcsid39_32_0_, itembranch0_.ibudf as ibudf40_32_0_, itembranch0_.ibpmmf as ibpmmf41_32_0_, itembranch0_.ibrbii as ibrbii42_32_0_, itembranch0_.ibrbim as ibrbim43_32_0_, itembranch0_.ibrbis as ibrbis44_32_0_, itembranch0_.ibvnid as ibvnid45_32_0_, itembranch0_.ibtaxpc as ibtaxpc46_32_0_, itembranch0_.ibtaxsc as ibtaxsc47_32_0_, itembranch0_.ibplg as ibplg48_32_0_, itembranch0_.ibrop as ibrop49_32_0_, itembranch0_.ibroq as ibroq50_32_0_, itembranch0_.ibsfstk as ibsfstk51_32_0_, itembranch0_.ibsnr as ibsnr52_32_0_, itembranch0_.ibskty as ibskty53_32_0_, itembranch0_.iblnty as iblnty54_32_0_ from t41011 itembranch0_ where itembranch0_.ibbuid=? and itembranch0_.ibinum=?
+2018-12-14 17:35:27.171  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@1c24488 testClass = ItemBranchInfoApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest@65f496d1, testMethod = createTestWithPut@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7d94b1bb testClass = ItemBranchInfoApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4c3186fa key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+2018-12-14 17:35:27.171  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@1c24488 testClass = ItemBranchInfoApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest@7dd66d6, testMethod = deleteTest@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7d94b1bb testClass = ItemBranchInfoApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4c3186fa key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:27.171  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:27.171  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:27.171  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+Hibernate: select itembranch0_.ibbuid as ibbuid1_32_0_, itembranch0_.ibinum as ibinum2_32_0_, itembranch0_.ibcid as ibcid3_32_0_, itembranch0_.ibdtin as ibdtin4_32_0_, itembranch0_.ibtmin as ibtmin5_32_0_, itembranch0_.ibuid as ibuid6_32_0_, itembranch0_.ibdtlu as ibdtlu7_32_0_, itembranch0_.ibtmlu as ibtmlu8_32_0_, itembranch0_.ibuidm as ibuidm9_32_0_, itembranch0_.ibdtls as ibdtls10_32_0_, itembranch0_.ibctm as ibctm11_32_0_, itembranch0_.ibitc02 as ibitc12_32_0_, itembranch0_.ibitc01 as ibitc13_32_0_, itembranch0_.ibitc10 as ibitc14_32_0_, itembranch0_.ibitc04 as ibitc15_32_0_, itembranch0_.ibitc06 as ibitc16_32_0_, itembranch0_.ibitc07 as ibitc17_32_0_, itembranch0_.ibitc08 as ibitc18_32_0_, itembranch0_.ibitc09 as ibitc19_32_0_, itembranch0_.ibitc05 as ibitc20_32_0_, itembranch0_.ibslrc0 as ibslrc21_32_0_, itembranch0_.ibslrc1 as ibslrc22_32_0_, itembranch0_.ibslrc2 as ibslrc23_32_0_, itembranch0_.ibslrc3 as ibslrc24_32_0_, itembranch0_.ibslrc4 as ibslrc25_32_0_, itembranch0_.ibslrc5 as ibslrc26_32_0_, itembranch0_.ibslrc6 as ibslrc27_32_0_, itembranch0_.ibslrc7 as ibslrc28_32_0_, itembranch0_.ibslrc8 as ibslrc29_32_0_, itembranch0_.ibslrc9 as ibslrc30_32_0_, itembranch0_.ibitc03 as ibitc31_32_0_, itembranch0_.ibglcls as ibglcls32_32_0_, itembranch0_.ibilc as ibilc33_32_0_, itembranch0_.ibipg as ibipg34_32_0_, itembranch0_.iblsc as iblsc35_32_0_, itembranch0_.ibmaxroq as ibmaxro36_32_0_, itembranch0_.ibminroq as ibminro37_32_0_, itembranch0_.ibbpid as ibbpid38_32_0_, itembranch0_.ibcsid as ibcsid39_32_0_, itembranch0_.ibudf as ibudf40_32_0_, itembranch0_.ibpmmf as ibpmmf41_32_0_, itembranch0_.ibrbii as ibrbii42_32_0_, itembranch0_.ibrbim as ibrbim43_32_0_, itembranch0_.ibrbis as ibrbis44_32_0_, itembranch0_.ibvnid as ibvnid45_32_0_, itembranch0_.ibtaxpc as ibtaxpc46_32_0_, itembranch0_.ibtaxsc as ibtaxsc47_32_0_, itembranch0_.ibplg as ibplg48_32_0_, itembranch0_.ibrop as ibrop49_32_0_, itembranch0_.ibroq as ibroq50_32_0_, itembranch0_.ibsfstk as ibsfstk51_32_0_, itembranch0_.ibsnr as ibsnr52_32_0_, itembranch0_.ibskty as ibskty53_32_0_, itembranch0_.iblnty as iblnty54_32_0_ from t41011 itembranch0_ where itembranch0_.ibbuid=? and itembranch0_.ibinum=?
+2018-12-14 17:35:27.280  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@1c24488 testClass = ItemBranchInfoApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest@7dd66d6, testMethod = deleteTest@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7d94b1bb testClass = ItemBranchInfoApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4c3186fa key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+2018-12-14 17:35:27.280  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@1c24488 testClass = ItemBranchInfoApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest@6cb6f106, testMethod = createTestWithPost@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7d94b1bb testClass = ItemBranchInfoApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4c3186fa key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:27.280  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:27.280  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:27.280  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+Hibernate: select itembranch0_.ibbuid as ibbuid1_32_0_, itembranch0_.ibinum as ibinum2_32_0_, itembranch0_.ibcid as ibcid3_32_0_, itembranch0_.ibdtin as ibdtin4_32_0_, itembranch0_.ibtmin as ibtmin5_32_0_, itembranch0_.ibuid as ibuid6_32_0_, itembranch0_.ibdtlu as ibdtlu7_32_0_, itembranch0_.ibtmlu as ibtmlu8_32_0_, itembranch0_.ibuidm as ibuidm9_32_0_, itembranch0_.ibdtls as ibdtls10_32_0_, itembranch0_.ibctm as ibctm11_32_0_, itembranch0_.ibitc02 as ibitc12_32_0_, itembranch0_.ibitc01 as ibitc13_32_0_, itembranch0_.ibitc10 as ibitc14_32_0_, itembranch0_.ibitc04 as ibitc15_32_0_, itembranch0_.ibitc06 as ibitc16_32_0_, itembranch0_.ibitc07 as ibitc17_32_0_, itembranch0_.ibitc08 as ibitc18_32_0_, itembranch0_.ibitc09 as ibitc19_32_0_, itembranch0_.ibitc05 as ibitc20_32_0_, itembranch0_.ibslrc0 as ibslrc21_32_0_, itembranch0_.ibslrc1 as ibslrc22_32_0_, itembranch0_.ibslrc2 as ibslrc23_32_0_, itembranch0_.ibslrc3 as ibslrc24_32_0_, itembranch0_.ibslrc4 as ibslrc25_32_0_, itembranch0_.ibslrc5 as ibslrc26_32_0_, itembranch0_.ibslrc6 as ibslrc27_32_0_, itembranch0_.ibslrc7 as ibslrc28_32_0_, itembranch0_.ibslrc8 as ibslrc29_32_0_, itembranch0_.ibslrc9 as ibslrc30_32_0_, itembranch0_.ibitc03 as ibitc31_32_0_, itembranch0_.ibglcls as ibglcls32_32_0_, itembranch0_.ibilc as ibilc33_32_0_, itembranch0_.ibipg as ibipg34_32_0_, itembranch0_.iblsc as iblsc35_32_0_, itembranch0_.ibmaxroq as ibmaxro36_32_0_, itembranch0_.ibminroq as ibminro37_32_0_, itembranch0_.ibbpid as ibbpid38_32_0_, itembranch0_.ibcsid as ibcsid39_32_0_, itembranch0_.ibudf as ibudf40_32_0_, itembranch0_.ibpmmf as ibpmmf41_32_0_, itembranch0_.ibrbii as ibrbii42_32_0_, itembranch0_.ibrbim as ibrbim43_32_0_, itembranch0_.ibrbis as ibrbis44_32_0_, itembranch0_.ibvnid as ibvnid45_32_0_, itembranch0_.ibtaxpc as ibtaxpc46_32_0_, itembranch0_.ibtaxsc as ibtaxsc47_32_0_, itembranch0_.ibplg as ibplg48_32_0_, itembranch0_.ibrop as ibrop49_32_0_, itembranch0_.ibroq as ibroq50_32_0_, itembranch0_.ibsfstk as ibsfstk51_32_0_, itembranch0_.ibsnr as ibsnr52_32_0_, itembranch0_.ibskty as ibskty53_32_0_, itembranch0_.iblnty as iblnty54_32_0_ from t41011 itembranch0_ where itembranch0_.ibbuid=? and itembranch0_.ibinum=?
+Hibernate: select itembranch0_.ibbuid as ibbuid1_32_0_, itembranch0_.ibinum as ibinum2_32_0_, itembranch0_.ibcid as ibcid3_32_0_, itembranch0_.ibdtin as ibdtin4_32_0_, itembranch0_.ibtmin as ibtmin5_32_0_, itembranch0_.ibuid as ibuid6_32_0_, itembranch0_.ibdtlu as ibdtlu7_32_0_, itembranch0_.ibtmlu as ibtmlu8_32_0_, itembranch0_.ibuidm as ibuidm9_32_0_, itembranch0_.ibdtls as ibdtls10_32_0_, itembranch0_.ibctm as ibctm11_32_0_, itembranch0_.ibitc02 as ibitc12_32_0_, itembranch0_.ibitc01 as ibitc13_32_0_, itembranch0_.ibitc10 as ibitc14_32_0_, itembranch0_.ibitc04 as ibitc15_32_0_, itembranch0_.ibitc06 as ibitc16_32_0_, itembranch0_.ibitc07 as ibitc17_32_0_, itembranch0_.ibitc08 as ibitc18_32_0_, itembranch0_.ibitc09 as ibitc19_32_0_, itembranch0_.ibitc05 as ibitc20_32_0_, itembranch0_.ibslrc0 as ibslrc21_32_0_, itembranch0_.ibslrc1 as ibslrc22_32_0_, itembranch0_.ibslrc2 as ibslrc23_32_0_, itembranch0_.ibslrc3 as ibslrc24_32_0_, itembranch0_.ibslrc4 as ibslrc25_32_0_, itembranch0_.ibslrc5 as ibslrc26_32_0_, itembranch0_.ibslrc6 as ibslrc27_32_0_, itembranch0_.ibslrc7 as ibslrc28_32_0_, itembranch0_.ibslrc8 as ibslrc29_32_0_, itembranch0_.ibslrc9 as ibslrc30_32_0_, itembranch0_.ibitc03 as ibitc31_32_0_, itembranch0_.ibglcls as ibglcls32_32_0_, itembranch0_.ibilc as ibilc33_32_0_, itembranch0_.ibipg as ibipg34_32_0_, itembranch0_.iblsc as iblsc35_32_0_, itembranch0_.ibmaxroq as ibmaxro36_32_0_, itembranch0_.ibminroq as ibminro37_32_0_, itembranch0_.ibbpid as ibbpid38_32_0_, itembranch0_.ibcsid as ibcsid39_32_0_, itembranch0_.ibudf as ibudf40_32_0_, itembranch0_.ibpmmf as ibpmmf41_32_0_, itembranch0_.ibrbii as ibrbii42_32_0_, itembranch0_.ibrbim as ibrbim43_32_0_, itembranch0_.ibrbis as ibrbis44_32_0_, itembranch0_.ibvnid as ibvnid45_32_0_, itembranch0_.ibtaxpc as ibtaxpc46_32_0_, itembranch0_.ibtaxsc as ibtaxsc47_32_0_, itembranch0_.ibplg as ibplg48_32_0_, itembranch0_.ibrop as ibrop49_32_0_, itembranch0_.ibroq as ibroq50_32_0_, itembranch0_.ibsfstk as ibsfstk51_32_0_, itembranch0_.ibsnr as ibsnr52_32_0_, itembranch0_.ibskty as ibskty53_32_0_, itembranch0_.iblnty as iblnty54_32_0_ from t41011 itembranch0_ where itembranch0_.ibbuid=? and itembranch0_.ibinum=?
+Hibernate: insert into t41011 (ibcid, ibdtin, ibtmin, ibuid, ibdtlu, ibtmlu, ibuidm, ibdtls, ibctm, ibitc02, ibitc01, ibitc10, ibitc04, ibitc06, ibitc07, ibitc08, ibitc09, ibitc05, ibslrc0, ibslrc1, ibslrc2, ibslrc3, ibslrc4, ibslrc5, ibslrc6, ibslrc7, ibslrc8, ibslrc9, ibitc03, ibglcls, ibilc, ibipg, iblsc, ibmaxroq, ibminroq, ibbpid, ibcsid, ibudf, ibpmmf, ibrbii, ibrbim, ibrbis, ibvnid, ibtaxpc, ibtaxsc, ibplg, ibrop, ibroq, ibsfstk, ibsnr, ibskty, iblnty, ibbuid, ibinum) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: select itembranch0_.ibbuid as ibbuid1_32_0_, itembranch0_.ibinum as ibinum2_32_0_, itembranch0_.ibcid as ibcid3_32_0_, itembranch0_.ibdtin as ibdtin4_32_0_, itembranch0_.ibtmin as ibtmin5_32_0_, itembranch0_.ibuid as ibuid6_32_0_, itembranch0_.ibdtlu as ibdtlu7_32_0_, itembranch0_.ibtmlu as ibtmlu8_32_0_, itembranch0_.ibuidm as ibuidm9_32_0_, itembranch0_.ibdtls as ibdtls10_32_0_, itembranch0_.ibctm as ibctm11_32_0_, itembranch0_.ibitc02 as ibitc12_32_0_, itembranch0_.ibitc01 as ibitc13_32_0_, itembranch0_.ibitc10 as ibitc14_32_0_, itembranch0_.ibitc04 as ibitc15_32_0_, itembranch0_.ibitc06 as ibitc16_32_0_, itembranch0_.ibitc07 as ibitc17_32_0_, itembranch0_.ibitc08 as ibitc18_32_0_, itembranch0_.ibitc09 as ibitc19_32_0_, itembranch0_.ibitc05 as ibitc20_32_0_, itembranch0_.ibslrc0 as ibslrc21_32_0_, itembranch0_.ibslrc1 as ibslrc22_32_0_, itembranch0_.ibslrc2 as ibslrc23_32_0_, itembranch0_.ibslrc3 as ibslrc24_32_0_, itembranch0_.ibslrc4 as ibslrc25_32_0_, itembranch0_.ibslrc5 as ibslrc26_32_0_, itembranch0_.ibslrc6 as ibslrc27_32_0_, itembranch0_.ibslrc7 as ibslrc28_32_0_, itembranch0_.ibslrc8 as ibslrc29_32_0_, itembranch0_.ibslrc9 as ibslrc30_32_0_, itembranch0_.ibitc03 as ibitc31_32_0_, itembranch0_.ibglcls as ibglcls32_32_0_, itembranch0_.ibilc as ibilc33_32_0_, itembranch0_.ibipg as ibipg34_32_0_, itembranch0_.iblsc as iblsc35_32_0_, itembranch0_.ibmaxroq as ibmaxro36_32_0_, itembranch0_.ibminroq as ibminro37_32_0_, itembranch0_.ibbpid as ibbpid38_32_0_, itembranch0_.ibcsid as ibcsid39_32_0_, itembranch0_.ibudf as ibudf40_32_0_, itembranch0_.ibpmmf as ibpmmf41_32_0_, itembranch0_.ibrbii as ibrbii42_32_0_, itembranch0_.ibrbim as ibrbim43_32_0_, itembranch0_.ibrbis as ibrbis44_32_0_, itembranch0_.ibvnid as ibvnid45_32_0_, itembranch0_.ibtaxpc as ibtaxpc46_32_0_, itembranch0_.ibtaxsc as ibtaxsc47_32_0_, itembranch0_.ibplg as ibplg48_32_0_, itembranch0_.ibrop as ibrop49_32_0_, itembranch0_.ibroq as ibroq50_32_0_, itembranch0_.ibsfstk as ibsfstk51_32_0_, itembranch0_.ibsnr as ibsnr52_32_0_, itembranch0_.ibskty as ibskty53_32_0_, itembranch0_.iblnty as iblnty54_32_0_ from t41011 itembranch0_ where itembranch0_.ibbuid=? and itembranch0_.ibinum=?
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/itembranches/123_TEST.TEST
+       Parameters = {}
+          Headers = {Accept=[application/json]}
+             Body = &lt;no character encoding set&gt;
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@54a685de, SPRING_SECURITY_CONTEXT=org.springframework.security.core.context.SecurityContextImpl@475fcd89: Authentication: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@475fcd89: Principal: org.springframework.security.core.userdetails.User@f02988d6: Username: username; Password: [PROTECTED]; Enabled: true; AccountNonExpired: true; credentialsNonExpired: true; AccountNonLocked: true; Not granted any authorities; Credentials: [PROTECTED]; Authenticated: true; Details: null; Not granted any authorities}
+
+Handler:
+             Type = org.springframework.data.rest.webmvc.RepositoryEntityController
+           Method = public org.springframework.http.ResponseEntity&lt;org.springframework.hateoas.Resource&lt;?&gt;&gt; org.springframework.data.rest.webmvc.RepositoryEntityController.getItemResource(org.springframework.data.rest.webmvc.RootResourceInformation,java.io.Serializable,org.springframework.data.rest.webmvc.PersistentEntityResourceAssembler,org.springframework.http.HttpHeaders) throws org.springframework.web.HttpRequestMethodNotSupportedException
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Disposition=[inline;filename=f.txt], Content-Type=[application/json;charset=UTF-8], X-Content-Type-Options=[nosniff], X-XSS-Protection=[1; mode=block], Cache-Control=[no-cache, no-store, max-age=0, must-revalidate], Pragma=[no-cache], Expires=[0], X-Frame-Options=[DENY]}
+     Content type = application/json;charset=UTF-8
+             Body = {
+  &quot;inputUserId&quot; : &quot;username&quot;,
+  &quot;lastUpdateUserId&quot; : &quot;username&quot;,
+  &quot;computerId&quot; : &quot;username&quot;,
+  &quot;lastSynchronizedDate&quot; : null,
+  &quot;branchCode&quot; : &quot;123&quot;,
+  &quot;itemCode&quot; : &quot;TEST.TEST&quot;,
+  &quot;stockingType&quot; : &quot;C&quot;,
+  &quot;glClass&quot; : &quot;&quot;,
+  &quot;transactionType&quot; : &quot;&quot;,
+  &quot;reorderQty&quot; : 100.15000,
+  &quot;reorderPoint&quot; : 0.00000,
+  &quot;maximumReorderQty&quot; : 0.00000,
+  &quot;minimumReorderQty&quot; : 0.00000,
+  &quot;safetyStock&quot; : 0.00000,
+  &quot;commitmentMethod&quot; : &quot;&quot;,
+  &quot;inventoryLotCreation&quot; : false,
+  &quot;serialNumberRequired&quot; : true,
+  &quot;lotStatusCode&quot; : &quot;&quot;,
+  &quot;itemPriceGroup&quot; : &quot;&quot;,
+  &quot;printerLocationGroup&quot; : &quot;&quot;,
+  &quot;parameters&quot; : {
+    &quot;discountFactor&quot; : 0E-15,
+    &quot;profitMarginMinimumFactor&quot; : 25.75000,
+    &quot;taxOnSalesCode&quot; : &quot;&quot;,
+    &quot;taxOnPurchaseCode&quot; : &quot;&quot;,
+    &quot;branchPlantId&quot; : &quot;&quot;,
+    &quot;customerId&quot; : &quot;&quot;,
+    &quot;supplierId&quot; : &quot;&quot;,
+    &quot;rankByInventorySales&quot; : &quot;&quot;,
+    &quot;rankByInventoryMargin&quot; : &quot;&quot;,
+    &quot;rankByInventoryInvestment&quot; : &quot;C&quot;
+  },
+  &quot;dataGroups&quot; : {
+    &quot;categoryCode&quot; : &quot;&quot;,
+    &quot;brandCode&quot; : &quot;&quot;,
+    &quot;typeCode&quot; : &quot;&quot;,
+    &quot;categoryCode4&quot; : &quot;&quot;,
+    &quot;landedCostRule&quot; : &quot;&quot;,
+    &quot;categoryCode6&quot; : &quot;&quot;,
+    &quot;categoryCode7&quot; : &quot;&quot;,
+    &quot;categoryCode8&quot; : &quot;&quot;,
+    &quot;categoryCode9&quot; : &quot;&quot;,
+    &quot;categoryCode10&quot; : &quot;&quot;,
+    &quot;salesReportingCode1&quot; : &quot;&quot;,
+    &quot;salesReportingCode2&quot; : &quot;&quot;,
+    &quot;salesReportingCode3&quot; : &quot;&quot;,
+    &quot;salesReportingCode4&quot; : &quot;&quot;,
+    &quot;salesReportingCode5&quot; : &quot;&quot;,
+    &quot;salesReportingCode6&quot; : &quot;&quot;,
+    &quot;salesReportingCode7&quot; : &quot;&quot;,
+    &quot;salesReportingCode8&quot; : &quot;&quot;,
+    &quot;salesReportingCode9&quot; : &quot;&quot;,
+    &quot;salesReportingCode0&quot; : &quot;&quot;
+  },
+  &quot;branchCode&quot; : &quot;123&quot;,
+  &quot;itemCode&quot; : &quot;TEST.TEST&quot;,
+  &quot;lastUpdateDateTime&quot; : &quot;2018-12-14T17:35:27&quot;,
+  &quot;inputDateTime&quot; : &quot;2018-12-14T17:35:27&quot;,
+  &quot;_links&quot; : {
+    &quot;self&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/itembranches/123_TEST.TEST&quot;
+    },
+    &quot;itemBranchInfo&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/itembranches/123_TEST.TEST&quot;
+    },
+    &quot;branch&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/itembranches/123_TEST.TEST/branch&quot;
+    },
+    &quot;itemMaster&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/itembranches/123_TEST.TEST/itemMaster&quot;
+    }
+  }
+}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2018-12-14 17:35:27.530  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@1c24488 testClass = ItemBranchInfoApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest@6cb6f106, testMethod = createTestWithPost@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7d94b1bb testClass = ItemBranchInfoApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4c3186fa key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 4.2.1</a> at 14 Dec, 2018 5:36:06 PM</p>
+</div>
+</div>
+</body>
+</html>

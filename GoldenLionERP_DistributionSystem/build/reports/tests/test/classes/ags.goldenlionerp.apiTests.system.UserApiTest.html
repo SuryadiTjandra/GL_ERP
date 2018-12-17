@@ -1,0 +1,1340 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class ags.goldenlionerp.apiTests.system.UserApiTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class ags.goldenlionerp.apiTests.system.UserApiTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/ags.goldenlionerp.apiTests.system.html">ags.goldenlionerp.apiTests.system</a> &gt; UserApiTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">11</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.647s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">createTestWithPost</td>
+<td>0.076s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">createTestWithPost_NoPasswordConfirm</td>
+<td>0.017s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">createTestWithPut</td>
+<td>0.020s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">deleteTest</td>
+<td>0.019s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getTestCollection</td>
+<td>0.053s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getTestSingle</td>
+<td>0.026s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">updatePasswordTest</td>
+<td>0.319s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">updatePasswordTestFail</td>
+<td>0.018s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">updateTestWithPatch</td>
+<td>0.029s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">updateTestWithPatch_HaveUserGroup</td>
+<td>0.046s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">updateTestWithPut</td>
+<td>0.024s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>2018-12-14 17:35:59.705  INFO 9212 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [ags.goldenlionerp.apiTests.system.UserApiTest], using SpringBootContextLoader
+2018-12-14 17:35:59.705  INFO 9212 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [ags.goldenlionerp.apiTests.system.UserApiTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2018-12-14 17:35:59.705  INFO 9212 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [ags.goldenlionerp.apiTests.system.UserApiTest]: UserApiTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2018-12-14 17:35:59.705  INFO 9212 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration ags.goldenlionerp.GoldenLionErpApplication for test class ags.goldenlionerp.apiTests.system.UserApiTest
+2018-12-14 17:35:59.705  INFO 9212 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-12-14 17:35:59.705  INFO 9212 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@70684777, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@60716df0, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6ba14a9e, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@17faa307, org.springframework.test.context.support.DirtiesContextTestExecutionListener@259b1d70, org.springframework.test.context.transaction.TransactionalTestExecutionListener@4e6efade, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@2f7abc37, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@6ddad044, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@10d72012, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@295680dc, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@53b70ac5, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@68d4b807, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@412ac2bf, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@5c67ea26]
+2018-12-14 17:35:59.721  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@50687f75 testClass = UserApiTest, testInstance = ags.goldenlionerp.apiTests.system.UserApiTest@f024847, testMethod = updatePasswordTest@UserApiTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7c188c9 testClass = UserApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@43919f19 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:59.721  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:59.721  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:59.721  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+Hibernate: select user0_.scusi as scusi2_42_0_, user0_.sccid as sccid3_42_0_, user0_.scdtin as scdtin4_42_0_, user0_.sctmin as sctmin5_42_0_, user0_.scuid as scuid6_42_0_, user0_.scdtlu as scdtlu7_42_0_, user0_.sctmlu as sctmlu8_42_0_, user0_.scuidm as scuidm9_42_0_, user0_.scanum as scanum10_42_0_, user0_.scaprcd as scaprcd11_42_0_, user0_.scbuid as scbuid12_42_0_, user0_.scmtoe as scmtoe13_42_0_, user0_.scmtoe2 as scmtoe14_42_0_, user0_.scmtoe1 as scmtoe15_42_0_, user0_.sctagid as sctagid16_42_0_, user0_.scusc as scusc17_42_0_, user0_.scusg as scusg18_42_0_, user0_.scusl as scusl19_42_0_, user0_.scust as scust1_42_0_, usergroup1_.scusi as scusi2_42_1_, usergroup1_.sccid as sccid3_42_1_, usergroup1_.scdtin as scdtin4_42_1_, usergroup1_.sctmin as sctmin5_42_1_, usergroup1_.scuid as scuid6_42_1_, usergroup1_.scdtlu as scdtlu7_42_1_, usergroup1_.sctmlu as sctmlu8_42_1_, usergroup1_.scuidm as scuidm9_42_1_, usergroup1_.scanum as scanum10_42_1_, usergroup1_.scaprcd as scaprcd11_42_1_, usergroup1_.scbuid as scbuid12_42_1_, usergroup1_.scmtoe as scmtoe13_42_1_, usergroup1_.scmtoe2 as scmtoe14_42_1_, usergroup1_.scmtoe1 as scmtoe15_42_1_, usergroup1_.sctagid as sctagid16_42_1_, usergroup1_.scusc as scusc17_42_1_, usergroup1_.scusg as scusg18_42_1_, usergroup1_.scusl as scusl19_42_1_, usergroup1_.scust as scust1_42_1_ from t9801 user0_ left outer join t9801 usergroup1_ on user0_.scusg=usergroup1_.scusi where user0_.scusi=? and user0_.scust='U'
+Hibernate: select usergroup0_.scusi as scusi2_42_0_, usergroup0_.sccid as sccid3_42_0_, usergroup0_.scdtin as scdtin4_42_0_, usergroup0_.sctmin as sctmin5_42_0_, usergroup0_.scuid as scuid6_42_0_, usergroup0_.scdtlu as scdtlu7_42_0_, usergroup0_.sctmlu as sctmlu8_42_0_, usergroup0_.scuidm as scuidm9_42_0_, usergroup0_.scanum as scanum10_42_0_, usergroup0_.scaprcd as scaprcd11_42_0_, usergroup0_.scbuid as scbuid12_42_0_, usergroup0_.scmtoe as scmtoe13_42_0_, usergroup0_.scmtoe2 as scmtoe14_42_0_, usergroup0_.scmtoe1 as scmtoe15_42_0_, usergroup0_.sctagid as sctagid16_42_0_, usergroup0_.scusc as scusc17_42_0_, usergroup0_.scusg as scusg18_42_0_, usergroup0_.scusl as scusl19_42_0_, usergroup0_.scust as scust1_42_0_ from t9801 usergroup0_ where usergroup0_.scusi=? and usergroup0_.scust='G'
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /login
+       Parameters = {username=[QSA], password=[], _csrf=[6e6a3169-f109-42a4-bf57-961d528c023b]}
+          Headers = {Accept=[application/x-www-form-urlencoded]}
+             Body = &lt;no character encoding set&gt;
+    Session Attrs = {SPRING_SECURITY_CONTEXT=org.springframework.security.core.context.SecurityContextImpl@fffe50e5: Authentication: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@fffe50e5: Principal: org.springframework.security.core.userdetails.User@13a5f: Username: QSA; Password: [PROTECTED]; Enabled: true; AccountNonExpired: true; credentialsNonExpired: true; AccountNonLocked: true; Not granted any authorities; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null; Not granted any authorities}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 302
+    Error message = null
+          Headers = {X-Content-Type-Options=[nosniff], X-XSS-Protection=[1; mode=block], Cache-Control=[no-cache, no-store, max-age=0, must-revalidate], Pragma=[no-cache], Expires=[0], X-Frame-Options=[DENY], Location=[/]}
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = /
+          Cookies = []
+Hibernate: update t9801 set sccid=?, scdtlu=?, sctmlu=?, scuidm=?, scanum=?, scaprcd=?, scbuid=?, scmtoe=?, scmtoe2=?, scmtoe1=?, sctagid=?, scusc=?, scusg=?, scusl=? where scusi=?
+Hibernate: select user0_.scusi as scusi2_42_0_, user0_.sccid as sccid3_42_0_, user0_.scdtin as scdtin4_42_0_, user0_.sctmin as sctmin5_42_0_, user0_.scuid as scuid6_42_0_, user0_.scdtlu as scdtlu7_42_0_, user0_.sctmlu as sctmlu8_42_0_, user0_.scuidm as scuidm9_42_0_, user0_.scanum as scanum10_42_0_, user0_.scaprcd as scaprcd11_42_0_, user0_.scbuid as scbuid12_42_0_, user0_.scmtoe as scmtoe13_42_0_, user0_.scmtoe2 as scmtoe14_42_0_, user0_.scmtoe1 as scmtoe15_42_0_, user0_.sctagid as sctagid16_42_0_, user0_.scusc as scusc17_42_0_, user0_.scusg as scusg18_42_0_, user0_.scusl as scusl19_42_0_, user0_.scust as scust1_42_0_, usergroup1_.scusi as scusi2_42_1_, usergroup1_.sccid as sccid3_42_1_, usergroup1_.scdtin as scdtin4_42_1_, usergroup1_.sctmin as sctmin5_42_1_, usergroup1_.scuid as scuid6_42_1_, usergroup1_.scdtlu as scdtlu7_42_1_, usergroup1_.sctmlu as sctmlu8_42_1_, usergroup1_.scuidm as scuidm9_42_1_, usergroup1_.scanum as scanum10_42_1_, usergroup1_.scaprcd as scaprcd11_42_1_, usergroup1_.scbuid as scbuid12_42_1_, usergroup1_.scmtoe as scmtoe13_42_1_, usergroup1_.scmtoe2 as scmtoe14_42_1_, usergroup1_.scmtoe1 as scmtoe15_42_1_, usergroup1_.sctagid as sctagid16_42_1_, usergroup1_.scusc as scusc17_42_1_, usergroup1_.scusg as scusg18_42_1_, usergroup1_.scusl as scusl19_42_1_, usergroup1_.scust as scust1_42_1_ from t9801 user0_ left outer join t9801 usergroup1_ on user0_.scusg=usergroup1_.scusi where user0_.scusi=? and user0_.scust='U'
+Hibernate: select usergroup0_.scusi as scusi2_42_0_, usergroup0_.sccid as sccid3_42_0_, usergroup0_.scdtin as scdtin4_42_0_, usergroup0_.sctmin as sctmin5_42_0_, usergroup0_.scuid as scuid6_42_0_, usergroup0_.scdtlu as scdtlu7_42_0_, usergroup0_.sctmlu as sctmlu8_42_0_, usergroup0_.scuidm as scuidm9_42_0_, usergroup0_.scanum as scanum10_42_0_, usergroup0_.scaprcd as scaprcd11_42_0_, usergroup0_.scbuid as scbuid12_42_0_, usergroup0_.scmtoe as scmtoe13_42_0_, usergroup0_.scmtoe2 as scmtoe14_42_0_, usergroup0_.scmtoe1 as scmtoe15_42_0_, usergroup0_.sctagid as sctagid16_42_0_, usergroup0_.scusc as scusc17_42_0_, usergroup0_.scusg as scusg18_42_0_, usergroup0_.scusl as scusl19_42_0_, usergroup0_.scust as scust1_42_0_ from t9801 usergroup0_ where usergroup0_.scusi=? and usergroup0_.scust='G'
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /login
+       Parameters = {username=[QSA], password=[password], _csrf=[8560e617-69e4-4819-9a71-bb2334b2d2c0]}
+          Headers = {Accept=[application/x-www-form-urlencoded]}
+             Body = &lt;no character encoding set&gt;
+    Session Attrs = {SPRING_SECURITY_CONTEXT=org.springframework.security.core.context.SecurityContextImpl@fffe50e5: Authentication: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@fffe50e5: Principal: org.springframework.security.core.userdetails.User@13a5f: Username: QSA; Password: [PROTECTED]; Enabled: true; AccountNonExpired: true; credentialsNonExpired: true; AccountNonLocked: true; Not granted any authorities; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null; Not granted any authorities}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 302
+    Error message = null
+          Headers = {X-Content-Type-Options=[nosniff], X-XSS-Protection=[1; mode=block], Cache-Control=[no-cache, no-store, max-age=0, must-revalidate], Pragma=[no-cache], Expires=[0], X-Frame-Options=[DENY], Location=[/]}
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = /
+          Cookies = []
+2018-12-14 17:36:00.033  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@50687f75 testClass = UserApiTest, testInstance = ags.goldenlionerp.apiTests.system.UserApiTest@f024847, testMethod = updatePasswordTest@UserApiTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7c188c9 testClass = UserApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@43919f19 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+2018-12-14 17:36:00.049  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@50687f75 testClass = UserApiTest, testInstance = ags.goldenlionerp.apiTests.system.UserApiTest@5379a9a5, testMethod = updateTestWithPatch_HaveUserGroup@UserApiTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7c188c9 testClass = UserApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@43919f19 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:36:00.049  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:36:00.049  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:36:00.055  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 6 ms
+Hibernate: select user0_.scusi as scusi2_42_0_, user0_.sccid as sccid3_42_0_, user0_.scdtin as scdtin4_42_0_, user0_.sctmin as sctmin5_42_0_, user0_.scuid as scuid6_42_0_, user0_.scdtlu as scdtlu7_42_0_, user0_.sctmlu as sctmlu8_42_0_, user0_.scuidm as scuidm9_42_0_, user0_.scanum as scanum10_42_0_, user0_.scaprcd as scaprcd11_42_0_, user0_.scbuid as scbuid12_42_0_, user0_.scmtoe as scmtoe13_42_0_, user0_.scmtoe2 as scmtoe14_42_0_, user0_.scmtoe1 as scmtoe15_42_0_, user0_.sctagid as sctagid16_42_0_, user0_.scusc as scusc17_42_0_, user0_.scusg as scusg18_42_0_, user0_.scusl as scusl19_42_0_, user0_.scust as scust1_42_0_, usergroup1_.scusi as scusi2_42_1_, usergroup1_.sccid as sccid3_42_1_, usergroup1_.scdtin as scdtin4_42_1_, usergroup1_.sctmin as sctmin5_42_1_, usergroup1_.scuid as scuid6_42_1_, usergroup1_.scdtlu as scdtlu7_42_1_, usergroup1_.sctmlu as sctmlu8_42_1_, usergroup1_.scuidm as scuidm9_42_1_, usergroup1_.scanum as scanum10_42_1_, usergroup1_.scaprcd as scaprcd11_42_1_, usergroup1_.scbuid as scbuid12_42_1_, usergroup1_.scmtoe as scmtoe13_42_1_, usergroup1_.scmtoe2 as scmtoe14_42_1_, usergroup1_.scmtoe1 as scmtoe15_42_1_, usergroup1_.sctagid as sctagid16_42_1_, usergroup1_.scusc as scusc17_42_1_, usergroup1_.scusg as scusg18_42_1_, usergroup1_.scusl as scusl19_42_1_, usergroup1_.scust as scust1_42_1_ from t9801 user0_ left outer join t9801 usergroup1_ on user0_.scusg=usergroup1_.scusi where user0_.scusi=? and user0_.scust='U'
+Hibernate: update t9801 set sccid=?, scdtlu=?, sctmlu=?, scuidm=?, scanum=?, scaprcd=?, scbuid=?, scmtoe=?, scmtoe2=?, scmtoe1=?, sctagid=?, scusc=?, scusg=?, scusl=? where scusi=?
+Hibernate: select user0_.scusi as scusi2_42_0_, user0_.sccid as sccid3_42_0_, user0_.scdtin as scdtin4_42_0_, user0_.sctmin as sctmin5_42_0_, user0_.scuid as scuid6_42_0_, user0_.scdtlu as scdtlu7_42_0_, user0_.sctmlu as sctmlu8_42_0_, user0_.scuidm as scuidm9_42_0_, user0_.scanum as scanum10_42_0_, user0_.scaprcd as scaprcd11_42_0_, user0_.scbuid as scbuid12_42_0_, user0_.scmtoe as scmtoe13_42_0_, user0_.scmtoe2 as scmtoe14_42_0_, user0_.scmtoe1 as scmtoe15_42_0_, user0_.sctagid as sctagid16_42_0_, user0_.scusc as scusc17_42_0_, user0_.scusg as scusg18_42_0_, user0_.scusl as scusl19_42_0_, user0_.scust as scust1_42_0_, usergroup1_.scusi as scusi2_42_1_, usergroup1_.sccid as sccid3_42_1_, usergroup1_.scdtin as scdtin4_42_1_, usergroup1_.sctmin as sctmin5_42_1_, usergroup1_.scuid as scuid6_42_1_, usergroup1_.scdtlu as scdtlu7_42_1_, usergroup1_.sctmlu as sctmlu8_42_1_, usergroup1_.scuidm as scuidm9_42_1_, usergroup1_.scanum as scanum10_42_1_, usergroup1_.scaprcd as scaprcd11_42_1_, usergroup1_.scbuid as scbuid12_42_1_, usergroup1_.scmtoe as scmtoe13_42_1_, usergroup1_.scmtoe2 as scmtoe14_42_1_, usergroup1_.scmtoe1 as scmtoe15_42_1_, usergroup1_.sctagid as sctagid16_42_1_, usergroup1_.scusc as scusc17_42_1_, usergroup1_.scusg as scusg18_42_1_, usergroup1_.scusl as scusl19_42_1_, usergroup1_.scust as scust1_42_1_ from t9801 user0_ left outer join t9801 usergroup1_ on user0_.scusg=usergroup1_.scusi where user0_.scusi=? and user0_.scust='U'
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /login
+       Parameters = {username=[SALES], password=[], _csrf=[708f8ecd-7e2a-4a5c-b1ce-18bfe091c9c0]}
+          Headers = {Accept=[application/x-www-form-urlencoded]}
+             Body = &lt;no character encoding set&gt;
+    Session Attrs = {SPRING_SECURITY_CONTEXT=org.springframework.security.core.context.SecurityContextImpl@fb4f3a56: Authentication: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@fb4f3a56: Principal: org.springframework.security.core.userdetails.User@4b050ec: Username: SALES; Password: [PROTECTED]; Enabled: true; AccountNonExpired: true; credentialsNonExpired: true; AccountNonLocked: true; Not granted any authorities; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null; Not granted any authorities}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 302
+    Error message = null
+          Headers = {X-Content-Type-Options=[nosniff], X-XSS-Protection=[1; mode=block], Cache-Control=[no-cache, no-store, max-age=0, must-revalidate], Pragma=[no-cache], Expires=[0], X-Frame-Options=[DENY], Location=[/]}
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = /
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /login
+       Parameters = {username=[SALES], password=[password], _csrf=[9cf52602-4b52-4622-ac23-d8d756d96d6b]}
+          Headers = {Accept=[application/x-www-form-urlencoded]}
+             Body = &lt;no character encoding set&gt;
+    Session Attrs = {SPRING_SECURITY_LAST_EXCEPTION=org.springframework.security.authentication.BadCredentialsException: Bad credentials}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 302
+    Error message = null
+          Headers = {X-Content-Type-Options=[nosniff], X-XSS-Protection=[1; mode=block], Cache-Control=[no-cache, no-store, max-age=0, must-revalidate], Pragma=[no-cache], Expires=[0], X-Frame-Options=[DENY], Location=[/login?error]}
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = /login?error
+          Cookies = []
+2018-12-14 17:36:00.079  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@50687f75 testClass = UserApiTest, testInstance = ags.goldenlionerp.apiTests.system.UserApiTest@5379a9a5, testMethod = updateTestWithPatch_HaveUserGroup@UserApiTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7c188c9 testClass = UserApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@43919f19 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+2018-12-14 17:36:00.079  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@50687f75 testClass = UserApiTest, testInstance = ags.goldenlionerp.apiTests.system.UserApiTest@31389c12, testMethod = updatePasswordTestFail@UserApiTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7c188c9 testClass = UserApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@43919f19 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:36:00.079  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:36:00.079  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:36:00.094  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 15 ms
+Hibernate: select user0_.scusi as scusi2_42_0_, user0_.sccid as sccid3_42_0_, user0_.scdtin as scdtin4_42_0_, user0_.sctmin as sctmin5_42_0_, user0_.scuid as scuid6_42_0_, user0_.scdtlu as scdtlu7_42_0_, user0_.sctmlu as sctmlu8_42_0_, user0_.scuidm as scuidm9_42_0_, user0_.scanum as scanum10_42_0_, user0_.scaprcd as scaprcd11_42_0_, user0_.scbuid as scbuid12_42_0_, user0_.scmtoe as scmtoe13_42_0_, user0_.scmtoe2 as scmtoe14_42_0_, user0_.scmtoe1 as scmtoe15_42_0_, user0_.sctagid as sctagid16_42_0_, user0_.scusc as scusc17_42_0_, user0_.scusg as scusg18_42_0_, user0_.scusl as scusl19_42_0_, user0_.scust as scust1_42_0_, usergroup1_.scusi as scusi2_42_1_, usergroup1_.sccid as sccid3_42_1_, usergroup1_.scdtin as scdtin4_42_1_, usergroup1_.sctmin as sctmin5_42_1_, usergroup1_.scuid as scuid6_42_1_, usergroup1_.scdtlu as scdtlu7_42_1_, usergroup1_.sctmlu as sctmlu8_42_1_, usergroup1_.scuidm as scuidm9_42_1_, usergroup1_.scanum as scanum10_42_1_, usergroup1_.scaprcd as scaprcd11_42_1_, usergroup1_.scbuid as scbuid12_42_1_, usergroup1_.scmtoe as scmtoe13_42_1_, usergroup1_.scmtoe2 as scmtoe14_42_1_, usergroup1_.scmtoe1 as scmtoe15_42_1_, usergroup1_.sctagid as sctagid16_42_1_, usergroup1_.scusc as scusc17_42_1_, usergroup1_.scusg as scusg18_42_1_, usergroup1_.scusl as scusl19_42_1_, usergroup1_.scust as scust1_42_1_ from t9801 user0_ left outer join t9801 usergroup1_ on user0_.scusg=usergroup1_.scusi where user0_.scusi=? and user0_.scust='U'
+Hibernate: select usergroup0_.scusi as scusi2_42_0_, usergroup0_.sccid as sccid3_42_0_, usergroup0_.scdtin as scdtin4_42_0_, usergroup0_.sctmin as sctmin5_42_0_, usergroup0_.scuid as scuid6_42_0_, usergroup0_.scdtlu as scdtlu7_42_0_, usergroup0_.sctmlu as sctmlu8_42_0_, usergroup0_.scuidm as scuidm9_42_0_, usergroup0_.scanum as scanum10_42_0_, usergroup0_.scaprcd as scaprcd11_42_0_, usergroup0_.scbuid as scbuid12_42_0_, usergroup0_.scmtoe as scmtoe13_42_0_, usergroup0_.scmtoe2 as scmtoe14_42_0_, usergroup0_.scmtoe1 as scmtoe15_42_0_, usergroup0_.sctagid as sctagid16_42_0_, usergroup0_.scusc as scusc17_42_0_, usergroup0_.scusg as scusg18_42_0_, usergroup0_.scusl as scusl19_42_0_, usergroup0_.scust as scust1_42_0_ from t9801 usergroup0_ where usergroup0_.scusi=? and usergroup0_.scust='G'
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /login
+       Parameters = {username=[QSA], password=[], _csrf=[80702646-5755-4cb9-bda6-553a3db9b5f2]}
+          Headers = {Accept=[application/x-www-form-urlencoded]}
+             Body = &lt;no character encoding set&gt;
+    Session Attrs = {SPRING_SECURITY_CONTEXT=org.springframework.security.core.context.SecurityContextImpl@fffe50e5: Authentication: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@fffe50e5: Principal: org.springframework.security.core.userdetails.User@13a5f: Username: QSA; Password: [PROTECTED]; Enabled: true; AccountNonExpired: true; credentialsNonExpired: true; AccountNonLocked: true; Not granted any authorities; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null; Not granted any authorities}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 302
+    Error message = null
+          Headers = {X-Content-Type-Options=[nosniff], X-XSS-Protection=[1; mode=block], Cache-Control=[no-cache, no-store, max-age=0, must-revalidate], Pragma=[no-cache], Expires=[0], X-Frame-Options=[DENY], Location=[/]}
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = /
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /login
+       Parameters = {username=[QSA], password=[invalidPassword], _csrf=[6f3169a8-eb4a-45e0-b63a-f8a5ff799fde]}
+          Headers = {Accept=[application/x-www-form-urlencoded]}
+             Body = &lt;no character encoding set&gt;
+    Session Attrs = {SPRING_SECURITY_LAST_EXCEPTION=org.springframework.security.authentication.BadCredentialsException: Bad credentials}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 302
+    Error message = null
+          Headers = {X-Content-Type-Options=[nosniff], X-XSS-Protection=[1; mode=block], Cache-Control=[no-cache, no-store, max-age=0, must-revalidate], Pragma=[no-cache], Expires=[0], X-Frame-Options=[DENY], Location=[/login?error]}
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = /login?error
+          Cookies = []
+2018-12-14 17:36:00.094  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@50687f75 testClass = UserApiTest, testInstance = ags.goldenlionerp.apiTests.system.UserApiTest@31389c12, testMethod = updatePasswordTestFail@UserApiTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7c188c9 testClass = UserApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@43919f19 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+2018-12-14 17:36:00.110  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@50687f75 testClass = UserApiTest, testInstance = ags.goldenlionerp.apiTests.system.UserApiTest@158d4358, testMethod = createTestWithPost_NoPasswordConfirm@UserApiTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7c188c9 testClass = UserApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@43919f19 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:36:00.110  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:36:00.110  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:36:00.110  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+Hibernate: select user0_.scusi as scusi2_42_0_, user0_.sccid as sccid3_42_0_, user0_.scdtin as scdtin4_42_0_, user0_.sctmin as sctmin5_42_0_, user0_.scuid as scuid6_42_0_, user0_.scdtlu as scdtlu7_42_0_, user0_.sctmlu as sctmlu8_42_0_, user0_.scuidm as scuidm9_42_0_, user0_.scanum as scanum10_42_0_, user0_.scaprcd as scaprcd11_42_0_, user0_.scbuid as scbuid12_42_0_, user0_.scmtoe as scmtoe13_42_0_, user0_.scmtoe2 as scmtoe14_42_0_, user0_.scmtoe1 as scmtoe15_42_0_, user0_.sctagid as sctagid16_42_0_, user0_.scusc as scusc17_42_0_, user0_.scusg as scusg18_42_0_, user0_.scusl as scusl19_42_0_, user0_.scust as scust1_42_0_, usergroup1_.scusi as scusi2_42_1_, usergroup1_.sccid as sccid3_42_1_, usergroup1_.scdtin as scdtin4_42_1_, usergroup1_.sctmin as sctmin5_42_1_, usergroup1_.scuid as scuid6_42_1_, usergroup1_.scdtlu as scdtlu7_42_1_, usergroup1_.sctmlu as sctmlu8_42_1_, usergroup1_.scuidm as scuidm9_42_1_, usergroup1_.scanum as scanum10_42_1_, usergroup1_.scaprcd as scaprcd11_42_1_, usergroup1_.scbuid as scbuid12_42_1_, usergroup1_.scmtoe as scmtoe13_42_1_, usergroup1_.scmtoe2 as scmtoe14_42_1_, usergroup1_.scmtoe1 as scmtoe15_42_1_, usergroup1_.sctagid as sctagid16_42_1_, usergroup1_.scusc as scusc17_42_1_, usergroup1_.scusg as scusg18_42_1_, usergroup1_.scusl as scusl19_42_1_, usergroup1_.scust as scust1_42_1_ from t9801 user0_ left outer join t9801 usergroup1_ on user0_.scusg=usergroup1_.scusi where user0_.scusi=? and user0_.scust='U'
+Hibernate: select count(*) as col_0_0_ from t9801 user0_ where user0_.scust='U' and user0_.scusi=?
+2018-12-14 17:36:00.126  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@50687f75 testClass = UserApiTest, testInstance = ags.goldenlionerp.apiTests.system.UserApiTest@158d4358, testMethod = createTestWithPost_NoPasswordConfirm@UserApiTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7c188c9 testClass = UserApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@43919f19 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+2018-12-14 17:36:00.126  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@50687f75 testClass = UserApiTest, testInstance = ags.goldenlionerp.apiTests.system.UserApiTest@550ee636, testMethod = updateTestWithPatch@UserApiTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7c188c9 testClass = UserApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@43919f19 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:36:00.126  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:36:00.126  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:36:00.126  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+Hibernate: select user0_.scusi as scusi2_42_0_, user0_.sccid as sccid3_42_0_, user0_.scdtin as scdtin4_42_0_, user0_.sctmin as sctmin5_42_0_, user0_.scuid as scuid6_42_0_, user0_.scdtlu as scdtlu7_42_0_, user0_.sctmlu as sctmlu8_42_0_, user0_.scuidm as scuidm9_42_0_, user0_.scanum as scanum10_42_0_, user0_.scaprcd as scaprcd11_42_0_, user0_.scbuid as scbuid12_42_0_, user0_.scmtoe as scmtoe13_42_0_, user0_.scmtoe2 as scmtoe14_42_0_, user0_.scmtoe1 as scmtoe15_42_0_, user0_.sctagid as sctagid16_42_0_, user0_.scusc as scusc17_42_0_, user0_.scusg as scusg18_42_0_, user0_.scusl as scusl19_42_0_, user0_.scust as scust1_42_0_, usergroup1_.scusi as scusi2_42_1_, usergroup1_.sccid as sccid3_42_1_, usergroup1_.scdtin as scdtin4_42_1_, usergroup1_.sctmin as sctmin5_42_1_, usergroup1_.scuid as scuid6_42_1_, usergroup1_.scdtlu as scdtlu7_42_1_, usergroup1_.sctmlu as sctmlu8_42_1_, usergroup1_.scuidm as scuidm9_42_1_, usergroup1_.scanum as scanum10_42_1_, usergroup1_.scaprcd as scaprcd11_42_1_, usergroup1_.scbuid as scbuid12_42_1_, usergroup1_.scmtoe as scmtoe13_42_1_, usergroup1_.scmtoe2 as scmtoe14_42_1_, usergroup1_.scmtoe1 as scmtoe15_42_1_, usergroup1_.sctagid as sctagid16_42_1_, usergroup1_.scusc as scusc17_42_1_, usergroup1_.scusg as scusg18_42_1_, usergroup1_.scusl as scusl19_42_1_, usergroup1_.scust as scust1_42_1_ from t9801 user0_ left outer join t9801 usergroup1_ on user0_.scusg=usergroup1_.scusi where user0_.scusi=? and user0_.scust='U'
+Hibernate: select usergroup0_.scusi as scusi2_42_0_, usergroup0_.sccid as sccid3_42_0_, usergroup0_.scdtin as scdtin4_42_0_, usergroup0_.sctmin as sctmin5_42_0_, usergroup0_.scuid as scuid6_42_0_, usergroup0_.scdtlu as scdtlu7_42_0_, usergroup0_.sctmlu as sctmlu8_42_0_, usergroup0_.scuidm as scuidm9_42_0_, usergroup0_.scanum as scanum10_42_0_, usergroup0_.scaprcd as scaprcd11_42_0_, usergroup0_.scbuid as scbuid12_42_0_, usergroup0_.scmtoe as scmtoe13_42_0_, usergroup0_.scmtoe2 as scmtoe14_42_0_, usergroup0_.scmtoe1 as scmtoe15_42_0_, usergroup0_.sctagid as sctagid16_42_0_, usergroup0_.scusc as scusc17_42_0_, usergroup0_.scusg as scusg18_42_0_, usergroup0_.scusl as scusl19_42_0_, usergroup0_.scust as scust1_42_0_ from t9801 usergroup0_ where usergroup0_.scusi=? and usergroup0_.scust='G'
+Hibernate: update t9801 set sccid=?, scdtlu=?, sctmlu=?, scuidm=?, scanum=?, scaprcd=?, scbuid=?, scmtoe=?, scmtoe2=?, scmtoe1=?, sctagid=?, scusc=?, scusg=?, scusl=? where scusi=?
+Hibernate: select user0_.scusi as scusi2_42_0_, user0_.sccid as sccid3_42_0_, user0_.scdtin as scdtin4_42_0_, user0_.sctmin as sctmin5_42_0_, user0_.scuid as scuid6_42_0_, user0_.scdtlu as scdtlu7_42_0_, user0_.sctmlu as sctmlu8_42_0_, user0_.scuidm as scuidm9_42_0_, user0_.scanum as scanum10_42_0_, user0_.scaprcd as scaprcd11_42_0_, user0_.scbuid as scbuid12_42_0_, user0_.scmtoe as scmtoe13_42_0_, user0_.scmtoe2 as scmtoe14_42_0_, user0_.scmtoe1 as scmtoe15_42_0_, user0_.sctagid as sctagid16_42_0_, user0_.scusc as scusc17_42_0_, user0_.scusg as scusg18_42_0_, user0_.scusl as scusl19_42_0_, user0_.scust as scust1_42_0_, usergroup1_.scusi as scusi2_42_1_, usergroup1_.sccid as sccid3_42_1_, usergroup1_.scdtin as scdtin4_42_1_, usergroup1_.sctmin as sctmin5_42_1_, usergroup1_.scuid as scuid6_42_1_, usergroup1_.scdtlu as scdtlu7_42_1_, usergroup1_.sctmlu as sctmlu8_42_1_, usergroup1_.scuidm as scuidm9_42_1_, usergroup1_.scanum as scanum10_42_1_, usergroup1_.scaprcd as scaprcd11_42_1_, usergroup1_.scbuid as scbuid12_42_1_, usergroup1_.scmtoe as scmtoe13_42_1_, usergroup1_.scmtoe2 as scmtoe14_42_1_, usergroup1_.scmtoe1 as scmtoe15_42_1_, usergroup1_.sctagid as sctagid16_42_1_, usergroup1_.scusc as scusc17_42_1_, usergroup1_.scusg as scusg18_42_1_, usergroup1_.scusl as scusl19_42_1_, usergroup1_.scust as scust1_42_1_ from t9801 user0_ left outer join t9801 usergroup1_ on user0_.scusg=usergroup1_.scusi where user0_.scusi=? and user0_.scust='U'
+Hibernate: select usergroup0_.scusi as scusi2_42_0_, usergroup0_.sccid as sccid3_42_0_, usergroup0_.scdtin as scdtin4_42_0_, usergroup0_.sctmin as sctmin5_42_0_, usergroup0_.scuid as scuid6_42_0_, usergroup0_.scdtlu as scdtlu7_42_0_, usergroup0_.sctmlu as sctmlu8_42_0_, usergroup0_.scuidm as scuidm9_42_0_, usergroup0_.scanum as scanum10_42_0_, usergroup0_.scaprcd as scaprcd11_42_0_, usergroup0_.scbuid as scbuid12_42_0_, usergroup0_.scmtoe as scmtoe13_42_0_, usergroup0_.scmtoe2 as scmtoe14_42_0_, usergroup0_.scmtoe1 as scmtoe15_42_0_, usergroup0_.sctagid as sctagid16_42_0_, usergroup0_.scusc as scusc17_42_0_, usergroup0_.scusg as scusg18_42_0_, usergroup0_.scusl as scusl19_42_0_, usergroup0_.scust as scust1_42_0_ from t9801 usergroup0_ where usergroup0_.scusi=? and usergroup0_.scust='G'
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /login
+       Parameters = {username=[QSA], password=[], _csrf=[3eccecf8-81be-4d8d-890f-3645f669306d]}
+          Headers = {Accept=[application/x-www-form-urlencoded]}
+             Body = &lt;no character encoding set&gt;
+    Session Attrs = {SPRING_SECURITY_CONTEXT=org.springframework.security.core.context.SecurityContextImpl@fffe50e5: Authentication: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@fffe50e5: Principal: org.springframework.security.core.userdetails.User@13a5f: Username: QSA; Password: [PROTECTED]; Enabled: true; AccountNonExpired: true; credentialsNonExpired: true; AccountNonLocked: true; Not granted any authorities; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null; Not granted any authorities}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 302
+    Error message = null
+          Headers = {X-Content-Type-Options=[nosniff], X-XSS-Protection=[1; mode=block], Cache-Control=[no-cache, no-store, max-age=0, must-revalidate], Pragma=[no-cache], Expires=[0], X-Frame-Options=[DENY], Location=[/]}
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = /
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /login
+       Parameters = {username=[QSA], password=[password], _csrf=[8d62cd02-19f3-4af5-acb0-94a25e92bb88]}
+          Headers = {Accept=[application/x-www-form-urlencoded]}
+             Body = &lt;no character encoding set&gt;
+    Session Attrs = {SPRING_SECURITY_LAST_EXCEPTION=org.springframework.security.authentication.BadCredentialsException: Bad credentials}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 302
+    Error message = null
+          Headers = {X-Content-Type-Options=[nosniff], X-XSS-Protection=[1; mode=block], Cache-Control=[no-cache, no-store, max-age=0, must-revalidate], Pragma=[no-cache], Expires=[0], X-Frame-Options=[DENY], Location=[/login?error]}
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = /login?error
+          Cookies = []
+2018-12-14 17:36:00.141  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@50687f75 testClass = UserApiTest, testInstance = ags.goldenlionerp.apiTests.system.UserApiTest@550ee636, testMethod = updateTestWithPatch@UserApiTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7c188c9 testClass = UserApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@43919f19 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+2018-12-14 17:36:00.157  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@50687f75 testClass = UserApiTest, testInstance = ags.goldenlionerp.apiTests.system.UserApiTest@1fb723d8, testMethod = createTestWithPost@UserApiTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7c188c9 testClass = UserApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@43919f19 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:36:00.157  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:36:00.157  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:36:00.173  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 16 ms
+Hibernate: select user0_.scusi as scusi2_42_0_, user0_.sccid as sccid3_42_0_, user0_.scdtin as scdtin4_42_0_, user0_.sctmin as sctmin5_42_0_, user0_.scuid as scuid6_42_0_, user0_.scdtlu as scdtlu7_42_0_, user0_.sctmlu as sctmlu8_42_0_, user0_.scuidm as scuidm9_42_0_, user0_.scanum as scanum10_42_0_, user0_.scaprcd as scaprcd11_42_0_, user0_.scbuid as scbuid12_42_0_, user0_.scmtoe as scmtoe13_42_0_, user0_.scmtoe2 as scmtoe14_42_0_, user0_.scmtoe1 as scmtoe15_42_0_, user0_.sctagid as sctagid16_42_0_, user0_.scusc as scusc17_42_0_, user0_.scusg as scusg18_42_0_, user0_.scusl as scusl19_42_0_, user0_.scust as scust1_42_0_, usergroup1_.scusi as scusi2_42_1_, usergroup1_.sccid as sccid3_42_1_, usergroup1_.scdtin as scdtin4_42_1_, usergroup1_.sctmin as sctmin5_42_1_, usergroup1_.scuid as scuid6_42_1_, usergroup1_.scdtlu as scdtlu7_42_1_, usergroup1_.sctmlu as sctmlu8_42_1_, usergroup1_.scuidm as scuidm9_42_1_, usergroup1_.scanum as scanum10_42_1_, usergroup1_.scaprcd as scaprcd11_42_1_, usergroup1_.scbuid as scbuid12_42_1_, usergroup1_.scmtoe as scmtoe13_42_1_, usergroup1_.scmtoe2 as scmtoe14_42_1_, usergroup1_.scmtoe1 as scmtoe15_42_1_, usergroup1_.sctagid as sctagid16_42_1_, usergroup1_.scusc as scusc17_42_1_, usergroup1_.scusg as scusg18_42_1_, usergroup1_.scusl as scusl19_42_1_, usergroup1_.scust as scust1_42_1_ from t9801 user0_ left outer join t9801 usergroup1_ on user0_.scusg=usergroup1_.scusi where user0_.scusi=? and user0_.scust='U'
+Hibernate: select count(*) as col_0_0_ from t9801 user0_ where user0_.scust='U' and user0_.scusi=?
+Hibernate: select user0_.scusi as scusi2_42_0_, user0_.sccid as sccid3_42_0_, user0_.scdtin as scdtin4_42_0_, user0_.sctmin as sctmin5_42_0_, user0_.scuid as scuid6_42_0_, user0_.scdtlu as scdtlu7_42_0_, user0_.sctmlu as sctmlu8_42_0_, user0_.scuidm as scuidm9_42_0_, user0_.scanum as scanum10_42_0_, user0_.scaprcd as scaprcd11_42_0_, user0_.scbuid as scbuid12_42_0_, user0_.scmtoe as scmtoe13_42_0_, user0_.scmtoe2 as scmtoe14_42_0_, user0_.scmtoe1 as scmtoe15_42_0_, user0_.sctagid as sctagid16_42_0_, user0_.scusc as scusc17_42_0_, user0_.scusg as scusg18_42_0_, user0_.scusl as scusl19_42_0_, user0_.scust as scust1_42_0_ from t9801 user0_ where user0_.scusi=? and user0_.scust='U'
+Hibernate: insert into t9801 (sccid, scdtin, sctmin, scuid, scdtlu, sctmlu, scuidm, scanum, scaprcd, scbuid, scmtoe, scmtoe2, scmtoe1, sctagid, scusc, scusg, scusl, scust, scusi) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'U', ?)
+Hibernate: select user0_.scusi as scusi2_42_0_, user0_.sccid as sccid3_42_0_, user0_.scdtin as scdtin4_42_0_, user0_.sctmin as sctmin5_42_0_, user0_.scuid as scuid6_42_0_, user0_.scdtlu as scdtlu7_42_0_, user0_.sctmlu as sctmlu8_42_0_, user0_.scuidm as scuidm9_42_0_, user0_.scanum as scanum10_42_0_, user0_.scaprcd as scaprcd11_42_0_, user0_.scbuid as scbuid12_42_0_, user0_.scmtoe as scmtoe13_42_0_, user0_.scmtoe2 as scmtoe14_42_0_, user0_.scmtoe1 as scmtoe15_42_0_, user0_.sctagid as sctagid16_42_0_, user0_.scusc as scusc17_42_0_, user0_.scusg as scusg18_42_0_, user0_.scusl as scusl19_42_0_, user0_.scust as scust1_42_0_, usergroup1_.scusi as scusi2_42_1_, usergroup1_.sccid as sccid3_42_1_, usergroup1_.scdtin as scdtin4_42_1_, usergroup1_.sctmin as sctmin5_42_1_, usergroup1_.scuid as scuid6_42_1_, usergroup1_.scdtlu as scdtlu7_42_1_, usergroup1_.sctmlu as sctmlu8_42_1_, usergroup1_.scuidm as scuidm9_42_1_, usergroup1_.scanum as scanum10_42_1_, usergroup1_.scaprcd as scaprcd11_42_1_, usergroup1_.scbuid as scbuid12_42_1_, usergroup1_.scmtoe as scmtoe13_42_1_, usergroup1_.scmtoe2 as scmtoe14_42_1_, usergroup1_.scmtoe1 as scmtoe15_42_1_, usergroup1_.sctagid as sctagid16_42_1_, usergroup1_.scusc as scusc17_42_1_, usergroup1_.scusg as scusg18_42_1_, usergroup1_.scusl as scusl19_42_1_, usergroup1_.scust as scust1_42_1_ from t9801 user0_ left outer join t9801 usergroup1_ on user0_.scusg=usergroup1_.scusi where user0_.scusi=? and user0_.scust='U'
+Hibernate: select usergroup0_.scusi as scusi2_42_0_, usergroup0_.sccid as sccid3_42_0_, usergroup0_.scdtin as scdtin4_42_0_, usergroup0_.sctmin as sctmin5_42_0_, usergroup0_.scuid as scuid6_42_0_, usergroup0_.scdtlu as scdtlu7_42_0_, usergroup0_.sctmlu as sctmlu8_42_0_, usergroup0_.scuidm as scuidm9_42_0_, usergroup0_.scanum as scanum10_42_0_, usergroup0_.scaprcd as scaprcd11_42_0_, usergroup0_.scbuid as scbuid12_42_0_, usergroup0_.scmtoe as scmtoe13_42_0_, usergroup0_.scmtoe2 as scmtoe14_42_0_, usergroup0_.scmtoe1 as scmtoe15_42_0_, usergroup0_.sctagid as sctagid16_42_0_, usergroup0_.scusc as scusc17_42_0_, usergroup0_.scusg as scusg18_42_0_, usergroup0_.scusl as scusl19_42_0_, usergroup0_.scust as scust1_42_0_ from t9801 usergroup0_ where usergroup0_.scusi=? and usergroup0_.scust='G'
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/users/SALMON
+       Parameters = {}
+          Headers = {Accept=[application/json]}
+             Body = &lt;no character encoding set&gt;
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@20a5a70b, SPRING_SECURITY_CONTEXT=org.springframework.security.core.context.SecurityContextImpl@475fcd89: Authentication: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@475fcd89: Principal: org.springframework.security.core.userdetails.User@f02988d6: Username: username; Password: [PROTECTED]; Enabled: true; AccountNonExpired: true; credentialsNonExpired: true; AccountNonLocked: true; Not granted any authorities; Credentials: [PROTECTED]; Authenticated: true; Details: null; Not granted any authorities}
+
+Handler:
+             Type = org.springframework.data.rest.webmvc.RepositoryEntityController
+           Method = public org.springframework.http.ResponseEntity&lt;org.springframework.hateoas.Resource&lt;?&gt;&gt; org.springframework.data.rest.webmvc.RepositoryEntityController.getItemResource(org.springframework.data.rest.webmvc.RootResourceInformation,java.io.Serializable,org.springframework.data.rest.webmvc.PersistentEntityResourceAssembler,org.springframework.http.HttpHeaders) throws org.springframework.web.HttpRequestMethodNotSupportedException
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Type=[application/json;charset=UTF-8], X-Content-Type-Options=[nosniff], X-XSS-Protection=[1; mode=block], Cache-Control=[no-cache, no-store, max-age=0, must-revalidate], Pragma=[no-cache], Expires=[0], X-Frame-Options=[DENY]}
+     Content type = application/json;charset=UTF-8
+             Body = {
+  &quot;inputUserId&quot; : &quot;username&quot;,
+  &quot;lastUpdateUserId&quot; : &quot;username&quot;,
+  &quot;computerId&quot; : &quot;username&quot;,
+  &quot;userSecurityId&quot; : &quot;SALMON&quot;,
+  &quot;userSecurityLevel&quot; : 5,
+  &quot;userSecurityGroupId&quot; : &quot;&quot;,
+  &quot;userSecurityType&quot; : &quot;U&quot;,
+  &quot;addressNumber&quot; : &quot;&quot;,
+  &quot;menuToExecuteBOS&quot; : &quot;MH10&quot;,
+  &quot;menuToExecutePOS&quot; : &quot;&quot;,
+  &quot;menuToExecuteHOS&quot; : &quot;&quot;,
+  &quot;tagId&quot; : &quot;&quot;,
+  &quot;approvalRouteCode&quot; : &quot;&quot;,
+  &quot;businessUnitId&quot; : &quot;110&quot;,
+  &quot;lastUpdateDateTime&quot; : &quot;2018-12-14T17:36:00&quot;,
+  &quot;inputDateTime&quot; : &quot;2018-12-14T17:36:00&quot;,
+  &quot;_links&quot; : {
+    &quot;self&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/users/SALMON&quot;
+    },
+    &quot;user&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/users/SALMON&quot;
+    },
+    &quot;password&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/users/SALMON/password&quot;
+    },
+    &quot;userSecurityGroup&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/users/SALMON/userSecurityGroup&quot;
+    }
+  }
+}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /login
+       Parameters = {username=[SALMON], password=[password], _csrf=[6290be64-b859-4b95-8a8b-5b41be07bce2]}
+          Headers = {Accept=[application/x-www-form-urlencoded]}
+             Body = &lt;no character encoding set&gt;
+    Session Attrs = {SPRING_SECURITY_CONTEXT=org.springframework.security.core.context.SecurityContextImpl@6ea680d4: Authentication: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@6ea680d4: Principal: org.springframework.security.core.userdetails.User@9159ea6e: Username: SALMON; Password: [PROTECTED]; Enabled: true; AccountNonExpired: true; credentialsNonExpired: true; AccountNonLocked: true; Not granted any authorities; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null; Not granted any authorities}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 302
+    Error message = null
+          Headers = {X-Content-Type-Options=[nosniff], X-XSS-Protection=[1; mode=block], Cache-Control=[no-cache, no-store, max-age=0, must-revalidate], Pragma=[no-cache], Expires=[0], X-Frame-Options=[DENY], Location=[/]}
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = /
+          Cookies = []
+2018-12-14 17:36:00.219  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@50687f75 testClass = UserApiTest, testInstance = ags.goldenlionerp.apiTests.system.UserApiTest@1fb723d8, testMethod = createTestWithPost@UserApiTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7c188c9 testClass = UserApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@43919f19 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+2018-12-14 17:36:00.235  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@50687f75 testClass = UserApiTest, testInstance = ags.goldenlionerp.apiTests.system.UserApiTest@474cd567, testMethod = updateTestWithPut@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7c188c9 testClass = UserApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@43919f19 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:36:00.235  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:36:00.235  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:36:00.235  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+Hibernate: select user0_.scusi as scusi2_42_0_, user0_.sccid as sccid3_42_0_, user0_.scdtin as scdtin4_42_0_, user0_.sctmin as sctmin5_42_0_, user0_.scuid as scuid6_42_0_, user0_.scdtlu as scdtlu7_42_0_, user0_.sctmlu as sctmlu8_42_0_, user0_.scuidm as scuidm9_42_0_, user0_.scanum as scanum10_42_0_, user0_.scaprcd as scaprcd11_42_0_, user0_.scbuid as scbuid12_42_0_, user0_.scmtoe as scmtoe13_42_0_, user0_.scmtoe2 as scmtoe14_42_0_, user0_.scmtoe1 as scmtoe15_42_0_, user0_.sctagid as sctagid16_42_0_, user0_.scusc as scusc17_42_0_, user0_.scusg as scusg18_42_0_, user0_.scusl as scusl19_42_0_, user0_.scust as scust1_42_0_, usergroup1_.scusi as scusi2_42_1_, usergroup1_.sccid as sccid3_42_1_, usergroup1_.scdtin as scdtin4_42_1_, usergroup1_.sctmin as sctmin5_42_1_, usergroup1_.scuid as scuid6_42_1_, usergroup1_.scdtlu as scdtlu7_42_1_, usergroup1_.sctmlu as sctmlu8_42_1_, usergroup1_.scuidm as scuidm9_42_1_, usergroup1_.scanum as scanum10_42_1_, usergroup1_.scaprcd as scaprcd11_42_1_, usergroup1_.scbuid as scbuid12_42_1_, usergroup1_.scmtoe as scmtoe13_42_1_, usergroup1_.scmtoe2 as scmtoe14_42_1_, usergroup1_.scmtoe1 as scmtoe15_42_1_, usergroup1_.sctagid as sctagid16_42_1_, usergroup1_.scusc as scusc17_42_1_, usergroup1_.scusg as scusg18_42_1_, usergroup1_.scusl as scusl19_42_1_, usergroup1_.scust as scust1_42_1_ from t9801 user0_ left outer join t9801 usergroup1_ on user0_.scusg=usergroup1_.scusi where user0_.scusi=? and user0_.scust='U'
+Hibernate: select usergroup0_.scusi as scusi2_42_0_, usergroup0_.sccid as sccid3_42_0_, usergroup0_.scdtin as scdtin4_42_0_, usergroup0_.sctmin as sctmin5_42_0_, usergroup0_.scuid as scuid6_42_0_, usergroup0_.scdtlu as scdtlu7_42_0_, usergroup0_.sctmlu as sctmlu8_42_0_, usergroup0_.scuidm as scuidm9_42_0_, usergroup0_.scanum as scanum10_42_0_, usergroup0_.scaprcd as scaprcd11_42_0_, usergroup0_.scbuid as scbuid12_42_0_, usergroup0_.scmtoe as scmtoe13_42_0_, usergroup0_.scmtoe2 as scmtoe14_42_0_, usergroup0_.scmtoe1 as scmtoe15_42_0_, usergroup0_.sctagid as sctagid16_42_0_, usergroup0_.scusc as scusc17_42_0_, usergroup0_.scusg as scusg18_42_0_, usergroup0_.scusl as scusl19_42_0_, usergroup0_.scust as scust1_42_0_ from t9801 usergroup0_ where usergroup0_.scusi=? and usergroup0_.scust='G'
+2018-12-14 17:36:00.251  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@50687f75 testClass = UserApiTest, testInstance = ags.goldenlionerp.apiTests.system.UserApiTest@474cd567, testMethod = updateTestWithPut@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7c188c9 testClass = UserApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@43919f19 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+2018-12-14 17:36:00.251  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@50687f75 testClass = UserApiTest, testInstance = ags.goldenlionerp.apiTests.system.UserApiTest@1c092623, testMethod = getTestSingle@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7c188c9 testClass = UserApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@43919f19 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:36:00.251  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:36:00.251  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:36:00.251  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+Hibernate: select user0_.scusi as scusi2_42_0_, user0_.sccid as sccid3_42_0_, user0_.scdtin as scdtin4_42_0_, user0_.sctmin as sctmin5_42_0_, user0_.scuid as scuid6_42_0_, user0_.scdtlu as scdtlu7_42_0_, user0_.sctmlu as sctmlu8_42_0_, user0_.scuidm as scuidm9_42_0_, user0_.scanum as scanum10_42_0_, user0_.scaprcd as scaprcd11_42_0_, user0_.scbuid as scbuid12_42_0_, user0_.scmtoe as scmtoe13_42_0_, user0_.scmtoe2 as scmtoe14_42_0_, user0_.scmtoe1 as scmtoe15_42_0_, user0_.sctagid as sctagid16_42_0_, user0_.scusc as scusc17_42_0_, user0_.scusg as scusg18_42_0_, user0_.scusl as scusl19_42_0_, user0_.scust as scust1_42_0_, usergroup1_.scusi as scusi2_42_1_, usergroup1_.sccid as sccid3_42_1_, usergroup1_.scdtin as scdtin4_42_1_, usergroup1_.sctmin as sctmin5_42_1_, usergroup1_.scuid as scuid6_42_1_, usergroup1_.scdtlu as scdtlu7_42_1_, usergroup1_.sctmlu as sctmlu8_42_1_, usergroup1_.scuidm as scuidm9_42_1_, usergroup1_.scanum as scanum10_42_1_, usergroup1_.scaprcd as scaprcd11_42_1_, usergroup1_.scbuid as scbuid12_42_1_, usergroup1_.scmtoe as scmtoe13_42_1_, usergroup1_.scmtoe2 as scmtoe14_42_1_, usergroup1_.scmtoe1 as scmtoe15_42_1_, usergroup1_.sctagid as sctagid16_42_1_, usergroup1_.scusc as scusc17_42_1_, usergroup1_.scusg as scusg18_42_1_, usergroup1_.scusl as scusl19_42_1_, usergroup1_.scust as scust1_42_1_ from t9801 user0_ left outer join t9801 usergroup1_ on user0_.scusg=usergroup1_.scusi where user0_.scusi=? and user0_.scust='U'
+Hibernate: select usergroup0_.scusi as scusi2_42_0_, usergroup0_.sccid as sccid3_42_0_, usergroup0_.scdtin as scdtin4_42_0_, usergroup0_.sctmin as sctmin5_42_0_, usergroup0_.scuid as scuid6_42_0_, usergroup0_.scdtlu as scdtlu7_42_0_, usergroup0_.sctmlu as sctmlu8_42_0_, usergroup0_.scuidm as scuidm9_42_0_, usergroup0_.scanum as scanum10_42_0_, usergroup0_.scaprcd as scaprcd11_42_0_, usergroup0_.scbuid as scbuid12_42_0_, usergroup0_.scmtoe as scmtoe13_42_0_, usergroup0_.scmtoe2 as scmtoe14_42_0_, usergroup0_.scmtoe1 as scmtoe15_42_0_, usergroup0_.sctagid as sctagid16_42_0_, usergroup0_.scusc as scusc17_42_0_, usergroup0_.scusg as scusg18_42_0_, usergroup0_.scusl as scusl19_42_0_, usergroup0_.scust as scust1_42_0_ from t9801 usergroup0_ where usergroup0_.scusi=? and usergroup0_.scust='G'
+2018-12-14 17:36:00.282  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@50687f75 testClass = UserApiTest, testInstance = ags.goldenlionerp.apiTests.system.UserApiTest@1c092623, testMethod = getTestSingle@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7c188c9 testClass = UserApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@43919f19 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+2018-12-14 17:36:00.282  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@50687f75 testClass = UserApiTest, testInstance = ags.goldenlionerp.apiTests.system.UserApiTest@6be21c6c, testMethod = getTestCollection@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7c188c9 testClass = UserApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@43919f19 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:36:00.282  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:36:00.282  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:36:00.282  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+Hibernate: select TOP(?) user0_.scusi as scusi2_42_, user0_.sccid as sccid3_42_, user0_.scdtin as scdtin4_42_, user0_.sctmin as sctmin5_42_, user0_.scuid as scuid6_42_, user0_.scdtlu as scdtlu7_42_, user0_.sctmlu as sctmlu8_42_, user0_.scuidm as scuidm9_42_, user0_.scanum as scanum10_42_, user0_.scaprcd as scaprcd11_42_, user0_.scbuid as scbuid12_42_, user0_.scmtoe as scmtoe13_42_, user0_.scmtoe2 as scmtoe14_42_, user0_.scmtoe1 as scmtoe15_42_, user0_.sctagid as sctagid16_42_, user0_.scusc as scusc17_42_, user0_.scusg as scusg18_42_, user0_.scusl as scusl19_42_, user0_.scust as scust1_42_ from t9801 user0_ where user0_.scust='U'
+Hibernate: select usergroup0_.scusi as scusi2_42_0_, usergroup0_.sccid as sccid3_42_0_, usergroup0_.scdtin as scdtin4_42_0_, usergroup0_.sctmin as sctmin5_42_0_, usergroup0_.scuid as scuid6_42_0_, usergroup0_.scdtlu as scdtlu7_42_0_, usergroup0_.sctmlu as sctmlu8_42_0_, usergroup0_.scuidm as scuidm9_42_0_, usergroup0_.scanum as scanum10_42_0_, usergroup0_.scaprcd as scaprcd11_42_0_, usergroup0_.scbuid as scbuid12_42_0_, usergroup0_.scmtoe as scmtoe13_42_0_, usergroup0_.scmtoe2 as scmtoe14_42_0_, usergroup0_.scmtoe1 as scmtoe15_42_0_, usergroup0_.sctagid as sctagid16_42_0_, usergroup0_.scusc as scusc17_42_0_, usergroup0_.scusg as scusg18_42_0_, usergroup0_.scusl as scusl19_42_0_, usergroup0_.scust as scust1_42_0_ from t9801 usergroup0_ where usergroup0_.scusi=? and usergroup0_.scust='G'
+Hibernate: select usergroup0_.scusi as scusi2_42_0_, usergroup0_.sccid as sccid3_42_0_, usergroup0_.scdtin as scdtin4_42_0_, usergroup0_.sctmin as sctmin5_42_0_, usergroup0_.scuid as scuid6_42_0_, usergroup0_.scdtlu as scdtlu7_42_0_, usergroup0_.sctmlu as sctmlu8_42_0_, usergroup0_.scuidm as scuidm9_42_0_, usergroup0_.scanum as scanum10_42_0_, usergroup0_.scaprcd as scaprcd11_42_0_, usergroup0_.scbuid as scbuid12_42_0_, usergroup0_.scmtoe as scmtoe13_42_0_, usergroup0_.scmtoe2 as scmtoe14_42_0_, usergroup0_.scmtoe1 as scmtoe15_42_0_, usergroup0_.sctagid as sctagid16_42_0_, usergroup0_.scusc as scusc17_42_0_, usergroup0_.scusg as scusg18_42_0_, usergroup0_.scusl as scusl19_42_0_, usergroup0_.scust as scust1_42_0_ from t9801 usergroup0_ where usergroup0_.scusi=? and usergroup0_.scust='G'
+Hibernate: select usergroup0_.scusi as scusi2_42_0_, usergroup0_.sccid as sccid3_42_0_, usergroup0_.scdtin as scdtin4_42_0_, usergroup0_.sctmin as sctmin5_42_0_, usergroup0_.scuid as scuid6_42_0_, usergroup0_.scdtlu as scdtlu7_42_0_, usergroup0_.sctmlu as sctmlu8_42_0_, usergroup0_.scuidm as scuidm9_42_0_, usergroup0_.scanum as scanum10_42_0_, usergroup0_.scaprcd as scaprcd11_42_0_, usergroup0_.scbuid as scbuid12_42_0_, usergroup0_.scmtoe as scmtoe13_42_0_, usergroup0_.scmtoe2 as scmtoe14_42_0_, usergroup0_.scmtoe1 as scmtoe15_42_0_, usergroup0_.sctagid as sctagid16_42_0_, usergroup0_.scusc as scusc17_42_0_, usergroup0_.scusg as scusg18_42_0_, usergroup0_.scusl as scusl19_42_0_, usergroup0_.scust as scust1_42_0_ from t9801 usergroup0_ where usergroup0_.scusi=? and usergroup0_.scust='G'
+Hibernate: select usergroup0_.scusi as scusi2_42_0_, usergroup0_.sccid as sccid3_42_0_, usergroup0_.scdtin as scdtin4_42_0_, usergroup0_.sctmin as sctmin5_42_0_, usergroup0_.scuid as scuid6_42_0_, usergroup0_.scdtlu as scdtlu7_42_0_, usergroup0_.sctmlu as sctmlu8_42_0_, usergroup0_.scuidm as scuidm9_42_0_, usergroup0_.scanum as scanum10_42_0_, usergroup0_.scaprcd as scaprcd11_42_0_, usergroup0_.scbuid as scbuid12_42_0_, usergroup0_.scmtoe as scmtoe13_42_0_, usergroup0_.scmtoe2 as scmtoe14_42_0_, usergroup0_.scmtoe1 as scmtoe15_42_0_, usergroup0_.sctagid as sctagid16_42_0_, usergroup0_.scusc as scusc17_42_0_, usergroup0_.scusg as scusg18_42_0_, usergroup0_.scusl as scusl19_42_0_, usergroup0_.scust as scust1_42_0_ from t9801 usergroup0_ where usergroup0_.scusi=? and usergroup0_.scust='G'
+Hibernate: select usergroup0_.scusi as scusi2_42_0_, usergroup0_.sccid as sccid3_42_0_, usergroup0_.scdtin as scdtin4_42_0_, usergroup0_.sctmin as sctmin5_42_0_, usergroup0_.scuid as scuid6_42_0_, usergroup0_.scdtlu as scdtlu7_42_0_, usergroup0_.sctmlu as sctmlu8_42_0_, usergroup0_.scuidm as scuidm9_42_0_, usergroup0_.scanum as scanum10_42_0_, usergroup0_.scaprcd as scaprcd11_42_0_, usergroup0_.scbuid as scbuid12_42_0_, usergroup0_.scmtoe as scmtoe13_42_0_, usergroup0_.scmtoe2 as scmtoe14_42_0_, usergroup0_.scmtoe1 as scmtoe15_42_0_, usergroup0_.sctagid as sctagid16_42_0_, usergroup0_.scusc as scusc17_42_0_, usergroup0_.scusg as scusg18_42_0_, usergroup0_.scusl as scusl19_42_0_, usergroup0_.scust as scust1_42_0_ from t9801 usergroup0_ where usergroup0_.scusi=? and usergroup0_.scust='G'
+Hibernate: select usergroup0_.scusi as scusi2_42_0_, usergroup0_.sccid as sccid3_42_0_, usergroup0_.scdtin as scdtin4_42_0_, usergroup0_.sctmin as sctmin5_42_0_, usergroup0_.scuid as scuid6_42_0_, usergroup0_.scdtlu as scdtlu7_42_0_, usergroup0_.sctmlu as sctmlu8_42_0_, usergroup0_.scuidm as scuidm9_42_0_, usergroup0_.scanum as scanum10_42_0_, usergroup0_.scaprcd as scaprcd11_42_0_, usergroup0_.scbuid as scbuid12_42_0_, usergroup0_.scmtoe as scmtoe13_42_0_, usergroup0_.scmtoe2 as scmtoe14_42_0_, usergroup0_.scmtoe1 as scmtoe15_42_0_, usergroup0_.sctagid as sctagid16_42_0_, usergroup0_.scusc as scusc17_42_0_, usergroup0_.scusg as scusg18_42_0_, usergroup0_.scusl as scusl19_42_0_, usergroup0_.scust as scust1_42_0_ from t9801 usergroup0_ where usergroup0_.scusi=? and usergroup0_.scust='G'
+Hibernate: select usergroup0_.scusi as scusi2_42_0_, usergroup0_.sccid as sccid3_42_0_, usergroup0_.scdtin as scdtin4_42_0_, usergroup0_.sctmin as sctmin5_42_0_, usergroup0_.scuid as scuid6_42_0_, usergroup0_.scdtlu as scdtlu7_42_0_, usergroup0_.sctmlu as sctmlu8_42_0_, usergroup0_.scuidm as scuidm9_42_0_, usergroup0_.scanum as scanum10_42_0_, usergroup0_.scaprcd as scaprcd11_42_0_, usergroup0_.scbuid as scbuid12_42_0_, usergroup0_.scmtoe as scmtoe13_42_0_, usergroup0_.scmtoe2 as scmtoe14_42_0_, usergroup0_.scmtoe1 as scmtoe15_42_0_, usergroup0_.sctagid as sctagid16_42_0_, usergroup0_.scusc as scusc17_42_0_, usergroup0_.scusg as scusg18_42_0_, usergroup0_.scusl as scusl19_42_0_, usergroup0_.scust as scust1_42_0_ from t9801 usergroup0_ where usergroup0_.scusi=? and usergroup0_.scust='G'
+Hibernate: select usergroup0_.scusi as scusi2_42_0_, usergroup0_.sccid as sccid3_42_0_, usergroup0_.scdtin as scdtin4_42_0_, usergroup0_.sctmin as sctmin5_42_0_, usergroup0_.scuid as scuid6_42_0_, usergroup0_.scdtlu as scdtlu7_42_0_, usergroup0_.sctmlu as sctmlu8_42_0_, usergroup0_.scuidm as scuidm9_42_0_, usergroup0_.scanum as scanum10_42_0_, usergroup0_.scaprcd as scaprcd11_42_0_, usergroup0_.scbuid as scbuid12_42_0_, usergroup0_.scmtoe as scmtoe13_42_0_, usergroup0_.scmtoe2 as scmtoe14_42_0_, usergroup0_.scmtoe1 as scmtoe15_42_0_, usergroup0_.sctagid as sctagid16_42_0_, usergroup0_.scusc as scusc17_42_0_, usergroup0_.scusg as scusg18_42_0_, usergroup0_.scusl as scusl19_42_0_, usergroup0_.scust as scust1_42_0_ from t9801 usergroup0_ where usergroup0_.scusi=? and usergroup0_.scust='G'
+Hibernate: select usergroup0_.scusi as scusi2_42_0_, usergroup0_.sccid as sccid3_42_0_, usergroup0_.scdtin as scdtin4_42_0_, usergroup0_.sctmin as sctmin5_42_0_, usergroup0_.scuid as scuid6_42_0_, usergroup0_.scdtlu as scdtlu7_42_0_, usergroup0_.sctmlu as sctmlu8_42_0_, usergroup0_.scuidm as scuidm9_42_0_, usergroup0_.scanum as scanum10_42_0_, usergroup0_.scaprcd as scaprcd11_42_0_, usergroup0_.scbuid as scbuid12_42_0_, usergroup0_.scmtoe as scmtoe13_42_0_, usergroup0_.scmtoe2 as scmtoe14_42_0_, usergroup0_.scmtoe1 as scmtoe15_42_0_, usergroup0_.sctagid as sctagid16_42_0_, usergroup0_.scusc as scusc17_42_0_, usergroup0_.scusg as scusg18_42_0_, usergroup0_.scusl as scusl19_42_0_, usergroup0_.scust as scust1_42_0_ from t9801 usergroup0_ where usergroup0_.scusi=? and usergroup0_.scust='G'
+Hibernate: select usergroup0_.scusi as scusi2_42_0_, usergroup0_.sccid as sccid3_42_0_, usergroup0_.scdtin as scdtin4_42_0_, usergroup0_.sctmin as sctmin5_42_0_, usergroup0_.scuid as scuid6_42_0_, usergroup0_.scdtlu as scdtlu7_42_0_, usergroup0_.sctmlu as sctmlu8_42_0_, usergroup0_.scuidm as scuidm9_42_0_, usergroup0_.scanum as scanum10_42_0_, usergroup0_.scaprcd as scaprcd11_42_0_, usergroup0_.scbuid as scbuid12_42_0_, usergroup0_.scmtoe as scmtoe13_42_0_, usergroup0_.scmtoe2 as scmtoe14_42_0_, usergroup0_.scmtoe1 as scmtoe15_42_0_, usergroup0_.sctagid as sctagid16_42_0_, usergroup0_.scusc as scusc17_42_0_, usergroup0_.scusg as scusg18_42_0_, usergroup0_.scusl as scusl19_42_0_, usergroup0_.scust as scust1_42_0_ from t9801 usergroup0_ where usergroup0_.scusi=? and usergroup0_.scust='G'
+Hibernate: select usergroup0_.scusi as scusi2_42_0_, usergroup0_.sccid as sccid3_42_0_, usergroup0_.scdtin as scdtin4_42_0_, usergroup0_.sctmin as sctmin5_42_0_, usergroup0_.scuid as scuid6_42_0_, usergroup0_.scdtlu as scdtlu7_42_0_, usergroup0_.sctmlu as sctmlu8_42_0_, usergroup0_.scuidm as scuidm9_42_0_, usergroup0_.scanum as scanum10_42_0_, usergroup0_.scaprcd as scaprcd11_42_0_, usergroup0_.scbuid as scbuid12_42_0_, usergroup0_.scmtoe as scmtoe13_42_0_, usergroup0_.scmtoe2 as scmtoe14_42_0_, usergroup0_.scmtoe1 as scmtoe15_42_0_, usergroup0_.sctagid as sctagid16_42_0_, usergroup0_.scusc as scusc17_42_0_, usergroup0_.scusg as scusg18_42_0_, usergroup0_.scusl as scusl19_42_0_, usergroup0_.scust as scust1_42_0_ from t9801 usergroup0_ where usergroup0_.scusi=? and usergroup0_.scust='G'
+Hibernate: select usergroup0_.scusi as scusi2_42_0_, usergroup0_.sccid as sccid3_42_0_, usergroup0_.scdtin as scdtin4_42_0_, usergroup0_.sctmin as sctmin5_42_0_, usergroup0_.scuid as scuid6_42_0_, usergroup0_.scdtlu as scdtlu7_42_0_, usergroup0_.sctmlu as sctmlu8_42_0_, usergroup0_.scuidm as scuidm9_42_0_, usergroup0_.scanum as scanum10_42_0_, usergroup0_.scaprcd as scaprcd11_42_0_, usergroup0_.scbuid as scbuid12_42_0_, usergroup0_.scmtoe as scmtoe13_42_0_, usergroup0_.scmtoe2 as scmtoe14_42_0_, usergroup0_.scmtoe1 as scmtoe15_42_0_, usergroup0_.sctagid as sctagid16_42_0_, usergroup0_.scusc as scusc17_42_0_, usergroup0_.scusg as scusg18_42_0_, usergroup0_.scusl as scusl19_42_0_, usergroup0_.scust as scust1_42_0_ from t9801 usergroup0_ where usergroup0_.scusi=? and usergroup0_.scust='G'
+Hibernate: select usergroup0_.scusi as scusi2_42_0_, usergroup0_.sccid as sccid3_42_0_, usergroup0_.scdtin as scdtin4_42_0_, usergroup0_.sctmin as sctmin5_42_0_, usergroup0_.scuid as scuid6_42_0_, usergroup0_.scdtlu as scdtlu7_42_0_, usergroup0_.sctmlu as sctmlu8_42_0_, usergroup0_.scuidm as scuidm9_42_0_, usergroup0_.scanum as scanum10_42_0_, usergroup0_.scaprcd as scaprcd11_42_0_, usergroup0_.scbuid as scbuid12_42_0_, usergroup0_.scmtoe as scmtoe13_42_0_, usergroup0_.scmtoe2 as scmtoe14_42_0_, usergroup0_.scmtoe1 as scmtoe15_42_0_, usergroup0_.sctagid as sctagid16_42_0_, usergroup0_.scusc as scusc17_42_0_, usergroup0_.scusg as scusg18_42_0_, usergroup0_.scusl as scusl19_42_0_, usergroup0_.scust as scust1_42_0_ from t9801 usergroup0_ where usergroup0_.scusi=? and usergroup0_.scust='G'
+Hibernate: select usergroup0_.scusi as scusi2_42_0_, usergroup0_.sccid as sccid3_42_0_, usergroup0_.scdtin as scdtin4_42_0_, usergroup0_.sctmin as sctmin5_42_0_, usergroup0_.scuid as scuid6_42_0_, usergroup0_.scdtlu as scdtlu7_42_0_, usergroup0_.sctmlu as sctmlu8_42_0_, usergroup0_.scuidm as scuidm9_42_0_, usergroup0_.scanum as scanum10_42_0_, usergroup0_.scaprcd as scaprcd11_42_0_, usergroup0_.scbuid as scbuid12_42_0_, usergroup0_.scmtoe as scmtoe13_42_0_, usergroup0_.scmtoe2 as scmtoe14_42_0_, usergroup0_.scmtoe1 as scmtoe15_42_0_, usergroup0_.sctagid as sctagid16_42_0_, usergroup0_.scusc as scusc17_42_0_, usergroup0_.scusg as scusg18_42_0_, usergroup0_.scusl as scusl19_42_0_, usergroup0_.scust as scust1_42_0_ from t9801 usergroup0_ where usergroup0_.scusi=? and usergroup0_.scust='G'
+Hibernate: select usergroup0_.scusi as scusi2_42_0_, usergroup0_.sccid as sccid3_42_0_, usergroup0_.scdtin as scdtin4_42_0_, usergroup0_.sctmin as sctmin5_42_0_, usergroup0_.scuid as scuid6_42_0_, usergroup0_.scdtlu as scdtlu7_42_0_, usergroup0_.sctmlu as sctmlu8_42_0_, usergroup0_.scuidm as scuidm9_42_0_, usergroup0_.scanum as scanum10_42_0_, usergroup0_.scaprcd as scaprcd11_42_0_, usergroup0_.scbuid as scbuid12_42_0_, usergroup0_.scmtoe as scmtoe13_42_0_, usergroup0_.scmtoe2 as scmtoe14_42_0_, usergroup0_.scmtoe1 as scmtoe15_42_0_, usergroup0_.sctagid as sctagid16_42_0_, usergroup0_.scusc as scusc17_42_0_, usergroup0_.scusg as scusg18_42_0_, usergroup0_.scusl as scusl19_42_0_, usergroup0_.scust as scust1_42_0_ from t9801 usergroup0_ where usergroup0_.scusi=? and usergroup0_.scust='G'
+Hibernate: select count(user0_.scusi) as col_0_0_ from t9801 user0_ where user0_.scust='U'
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/users/
+       Parameters = {}
+          Headers = {Accept=[application/json]}
+             Body = &lt;no character encoding set&gt;
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@774071bf, SPRING_SECURITY_CONTEXT=org.springframework.security.core.context.SecurityContextImpl@475fcd89: Authentication: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@475fcd89: Principal: org.springframework.security.core.userdetails.User@f02988d6: Username: username; Password: [PROTECTED]; Enabled: true; AccountNonExpired: true; credentialsNonExpired: true; AccountNonLocked: true; Not granted any authorities; Credentials: [PROTECTED]; Authenticated: true; Details: null; Not granted any authorities}
+
+Handler:
+             Type = org.springframework.data.rest.webmvc.RepositoryEntityController
+           Method = public org.springframework.hateoas.Resources&lt;?&gt; org.springframework.data.rest.webmvc.RepositoryEntityController.getCollectionResource(org.springframework.data.rest.webmvc.RootResourceInformation,org.springframework.data.rest.webmvc.support.DefaultedPageable,org.springframework.data.domain.Sort,org.springframework.data.rest.webmvc.PersistentEntityResourceAssembler) throws org.springframework.data.rest.webmvc.ResourceNotFoundException,org.springframework.web.HttpRequestMethodNotSupportedException
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Type=[application/json;charset=UTF-8], X-Content-Type-Options=[nosniff], X-XSS-Protection=[1; mode=block], Cache-Control=[no-cache, no-store, max-age=0, must-revalidate], Pragma=[no-cache], Expires=[0], X-Frame-Options=[DENY]}
+     Content type = application/json;charset=UTF-8
+             Body = {
+  &quot;_embedded&quot; : {
+    &quot;users&quot; : [ {
+      &quot;inputUserId&quot; : &quot;&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;&quot;,
+      &quot;computerId&quot; : &quot;&quot;,
+      &quot;userSecurityId&quot; : &quot;ADMIN1&quot;,
+      &quot;userSecurityLevel&quot; : 9,
+      &quot;userSecurityGroupId&quot; : &quot;&quot;,
+      &quot;userSecurityType&quot; : &quot;U&quot;,
+      &quot;addressNumber&quot; : &quot;0000&quot;,
+      &quot;menuToExecuteBOS&quot; : &quot;MH00&quot;,
+      &quot;menuToExecutePOS&quot; : &quot;PX00&quot;,
+      &quot;menuToExecuteHOS&quot; : &quot;MX00&quot;,
+      &quot;tagId&quot; : &quot;&quot;,
+      &quot;approvalRouteCode&quot; : &quot;&quot;,
+      &quot;businessUnitId&quot; : &quot;110&quot;,
+      &quot;lastUpdateDateTime&quot; : null,
+      &quot;inputDateTime&quot; : null,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/ADMIN1&quot;
+        },
+        &quot;user&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/ADMIN1&quot;
+        },
+        &quot;password&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/ADMIN1/password&quot;
+        },
+        &quot;userSecurityGroup&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/ADMIN1/userSecurityGroup&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;&quot;,
+      &quot;computerId&quot; : &quot;&quot;,
+      &quot;userSecurityId&quot; : &quot;ANDREAS&quot;,
+      &quot;userSecurityLevel&quot; : 7,
+      &quot;userSecurityGroupId&quot; : &quot;&quot;,
+      &quot;userSecurityType&quot; : &quot;U&quot;,
+      &quot;addressNumber&quot; : &quot;&quot;,
+      &quot;menuToExecuteBOS&quot; : &quot;MH00&quot;,
+      &quot;menuToExecutePOS&quot; : &quot;&quot;,
+      &quot;menuToExecuteHOS&quot; : &quot;&quot;,
+      &quot;tagId&quot; : &quot;&quot;,
+      &quot;approvalRouteCode&quot; : &quot;&quot;,
+      &quot;businessUnitId&quot; : &quot;110&quot;,
+      &quot;lastUpdateDateTime&quot; : null,
+      &quot;inputDateTime&quot; : null,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/ANDREAS&quot;
+        },
+        &quot;user&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/ANDREAS&quot;
+        },
+        &quot;password&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/ANDREAS/password&quot;
+        },
+        &quot;userSecurityGroup&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/ANDREAS/userSecurityGroup&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;&quot;,
+      &quot;computerId&quot; : &quot;&quot;,
+      &quot;userSecurityId&quot; : &quot;ANDREAS2&quot;,
+      &quot;userSecurityLevel&quot; : 8,
+      &quot;userSecurityGroupId&quot; : &quot;&quot;,
+      &quot;userSecurityType&quot; : &quot;U&quot;,
+      &quot;addressNumber&quot; : &quot;&quot;,
+      &quot;menuToExecuteBOS&quot; : &quot;MH00&quot;,
+      &quot;menuToExecutePOS&quot; : &quot;&quot;,
+      &quot;menuToExecuteHOS&quot; : &quot;&quot;,
+      &quot;tagId&quot; : &quot;&quot;,
+      &quot;approvalRouteCode&quot; : &quot;&quot;,
+      &quot;businessUnitId&quot; : &quot;110&quot;,
+      &quot;lastUpdateDateTime&quot; : null,
+      &quot;inputDateTime&quot; : null,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/ANDREAS2&quot;
+        },
+        &quot;user&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/ANDREAS2&quot;
+        },
+        &quot;password&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/ANDREAS2/password&quot;
+        },
+        &quot;userSecurityGroup&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/ANDREAS2/userSecurityGroup&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;&quot;,
+      &quot;computerId&quot; : &quot;&quot;,
+      &quot;userSecurityId&quot; : &quot;ANTHONI&quot;,
+      &quot;userSecurityLevel&quot; : 7,
+      &quot;userSecurityGroupId&quot; : &quot;&quot;,
+      &quot;userSecurityType&quot; : &quot;U&quot;,
+      &quot;addressNumber&quot; : &quot;&quot;,
+      &quot;menuToExecuteBOS&quot; : &quot;MH00&quot;,
+      &quot;menuToExecutePOS&quot; : &quot;&quot;,
+      &quot;menuToExecuteHOS&quot; : &quot;&quot;,
+      &quot;tagId&quot; : &quot;&quot;,
+      &quot;approvalRouteCode&quot; : &quot;&quot;,
+      &quot;businessUnitId&quot; : &quot;110&quot;,
+      &quot;lastUpdateDateTime&quot; : null,
+      &quot;inputDateTime&quot; : null,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/ANTHONI&quot;
+        },
+        &quot;user&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/ANTHONI&quot;
+        },
+        &quot;password&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/ANTHONI/password&quot;
+        },
+        &quot;userSecurityGroup&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/ANTHONI/userSecurityGroup&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;&quot;,
+      &quot;computerId&quot; : &quot;&quot;,
+      &quot;userSecurityId&quot; : &quot;ARI WAHYU&quot;,
+      &quot;userSecurityLevel&quot; : 4,
+      &quot;userSecurityGroupId&quot; : &quot;ADMIN PENJUALAN&quot;,
+      &quot;userSecurityType&quot; : &quot;U&quot;,
+      &quot;addressNumber&quot; : &quot;&quot;,
+      &quot;menuToExecuteBOS&quot; : &quot;MH00&quot;,
+      &quot;menuToExecutePOS&quot; : &quot;&quot;,
+      &quot;menuToExecuteHOS&quot; : &quot;&quot;,
+      &quot;tagId&quot; : &quot;&quot;,
+      &quot;approvalRouteCode&quot; : &quot;&quot;,
+      &quot;businessUnitId&quot; : &quot;110&quot;,
+      &quot;lastUpdateDateTime&quot; : null,
+      &quot;inputDateTime&quot; : null,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/ARI_WAHYU&quot;
+        },
+        &quot;user&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/ARI_WAHYU&quot;
+        },
+        &quot;password&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/ARI_WAHYU/password&quot;
+        },
+        &quot;userSecurityGroup&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/ARI_WAHYU/userSecurityGroup&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;&quot;,
+      &quot;computerId&quot; : &quot;&quot;,
+      &quot;userSecurityId&quot; : &quot;ASIH&quot;,
+      &quot;userSecurityLevel&quot; : 4,
+      &quot;userSecurityGroupId&quot; : &quot;&quot;,
+      &quot;userSecurityType&quot; : &quot;U&quot;,
+      &quot;addressNumber&quot; : &quot;&quot;,
+      &quot;menuToExecuteBOS&quot; : &quot;MH00&quot;,
+      &quot;menuToExecutePOS&quot; : &quot;&quot;,
+      &quot;menuToExecuteHOS&quot; : &quot;&quot;,
+      &quot;tagId&quot; : &quot;&quot;,
+      &quot;approvalRouteCode&quot; : &quot;&quot;,
+      &quot;businessUnitId&quot; : &quot;110&quot;,
+      &quot;lastUpdateDateTime&quot; : null,
+      &quot;inputDateTime&quot; : null,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/ASIH&quot;
+        },
+        &quot;user&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/ASIH&quot;
+        },
+        &quot;password&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/ASIH/password&quot;
+        },
+        &quot;userSecurityGroup&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/ASIH/userSecurityGroup&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;&quot;,
+      &quot;computerId&quot; : &quot;&quot;,
+      &quot;userSecurityId&quot; : &quot;DANI&quot;,
+      &quot;userSecurityLevel&quot; : 7,
+      &quot;userSecurityGroupId&quot; : &quot;&quot;,
+      &quot;userSecurityType&quot; : &quot;U&quot;,
+      &quot;addressNumber&quot; : &quot;0100&quot;,
+      &quot;menuToExecuteBOS&quot; : &quot;&quot;,
+      &quot;menuToExecutePOS&quot; : &quot;PX00&quot;,
+      &quot;menuToExecuteHOS&quot; : &quot;&quot;,
+      &quot;tagId&quot; : &quot;&quot;,
+      &quot;approvalRouteCode&quot; : &quot;&quot;,
+      &quot;businessUnitId&quot; : &quot;120&quot;,
+      &quot;lastUpdateDateTime&quot; : null,
+      &quot;inputDateTime&quot; : null,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/DANI&quot;
+        },
+        &quot;user&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/DANI&quot;
+        },
+        &quot;password&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/DANI/password&quot;
+        },
+        &quot;userSecurityGroup&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/DANI/userSecurityGroup&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;&quot;,
+      &quot;computerId&quot; : &quot;&quot;,
+      &quot;userSecurityId&quot; : &quot;DAVIDTANU&quot;,
+      &quot;userSecurityLevel&quot; : 4,
+      &quot;userSecurityGroupId&quot; : &quot;ADMIN PENJUALAN&quot;,
+      &quot;userSecurityType&quot; : &quot;U&quot;,
+      &quot;addressNumber&quot; : &quot;&quot;,
+      &quot;menuToExecuteBOS&quot; : &quot;MH00&quot;,
+      &quot;menuToExecutePOS&quot; : &quot;&quot;,
+      &quot;menuToExecuteHOS&quot; : &quot;&quot;,
+      &quot;tagId&quot; : &quot;&quot;,
+      &quot;approvalRouteCode&quot; : &quot;&quot;,
+      &quot;businessUnitId&quot; : &quot;110&quot;,
+      &quot;lastUpdateDateTime&quot; : null,
+      &quot;inputDateTime&quot; : null,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/DAVIDTANU&quot;
+        },
+        &quot;user&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/DAVIDTANU&quot;
+        },
+        &quot;password&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/DAVIDTANU/password&quot;
+        },
+        &quot;userSecurityGroup&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/DAVIDTANU/userSecurityGroup&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;&quot;,
+      &quot;computerId&quot; : &quot;&quot;,
+      &quot;userSecurityId&quot; : &quot;DEBBY&quot;,
+      &quot;userSecurityLevel&quot; : 9,
+      &quot;userSecurityGroupId&quot; : &quot;&quot;,
+      &quot;userSecurityType&quot; : &quot;U&quot;,
+      &quot;addressNumber&quot; : &quot;&quot;,
+      &quot;menuToExecuteBOS&quot; : &quot;MH00&quot;,
+      &quot;menuToExecutePOS&quot; : &quot;&quot;,
+      &quot;menuToExecuteHOS&quot; : &quot;&quot;,
+      &quot;tagId&quot; : &quot;&quot;,
+      &quot;approvalRouteCode&quot; : &quot;&quot;,
+      &quot;businessUnitId&quot; : &quot;110&quot;,
+      &quot;lastUpdateDateTime&quot; : null,
+      &quot;inputDateTime&quot; : null,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/DEBBY&quot;
+        },
+        &quot;user&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/DEBBY&quot;
+        },
+        &quot;password&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/DEBBY/password&quot;
+        },
+        &quot;userSecurityGroup&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/DEBBY/userSecurityGroup&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;&quot;,
+      &quot;computerId&quot; : &quot;&quot;,
+      &quot;userSecurityId&quot; : &quot;DENIA&quot;,
+      &quot;userSecurityLevel&quot; : 4,
+      &quot;userSecurityGroupId&quot; : &quot;ADMIN GUDANG&quot;,
+      &quot;userSecurityType&quot; : &quot;U&quot;,
+      &quot;addressNumber&quot; : &quot;&quot;,
+      &quot;menuToExecuteBOS&quot; : &quot;MH00&quot;,
+      &quot;menuToExecutePOS&quot; : &quot;&quot;,
+      &quot;menuToExecuteHOS&quot; : &quot;&quot;,
+      &quot;tagId&quot; : &quot;&quot;,
+      &quot;approvalRouteCode&quot; : &quot;&quot;,
+      &quot;businessUnitId&quot; : &quot;110&quot;,
+      &quot;lastUpdateDateTime&quot; : null,
+      &quot;inputDateTime&quot; : null,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/DENIA&quot;
+        },
+        &quot;user&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/DENIA&quot;
+        },
+        &quot;password&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/DENIA/password&quot;
+        },
+        &quot;userSecurityGroup&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/DENIA/userSecurityGroup&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;&quot;,
+      &quot;computerId&quot; : &quot;&quot;,
+      &quot;userSecurityId&quot; : &quot;ERWIN&quot;,
+      &quot;userSecurityLevel&quot; : 4,
+      &quot;userSecurityGroupId&quot; : &quot;ADMIN PENJUALAN&quot;,
+      &quot;userSecurityType&quot; : &quot;U&quot;,
+      &quot;addressNumber&quot; : &quot;3001&quot;,
+      &quot;menuToExecuteBOS&quot; : &quot;MH00&quot;,
+      &quot;menuToExecutePOS&quot; : &quot;&quot;,
+      &quot;menuToExecuteHOS&quot; : &quot;&quot;,
+      &quot;tagId&quot; : &quot;123456&quot;,
+      &quot;approvalRouteCode&quot; : &quot;&quot;,
+      &quot;businessUnitId&quot; : &quot;110&quot;,
+      &quot;lastUpdateDateTime&quot; : null,
+      &quot;inputDateTime&quot; : null,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/ERWIN&quot;
+        },
+        &quot;user&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/ERWIN&quot;
+        },
+        &quot;password&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/ERWIN/password&quot;
+        },
+        &quot;userSecurityGroup&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/ERWIN/userSecurityGroup&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;&quot;,
+      &quot;computerId&quot; : &quot;&quot;,
+      &quot;userSecurityId&quot; : &quot;IIS&quot;,
+      &quot;userSecurityLevel&quot; : 4,
+      &quot;userSecurityGroupId&quot; : &quot;ADMIN GUDANG&quot;,
+      &quot;userSecurityType&quot; : &quot;U&quot;,
+      &quot;addressNumber&quot; : &quot;&quot;,
+      &quot;menuToExecuteBOS&quot; : &quot;MH00&quot;,
+      &quot;menuToExecutePOS&quot; : &quot;&quot;,
+      &quot;menuToExecuteHOS&quot; : &quot;&quot;,
+      &quot;tagId&quot; : &quot;&quot;,
+      &quot;approvalRouteCode&quot; : &quot;&quot;,
+      &quot;businessUnitId&quot; : &quot;110&quot;,
+      &quot;lastUpdateDateTime&quot; : null,
+      &quot;inputDateTime&quot; : null,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/IIS&quot;
+        },
+        &quot;user&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/IIS&quot;
+        },
+        &quot;password&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/IIS/password&quot;
+        },
+        &quot;userSecurityGroup&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/IIS/userSecurityGroup&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;&quot;,
+      &quot;computerId&quot; : &quot;&quot;,
+      &quot;userSecurityId&quot; : &quot;INDAH&quot;,
+      &quot;userSecurityLevel&quot; : 4,
+      &quot;userSecurityGroupId&quot; : &quot;ADMIN PENJUALAN&quot;,
+      &quot;userSecurityType&quot; : &quot;U&quot;,
+      &quot;addressNumber&quot; : &quot;&quot;,
+      &quot;menuToExecuteBOS&quot; : &quot;MH00&quot;,
+      &quot;menuToExecutePOS&quot; : &quot;&quot;,
+      &quot;menuToExecuteHOS&quot; : &quot;&quot;,
+      &quot;tagId&quot; : &quot;&quot;,
+      &quot;approvalRouteCode&quot; : &quot;&quot;,
+      &quot;businessUnitId&quot; : &quot;110&quot;,
+      &quot;lastUpdateDateTime&quot; : null,
+      &quot;inputDateTime&quot; : null,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/INDAH&quot;
+        },
+        &quot;user&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/INDAH&quot;
+        },
+        &quot;password&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/INDAH/password&quot;
+        },
+        &quot;userSecurityGroup&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/INDAH/userSecurityGroup&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;&quot;,
+      &quot;computerId&quot; : &quot;&quot;,
+      &quot;userSecurityId&quot; : &quot;JONIE&quot;,
+      &quot;userSecurityLevel&quot; : 8,
+      &quot;userSecurityGroupId&quot; : &quot;&quot;,
+      &quot;userSecurityType&quot; : &quot;U&quot;,
+      &quot;addressNumber&quot; : &quot;0000&quot;,
+      &quot;menuToExecuteBOS&quot; : &quot;MH00&quot;,
+      &quot;menuToExecutePOS&quot; : &quot;PX00&quot;,
+      &quot;menuToExecuteHOS&quot; : &quot;MX00&quot;,
+      &quot;tagId&quot; : &quot;&quot;,
+      &quot;approvalRouteCode&quot; : &quot;&quot;,
+      &quot;businessUnitId&quot; : &quot;110&quot;,
+      &quot;lastUpdateDateTime&quot; : null,
+      &quot;inputDateTime&quot; : null,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/JONIE&quot;
+        },
+        &quot;user&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/JONIE&quot;
+        },
+        &quot;password&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/JONIE/password&quot;
+        },
+        &quot;userSecurityGroup&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/JONIE/userSecurityGroup&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;&quot;,
+      &quot;computerId&quot; : &quot;&quot;,
+      &quot;userSecurityId&quot; : &quot;JULI&quot;,
+      &quot;userSecurityLevel&quot; : 4,
+      &quot;userSecurityGroupId&quot; : &quot;ADMIN PENJUALAN&quot;,
+      &quot;userSecurityType&quot; : &quot;U&quot;,
+      &quot;addressNumber&quot; : &quot;&quot;,
+      &quot;menuToExecuteBOS&quot; : &quot;MH00&quot;,
+      &quot;menuToExecutePOS&quot; : &quot;&quot;,
+      &quot;menuToExecuteHOS&quot; : &quot;&quot;,
+      &quot;tagId&quot; : &quot;&quot;,
+      &quot;approvalRouteCode&quot; : &quot;&quot;,
+      &quot;businessUnitId&quot; : &quot;110&quot;,
+      &quot;lastUpdateDateTime&quot; : null,
+      &quot;inputDateTime&quot; : null,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/JULI&quot;
+        },
+        &quot;user&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/JULI&quot;
+        },
+        &quot;password&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/JULI/password&quot;
+        },
+        &quot;userSecurityGroup&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/JULI/userSecurityGroup&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;&quot;,
+      &quot;computerId&quot; : &quot;&quot;,
+      &quot;userSecurityId&quot; : &quot;KEN&quot;,
+      &quot;userSecurityLevel&quot; : 8,
+      &quot;userSecurityGroupId&quot; : &quot;&quot;,
+      &quot;userSecurityType&quot; : &quot;U&quot;,
+      &quot;addressNumber&quot; : &quot;9501&quot;,
+      &quot;menuToExecuteBOS&quot; : &quot;MH00&quot;,
+      &quot;menuToExecutePOS&quot; : &quot;PX00&quot;,
+      &quot;menuToExecuteHOS&quot; : &quot;MX00&quot;,
+      &quot;tagId&quot; : &quot;123&quot;,
+      &quot;approvalRouteCode&quot; : &quot;APR_PO&quot;,
+      &quot;businessUnitId&quot; : &quot;110&quot;,
+      &quot;lastUpdateDateTime&quot; : null,
+      &quot;inputDateTime&quot; : null,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/KEN&quot;
+        },
+        &quot;user&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/KEN&quot;
+        },
+        &quot;password&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/KEN/password&quot;
+        },
+        &quot;userSecurityGroup&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/KEN/userSecurityGroup&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;&quot;,
+      &quot;computerId&quot; : &quot;&quot;,
+      &quot;userSecurityId&quot; : &quot;KENINA&quot;,
+      &quot;userSecurityLevel&quot; : 8,
+      &quot;userSecurityGroupId&quot; : &quot;&quot;,
+      &quot;userSecurityType&quot; : &quot;U&quot;,
+      &quot;addressNumber&quot; : &quot;9501&quot;,
+      &quot;menuToExecuteBOS&quot; : &quot;MH00&quot;,
+      &quot;menuToExecutePOS&quot; : &quot;PX00&quot;,
+      &quot;menuToExecuteHOS&quot; : &quot;MX00&quot;,
+      &quot;tagId&quot; : &quot;&quot;,
+      &quot;approvalRouteCode&quot; : &quot;APR_PO&quot;,
+      &quot;businessUnitId&quot; : &quot;110&quot;,
+      &quot;lastUpdateDateTime&quot; : null,
+      &quot;inputDateTime&quot; : null,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/KENINA&quot;
+        },
+        &quot;user&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/KENINA&quot;
+        },
+        &quot;password&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/KENINA/password&quot;
+        },
+        &quot;userSecurityGroup&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/KENINA/userSecurityGroup&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;&quot;,
+      &quot;computerId&quot; : &quot;&quot;,
+      &quot;userSecurityId&quot; : &quot;KOREKSI&quot;,
+      &quot;userSecurityLevel&quot; : 8,
+      &quot;userSecurityGroupId&quot; : &quot;&quot;,
+      &quot;userSecurityType&quot; : &quot;U&quot;,
+      &quot;addressNumber&quot; : &quot;9501&quot;,
+      &quot;menuToExecuteBOS&quot; : &quot;MH00&quot;,
+      &quot;menuToExecutePOS&quot; : &quot;PX00&quot;,
+      &quot;menuToExecuteHOS&quot; : &quot;MX00&quot;,
+      &quot;tagId&quot; : &quot;&quot;,
+      &quot;approvalRouteCode&quot; : &quot;APR_PO&quot;,
+      &quot;businessUnitId&quot; : &quot;110&quot;,
+      &quot;lastUpdateDateTime&quot; : null,
+      &quot;inputDateTime&quot; : null,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/KOREKSI&quot;
+        },
+        &quot;user&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/KOREKSI&quot;
+        },
+        &quot;password&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/KOREKSI/password&quot;
+        },
+        &quot;userSecurityGroup&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/KOREKSI/userSecurityGroup&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;&quot;,
+      &quot;computerId&quot; : &quot;&quot;,
+      &quot;userSecurityId&quot; : &quot;LENIE&quot;,
+      &quot;userSecurityLevel&quot; : 7,
+      &quot;userSecurityGroupId&quot; : &quot;&quot;,
+      &quot;userSecurityType&quot; : &quot;U&quot;,
+      &quot;addressNumber&quot; : &quot;9501&quot;,
+      &quot;menuToExecuteBOS&quot; : &quot;MH00&quot;,
+      &quot;menuToExecutePOS&quot; : &quot;&quot;,
+      &quot;menuToExecuteHOS&quot; : &quot;&quot;,
+      &quot;tagId&quot; : &quot;&quot;,
+      &quot;approvalRouteCode&quot; : &quot;APR_PO&quot;,
+      &quot;businessUnitId&quot; : &quot;110&quot;,
+      &quot;lastUpdateDateTime&quot; : null,
+      &quot;inputDateTime&quot; : null,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/LENIE&quot;
+        },
+        &quot;user&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/LENIE&quot;
+        },
+        &quot;password&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/LENIE/password&quot;
+        },
+        &quot;userSecurityGroup&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/LENIE/userSecurityGroup&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;&quot;,
+      &quot;computerId&quot; : &quot;&quot;,
+      &quot;userSecurityId&quot; : &quot;LIANA&quot;,
+      &quot;userSecurityLevel&quot; : 7,
+      &quot;userSecurityGroupId&quot; : &quot;ADM ACCOUNTING&quot;,
+      &quot;userSecurityType&quot; : &quot;U&quot;,
+      &quot;addressNumber&quot; : &quot;&quot;,
+      &quot;menuToExecuteBOS&quot; : &quot;MH00&quot;,
+      &quot;menuToExecutePOS&quot; : &quot;&quot;,
+      &quot;menuToExecuteHOS&quot; : &quot;&quot;,
+      &quot;tagId&quot; : &quot;&quot;,
+      &quot;approvalRouteCode&quot; : &quot;&quot;,
+      &quot;businessUnitId&quot; : &quot;110&quot;,
+      &quot;lastUpdateDateTime&quot; : null,
+      &quot;inputDateTime&quot; : null,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/LIANA&quot;
+        },
+        &quot;user&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/LIANA&quot;
+        },
+        &quot;password&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/LIANA/password&quot;
+        },
+        &quot;userSecurityGroup&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/users/LIANA/userSecurityGroup&quot;
+        }
+      }
+    } ]
+  },
+  &quot;_links&quot; : {
+    &quot;first&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/users?page=0&amp;size=20&quot;
+    },
+    &quot;self&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/users{?page,size,sort}&quot;,
+      &quot;templated&quot; : true
+    },
+    &quot;next&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/users?page=1&amp;size=20&quot;
+    },
+    &quot;last&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/users?page=1&amp;size=20&quot;
+    },
+    &quot;profile&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/profile/users&quot;
+    }
+  },
+  &quot;page&quot; : {
+    &quot;size&quot; : 20,
+    &quot;totalElements&quot; : 38,
+    &quot;totalPages&quot; : 2,
+    &quot;number&quot; : 0
+  }
+}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2018-12-14 17:36:00.329  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@50687f75 testClass = UserApiTest, testInstance = ags.goldenlionerp.apiTests.system.UserApiTest@6be21c6c, testMethod = getTestCollection@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7c188c9 testClass = UserApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@43919f19 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+2018-12-14 17:36:00.329  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@50687f75 testClass = UserApiTest, testInstance = ags.goldenlionerp.apiTests.system.UserApiTest@793db2a7, testMethod = createTestWithPut@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7c188c9 testClass = UserApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@43919f19 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:36:00.329  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:36:00.329  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:36:00.344  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 15 ms
+Hibernate: select user0_.scusi as scusi2_42_0_, user0_.sccid as sccid3_42_0_, user0_.scdtin as scdtin4_42_0_, user0_.sctmin as sctmin5_42_0_, user0_.scuid as scuid6_42_0_, user0_.scdtlu as scdtlu7_42_0_, user0_.sctmlu as sctmlu8_42_0_, user0_.scuidm as scuidm9_42_0_, user0_.scanum as scanum10_42_0_, user0_.scaprcd as scaprcd11_42_0_, user0_.scbuid as scbuid12_42_0_, user0_.scmtoe as scmtoe13_42_0_, user0_.scmtoe2 as scmtoe14_42_0_, user0_.scmtoe1 as scmtoe15_42_0_, user0_.sctagid as sctagid16_42_0_, user0_.scusc as scusc17_42_0_, user0_.scusg as scusg18_42_0_, user0_.scusl as scusl19_42_0_, user0_.scust as scust1_42_0_, usergroup1_.scusi as scusi2_42_1_, usergroup1_.sccid as sccid3_42_1_, usergroup1_.scdtin as scdtin4_42_1_, usergroup1_.sctmin as sctmin5_42_1_, usergroup1_.scuid as scuid6_42_1_, usergroup1_.scdtlu as scdtlu7_42_1_, usergroup1_.sctmlu as sctmlu8_42_1_, usergroup1_.scuidm as scuidm9_42_1_, usergroup1_.scanum as scanum10_42_1_, usergroup1_.scaprcd as scaprcd11_42_1_, usergroup1_.scbuid as scbuid12_42_1_, usergroup1_.scmtoe as scmtoe13_42_1_, usergroup1_.scmtoe2 as scmtoe14_42_1_, usergroup1_.scmtoe1 as scmtoe15_42_1_, usergroup1_.sctagid as sctagid16_42_1_, usergroup1_.scusc as scusc17_42_1_, usergroup1_.scusg as scusg18_42_1_, usergroup1_.scusl as scusl19_42_1_, usergroup1_.scust as scust1_42_1_ from t9801 user0_ left outer join t9801 usergroup1_ on user0_.scusg=usergroup1_.scusi where user0_.scusi=? and user0_.scust='U'
+2018-12-14 17:36:00.344  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@50687f75 testClass = UserApiTest, testInstance = ags.goldenlionerp.apiTests.system.UserApiTest@793db2a7, testMethod = createTestWithPut@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7c188c9 testClass = UserApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@43919f19 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+2018-12-14 17:36:00.344  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@50687f75 testClass = UserApiTest, testInstance = ags.goldenlionerp.apiTests.system.UserApiTest@4cd7b025, testMethod = deleteTest@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7c188c9 testClass = UserApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@43919f19 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:36:00.344  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:36:00.344  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:36:00.360  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 16 ms
+Hibernate: select user0_.scusi as scusi2_42_0_, user0_.sccid as sccid3_42_0_, user0_.scdtin as scdtin4_42_0_, user0_.sctmin as sctmin5_42_0_, user0_.scuid as scuid6_42_0_, user0_.scdtlu as scdtlu7_42_0_, user0_.sctmlu as sctmlu8_42_0_, user0_.scuidm as scuidm9_42_0_, user0_.scanum as scanum10_42_0_, user0_.scaprcd as scaprcd11_42_0_, user0_.scbuid as scbuid12_42_0_, user0_.scmtoe as scmtoe13_42_0_, user0_.scmtoe2 as scmtoe14_42_0_, user0_.scmtoe1 as scmtoe15_42_0_, user0_.sctagid as sctagid16_42_0_, user0_.scusc as scusc17_42_0_, user0_.scusg as scusg18_42_0_, user0_.scusl as scusl19_42_0_, user0_.scust as scust1_42_0_, usergroup1_.scusi as scusi2_42_1_, usergroup1_.sccid as sccid3_42_1_, usergroup1_.scdtin as scdtin4_42_1_, usergroup1_.sctmin as sctmin5_42_1_, usergroup1_.scuid as scuid6_42_1_, usergroup1_.scdtlu as scdtlu7_42_1_, usergroup1_.sctmlu as sctmlu8_42_1_, usergroup1_.scuidm as scuidm9_42_1_, usergroup1_.scanum as scanum10_42_1_, usergroup1_.scaprcd as scaprcd11_42_1_, usergroup1_.scbuid as scbuid12_42_1_, usergroup1_.scmtoe as scmtoe13_42_1_, usergroup1_.scmtoe2 as scmtoe14_42_1_, usergroup1_.scmtoe1 as scmtoe15_42_1_, usergroup1_.sctagid as sctagid16_42_1_, usergroup1_.scusc as scusc17_42_1_, usergroup1_.scusg as scusg18_42_1_, usergroup1_.scusl as scusl19_42_1_, usergroup1_.scust as scust1_42_1_ from t9801 user0_ left outer join t9801 usergroup1_ on user0_.scusg=usergroup1_.scusi where user0_.scusi=? and user0_.scust='U'
+Hibernate: select usergroup0_.scusi as scusi2_42_0_, usergroup0_.sccid as sccid3_42_0_, usergroup0_.scdtin as scdtin4_42_0_, usergroup0_.sctmin as sctmin5_42_0_, usergroup0_.scuid as scuid6_42_0_, usergroup0_.scdtlu as scdtlu7_42_0_, usergroup0_.sctmlu as sctmlu8_42_0_, usergroup0_.scuidm as scuidm9_42_0_, usergroup0_.scanum as scanum10_42_0_, usergroup0_.scaprcd as scaprcd11_42_0_, usergroup0_.scbuid as scbuid12_42_0_, usergroup0_.scmtoe as scmtoe13_42_0_, usergroup0_.scmtoe2 as scmtoe14_42_0_, usergroup0_.scmtoe1 as scmtoe15_42_0_, usergroup0_.sctagid as sctagid16_42_0_, usergroup0_.scusc as scusc17_42_0_, usergroup0_.scusg as scusg18_42_0_, usergroup0_.scusl as scusl19_42_0_, usergroup0_.scust as scust1_42_0_ from t9801 usergroup0_ where usergroup0_.scusi=? and usergroup0_.scust='G'
+2018-12-14 17:36:00.376  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@50687f75 testClass = UserApiTest, testInstance = ags.goldenlionerp.apiTests.system.UserApiTest@4cd7b025, testMethod = deleteTest@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7c188c9 testClass = UserApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@43919f19 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 4.2.1</a> at 14 Dec, 2018 5:36:06 PM</p>
+</div>
+</div>
+</body>
+</html>

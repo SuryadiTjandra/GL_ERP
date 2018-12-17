@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ags.goldenlionerp.apiTests.itemstock.StockTransactionApiTest" tests="7" skipped="7" failures="0" errors="0" timestamp="2018-12-14T10:35:30" hostname="LAPTOP-FHFRCCL6" time="0.0">
+  <properties/>
+  <testcase name="updateTestWithPut" classname="ags.goldenlionerp.apiTests.itemstock.StockTransactionApiTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="getTestSingle" classname="ags.goldenlionerp.apiTests.itemstock.StockTransactionApiTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="updateTestWithPatch" classname="ags.goldenlionerp.apiTests.itemstock.StockTransactionApiTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="getTestCollection" classname="ags.goldenlionerp.apiTests.itemstock.StockTransactionApiTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="createTestWithPut" classname="ags.goldenlionerp.apiTests.itemstock.StockTransactionApiTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="deleteTest" classname="ags.goldenlionerp.apiTests.itemstock.StockTransactionApiTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="createTestWithPost" classname="ags.goldenlionerp.apiTests.itemstock.StockTransactionApiTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <system-out><![CDATA[2018-12-14 17:35:30.191  INFO 9212 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [ags.goldenlionerp.apiTests.itemstock.StockTransactionApiTest], using SpringBootContextLoader
+2018-12-14 17:35:30.191  INFO 9212 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [ags.goldenlionerp.apiTests.itemstock.StockTransactionApiTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2018-12-14 17:35:30.191  INFO 9212 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [ags.goldenlionerp.apiTests.itemstock.StockTransactionApiTest]: StockTransactionApiTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2018-12-14 17:35:30.206  INFO 9212 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration ags.goldenlionerp.GoldenLionErpApplication for test class ags.goldenlionerp.apiTests.itemstock.StockTransactionApiTest
+2018-12-14 17:35:30.206  INFO 9212 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-12-14 17:35:30.206  INFO 9212 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@4e07c42, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@343c7da7, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@514fb885, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@4005e7b9, org.springframework.test.context.support.DirtiesContextTestExecutionListener@47809197, org.springframework.test.context.transaction.TransactionalTestExecutionListener@10860d85, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@3c210480, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@53f60492, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@10b92b52, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@30f3e6e5, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@442f17f, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@6773b7f1, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@3e49f3f6, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@11a2fe14]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,1413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ags.goldenlionerp.apiTests.item.ItemLocationApiTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2018-12-14T10:35:27" hostname="LAPTOP-FHFRCCL6" time="0.551">
+  <properties/>
+  <testcase name="updateTestWithPut" classname="ags.goldenlionerp.apiTests.item.ItemLocationApiTest" time="0.141"/>
+  <testcase name="getTestSingle" classname="ags.goldenlionerp.apiTests.item.ItemLocationApiTest" time="0.019"/>
+  <testcase name="updateTestWithPatch" classname="ags.goldenlionerp.apiTests.item.ItemLocationApiTest" time="0.106"/>
+  <testcase name="getTestCollection" classname="ags.goldenlionerp.apiTests.item.ItemLocationApiTest" time="0.1"/>
+  <testcase name="createTestWithPut" classname="ags.goldenlionerp.apiTests.item.ItemLocationApiTest" time="0.02"/>
+  <testcase name="deleteTest" classname="ags.goldenlionerp.apiTests.item.ItemLocationApiTest" time="0.022"/>
+  <testcase name="createTestWithPost" classname="ags.goldenlionerp.apiTests.item.ItemLocationApiTest" time="0.138"/>
+  <system-out><![CDATA[2018-12-14 17:35:27.530  INFO 9212 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [ags.goldenlionerp.apiTests.item.ItemLocationApiTest], using SpringBootContextLoader
+2018-12-14 17:35:27.530  INFO 9212 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [ags.goldenlionerp.apiTests.item.ItemLocationApiTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2018-12-14 17:35:27.530  INFO 9212 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [ags.goldenlionerp.apiTests.item.ItemLocationApiTest]: ItemLocationApiTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2018-12-14 17:35:27.530  INFO 9212 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration ags.goldenlionerp.GoldenLionErpApplication for test class ags.goldenlionerp.apiTests.item.ItemLocationApiTest
+2018-12-14 17:35:27.546  INFO 9212 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-12-14 17:35:27.546  INFO 9212 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1c226e0e, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@7c4a8021, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@7a9a7763, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@770a4bdb, org.springframework.test.context.support.DirtiesContextTestExecutionListener@78d7092a, org.springframework.test.context.transaction.TransactionalTestExecutionListener@50b4d599, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@79bc8183, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@5ccd59fc, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@1c138516, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@6a7d9310, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@77d0a745, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@416402fa, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@415f04f5, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@47bcfadd]
+2018-12-14 17:35:27.561  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@5cb78e12 testClass = ItemLocationApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemLocationApiTest@39e760b8, testMethod = updateTestWithPut@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@6b378341 testClass = ItemLocationApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4af5667e key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:27.561  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:27.561  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:27.561  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+Hibernate: select itemlocati0_.ilbuid as ilbuid1_33_0_, itemlocati0_.ilinum as ilinum2_33_0_, itemlocati0_.illocid as illocid3_33_0_, itemlocati0_.ilsnlot as ilsnlot4_33_0_, itemlocati0_.ilcid as ilcid5_33_0_, itemlocati0_.ildtin as ildtin6_33_0_, itemlocati0_.iltmin as iltmin7_33_0_, itemlocati0_.iluid as iluid8_33_0_, itemlocati0_.ildtlu as ildtlu9_33_0_, itemlocati0_.iltmlu as iltmlu10_33_0_, itemlocati0_.iluidm as iluidm11_33_0_, itemlocati0_.ildtlt as ildtlt12_33_0_, itemlocati0_.ilexpdt as ilexpdt13_33_0_, itemlocati0_.ilglcls as ilglcls14_33_0_, itemlocati0_.illocst as illocst15_33_0_, itemlocati0_.illsc as illsc16_33_0_, itemlocati0_.ilpqoh as ilpqoh17_33_0_, itemlocati0_.ilqtib as ilqtib18_33_0_, itemlocati0_.ilqtin as ilqtin19_33_0_, itemlocati0_.ilqttr as ilqttr20_33_0_, itemlocati0_.ilqobo as ilqobo21_33_0_, itemlocati0_.ilqohc as ilqohc22_33_0_, itemlocati0_.ilqopo as ilqopo23_33_0_, itemlocati0_.ilqoso as ilqoso24_33_0_, itemlocati0_.ilqosc as ilqosc25_33_0_, itemlocati0_.ilqowo as ilqowo26_33_0_, itemlocati0_.ilqowh as ilqowh27_33_0_, itemlocati0_.ilqows as ilqows28_33_0_, itemlocati0_.ilqot1 as ilqot29_33_0_, itemlocati0_.ilqot2 as ilqot30_33_0_, itemlocati0_.ilqot3 as ilqot31_33_0_, itemlocati0_.ilqtob as ilqtob32_33_0_, itemlocati0_.ilsqoh as ilsqoh33_33_0_, itemlocati0_.ilsqpo as ilsqpo34_33_0_, itemlocati0_.ilsqso as ilsqso35_33_0_, itemlocati0_.ilsqwo as ilsqwo36_33_0_, itemlocati0_.iluom as iluom37_33_0_, itemlocati0_.iluom1 as iluom38_33_0_, itemlocati0_.iluom2 as iluom39_33_0_ from t41021 itemlocati0_ where itemlocati0_.ilbuid=? and itemlocati0_.ilinum=? and itemlocati0_.illocid=? and itemlocati0_.ilsnlot=?
+Hibernate: select lotmaster0_.ltbuid as ltbuid1_34_0_, lotmaster0_.ltinum as ltinum2_34_0_, lotmaster0_.ltsnlot as ltsnlot3_34_0_, lotmaster0_.ltcid as ltcid4_34_0_, lotmaster0_.ltdtin as ltdtin5_34_0_, lotmaster0_.lttmin as lttmin6_34_0_, lotmaster0_.ltuid as ltuid7_34_0_, lotmaster0_.ltdtlu as ltdtlu8_34_0_, lotmaster0_.lttmlu as lttmlu9_34_0_, lotmaster0_.ltuidm as ltuidm10_34_0_, lotmaster0_.ltbodt as ltbodt11_34_0_, lotmaster0_.ltbbdt as ltbbdt12_34_0_, lotmaster0_.ltcldt as ltcldt13_34_0_, lotmaster0_.ltexpdt as ltexpdt14_34_0_, lotmaster0_.ltldsc as ltldsc15_34_0_, lotmaster0_.ltledt as ltledt16_34_0_, lotmaster0_.ltlsc as ltlsc17_34_0_, lotmaster0_.ltmlot1 as ltmlot18_34_0_, lotmaster0_.ltmlot2 as ltmlot19_34_0_, lotmaster0_.ltmlot3 as ltmlot20_34_0_, lotmaster0_.ltohdt as ltohdt21_34_0_, lotmaster0_.ltsern as ltsern22_34_0_ from t4108 lotmaster0_ where lotmaster0_.ltbuid=? and lotmaster0_.ltinum=? and lotmaster0_.ltsnlot=?
+2018-12-14 17:35:27.702  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@5cb78e12 testClass = ItemLocationApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemLocationApiTest@39e760b8, testMethod = updateTestWithPut@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@6b378341 testClass = ItemLocationApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4af5667e key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]
+2018-12-14 17:35:27.702  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@5cb78e12 testClass = ItemLocationApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemLocationApiTest@67cfd0e9, testMethod = getTestSingle@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@6b378341 testClass = ItemLocationApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4af5667e key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:27.702  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:27.702  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:27.702  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+Hibernate: select itemlocati0_.ilbuid as ilbuid1_33_0_, itemlocati0_.ilinum as ilinum2_33_0_, itemlocati0_.illocid as illocid3_33_0_, itemlocati0_.ilsnlot as ilsnlot4_33_0_, itemlocati0_.ilcid as ilcid5_33_0_, itemlocati0_.ildtin as ildtin6_33_0_, itemlocati0_.iltmin as iltmin7_33_0_, itemlocati0_.iluid as iluid8_33_0_, itemlocati0_.ildtlu as ildtlu9_33_0_, itemlocati0_.iltmlu as iltmlu10_33_0_, itemlocati0_.iluidm as iluidm11_33_0_, itemlocati0_.ildtlt as ildtlt12_33_0_, itemlocati0_.ilexpdt as ilexpdt13_33_0_, itemlocati0_.ilglcls as ilglcls14_33_0_, itemlocati0_.illocst as illocst15_33_0_, itemlocati0_.illsc as illsc16_33_0_, itemlocati0_.ilpqoh as ilpqoh17_33_0_, itemlocati0_.ilqtib as ilqtib18_33_0_, itemlocati0_.ilqtin as ilqtin19_33_0_, itemlocati0_.ilqttr as ilqttr20_33_0_, itemlocati0_.ilqobo as ilqobo21_33_0_, itemlocati0_.ilqohc as ilqohc22_33_0_, itemlocati0_.ilqopo as ilqopo23_33_0_, itemlocati0_.ilqoso as ilqoso24_33_0_, itemlocati0_.ilqosc as ilqosc25_33_0_, itemlocati0_.ilqowo as ilqowo26_33_0_, itemlocati0_.ilqowh as ilqowh27_33_0_, itemlocati0_.ilqows as ilqows28_33_0_, itemlocati0_.ilqot1 as ilqot29_33_0_, itemlocati0_.ilqot2 as ilqot30_33_0_, itemlocati0_.ilqot3 as ilqot31_33_0_, itemlocati0_.ilqtob as ilqtob32_33_0_, itemlocati0_.ilsqoh as ilsqoh33_33_0_, itemlocati0_.ilsqpo as ilsqpo34_33_0_, itemlocati0_.ilsqso as ilsqso35_33_0_, itemlocati0_.ilsqwo as ilsqwo36_33_0_, itemlocati0_.iluom as iluom37_33_0_, itemlocati0_.iluom1 as iluom38_33_0_, itemlocati0_.iluom2 as iluom39_33_0_ from t41021 itemlocati0_ where itemlocati0_.ilbuid=? and itemlocati0_.ilinum=? and itemlocati0_.illocid=? and itemlocati0_.ilsnlot=?
+Hibernate: select lotmaster0_.ltbuid as ltbuid1_34_0_, lotmaster0_.ltinum as ltinum2_34_0_, lotmaster0_.ltsnlot as ltsnlot3_34_0_, lotmaster0_.ltcid as ltcid4_34_0_, lotmaster0_.ltdtin as ltdtin5_34_0_, lotmaster0_.lttmin as lttmin6_34_0_, lotmaster0_.ltuid as ltuid7_34_0_, lotmaster0_.ltdtlu as ltdtlu8_34_0_, lotmaster0_.lttmlu as lttmlu9_34_0_, lotmaster0_.ltuidm as ltuidm10_34_0_, lotmaster0_.ltbodt as ltbodt11_34_0_, lotmaster0_.ltbbdt as ltbbdt12_34_0_, lotmaster0_.ltcldt as ltcldt13_34_0_, lotmaster0_.ltexpdt as ltexpdt14_34_0_, lotmaster0_.ltldsc as ltldsc15_34_0_, lotmaster0_.ltledt as ltledt16_34_0_, lotmaster0_.ltlsc as ltlsc17_34_0_, lotmaster0_.ltmlot1 as ltmlot18_34_0_, lotmaster0_.ltmlot2 as ltmlot19_34_0_, lotmaster0_.ltmlot3 as ltmlot20_34_0_, lotmaster0_.ltohdt as ltohdt21_34_0_, lotmaster0_.ltsern as ltsern22_34_0_ from t4108 lotmaster0_ where lotmaster0_.ltbuid=? and lotmaster0_.ltinum=? and lotmaster0_.ltsnlot=?
+2018-12-14 17:35:27.717  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@5cb78e12 testClass = ItemLocationApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemLocationApiTest@67cfd0e9, testMethod = getTestSingle@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@6b378341 testClass = ItemLocationApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4af5667e key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]
+2018-12-14 17:35:27.717  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@5cb78e12 testClass = ItemLocationApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemLocationApiTest@11cb5fdf, testMethod = updateTestWithPatch@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@6b378341 testClass = ItemLocationApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4af5667e key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:27.717  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:27.717  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:27.717  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+Hibernate: select itemlocati0_.ilbuid as ilbuid1_33_0_, itemlocati0_.ilinum as ilinum2_33_0_, itemlocati0_.illocid as illocid3_33_0_, itemlocati0_.ilsnlot as ilsnlot4_33_0_, itemlocati0_.ilcid as ilcid5_33_0_, itemlocati0_.ildtin as ildtin6_33_0_, itemlocati0_.iltmin as iltmin7_33_0_, itemlocati0_.iluid as iluid8_33_0_, itemlocati0_.ildtlu as ildtlu9_33_0_, itemlocati0_.iltmlu as iltmlu10_33_0_, itemlocati0_.iluidm as iluidm11_33_0_, itemlocati0_.ildtlt as ildtlt12_33_0_, itemlocati0_.ilexpdt as ilexpdt13_33_0_, itemlocati0_.ilglcls as ilglcls14_33_0_, itemlocati0_.illocst as illocst15_33_0_, itemlocati0_.illsc as illsc16_33_0_, itemlocati0_.ilpqoh as ilpqoh17_33_0_, itemlocati0_.ilqtib as ilqtib18_33_0_, itemlocati0_.ilqtin as ilqtin19_33_0_, itemlocati0_.ilqttr as ilqttr20_33_0_, itemlocati0_.ilqobo as ilqobo21_33_0_, itemlocati0_.ilqohc as ilqohc22_33_0_, itemlocati0_.ilqopo as ilqopo23_33_0_, itemlocati0_.ilqoso as ilqoso24_33_0_, itemlocati0_.ilqosc as ilqosc25_33_0_, itemlocati0_.ilqowo as ilqowo26_33_0_, itemlocati0_.ilqowh as ilqowh27_33_0_, itemlocati0_.ilqows as ilqows28_33_0_, itemlocati0_.ilqot1 as ilqot29_33_0_, itemlocati0_.ilqot2 as ilqot30_33_0_, itemlocati0_.ilqot3 as ilqot31_33_0_, itemlocati0_.ilqtob as ilqtob32_33_0_, itemlocati0_.ilsqoh as ilsqoh33_33_0_, itemlocati0_.ilsqpo as ilsqpo34_33_0_, itemlocati0_.ilsqso as ilsqso35_33_0_, itemlocati0_.ilsqwo as ilsqwo36_33_0_, itemlocati0_.iluom as iluom37_33_0_, itemlocati0_.iluom1 as iluom38_33_0_, itemlocati0_.iluom2 as iluom39_33_0_ from t41021 itemlocati0_ where itemlocati0_.ilbuid=? and itemlocati0_.ilinum=? and itemlocati0_.illocid=? and itemlocati0_.ilsnlot=?
+Hibernate: select lotmaster0_.ltbuid as ltbuid1_34_0_, lotmaster0_.ltinum as ltinum2_34_0_, lotmaster0_.ltsnlot as ltsnlot3_34_0_, lotmaster0_.ltcid as ltcid4_34_0_, lotmaster0_.ltdtin as ltdtin5_34_0_, lotmaster0_.lttmin as lttmin6_34_0_, lotmaster0_.ltuid as ltuid7_34_0_, lotmaster0_.ltdtlu as ltdtlu8_34_0_, lotmaster0_.lttmlu as lttmlu9_34_0_, lotmaster0_.ltuidm as ltuidm10_34_0_, lotmaster0_.ltbodt as ltbodt11_34_0_, lotmaster0_.ltbbdt as ltbbdt12_34_0_, lotmaster0_.ltcldt as ltcldt13_34_0_, lotmaster0_.ltexpdt as ltexpdt14_34_0_, lotmaster0_.ltldsc as ltldsc15_34_0_, lotmaster0_.ltledt as ltledt16_34_0_, lotmaster0_.ltlsc as ltlsc17_34_0_, lotmaster0_.ltmlot1 as ltmlot18_34_0_, lotmaster0_.ltmlot2 as ltmlot19_34_0_, lotmaster0_.ltmlot3 as ltmlot20_34_0_, lotmaster0_.ltohdt as ltohdt21_34_0_, lotmaster0_.ltsern as ltsern22_34_0_ from t4108 lotmaster0_ where lotmaster0_.ltbuid=? and lotmaster0_.ltinum=? and lotmaster0_.ltsnlot=?
+Hibernate: update t41021 set ilcid=?, ildtlu=?, iltmlu=?, iluidm=?, ildtlt=?, ilexpdt=?, ilglcls=?, illocst=?, illsc=?, ilpqoh=?, ilqtib=?, ilqtin=?, ilqttr=?, ilqobo=?, ilqohc=?, ilqopo=?, ilqoso=?, ilqosc=?, ilqowo=?, ilqowh=?, ilqows=?, ilqot1=?, ilqot2=?, ilqot3=?, ilqtob=?, ilsqoh=?, ilsqpo=?, ilsqso=?, ilsqwo=?, iluom=?, iluom1=?, iluom2=? where ilbuid=? and ilinum=? and illocid=? and ilsnlot=?
+Hibernate: select itemlocati0_.ilbuid as ilbuid1_33_0_, itemlocati0_.ilinum as ilinum2_33_0_, itemlocati0_.illocid as illocid3_33_0_, itemlocati0_.ilsnlot as ilsnlot4_33_0_, itemlocati0_.ilcid as ilcid5_33_0_, itemlocati0_.ildtin as ildtin6_33_0_, itemlocati0_.iltmin as iltmin7_33_0_, itemlocati0_.iluid as iluid8_33_0_, itemlocati0_.ildtlu as ildtlu9_33_0_, itemlocati0_.iltmlu as iltmlu10_33_0_, itemlocati0_.iluidm as iluidm11_33_0_, itemlocati0_.ildtlt as ildtlt12_33_0_, itemlocati0_.ilexpdt as ilexpdt13_33_0_, itemlocati0_.ilglcls as ilglcls14_33_0_, itemlocati0_.illocst as illocst15_33_0_, itemlocati0_.illsc as illsc16_33_0_, itemlocati0_.ilpqoh as ilpqoh17_33_0_, itemlocati0_.ilqtib as ilqtib18_33_0_, itemlocati0_.ilqtin as ilqtin19_33_0_, itemlocati0_.ilqttr as ilqttr20_33_0_, itemlocati0_.ilqobo as ilqobo21_33_0_, itemlocati0_.ilqohc as ilqohc22_33_0_, itemlocati0_.ilqopo as ilqopo23_33_0_, itemlocati0_.ilqoso as ilqoso24_33_0_, itemlocati0_.ilqosc as ilqosc25_33_0_, itemlocati0_.ilqowo as ilqowo26_33_0_, itemlocati0_.ilqowh as ilqowh27_33_0_, itemlocati0_.ilqows as ilqows28_33_0_, itemlocati0_.ilqot1 as ilqot29_33_0_, itemlocati0_.ilqot2 as ilqot30_33_0_, itemlocati0_.ilqot3 as ilqot31_33_0_, itemlocati0_.ilqtob as ilqtob32_33_0_, itemlocati0_.ilsqoh as ilsqoh33_33_0_, itemlocati0_.ilsqpo as ilsqpo34_33_0_, itemlocati0_.ilsqso as ilsqso35_33_0_, itemlocati0_.ilsqwo as ilsqwo36_33_0_, itemlocati0_.iluom as iluom37_33_0_, itemlocati0_.iluom1 as iluom38_33_0_, itemlocati0_.iluom2 as iluom39_33_0_ from t41021 itemlocati0_ where itemlocati0_.ilbuid=? and itemlocati0_.ilinum=? and itemlocati0_.illocid=? and itemlocati0_.ilsnlot=?
+Hibernate: select lotmaster0_.ltbuid as ltbuid1_34_0_, lotmaster0_.ltinum as ltinum2_34_0_, lotmaster0_.ltsnlot as ltsnlot3_34_0_, lotmaster0_.ltcid as ltcid4_34_0_, lotmaster0_.ltdtin as ltdtin5_34_0_, lotmaster0_.lttmin as lttmin6_34_0_, lotmaster0_.ltuid as ltuid7_34_0_, lotmaster0_.ltdtlu as ltdtlu8_34_0_, lotmaster0_.lttmlu as lttmlu9_34_0_, lotmaster0_.ltuidm as ltuidm10_34_0_, lotmaster0_.ltbodt as ltbodt11_34_0_, lotmaster0_.ltbbdt as ltbbdt12_34_0_, lotmaster0_.ltcldt as ltcldt13_34_0_, lotmaster0_.ltexpdt as ltexpdt14_34_0_, lotmaster0_.ltldsc as ltldsc15_34_0_, lotmaster0_.ltledt as ltledt16_34_0_, lotmaster0_.ltlsc as ltlsc17_34_0_, lotmaster0_.ltmlot1 as ltmlot18_34_0_, lotmaster0_.ltmlot2 as ltmlot19_34_0_, lotmaster0_.ltmlot3 as ltmlot20_34_0_, lotmaster0_.ltohdt as ltohdt21_34_0_, lotmaster0_.ltsern as ltsern22_34_0_ from t4108 lotmaster0_ where lotmaster0_.ltbuid=? and lotmaster0_.ltinum=? and lotmaster0_.ltsnlot=?
+2018-12-14 17:35:27.827  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@5cb78e12 testClass = ItemLocationApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemLocationApiTest@11cb5fdf, testMethod = updateTestWithPatch@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@6b378341 testClass = ItemLocationApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4af5667e key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]
+2018-12-14 17:35:27.827  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@5cb78e12 testClass = ItemLocationApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemLocationApiTest@b6e63ca, testMethod = getTestCollection@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@6b378341 testClass = ItemLocationApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4af5667e key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:27.827  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:27.827  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:27.827  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+Hibernate: select TOP(?) itemlocati0_.ilbuid as ilbuid1_33_, itemlocati0_.ilinum as ilinum2_33_, itemlocati0_.illocid as illocid3_33_, itemlocati0_.ilsnlot as ilsnlot4_33_, itemlocati0_.ilcid as ilcid5_33_, itemlocati0_.ildtin as ildtin6_33_, itemlocati0_.iltmin as iltmin7_33_, itemlocati0_.iluid as iluid8_33_, itemlocati0_.ildtlu as ildtlu9_33_, itemlocati0_.iltmlu as iltmlu10_33_, itemlocati0_.iluidm as iluidm11_33_, itemlocati0_.ildtlt as ildtlt12_33_, itemlocati0_.ilexpdt as ilexpdt13_33_, itemlocati0_.ilglcls as ilglcls14_33_, itemlocati0_.illocst as illocst15_33_, itemlocati0_.illsc as illsc16_33_, itemlocati0_.ilpqoh as ilpqoh17_33_, itemlocati0_.ilqtib as ilqtib18_33_, itemlocati0_.ilqtin as ilqtin19_33_, itemlocati0_.ilqttr as ilqttr20_33_, itemlocati0_.ilqobo as ilqobo21_33_, itemlocati0_.ilqohc as ilqohc22_33_, itemlocati0_.ilqopo as ilqopo23_33_, itemlocati0_.ilqoso as ilqoso24_33_, itemlocati0_.ilqosc as ilqosc25_33_, itemlocati0_.ilqowo as ilqowo26_33_, itemlocati0_.ilqowh as ilqowh27_33_, itemlocati0_.ilqows as ilqows28_33_, itemlocati0_.ilqot1 as ilqot29_33_, itemlocati0_.ilqot2 as ilqot30_33_, itemlocati0_.ilqot3 as ilqot31_33_, itemlocati0_.ilqtob as ilqtob32_33_, itemlocati0_.ilsqoh as ilsqoh33_33_, itemlocati0_.ilsqpo as ilsqpo34_33_, itemlocati0_.ilsqso as ilsqso35_33_, itemlocati0_.ilsqwo as ilsqwo36_33_, itemlocati0_.iluom as iluom37_33_, itemlocati0_.iluom1 as iluom38_33_, itemlocati0_.iluom2 as iluom39_33_ from t41021 itemlocati0_
+Hibernate: select lotmaster0_.ltbuid as ltbuid1_34_0_, lotmaster0_.ltinum as ltinum2_34_0_, lotmaster0_.ltsnlot as ltsnlot3_34_0_, lotmaster0_.ltcid as ltcid4_34_0_, lotmaster0_.ltdtin as ltdtin5_34_0_, lotmaster0_.lttmin as lttmin6_34_0_, lotmaster0_.ltuid as ltuid7_34_0_, lotmaster0_.ltdtlu as ltdtlu8_34_0_, lotmaster0_.lttmlu as lttmlu9_34_0_, lotmaster0_.ltuidm as ltuidm10_34_0_, lotmaster0_.ltbodt as ltbodt11_34_0_, lotmaster0_.ltbbdt as ltbbdt12_34_0_, lotmaster0_.ltcldt as ltcldt13_34_0_, lotmaster0_.ltexpdt as ltexpdt14_34_0_, lotmaster0_.ltldsc as ltldsc15_34_0_, lotmaster0_.ltledt as ltledt16_34_0_, lotmaster0_.ltlsc as ltlsc17_34_0_, lotmaster0_.ltmlot1 as ltmlot18_34_0_, lotmaster0_.ltmlot2 as ltmlot19_34_0_, lotmaster0_.ltmlot3 as ltmlot20_34_0_, lotmaster0_.ltohdt as ltohdt21_34_0_, lotmaster0_.ltsern as ltsern22_34_0_ from t4108 lotmaster0_ where lotmaster0_.ltbuid=? and lotmaster0_.ltinum=? and lotmaster0_.ltsnlot=?
+Hibernate: select lotmaster0_.ltbuid as ltbuid1_34_0_, lotmaster0_.ltinum as ltinum2_34_0_, lotmaster0_.ltsnlot as ltsnlot3_34_0_, lotmaster0_.ltcid as ltcid4_34_0_, lotmaster0_.ltdtin as ltdtin5_34_0_, lotmaster0_.lttmin as lttmin6_34_0_, lotmaster0_.ltuid as ltuid7_34_0_, lotmaster0_.ltdtlu as ltdtlu8_34_0_, lotmaster0_.lttmlu as lttmlu9_34_0_, lotmaster0_.ltuidm as ltuidm10_34_0_, lotmaster0_.ltbodt as ltbodt11_34_0_, lotmaster0_.ltbbdt as ltbbdt12_34_0_, lotmaster0_.ltcldt as ltcldt13_34_0_, lotmaster0_.ltexpdt as ltexpdt14_34_0_, lotmaster0_.ltldsc as ltldsc15_34_0_, lotmaster0_.ltledt as ltledt16_34_0_, lotmaster0_.ltlsc as ltlsc17_34_0_, lotmaster0_.ltmlot1 as ltmlot18_34_0_, lotmaster0_.ltmlot2 as ltmlot19_34_0_, lotmaster0_.ltmlot3 as ltmlot20_34_0_, lotmaster0_.ltohdt as ltohdt21_34_0_, lotmaster0_.ltsern as ltsern22_34_0_ from t4108 lotmaster0_ where lotmaster0_.ltbuid=? and lotmaster0_.ltinum=? and lotmaster0_.ltsnlot=?
+Hibernate: select lotmaster0_.ltbuid as ltbuid1_34_0_, lotmaster0_.ltinum as ltinum2_34_0_, lotmaster0_.ltsnlot as ltsnlot3_34_0_, lotmaster0_.ltcid as ltcid4_34_0_, lotmaster0_.ltdtin as ltdtin5_34_0_, lotmaster0_.lttmin as lttmin6_34_0_, lotmaster0_.ltuid as ltuid7_34_0_, lotmaster0_.ltdtlu as ltdtlu8_34_0_, lotmaster0_.lttmlu as lttmlu9_34_0_, lotmaster0_.ltuidm as ltuidm10_34_0_, lotmaster0_.ltbodt as ltbodt11_34_0_, lotmaster0_.ltbbdt as ltbbdt12_34_0_, lotmaster0_.ltcldt as ltcldt13_34_0_, lotmaster0_.ltexpdt as ltexpdt14_34_0_, lotmaster0_.ltldsc as ltldsc15_34_0_, lotmaster0_.ltledt as ltledt16_34_0_, lotmaster0_.ltlsc as ltlsc17_34_0_, lotmaster0_.ltmlot1 as ltmlot18_34_0_, lotmaster0_.ltmlot2 as ltmlot19_34_0_, lotmaster0_.ltmlot3 as ltmlot20_34_0_, lotmaster0_.ltohdt as ltohdt21_34_0_, lotmaster0_.ltsern as ltsern22_34_0_ from t4108 lotmaster0_ where lotmaster0_.ltbuid=? and lotmaster0_.ltinum=? and lotmaster0_.ltsnlot=?
+Hibernate: select lotmaster0_.ltbuid as ltbuid1_34_0_, lotmaster0_.ltinum as ltinum2_34_0_, lotmaster0_.ltsnlot as ltsnlot3_34_0_, lotmaster0_.ltcid as ltcid4_34_0_, lotmaster0_.ltdtin as ltdtin5_34_0_, lotmaster0_.lttmin as lttmin6_34_0_, lotmaster0_.ltuid as ltuid7_34_0_, lotmaster0_.ltdtlu as ltdtlu8_34_0_, lotmaster0_.lttmlu as lttmlu9_34_0_, lotmaster0_.ltuidm as ltuidm10_34_0_, lotmaster0_.ltbodt as ltbodt11_34_0_, lotmaster0_.ltbbdt as ltbbdt12_34_0_, lotmaster0_.ltcldt as ltcldt13_34_0_, lotmaster0_.ltexpdt as ltexpdt14_34_0_, lotmaster0_.ltldsc as ltldsc15_34_0_, lotmaster0_.ltledt as ltledt16_34_0_, lotmaster0_.ltlsc as ltlsc17_34_0_, lotmaster0_.ltmlot1 as ltmlot18_34_0_, lotmaster0_.ltmlot2 as ltmlot19_34_0_, lotmaster0_.ltmlot3 as ltmlot20_34_0_, lotmaster0_.ltohdt as ltohdt21_34_0_, lotmaster0_.ltsern as ltsern22_34_0_ from t4108 lotmaster0_ where lotmaster0_.ltbuid=? and lotmaster0_.ltinum=? and lotmaster0_.ltsnlot=?
+Hibernate: select lotmaster0_.ltbuid as ltbuid1_34_0_, lotmaster0_.ltinum as ltinum2_34_0_, lotmaster0_.ltsnlot as ltsnlot3_34_0_, lotmaster0_.ltcid as ltcid4_34_0_, lotmaster0_.ltdtin as ltdtin5_34_0_, lotmaster0_.lttmin as lttmin6_34_0_, lotmaster0_.ltuid as ltuid7_34_0_, lotmaster0_.ltdtlu as ltdtlu8_34_0_, lotmaster0_.lttmlu as lttmlu9_34_0_, lotmaster0_.ltuidm as ltuidm10_34_0_, lotmaster0_.ltbodt as ltbodt11_34_0_, lotmaster0_.ltbbdt as ltbbdt12_34_0_, lotmaster0_.ltcldt as ltcldt13_34_0_, lotmaster0_.ltexpdt as ltexpdt14_34_0_, lotmaster0_.ltldsc as ltldsc15_34_0_, lotmaster0_.ltledt as ltledt16_34_0_, lotmaster0_.ltlsc as ltlsc17_34_0_, lotmaster0_.ltmlot1 as ltmlot18_34_0_, lotmaster0_.ltmlot2 as ltmlot19_34_0_, lotmaster0_.ltmlot3 as ltmlot20_34_0_, lotmaster0_.ltohdt as ltohdt21_34_0_, lotmaster0_.ltsern as ltsern22_34_0_ from t4108 lotmaster0_ where lotmaster0_.ltbuid=? and lotmaster0_.ltinum=? and lotmaster0_.ltsnlot=?
+Hibernate: select lotmaster0_.ltbuid as ltbuid1_34_0_, lotmaster0_.ltinum as ltinum2_34_0_, lotmaster0_.ltsnlot as ltsnlot3_34_0_, lotmaster0_.ltcid as ltcid4_34_0_, lotmaster0_.ltdtin as ltdtin5_34_0_, lotmaster0_.lttmin as lttmin6_34_0_, lotmaster0_.ltuid as ltuid7_34_0_, lotmaster0_.ltdtlu as ltdtlu8_34_0_, lotmaster0_.lttmlu as lttmlu9_34_0_, lotmaster0_.ltuidm as ltuidm10_34_0_, lotmaster0_.ltbodt as ltbodt11_34_0_, lotmaster0_.ltbbdt as ltbbdt12_34_0_, lotmaster0_.ltcldt as ltcldt13_34_0_, lotmaster0_.ltexpdt as ltexpdt14_34_0_, lotmaster0_.ltldsc as ltldsc15_34_0_, lotmaster0_.ltledt as ltledt16_34_0_, lotmaster0_.ltlsc as ltlsc17_34_0_, lotmaster0_.ltmlot1 as ltmlot18_34_0_, lotmaster0_.ltmlot2 as ltmlot19_34_0_, lotmaster0_.ltmlot3 as ltmlot20_34_0_, lotmaster0_.ltohdt as ltohdt21_34_0_, lotmaster0_.ltsern as ltsern22_34_0_ from t4108 lotmaster0_ where lotmaster0_.ltbuid=? and lotmaster0_.ltinum=? and lotmaster0_.ltsnlot=?
+Hibernate: select lotmaster0_.ltbuid as ltbuid1_34_0_, lotmaster0_.ltinum as ltinum2_34_0_, lotmaster0_.ltsnlot as ltsnlot3_34_0_, lotmaster0_.ltcid as ltcid4_34_0_, lotmaster0_.ltdtin as ltdtin5_34_0_, lotmaster0_.lttmin as lttmin6_34_0_, lotmaster0_.ltuid as ltuid7_34_0_, lotmaster0_.ltdtlu as ltdtlu8_34_0_, lotmaster0_.lttmlu as lttmlu9_34_0_, lotmaster0_.ltuidm as ltuidm10_34_0_, lotmaster0_.ltbodt as ltbodt11_34_0_, lotmaster0_.ltbbdt as ltbbdt12_34_0_, lotmaster0_.ltcldt as ltcldt13_34_0_, lotmaster0_.ltexpdt as ltexpdt14_34_0_, lotmaster0_.ltldsc as ltldsc15_34_0_, lotmaster0_.ltledt as ltledt16_34_0_, lotmaster0_.ltlsc as ltlsc17_34_0_, lotmaster0_.ltmlot1 as ltmlot18_34_0_, lotmaster0_.ltmlot2 as ltmlot19_34_0_, lotmaster0_.ltmlot3 as ltmlot20_34_0_, lotmaster0_.ltohdt as ltohdt21_34_0_, lotmaster0_.ltsern as ltsern22_34_0_ from t4108 lotmaster0_ where lotmaster0_.ltbuid=? and lotmaster0_.ltinum=? and lotmaster0_.ltsnlot=?
+Hibernate: select lotmaster0_.ltbuid as ltbuid1_34_0_, lotmaster0_.ltinum as ltinum2_34_0_, lotmaster0_.ltsnlot as ltsnlot3_34_0_, lotmaster0_.ltcid as ltcid4_34_0_, lotmaster0_.ltdtin as ltdtin5_34_0_, lotmaster0_.lttmin as lttmin6_34_0_, lotmaster0_.ltuid as ltuid7_34_0_, lotmaster0_.ltdtlu as ltdtlu8_34_0_, lotmaster0_.lttmlu as lttmlu9_34_0_, lotmaster0_.ltuidm as ltuidm10_34_0_, lotmaster0_.ltbodt as ltbodt11_34_0_, lotmaster0_.ltbbdt as ltbbdt12_34_0_, lotmaster0_.ltcldt as ltcldt13_34_0_, lotmaster0_.ltexpdt as ltexpdt14_34_0_, lotmaster0_.ltldsc as ltldsc15_34_0_, lotmaster0_.ltledt as ltledt16_34_0_, lotmaster0_.ltlsc as ltlsc17_34_0_, lotmaster0_.ltmlot1 as ltmlot18_34_0_, lotmaster0_.ltmlot2 as ltmlot19_34_0_, lotmaster0_.ltmlot3 as ltmlot20_34_0_, lotmaster0_.ltohdt as ltohdt21_34_0_, lotmaster0_.ltsern as ltsern22_34_0_ from t4108 lotmaster0_ where lotmaster0_.ltbuid=? and lotmaster0_.ltinum=? and lotmaster0_.ltsnlot=?
+Hibernate: select lotmaster0_.ltbuid as ltbuid1_34_0_, lotmaster0_.ltinum as ltinum2_34_0_, lotmaster0_.ltsnlot as ltsnlot3_34_0_, lotmaster0_.ltcid as ltcid4_34_0_, lotmaster0_.ltdtin as ltdtin5_34_0_, lotmaster0_.lttmin as lttmin6_34_0_, lotmaster0_.ltuid as ltuid7_34_0_, lotmaster0_.ltdtlu as ltdtlu8_34_0_, lotmaster0_.lttmlu as lttmlu9_34_0_, lotmaster0_.ltuidm as ltuidm10_34_0_, lotmaster0_.ltbodt as ltbodt11_34_0_, lotmaster0_.ltbbdt as ltbbdt12_34_0_, lotmaster0_.ltcldt as ltcldt13_34_0_, lotmaster0_.ltexpdt as ltexpdt14_34_0_, lotmaster0_.ltldsc as ltldsc15_34_0_, lotmaster0_.ltledt as ltledt16_34_0_, lotmaster0_.ltlsc as ltlsc17_34_0_, lotmaster0_.ltmlot1 as ltmlot18_34_0_, lotmaster0_.ltmlot2 as ltmlot19_34_0_, lotmaster0_.ltmlot3 as ltmlot20_34_0_, lotmaster0_.ltohdt as ltohdt21_34_0_, lotmaster0_.ltsern as ltsern22_34_0_ from t4108 lotmaster0_ where lotmaster0_.ltbuid=? and lotmaster0_.ltinum=? and lotmaster0_.ltsnlot=?
+Hibernate: select lotmaster0_.ltbuid as ltbuid1_34_0_, lotmaster0_.ltinum as ltinum2_34_0_, lotmaster0_.ltsnlot as ltsnlot3_34_0_, lotmaster0_.ltcid as ltcid4_34_0_, lotmaster0_.ltdtin as ltdtin5_34_0_, lotmaster0_.lttmin as lttmin6_34_0_, lotmaster0_.ltuid as ltuid7_34_0_, lotmaster0_.ltdtlu as ltdtlu8_34_0_, lotmaster0_.lttmlu as lttmlu9_34_0_, lotmaster0_.ltuidm as ltuidm10_34_0_, lotmaster0_.ltbodt as ltbodt11_34_0_, lotmaster0_.ltbbdt as ltbbdt12_34_0_, lotmaster0_.ltcldt as ltcldt13_34_0_, lotmaster0_.ltexpdt as ltexpdt14_34_0_, lotmaster0_.ltldsc as ltldsc15_34_0_, lotmaster0_.ltledt as ltledt16_34_0_, lotmaster0_.ltlsc as ltlsc17_34_0_, lotmaster0_.ltmlot1 as ltmlot18_34_0_, lotmaster0_.ltmlot2 as ltmlot19_34_0_, lotmaster0_.ltmlot3 as ltmlot20_34_0_, lotmaster0_.ltohdt as ltohdt21_34_0_, lotmaster0_.ltsern as ltsern22_34_0_ from t4108 lotmaster0_ where lotmaster0_.ltbuid=? and lotmaster0_.ltinum=? and lotmaster0_.ltsnlot=?
+Hibernate: select lotmaster0_.ltbuid as ltbuid1_34_0_, lotmaster0_.ltinum as ltinum2_34_0_, lotmaster0_.ltsnlot as ltsnlot3_34_0_, lotmaster0_.ltcid as ltcid4_34_0_, lotmaster0_.ltdtin as ltdtin5_34_0_, lotmaster0_.lttmin as lttmin6_34_0_, lotmaster0_.ltuid as ltuid7_34_0_, lotmaster0_.ltdtlu as ltdtlu8_34_0_, lotmaster0_.lttmlu as lttmlu9_34_0_, lotmaster0_.ltuidm as ltuidm10_34_0_, lotmaster0_.ltbodt as ltbodt11_34_0_, lotmaster0_.ltbbdt as ltbbdt12_34_0_, lotmaster0_.ltcldt as ltcldt13_34_0_, lotmaster0_.ltexpdt as ltexpdt14_34_0_, lotmaster0_.ltldsc as ltldsc15_34_0_, lotmaster0_.ltledt as ltledt16_34_0_, lotmaster0_.ltlsc as ltlsc17_34_0_, lotmaster0_.ltmlot1 as ltmlot18_34_0_, lotmaster0_.ltmlot2 as ltmlot19_34_0_, lotmaster0_.ltmlot3 as ltmlot20_34_0_, lotmaster0_.ltohdt as ltohdt21_34_0_, lotmaster0_.ltsern as ltsern22_34_0_ from t4108 lotmaster0_ where lotmaster0_.ltbuid=? and lotmaster0_.ltinum=? and lotmaster0_.ltsnlot=?
+Hibernate: select lotmaster0_.ltbuid as ltbuid1_34_0_, lotmaster0_.ltinum as ltinum2_34_0_, lotmaster0_.ltsnlot as ltsnlot3_34_0_, lotmaster0_.ltcid as ltcid4_34_0_, lotmaster0_.ltdtin as ltdtin5_34_0_, lotmaster0_.lttmin as lttmin6_34_0_, lotmaster0_.ltuid as ltuid7_34_0_, lotmaster0_.ltdtlu as ltdtlu8_34_0_, lotmaster0_.lttmlu as lttmlu9_34_0_, lotmaster0_.ltuidm as ltuidm10_34_0_, lotmaster0_.ltbodt as ltbodt11_34_0_, lotmaster0_.ltbbdt as ltbbdt12_34_0_, lotmaster0_.ltcldt as ltcldt13_34_0_, lotmaster0_.ltexpdt as ltexpdt14_34_0_, lotmaster0_.ltldsc as ltldsc15_34_0_, lotmaster0_.ltledt as ltledt16_34_0_, lotmaster0_.ltlsc as ltlsc17_34_0_, lotmaster0_.ltmlot1 as ltmlot18_34_0_, lotmaster0_.ltmlot2 as ltmlot19_34_0_, lotmaster0_.ltmlot3 as ltmlot20_34_0_, lotmaster0_.ltohdt as ltohdt21_34_0_, lotmaster0_.ltsern as ltsern22_34_0_ from t4108 lotmaster0_ where lotmaster0_.ltbuid=? and lotmaster0_.ltinum=? and lotmaster0_.ltsnlot=?
+Hibernate: select lotmaster0_.ltbuid as ltbuid1_34_0_, lotmaster0_.ltinum as ltinum2_34_0_, lotmaster0_.ltsnlot as ltsnlot3_34_0_, lotmaster0_.ltcid as ltcid4_34_0_, lotmaster0_.ltdtin as ltdtin5_34_0_, lotmaster0_.lttmin as lttmin6_34_0_, lotmaster0_.ltuid as ltuid7_34_0_, lotmaster0_.ltdtlu as ltdtlu8_34_0_, lotmaster0_.lttmlu as lttmlu9_34_0_, lotmaster0_.ltuidm as ltuidm10_34_0_, lotmaster0_.ltbodt as ltbodt11_34_0_, lotmaster0_.ltbbdt as ltbbdt12_34_0_, lotmaster0_.ltcldt as ltcldt13_34_0_, lotmaster0_.ltexpdt as ltexpdt14_34_0_, lotmaster0_.ltldsc as ltldsc15_34_0_, lotmaster0_.ltledt as ltledt16_34_0_, lotmaster0_.ltlsc as ltlsc17_34_0_, lotmaster0_.ltmlot1 as ltmlot18_34_0_, lotmaster0_.ltmlot2 as ltmlot19_34_0_, lotmaster0_.ltmlot3 as ltmlot20_34_0_, lotmaster0_.ltohdt as ltohdt21_34_0_, lotmaster0_.ltsern as ltsern22_34_0_ from t4108 lotmaster0_ where lotmaster0_.ltbuid=? and lotmaster0_.ltinum=? and lotmaster0_.ltsnlot=?
+Hibernate: select lotmaster0_.ltbuid as ltbuid1_34_0_, lotmaster0_.ltinum as ltinum2_34_0_, lotmaster0_.ltsnlot as ltsnlot3_34_0_, lotmaster0_.ltcid as ltcid4_34_0_, lotmaster0_.ltdtin as ltdtin5_34_0_, lotmaster0_.lttmin as lttmin6_34_0_, lotmaster0_.ltuid as ltuid7_34_0_, lotmaster0_.ltdtlu as ltdtlu8_34_0_, lotmaster0_.lttmlu as lttmlu9_34_0_, lotmaster0_.ltuidm as ltuidm10_34_0_, lotmaster0_.ltbodt as ltbodt11_34_0_, lotmaster0_.ltbbdt as ltbbdt12_34_0_, lotmaster0_.ltcldt as ltcldt13_34_0_, lotmaster0_.ltexpdt as ltexpdt14_34_0_, lotmaster0_.ltldsc as ltldsc15_34_0_, lotmaster0_.ltledt as ltledt16_34_0_, lotmaster0_.ltlsc as ltlsc17_34_0_, lotmaster0_.ltmlot1 as ltmlot18_34_0_, lotmaster0_.ltmlot2 as ltmlot19_34_0_, lotmaster0_.ltmlot3 as ltmlot20_34_0_, lotmaster0_.ltohdt as ltohdt21_34_0_, lotmaster0_.ltsern as ltsern22_34_0_ from t4108 lotmaster0_ where lotmaster0_.ltbuid=? and lotmaster0_.ltinum=? and lotmaster0_.ltsnlot=?
+Hibernate: select lotmaster0_.ltbuid as ltbuid1_34_0_, lotmaster0_.ltinum as ltinum2_34_0_, lotmaster0_.ltsnlot as ltsnlot3_34_0_, lotmaster0_.ltcid as ltcid4_34_0_, lotmaster0_.ltdtin as ltdtin5_34_0_, lotmaster0_.lttmin as lttmin6_34_0_, lotmaster0_.ltuid as ltuid7_34_0_, lotmaster0_.ltdtlu as ltdtlu8_34_0_, lotmaster0_.lttmlu as lttmlu9_34_0_, lotmaster0_.ltuidm as ltuidm10_34_0_, lotmaster0_.ltbodt as ltbodt11_34_0_, lotmaster0_.ltbbdt as ltbbdt12_34_0_, lotmaster0_.ltcldt as ltcldt13_34_0_, lotmaster0_.ltexpdt as ltexpdt14_34_0_, lotmaster0_.ltldsc as ltldsc15_34_0_, lotmaster0_.ltledt as ltledt16_34_0_, lotmaster0_.ltlsc as ltlsc17_34_0_, lotmaster0_.ltmlot1 as ltmlot18_34_0_, lotmaster0_.ltmlot2 as ltmlot19_34_0_, lotmaster0_.ltmlot3 as ltmlot20_34_0_, lotmaster0_.ltohdt as ltohdt21_34_0_, lotmaster0_.ltsern as ltsern22_34_0_ from t4108 lotmaster0_ where lotmaster0_.ltbuid=? and lotmaster0_.ltinum=? and lotmaster0_.ltsnlot=?
+Hibernate: select lotmaster0_.ltbuid as ltbuid1_34_0_, lotmaster0_.ltinum as ltinum2_34_0_, lotmaster0_.ltsnlot as ltsnlot3_34_0_, lotmaster0_.ltcid as ltcid4_34_0_, lotmaster0_.ltdtin as ltdtin5_34_0_, lotmaster0_.lttmin as lttmin6_34_0_, lotmaster0_.ltuid as ltuid7_34_0_, lotmaster0_.ltdtlu as ltdtlu8_34_0_, lotmaster0_.lttmlu as lttmlu9_34_0_, lotmaster0_.ltuidm as ltuidm10_34_0_, lotmaster0_.ltbodt as ltbodt11_34_0_, lotmaster0_.ltbbdt as ltbbdt12_34_0_, lotmaster0_.ltcldt as ltcldt13_34_0_, lotmaster0_.ltexpdt as ltexpdt14_34_0_, lotmaster0_.ltldsc as ltldsc15_34_0_, lotmaster0_.ltledt as ltledt16_34_0_, lotmaster0_.ltlsc as ltlsc17_34_0_, lotmaster0_.ltmlot1 as ltmlot18_34_0_, lotmaster0_.ltmlot2 as ltmlot19_34_0_, lotmaster0_.ltmlot3 as ltmlot20_34_0_, lotmaster0_.ltohdt as ltohdt21_34_0_, lotmaster0_.ltsern as ltsern22_34_0_ from t4108 lotmaster0_ where lotmaster0_.ltbuid=? and lotmaster0_.ltinum=? and lotmaster0_.ltsnlot=?
+Hibernate: select lotmaster0_.ltbuid as ltbuid1_34_0_, lotmaster0_.ltinum as ltinum2_34_0_, lotmaster0_.ltsnlot as ltsnlot3_34_0_, lotmaster0_.ltcid as ltcid4_34_0_, lotmaster0_.ltdtin as ltdtin5_34_0_, lotmaster0_.lttmin as lttmin6_34_0_, lotmaster0_.ltuid as ltuid7_34_0_, lotmaster0_.ltdtlu as ltdtlu8_34_0_, lotmaster0_.lttmlu as lttmlu9_34_0_, lotmaster0_.ltuidm as ltuidm10_34_0_, lotmaster0_.ltbodt as ltbodt11_34_0_, lotmaster0_.ltbbdt as ltbbdt12_34_0_, lotmaster0_.ltcldt as ltcldt13_34_0_, lotmaster0_.ltexpdt as ltexpdt14_34_0_, lotmaster0_.ltldsc as ltldsc15_34_0_, lotmaster0_.ltledt as ltledt16_34_0_, lotmaster0_.ltlsc as ltlsc17_34_0_, lotmaster0_.ltmlot1 as ltmlot18_34_0_, lotmaster0_.ltmlot2 as ltmlot19_34_0_, lotmaster0_.ltmlot3 as ltmlot20_34_0_, lotmaster0_.ltohdt as ltohdt21_34_0_, lotmaster0_.ltsern as ltsern22_34_0_ from t4108 lotmaster0_ where lotmaster0_.ltbuid=? and lotmaster0_.ltinum=? and lotmaster0_.ltsnlot=?
+Hibernate: select lotmaster0_.ltbuid as ltbuid1_34_0_, lotmaster0_.ltinum as ltinum2_34_0_, lotmaster0_.ltsnlot as ltsnlot3_34_0_, lotmaster0_.ltcid as ltcid4_34_0_, lotmaster0_.ltdtin as ltdtin5_34_0_, lotmaster0_.lttmin as lttmin6_34_0_, lotmaster0_.ltuid as ltuid7_34_0_, lotmaster0_.ltdtlu as ltdtlu8_34_0_, lotmaster0_.lttmlu as lttmlu9_34_0_, lotmaster0_.ltuidm as ltuidm10_34_0_, lotmaster0_.ltbodt as ltbodt11_34_0_, lotmaster0_.ltbbdt as ltbbdt12_34_0_, lotmaster0_.ltcldt as ltcldt13_34_0_, lotmaster0_.ltexpdt as ltexpdt14_34_0_, lotmaster0_.ltldsc as ltldsc15_34_0_, lotmaster0_.ltledt as ltledt16_34_0_, lotmaster0_.ltlsc as ltlsc17_34_0_, lotmaster0_.ltmlot1 as ltmlot18_34_0_, lotmaster0_.ltmlot2 as ltmlot19_34_0_, lotmaster0_.ltmlot3 as ltmlot20_34_0_, lotmaster0_.ltohdt as ltohdt21_34_0_, lotmaster0_.ltsern as ltsern22_34_0_ from t4108 lotmaster0_ where lotmaster0_.ltbuid=? and lotmaster0_.ltinum=? and lotmaster0_.ltsnlot=?
+Hibernate: select lotmaster0_.ltbuid as ltbuid1_34_0_, lotmaster0_.ltinum as ltinum2_34_0_, lotmaster0_.ltsnlot as ltsnlot3_34_0_, lotmaster0_.ltcid as ltcid4_34_0_, lotmaster0_.ltdtin as ltdtin5_34_0_, lotmaster0_.lttmin as lttmin6_34_0_, lotmaster0_.ltuid as ltuid7_34_0_, lotmaster0_.ltdtlu as ltdtlu8_34_0_, lotmaster0_.lttmlu as lttmlu9_34_0_, lotmaster0_.ltuidm as ltuidm10_34_0_, lotmaster0_.ltbodt as ltbodt11_34_0_, lotmaster0_.ltbbdt as ltbbdt12_34_0_, lotmaster0_.ltcldt as ltcldt13_34_0_, lotmaster0_.ltexpdt as ltexpdt14_34_0_, lotmaster0_.ltldsc as ltldsc15_34_0_, lotmaster0_.ltledt as ltledt16_34_0_, lotmaster0_.ltlsc as ltlsc17_34_0_, lotmaster0_.ltmlot1 as ltmlot18_34_0_, lotmaster0_.ltmlot2 as ltmlot19_34_0_, lotmaster0_.ltmlot3 as ltmlot20_34_0_, lotmaster0_.ltohdt as ltohdt21_34_0_, lotmaster0_.ltsern as ltsern22_34_0_ from t4108 lotmaster0_ where lotmaster0_.ltbuid=? and lotmaster0_.ltinum=? and lotmaster0_.ltsnlot=?
+Hibernate: select lotmaster0_.ltbuid as ltbuid1_34_0_, lotmaster0_.ltinum as ltinum2_34_0_, lotmaster0_.ltsnlot as ltsnlot3_34_0_, lotmaster0_.ltcid as ltcid4_34_0_, lotmaster0_.ltdtin as ltdtin5_34_0_, lotmaster0_.lttmin as lttmin6_34_0_, lotmaster0_.ltuid as ltuid7_34_0_, lotmaster0_.ltdtlu as ltdtlu8_34_0_, lotmaster0_.lttmlu as lttmlu9_34_0_, lotmaster0_.ltuidm as ltuidm10_34_0_, lotmaster0_.ltbodt as ltbodt11_34_0_, lotmaster0_.ltbbdt as ltbbdt12_34_0_, lotmaster0_.ltcldt as ltcldt13_34_0_, lotmaster0_.ltexpdt as ltexpdt14_34_0_, lotmaster0_.ltldsc as ltldsc15_34_0_, lotmaster0_.ltledt as ltledt16_34_0_, lotmaster0_.ltlsc as ltlsc17_34_0_, lotmaster0_.ltmlot1 as ltmlot18_34_0_, lotmaster0_.ltmlot2 as ltmlot19_34_0_, lotmaster0_.ltmlot3 as ltmlot20_34_0_, lotmaster0_.ltohdt as ltohdt21_34_0_, lotmaster0_.ltsern as ltsern22_34_0_ from t4108 lotmaster0_ where lotmaster0_.ltbuid=? and lotmaster0_.ltinum=? and lotmaster0_.ltsnlot=?
+Hibernate: select count(itemlocati0_.ilbuid) as col_0_0_ from t41021 itemlocati0_
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/itemLocations/
+       Parameters = {}
+          Headers = {Accept=[application/json]}
+             Body = <no character encoding set>
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@235c0a58, SPRING_SECURITY_CONTEXT=org.springframework.security.core.context.SecurityContextImpl@475fcd89: Authentication: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@475fcd89: Principal: org.springframework.security.core.userdetails.User@f02988d6: Username: username; Password: [PROTECTED]; Enabled: true; AccountNonExpired: true; credentialsNonExpired: true; AccountNonLocked: true; Not granted any authorities; Credentials: [PROTECTED]; Authenticated: true; Details: null; Not granted any authorities}
+
+Handler:
+             Type = org.springframework.data.rest.webmvc.RepositoryEntityController
+           Method = public org.springframework.hateoas.Resources<?> org.springframework.data.rest.webmvc.RepositoryEntityController.getCollectionResource(org.springframework.data.rest.webmvc.RootResourceInformation,org.springframework.data.rest.webmvc.support.DefaultedPageable,org.springframework.data.domain.Sort,org.springframework.data.rest.webmvc.PersistentEntityResourceAssembler) throws org.springframework.data.rest.webmvc.ResourceNotFoundException,org.springframework.web.HttpRequestMethodNotSupportedException
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Type=[application/json;charset=UTF-8], X-Content-Type-Options=[nosniff], X-XSS-Protection=[1; mode=block], Cache-Control=[no-cache, no-store, max-age=0, must-revalidate], Pragma=[no-cache], Expires=[0], X-Frame-Options=[DENY]}
+     Content type = application/json;charset=UTF-8
+             Body = {
+  "_embedded" : {
+    "itemLocations" : [ {
+      "inputUserId" : "ERWIN",
+      "lastUpdateUserId" : "ERWIN",
+      "computerId" : "",
+      "lastTransactionDate" : null,
+      "itemCode" : "ACC.APC-AR2400FP1",
+      "businessUnitId" : "110",
+      "locationId" : "GDT",
+      "serialLotNo" : "",
+      "lotStatusCode" : "",
+      "locationStatus" : "S",
+      "expiredDate" : null,
+      "glClass" : "INFG",
+      "quantities" : {
+        "primaryQuantityOnHand" : 0.00000,
+        "secondaryQuantityOnHand" : 0.00000,
+        "quantityOnPurchaseOrder" : 0.00000,
+        "quantityOnSalesOrder" : 0.00000,
+        "quantityOnBackOrder" : 0.00000,
+        "quantityInTransit" : 0.00000,
+        "quantityInInspection" : 0.00000,
+        "quantityOther1" : 0.00000,
+        "quantityOther2" : 0.00000,
+        "quantityOther3" : 0.00000,
+        "quantityInBound" : 0.00000,
+        "quantityOutBound" : 0.00000,
+        "quantityOnSoftCommit" : 0.00000,
+        "quantityOnHardCommit" : 0.00000,
+        "quantityOnWO" : 0.00000,
+        "quantityOnWOSoftCommit" : 0.00000,
+        "quantityOnWOHardCommit" : 0.00000,
+        "secondaryQuantityOnPO" : 0.00000,
+        "secondaryQuantityOnSO" : 0.00000,
+        "secondaryQuantityOnWO" : 0.00000,
+        "unitOfMeasure" : "UNT",
+        "unitOfMeasure1" : "",
+        "unitOfMeasure2" : ""
+      },
+      "primary" : false,
+      "lastUpdateDateTime" : "2018-02-05T17:24:44",
+      "inputDateTime" : "2018-02-02T15:03:12",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/itemLocations/ACC.APC-AR2400FP1_110_GDT_"
+        },
+        "itemLocation" : {
+          "href" : "http://localhost/api/itemLocations/ACC.APC-AR2400FP1_110_GDT_"
+        },
+        "location" : {
+          "href" : "http://localhost/api/itemLocations/ACC.APC-AR2400FP1_110_GDT_/location"
+        },
+        "item" : {
+          "href" : "http://localhost/api/itemLocations/ACC.APC-AR2400FP1_110_GDT_/item"
+        },
+        "lot" : {
+          "href" : "http://localhost/api/itemLocations/ACC.APC-AR2400FP1_110_GDT_/lot"
+        }
+      }
+    }, {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "ERWIN",
+      "computerId" : "AYOOKLIK",
+      "lastTransactionDate" : null,
+      "itemCode" : "ACC.APC-AR2400FP1",
+      "businessUnitId" : "110",
+      "locationId" : "GDU",
+      "serialLotNo" : "",
+      "lotStatusCode" : "",
+      "locationStatus" : "P",
+      "expiredDate" : null,
+      "glClass" : "INFG",
+      "quantities" : {
+        "primaryQuantityOnHand" : 0.00000,
+        "secondaryQuantityOnHand" : 0.00000,
+        "quantityOnPurchaseOrder" : 4.00000,
+        "quantityOnSalesOrder" : 0.00000,
+        "quantityOnBackOrder" : 0.00000,
+        "quantityInTransit" : 0.00000,
+        "quantityInInspection" : 0.00000,
+        "quantityOther1" : 0.00000,
+        "quantityOther2" : 0.00000,
+        "quantityOther3" : 0.00000,
+        "quantityInBound" : 0.00000,
+        "quantityOutBound" : 0.00000,
+        "quantityOnSoftCommit" : 0.00000,
+        "quantityOnHardCommit" : 0.00000,
+        "quantityOnWO" : 0.00000,
+        "quantityOnWOSoftCommit" : 0.00000,
+        "quantityOnWOHardCommit" : 0.00000,
+        "secondaryQuantityOnPO" : 0.00000,
+        "secondaryQuantityOnSO" : 0.00000,
+        "secondaryQuantityOnWO" : 0.00000,
+        "unitOfMeasure" : "UNT",
+        "unitOfMeasure1" : "",
+        "unitOfMeasure2" : ""
+      },
+      "primary" : true,
+      "lastUpdateDateTime" : "2018-02-02T17:17:20",
+      "inputDateTime" : "2017-10-30T00:00:00",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/itemLocations/ACC.APC-AR2400FP1_110_GDU_"
+        },
+        "itemLocation" : {
+          "href" : "http://localhost/api/itemLocations/ACC.APC-AR2400FP1_110_GDU_"
+        },
+        "location" : {
+          "href" : "http://localhost/api/itemLocations/ACC.APC-AR2400FP1_110_GDU_/location"
+        },
+        "item" : {
+          "href" : "http://localhost/api/itemLocations/ACC.APC-AR2400FP1_110_GDU_/item"
+        },
+        "lot" : {
+          "href" : "http://localhost/api/itemLocations/ACC.APC-AR2400FP1_110_GDU_/lot"
+        }
+      }
+    }, {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "ERWIN",
+      "computerId" : "AYOOKLIK",
+      "lastTransactionDate" : null,
+      "itemCode" : "ACC.APC-AR2400FP1",
+      "businessUnitId" : "11000",
+      "locationId" : "GDU",
+      "serialLotNo" : "",
+      "lotStatusCode" : "",
+      "locationStatus" : "P",
+      "expiredDate" : null,
+      "glClass" : "INFG",
+      "quantities" : {
+        "primaryQuantityOnHand" : 0.00000,
+        "secondaryQuantityOnHand" : 0.00000,
+        "quantityOnPurchaseOrder" : 0.00000,
+        "quantityOnSalesOrder" : 0.00000,
+        "quantityOnBackOrder" : 0.00000,
+        "quantityInTransit" : 0.00000,
+        "quantityInInspection" : 0.00000,
+        "quantityOther1" : 0.00000,
+        "quantityOther2" : 0.00000,
+        "quantityOther3" : 0.00000,
+        "quantityInBound" : 0.00000,
+        "quantityOutBound" : 0.00000,
+        "quantityOnSoftCommit" : 0.00000,
+        "quantityOnHardCommit" : 0.00000,
+        "quantityOnWO" : 0.00000,
+        "quantityOnWOSoftCommit" : 0.00000,
+        "quantityOnWOHardCommit" : 0.00000,
+        "secondaryQuantityOnPO" : 0.00000,
+        "secondaryQuantityOnSO" : 0.00000,
+        "secondaryQuantityOnWO" : 0.00000,
+        "unitOfMeasure" : "UNT",
+        "unitOfMeasure1" : "",
+        "unitOfMeasure2" : ""
+      },
+      "primary" : true,
+      "lastUpdateDateTime" : "2018-02-02T17:17:20",
+      "inputDateTime" : "2018-02-02T14:32:39",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/itemLocations/ACC.APC-AR2400FP1_11000_GDU_"
+        },
+        "itemLocation" : {
+          "href" : "http://localhost/api/itemLocations/ACC.APC-AR2400FP1_11000_GDU_"
+        },
+        "location" : {
+          "href" : "http://localhost/api/itemLocations/ACC.APC-AR2400FP1_11000_GDU_/location"
+        },
+        "item" : {
+          "href" : "http://localhost/api/itemLocations/ACC.APC-AR2400FP1_11000_GDU_/item"
+        },
+        "lot" : {
+          "href" : "http://localhost/api/itemLocations/ACC.APC-AR2400FP1_11000_GDU_/lot"
+        }
+      }
+    }, {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "QSA",
+      "computerId" : "AYOOKLIK",
+      "lastTransactionDate" : null,
+      "itemCode" : "ACC.APC-AR2400FP1",
+      "businessUnitId" : "120",
+      "locationId" : "GDT",
+      "serialLotNo" : "",
+      "lotStatusCode" : "",
+      "locationStatus" : "S",
+      "expiredDate" : null,
+      "glClass" : "INFG",
+      "quantities" : {
+        "primaryQuantityOnHand" : 0.00000,
+        "secondaryQuantityOnHand" : 0.00000,
+        "quantityOnPurchaseOrder" : 0.00000,
+        "quantityOnSalesOrder" : 0.00000,
+        "quantityOnBackOrder" : 0.00000,
+        "quantityInTransit" : 0.00000,
+        "quantityInInspection" : 0.00000,
+        "quantityOther1" : 0.00000,
+        "quantityOther2" : 0.00000,
+        "quantityOther3" : 0.00000,
+        "quantityInBound" : 0.00000,
+        "quantityOutBound" : 0.00000,
+        "quantityOnSoftCommit" : 0.00000,
+        "quantityOnHardCommit" : 0.00000,
+        "quantityOnWO" : 0.00000,
+        "quantityOnWOSoftCommit" : 0.00000,
+        "quantityOnWOHardCommit" : 0.00000,
+        "secondaryQuantityOnPO" : 0.00000,
+        "secondaryQuantityOnSO" : 0.00000,
+        "secondaryQuantityOnWO" : 0.00000,
+        "unitOfMeasure" : "UNT",
+        "unitOfMeasure1" : "",
+        "unitOfMeasure2" : ""
+      },
+      "primary" : false,
+      "lastUpdateDateTime" : "2018-02-02T14:32:39",
+      "inputDateTime" : "2017-10-30T00:00:00",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/itemLocations/ACC.APC-AR2400FP1_120_GDT_"
+        },
+        "itemLocation" : {
+          "href" : "http://localhost/api/itemLocations/ACC.APC-AR2400FP1_120_GDT_"
+        },
+        "location" : {
+          "href" : "http://localhost/api/itemLocations/ACC.APC-AR2400FP1_120_GDT_/location"
+        },
+        "item" : {
+          "href" : "http://localhost/api/itemLocations/ACC.APC-AR2400FP1_120_GDT_/item"
+        },
+        "lot" : {
+          "href" : "http://localhost/api/itemLocations/ACC.APC-AR2400FP1_120_GDT_/lot"
+        }
+      }
+    }, {
+      "inputUserId" : "KEN",
+      "lastUpdateUserId" : "ERWIN",
+      "computerId" : "AYOOKLIK",
+      "lastTransactionDate" : null,
+      "itemCode" : "ACC.APC-AR2400FP1",
+      "businessUnitId" : "120",
+      "locationId" : "GDU",
+      "serialLotNo" : "",
+      "lotStatusCode" : "",
+      "locationStatus" : "P",
+      "expiredDate" : null,
+      "glClass" : "INFG",
+      "quantities" : {
+        "primaryQuantityOnHand" : 0.00000,
+        "secondaryQuantityOnHand" : 0.00000,
+        "quantityOnPurchaseOrder" : 0.00000,
+        "quantityOnSalesOrder" : 0.00000,
+        "quantityOnBackOrder" : 0.00000,
+        "quantityInTransit" : 0.00000,
+        "quantityInInspection" : 0.00000,
+        "quantityOther1" : 0.00000,
+        "quantityOther2" : 0.00000,
+        "quantityOther3" : 0.00000,
+        "quantityInBound" : 0.00000,
+        "quantityOutBound" : 0.00000,
+        "quantityOnSoftCommit" : 0.00000,
+        "quantityOnHardCommit" : 0.00000,
+        "quantityOnWO" : 0.00000,
+        "quantityOnWOSoftCommit" : 0.00000,
+        "quantityOnWOHardCommit" : 0.00000,
+        "secondaryQuantityOnPO" : 0.00000,
+        "secondaryQuantityOnSO" : 0.00000,
+        "secondaryQuantityOnWO" : 0.00000,
+        "unitOfMeasure" : "UNT",
+        "unitOfMeasure1" : "",
+        "unitOfMeasure2" : ""
+      },
+      "primary" : true,
+      "lastUpdateDateTime" : "2018-02-02T17:17:20",
+      "inputDateTime" : "2018-02-02T14:40:07",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/itemLocations/ACC.APC-AR2400FP1_120_GDU_"
+        },
+        "itemLocation" : {
+          "href" : "http://localhost/api/itemLocations/ACC.APC-AR2400FP1_120_GDU_"
+        },
+        "location" : {
+          "href" : "http://localhost/api/itemLocations/ACC.APC-AR2400FP1_120_GDU_/location"
+        },
+        "item" : {
+          "href" : "http://localhost/api/itemLocations/ACC.APC-AR2400FP1_120_GDU_/item"
+        },
+        "lot" : {
+          "href" : "http://localhost/api/itemLocations/ACC.APC-AR2400FP1_120_GDU_/lot"
+        }
+      }
+    }, {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "QSA",
+      "computerId" : "LAPTOP-FHFRCCL6",
+      "lastTransactionDate" : null,
+      "itemCode" : "ACC.BATERAI - CMOS\t\t\t",
+      "businessUnitId" : "110",
+      "locationId" : "ABC.1.2.3",
+      "serialLotNo" : "",
+      "lotStatusCode" : "",
+      "locationStatus" : "S",
+      "expiredDate" : null,
+      "glClass" : "INFG",
+      "quantities" : {
+        "primaryQuantityOnHand" : 0.00000,
+        "secondaryQuantityOnHand" : 0.00000,
+        "quantityOnPurchaseOrder" : 0.00000,
+        "quantityOnSalesOrder" : 0.00000,
+        "quantityOnBackOrder" : 0.00000,
+        "quantityInTransit" : 0.00000,
+        "quantityInInspection" : 0.00000,
+        "quantityOther1" : 0.00000,
+        "quantityOther2" : 0.00000,
+        "quantityOther3" : 0.00000,
+        "quantityInBound" : 0.00000,
+        "quantityOutBound" : 0.00000,
+        "quantityOnSoftCommit" : 0.00000,
+        "quantityOnHardCommit" : 0.00000,
+        "quantityOnWO" : 0.00000,
+        "quantityOnWOSoftCommit" : 0.00000,
+        "quantityOnWOHardCommit" : 0.00000,
+        "secondaryQuantityOnPO" : 0.00000,
+        "secondaryQuantityOnSO" : 0.00000,
+        "secondaryQuantityOnWO" : 0.00000,
+        "unitOfMeasure" : "UNT",
+        "unitOfMeasure1" : "UNT",
+        "unitOfMeasure2" : "UNT"
+      },
+      "primary" : false,
+      "lastUpdateDateTime" : "2018-08-30T15:00:46",
+      "inputDateTime" : "2018-08-30T15:00:46",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BATERAI_-_CMOS_t_t_t_110_ABC.1.2.3_"
+        },
+        "itemLocation" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BATERAI_-_CMOS_t_t_t_110_ABC.1.2.3_"
+        },
+        "location" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BATERAI_-_CMOS_t_t_t_110_ABC.1.2.3_/location"
+        },
+        "item" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BATERAI_-_CMOS_t_t_t_110_ABC.1.2.3_/item"
+        },
+        "lot" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BATERAI_-_CMOS_t_t_t_110_ABC.1.2.3_/lot"
+        }
+      }
+    }, {
+      "inputUserId" : "ANTHONI",
+      "lastUpdateUserId" : "QSA",
+      "computerId" : "DESKTOP-9TRIRBU",
+      "lastTransactionDate" : null,
+      "itemCode" : "ACC.BATERAI - CMOS\t\t\t",
+      "businessUnitId" : "110",
+      "locationId" : "GDU",
+      "serialLotNo" : "",
+      "lotStatusCode" : "",
+      "locationStatus" : "P",
+      "expiredDate" : null,
+      "glClass" : "",
+      "quantities" : {
+        "primaryQuantityOnHand" : 0.00000,
+        "secondaryQuantityOnHand" : 0.00000,
+        "quantityOnPurchaseOrder" : 0.00000,
+        "quantityOnSalesOrder" : 10.00000,
+        "quantityOnBackOrder" : 0.00000,
+        "quantityInTransit" : 0.00000,
+        "quantityInInspection" : 0.00000,
+        "quantityOther1" : 0.00000,
+        "quantityOther2" : 0.00000,
+        "quantityOther3" : 0.00000,
+        "quantityInBound" : 0.00000,
+        "quantityOutBound" : 0.00000,
+        "quantityOnSoftCommit" : 0.00000,
+        "quantityOnHardCommit" : 0.00000,
+        "quantityOnWO" : 0.00000,
+        "quantityOnWOSoftCommit" : 0.00000,
+        "quantityOnWOHardCommit" : 0.00000,
+        "secondaryQuantityOnPO" : 0.00000,
+        "secondaryQuantityOnSO" : 0.00000,
+        "secondaryQuantityOnWO" : 0.00000,
+        "unitOfMeasure" : "",
+        "unitOfMeasure1" : "",
+        "unitOfMeasure2" : ""
+      },
+      "primary" : true,
+      "lastUpdateDateTime" : "2018-08-29T00:00:00",
+      "inputDateTime" : "2018-02-12T13:51:22",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BATERAI_-_CMOS_t_t_t_110_GDU_"
+        },
+        "itemLocation" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BATERAI_-_CMOS_t_t_t_110_GDU_"
+        },
+        "location" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BATERAI_-_CMOS_t_t_t_110_GDU_/location"
+        },
+        "item" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BATERAI_-_CMOS_t_t_t_110_GDU_/item"
+        },
+        "lot" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BATERAI_-_CMOS_t_t_t_110_GDU_/lot"
+        }
+      }
+    }, {
+      "inputUserId" : "ANTHONI",
+      "lastUpdateUserId" : "ANTHONI",
+      "computerId" : "DESKTOP-9TRIRBU",
+      "lastTransactionDate" : null,
+      "itemCode" : "ACC.BATERAI - CMOS\t\t\t",
+      "businessUnitId" : "11000",
+      "locationId" : "GDU",
+      "serialLotNo" : "",
+      "lotStatusCode" : "",
+      "locationStatus" : "P",
+      "expiredDate" : null,
+      "glClass" : "",
+      "quantities" : {
+        "primaryQuantityOnHand" : 0.00000,
+        "secondaryQuantityOnHand" : 0.00000,
+        "quantityOnPurchaseOrder" : 0.00000,
+        "quantityOnSalesOrder" : 0.00000,
+        "quantityOnBackOrder" : 0.00000,
+        "quantityInTransit" : 0.00000,
+        "quantityInInspection" : 0.00000,
+        "quantityOther1" : 0.00000,
+        "quantityOther2" : 0.00000,
+        "quantityOther3" : 0.00000,
+        "quantityInBound" : 0.00000,
+        "quantityOutBound" : 0.00000,
+        "quantityOnSoftCommit" : 0.00000,
+        "quantityOnHardCommit" : 0.00000,
+        "quantityOnWO" : 0.00000,
+        "quantityOnWOSoftCommit" : 0.00000,
+        "quantityOnWOHardCommit" : 0.00000,
+        "secondaryQuantityOnPO" : 0.00000,
+        "secondaryQuantityOnSO" : 0.00000,
+        "secondaryQuantityOnWO" : 0.00000,
+        "unitOfMeasure" : "",
+        "unitOfMeasure1" : "",
+        "unitOfMeasure2" : ""
+      },
+      "primary" : true,
+      "lastUpdateDateTime" : "2018-02-12T13:51:22",
+      "inputDateTime" : "2018-02-12T13:51:22",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BATERAI_-_CMOS_t_t_t_11000_GDU_"
+        },
+        "itemLocation" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BATERAI_-_CMOS_t_t_t_11000_GDU_"
+        },
+        "location" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BATERAI_-_CMOS_t_t_t_11000_GDU_/location"
+        },
+        "item" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BATERAI_-_CMOS_t_t_t_11000_GDU_/item"
+        },
+        "lot" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BATERAI_-_CMOS_t_t_t_11000_GDU_/lot"
+        }
+      }
+    }, {
+      "inputUserId" : "ANTHONI",
+      "lastUpdateUserId" : "ANTHONI",
+      "computerId" : "DESKTOP-9TRIRBU",
+      "lastTransactionDate" : null,
+      "itemCode" : "ACC.BATERAI - CMOS\t\t\t",
+      "businessUnitId" : "120",
+      "locationId" : "GDU",
+      "serialLotNo" : "",
+      "lotStatusCode" : "",
+      "locationStatus" : "P",
+      "expiredDate" : null,
+      "glClass" : "",
+      "quantities" : {
+        "primaryQuantityOnHand" : 0.00000,
+        "secondaryQuantityOnHand" : 0.00000,
+        "quantityOnPurchaseOrder" : 0.00000,
+        "quantityOnSalesOrder" : 0.00000,
+        "quantityOnBackOrder" : 0.00000,
+        "quantityInTransit" : 0.00000,
+        "quantityInInspection" : 0.00000,
+        "quantityOther1" : 0.00000,
+        "quantityOther2" : 0.00000,
+        "quantityOther3" : 0.00000,
+        "quantityInBound" : 0.00000,
+        "quantityOutBound" : 0.00000,
+        "quantityOnSoftCommit" : 0.00000,
+        "quantityOnHardCommit" : 0.00000,
+        "quantityOnWO" : 0.00000,
+        "quantityOnWOSoftCommit" : 0.00000,
+        "quantityOnWOHardCommit" : 0.00000,
+        "secondaryQuantityOnPO" : 0.00000,
+        "secondaryQuantityOnSO" : 0.00000,
+        "secondaryQuantityOnWO" : 0.00000,
+        "unitOfMeasure" : "",
+        "unitOfMeasure1" : "",
+        "unitOfMeasure2" : ""
+      },
+      "primary" : true,
+      "lastUpdateDateTime" : "2018-02-12T13:51:22",
+      "inputDateTime" : "2018-02-12T13:51:22",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BATERAI_-_CMOS_t_t_t_120_GDU_"
+        },
+        "itemLocation" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BATERAI_-_CMOS_t_t_t_120_GDU_"
+        },
+        "location" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BATERAI_-_CMOS_t_t_t_120_GDU_/location"
+        },
+        "item" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BATERAI_-_CMOS_t_t_t_120_GDU_/item"
+        },
+        "lot" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BATERAI_-_CMOS_t_t_t_120_GDU_/lot"
+        }
+      }
+    }, {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "QSA",
+      "computerId" : "LAPTOP-FHFRCCL6",
+      "lastTransactionDate" : null,
+      "itemCode" : "ACC.BROTHER-LT6505",
+      "businessUnitId" : "110",
+      "locationId" : "GDU",
+      "serialLotNo" : "",
+      "lotStatusCode" : "",
+      "locationStatus" : "P",
+      "expiredDate" : null,
+      "glClass" : "INFG",
+      "quantities" : {
+        "primaryQuantityOnHand" : 3.00000,
+        "secondaryQuantityOnHand" : 0.00000,
+        "quantityOnPurchaseOrder" : 0.00000,
+        "quantityOnSalesOrder" : 5.00000,
+        "quantityOnBackOrder" : 0.00000,
+        "quantityInTransit" : 0.00000,
+        "quantityInInspection" : 0.00000,
+        "quantityOther1" : 0.00000,
+        "quantityOther2" : 0.00000,
+        "quantityOther3" : 0.00000,
+        "quantityInBound" : 0.00000,
+        "quantityOutBound" : 0.00000,
+        "quantityOnSoftCommit" : 0.00000,
+        "quantityOnHardCommit" : 0.00000,
+        "quantityOnWO" : 0.00000,
+        "quantityOnWOSoftCommit" : 0.00000,
+        "quantityOnWOHardCommit" : 0.00000,
+        "secondaryQuantityOnPO" : 0.00000,
+        "secondaryQuantityOnSO" : 0.00000,
+        "secondaryQuantityOnWO" : 0.00000,
+        "unitOfMeasure" : "UNT",
+        "unitOfMeasure1" : "",
+        "unitOfMeasure2" : ""
+      },
+      "primary" : true,
+      "lastUpdateDateTime" : "2018-11-13T00:00:00",
+      "inputDateTime" : "2017-10-30T00:00:00",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BROTHER-LT6505_110_GDU_"
+        },
+        "itemLocation" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BROTHER-LT6505_110_GDU_"
+        },
+        "location" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BROTHER-LT6505_110_GDU_/location"
+        },
+        "item" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BROTHER-LT6505_110_GDU_/item"
+        },
+        "lot" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BROTHER-LT6505_110_GDU_/lot"
+        }
+      }
+    }, {
+      "inputUserId" : "LUDY",
+      "lastUpdateUserId" : "QSA",
+      "computerId" : "LAPTOP-FHFRCCL6",
+      "lastTransactionDate" : null,
+      "itemCode" : "ACC.BROTHER-LT6505",
+      "businessUnitId" : "110",
+      "locationId" : "GDU",
+      "serialLotNo" : "123456",
+      "lotStatusCode" : "",
+      "locationStatus" : "P",
+      "expiredDate" : "2017-11-29T00:00:00",
+      "glClass" : "INFG",
+      "quantities" : {
+        "primaryQuantityOnHand" : 0.00000,
+        "secondaryQuantityOnHand" : 0.00000,
+        "quantityOnPurchaseOrder" : 0.00000,
+        "quantityOnSalesOrder" : 0.00000,
+        "quantityOnBackOrder" : 0.00000,
+        "quantityInTransit" : 0.00000,
+        "quantityInInspection" : 0.00000,
+        "quantityOther1" : 0.00000,
+        "quantityOther2" : 0.00000,
+        "quantityOther3" : 0.00000,
+        "quantityInBound" : 0.00000,
+        "quantityOutBound" : 0.00000,
+        "quantityOnSoftCommit" : 0.00000,
+        "quantityOnHardCommit" : 0.00000,
+        "quantityOnWO" : 0.00000,
+        "quantityOnWOSoftCommit" : 0.00000,
+        "quantityOnWOHardCommit" : 0.00000,
+        "secondaryQuantityOnPO" : 0.00000,
+        "secondaryQuantityOnSO" : 0.00000,
+        "secondaryQuantityOnWO" : 0.00000,
+        "unitOfMeasure" : "UNT",
+        "unitOfMeasure1" : "",
+        "unitOfMeasure2" : ""
+      },
+      "primary" : true,
+      "lastUpdateDateTime" : "2018-10-26T14:57:47",
+      "inputDateTime" : "2017-11-29T11:30:46",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BROTHER-LT6505_110_GDU_123456"
+        },
+        "itemLocation" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BROTHER-LT6505_110_GDU_123456"
+        },
+        "location" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BROTHER-LT6505_110_GDU_123456/location"
+        },
+        "item" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BROTHER-LT6505_110_GDU_123456/item"
+        },
+        "lot" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BROTHER-LT6505_110_GDU_123456/lot"
+        }
+      }
+    }, {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "QSA",
+      "computerId" : "AYOOKLIK",
+      "lastTransactionDate" : null,
+      "itemCode" : "ACC.BROTHER-LT6505",
+      "businessUnitId" : "11000",
+      "locationId" : "GDU",
+      "serialLotNo" : "",
+      "lotStatusCode" : "",
+      "locationStatus" : "P",
+      "expiredDate" : null,
+      "glClass" : "",
+      "quantities" : {
+        "primaryQuantityOnHand" : 0.00000,
+        "secondaryQuantityOnHand" : 0.00000,
+        "quantityOnPurchaseOrder" : 0.00000,
+        "quantityOnSalesOrder" : 0.00000,
+        "quantityOnBackOrder" : 0.00000,
+        "quantityInTransit" : 0.00000,
+        "quantityInInspection" : 0.00000,
+        "quantityOther1" : 0.00000,
+        "quantityOther2" : 0.00000,
+        "quantityOther3" : 0.00000,
+        "quantityInBound" : 0.00000,
+        "quantityOutBound" : 0.00000,
+        "quantityOnSoftCommit" : 0.00000,
+        "quantityOnHardCommit" : 0.00000,
+        "quantityOnWO" : 0.00000,
+        "quantityOnWOSoftCommit" : 0.00000,
+        "quantityOnWOHardCommit" : 0.00000,
+        "secondaryQuantityOnPO" : 0.00000,
+        "secondaryQuantityOnSO" : 0.00000,
+        "secondaryQuantityOnWO" : 0.00000,
+        "unitOfMeasure" : "",
+        "unitOfMeasure1" : "",
+        "unitOfMeasure2" : ""
+      },
+      "primary" : true,
+      "lastUpdateDateTime" : "2018-02-02T14:35:14",
+      "inputDateTime" : "2018-02-02T14:35:14",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BROTHER-LT6505_11000_GDU_"
+        },
+        "itemLocation" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BROTHER-LT6505_11000_GDU_"
+        },
+        "location" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BROTHER-LT6505_11000_GDU_/location"
+        },
+        "item" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BROTHER-LT6505_11000_GDU_/item"
+        },
+        "lot" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BROTHER-LT6505_11000_GDU_/lot"
+        }
+      }
+    }, {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "QSA",
+      "computerId" : "LAPTOP-FHFRCCL6",
+      "lastTransactionDate" : null,
+      "itemCode" : "ACC.BROTHER-LT6505",
+      "businessUnitId" : "120",
+      "locationId" : "GDT",
+      "serialLotNo" : "",
+      "lotStatusCode" : "",
+      "locationStatus" : "S",
+      "expiredDate" : null,
+      "glClass" : "INFG",
+      "quantities" : {
+        "primaryQuantityOnHand" : 0.00000,
+        "secondaryQuantityOnHand" : 0.00000,
+        "quantityOnPurchaseOrder" : 0.00000,
+        "quantityOnSalesOrder" : 0.00000,
+        "quantityOnBackOrder" : 0.00000,
+        "quantityInTransit" : 0.00000,
+        "quantityInInspection" : 0.00000,
+        "quantityOther1" : 0.00000,
+        "quantityOther2" : 0.00000,
+        "quantityOther3" : 0.00000,
+        "quantityInBound" : 0.00000,
+        "quantityOutBound" : 0.00000,
+        "quantityOnSoftCommit" : 0.00000,
+        "quantityOnHardCommit" : 0.00000,
+        "quantityOnWO" : 0.00000,
+        "quantityOnWOSoftCommit" : 0.00000,
+        "quantityOnWOHardCommit" : 0.00000,
+        "secondaryQuantityOnPO" : 0.00000,
+        "secondaryQuantityOnSO" : 0.00000,
+        "secondaryQuantityOnWO" : 0.00000,
+        "unitOfMeasure" : "UNT",
+        "unitOfMeasure1" : "",
+        "unitOfMeasure2" : ""
+      },
+      "primary" : false,
+      "lastUpdateDateTime" : "2018-10-26T14:57:47",
+      "inputDateTime" : "2017-10-30T00:00:00",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BROTHER-LT6505_120_GDT_"
+        },
+        "itemLocation" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BROTHER-LT6505_120_GDT_"
+        },
+        "location" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BROTHER-LT6505_120_GDT_/location"
+        },
+        "item" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BROTHER-LT6505_120_GDT_/item"
+        },
+        "lot" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BROTHER-LT6505_120_GDT_/lot"
+        }
+      }
+    }, {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "ANTHONI",
+      "computerId" : "DESKTOP-09OGK1M",
+      "lastTransactionDate" : null,
+      "itemCode" : "ACC.BROTHER-MX4000",
+      "businessUnitId" : "110",
+      "locationId" : "GDU",
+      "serialLotNo" : "",
+      "lotStatusCode" : "N",
+      "locationStatus" : "P",
+      "expiredDate" : null,
+      "glClass" : "INFG",
+      "quantities" : {
+        "primaryQuantityOnHand" : 0.00000,
+        "secondaryQuantityOnHand" : 0.00000,
+        "quantityOnPurchaseOrder" : 0.00000,
+        "quantityOnSalesOrder" : 0.00000,
+        "quantityOnBackOrder" : 0.00000,
+        "quantityInTransit" : 0.00000,
+        "quantityInInspection" : 0.00000,
+        "quantityOther1" : 0.00000,
+        "quantityOther2" : 0.00000,
+        "quantityOther3" : 0.00000,
+        "quantityInBound" : 0.00000,
+        "quantityOutBound" : 0.00000,
+        "quantityOnSoftCommit" : 0.00000,
+        "quantityOnHardCommit" : 0.00000,
+        "quantityOnWO" : 0.00000,
+        "quantityOnWOSoftCommit" : 0.00000,
+        "quantityOnWOHardCommit" : 0.00000,
+        "secondaryQuantityOnPO" : 0.00000,
+        "secondaryQuantityOnSO" : 0.00000,
+        "secondaryQuantityOnWO" : 0.00000,
+        "unitOfMeasure" : "UNT",
+        "unitOfMeasure1" : "",
+        "unitOfMeasure2" : ""
+      },
+      "primary" : true,
+      "lastUpdateDateTime" : "2018-03-24T14:34:05",
+      "inputDateTime" : "2017-10-30T00:00:00",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BROTHER-MX4000_110_GDU_"
+        },
+        "itemLocation" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BROTHER-MX4000_110_GDU_"
+        },
+        "location" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BROTHER-MX4000_110_GDU_/location"
+        },
+        "item" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BROTHER-MX4000_110_GDU_/item"
+        },
+        "lot" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BROTHER-MX4000_110_GDU_/lot"
+        }
+      }
+    }, {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "QSA",
+      "computerId" : "AYOOKLIK",
+      "lastTransactionDate" : null,
+      "itemCode" : "ACC.BROTHER-MX4000",
+      "businessUnitId" : "11000",
+      "locationId" : "GDU",
+      "serialLotNo" : "",
+      "lotStatusCode" : "",
+      "locationStatus" : "P",
+      "expiredDate" : null,
+      "glClass" : "",
+      "quantities" : {
+        "primaryQuantityOnHand" : 0.00000,
+        "secondaryQuantityOnHand" : 0.00000,
+        "quantityOnPurchaseOrder" : 0.00000,
+        "quantityOnSalesOrder" : 0.00000,
+        "quantityOnBackOrder" : 0.00000,
+        "quantityInTransit" : 0.00000,
+        "quantityInInspection" : 0.00000,
+        "quantityOther1" : 0.00000,
+        "quantityOther2" : 0.00000,
+        "quantityOther3" : 0.00000,
+        "quantityInBound" : 0.00000,
+        "quantityOutBound" : 0.00000,
+        "quantityOnSoftCommit" : 0.00000,
+        "quantityOnHardCommit" : 0.00000,
+        "quantityOnWO" : 0.00000,
+        "quantityOnWOSoftCommit" : 0.00000,
+        "quantityOnWOHardCommit" : 0.00000,
+        "secondaryQuantityOnPO" : 0.00000,
+        "secondaryQuantityOnSO" : 0.00000,
+        "secondaryQuantityOnWO" : 0.00000,
+        "unitOfMeasure" : "",
+        "unitOfMeasure1" : "",
+        "unitOfMeasure2" : ""
+      },
+      "primary" : true,
+      "lastUpdateDateTime" : "2018-02-02T14:36:25",
+      "inputDateTime" : "2018-02-02T14:36:25",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BROTHER-MX4000_11000_GDU_"
+        },
+        "itemLocation" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BROTHER-MX4000_11000_GDU_"
+        },
+        "location" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BROTHER-MX4000_11000_GDU_/location"
+        },
+        "item" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BROTHER-MX4000_11000_GDU_/item"
+        },
+        "lot" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BROTHER-MX4000_11000_GDU_/lot"
+        }
+      }
+    }, {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "ANTHONI",
+      "computerId" : "DESKTOP-09OGK1M",
+      "lastTransactionDate" : null,
+      "itemCode" : "ACC.BROTHER-MX4000",
+      "businessUnitId" : "120",
+      "locationId" : "GDT",
+      "serialLotNo" : "",
+      "lotStatusCode" : "N",
+      "locationStatus" : "S",
+      "expiredDate" : null,
+      "glClass" : "INFG",
+      "quantities" : {
+        "primaryQuantityOnHand" : 0.00000,
+        "secondaryQuantityOnHand" : 0.00000,
+        "quantityOnPurchaseOrder" : 0.00000,
+        "quantityOnSalesOrder" : 0.00000,
+        "quantityOnBackOrder" : 0.00000,
+        "quantityInTransit" : 0.00000,
+        "quantityInInspection" : 0.00000,
+        "quantityOther1" : 0.00000,
+        "quantityOther2" : 0.00000,
+        "quantityOther3" : 0.00000,
+        "quantityInBound" : 0.00000,
+        "quantityOutBound" : 0.00000,
+        "quantityOnSoftCommit" : 0.00000,
+        "quantityOnHardCommit" : 0.00000,
+        "quantityOnWO" : 0.00000,
+        "quantityOnWOSoftCommit" : 0.00000,
+        "quantityOnWOHardCommit" : 0.00000,
+        "secondaryQuantityOnPO" : 0.00000,
+        "secondaryQuantityOnSO" : 0.00000,
+        "secondaryQuantityOnWO" : 0.00000,
+        "unitOfMeasure" : "UNT",
+        "unitOfMeasure1" : "",
+        "unitOfMeasure2" : ""
+      },
+      "primary" : false,
+      "lastUpdateDateTime" : "2018-03-24T14:34:05",
+      "inputDateTime" : "2017-10-30T00:00:00",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BROTHER-MX4000_120_GDT_"
+        },
+        "itemLocation" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BROTHER-MX4000_120_GDT_"
+        },
+        "location" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BROTHER-MX4000_120_GDT_/location"
+        },
+        "item" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BROTHER-MX4000_120_GDT_/item"
+        },
+        "lot" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BROTHER-MX4000_120_GDT_/lot"
+        }
+      }
+    }, {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "ANTHONI",
+      "computerId" : "DESKTOP-09OGK1M",
+      "lastTransactionDate" : null,
+      "itemCode" : "ACC.BROTHER-TT4000",
+      "businessUnitId" : "110",
+      "locationId" : "GDU",
+      "serialLotNo" : "",
+      "lotStatusCode" : "N",
+      "locationStatus" : "P",
+      "expiredDate" : null,
+      "glClass" : "INFG",
+      "quantities" : {
+        "primaryQuantityOnHand" : 0.00000,
+        "secondaryQuantityOnHand" : 0.00000,
+        "quantityOnPurchaseOrder" : 0.00000,
+        "quantityOnSalesOrder" : 0.00000,
+        "quantityOnBackOrder" : 0.00000,
+        "quantityInTransit" : 0.00000,
+        "quantityInInspection" : 0.00000,
+        "quantityOther1" : 0.00000,
+        "quantityOther2" : 0.00000,
+        "quantityOther3" : 0.00000,
+        "quantityInBound" : 0.00000,
+        "quantityOutBound" : 0.00000,
+        "quantityOnSoftCommit" : 0.00000,
+        "quantityOnHardCommit" : 0.00000,
+        "quantityOnWO" : 0.00000,
+        "quantityOnWOSoftCommit" : 0.00000,
+        "quantityOnWOHardCommit" : 0.00000,
+        "secondaryQuantityOnPO" : 0.00000,
+        "secondaryQuantityOnSO" : 0.00000,
+        "secondaryQuantityOnWO" : 0.00000,
+        "unitOfMeasure" : "UNT",
+        "unitOfMeasure1" : "",
+        "unitOfMeasure2" : ""
+      },
+      "primary" : true,
+      "lastUpdateDateTime" : "2018-03-24T14:34:18",
+      "inputDateTime" : "2017-10-30T00:00:00",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BROTHER-TT4000_110_GDU_"
+        },
+        "itemLocation" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BROTHER-TT4000_110_GDU_"
+        },
+        "location" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BROTHER-TT4000_110_GDU_/location"
+        },
+        "item" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BROTHER-TT4000_110_GDU_/item"
+        },
+        "lot" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BROTHER-TT4000_110_GDU_/lot"
+        }
+      }
+    }, {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "ANTHONI",
+      "computerId" : "DESKTOP-09OGK1M",
+      "lastTransactionDate" : null,
+      "itemCode" : "ACC.BROTHER-TT4000",
+      "businessUnitId" : "120",
+      "locationId" : "GDT",
+      "serialLotNo" : "",
+      "lotStatusCode" : "N",
+      "locationStatus" : "S",
+      "expiredDate" : null,
+      "glClass" : "INFG",
+      "quantities" : {
+        "primaryQuantityOnHand" : 0.00000,
+        "secondaryQuantityOnHand" : 0.00000,
+        "quantityOnPurchaseOrder" : 0.00000,
+        "quantityOnSalesOrder" : 0.00000,
+        "quantityOnBackOrder" : 0.00000,
+        "quantityInTransit" : 0.00000,
+        "quantityInInspection" : 0.00000,
+        "quantityOther1" : 0.00000,
+        "quantityOther2" : 0.00000,
+        "quantityOther3" : 0.00000,
+        "quantityInBound" : 0.00000,
+        "quantityOutBound" : 0.00000,
+        "quantityOnSoftCommit" : 0.00000,
+        "quantityOnHardCommit" : 0.00000,
+        "quantityOnWO" : 0.00000,
+        "quantityOnWOSoftCommit" : 0.00000,
+        "quantityOnWOHardCommit" : 0.00000,
+        "secondaryQuantityOnPO" : 0.00000,
+        "secondaryQuantityOnSO" : 0.00000,
+        "secondaryQuantityOnWO" : 0.00000,
+        "unitOfMeasure" : "UNT",
+        "unitOfMeasure1" : "",
+        "unitOfMeasure2" : ""
+      },
+      "primary" : false,
+      "lastUpdateDateTime" : "2018-03-24T14:34:18",
+      "inputDateTime" : "2017-10-30T00:00:00",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BROTHER-TT4000_120_GDT_"
+        },
+        "itemLocation" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BROTHER-TT4000_120_GDT_"
+        },
+        "location" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BROTHER-TT4000_120_GDT_/location"
+        },
+        "item" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BROTHER-TT4000_120_GDT_/item"
+        },
+        "lot" : {
+          "href" : "http://localhost/api/itemLocations/ACC.BROTHER-TT4000_120_GDT_/lot"
+        }
+      }
+    }, {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "QSA",
+      "computerId" : "GLSERVER01",
+      "lastTransactionDate" : null,
+      "itemCode" : "ACC.CD-CDBLANK",
+      "businessUnitId" : "110",
+      "locationId" : "GDU",
+      "serialLotNo" : "",
+      "lotStatusCode" : "",
+      "locationStatus" : "P",
+      "expiredDate" : null,
+      "glClass" : "INFG",
+      "quantities" : {
+        "primaryQuantityOnHand" : 0.00000,
+        "secondaryQuantityOnHand" : 0.00000,
+        "quantityOnPurchaseOrder" : 0.00000,
+        "quantityOnSalesOrder" : 0.00000,
+        "quantityOnBackOrder" : 0.00000,
+        "quantityInTransit" : 0.00000,
+        "quantityInInspection" : 0.00000,
+        "quantityOther1" : 0.00000,
+        "quantityOther2" : 0.00000,
+        "quantityOther3" : 0.00000,
+        "quantityInBound" : 0.00000,
+        "quantityOutBound" : 0.00000,
+        "quantityOnSoftCommit" : 0.00000,
+        "quantityOnHardCommit" : 0.00000,
+        "quantityOnWO" : 0.00000,
+        "quantityOnWOSoftCommit" : 0.00000,
+        "quantityOnWOHardCommit" : 0.00000,
+        "secondaryQuantityOnPO" : 0.00000,
+        "secondaryQuantityOnSO" : 0.00000,
+        "secondaryQuantityOnWO" : 0.00000,
+        "unitOfMeasure" : "PCS",
+        "unitOfMeasure1" : "",
+        "unitOfMeasure2" : ""
+      },
+      "primary" : true,
+      "lastUpdateDateTime" : "2018-08-29T00:00:00",
+      "inputDateTime" : "2017-10-30T00:00:00",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/itemLocations/ACC.CD-CDBLANK_110_GDU_"
+        },
+        "itemLocation" : {
+          "href" : "http://localhost/api/itemLocations/ACC.CD-CDBLANK_110_GDU_"
+        },
+        "location" : {
+          "href" : "http://localhost/api/itemLocations/ACC.CD-CDBLANK_110_GDU_/location"
+        },
+        "item" : {
+          "href" : "http://localhost/api/itemLocations/ACC.CD-CDBLANK_110_GDU_/item"
+        },
+        "lot" : {
+          "href" : "http://localhost/api/itemLocations/ACC.CD-CDBLANK_110_GDU_/lot"
+        }
+      }
+    }, {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "QSA",
+      "computerId" : "GLSERVER01",
+      "lastTransactionDate" : null,
+      "itemCode" : "ACC.CD-CDBLANK",
+      "businessUnitId" : "120",
+      "locationId" : "GDT",
+      "serialLotNo" : "",
+      "lotStatusCode" : "",
+      "locationStatus" : "P",
+      "expiredDate" : null,
+      "glClass" : "INFG",
+      "quantities" : {
+        "primaryQuantityOnHand" : 0.00000,
+        "secondaryQuantityOnHand" : 0.00000,
+        "quantityOnPurchaseOrder" : 0.00000,
+        "quantityOnSalesOrder" : 0.00000,
+        "quantityOnBackOrder" : 0.00000,
+        "quantityInTransit" : 0.00000,
+        "quantityInInspection" : 0.00000,
+        "quantityOther1" : 0.00000,
+        "quantityOther2" : 0.00000,
+        "quantityOther3" : 0.00000,
+        "quantityInBound" : 0.00000,
+        "quantityOutBound" : 0.00000,
+        "quantityOnSoftCommit" : 0.00000,
+        "quantityOnHardCommit" : 0.00000,
+        "quantityOnWO" : 0.00000,
+        "quantityOnWOSoftCommit" : 0.00000,
+        "quantityOnWOHardCommit" : 0.00000,
+        "secondaryQuantityOnPO" : 0.00000,
+        "secondaryQuantityOnSO" : 0.00000,
+        "secondaryQuantityOnWO" : 0.00000,
+        "unitOfMeasure" : "PCS",
+        "unitOfMeasure1" : "",
+        "unitOfMeasure2" : ""
+      },
+      "primary" : true,
+      "lastUpdateDateTime" : "2017-10-30T00:00:00",
+      "inputDateTime" : "2017-10-30T00:00:00",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/itemLocations/ACC.CD-CDBLANK_120_GDT_"
+        },
+        "itemLocation" : {
+          "href" : "http://localhost/api/itemLocations/ACC.CD-CDBLANK_120_GDT_"
+        },
+        "location" : {
+          "href" : "http://localhost/api/itemLocations/ACC.CD-CDBLANK_120_GDT_/location"
+        },
+        "item" : {
+          "href" : "http://localhost/api/itemLocations/ACC.CD-CDBLANK_120_GDT_/item"
+        },
+        "lot" : {
+          "href" : "http://localhost/api/itemLocations/ACC.CD-CDBLANK_120_GDT_/lot"
+        }
+      }
+    } ]
+  },
+  "_links" : {
+    "first" : {
+      "href" : "http://localhost/api/itemLocations?page=0&size=20"
+    },
+    "self" : {
+      "href" : "http://localhost/api/itemLocations{?page,size,sort}",
+      "templated" : true
+    },
+    "next" : {
+      "href" : "http://localhost/api/itemLocations?page=1&size=20"
+    },
+    "last" : {
+      "href" : "http://localhost/api/itemLocations?page=150&size=20"
+    },
+    "profile" : {
+      "href" : "http://localhost/api/profile/itemLocations"
+    }
+  },
+  "page" : {
+    "size" : 20,
+    "totalElements" : 3018,
+    "totalPages" : 151,
+    "number" : 0
+  }
+}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2018-12-14 17:35:27.920  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@5cb78e12 testClass = ItemLocationApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemLocationApiTest@b6e63ca, testMethod = getTestCollection@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@6b378341 testClass = ItemLocationApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4af5667e key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]
+2018-12-14 17:35:27.920  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@5cb78e12 testClass = ItemLocationApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemLocationApiTest@51da2dee, testMethod = createTestWithPut@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@6b378341 testClass = ItemLocationApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4af5667e key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:27.920  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:27.920  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:27.936  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 16 ms
+Hibernate: select itemlocati0_.ilbuid as ilbuid1_33_0_, itemlocati0_.ilinum as ilinum2_33_0_, itemlocati0_.illocid as illocid3_33_0_, itemlocati0_.ilsnlot as ilsnlot4_33_0_, itemlocati0_.ilcid as ilcid5_33_0_, itemlocati0_.ildtin as ildtin6_33_0_, itemlocati0_.iltmin as iltmin7_33_0_, itemlocati0_.iluid as iluid8_33_0_, itemlocati0_.ildtlu as ildtlu9_33_0_, itemlocati0_.iltmlu as iltmlu10_33_0_, itemlocati0_.iluidm as iluidm11_33_0_, itemlocati0_.ildtlt as ildtlt12_33_0_, itemlocati0_.ilexpdt as ilexpdt13_33_0_, itemlocati0_.ilglcls as ilglcls14_33_0_, itemlocati0_.illocst as illocst15_33_0_, itemlocati0_.illsc as illsc16_33_0_, itemlocati0_.ilpqoh as ilpqoh17_33_0_, itemlocati0_.ilqtib as ilqtib18_33_0_, itemlocati0_.ilqtin as ilqtin19_33_0_, itemlocati0_.ilqttr as ilqttr20_33_0_, itemlocati0_.ilqobo as ilqobo21_33_0_, itemlocati0_.ilqohc as ilqohc22_33_0_, itemlocati0_.ilqopo as ilqopo23_33_0_, itemlocati0_.ilqoso as ilqoso24_33_0_, itemlocati0_.ilqosc as ilqosc25_33_0_, itemlocati0_.ilqowo as ilqowo26_33_0_, itemlocati0_.ilqowh as ilqowh27_33_0_, itemlocati0_.ilqows as ilqows28_33_0_, itemlocati0_.ilqot1 as ilqot29_33_0_, itemlocati0_.ilqot2 as ilqot30_33_0_, itemlocati0_.ilqot3 as ilqot31_33_0_, itemlocati0_.ilqtob as ilqtob32_33_0_, itemlocati0_.ilsqoh as ilsqoh33_33_0_, itemlocati0_.ilsqpo as ilsqpo34_33_0_, itemlocati0_.ilsqso as ilsqso35_33_0_, itemlocati0_.ilsqwo as ilsqwo36_33_0_, itemlocati0_.iluom as iluom37_33_0_, itemlocati0_.iluom1 as iluom38_33_0_, itemlocati0_.iluom2 as iluom39_33_0_ from t41021 itemlocati0_ where itemlocati0_.ilbuid=? and itemlocati0_.ilinum=? and itemlocati0_.illocid=? and itemlocati0_.ilsnlot=?
+2018-12-14 17:35:27.952  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@5cb78e12 testClass = ItemLocationApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemLocationApiTest@51da2dee, testMethod = createTestWithPut@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@6b378341 testClass = ItemLocationApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4af5667e key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]
+2018-12-14 17:35:27.952  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@5cb78e12 testClass = ItemLocationApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemLocationApiTest@7d4017df, testMethod = deleteTest@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@6b378341 testClass = ItemLocationApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4af5667e key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:27.952  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:27.952  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:27.952  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+Hibernate: select itemlocati0_.ilbuid as ilbuid1_33_0_, itemlocati0_.ilinum as ilinum2_33_0_, itemlocati0_.illocid as illocid3_33_0_, itemlocati0_.ilsnlot as ilsnlot4_33_0_, itemlocati0_.ilcid as ilcid5_33_0_, itemlocati0_.ildtin as ildtin6_33_0_, itemlocati0_.iltmin as iltmin7_33_0_, itemlocati0_.iluid as iluid8_33_0_, itemlocati0_.ildtlu as ildtlu9_33_0_, itemlocati0_.iltmlu as iltmlu10_33_0_, itemlocati0_.iluidm as iluidm11_33_0_, itemlocati0_.ildtlt as ildtlt12_33_0_, itemlocati0_.ilexpdt as ilexpdt13_33_0_, itemlocati0_.ilglcls as ilglcls14_33_0_, itemlocati0_.illocst as illocst15_33_0_, itemlocati0_.illsc as illsc16_33_0_, itemlocati0_.ilpqoh as ilpqoh17_33_0_, itemlocati0_.ilqtib as ilqtib18_33_0_, itemlocati0_.ilqtin as ilqtin19_33_0_, itemlocati0_.ilqttr as ilqttr20_33_0_, itemlocati0_.ilqobo as ilqobo21_33_0_, itemlocati0_.ilqohc as ilqohc22_33_0_, itemlocati0_.ilqopo as ilqopo23_33_0_, itemlocati0_.ilqoso as ilqoso24_33_0_, itemlocati0_.ilqosc as ilqosc25_33_0_, itemlocati0_.ilqowo as ilqowo26_33_0_, itemlocati0_.ilqowh as ilqowh27_33_0_, itemlocati0_.ilqows as ilqows28_33_0_, itemlocati0_.ilqot1 as ilqot29_33_0_, itemlocati0_.ilqot2 as ilqot30_33_0_, itemlocati0_.ilqot3 as ilqot31_33_0_, itemlocati0_.ilqtob as ilqtob32_33_0_, itemlocati0_.ilsqoh as ilsqoh33_33_0_, itemlocati0_.ilsqpo as ilsqpo34_33_0_, itemlocati0_.ilsqso as ilsqso35_33_0_, itemlocati0_.ilsqwo as ilsqwo36_33_0_, itemlocati0_.iluom as iluom37_33_0_, itemlocati0_.iluom1 as iluom38_33_0_, itemlocati0_.iluom2 as iluom39_33_0_ from t41021 itemlocati0_ where itemlocati0_.ilbuid=? and itemlocati0_.ilinum=? and itemlocati0_.illocid=? and itemlocati0_.ilsnlot=?
+Hibernate: select lotmaster0_.ltbuid as ltbuid1_34_0_, lotmaster0_.ltinum as ltinum2_34_0_, lotmaster0_.ltsnlot as ltsnlot3_34_0_, lotmaster0_.ltcid as ltcid4_34_0_, lotmaster0_.ltdtin as ltdtin5_34_0_, lotmaster0_.lttmin as lttmin6_34_0_, lotmaster0_.ltuid as ltuid7_34_0_, lotmaster0_.ltdtlu as ltdtlu8_34_0_, lotmaster0_.lttmlu as lttmlu9_34_0_, lotmaster0_.ltuidm as ltuidm10_34_0_, lotmaster0_.ltbodt as ltbodt11_34_0_, lotmaster0_.ltbbdt as ltbbdt12_34_0_, lotmaster0_.ltcldt as ltcldt13_34_0_, lotmaster0_.ltexpdt as ltexpdt14_34_0_, lotmaster0_.ltldsc as ltldsc15_34_0_, lotmaster0_.ltledt as ltledt16_34_0_, lotmaster0_.ltlsc as ltlsc17_34_0_, lotmaster0_.ltmlot1 as ltmlot18_34_0_, lotmaster0_.ltmlot2 as ltmlot19_34_0_, lotmaster0_.ltmlot3 as ltmlot20_34_0_, lotmaster0_.ltohdt as ltohdt21_34_0_, lotmaster0_.ltsern as ltsern22_34_0_ from t4108 lotmaster0_ where lotmaster0_.ltbuid=? and lotmaster0_.ltinum=? and lotmaster0_.ltsnlot=?
+2018-12-14 17:35:27.967  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@5cb78e12 testClass = ItemLocationApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemLocationApiTest@7d4017df, testMethod = deleteTest@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@6b378341 testClass = ItemLocationApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4af5667e key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]
+2018-12-14 17:35:27.967  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@5cb78e12 testClass = ItemLocationApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemLocationApiTest@3032e044, testMethod = createTestWithPost@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@6b378341 testClass = ItemLocationApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4af5667e key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:27.967  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:27.967  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:27.983  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 16 ms
+Hibernate: select itemlocati0_.ilbuid as ilbuid1_33_0_, itemlocati0_.ilinum as ilinum2_33_0_, itemlocati0_.illocid as illocid3_33_0_, itemlocati0_.ilsnlot as ilsnlot4_33_0_, itemlocati0_.ilcid as ilcid5_33_0_, itemlocati0_.ildtin as ildtin6_33_0_, itemlocati0_.iltmin as iltmin7_33_0_, itemlocati0_.iluid as iluid8_33_0_, itemlocati0_.ildtlu as ildtlu9_33_0_, itemlocati0_.iltmlu as iltmlu10_33_0_, itemlocati0_.iluidm as iluidm11_33_0_, itemlocati0_.ildtlt as ildtlt12_33_0_, itemlocati0_.ilexpdt as ilexpdt13_33_0_, itemlocati0_.ilglcls as ilglcls14_33_0_, itemlocati0_.illocst as illocst15_33_0_, itemlocati0_.illsc as illsc16_33_0_, itemlocati0_.ilpqoh as ilpqoh17_33_0_, itemlocati0_.ilqtib as ilqtib18_33_0_, itemlocati0_.ilqtin as ilqtin19_33_0_, itemlocati0_.ilqttr as ilqttr20_33_0_, itemlocati0_.ilqobo as ilqobo21_33_0_, itemlocati0_.ilqohc as ilqohc22_33_0_, itemlocati0_.ilqopo as ilqopo23_33_0_, itemlocati0_.ilqoso as ilqoso24_33_0_, itemlocati0_.ilqosc as ilqosc25_33_0_, itemlocati0_.ilqowo as ilqowo26_33_0_, itemlocati0_.ilqowh as ilqowh27_33_0_, itemlocati0_.ilqows as ilqows28_33_0_, itemlocati0_.ilqot1 as ilqot29_33_0_, itemlocati0_.ilqot2 as ilqot30_33_0_, itemlocati0_.ilqot3 as ilqot31_33_0_, itemlocati0_.ilqtob as ilqtob32_33_0_, itemlocati0_.ilsqoh as ilsqoh33_33_0_, itemlocati0_.ilsqpo as ilsqpo34_33_0_, itemlocati0_.ilsqso as ilsqso35_33_0_, itemlocati0_.ilsqwo as ilsqwo36_33_0_, itemlocati0_.iluom as iluom37_33_0_, itemlocati0_.iluom1 as iluom38_33_0_, itemlocati0_.iluom2 as iluom39_33_0_ from t41021 itemlocati0_ where itemlocati0_.ilbuid=? and itemlocati0_.ilinum=? and itemlocati0_.illocid=? and itemlocati0_.ilsnlot=?
+Hibernate: select itemlocati0_.ilbuid as ilbuid1_33_0_, itemlocati0_.ilinum as ilinum2_33_0_, itemlocati0_.illocid as illocid3_33_0_, itemlocati0_.ilsnlot as ilsnlot4_33_0_, itemlocati0_.ilcid as ilcid5_33_0_, itemlocati0_.ildtin as ildtin6_33_0_, itemlocati0_.iltmin as iltmin7_33_0_, itemlocati0_.iluid as iluid8_33_0_, itemlocati0_.ildtlu as ildtlu9_33_0_, itemlocati0_.iltmlu as iltmlu10_33_0_, itemlocati0_.iluidm as iluidm11_33_0_, itemlocati0_.ildtlt as ildtlt12_33_0_, itemlocati0_.ilexpdt as ilexpdt13_33_0_, itemlocati0_.ilglcls as ilglcls14_33_0_, itemlocati0_.illocst as illocst15_33_0_, itemlocati0_.illsc as illsc16_33_0_, itemlocati0_.ilpqoh as ilpqoh17_33_0_, itemlocati0_.ilqtib as ilqtib18_33_0_, itemlocati0_.ilqtin as ilqtin19_33_0_, itemlocati0_.ilqttr as ilqttr20_33_0_, itemlocati0_.ilqobo as ilqobo21_33_0_, itemlocati0_.ilqohc as ilqohc22_33_0_, itemlocati0_.ilqopo as ilqopo23_33_0_, itemlocati0_.ilqoso as ilqoso24_33_0_, itemlocati0_.ilqosc as ilqosc25_33_0_, itemlocati0_.ilqowo as ilqowo26_33_0_, itemlocati0_.ilqowh as ilqowh27_33_0_, itemlocati0_.ilqows as ilqows28_33_0_, itemlocati0_.ilqot1 as ilqot29_33_0_, itemlocati0_.ilqot2 as ilqot30_33_0_, itemlocati0_.ilqot3 as ilqot31_33_0_, itemlocati0_.ilqtob as ilqtob32_33_0_, itemlocati0_.ilsqoh as ilsqoh33_33_0_, itemlocati0_.ilsqpo as ilsqpo34_33_0_, itemlocati0_.ilsqso as ilsqso35_33_0_, itemlocati0_.ilsqwo as ilsqwo36_33_0_, itemlocati0_.iluom as iluom37_33_0_, itemlocati0_.iluom1 as iluom38_33_0_, itemlocati0_.iluom2 as iluom39_33_0_ from t41021 itemlocati0_ where itemlocati0_.ilbuid=? and itemlocati0_.ilinum=? and itemlocati0_.illocid=? and itemlocati0_.ilsnlot=?
+Hibernate: insert into t41021 (ilcid, ildtin, iltmin, iluid, ildtlu, iltmlu, iluidm, ildtlt, ilexpdt, ilglcls, illocst, illsc, ilpqoh, ilqtib, ilqtin, ilqttr, ilqobo, ilqohc, ilqopo, ilqoso, ilqosc, ilqowo, ilqowh, ilqows, ilqot1, ilqot2, ilqot3, ilqtob, ilsqoh, ilsqpo, ilsqso, ilsqwo, iluom, iluom1, iluom2, ilbuid, ilinum, illocid, ilsnlot) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: select itemlocati0_.ilbuid as ilbuid1_33_0_, itemlocati0_.ilinum as ilinum2_33_0_, itemlocati0_.illocid as illocid3_33_0_, itemlocati0_.ilsnlot as ilsnlot4_33_0_, itemlocati0_.ilcid as ilcid5_33_0_, itemlocati0_.ildtin as ildtin6_33_0_, itemlocati0_.iltmin as iltmin7_33_0_, itemlocati0_.iluid as iluid8_33_0_, itemlocati0_.ildtlu as ildtlu9_33_0_, itemlocati0_.iltmlu as iltmlu10_33_0_, itemlocati0_.iluidm as iluidm11_33_0_, itemlocati0_.ildtlt as ildtlt12_33_0_, itemlocati0_.ilexpdt as ilexpdt13_33_0_, itemlocati0_.ilglcls as ilglcls14_33_0_, itemlocati0_.illocst as illocst15_33_0_, itemlocati0_.illsc as illsc16_33_0_, itemlocati0_.ilpqoh as ilpqoh17_33_0_, itemlocati0_.ilqtib as ilqtib18_33_0_, itemlocati0_.ilqtin as ilqtin19_33_0_, itemlocati0_.ilqttr as ilqttr20_33_0_, itemlocati0_.ilqobo as ilqobo21_33_0_, itemlocati0_.ilqohc as ilqohc22_33_0_, itemlocati0_.ilqopo as ilqopo23_33_0_, itemlocati0_.ilqoso as ilqoso24_33_0_, itemlocati0_.ilqosc as ilqosc25_33_0_, itemlocati0_.ilqowo as ilqowo26_33_0_, itemlocati0_.ilqowh as ilqowh27_33_0_, itemlocati0_.ilqows as ilqows28_33_0_, itemlocati0_.ilqot1 as ilqot29_33_0_, itemlocati0_.ilqot2 as ilqot30_33_0_, itemlocati0_.ilqot3 as ilqot31_33_0_, itemlocati0_.ilqtob as ilqtob32_33_0_, itemlocati0_.ilsqoh as ilsqoh33_33_0_, itemlocati0_.ilsqpo as ilsqpo34_33_0_, itemlocati0_.ilsqso as ilsqso35_33_0_, itemlocati0_.ilsqwo as ilsqwo36_33_0_, itemlocati0_.iluom as iluom37_33_0_, itemlocati0_.iluom1 as iluom38_33_0_, itemlocati0_.iluom2 as iluom39_33_0_ from t41021 itemlocati0_ where itemlocati0_.ilbuid=? and itemlocati0_.ilinum=? and itemlocati0_.illocid=? and itemlocati0_.ilsnlot=?
+Hibernate: select lotmaster0_.ltbuid as ltbuid1_34_0_, lotmaster0_.ltinum as ltinum2_34_0_, lotmaster0_.ltsnlot as ltsnlot3_34_0_, lotmaster0_.ltcid as ltcid4_34_0_, lotmaster0_.ltdtin as ltdtin5_34_0_, lotmaster0_.lttmin as lttmin6_34_0_, lotmaster0_.ltuid as ltuid7_34_0_, lotmaster0_.ltdtlu as ltdtlu8_34_0_, lotmaster0_.lttmlu as lttmlu9_34_0_, lotmaster0_.ltuidm as ltuidm10_34_0_, lotmaster0_.ltbodt as ltbodt11_34_0_, lotmaster0_.ltbbdt as ltbbdt12_34_0_, lotmaster0_.ltcldt as ltcldt13_34_0_, lotmaster0_.ltexpdt as ltexpdt14_34_0_, lotmaster0_.ltldsc as ltldsc15_34_0_, lotmaster0_.ltledt as ltledt16_34_0_, lotmaster0_.ltlsc as ltlsc17_34_0_, lotmaster0_.ltmlot1 as ltmlot18_34_0_, lotmaster0_.ltmlot2 as ltmlot19_34_0_, lotmaster0_.ltmlot3 as ltmlot20_34_0_, lotmaster0_.ltohdt as ltohdt21_34_0_, lotmaster0_.ltsern as ltsern22_34_0_ from t4108 lotmaster0_ where lotmaster0_.ltbuid=? and lotmaster0_.ltinum=? and lotmaster0_.ltsnlot=?
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/itemLocations/TEST.TEST_123_ABC.1.2.3_test
+       Parameters = {}
+          Headers = {Accept=[application/json]}
+             Body = <no character encoding set>
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@166369a1, SPRING_SECURITY_CONTEXT=org.springframework.security.core.context.SecurityContextImpl@475fcd89: Authentication: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@475fcd89: Principal: org.springframework.security.core.userdetails.User@f02988d6: Username: username; Password: [PROTECTED]; Enabled: true; AccountNonExpired: true; credentialsNonExpired: true; AccountNonLocked: true; Not granted any authorities; Credentials: [PROTECTED]; Authenticated: true; Details: null; Not granted any authorities}
+
+Handler:
+             Type = org.springframework.data.rest.webmvc.RepositoryEntityController
+           Method = public org.springframework.http.ResponseEntity<org.springframework.hateoas.Resource<?>> org.springframework.data.rest.webmvc.RepositoryEntityController.getItemResource(org.springframework.data.rest.webmvc.RootResourceInformation,java.io.Serializable,org.springframework.data.rest.webmvc.PersistentEntityResourceAssembler,org.springframework.http.HttpHeaders) throws org.springframework.web.HttpRequestMethodNotSupportedException
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Disposition=[inline;filename=f.txt], Content-Type=[application/json;charset=UTF-8], X-Content-Type-Options=[nosniff], X-XSS-Protection=[1; mode=block], Cache-Control=[no-cache, no-store, max-age=0, must-revalidate], Pragma=[no-cache], Expires=[0], X-Frame-Options=[DENY]}
+     Content type = application/json;charset=UTF-8
+             Body = {
+  "inputUserId" : "username",
+  "lastUpdateUserId" : "username",
+  "computerId" : "username",
+  "lastTransactionDate" : null,
+  "itemCode" : "TEST.TEST",
+  "businessUnitId" : "123",
+  "locationId" : "ABC.1.2.3",
+  "serialLotNo" : "test",
+  "lotStatusCode" : "A",
+  "locationStatus" : "",
+  "expiredDate" : null,
+  "glClass" : "",
+  "quantities" : {
+    "primaryQuantityOnHand" : 0.00000,
+    "secondaryQuantityOnHand" : 0.00000,
+    "quantityOnPurchaseOrder" : 0.00000,
+    "quantityOnSalesOrder" : 0.00000,
+    "quantityOnBackOrder" : 0.00000,
+    "quantityInTransit" : 0.00000,
+    "quantityInInspection" : 0.00000,
+    "quantityOther1" : 0.00000,
+    "quantityOther2" : 0.00000,
+    "quantityOther3" : 0.00000,
+    "quantityInBound" : 0.00000,
+    "quantityOutBound" : 0.00000,
+    "quantityOnSoftCommit" : 0.00000,
+    "quantityOnHardCommit" : 0.00000,
+    "quantityOnWO" : 0.00000,
+    "quantityOnWOSoftCommit" : 0.00000,
+    "quantityOnWOHardCommit" : 0.00000,
+    "secondaryQuantityOnPO" : 0.00000,
+    "secondaryQuantityOnSO" : 0.00000,
+    "secondaryQuantityOnWO" : 0.00000,
+    "unitOfMeasure" : "",
+    "unitOfMeasure1" : "",
+    "unitOfMeasure2" : ""
+  },
+  "primary" : false,
+  "lastUpdateDateTime" : "2018-12-14T17:35:27",
+  "inputDateTime" : "2018-12-14T17:35:27",
+  "_links" : {
+    "self" : {
+      "href" : "http://localhost/api/itemLocations/TEST.TEST_123_ABC.1.2.3_test"
+    },
+    "itemLocation" : {
+      "href" : "http://localhost/api/itemLocations/TEST.TEST_123_ABC.1.2.3_test"
+    },
+    "location" : {
+      "href" : "http://localhost/api/itemLocations/TEST.TEST_123_ABC.1.2.3_test/location"
+    },
+    "item" : {
+      "href" : "http://localhost/api/itemLocations/TEST.TEST_123_ABC.1.2.3_test/item"
+    },
+    "lot" : {
+      "href" : "http://localhost/api/itemLocations/TEST.TEST_123_ABC.1.2.3_test/lot"
+    }
+  }
+}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2018-12-14 17:35:28.108  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@5cb78e12 testClass = ItemLocationApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemLocationApiTest@3032e044, testMethod = createTestWithPost@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@6b378341 testClass = ItemLocationApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4af5667e key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

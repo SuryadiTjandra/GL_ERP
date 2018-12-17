@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ags.goldenlionerp.converters.YNConverterTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2018-12-14T10:36:06" hostname="LAPTOP-FHFRCCL6" time="0.0">
+  <properties/>
+  <testcase name="testConvertToDatabaseColumn" classname="ags.goldenlionerp.converters.YNConverterTest" time="0.0"/>
+  <testcase name="testConvertToEntityAttribute" classname="ags.goldenlionerp.converters.YNConverterTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

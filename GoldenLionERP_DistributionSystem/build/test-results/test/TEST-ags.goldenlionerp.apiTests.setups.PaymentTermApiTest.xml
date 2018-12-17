@@ -1,0 +1,736 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ags.goldenlionerp.apiTests.setups.PaymentTermApiTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2018-12-14T10:35:58" hostname="LAPTOP-FHFRCCL6" time="0.281">
+  <properties/>
+  <testcase name="updateTestWithPut" classname="ags.goldenlionerp.apiTests.setups.PaymentTermApiTest" time="0.102"/>
+  <testcase name="getTestSingle" classname="ags.goldenlionerp.apiTests.setups.PaymentTermApiTest" time="0.028"/>
+  <testcase name="updateTestWithPatch" classname="ags.goldenlionerp.apiTests.setups.PaymentTermApiTest" time="0.042"/>
+  <testcase name="getTestCollection" classname="ags.goldenlionerp.apiTests.setups.PaymentTermApiTest" time="0.037"/>
+  <testcase name="createTestWithPut" classname="ags.goldenlionerp.apiTests.setups.PaymentTermApiTest" time="0.018"/>
+  <testcase name="deleteTest" classname="ags.goldenlionerp.apiTests.setups.PaymentTermApiTest" time="0.019"/>
+  <testcase name="createTestWithPost" classname="ags.goldenlionerp.apiTests.setups.PaymentTermApiTest" time="0.031"/>
+  <system-out><![CDATA[2018-12-14 17:35:58.860  INFO 9212 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [ags.goldenlionerp.apiTests.setups.PaymentTermApiTest], using SpringBootContextLoader
+2018-12-14 17:35:58.860  INFO 9212 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [ags.goldenlionerp.apiTests.setups.PaymentTermApiTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2018-12-14 17:35:58.860  INFO 9212 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [ags.goldenlionerp.apiTests.setups.PaymentTermApiTest]: PaymentTermApiTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2018-12-14 17:35:58.875  INFO 9212 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration ags.goldenlionerp.GoldenLionErpApplication for test class ags.goldenlionerp.apiTests.setups.PaymentTermApiTest
+2018-12-14 17:35:58.875  INFO 9212 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-12-14 17:35:58.875  INFO 9212 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@76a0836a, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@4dffd0f4, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@181e1068, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@35fbd6e9, org.springframework.test.context.support.DirtiesContextTestExecutionListener@4732a8ef, org.springframework.test.context.transaction.TransactionalTestExecutionListener@74f9b88d, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@1c0c7b2a, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@772baadc, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@250c0106, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@1c88e8fa, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@6322056a, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@49752e98, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@c340281, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@5720e4c5]
+2018-12-14 17:35:58.891  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@49dab3b0 testClass = PaymentTermApiTest, testInstance = ags.goldenlionerp.apiTests.setups.PaymentTermApiTest@57308fa9, testMethod = updateTestWithPut@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@40bfea3 testClass = PaymentTermApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@313844fe key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:58.891  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:58.891  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:58.891  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+Hibernate: select paymentter0_.pyptc as pyptc1_4_0_, paymentter0_.pycid as pycid2_4_0_, paymentter0_.pydtin as pydtin3_4_0_, paymentter0_.pytmin as pytmin4_4_0_, paymentter0_.pyuid as pyuid5_4_0_, paymentter0_.pydtlu as pydtlu6_4_0_, paymentter0_.pytmlu as pytmlu7_4_0_, paymentter0_.pyuidm as pyuidm8_4_0_, paymentter0_.pydtpa as pydtpa9_4_0_, paymentter0_.pydesa1 as pydesa10_4_0_, paymentter0_.pydcdy as pydcdy11_4_0_, paymentter0_.pydcrt as pydcrt12_4_0_, paymentter0_.pydudy as pydudy13_4_0_, paymentter0_.pydumo as pydumo14_4_0_, paymentter0_.pyeir as pyeir15_4_0_, paymentter0_.pyitap as pyitap16_4_0_, paymentter0_.pyitar as pyitar17_4_0_, paymentter0_.pyndtp as pyndtp18_4_0_, paymentter0_.pynosp as pynosp19_4_0_, paymentter0_.pyobid as pyobid20_4_0_ from t0014 paymentter0_ where paymentter0_.pyptc=?
+2018-12-14 17:35:58.985  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@49dab3b0 testClass = PaymentTermApiTest, testInstance = ags.goldenlionerp.apiTests.setups.PaymentTermApiTest@57308fa9, testMethod = updateTestWithPut@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@40bfea3 testClass = PaymentTermApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@313844fe key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]
+2018-12-14 17:35:58.985  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@49dab3b0 testClass = PaymentTermApiTest, testInstance = ags.goldenlionerp.apiTests.setups.PaymentTermApiTest@113be030, testMethod = getTestSingle@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@40bfea3 testClass = PaymentTermApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@313844fe key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:58.985  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:58.985  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:58.985  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+Hibernate: select paymentter0_.pyptc as pyptc1_4_0_, paymentter0_.pycid as pycid2_4_0_, paymentter0_.pydtin as pydtin3_4_0_, paymentter0_.pytmin as pytmin4_4_0_, paymentter0_.pyuid as pyuid5_4_0_, paymentter0_.pydtlu as pydtlu6_4_0_, paymentter0_.pytmlu as pytmlu7_4_0_, paymentter0_.pyuidm as pyuidm8_4_0_, paymentter0_.pydtpa as pydtpa9_4_0_, paymentter0_.pydesa1 as pydesa10_4_0_, paymentter0_.pydcdy as pydcdy11_4_0_, paymentter0_.pydcrt as pydcrt12_4_0_, paymentter0_.pydudy as pydudy13_4_0_, paymentter0_.pydumo as pydumo14_4_0_, paymentter0_.pyeir as pyeir15_4_0_, paymentter0_.pyitap as pyitap16_4_0_, paymentter0_.pyitar as pyitar17_4_0_, paymentter0_.pyndtp as pyndtp18_4_0_, paymentter0_.pynosp as pynosp19_4_0_, paymentter0_.pyobid as pyobid20_4_0_ from t0014 paymentter0_ where paymentter0_.pyptc=?
+2018-12-14 17:35:59.016  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@49dab3b0 testClass = PaymentTermApiTest, testInstance = ags.goldenlionerp.apiTests.setups.PaymentTermApiTest@113be030, testMethod = getTestSingle@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@40bfea3 testClass = PaymentTermApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@313844fe key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]
+2018-12-14 17:35:59.016  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@49dab3b0 testClass = PaymentTermApiTest, testInstance = ags.goldenlionerp.apiTests.setups.PaymentTermApiTest@792048fa, testMethod = updateTestWithPatch@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@40bfea3 testClass = PaymentTermApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@313844fe key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:59.016  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:59.016  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:59.016  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+Hibernate: select paymentter0_.pyptc as pyptc1_4_0_, paymentter0_.pycid as pycid2_4_0_, paymentter0_.pydtin as pydtin3_4_0_, paymentter0_.pytmin as pytmin4_4_0_, paymentter0_.pyuid as pyuid5_4_0_, paymentter0_.pydtlu as pydtlu6_4_0_, paymentter0_.pytmlu as pytmlu7_4_0_, paymentter0_.pyuidm as pyuidm8_4_0_, paymentter0_.pydtpa as pydtpa9_4_0_, paymentter0_.pydesa1 as pydesa10_4_0_, paymentter0_.pydcdy as pydcdy11_4_0_, paymentter0_.pydcrt as pydcrt12_4_0_, paymentter0_.pydudy as pydudy13_4_0_, paymentter0_.pydumo as pydumo14_4_0_, paymentter0_.pyeir as pyeir15_4_0_, paymentter0_.pyitap as pyitap16_4_0_, paymentter0_.pyitar as pyitar17_4_0_, paymentter0_.pyndtp as pyndtp18_4_0_, paymentter0_.pynosp as pynosp19_4_0_, paymentter0_.pyobid as pyobid20_4_0_ from t0014 paymentter0_ where paymentter0_.pyptc=?
+Hibernate: update t0014 set pycid=?, pydtlu=?, pytmlu=?, pyuidm=?, pydtpa=?, pydesa1=?, pydcdy=?, pydcrt=?, pydudy=?, pydumo=?, pyeir=?, pyitap=?, pyitar=?, pyndtp=?, pynosp=?, pyobid=? where pyptc=?
+Hibernate: select paymentter0_.pyptc as pyptc1_4_0_, paymentter0_.pycid as pycid2_4_0_, paymentter0_.pydtin as pydtin3_4_0_, paymentter0_.pytmin as pytmin4_4_0_, paymentter0_.pyuid as pyuid5_4_0_, paymentter0_.pydtlu as pydtlu6_4_0_, paymentter0_.pytmlu as pytmlu7_4_0_, paymentter0_.pyuidm as pyuidm8_4_0_, paymentter0_.pydtpa as pydtpa9_4_0_, paymentter0_.pydesa1 as pydesa10_4_0_, paymentter0_.pydcdy as pydcdy11_4_0_, paymentter0_.pydcrt as pydcrt12_4_0_, paymentter0_.pydudy as pydudy13_4_0_, paymentter0_.pydumo as pydumo14_4_0_, paymentter0_.pyeir as pyeir15_4_0_, paymentter0_.pyitap as pyitap16_4_0_, paymentter0_.pyitar as pyitar17_4_0_, paymentter0_.pyndtp as pyndtp18_4_0_, paymentter0_.pynosp as pynosp19_4_0_, paymentter0_.pyobid as pyobid20_4_0_ from t0014 paymentter0_ where paymentter0_.pyptc=?
+2018-12-14 17:35:59.065  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@49dab3b0 testClass = PaymentTermApiTest, testInstance = ags.goldenlionerp.apiTests.setups.PaymentTermApiTest@792048fa, testMethod = updateTestWithPatch@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@40bfea3 testClass = PaymentTermApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@313844fe key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]
+2018-12-14 17:35:59.065  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@49dab3b0 testClass = PaymentTermApiTest, testInstance = ags.goldenlionerp.apiTests.setups.PaymentTermApiTest@2dc125d9, testMethod = getTestCollection@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@40bfea3 testClass = PaymentTermApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@313844fe key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:59.065  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:59.065  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:59.065  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+Hibernate: select TOP(?) paymentter0_.pyptc as pyptc1_4_, paymentter0_.pycid as pycid2_4_, paymentter0_.pydtin as pydtin3_4_, paymentter0_.pytmin as pytmin4_4_, paymentter0_.pyuid as pyuid5_4_, paymentter0_.pydtlu as pydtlu6_4_, paymentter0_.pytmlu as pytmlu7_4_, paymentter0_.pyuidm as pyuidm8_4_, paymentter0_.pydtpa as pydtpa9_4_, paymentter0_.pydesa1 as pydesa10_4_, paymentter0_.pydcdy as pydcdy11_4_, paymentter0_.pydcrt as pydcrt12_4_, paymentter0_.pydudy as pydudy13_4_, paymentter0_.pydumo as pydumo14_4_, paymentter0_.pyeir as pyeir15_4_, paymentter0_.pyitap as pyitap16_4_, paymentter0_.pyitar as pyitar17_4_, paymentter0_.pyndtp as pyndtp18_4_, paymentter0_.pynosp as pynosp19_4_, paymentter0_.pyobid as pyobid20_4_ from t0014 paymentter0_
+Hibernate: select count(paymentter0_.pyptc) as col_0_0_ from t0014 paymentter0_
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/paymentTerms/
+       Parameters = {}
+          Headers = {Accept=[application/json]}
+             Body = <no character encoding set>
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@46709c, SPRING_SECURITY_CONTEXT=org.springframework.security.core.context.SecurityContextImpl@475fcd89: Authentication: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@475fcd89: Principal: org.springframework.security.core.userdetails.User@f02988d6: Username: username; Password: [PROTECTED]; Enabled: true; AccountNonExpired: true; credentialsNonExpired: true; AccountNonLocked: true; Not granted any authorities; Credentials: [PROTECTED]; Authenticated: true; Details: null; Not granted any authorities}
+
+Handler:
+             Type = org.springframework.data.rest.webmvc.RepositoryEntityController
+           Method = public org.springframework.hateoas.Resources<?> org.springframework.data.rest.webmvc.RepositoryEntityController.getCollectionResource(org.springframework.data.rest.webmvc.RootResourceInformation,org.springframework.data.rest.webmvc.support.DefaultedPageable,org.springframework.data.domain.Sort,org.springframework.data.rest.webmvc.PersistentEntityResourceAssembler) throws org.springframework.data.rest.webmvc.ResourceNotFoundException,org.springframework.web.HttpRequestMethodNotSupportedException
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Type=[application/json;charset=UTF-8], X-Content-Type-Options=[nosniff], X-XSS-Protection=[1; mode=block], Cache-Control=[no-cache, no-store, max-age=0, must-revalidate], Pragma=[no-cache], Expires=[0], X-Frame-Options=[DENY]}
+     Content type = application/json;charset=UTF-8
+             Body = {
+  "_embedded" : {
+    "paymentTerms" : [ {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "QSA",
+      "computerId" : "WIN7UL7P5",
+      "paymentTermCode" : "CBD",
+      "description" : "Tunai (Cash Before Deliver)",
+      "discountPercentage" : 0E-15,
+      "discountDays" : 0,
+      "netDaysToPay" : 0,
+      "numberOfSplitPayment" : 0,
+      "daysToPayAging" : 0,
+      "effectiveInterestRate" : 0.00000,
+      "dueMonth" : 0,
+      "dueDay" : 0,
+      "interfaceToAccountReceivable" : false,
+      "interfaceToAccountPayable" : false,
+      "objectId" : "",
+      "lastUpdateDateTime" : "2015-06-21T21:41:32",
+      "inputDateTime" : "2009-08-28T20:40:42",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/paymentTerms/CBD"
+        },
+        "paymentTerm" : {
+          "href" : "http://localhost/api/paymentTerms/CBD"
+        }
+      }
+    }, {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "QSA",
+      "computerId" : "WIN7UL7P5",
+      "paymentTermCode" : "CDC",
+      "description" : "Credit Card",
+      "discountPercentage" : 0E-15,
+      "discountDays" : 0,
+      "netDaysToPay" : 2,
+      "numberOfSplitPayment" : 0,
+      "daysToPayAging" : 0,
+      "effectiveInterestRate" : 0.00000,
+      "dueMonth" : 0,
+      "dueDay" : 0,
+      "interfaceToAccountReceivable" : true,
+      "interfaceToAccountPayable" : true,
+      "objectId" : "0",
+      "lastUpdateDateTime" : "2015-06-21T21:41:35",
+      "inputDateTime" : "2008-10-15T21:34:20",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/paymentTerms/CDC"
+        },
+        "paymentTerm" : {
+          "href" : "http://localhost/api/paymentTerms/CDC"
+        }
+      }
+    }, {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "QSA",
+      "computerId" : "GOLDENLION-PC",
+      "paymentTermCode" : "COD",
+      "description" : "Tunai (Cash On Deliver)",
+      "discountPercentage" : 0E-15,
+      "discountDays" : 1,
+      "netDaysToPay" : 1,
+      "numberOfSplitPayment" : 0,
+      "daysToPayAging" : 0,
+      "effectiveInterestRate" : 0.00000,
+      "dueMonth" : 0,
+      "dueDay" : 0,
+      "interfaceToAccountReceivable" : true,
+      "interfaceToAccountPayable" : true,
+      "objectId" : "",
+      "lastUpdateDateTime" : "2017-11-14T15:37:01",
+      "inputDateTime" : "2009-08-28T20:40:28",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/paymentTerms/COD"
+        },
+        "paymentTerm" : {
+          "href" : "http://localhost/api/paymentTerms/COD"
+        }
+      }
+    }, {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "QSA",
+      "computerId" : "WIN7UL7P5",
+      "paymentTermCode" : "COM",
+      "description" : "Complimentary",
+      "discountPercentage" : 0E-15,
+      "discountDays" : 0,
+      "netDaysToPay" : -1,
+      "numberOfSplitPayment" : 0,
+      "daysToPayAging" : 0,
+      "effectiveInterestRate" : 0.00000,
+      "dueMonth" : 0,
+      "dueDay" : 0,
+      "interfaceToAccountReceivable" : false,
+      "interfaceToAccountPayable" : false,
+      "objectId" : "0",
+      "lastUpdateDateTime" : "2015-06-21T21:42:02",
+      "inputDateTime" : "2008-10-15T21:34:46",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/paymentTerms/COM"
+        },
+        "paymentTerm" : {
+          "href" : "http://localhost/api/paymentTerms/COM"
+        }
+      }
+    }, {
+      "inputUserId" : "SA",
+      "lastUpdateUserId" : "QSA",
+      "computerId" : "WIN7UL7P5",
+      "paymentTermCode" : "CRD",
+      "description" : "Credit / Pending Bill",
+      "discountPercentage" : 0E-15,
+      "discountDays" : 0,
+      "netDaysToPay" : 30,
+      "numberOfSplitPayment" : 0,
+      "daysToPayAging" : 0,
+      "effectiveInterestRate" : 0.00000,
+      "dueMonth" : 0,
+      "dueDay" : 0,
+      "interfaceToAccountReceivable" : true,
+      "interfaceToAccountPayable" : true,
+      "objectId" : "",
+      "lastUpdateDateTime" : "2015-06-21T21:42:10",
+      "inputDateTime" : "2012-09-07T11:21:01",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/paymentTerms/CRD"
+        },
+        "paymentTerm" : {
+          "href" : "http://localhost/api/paymentTerms/CRD"
+        }
+      }
+    }, {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "QSA",
+      "computerId" : "WIN7UL7P5",
+      "paymentTermCode" : "D02",
+      "description" : "2% 10 Days Net 30",
+      "discountPercentage" : 2.000000000000000,
+      "discountDays" : 10,
+      "netDaysToPay" : 30,
+      "numberOfSplitPayment" : 0,
+      "daysToPayAging" : 0,
+      "effectiveInterestRate" : 0.00000,
+      "dueMonth" : 0,
+      "dueDay" : 0,
+      "interfaceToAccountReceivable" : false,
+      "interfaceToAccountPayable" : false,
+      "objectId" : "",
+      "lastUpdateDateTime" : "2015-06-19T22:35:47",
+      "inputDateTime" : "2009-09-26T17:26:16",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/paymentTerms/D02"
+        },
+        "paymentTerm" : {
+          "href" : "http://localhost/api/paymentTerms/D02"
+        }
+      }
+    }, {
+      "inputUserId" : "SA",
+      "lastUpdateUserId" : "QSA",
+      "computerId" : "WIN7UL7P5",
+      "paymentTermCode" : "DBC",
+      "description" : "Debit Card",
+      "discountPercentage" : 0E-15,
+      "discountDays" : 0,
+      "netDaysToPay" : 1,
+      "numberOfSplitPayment" : 0,
+      "daysToPayAging" : 0,
+      "effectiveInterestRate" : 0.00000,
+      "dueMonth" : 0,
+      "dueDay" : 0,
+      "interfaceToAccountReceivable" : true,
+      "interfaceToAccountPayable" : true,
+      "objectId" : "",
+      "lastUpdateDateTime" : "2015-10-24T15:51:41",
+      "inputDateTime" : "2012-09-07T11:20:20",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/paymentTerms/DBC"
+        },
+        "paymentTerm" : {
+          "href" : "http://localhost/api/paymentTerms/DBC"
+        }
+      }
+    }, {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "QSA",
+      "computerId" : "WIN7UL7P5",
+      "paymentTermCode" : "DEP",
+      "description" : "Cash Deposit",
+      "discountPercentage" : 0E-15,
+      "discountDays" : 0,
+      "netDaysToPay" : -1,
+      "numberOfSplitPayment" : 0,
+      "daysToPayAging" : 0,
+      "effectiveInterestRate" : 0.00000,
+      "dueMonth" : 0,
+      "dueDay" : 0,
+      "interfaceToAccountReceivable" : false,
+      "interfaceToAccountPayable" : false,
+      "objectId" : "",
+      "lastUpdateDateTime" : "2015-06-21T21:42:44",
+      "inputDateTime" : "2015-06-21T21:42:44",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/paymentTerms/DEP"
+        },
+        "paymentTerm" : {
+          "href" : "http://localhost/api/paymentTerms/DEP"
+        }
+      }
+    }, {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "QSA",
+      "computerId" : "WIN7UL7P5",
+      "paymentTermCode" : "GFC",
+      "description" : "Gift Card",
+      "discountPercentage" : 0E-15,
+      "discountDays" : 0,
+      "netDaysToPay" : -1,
+      "numberOfSplitPayment" : 0,
+      "daysToPayAging" : 0,
+      "effectiveInterestRate" : 0.00000,
+      "dueMonth" : 0,
+      "dueDay" : 0,
+      "interfaceToAccountReceivable" : false,
+      "interfaceToAccountPayable" : false,
+      "objectId" : "",
+      "lastUpdateDateTime" : "2015-06-21T21:42:31",
+      "inputDateTime" : "2015-06-21T21:42:31",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/paymentTerms/GFC"
+        },
+        "paymentTerm" : {
+          "href" : "http://localhost/api/paymentTerms/GFC"
+        }
+      }
+    }, {
+      "inputUserId" : "ANTHONI",
+      "lastUpdateUserId" : "QSA",
+      "computerId" : "AYOOKLIK",
+      "paymentTermCode" : "N03",
+      "description" : "Net 3 Hari",
+      "discountPercentage" : 0E-15,
+      "discountDays" : 0,
+      "netDaysToPay" : 3,
+      "numberOfSplitPayment" : 0,
+      "daysToPayAging" : 0,
+      "effectiveInterestRate" : 0.00000,
+      "dueMonth" : 0,
+      "dueDay" : 0,
+      "interfaceToAccountReceivable" : true,
+      "interfaceToAccountPayable" : true,
+      "objectId" : "",
+      "lastUpdateDateTime" : "2018-04-12T19:00:17",
+      "inputDateTime" : "2018-03-19T10:27:12",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/paymentTerms/N03"
+        },
+        "paymentTerm" : {
+          "href" : "http://localhost/api/paymentTerms/N03"
+        }
+      }
+    }, {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "QSA",
+      "computerId" : "WIN7UL7P5",
+      "paymentTermCode" : "N07",
+      "description" : "Net 7 Hari",
+      "discountPercentage" : 0E-15,
+      "discountDays" : 0,
+      "netDaysToPay" : 7,
+      "numberOfSplitPayment" : 0,
+      "daysToPayAging" : 0,
+      "effectiveInterestRate" : 0.00000,
+      "dueMonth" : 0,
+      "dueDay" : 0,
+      "interfaceToAccountReceivable" : true,
+      "interfaceToAccountPayable" : true,
+      "objectId" : "",
+      "lastUpdateDateTime" : "2015-06-21T21:42:56",
+      "inputDateTime" : "2009-09-26T17:22:59",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/paymentTerms/N07"
+        },
+        "paymentTerm" : {
+          "href" : "http://localhost/api/paymentTerms/N07"
+        }
+      }
+    }, {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "QSA",
+      "computerId" : "WIN7UL7P5",
+      "paymentTermCode" : "N14",
+      "description" : "Net 14 Hari",
+      "discountPercentage" : 0E-15,
+      "discountDays" : 0,
+      "netDaysToPay" : 14,
+      "numberOfSplitPayment" : 0,
+      "daysToPayAging" : 0,
+      "effectiveInterestRate" : 0.00000,
+      "dueMonth" : 0,
+      "dueDay" : 0,
+      "interfaceToAccountReceivable" : true,
+      "interfaceToAccountPayable" : true,
+      "objectId" : "",
+      "lastUpdateDateTime" : "2015-06-21T21:42:59",
+      "inputDateTime" : "2009-09-26T17:22:32",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/paymentTerms/N14"
+        },
+        "paymentTerm" : {
+          "href" : "http://localhost/api/paymentTerms/N14"
+        }
+      }
+    }, {
+      "inputUserId" : "ANTHONI",
+      "lastUpdateUserId" : "ANTHONI",
+      "computerId" : "DESKTOP-09OGK1M",
+      "paymentTermCode" : "N21",
+      "description" : "Net 21 Hari",
+      "discountPercentage" : 0E-15,
+      "discountDays" : 0,
+      "netDaysToPay" : 21,
+      "numberOfSplitPayment" : 0,
+      "daysToPayAging" : 0,
+      "effectiveInterestRate" : 0.00000,
+      "dueMonth" : 0,
+      "dueDay" : 0,
+      "interfaceToAccountReceivable" : true,
+      "interfaceToAccountPayable" : true,
+      "objectId" : "",
+      "lastUpdateDateTime" : "2018-03-27T09:28:57",
+      "inputDateTime" : "2018-03-27T09:28:57",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/paymentTerms/N21"
+        },
+        "paymentTerm" : {
+          "href" : "http://localhost/api/paymentTerms/N21"
+        }
+      }
+    }, {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "QSA",
+      "computerId" : "WIN7UL7P5",
+      "paymentTermCode" : "N30",
+      "description" : "Net 30 Hari",
+      "discountPercentage" : 0E-15,
+      "discountDays" : 0,
+      "netDaysToPay" : 30,
+      "numberOfSplitPayment" : 0,
+      "daysToPayAging" : 0,
+      "effectiveInterestRate" : 0.00000,
+      "dueMonth" : 0,
+      "dueDay" : 0,
+      "interfaceToAccountReceivable" : true,
+      "interfaceToAccountPayable" : true,
+      "objectId" : "0",
+      "lastUpdateDateTime" : "2015-06-21T21:43:03",
+      "inputDateTime" : "2006-10-27T13:45:28",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/paymentTerms/N30"
+        },
+        "paymentTerm" : {
+          "href" : "http://localhost/api/paymentTerms/N30"
+        }
+      }
+    }, {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "QSA",
+      "computerId" : "WIN7UL7P5",
+      "paymentTermCode" : "N45",
+      "description" : "Net 45 Hari (1,5 Bulan)",
+      "discountPercentage" : 0E-15,
+      "discountDays" : 0,
+      "netDaysToPay" : 45,
+      "numberOfSplitPayment" : 0,
+      "daysToPayAging" : 0,
+      "effectiveInterestRate" : 0.00000,
+      "dueMonth" : 0,
+      "dueDay" : 0,
+      "interfaceToAccountReceivable" : true,
+      "interfaceToAccountPayable" : true,
+      "objectId" : "",
+      "lastUpdateDateTime" : "2015-06-21T21:43:09",
+      "inputDateTime" : "2013-04-24T09:56:08",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/paymentTerms/N45"
+        },
+        "paymentTerm" : {
+          "href" : "http://localhost/api/paymentTerms/N45"
+        }
+      }
+    }, {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "QSA",
+      "computerId" : "WIN7UL7P5",
+      "paymentTermCode" : "N60",
+      "description" : "Net 60 Hari",
+      "discountPercentage" : 0E-15,
+      "discountDays" : 0,
+      "netDaysToPay" : 60,
+      "numberOfSplitPayment" : 0,
+      "daysToPayAging" : 0,
+      "effectiveInterestRate" : 0.00000,
+      "dueMonth" : 0,
+      "dueDay" : 0,
+      "interfaceToAccountReceivable" : true,
+      "interfaceToAccountPayable" : true,
+      "objectId" : "",
+      "lastUpdateDateTime" : "2015-06-21T21:43:13",
+      "inputDateTime" : "2013-04-24T09:49:39",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/paymentTerms/N60"
+        },
+        "paymentTerm" : {
+          "href" : "http://localhost/api/paymentTerms/N60"
+        }
+      }
+    }, {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "QSA",
+      "computerId" : "WIN7UL7P5",
+      "paymentTermCode" : "N75",
+      "description" : "Net 75 Hari (2,5 Bulan)",
+      "discountPercentage" : 0E-15,
+      "discountDays" : 0,
+      "netDaysToPay" : 75,
+      "numberOfSplitPayment" : 0,
+      "daysToPayAging" : 0,
+      "effectiveInterestRate" : 0.00000,
+      "dueMonth" : 0,
+      "dueDay" : 0,
+      "interfaceToAccountReceivable" : true,
+      "interfaceToAccountPayable" : true,
+      "objectId" : "",
+      "lastUpdateDateTime" : "2015-06-21T21:43:17",
+      "inputDateTime" : "2013-04-24T09:55:53",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/paymentTerms/N75"
+        },
+        "paymentTerm" : {
+          "href" : "http://localhost/api/paymentTerms/N75"
+        }
+      }
+    }, {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "QSA",
+      "computerId" : "WIN7UL7P5",
+      "paymentTermCode" : "N90",
+      "description" : "Net 90 Hari (3 Bulan)",
+      "discountPercentage" : 0E-15,
+      "discountDays" : 0,
+      "netDaysToPay" : 90,
+      "numberOfSplitPayment" : 0,
+      "daysToPayAging" : 0,
+      "effectiveInterestRate" : 0.00000,
+      "dueMonth" : 0,
+      "dueDay" : 0,
+      "interfaceToAccountReceivable" : true,
+      "interfaceToAccountPayable" : true,
+      "objectId" : "",
+      "lastUpdateDateTime" : "2015-06-21T21:43:22",
+      "inputDateTime" : "2013-04-24T10:03:36",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/paymentTerms/N90"
+        },
+        "paymentTerm" : {
+          "href" : "http://localhost/api/paymentTerms/N90"
+        }
+      }
+    }, {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "QSA",
+      "computerId" : "WIN7UL7P5",
+      "paymentTermCode" : "VCR",
+      "description" : "Voucher",
+      "discountPercentage" : 0E-15,
+      "discountDays" : 0,
+      "netDaysToPay" : -1,
+      "numberOfSplitPayment" : 0,
+      "daysToPayAging" : 0,
+      "effectiveInterestRate" : 0.00000,
+      "dueMonth" : 0,
+      "dueDay" : 0,
+      "interfaceToAccountReceivable" : false,
+      "interfaceToAccountPayable" : false,
+      "objectId" : "",
+      "lastUpdateDateTime" : "2015-10-24T15:51:30",
+      "inputDateTime" : "2015-10-24T15:51:30",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/paymentTerms/VCR"
+        },
+        "paymentTerm" : {
+          "href" : "http://localhost/api/paymentTerms/VCR"
+        }
+      }
+    }, {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "QSA",
+      "computerId" : "WINXPL7P5",
+      "paymentTermCode" : "X12",
+      "description" : "Pinjaman 12 Bulan",
+      "discountPercentage" : 0E-15,
+      "discountDays" : 0,
+      "netDaysToPay" : 0,
+      "numberOfSplitPayment" : 12,
+      "daysToPayAging" : 0,
+      "effectiveInterestRate" : 0.00000,
+      "dueMonth" : 0,
+      "dueDay" : 0,
+      "interfaceToAccountReceivable" : false,
+      "interfaceToAccountPayable" : false,
+      "objectId" : "",
+      "lastUpdateDateTime" : "2009-02-26T16:59:41",
+      "inputDateTime" : "2009-02-26T16:59:41",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/paymentTerms/X12"
+        },
+        "paymentTerm" : {
+          "href" : "http://localhost/api/paymentTerms/X12"
+        }
+      }
+    } ]
+  },
+  "_links" : {
+    "first" : {
+      "href" : "http://localhost/api/paymentTerms?page=0&size=20"
+    },
+    "self" : {
+      "href" : "http://localhost/api/paymentTerms{?page,size,sort}",
+      "templated" : true
+    },
+    "next" : {
+      "href" : "http://localhost/api/paymentTerms?page=1&size=20"
+    },
+    "last" : {
+      "href" : "http://localhost/api/paymentTerms?page=1&size=20"
+    },
+    "profile" : {
+      "href" : "http://localhost/api/profile/paymentTerms"
+    }
+  },
+  "page" : {
+    "size" : 20,
+    "totalElements" : 22,
+    "totalPages" : 2,
+    "number" : 0
+  }
+}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2018-12-14 17:35:59.096  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@49dab3b0 testClass = PaymentTermApiTest, testInstance = ags.goldenlionerp.apiTests.setups.PaymentTermApiTest@2dc125d9, testMethod = getTestCollection@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@40bfea3 testClass = PaymentTermApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@313844fe key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]
+2018-12-14 17:35:59.096  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@49dab3b0 testClass = PaymentTermApiTest, testInstance = ags.goldenlionerp.apiTests.setups.PaymentTermApiTest@53cff1e9, testMethod = createTestWithPut@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@40bfea3 testClass = PaymentTermApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@313844fe key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:59.096  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:59.096  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:59.111  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 15 ms
+Hibernate: select paymentter0_.pyptc as pyptc1_4_0_, paymentter0_.pycid as pycid2_4_0_, paymentter0_.pydtin as pydtin3_4_0_, paymentter0_.pytmin as pytmin4_4_0_, paymentter0_.pyuid as pyuid5_4_0_, paymentter0_.pydtlu as pydtlu6_4_0_, paymentter0_.pytmlu as pytmlu7_4_0_, paymentter0_.pyuidm as pyuidm8_4_0_, paymentter0_.pydtpa as pydtpa9_4_0_, paymentter0_.pydesa1 as pydesa10_4_0_, paymentter0_.pydcdy as pydcdy11_4_0_, paymentter0_.pydcrt as pydcrt12_4_0_, paymentter0_.pydudy as pydudy13_4_0_, paymentter0_.pydumo as pydumo14_4_0_, paymentter0_.pyeir as pyeir15_4_0_, paymentter0_.pyitap as pyitap16_4_0_, paymentter0_.pyitar as pyitar17_4_0_, paymentter0_.pyndtp as pyndtp18_4_0_, paymentter0_.pynosp as pynosp19_4_0_, paymentter0_.pyobid as pyobid20_4_0_ from t0014 paymentter0_ where paymentter0_.pyptc=?
+2018-12-14 17:35:59.111  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@49dab3b0 testClass = PaymentTermApiTest, testInstance = ags.goldenlionerp.apiTests.setups.PaymentTermApiTest@53cff1e9, testMethod = createTestWithPut@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@40bfea3 testClass = PaymentTermApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@313844fe key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]
+2018-12-14 17:35:59.111  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@49dab3b0 testClass = PaymentTermApiTest, testInstance = ags.goldenlionerp.apiTests.setups.PaymentTermApiTest@4d2f3456, testMethod = deleteTest@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@40bfea3 testClass = PaymentTermApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@313844fe key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:59.111  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:59.111  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:59.127  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 16 ms
+Hibernate: select paymentter0_.pyptc as pyptc1_4_0_, paymentter0_.pycid as pycid2_4_0_, paymentter0_.pydtin as pydtin3_4_0_, paymentter0_.pytmin as pytmin4_4_0_, paymentter0_.pyuid as pyuid5_4_0_, paymentter0_.pydtlu as pydtlu6_4_0_, paymentter0_.pytmlu as pytmlu7_4_0_, paymentter0_.pyuidm as pyuidm8_4_0_, paymentter0_.pydtpa as pydtpa9_4_0_, paymentter0_.pydesa1 as pydesa10_4_0_, paymentter0_.pydcdy as pydcdy11_4_0_, paymentter0_.pydcrt as pydcrt12_4_0_, paymentter0_.pydudy as pydudy13_4_0_, paymentter0_.pydumo as pydumo14_4_0_, paymentter0_.pyeir as pyeir15_4_0_, paymentter0_.pyitap as pyitap16_4_0_, paymentter0_.pyitar as pyitar17_4_0_, paymentter0_.pyndtp as pyndtp18_4_0_, paymentter0_.pynosp as pynosp19_4_0_, paymentter0_.pyobid as pyobid20_4_0_ from t0014 paymentter0_ where paymentter0_.pyptc=?
+2018-12-14 17:35:59.127  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@49dab3b0 testClass = PaymentTermApiTest, testInstance = ags.goldenlionerp.apiTests.setups.PaymentTermApiTest@4d2f3456, testMethod = deleteTest@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@40bfea3 testClass = PaymentTermApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@313844fe key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]
+2018-12-14 17:35:59.127  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@49dab3b0 testClass = PaymentTermApiTest, testInstance = ags.goldenlionerp.apiTests.setups.PaymentTermApiTest@4b2bcb21, testMethod = createTestWithPost@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@40bfea3 testClass = PaymentTermApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@313844fe key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:59.143  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:59.143  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:59.143  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+Hibernate: select paymentter0_.pyptc as pyptc1_4_0_, paymentter0_.pycid as pycid2_4_0_, paymentter0_.pydtin as pydtin3_4_0_, paymentter0_.pytmin as pytmin4_4_0_, paymentter0_.pyuid as pyuid5_4_0_, paymentter0_.pydtlu as pydtlu6_4_0_, paymentter0_.pytmlu as pytmlu7_4_0_, paymentter0_.pyuidm as pyuidm8_4_0_, paymentter0_.pydtpa as pydtpa9_4_0_, paymentter0_.pydesa1 as pydesa10_4_0_, paymentter0_.pydcdy as pydcdy11_4_0_, paymentter0_.pydcrt as pydcrt12_4_0_, paymentter0_.pydudy as pydudy13_4_0_, paymentter0_.pydumo as pydumo14_4_0_, paymentter0_.pyeir as pyeir15_4_0_, paymentter0_.pyitap as pyitap16_4_0_, paymentter0_.pyitar as pyitar17_4_0_, paymentter0_.pyndtp as pyndtp18_4_0_, paymentter0_.pynosp as pynosp19_4_0_, paymentter0_.pyobid as pyobid20_4_0_ from t0014 paymentter0_ where paymentter0_.pyptc=?
+Hibernate: select paymentter0_.pyptc as pyptc1_4_0_, paymentter0_.pycid as pycid2_4_0_, paymentter0_.pydtin as pydtin3_4_0_, paymentter0_.pytmin as pytmin4_4_0_, paymentter0_.pyuid as pyuid5_4_0_, paymentter0_.pydtlu as pydtlu6_4_0_, paymentter0_.pytmlu as pytmlu7_4_0_, paymentter0_.pyuidm as pyuidm8_4_0_, paymentter0_.pydtpa as pydtpa9_4_0_, paymentter0_.pydesa1 as pydesa10_4_0_, paymentter0_.pydcdy as pydcdy11_4_0_, paymentter0_.pydcrt as pydcrt12_4_0_, paymentter0_.pydudy as pydudy13_4_0_, paymentter0_.pydumo as pydumo14_4_0_, paymentter0_.pyeir as pyeir15_4_0_, paymentter0_.pyitap as pyitap16_4_0_, paymentter0_.pyitar as pyitar17_4_0_, paymentter0_.pyndtp as pyndtp18_4_0_, paymentter0_.pynosp as pynosp19_4_0_, paymentter0_.pyobid as pyobid20_4_0_ from t0014 paymentter0_ where paymentter0_.pyptc=?
+Hibernate: insert into t0014 (pycid, pydtin, pytmin, pyuid, pydtlu, pytmlu, pyuidm, pydtpa, pydesa1, pydcdy, pydcrt, pydudy, pydumo, pyeir, pyitap, pyitar, pyndtp, pynosp, pyobid, pyptc) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: select paymentter0_.pyptc as pyptc1_4_0_, paymentter0_.pycid as pycid2_4_0_, paymentter0_.pydtin as pydtin3_4_0_, paymentter0_.pytmin as pytmin4_4_0_, paymentter0_.pyuid as pyuid5_4_0_, paymentter0_.pydtlu as pydtlu6_4_0_, paymentter0_.pytmlu as pytmlu7_4_0_, paymentter0_.pyuidm as pyuidm8_4_0_, paymentter0_.pydtpa as pydtpa9_4_0_, paymentter0_.pydesa1 as pydesa10_4_0_, paymentter0_.pydcdy as pydcdy11_4_0_, paymentter0_.pydcrt as pydcrt12_4_0_, paymentter0_.pydudy as pydudy13_4_0_, paymentter0_.pydumo as pydumo14_4_0_, paymentter0_.pyeir as pyeir15_4_0_, paymentter0_.pyitap as pyitap16_4_0_, paymentter0_.pyitar as pyitar17_4_0_, paymentter0_.pyndtp as pyndtp18_4_0_, paymentter0_.pynosp as pynosp19_4_0_, paymentter0_.pyobid as pyobid20_4_0_ from t0014 paymentter0_ where paymentter0_.pyptc=?
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/paymentTerms/TES
+       Parameters = {}
+          Headers = {Accept=[application/json]}
+             Body = <no character encoding set>
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@6a6ef7f7, SPRING_SECURITY_CONTEXT=org.springframework.security.core.context.SecurityContextImpl@475fcd89: Authentication: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@475fcd89: Principal: org.springframework.security.core.userdetails.User@f02988d6: Username: username; Password: [PROTECTED]; Enabled: true; AccountNonExpired: true; credentialsNonExpired: true; AccountNonLocked: true; Not granted any authorities; Credentials: [PROTECTED]; Authenticated: true; Details: null; Not granted any authorities}
+
+Handler:
+             Type = org.springframework.data.rest.webmvc.RepositoryEntityController
+           Method = public org.springframework.http.ResponseEntity<org.springframework.hateoas.Resource<?>> org.springframework.data.rest.webmvc.RepositoryEntityController.getItemResource(org.springframework.data.rest.webmvc.RootResourceInformation,java.io.Serializable,org.springframework.data.rest.webmvc.PersistentEntityResourceAssembler,org.springframework.http.HttpHeaders) throws org.springframework.web.HttpRequestMethodNotSupportedException
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Type=[application/json;charset=UTF-8], X-Content-Type-Options=[nosniff], X-XSS-Protection=[1; mode=block], Cache-Control=[no-cache, no-store, max-age=0, must-revalidate], Pragma=[no-cache], Expires=[0], X-Frame-Options=[DENY]}
+     Content type = application/json;charset=UTF-8
+             Body = {
+  "inputUserId" : "username",
+  "lastUpdateUserId" : "username",
+  "computerId" : "username",
+  "paymentTermCode" : "TES",
+  "description" : "Test Payment Term",
+  "discountPercentage" : 25.000000000000000,
+  "discountDays" : 7,
+  "netDaysToPay" : 5,
+  "numberOfSplitPayment" : 0,
+  "daysToPayAging" : 0,
+  "effectiveInterestRate" : 0.00000,
+  "dueMonth" : 5,
+  "dueDay" : 12,
+  "interfaceToAccountReceivable" : true,
+  "interfaceToAccountPayable" : false,
+  "objectId" : "",
+  "lastUpdateDateTime" : "2018-12-14T17:35:59",
+  "inputDateTime" : "2018-12-14T17:35:59",
+  "_links" : {
+    "self" : {
+      "href" : "http://localhost/api/paymentTerms/TES"
+    },
+    "paymentTerm" : {
+      "href" : "http://localhost/api/paymentTerms/TES"
+    }
+  }
+}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2018-12-14 17:35:59.158  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@49dab3b0 testClass = PaymentTermApiTest, testInstance = ags.goldenlionerp.apiTests.setups.PaymentTermApiTest@4b2bcb21, testMethod = createTestWithPost@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@40bfea3 testClass = PaymentTermApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@313844fe key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class ags.goldenlionerp.apiTests.item.StandardUomConversionApiTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class ags.goldenlionerp.apiTests.item.StandardUomConversionApiTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/ags.goldenlionerp.apiTests.item.html">ags.goldenlionerp.apiTests.item</a> &gt; StandardUomConversionApiTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">8</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.271s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">createTestWithPost</td>
+<td>0.044s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">createTestWithPost_ExistingConversion</td>
+<td>0.056s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">createTestWithPut</td>
+<td>0.019s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">deleteTest</td>
+<td>0.025s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getTestCollection</td>
+<td>0.035s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getTestSingle</td>
+<td>0.023s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">updateTestWithPatch</td>
+<td>0.043s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">updateTestWithPut</td>
+<td>0.026s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>2018-12-14 17:35:29.878  INFO 9212 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [ags.goldenlionerp.apiTests.item.StandardUomConversionApiTest], using SpringBootContextLoader
+2018-12-14 17:35:29.878  INFO 9212 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [ags.goldenlionerp.apiTests.item.StandardUomConversionApiTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2018-12-14 17:35:29.878  INFO 9212 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [ags.goldenlionerp.apiTests.item.StandardUomConversionApiTest]: StandardUomConversionApiTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2018-12-14 17:35:29.878  INFO 9212 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration ags.goldenlionerp.GoldenLionErpApplication for test class ags.goldenlionerp.apiTests.item.StandardUomConversionApiTest
+2018-12-14 17:35:29.878  INFO 9212 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-12-14 17:35:29.878  INFO 9212 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7b8b26cc, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@160bea00, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@5b4d545e, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@53b64d54, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7129bca8, org.springframework.test.context.transaction.TransactionalTestExecutionListener@383b0367, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@9654f9a, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@68586f0f, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@54a85250, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@34684399, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@17d2d311, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@3c59e6f3, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@2a7519fa, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@5cf7f3a6]
+2018-12-14 17:35:29.910  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@755d3fb0 testClass = StandardUomConversionApiTest, testInstance = ags.goldenlionerp.apiTests.item.StandardUomConversionApiTest@54cf2061, testMethod = createTestWithPost_ExistingConversion@StandardUomConversionApiTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@34137aab testClass = StandardUomConversionApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@7a0f4e80 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:29.910  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:29.910  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:29.910  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+Hibernate: select standarduo0_.ucuom as ucuom1_30_0_, standarduo0_.ucuomr as ucuomr2_30_0_, standarduo0_.uccid as uccid3_30_0_, standarduo0_.ucdtin as ucdtin4_30_0_, standarduo0_.uctmin as uctmin5_30_0_, standarduo0_.ucuid as ucuid6_30_0_, standarduo0_.ucdtlu as ucdtlu7_30_0_, standarduo0_.uctmlu as uctmlu8_30_0_, standarduo0_.ucuidm as ucuidm9_30_0_, standarduo0_.ucdtls as ucdtls10_30_0_, standarduo0_.uccnv as uccnv11_30_0_ from t41003 standarduo0_ where standarduo0_.ucuom=? and standarduo0_.ucuomr=?
+Hibernate: select standarduo0_.ucuom as ucuom1_30_0_, standarduo0_.ucuomr as ucuomr2_30_0_, standarduo0_.uccid as uccid3_30_0_, standarduo0_.ucdtin as ucdtin4_30_0_, standarduo0_.uctmin as uctmin5_30_0_, standarduo0_.ucuid as ucuid6_30_0_, standarduo0_.ucdtlu as ucdtlu7_30_0_, standarduo0_.uctmlu as uctmlu8_30_0_, standarduo0_.ucuidm as ucuidm9_30_0_, standarduo0_.ucdtls as ucdtls10_30_0_, standarduo0_.uccnv as uccnv11_30_0_ from t41003 standarduo0_ where standarduo0_.ucuom=? and standarduo0_.ucuomr=?
+2018-12-14 17:35:29.956  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@755d3fb0 testClass = StandardUomConversionApiTest, testInstance = ags.goldenlionerp.apiTests.item.StandardUomConversionApiTest@54cf2061, testMethod = createTestWithPost_ExistingConversion@StandardUomConversionApiTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@34137aab testClass = StandardUomConversionApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@7a0f4e80 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+2018-12-14 17:35:29.956  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@755d3fb0 testClass = StandardUomConversionApiTest, testInstance = ags.goldenlionerp.apiTests.item.StandardUomConversionApiTest@6938b17e, testMethod = updateTestWithPut@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@34137aab testClass = StandardUomConversionApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@7a0f4e80 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:29.956  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:29.956  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:29.972  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 16 ms
+Hibernate: select standarduo0_.ucuom as ucuom1_30_0_, standarduo0_.ucuomr as ucuomr2_30_0_, standarduo0_.uccid as uccid3_30_0_, standarduo0_.ucdtin as ucdtin4_30_0_, standarduo0_.uctmin as uctmin5_30_0_, standarduo0_.ucuid as ucuid6_30_0_, standarduo0_.ucdtlu as ucdtlu7_30_0_, standarduo0_.uctmlu as uctmlu8_30_0_, standarduo0_.ucuidm as ucuidm9_30_0_, standarduo0_.ucdtls as ucdtls10_30_0_, standarduo0_.uccnv as uccnv11_30_0_ from t41003 standarduo0_ where standarduo0_.ucuom=? and standarduo0_.ucuomr=?
+2018-12-14 17:35:29.988  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@755d3fb0 testClass = StandardUomConversionApiTest, testInstance = ags.goldenlionerp.apiTests.item.StandardUomConversionApiTest@6938b17e, testMethod = updateTestWithPut@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@34137aab testClass = StandardUomConversionApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@7a0f4e80 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+2018-12-14 17:35:29.988  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@755d3fb0 testClass = StandardUomConversionApiTest, testInstance = ags.goldenlionerp.apiTests.item.StandardUomConversionApiTest@695ec029, testMethod = getTestSingle@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@34137aab testClass = StandardUomConversionApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@7a0f4e80 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:29.988  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:29.988  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:29.988  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+Hibernate: select standarduo0_.ucuom as ucuom1_30_0_, standarduo0_.ucuomr as ucuomr2_30_0_, standarduo0_.uccid as uccid3_30_0_, standarduo0_.ucdtin as ucdtin4_30_0_, standarduo0_.uctmin as uctmin5_30_0_, standarduo0_.ucuid as ucuid6_30_0_, standarduo0_.ucdtlu as ucdtlu7_30_0_, standarduo0_.uctmlu as uctmlu8_30_0_, standarduo0_.ucuidm as ucuidm9_30_0_, standarduo0_.ucdtls as ucdtls10_30_0_, standarduo0_.uccnv as uccnv11_30_0_ from t41003 standarduo0_ where standarduo0_.ucuom=? and standarduo0_.ucuomr=?
+2018-12-14 17:35:30.003  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@755d3fb0 testClass = StandardUomConversionApiTest, testInstance = ags.goldenlionerp.apiTests.item.StandardUomConversionApiTest@695ec029, testMethod = getTestSingle@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@34137aab testClass = StandardUomConversionApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@7a0f4e80 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+2018-12-14 17:35:30.003  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@755d3fb0 testClass = StandardUomConversionApiTest, testInstance = ags.goldenlionerp.apiTests.item.StandardUomConversionApiTest@7734c7c5, testMethod = updateTestWithPatch@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@34137aab testClass = StandardUomConversionApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@7a0f4e80 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:30.003  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:30.003  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:30.019  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 16 ms
+Hibernate: select standarduo0_.ucuom as ucuom1_30_0_, standarduo0_.ucuomr as ucuomr2_30_0_, standarduo0_.uccid as uccid3_30_0_, standarduo0_.ucdtin as ucdtin4_30_0_, standarduo0_.uctmin as uctmin5_30_0_, standarduo0_.ucuid as ucuid6_30_0_, standarduo0_.ucdtlu as ucdtlu7_30_0_, standarduo0_.uctmlu as uctmlu8_30_0_, standarduo0_.ucuidm as ucuidm9_30_0_, standarduo0_.ucdtls as ucdtls10_30_0_, standarduo0_.uccnv as uccnv11_30_0_ from t41003 standarduo0_ where standarduo0_.ucuom=? and standarduo0_.ucuomr=?
+Hibernate: update t41003 set uccid=?, ucdtlu=?, uctmlu=?, ucuidm=?, ucdtls=?, uccnv=? where ucuom=? and ucuomr=?
+Hibernate: select standarduo0_.ucuom as ucuom1_30_0_, standarduo0_.ucuomr as ucuomr2_30_0_, standarduo0_.uccid as uccid3_30_0_, standarduo0_.ucdtin as ucdtin4_30_0_, standarduo0_.uctmin as uctmin5_30_0_, standarduo0_.ucuid as ucuid6_30_0_, standarduo0_.ucdtlu as ucdtlu7_30_0_, standarduo0_.uctmlu as uctmlu8_30_0_, standarduo0_.ucuidm as ucuidm9_30_0_, standarduo0_.ucdtls as ucdtls10_30_0_, standarduo0_.uccnv as uccnv11_30_0_ from t41003 standarduo0_ where standarduo0_.ucuom=? and standarduo0_.ucuomr=?
+2018-12-14 17:35:30.050  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@755d3fb0 testClass = StandardUomConversionApiTest, testInstance = ags.goldenlionerp.apiTests.item.StandardUomConversionApiTest@7734c7c5, testMethod = updateTestWithPatch@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@34137aab testClass = StandardUomConversionApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@7a0f4e80 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+2018-12-14 17:35:30.050  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@755d3fb0 testClass = StandardUomConversionApiTest, testInstance = ags.goldenlionerp.apiTests.item.StandardUomConversionApiTest@1340f3ab, testMethod = getTestCollection@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@34137aab testClass = StandardUomConversionApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@7a0f4e80 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:30.050  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:30.050  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:30.066  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 16 ms
+Hibernate: select TOP(?) standarduo0_.ucuom as ucuom1_30_, standarduo0_.ucuomr as ucuomr2_30_, standarduo0_.uccid as uccid3_30_, standarduo0_.ucdtin as ucdtin4_30_, standarduo0_.uctmin as uctmin5_30_, standarduo0_.ucuid as ucuid6_30_, standarduo0_.ucdtlu as ucdtlu7_30_, standarduo0_.uctmlu as uctmlu8_30_, standarduo0_.ucuidm as ucuidm9_30_, standarduo0_.ucdtls as ucdtls10_30_, standarduo0_.uccnv as uccnv11_30_ from t41003 standarduo0_
+Hibernate: select count(standarduo0_.ucuom) as col_0_0_ from t41003 standarduo0_
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/stduomconvs/
+       Parameters = {}
+          Headers = {Accept=[application/json]}
+             Body = &lt;no character encoding set&gt;
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@1ebd92cc, SPRING_SECURITY_CONTEXT=org.springframework.security.core.context.SecurityContextImpl@475fcd89: Authentication: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@475fcd89: Principal: org.springframework.security.core.userdetails.User@f02988d6: Username: username; Password: [PROTECTED]; Enabled: true; AccountNonExpired: true; credentialsNonExpired: true; AccountNonLocked: true; Not granted any authorities; Credentials: [PROTECTED]; Authenticated: true; Details: null; Not granted any authorities}
+
+Handler:
+             Type = org.springframework.data.rest.webmvc.RepositoryEntityController
+           Method = public org.springframework.hateoas.Resources&lt;?&gt; org.springframework.data.rest.webmvc.RepositoryEntityController.getCollectionResource(org.springframework.data.rest.webmvc.RootResourceInformation,org.springframework.data.rest.webmvc.support.DefaultedPageable,org.springframework.data.domain.Sort,org.springframework.data.rest.webmvc.PersistentEntityResourceAssembler) throws org.springframework.data.rest.webmvc.ResourceNotFoundException,org.springframework.web.HttpRequestMethodNotSupportedException
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Type=[application/json;charset=UTF-8], X-Content-Type-Options=[nosniff], X-XSS-Protection=[1; mode=block], Cache-Control=[no-cache, no-store, max-age=0, must-revalidate], Pragma=[no-cache], Expires=[0], X-Frame-Options=[DENY]}
+     Content type = application/json;charset=UTF-8
+             Body = {
+  &quot;_embedded&quot; : {
+    &quot;standardUomConversions&quot; : [ {
+      &quot;uomFrom&quot; : &quot;CL&quot;,
+      &quot;uomTo&quot; : &quot;ML&quot;,
+      &quot;conversionValue&quot; : 10.000000000,
+      &quot;inputUserId&quot; : &quot;QSA&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;QSA&quot;,
+      &quot;computerId&quot; : &quot;WIN7UL7P5&quot;,
+      &quot;lastSynchronizedDate&quot; : null,
+      &quot;lastUpdateDateTime&quot; : &quot;2013-12-02T16:43:45&quot;,
+      &quot;inputDateTime&quot; : &quot;2013-12-02T16:43:45&quot;,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/stduomconvs/CL_ML&quot;
+        },
+        &quot;standardUomConversion&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/stduomconvs/CL_ML&quot;
+        }
+      }
+    }, {
+      &quot;uomFrom&quot; : &quot;CM&quot;,
+      &quot;uomTo&quot; : &quot;MM&quot;,
+      &quot;conversionValue&quot; : 10.000000000,
+      &quot;inputUserId&quot; : &quot;&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;QSA&quot;,
+      &quot;computerId&quot; : &quot;WIN7UL7P5&quot;,
+      &quot;lastSynchronizedDate&quot; : null,
+      &quot;lastUpdateDateTime&quot; : &quot;2013-12-02T16:31:56&quot;,
+      &quot;inputDateTime&quot; : null,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/stduomconvs/CM_MM&quot;
+        },
+        &quot;standardUomConversion&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/stduomconvs/CM_MM&quot;
+        }
+      }
+    }, {
+      &quot;uomFrom&quot; : &quot;CW&quot;,
+      &quot;uomTo&quot; : &quot;LB&quot;,
+      &quot;conversionValue&quot; : 100.000000000,
+      &quot;inputUserId&quot; : &quot;&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;&quot;,
+      &quot;computerId&quot; : &quot;&quot;,
+      &quot;lastSynchronizedDate&quot; : null,
+      &quot;lastUpdateDateTime&quot; : null,
+      &quot;inputDateTime&quot; : null,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/stduomconvs/CW_LB&quot;
+        },
+        &quot;standardUomConversion&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/stduomconvs/CW_LB&quot;
+        }
+      }
+    }, {
+      &quot;uomFrom&quot; : &quot;DC&quot;,
+      &quot;uomTo&quot; : &quot;IN&quot;,
+      &quot;conversionValue&quot; : 3.937000000,
+      &quot;inputUserId&quot; : &quot;&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;&quot;,
+      &quot;computerId&quot; : &quot;&quot;,
+      &quot;lastSynchronizedDate&quot; : null,
+      &quot;lastUpdateDateTime&quot; : null,
+      &quot;inputDateTime&quot; : null,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/stduomconvs/DC_IN&quot;
+        },
+        &quot;standardUomConversion&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/stduomconvs/DC_IN&quot;
+        }
+      }
+    }, {
+      &quot;uomFrom&quot; : &quot;DD&quot;,
+      &quot;uomTo&quot; : &quot;HH&quot;,
+      &quot;conversionValue&quot; : 8.000000000,
+      &quot;inputUserId&quot; : &quot;QSA&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;QSA&quot;,
+      &quot;computerId&quot; : &quot;WIN7UL7P5&quot;,
+      &quot;lastSynchronizedDate&quot; : null,
+      &quot;lastUpdateDateTime&quot; : &quot;2013-11-21T10:52:17&quot;,
+      &quot;inputDateTime&quot; : &quot;2013-11-21T10:52:17&quot;,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/stduomconvs/DD_HH&quot;
+        },
+        &quot;standardUomConversion&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/stduomconvs/DD_HH&quot;
+        }
+      }
+    }, {
+      &quot;uomFrom&quot; : &quot;DL&quot;,
+      &quot;uomTo&quot; : &quot;CL&quot;,
+      &quot;conversionValue&quot; : 10.000000000,
+      &quot;inputUserId&quot; : &quot;&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;&quot;,
+      &quot;computerId&quot; : &quot;&quot;,
+      &quot;lastSynchronizedDate&quot; : null,
+      &quot;lastUpdateDateTime&quot; : null,
+      &quot;inputDateTime&quot; : null,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/stduomconvs/DL_CL&quot;
+        },
+        &quot;standardUomConversion&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/stduomconvs/DL_CL&quot;
+        }
+      }
+    }, {
+      &quot;uomFrom&quot; : &quot;DZ&quot;,
+      &quot;uomTo&quot; : &quot;EA&quot;,
+      &quot;conversionValue&quot; : 12.000000000,
+      &quot;inputUserId&quot; : &quot;&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;&quot;,
+      &quot;computerId&quot; : &quot;&quot;,
+      &quot;lastSynchronizedDate&quot; : null,
+      &quot;lastUpdateDateTime&quot; : null,
+      &quot;inputDateTime&quot; : null,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/stduomconvs/DZ_EA&quot;
+        },
+        &quot;standardUomConversion&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/stduomconvs/DZ_EA&quot;
+        }
+      }
+    }, {
+      &quot;uomFrom&quot; : &quot;FC&quot;,
+      &quot;uomTo&quot; : &quot;CI&quot;,
+      &quot;conversionValue&quot; : 1728.000000000,
+      &quot;inputUserId&quot; : &quot;&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;&quot;,
+      &quot;computerId&quot; : &quot;&quot;,
+      &quot;lastSynchronizedDate&quot; : null,
+      &quot;lastUpdateDateTime&quot; : null,
+      &quot;inputDateTime&quot; : null,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/stduomconvs/FC_CI&quot;
+        },
+        &quot;standardUomConversion&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/stduomconvs/FC_CI&quot;
+        }
+      }
+    }, {
+      &quot;uomFrom&quot; : &quot;FC&quot;,
+      &quot;uomTo&quot; : &quot;LT&quot;,
+      &quot;conversionValue&quot; : 28.330000000,
+      &quot;inputUserId&quot; : &quot;&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;&quot;,
+      &quot;computerId&quot; : &quot;&quot;,
+      &quot;lastSynchronizedDate&quot; : null,
+      &quot;lastUpdateDateTime&quot; : null,
+      &quot;inputDateTime&quot; : null,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/stduomconvs/FC_LT&quot;
+        },
+        &quot;standardUomConversion&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/stduomconvs/FC_LT&quot;
+        }
+      }
+    }, {
+      &quot;uomFrom&quot; : &quot;FT&quot;,
+      &quot;uomTo&quot; : &quot;DC&quot;,
+      &quot;conversionValue&quot; : 3.048000000,
+      &quot;inputUserId&quot; : &quot;&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;&quot;,
+      &quot;computerId&quot; : &quot;&quot;,
+      &quot;lastSynchronizedDate&quot; : null,
+      &quot;lastUpdateDateTime&quot; : null,
+      &quot;inputDateTime&quot; : null,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/stduomconvs/FT_DC&quot;
+        },
+        &quot;standardUomConversion&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/stduomconvs/FT_DC&quot;
+        }
+      }
+    }, {
+      &quot;uomFrom&quot; : &quot;FT&quot;,
+      &quot;uomTo&quot; : &quot;IN&quot;,
+      &quot;conversionValue&quot; : 12.000000000,
+      &quot;inputUserId&quot; : &quot;&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;&quot;,
+      &quot;computerId&quot; : &quot;&quot;,
+      &quot;lastSynchronizedDate&quot; : null,
+      &quot;lastUpdateDateTime&quot; : null,
+      &quot;inputDateTime&quot; : null,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/stduomconvs/FT_IN&quot;
+        },
+        &quot;standardUomConversion&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/stduomconvs/FT_IN&quot;
+        }
+      }
+    }, {
+      &quot;uomFrom&quot; : &quot;GA&quot;,
+      &quot;uomTo&quot; : &quot;LT&quot;,
+      &quot;conversionValue&quot; : 3.785300000,
+      &quot;inputUserId&quot; : &quot;&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;&quot;,
+      &quot;computerId&quot; : &quot;&quot;,
+      &quot;lastSynchronizedDate&quot; : null,
+      &quot;lastUpdateDateTime&quot; : null,
+      &quot;inputDateTime&quot; : null,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/stduomconvs/GA_LT&quot;
+        },
+        &quot;standardUomConversion&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/stduomconvs/GA_LT&quot;
+        }
+      }
+    }, {
+      &quot;uomFrom&quot; : &quot;GA&quot;,
+      &quot;uomTo&quot; : &quot;PT&quot;,
+      &quot;conversionValue&quot; : 8.000000000,
+      &quot;inputUserId&quot; : &quot;&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;&quot;,
+      &quot;computerId&quot; : &quot;&quot;,
+      &quot;lastSynchronizedDate&quot; : null,
+      &quot;lastUpdateDateTime&quot; : null,
+      &quot;inputDateTime&quot; : null,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/stduomconvs/GA_PT&quot;
+        },
+        &quot;standardUomConversion&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/stduomconvs/GA_PT&quot;
+        }
+      }
+    }, {
+      &quot;uomFrom&quot; : &quot;GA&quot;,
+      &quot;uomTo&quot; : &quot;QT&quot;,
+      &quot;conversionValue&quot; : 4.000000000,
+      &quot;inputUserId&quot; : &quot;&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;&quot;,
+      &quot;computerId&quot; : &quot;&quot;,
+      &quot;lastSynchronizedDate&quot; : null,
+      &quot;lastUpdateDateTime&quot; : null,
+      &quot;inputDateTime&quot; : null,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/stduomconvs/GA_QT&quot;
+        },
+        &quot;standardUomConversion&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/stduomconvs/GA_QT&quot;
+        }
+      }
+    }, {
+      &quot;uomFrom&quot; : &quot;GM&quot;,
+      &quot;uomTo&quot; : &quot;MG&quot;,
+      &quot;conversionValue&quot; : 1000.000000000,
+      &quot;inputUserId&quot; : &quot;&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;&quot;,
+      &quot;computerId&quot; : &quot;&quot;,
+      &quot;lastSynchronizedDate&quot; : null,
+      &quot;lastUpdateDateTime&quot; : null,
+      &quot;inputDateTime&quot; : null,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/stduomconvs/GM_MG&quot;
+        },
+        &quot;standardUomConversion&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/stduomconvs/GM_MG&quot;
+        }
+      }
+    }, {
+      &quot;uomFrom&quot; : &quot;GP&quot;,
+      &quot;uomTo&quot; : &quot;GA&quot;,
+      &quot;conversionValue&quot; : 1.000000000,
+      &quot;inputUserId&quot; : &quot;&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;&quot;,
+      &quot;computerId&quot; : &quot;&quot;,
+      &quot;lastSynchronizedDate&quot; : null,
+      &quot;lastUpdateDateTime&quot; : null,
+      &quot;inputDateTime&quot; : null,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/stduomconvs/GP_GA&quot;
+        },
+        &quot;standardUomConversion&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/stduomconvs/GP_GA&quot;
+        }
+      }
+    }, {
+      &quot;uomFrom&quot; : &quot;GR&quot;,
+      &quot;uomTo&quot; : &quot;DZ&quot;,
+      &quot;conversionValue&quot; : 12.000000000,
+      &quot;inputUserId&quot; : &quot;&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;&quot;,
+      &quot;computerId&quot; : &quot;&quot;,
+      &quot;lastSynchronizedDate&quot; : null,
+      &quot;lastUpdateDateTime&quot; : null,
+      &quot;inputDateTime&quot; : null,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/stduomconvs/GR_DZ&quot;
+        },
+        &quot;standardUomConversion&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/stduomconvs/GR_DZ&quot;
+        }
+      }
+    }, {
+      &quot;uomFrom&quot; : &quot;HH&quot;,
+      &quot;uomTo&quot; : &quot;NN&quot;,
+      &quot;conversionValue&quot; : 60.000000000,
+      &quot;inputUserId&quot; : &quot;QSA&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;QSA&quot;,
+      &quot;computerId&quot; : &quot;WIN7UL7P5&quot;,
+      &quot;lastSynchronizedDate&quot; : null,
+      &quot;lastUpdateDateTime&quot; : &quot;2013-11-21T10:51:49&quot;,
+      &quot;inputDateTime&quot; : &quot;2013-11-21T10:51:49&quot;,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/stduomconvs/HH_NN&quot;
+        },
+        &quot;standardUomConversion&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/stduomconvs/HH_NN&quot;
+        }
+      }
+    }, {
+      &quot;uomFrom&quot; : &quot;HL&quot;,
+      &quot;uomTo&quot; : &quot;LT&quot;,
+      &quot;conversionValue&quot; : 100.000000000,
+      &quot;inputUserId&quot; : &quot;&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;&quot;,
+      &quot;computerId&quot; : &quot;&quot;,
+      &quot;lastSynchronizedDate&quot; : null,
+      &quot;lastUpdateDateTime&quot; : null,
+      &quot;inputDateTime&quot; : null,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/stduomconvs/HL_LT&quot;
+        },
+        &quot;standardUomConversion&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/stduomconvs/HL_LT&quot;
+        }
+      }
+    }, {
+      &quot;uomFrom&quot; : &quot;IN&quot;,
+      &quot;uomTo&quot; : &quot;CM&quot;,
+      &quot;conversionValue&quot; : 2.540000000,
+      &quot;inputUserId&quot; : &quot;&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;&quot;,
+      &quot;computerId&quot; : &quot;&quot;,
+      &quot;lastSynchronizedDate&quot; : null,
+      &quot;lastUpdateDateTime&quot; : null,
+      &quot;inputDateTime&quot; : null,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/stduomconvs/IN_CM&quot;
+        },
+        &quot;standardUomConversion&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/stduomconvs/IN_CM&quot;
+        }
+      }
+    } ]
+  },
+  &quot;_links&quot; : {
+    &quot;first&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/stduomconvs?page=0&amp;size=20&quot;
+    },
+    &quot;self&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/stduomconvs{?page,size,sort}&quot;,
+      &quot;templated&quot; : true
+    },
+    &quot;next&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/stduomconvs?page=1&amp;size=20&quot;
+    },
+    &quot;last&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/stduomconvs?page=2&amp;size=20&quot;
+    },
+    &quot;profile&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/profile/stduomconvs&quot;
+    },
+    &quot;search&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/stduomconvs/search&quot;
+    }
+  },
+  &quot;page&quot; : {
+    &quot;size&quot; : 20,
+    &quot;totalElements&quot; : 55,
+    &quot;totalPages&quot; : 3,
+    &quot;number&quot; : 0
+  }
+}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2018-12-14 17:35:30.081  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@755d3fb0 testClass = StandardUomConversionApiTest, testInstance = ags.goldenlionerp.apiTests.item.StandardUomConversionApiTest@1340f3ab, testMethod = getTestCollection@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@34137aab testClass = StandardUomConversionApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@7a0f4e80 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+2018-12-14 17:35:30.097  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@755d3fb0 testClass = StandardUomConversionApiTest, testInstance = ags.goldenlionerp.apiTests.item.StandardUomConversionApiTest@5ea8c92c, testMethod = createTestWithPut@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@34137aab testClass = StandardUomConversionApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@7a0f4e80 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:30.097  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:30.097  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:30.097  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+Hibernate: select standarduo0_.ucuom as ucuom1_30_0_, standarduo0_.ucuomr as ucuomr2_30_0_, standarduo0_.uccid as uccid3_30_0_, standarduo0_.ucdtin as ucdtin4_30_0_, standarduo0_.uctmin as uctmin5_30_0_, standarduo0_.ucuid as ucuid6_30_0_, standarduo0_.ucdtlu as ucdtlu7_30_0_, standarduo0_.uctmlu as uctmlu8_30_0_, standarduo0_.ucuidm as ucuidm9_30_0_, standarduo0_.ucdtls as ucdtls10_30_0_, standarduo0_.uccnv as uccnv11_30_0_ from t41003 standarduo0_ where standarduo0_.ucuom=? and standarduo0_.ucuomr=?
+2018-12-14 17:35:30.113  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@755d3fb0 testClass = StandardUomConversionApiTest, testInstance = ags.goldenlionerp.apiTests.item.StandardUomConversionApiTest@5ea8c92c, testMethod = createTestWithPut@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@34137aab testClass = StandardUomConversionApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@7a0f4e80 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+2018-12-14 17:35:30.113  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@755d3fb0 testClass = StandardUomConversionApiTest, testInstance = ags.goldenlionerp.apiTests.item.StandardUomConversionApiTest@4e5bf2c0, testMethod = deleteTest@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@34137aab testClass = StandardUomConversionApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@7a0f4e80 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:30.113  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:30.113  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:30.113  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+Hibernate: select standarduo0_.ucuom as ucuom1_30_0_, standarduo0_.ucuomr as ucuomr2_30_0_, standarduo0_.uccid as uccid3_30_0_, standarduo0_.ucdtin as ucdtin4_30_0_, standarduo0_.uctmin as uctmin5_30_0_, standarduo0_.ucuid as ucuid6_30_0_, standarduo0_.ucdtlu as ucdtlu7_30_0_, standarduo0_.uctmlu as uctmlu8_30_0_, standarduo0_.ucuidm as ucuidm9_30_0_, standarduo0_.ucdtls as ucdtls10_30_0_, standarduo0_.uccnv as uccnv11_30_0_ from t41003 standarduo0_ where standarduo0_.ucuom=? and standarduo0_.ucuomr=?
+2018-12-14 17:35:30.128  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@755d3fb0 testClass = StandardUomConversionApiTest, testInstance = ags.goldenlionerp.apiTests.item.StandardUomConversionApiTest@4e5bf2c0, testMethod = deleteTest@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@34137aab testClass = StandardUomConversionApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@7a0f4e80 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+2018-12-14 17:35:30.128  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@755d3fb0 testClass = StandardUomConversionApiTest, testInstance = ags.goldenlionerp.apiTests.item.StandardUomConversionApiTest@297b07df, testMethod = createTestWithPost@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@34137aab testClass = StandardUomConversionApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@7a0f4e80 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:30.128  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:30.128  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:30.144  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 16 ms
+Hibernate: select standarduo0_.ucuom as ucuom1_30_0_, standarduo0_.ucuomr as ucuomr2_30_0_, standarduo0_.uccid as uccid3_30_0_, standarduo0_.ucdtin as ucdtin4_30_0_, standarduo0_.uctmin as uctmin5_30_0_, standarduo0_.ucuid as ucuid6_30_0_, standarduo0_.ucdtlu as ucdtlu7_30_0_, standarduo0_.uctmlu as uctmlu8_30_0_, standarduo0_.ucuidm as ucuidm9_30_0_, standarduo0_.ucdtls as ucdtls10_30_0_, standarduo0_.uccnv as uccnv11_30_0_ from t41003 standarduo0_ where standarduo0_.ucuom=? and standarduo0_.ucuomr=?
+Hibernate: select standarduo0_.ucuom as ucuom1_30_0_, standarduo0_.ucuomr as ucuomr2_30_0_, standarduo0_.uccid as uccid3_30_0_, standarduo0_.ucdtin as ucdtin4_30_0_, standarduo0_.uctmin as uctmin5_30_0_, standarduo0_.ucuid as ucuid6_30_0_, standarduo0_.ucdtlu as ucdtlu7_30_0_, standarduo0_.uctmlu as uctmlu8_30_0_, standarduo0_.ucuidm as ucuidm9_30_0_, standarduo0_.ucdtls as ucdtls10_30_0_, standarduo0_.uccnv as uccnv11_30_0_ from t41003 standarduo0_ where standarduo0_.ucuom=? and standarduo0_.ucuomr=?
+Hibernate: insert into t41003 (uccid, ucdtin, uctmin, ucuid, ucdtlu, uctmlu, ucuidm, ucdtls, uccnv, ucuom, ucuomr) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: select standarduo0_.ucuom as ucuom1_30_0_, standarduo0_.ucuomr as ucuomr2_30_0_, standarduo0_.uccid as uccid3_30_0_, standarduo0_.ucdtin as ucdtin4_30_0_, standarduo0_.uctmin as uctmin5_30_0_, standarduo0_.ucuid as ucuid6_30_0_, standarduo0_.ucdtlu as ucdtlu7_30_0_, standarduo0_.uctmlu as uctmlu8_30_0_, standarduo0_.ucuidm as ucuidm9_30_0_, standarduo0_.ucdtls as ucdtls10_30_0_, standarduo0_.uccnv as uccnv11_30_0_ from t41003 standarduo0_ where standarduo0_.ucuom=? and standarduo0_.ucuomr=?
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/stduomconvs/CM_KG
+       Parameters = {}
+          Headers = {Accept=[application/json]}
+             Body = &lt;no character encoding set&gt;
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@7413b48e, SPRING_SECURITY_CONTEXT=org.springframework.security.core.context.SecurityContextImpl@475fcd89: Authentication: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@475fcd89: Principal: org.springframework.security.core.userdetails.User@f02988d6: Username: username; Password: [PROTECTED]; Enabled: true; AccountNonExpired: true; credentialsNonExpired: true; AccountNonLocked: true; Not granted any authorities; Credentials: [PROTECTED]; Authenticated: true; Details: null; Not granted any authorities}
+
+Handler:
+             Type = org.springframework.data.rest.webmvc.RepositoryEntityController
+           Method = public org.springframework.http.ResponseEntity&lt;org.springframework.hateoas.Resource&lt;?&gt;&gt; org.springframework.data.rest.webmvc.RepositoryEntityController.getItemResource(org.springframework.data.rest.webmvc.RootResourceInformation,java.io.Serializable,org.springframework.data.rest.webmvc.PersistentEntityResourceAssembler,org.springframework.http.HttpHeaders) throws org.springframework.web.HttpRequestMethodNotSupportedException
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Type=[application/json;charset=UTF-8], X-Content-Type-Options=[nosniff], X-XSS-Protection=[1; mode=block], Cache-Control=[no-cache, no-store, max-age=0, must-revalidate], Pragma=[no-cache], Expires=[0], X-Frame-Options=[DENY]}
+     Content type = application/json;charset=UTF-8
+             Body = {
+  &quot;uomFrom&quot; : &quot;CM&quot;,
+  &quot;uomTo&quot; : &quot;KG&quot;,
+  &quot;conversionValue&quot; : 1234.567800000,
+  &quot;inputUserId&quot; : &quot;username&quot;,
+  &quot;lastUpdateUserId&quot; : &quot;username&quot;,
+  &quot;computerId&quot; : &quot;username&quot;,
+  &quot;lastSynchronizedDate&quot; : null,
+  &quot;lastUpdateDateTime&quot; : &quot;2018-12-14T17:35:30&quot;,
+  &quot;inputDateTime&quot; : &quot;2018-12-14T17:35:30&quot;,
+  &quot;_links&quot; : {
+    &quot;self&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/stduomconvs/CM_KG&quot;
+    },
+    &quot;standardUomConversion&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/stduomconvs/CM_KG&quot;
+    }
+  }
+}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2018-12-14 17:35:30.175  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@755d3fb0 testClass = StandardUomConversionApiTest, testInstance = ags.goldenlionerp.apiTests.item.StandardUomConversionApiTest@297b07df, testMethod = createTestWithPost@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@34137aab testClass = StandardUomConversionApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@7a0f4e80 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 4.2.1</a> at 14 Dec, 2018 5:36:06 PM</p>
+</div>
+</div>
+</body>
+</html>

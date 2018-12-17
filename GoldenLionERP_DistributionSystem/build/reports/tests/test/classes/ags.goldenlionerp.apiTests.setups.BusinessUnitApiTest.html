@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class ags.goldenlionerp.apiTests.setups.BusinessUnitApiTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class ags.goldenlionerp.apiTests.setups.BusinessUnitApiTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/ags.goldenlionerp.apiTests.setups.html">ags.goldenlionerp.apiTests.setups</a> &gt; BusinessUnitApiTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">10</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.282s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">createTestAlreadyExist</td>
+<td>0.020s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">createTestWithPost</td>
+<td>0.031s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">createTestWithPostWithoutRelatedBU</td>
+<td>0.020s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">createTestWithPut</td>
+<td>0.015s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">deleteTest</td>
+<td>0.024s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getTestCollection</td>
+<td>0.046s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getTestSingle</td>
+<td>0.020s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">updateTestWithPatch</td>
+<td>0.063s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">updateTestWithPatchRemoveRelatedBusinessUnit</td>
+<td>0.032s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">updateTestWithPut</td>
+<td>0.011s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>2018-12-14 17:35:54.862  INFO 9212 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [ags.goldenlionerp.apiTests.setups.BusinessUnitApiTest], using SpringBootContextLoader
+2018-12-14 17:35:54.862  INFO 9212 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [ags.goldenlionerp.apiTests.setups.BusinessUnitApiTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2018-12-14 17:35:54.862  INFO 9212 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [ags.goldenlionerp.apiTests.setups.BusinessUnitApiTest]: BusinessUnitApiTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2018-12-14 17:35:54.862  INFO 9212 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration ags.goldenlionerp.GoldenLionErpApplication for test class ags.goldenlionerp.apiTests.setups.BusinessUnitApiTest
+2018-12-14 17:35:54.862  INFO 9212 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-12-14 17:35:54.862  INFO 9212 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@76dccc6c, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@42380389, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6a0f7841, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@107b8a3a, org.springframework.test.context.support.DirtiesContextTestExecutionListener@548bf5, org.springframework.test.context.transaction.TransactionalTestExecutionListener@272e43d, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@132e5942, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@5f483b47, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@7be70878, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@6e215835, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@f24e8fa, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@1128785a, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@52cf06cf, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@36cb0c53]
+2018-12-14 17:35:54.877  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@143aa50a testClass = BusinessUnitApiTest, testInstance = ags.goldenlionerp.apiTests.setups.BusinessUnitApiTest@180ddca7, testMethod = createTestAlreadyExist@BusinessUnitApiTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@22aea804 testClass = BusinessUnitApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4f157508 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:54.877  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:54.877  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:54.877  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+Hibernate: select count(*) as col_0_0_ from t0021 businessun0_ where businessun0_.bnbuid=?
+2018-12-14 17:35:54.893  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@143aa50a testClass = BusinessUnitApiTest, testInstance = ags.goldenlionerp.apiTests.setups.BusinessUnitApiTest@180ddca7, testMethod = createTestAlreadyExist@BusinessUnitApiTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@22aea804 testClass = BusinessUnitApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4f157508 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+2018-12-14 17:35:54.893  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@143aa50a testClass = BusinessUnitApiTest, testInstance = ags.goldenlionerp.apiTests.setups.BusinessUnitApiTest@711c4699, testMethod = updateTestWithPatchRemoveRelatedBusinessUnit@BusinessUnitApiTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@22aea804 testClass = BusinessUnitApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4f157508 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:54.893  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:54.893  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:54.908  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 15 ms
+Hibernate: select businessun0_.bnbuid as bnbuid1_10_0_, businessun0_.bncid as bncid2_10_0_, businessun0_.bndtin as bndtin3_10_0_, businessun0_.bntmin as bntmin4_10_0_, businessun0_.bnuid as bnuid5_10_0_, businessun0_.bndtlu as bndtlu6_10_0_, businessun0_.bntmlu as bntmlu7_10_0_, businessun0_.bnuidm as bnuidm8_10_0_, businessun0_.bnbuty as bnbuty9_10_0_, businessun0_.bncoid as bncoid10_10_0_, businessun0_.bndesb1 as bndesb11_10_0_, businessun0_.bnanum as bnanum12_10_0_, businessun0_.bnfmod as bnfmod13_10_0_, businessun0_.bnbuid1 as bnbuid14_10_0_, company1_.cncoid as cncoid1_9_1_, company1_.cncid as cncid2_9_1_, company1_.cndtin as cndtin3_9_1_, company1_.cntmin as cntmin4_9_1_, company1_.cnuid as cnuid5_9_1_, company1_.cndtlu as cndtlu6_9_1_, company1_.cntmlu as cntmlu7_9_1_, company1_.cnuidm as cnuidm8_9_1_, company1_.cnanum as cnanum9_9_1_, company1_.cncrcb as cncrcb10_9_1_, company1_.cncap as cncap11_9_1_, company1_.cncfy as cncfy12_9_1_, company1_.cncip as cncip13_9_1_, company1_.cncpp as cncpp14_9_1_, company1_.cncrp as cncrp15_9_1_, company1_.cndesb1 as cndesb16_9_1_, company1_.cnfdp as cnfdp17_9_1_, branchplan2_.bcbuid as bcbuid1_11_2_, branchplan2_.bccid as bccid2_11_2_, branchplan2_.bcdtin as bcdtin3_11_2_, branchplan2_.bctmin as bctmin4_11_2_, branchplan2_.bcuid as bcuid5_11_2_, branchplan2_.bcdtlu as bcdtlu6_11_2_, branchplan2_.bctmlu as bctmlu7_11_2_, branchplan2_.bcuidm as bcuidm8_11_2_, branchplan2_.bcanum as bcanum9_11_2_, branchplan2_.bcctm as bcctm10_11_2_, branchplan2_.bcitgl as bcitgl11_11_2_, branchplan2_.bcilc as bcilc12_11_2_, branchplan2_.bcxrt as bcxrt13_11_2_, branchplan2_.bcxrt2 as bcxrt14_11_2_, branchplan2_.bclctl as bclctl15_11_2_, branchplan2_.bcpucm as bcpucm16_11_2_, branchplan2_.bcsicm as bcsicm17_11_2_, branchplan2_.bcwctl as bcwctl18_11_2_ from t0021 businessun0_ inner join t0020 company1_ on businessun0_.bncoid=company1_.cncoid left outer join t0022 branchplan2_ on businessun0_.bnbuid=branchplan2_.bcbuid where businessun0_.bnbuid=?
+Hibernate: update t0021 set bncid=?, bndtlu=?, bntmlu=?, bnuidm=?, bnbuty=?, bncoid=?, bndesb1=?, bnanum=?, bnfmod=?, bnbuid1=? where bnbuid=?
+Hibernate: select businessun0_.bnbuid as bnbuid1_10_0_, businessun0_.bncid as bncid2_10_0_, businessun0_.bndtin as bndtin3_10_0_, businessun0_.bntmin as bntmin4_10_0_, businessun0_.bnuid as bnuid5_10_0_, businessun0_.bndtlu as bndtlu6_10_0_, businessun0_.bntmlu as bntmlu7_10_0_, businessun0_.bnuidm as bnuidm8_10_0_, businessun0_.bnbuty as bnbuty9_10_0_, businessun0_.bncoid as bncoid10_10_0_, businessun0_.bndesb1 as bndesb11_10_0_, businessun0_.bnanum as bnanum12_10_0_, businessun0_.bnfmod as bnfmod13_10_0_, businessun0_.bnbuid1 as bnbuid14_10_0_, company1_.cncoid as cncoid1_9_1_, company1_.cncid as cncid2_9_1_, company1_.cndtin as cndtin3_9_1_, company1_.cntmin as cntmin4_9_1_, company1_.cnuid as cnuid5_9_1_, company1_.cndtlu as cndtlu6_9_1_, company1_.cntmlu as cntmlu7_9_1_, company1_.cnuidm as cnuidm8_9_1_, company1_.cnanum as cnanum9_9_1_, company1_.cncrcb as cncrcb10_9_1_, company1_.cncap as cncap11_9_1_, company1_.cncfy as cncfy12_9_1_, company1_.cncip as cncip13_9_1_, company1_.cncpp as cncpp14_9_1_, company1_.cncrp as cncrp15_9_1_, company1_.cndesb1 as cndesb16_9_1_, company1_.cnfdp as cnfdp17_9_1_, branchplan2_.bcbuid as bcbuid1_11_2_, branchplan2_.bccid as bccid2_11_2_, branchplan2_.bcdtin as bcdtin3_11_2_, branchplan2_.bctmin as bctmin4_11_2_, branchplan2_.bcuid as bcuid5_11_2_, branchplan2_.bcdtlu as bcdtlu6_11_2_, branchplan2_.bctmlu as bctmlu7_11_2_, branchplan2_.bcuidm as bcuidm8_11_2_, branchplan2_.bcanum as bcanum9_11_2_, branchplan2_.bcctm as bcctm10_11_2_, branchplan2_.bcitgl as bcitgl11_11_2_, branchplan2_.bcilc as bcilc12_11_2_, branchplan2_.bcxrt as bcxrt13_11_2_, branchplan2_.bcxrt2 as bcxrt14_11_2_, branchplan2_.bclctl as bclctl15_11_2_, branchplan2_.bcpucm as bcpucm16_11_2_, branchplan2_.bcsicm as bcsicm17_11_2_, branchplan2_.bcwctl as bcwctl18_11_2_ from t0021 businessun0_ inner join t0020 company1_ on businessun0_.bncoid=company1_.cncoid left outer join t0022 branchplan2_ on businessun0_.bnbuid=branchplan2_.bcbuid where businessun0_.bnbuid=?
+2018-12-14 17:35:54.924  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@143aa50a testClass = BusinessUnitApiTest, testInstance = ags.goldenlionerp.apiTests.setups.BusinessUnitApiTest@711c4699, testMethod = updateTestWithPatchRemoveRelatedBusinessUnit@BusinessUnitApiTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@22aea804 testClass = BusinessUnitApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4f157508 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+2018-12-14 17:35:54.924  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@143aa50a testClass = BusinessUnitApiTest, testInstance = ags.goldenlionerp.apiTests.setups.BusinessUnitApiTest@1814c822, testMethod = createTestWithPostWithoutRelatedBU@BusinessUnitApiTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@22aea804 testClass = BusinessUnitApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4f157508 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:54.924  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:54.924  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:54.940  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 16 ms
+Hibernate: select businessun0_.bnbuid as bnbuid1_10_0_, businessun0_.bncid as bncid2_10_0_, businessun0_.bndtin as bndtin3_10_0_, businessun0_.bntmin as bntmin4_10_0_, businessun0_.bnuid as bnuid5_10_0_, businessun0_.bndtlu as bndtlu6_10_0_, businessun0_.bntmlu as bntmlu7_10_0_, businessun0_.bnuidm as bnuidm8_10_0_, businessun0_.bnbuty as bnbuty9_10_0_, businessun0_.bncoid as bncoid10_10_0_, businessun0_.bndesb1 as bndesb11_10_0_, businessun0_.bnanum as bnanum12_10_0_, businessun0_.bnfmod as bnfmod13_10_0_, businessun0_.bnbuid1 as bnbuid14_10_0_, company1_.cncoid as cncoid1_9_1_, company1_.cncid as cncid2_9_1_, company1_.cndtin as cndtin3_9_1_, company1_.cntmin as cntmin4_9_1_, company1_.cnuid as cnuid5_9_1_, company1_.cndtlu as cndtlu6_9_1_, company1_.cntmlu as cntmlu7_9_1_, company1_.cnuidm as cnuidm8_9_1_, company1_.cnanum as cnanum9_9_1_, company1_.cncrcb as cncrcb10_9_1_, company1_.cncap as cncap11_9_1_, company1_.cncfy as cncfy12_9_1_, company1_.cncip as cncip13_9_1_, company1_.cncpp as cncpp14_9_1_, company1_.cncrp as cncrp15_9_1_, company1_.cndesb1 as cndesb16_9_1_, company1_.cnfdp as cnfdp17_9_1_, branchplan2_.bcbuid as bcbuid1_11_2_, branchplan2_.bccid as bccid2_11_2_, branchplan2_.bcdtin as bcdtin3_11_2_, branchplan2_.bctmin as bctmin4_11_2_, branchplan2_.bcuid as bcuid5_11_2_, branchplan2_.bcdtlu as bcdtlu6_11_2_, branchplan2_.bctmlu as bctmlu7_11_2_, branchplan2_.bcuidm as bcuidm8_11_2_, branchplan2_.bcanum as bcanum9_11_2_, branchplan2_.bcctm as bcctm10_11_2_, branchplan2_.bcitgl as bcitgl11_11_2_, branchplan2_.bcilc as bcilc12_11_2_, branchplan2_.bcxrt as bcxrt13_11_2_, branchplan2_.bcxrt2 as bcxrt14_11_2_, branchplan2_.bclctl as bclctl15_11_2_, branchplan2_.bcpucm as bcpucm16_11_2_, branchplan2_.bcsicm as bcsicm17_11_2_, branchplan2_.bcwctl as bcwctl18_11_2_ from t0021 businessun0_ inner join t0020 company1_ on businessun0_.bncoid=company1_.cncoid left outer join t0022 branchplan2_ on businessun0_.bnbuid=branchplan2_.bcbuid where businessun0_.bnbuid=?
+Hibernate: select count(*) as col_0_0_ from t0021 businessun0_ where businessun0_.bnbuid=?
+Hibernate: select businessun0_.bnbuid as bnbuid1_10_0_, businessun0_.bncid as bncid2_10_0_, businessun0_.bndtin as bndtin3_10_0_, businessun0_.bntmin as bntmin4_10_0_, businessun0_.bnuid as bnuid5_10_0_, businessun0_.bndtlu as bndtlu6_10_0_, businessun0_.bntmlu as bntmlu7_10_0_, businessun0_.bnuidm as bnuidm8_10_0_, businessun0_.bnbuty as bnbuty9_10_0_, businessun0_.bncoid as bncoid10_10_0_, businessun0_.bndesb1 as bndesb11_10_0_, businessun0_.bnanum as bnanum12_10_0_, businessun0_.bnfmod as bnfmod13_10_0_, businessun0_.bnbuid1 as bnbuid14_10_0_ from t0021 businessun0_ where businessun0_.bnbuid=?
+Hibernate: insert into t0021 (bncid, bndtin, bntmin, bnuid, bndtlu, bntmlu, bnuidm, bnbuty, bncoid, bndesb1, bnanum, bnfmod, bnbuid1, bnbuid) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: select businessun0_.bnbuid as bnbuid1_10_0_, businessun0_.bncid as bncid2_10_0_, businessun0_.bndtin as bndtin3_10_0_, businessun0_.bntmin as bntmin4_10_0_, businessun0_.bnuid as bnuid5_10_0_, businessun0_.bndtlu as bndtlu6_10_0_, businessun0_.bntmlu as bntmlu7_10_0_, businessun0_.bnuidm as bnuidm8_10_0_, businessun0_.bnbuty as bnbuty9_10_0_, businessun0_.bncoid as bncoid10_10_0_, businessun0_.bndesb1 as bndesb11_10_0_, businessun0_.bnanum as bnanum12_10_0_, businessun0_.bnfmod as bnfmod13_10_0_, businessun0_.bnbuid1 as bnbuid14_10_0_, company1_.cncoid as cncoid1_9_1_, company1_.cncid as cncid2_9_1_, company1_.cndtin as cndtin3_9_1_, company1_.cntmin as cntmin4_9_1_, company1_.cnuid as cnuid5_9_1_, company1_.cndtlu as cndtlu6_9_1_, company1_.cntmlu as cntmlu7_9_1_, company1_.cnuidm as cnuidm8_9_1_, company1_.cnanum as cnanum9_9_1_, company1_.cncrcb as cncrcb10_9_1_, company1_.cncap as cncap11_9_1_, company1_.cncfy as cncfy12_9_1_, company1_.cncip as cncip13_9_1_, company1_.cncpp as cncpp14_9_1_, company1_.cncrp as cncrp15_9_1_, company1_.cndesb1 as cndesb16_9_1_, company1_.cnfdp as cnfdp17_9_1_, branchplan2_.bcbuid as bcbuid1_11_2_, branchplan2_.bccid as bccid2_11_2_, branchplan2_.bcdtin as bcdtin3_11_2_, branchplan2_.bctmin as bctmin4_11_2_, branchplan2_.bcuid as bcuid5_11_2_, branchplan2_.bcdtlu as bcdtlu6_11_2_, branchplan2_.bctmlu as bctmlu7_11_2_, branchplan2_.bcuidm as bcuidm8_11_2_, branchplan2_.bcanum as bcanum9_11_2_, branchplan2_.bcctm as bcctm10_11_2_, branchplan2_.bcitgl as bcitgl11_11_2_, branchplan2_.bcilc as bcilc12_11_2_, branchplan2_.bcxrt as bcxrt13_11_2_, branchplan2_.bcxrt2 as bcxrt14_11_2_, branchplan2_.bclctl as bclctl15_11_2_, branchplan2_.bcpucm as bcpucm16_11_2_, branchplan2_.bcsicm as bcsicm17_11_2_, branchplan2_.bcwctl as bcwctl18_11_2_ from t0021 businessun0_ inner join t0020 company1_ on businessun0_.bncoid=company1_.cncoid left outer join t0022 branchplan2_ on businessun0_.bnbuid=branchplan2_.bcbuid where businessun0_.bnbuid=?
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/businessUnits/125
+       Parameters = {}
+          Headers = {Accept=[application/json]}
+             Body = &lt;no character encoding set&gt;
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@2641d12f, SPRING_SECURITY_CONTEXT=org.springframework.security.core.context.SecurityContextImpl@475fcd89: Authentication: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@475fcd89: Principal: org.springframework.security.core.userdetails.User@f02988d6: Username: username; Password: [PROTECTED]; Enabled: true; AccountNonExpired: true; credentialsNonExpired: true; AccountNonLocked: true; Not granted any authorities; Credentials: [PROTECTED]; Authenticated: true; Details: null; Not granted any authorities}
+
+Handler:
+             Type = org.springframework.data.rest.webmvc.RepositoryEntityController
+           Method = public org.springframework.http.ResponseEntity&lt;org.springframework.hateoas.Resource&lt;?&gt;&gt; org.springframework.data.rest.webmvc.RepositoryEntityController.getItemResource(org.springframework.data.rest.webmvc.RootResourceInformation,java.io.Serializable,org.springframework.data.rest.webmvc.PersistentEntityResourceAssembler,org.springframework.http.HttpHeaders) throws org.springframework.web.HttpRequestMethodNotSupportedException
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Type=[application/json;charset=UTF-8], X-Content-Type-Options=[nosniff], X-XSS-Protection=[1; mode=block], Cache-Control=[no-cache, no-store, max-age=0, must-revalidate], Pragma=[no-cache], Expires=[0], X-Frame-Options=[DENY]}
+     Content type = application/json;charset=UTF-8
+             Body = {
+  &quot;inputUserId&quot; : &quot;username&quot;,
+  &quot;lastUpdateUserId&quot; : &quot;username&quot;,
+  &quot;computerId&quot; : &quot;username&quot;,
+  &quot;businessUnitId&quot; : &quot;125&quot;,
+  &quot;description&quot; : &quot;TESTTEST&quot;,
+  &quot;businessUnitType&quot; : &quot;BS&quot;,
+  &quot;idNumber&quot; : &quot;&quot;,
+  &quot;companyId&quot; : &quot;00000&quot;,
+  &quot;relatedBusinessUnitId&quot; : &quot;&quot;,
+  &quot;modelOrConsolidated&quot; : &quot;&quot;,
+  &quot;companyPreview&quot; : {
+    &quot;companyId&quot; : &quot;00000&quot;,
+    &quot;description&quot; : &quot;AMTEK GROUP&quot;
+  },
+  &quot;lastUpdateDateTime&quot; : &quot;2018-12-14T17:35:54&quot;,
+  &quot;inputDateTime&quot; : &quot;2018-12-14T17:35:54&quot;,
+  &quot;relatedPreview&quot; : null,
+  &quot;_links&quot; : {
+    &quot;self&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/businessUnits/125&quot;
+    },
+    &quot;businessUnit&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/businessUnits/125&quot;
+    },
+    &quot;related&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/businessUnits/125/related&quot;
+    },
+    &quot;itemBranchInfos&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/businessUnits/125/itemBranchInfos&quot;
+    },
+    &quot;locations&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/businessUnits/125/locations&quot;
+    },
+    &quot;company&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/businessUnits/125/company&quot;
+    },
+    &quot;configuration&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/businessUnits/125/configuration&quot;
+    }
+  }
+}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2018-12-14 17:35:54.955  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@143aa50a testClass = BusinessUnitApiTest, testInstance = ags.goldenlionerp.apiTests.setups.BusinessUnitApiTest@1814c822, testMethod = createTestWithPostWithoutRelatedBU@BusinessUnitApiTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@22aea804 testClass = BusinessUnitApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4f157508 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+2018-12-14 17:35:54.955  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@143aa50a testClass = BusinessUnitApiTest, testInstance = ags.goldenlionerp.apiTests.setups.BusinessUnitApiTest@25c4cf7a, testMethod = updateTestWithPut@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@22aea804 testClass = BusinessUnitApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4f157508 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:54.955  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:54.955  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:54.955  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+Hibernate: select businessun0_.bnbuid as bnbuid1_10_0_, businessun0_.bncid as bncid2_10_0_, businessun0_.bndtin as bndtin3_10_0_, businessun0_.bntmin as bntmin4_10_0_, businessun0_.bnuid as bnuid5_10_0_, businessun0_.bndtlu as bndtlu6_10_0_, businessun0_.bntmlu as bntmlu7_10_0_, businessun0_.bnuidm as bnuidm8_10_0_, businessun0_.bnbuty as bnbuty9_10_0_, businessun0_.bncoid as bncoid10_10_0_, businessun0_.bndesb1 as bndesb11_10_0_, businessun0_.bnanum as bnanum12_10_0_, businessun0_.bnfmod as bnfmod13_10_0_, businessun0_.bnbuid1 as bnbuid14_10_0_, company1_.cncoid as cncoid1_9_1_, company1_.cncid as cncid2_9_1_, company1_.cndtin as cndtin3_9_1_, company1_.cntmin as cntmin4_9_1_, company1_.cnuid as cnuid5_9_1_, company1_.cndtlu as cndtlu6_9_1_, company1_.cntmlu as cntmlu7_9_1_, company1_.cnuidm as cnuidm8_9_1_, company1_.cnanum as cnanum9_9_1_, company1_.cncrcb as cncrcb10_9_1_, company1_.cncap as cncap11_9_1_, company1_.cncfy as cncfy12_9_1_, company1_.cncip as cncip13_9_1_, company1_.cncpp as cncpp14_9_1_, company1_.cncrp as cncrp15_9_1_, company1_.cndesb1 as cndesb16_9_1_, company1_.cnfdp as cnfdp17_9_1_, branchplan2_.bcbuid as bcbuid1_11_2_, branchplan2_.bccid as bccid2_11_2_, branchplan2_.bcdtin as bcdtin3_11_2_, branchplan2_.bctmin as bctmin4_11_2_, branchplan2_.bcuid as bcuid5_11_2_, branchplan2_.bcdtlu as bcdtlu6_11_2_, branchplan2_.bctmlu as bctmlu7_11_2_, branchplan2_.bcuidm as bcuidm8_11_2_, branchplan2_.bcanum as bcanum9_11_2_, branchplan2_.bcctm as bcctm10_11_2_, branchplan2_.bcitgl as bcitgl11_11_2_, branchplan2_.bcilc as bcilc12_11_2_, branchplan2_.bcxrt as bcxrt13_11_2_, branchplan2_.bcxrt2 as bcxrt14_11_2_, branchplan2_.bclctl as bclctl15_11_2_, branchplan2_.bcpucm as bcpucm16_11_2_, branchplan2_.bcsicm as bcsicm17_11_2_, branchplan2_.bcwctl as bcwctl18_11_2_ from t0021 businessun0_ inner join t0020 company1_ on businessun0_.bncoid=company1_.cncoid left outer join t0022 branchplan2_ on businessun0_.bnbuid=branchplan2_.bcbuid where businessun0_.bnbuid=?
+2018-12-14 17:35:54.955  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@143aa50a testClass = BusinessUnitApiTest, testInstance = ags.goldenlionerp.apiTests.setups.BusinessUnitApiTest@25c4cf7a, testMethod = updateTestWithPut@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@22aea804 testClass = BusinessUnitApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4f157508 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+2018-12-14 17:35:54.955  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@143aa50a testClass = BusinessUnitApiTest, testInstance = ags.goldenlionerp.apiTests.setups.BusinessUnitApiTest@1c8df041, testMethod = getTestSingle@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@22aea804 testClass = BusinessUnitApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4f157508 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:54.955  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:54.955  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:54.971  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 16 ms
+Hibernate: select businessun0_.bnbuid as bnbuid1_10_0_, businessun0_.bncid as bncid2_10_0_, businessun0_.bndtin as bndtin3_10_0_, businessun0_.bntmin as bntmin4_10_0_, businessun0_.bnuid as bnuid5_10_0_, businessun0_.bndtlu as bndtlu6_10_0_, businessun0_.bntmlu as bntmlu7_10_0_, businessun0_.bnuidm as bnuidm8_10_0_, businessun0_.bnbuty as bnbuty9_10_0_, businessun0_.bncoid as bncoid10_10_0_, businessun0_.bndesb1 as bndesb11_10_0_, businessun0_.bnanum as bnanum12_10_0_, businessun0_.bnfmod as bnfmod13_10_0_, businessun0_.bnbuid1 as bnbuid14_10_0_, company1_.cncoid as cncoid1_9_1_, company1_.cncid as cncid2_9_1_, company1_.cndtin as cndtin3_9_1_, company1_.cntmin as cntmin4_9_1_, company1_.cnuid as cnuid5_9_1_, company1_.cndtlu as cndtlu6_9_1_, company1_.cntmlu as cntmlu7_9_1_, company1_.cnuidm as cnuidm8_9_1_, company1_.cnanum as cnanum9_9_1_, company1_.cncrcb as cncrcb10_9_1_, company1_.cncap as cncap11_9_1_, company1_.cncfy as cncfy12_9_1_, company1_.cncip as cncip13_9_1_, company1_.cncpp as cncpp14_9_1_, company1_.cncrp as cncrp15_9_1_, company1_.cndesb1 as cndesb16_9_1_, company1_.cnfdp as cnfdp17_9_1_, branchplan2_.bcbuid as bcbuid1_11_2_, branchplan2_.bccid as bccid2_11_2_, branchplan2_.bcdtin as bcdtin3_11_2_, branchplan2_.bctmin as bctmin4_11_2_, branchplan2_.bcuid as bcuid5_11_2_, branchplan2_.bcdtlu as bcdtlu6_11_2_, branchplan2_.bctmlu as bctmlu7_11_2_, branchplan2_.bcuidm as bcuidm8_11_2_, branchplan2_.bcanum as bcanum9_11_2_, branchplan2_.bcctm as bcctm10_11_2_, branchplan2_.bcitgl as bcitgl11_11_2_, branchplan2_.bcilc as bcilc12_11_2_, branchplan2_.bcxrt as bcxrt13_11_2_, branchplan2_.bcxrt2 as bcxrt14_11_2_, branchplan2_.bclctl as bclctl15_11_2_, branchplan2_.bcpucm as bcpucm16_11_2_, branchplan2_.bcsicm as bcsicm17_11_2_, branchplan2_.bcwctl as bcwctl18_11_2_ from t0021 businessun0_ inner join t0020 company1_ on businessun0_.bncoid=company1_.cncoid left outer join t0022 branchplan2_ on businessun0_.bnbuid=branchplan2_.bcbuid where businessun0_.bnbuid=?
+2018-12-14 17:35:54.987  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@143aa50a testClass = BusinessUnitApiTest, testInstance = ags.goldenlionerp.apiTests.setups.BusinessUnitApiTest@1c8df041, testMethod = getTestSingle@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@22aea804 testClass = BusinessUnitApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4f157508 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+2018-12-14 17:35:54.987  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@143aa50a testClass = BusinessUnitApiTest, testInstance = ags.goldenlionerp.apiTests.setups.BusinessUnitApiTest@62a1c144, testMethod = updateTestWithPatch@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@22aea804 testClass = BusinessUnitApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4f157508 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:54.987  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:54.987  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:54.987  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+Hibernate: select businessun0_.bnbuid as bnbuid1_10_0_, businessun0_.bncid as bncid2_10_0_, businessun0_.bndtin as bndtin3_10_0_, businessun0_.bntmin as bntmin4_10_0_, businessun0_.bnuid as bnuid5_10_0_, businessun0_.bndtlu as bndtlu6_10_0_, businessun0_.bntmlu as bntmlu7_10_0_, businessun0_.bnuidm as bnuidm8_10_0_, businessun0_.bnbuty as bnbuty9_10_0_, businessun0_.bncoid as bncoid10_10_0_, businessun0_.bndesb1 as bndesb11_10_0_, businessun0_.bnanum as bnanum12_10_0_, businessun0_.bnfmod as bnfmod13_10_0_, businessun0_.bnbuid1 as bnbuid14_10_0_, company1_.cncoid as cncoid1_9_1_, company1_.cncid as cncid2_9_1_, company1_.cndtin as cndtin3_9_1_, company1_.cntmin as cntmin4_9_1_, company1_.cnuid as cnuid5_9_1_, company1_.cndtlu as cndtlu6_9_1_, company1_.cntmlu as cntmlu7_9_1_, company1_.cnuidm as cnuidm8_9_1_, company1_.cnanum as cnanum9_9_1_, company1_.cncrcb as cncrcb10_9_1_, company1_.cncap as cncap11_9_1_, company1_.cncfy as cncfy12_9_1_, company1_.cncip as cncip13_9_1_, company1_.cncpp as cncpp14_9_1_, company1_.cncrp as cncrp15_9_1_, company1_.cndesb1 as cndesb16_9_1_, company1_.cnfdp as cnfdp17_9_1_, branchplan2_.bcbuid as bcbuid1_11_2_, branchplan2_.bccid as bccid2_11_2_, branchplan2_.bcdtin as bcdtin3_11_2_, branchplan2_.bctmin as bctmin4_11_2_, branchplan2_.bcuid as bcuid5_11_2_, branchplan2_.bcdtlu as bcdtlu6_11_2_, branchplan2_.bctmlu as bctmlu7_11_2_, branchplan2_.bcuidm as bcuidm8_11_2_, branchplan2_.bcanum as bcanum9_11_2_, branchplan2_.bcctm as bcctm10_11_2_, branchplan2_.bcitgl as bcitgl11_11_2_, branchplan2_.bcilc as bcilc12_11_2_, branchplan2_.bcxrt as bcxrt13_11_2_, branchplan2_.bcxrt2 as bcxrt14_11_2_, branchplan2_.bclctl as bclctl15_11_2_, branchplan2_.bcpucm as bcpucm16_11_2_, branchplan2_.bcsicm as bcsicm17_11_2_, branchplan2_.bcwctl as bcwctl18_11_2_ from t0021 businessun0_ inner join t0020 company1_ on businessun0_.bncoid=company1_.cncoid left outer join t0022 branchplan2_ on businessun0_.bnbuid=branchplan2_.bcbuid where businessun0_.bnbuid=?
+Hibernate: update t0021 set bncid=?, bndtlu=?, bntmlu=?, bnuidm=?, bnbuty=?, bncoid=?, bndesb1=?, bnanum=?, bnfmod=?, bnbuid1=? where bnbuid=?
+Hibernate: select businessun0_.bnbuid as bnbuid1_10_0_, businessun0_.bncid as bncid2_10_0_, businessun0_.bndtin as bndtin3_10_0_, businessun0_.bntmin as bntmin4_10_0_, businessun0_.bnuid as bnuid5_10_0_, businessun0_.bndtlu as bndtlu6_10_0_, businessun0_.bntmlu as bntmlu7_10_0_, businessun0_.bnuidm as bnuidm8_10_0_, businessun0_.bnbuty as bnbuty9_10_0_, businessun0_.bncoid as bncoid10_10_0_, businessun0_.bndesb1 as bndesb11_10_0_, businessun0_.bnanum as bnanum12_10_0_, businessun0_.bnfmod as bnfmod13_10_0_, businessun0_.bnbuid1 as bnbuid14_10_0_, company1_.cncoid as cncoid1_9_1_, company1_.cncid as cncid2_9_1_, company1_.cndtin as cndtin3_9_1_, company1_.cntmin as cntmin4_9_1_, company1_.cnuid as cnuid5_9_1_, company1_.cndtlu as cndtlu6_9_1_, company1_.cntmlu as cntmlu7_9_1_, company1_.cnuidm as cnuidm8_9_1_, company1_.cnanum as cnanum9_9_1_, company1_.cncrcb as cncrcb10_9_1_, company1_.cncap as cncap11_9_1_, company1_.cncfy as cncfy12_9_1_, company1_.cncip as cncip13_9_1_, company1_.cncpp as cncpp14_9_1_, company1_.cncrp as cncrp15_9_1_, company1_.cndesb1 as cndesb16_9_1_, company1_.cnfdp as cnfdp17_9_1_, branchplan2_.bcbuid as bcbuid1_11_2_, branchplan2_.bccid as bccid2_11_2_, branchplan2_.bcdtin as bcdtin3_11_2_, branchplan2_.bctmin as bctmin4_11_2_, branchplan2_.bcuid as bcuid5_11_2_, branchplan2_.bcdtlu as bcdtlu6_11_2_, branchplan2_.bctmlu as bctmlu7_11_2_, branchplan2_.bcuidm as bcuidm8_11_2_, branchplan2_.bcanum as bcanum9_11_2_, branchplan2_.bcctm as bcctm10_11_2_, branchplan2_.bcitgl as bcitgl11_11_2_, branchplan2_.bcilc as bcilc12_11_2_, branchplan2_.bcxrt as bcxrt13_11_2_, branchplan2_.bcxrt2 as bcxrt14_11_2_, branchplan2_.bclctl as bclctl15_11_2_, branchplan2_.bcpucm as bcpucm16_11_2_, branchplan2_.bcsicm as bcsicm17_11_2_, branchplan2_.bcwctl as bcwctl18_11_2_ from t0021 businessun0_ inner join t0020 company1_ on businessun0_.bncoid=company1_.cncoid left outer join t0022 branchplan2_ on businessun0_.bnbuid=branchplan2_.bcbuid where businessun0_.bnbuid=?
+Hibernate: select businessun0_.bnbuid as bnbuid1_10_0_, businessun0_.bncid as bncid2_10_0_, businessun0_.bndtin as bndtin3_10_0_, businessun0_.bntmin as bntmin4_10_0_, businessun0_.bnuid as bnuid5_10_0_, businessun0_.bndtlu as bndtlu6_10_0_, businessun0_.bntmlu as bntmlu7_10_0_, businessun0_.bnuidm as bnuidm8_10_0_, businessun0_.bnbuty as bnbuty9_10_0_, businessun0_.bncoid as bncoid10_10_0_, businessun0_.bndesb1 as bndesb11_10_0_, businessun0_.bnanum as bnanum12_10_0_, businessun0_.bnfmod as bnfmod13_10_0_, businessun0_.bnbuid1 as bnbuid14_10_0_, company1_.cncoid as cncoid1_9_1_, company1_.cncid as cncid2_9_1_, company1_.cndtin as cndtin3_9_1_, company1_.cntmin as cntmin4_9_1_, company1_.cnuid as cnuid5_9_1_, company1_.cndtlu as cndtlu6_9_1_, company1_.cntmlu as cntmlu7_9_1_, company1_.cnuidm as cnuidm8_9_1_, company1_.cnanum as cnanum9_9_1_, company1_.cncrcb as cncrcb10_9_1_, company1_.cncap as cncap11_9_1_, company1_.cncfy as cncfy12_9_1_, company1_.cncip as cncip13_9_1_, company1_.cncpp as cncpp14_9_1_, company1_.cncrp as cncrp15_9_1_, company1_.cndesb1 as cndesb16_9_1_, company1_.cnfdp as cnfdp17_9_1_, branchplan2_.bcbuid as bcbuid1_11_2_, branchplan2_.bccid as bccid2_11_2_, branchplan2_.bcdtin as bcdtin3_11_2_, branchplan2_.bctmin as bctmin4_11_2_, branchplan2_.bcuid as bcuid5_11_2_, branchplan2_.bcdtlu as bcdtlu6_11_2_, branchplan2_.bctmlu as bctmlu7_11_2_, branchplan2_.bcuidm as bcuidm8_11_2_, branchplan2_.bcanum as bcanum9_11_2_, branchplan2_.bcctm as bcctm10_11_2_, branchplan2_.bcitgl as bcitgl11_11_2_, branchplan2_.bcilc as bcilc12_11_2_, branchplan2_.bcxrt as bcxrt13_11_2_, branchplan2_.bcxrt2 as bcxrt14_11_2_, branchplan2_.bclctl as bclctl15_11_2_, branchplan2_.bcpucm as bcpucm16_11_2_, branchplan2_.bcsicm as bcsicm17_11_2_, branchplan2_.bcwctl as bcwctl18_11_2_ from t0021 businessun0_ inner join t0020 company1_ on businessun0_.bncoid=company1_.cncoid left outer join t0022 branchplan2_ on businessun0_.bnbuid=branchplan2_.bcbuid where businessun0_.bnbuid=?
+2018-12-14 17:35:55.051  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@143aa50a testClass = BusinessUnitApiTest, testInstance = ags.goldenlionerp.apiTests.setups.BusinessUnitApiTest@62a1c144, testMethod = updateTestWithPatch@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@22aea804 testClass = BusinessUnitApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4f157508 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+2018-12-14 17:35:55.053  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@143aa50a testClass = BusinessUnitApiTest, testInstance = ags.goldenlionerp.apiTests.setups.BusinessUnitApiTest@45f39d65, testMethod = getTestCollection@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@22aea804 testClass = BusinessUnitApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4f157508 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:55.053  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:55.053  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:55.058  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 5 ms
+Hibernate: select TOP(?) businessun0_.bnbuid as bnbuid1_10_, businessun0_.bncid as bncid2_10_, businessun0_.bndtin as bndtin3_10_, businessun0_.bntmin as bntmin4_10_, businessun0_.bnuid as bnuid5_10_, businessun0_.bndtlu as bndtlu6_10_, businessun0_.bntmlu as bntmlu7_10_, businessun0_.bnuidm as bnuidm8_10_, businessun0_.bnbuty as bnbuty9_10_, businessun0_.bncoid as bncoid10_10_, businessun0_.bndesb1 as bndesb11_10_, businessun0_.bnanum as bnanum12_10_, businessun0_.bnfmod as bnfmod13_10_, businessun0_.bnbuid1 as bnbuid14_10_ from t0021 businessun0_
+Hibernate: select company0_.cncoid as cncoid1_9_0_, company0_.cncid as cncid2_9_0_, company0_.cndtin as cndtin3_9_0_, company0_.cntmin as cntmin4_9_0_, company0_.cnuid as cnuid5_9_0_, company0_.cndtlu as cndtlu6_9_0_, company0_.cntmlu as cntmlu7_9_0_, company0_.cnuidm as cnuidm8_9_0_, company0_.cnanum as cnanum9_9_0_, company0_.cncrcb as cncrcb10_9_0_, company0_.cncap as cncap11_9_0_, company0_.cncfy as cncfy12_9_0_, company0_.cncip as cncip13_9_0_, company0_.cncpp as cncpp14_9_0_, company0_.cncrp as cncrp15_9_0_, company0_.cndesb1 as cndesb16_9_0_, company0_.cnfdp as cnfdp17_9_0_ from t0020 company0_ where company0_.cncoid=?
+Hibernate: select branchplan0_.bcbuid as bcbuid1_11_0_, branchplan0_.bccid as bccid2_11_0_, branchplan0_.bcdtin as bcdtin3_11_0_, branchplan0_.bctmin as bctmin4_11_0_, branchplan0_.bcuid as bcuid5_11_0_, branchplan0_.bcdtlu as bcdtlu6_11_0_, branchplan0_.bctmlu as bctmlu7_11_0_, branchplan0_.bcuidm as bcuidm8_11_0_, branchplan0_.bcanum as bcanum9_11_0_, branchplan0_.bcctm as bcctm10_11_0_, branchplan0_.bcitgl as bcitgl11_11_0_, branchplan0_.bcilc as bcilc12_11_0_, branchplan0_.bcxrt as bcxrt13_11_0_, branchplan0_.bcxrt2 as bcxrt14_11_0_, branchplan0_.bclctl as bclctl15_11_0_, branchplan0_.bcpucm as bcpucm16_11_0_, branchplan0_.bcsicm as bcsicm17_11_0_, branchplan0_.bcwctl as bcwctl18_11_0_, businessun1_.bnbuid as bnbuid1_10_1_, businessun1_.bncid as bncid2_10_1_, businessun1_.bndtin as bndtin3_10_1_, businessun1_.bntmin as bntmin4_10_1_, businessun1_.bnuid as bnuid5_10_1_, businessun1_.bndtlu as bndtlu6_10_1_, businessun1_.bntmlu as bntmlu7_10_1_, businessun1_.bnuidm as bnuidm8_10_1_, businessun1_.bnbuty as bnbuty9_10_1_, businessun1_.bncoid as bncoid10_10_1_, businessun1_.bndesb1 as bndesb11_10_1_, businessun1_.bnanum as bnanum12_10_1_, businessun1_.bnfmod as bnfmod13_10_1_, businessun1_.bnbuid1 as bnbuid14_10_1_, company2_.cncoid as cncoid1_9_2_, company2_.cncid as cncid2_9_2_, company2_.cndtin as cndtin3_9_2_, company2_.cntmin as cntmin4_9_2_, company2_.cnuid as cnuid5_9_2_, company2_.cndtlu as cndtlu6_9_2_, company2_.cntmlu as cntmlu7_9_2_, company2_.cnuidm as cnuidm8_9_2_, company2_.cnanum as cnanum9_9_2_, company2_.cncrcb as cncrcb10_9_2_, company2_.cncap as cncap11_9_2_, company2_.cncfy as cncfy12_9_2_, company2_.cncip as cncip13_9_2_, company2_.cncpp as cncpp14_9_2_, company2_.cncrp as cncrp15_9_2_, company2_.cndesb1 as cndesb16_9_2_, company2_.cnfdp as cnfdp17_9_2_ from t0022 branchplan0_ inner join t0021 businessun1_ on branchplan0_.bcbuid=businessun1_.bnbuid inner join t0020 company2_ on businessun1_.bncoid=company2_.cncoid where branchplan0_.bcbuid=?
+Hibernate: select branchplan0_.bcbuid as bcbuid1_11_0_, branchplan0_.bccid as bccid2_11_0_, branchplan0_.bcdtin as bcdtin3_11_0_, branchplan0_.bctmin as bctmin4_11_0_, branchplan0_.bcuid as bcuid5_11_0_, branchplan0_.bcdtlu as bcdtlu6_11_0_, branchplan0_.bctmlu as bctmlu7_11_0_, branchplan0_.bcuidm as bcuidm8_11_0_, branchplan0_.bcanum as bcanum9_11_0_, branchplan0_.bcctm as bcctm10_11_0_, branchplan0_.bcitgl as bcitgl11_11_0_, branchplan0_.bcilc as bcilc12_11_0_, branchplan0_.bcxrt as bcxrt13_11_0_, branchplan0_.bcxrt2 as bcxrt14_11_0_, branchplan0_.bclctl as bclctl15_11_0_, branchplan0_.bcpucm as bcpucm16_11_0_, branchplan0_.bcsicm as bcsicm17_11_0_, branchplan0_.bcwctl as bcwctl18_11_0_, businessun1_.bnbuid as bnbuid1_10_1_, businessun1_.bncid as bncid2_10_1_, businessun1_.bndtin as bndtin3_10_1_, businessun1_.bntmin as bntmin4_10_1_, businessun1_.bnuid as bnuid5_10_1_, businessun1_.bndtlu as bndtlu6_10_1_, businessun1_.bntmlu as bntmlu7_10_1_, businessun1_.bnuidm as bnuidm8_10_1_, businessun1_.bnbuty as bnbuty9_10_1_, businessun1_.bncoid as bncoid10_10_1_, businessun1_.bndesb1 as bndesb11_10_1_, businessun1_.bnanum as bnanum12_10_1_, businessun1_.bnfmod as bnfmod13_10_1_, businessun1_.bnbuid1 as bnbuid14_10_1_, company2_.cncoid as cncoid1_9_2_, company2_.cncid as cncid2_9_2_, company2_.cndtin as cndtin3_9_2_, company2_.cntmin as cntmin4_9_2_, company2_.cnuid as cnuid5_9_2_, company2_.cndtlu as cndtlu6_9_2_, company2_.cntmlu as cntmlu7_9_2_, company2_.cnuidm as cnuidm8_9_2_, company2_.cnanum as cnanum9_9_2_, company2_.cncrcb as cncrcb10_9_2_, company2_.cncap as cncap11_9_2_, company2_.cncfy as cncfy12_9_2_, company2_.cncip as cncip13_9_2_, company2_.cncpp as cncpp14_9_2_, company2_.cncrp as cncrp15_9_2_, company2_.cndesb1 as cndesb16_9_2_, company2_.cnfdp as cnfdp17_9_2_ from t0022 branchplan0_ inner join t0021 businessun1_ on branchplan0_.bcbuid=businessun1_.bnbuid inner join t0020 company2_ on businessun1_.bncoid=company2_.cncoid where branchplan0_.bcbuid=?
+Hibernate: select branchplan0_.bcbuid as bcbuid1_11_0_, branchplan0_.bccid as bccid2_11_0_, branchplan0_.bcdtin as bcdtin3_11_0_, branchplan0_.bctmin as bctmin4_11_0_, branchplan0_.bcuid as bcuid5_11_0_, branchplan0_.bcdtlu as bcdtlu6_11_0_, branchplan0_.bctmlu as bctmlu7_11_0_, branchplan0_.bcuidm as bcuidm8_11_0_, branchplan0_.bcanum as bcanum9_11_0_, branchplan0_.bcctm as bcctm10_11_0_, branchplan0_.bcitgl as bcitgl11_11_0_, branchplan0_.bcilc as bcilc12_11_0_, branchplan0_.bcxrt as bcxrt13_11_0_, branchplan0_.bcxrt2 as bcxrt14_11_0_, branchplan0_.bclctl as bclctl15_11_0_, branchplan0_.bcpucm as bcpucm16_11_0_, branchplan0_.bcsicm as bcsicm17_11_0_, branchplan0_.bcwctl as bcwctl18_11_0_, businessun1_.bnbuid as bnbuid1_10_1_, businessun1_.bncid as bncid2_10_1_, businessun1_.bndtin as bndtin3_10_1_, businessun1_.bntmin as bntmin4_10_1_, businessun1_.bnuid as bnuid5_10_1_, businessun1_.bndtlu as bndtlu6_10_1_, businessun1_.bntmlu as bntmlu7_10_1_, businessun1_.bnuidm as bnuidm8_10_1_, businessun1_.bnbuty as bnbuty9_10_1_, businessun1_.bncoid as bncoid10_10_1_, businessun1_.bndesb1 as bndesb11_10_1_, businessun1_.bnanum as bnanum12_10_1_, businessun1_.bnfmod as bnfmod13_10_1_, businessun1_.bnbuid1 as bnbuid14_10_1_, company2_.cncoid as cncoid1_9_2_, company2_.cncid as cncid2_9_2_, company2_.cndtin as cndtin3_9_2_, company2_.cntmin as cntmin4_9_2_, company2_.cnuid as cnuid5_9_2_, company2_.cndtlu as cndtlu6_9_2_, company2_.cntmlu as cntmlu7_9_2_, company2_.cnuidm as cnuidm8_9_2_, company2_.cnanum as cnanum9_9_2_, company2_.cncrcb as cncrcb10_9_2_, company2_.cncap as cncap11_9_2_, company2_.cncfy as cncfy12_9_2_, company2_.cncip as cncip13_9_2_, company2_.cncpp as cncpp14_9_2_, company2_.cncrp as cncrp15_9_2_, company2_.cndesb1 as cndesb16_9_2_, company2_.cnfdp as cnfdp17_9_2_ from t0022 branchplan0_ inner join t0021 businessun1_ on branchplan0_.bcbuid=businessun1_.bnbuid inner join t0020 company2_ on businessun1_.bncoid=company2_.cncoid where branchplan0_.bcbuid=?
+Hibernate: select company0_.cncoid as cncoid1_9_0_, company0_.cncid as cncid2_9_0_, company0_.cndtin as cndtin3_9_0_, company0_.cntmin as cntmin4_9_0_, company0_.cnuid as cnuid5_9_0_, company0_.cndtlu as cndtlu6_9_0_, company0_.cntmlu as cntmlu7_9_0_, company0_.cnuidm as cnuidm8_9_0_, company0_.cnanum as cnanum9_9_0_, company0_.cncrcb as cncrcb10_9_0_, company0_.cncap as cncap11_9_0_, company0_.cncfy as cncfy12_9_0_, company0_.cncip as cncip13_9_0_, company0_.cncpp as cncpp14_9_0_, company0_.cncrp as cncrp15_9_0_, company0_.cndesb1 as cndesb16_9_0_, company0_.cnfdp as cnfdp17_9_0_ from t0020 company0_ where company0_.cncoid=?
+Hibernate: select branchplan0_.bcbuid as bcbuid1_11_0_, branchplan0_.bccid as bccid2_11_0_, branchplan0_.bcdtin as bcdtin3_11_0_, branchplan0_.bctmin as bctmin4_11_0_, branchplan0_.bcuid as bcuid5_11_0_, branchplan0_.bcdtlu as bcdtlu6_11_0_, branchplan0_.bctmlu as bctmlu7_11_0_, branchplan0_.bcuidm as bcuidm8_11_0_, branchplan0_.bcanum as bcanum9_11_0_, branchplan0_.bcctm as bcctm10_11_0_, branchplan0_.bcitgl as bcitgl11_11_0_, branchplan0_.bcilc as bcilc12_11_0_, branchplan0_.bcxrt as bcxrt13_11_0_, branchplan0_.bcxrt2 as bcxrt14_11_0_, branchplan0_.bclctl as bclctl15_11_0_, branchplan0_.bcpucm as bcpucm16_11_0_, branchplan0_.bcsicm as bcsicm17_11_0_, branchplan0_.bcwctl as bcwctl18_11_0_, businessun1_.bnbuid as bnbuid1_10_1_, businessun1_.bncid as bncid2_10_1_, businessun1_.bndtin as bndtin3_10_1_, businessun1_.bntmin as bntmin4_10_1_, businessun1_.bnuid as bnuid5_10_1_, businessun1_.bndtlu as bndtlu6_10_1_, businessun1_.bntmlu as bntmlu7_10_1_, businessun1_.bnuidm as bnuidm8_10_1_, businessun1_.bnbuty as bnbuty9_10_1_, businessun1_.bncoid as bncoid10_10_1_, businessun1_.bndesb1 as bndesb11_10_1_, businessun1_.bnanum as bnanum12_10_1_, businessun1_.bnfmod as bnfmod13_10_1_, businessun1_.bnbuid1 as bnbuid14_10_1_, company2_.cncoid as cncoid1_9_2_, company2_.cncid as cncid2_9_2_, company2_.cndtin as cndtin3_9_2_, company2_.cntmin as cntmin4_9_2_, company2_.cnuid as cnuid5_9_2_, company2_.cndtlu as cndtlu6_9_2_, company2_.cntmlu as cntmlu7_9_2_, company2_.cnuidm as cnuidm8_9_2_, company2_.cnanum as cnanum9_9_2_, company2_.cncrcb as cncrcb10_9_2_, company2_.cncap as cncap11_9_2_, company2_.cncfy as cncfy12_9_2_, company2_.cncip as cncip13_9_2_, company2_.cncpp as cncpp14_9_2_, company2_.cncrp as cncrp15_9_2_, company2_.cndesb1 as cndesb16_9_2_, company2_.cnfdp as cnfdp17_9_2_ from t0022 branchplan0_ inner join t0021 businessun1_ on branchplan0_.bcbuid=businessun1_.bnbuid inner join t0020 company2_ on businessun1_.bncoid=company2_.cncoid where branchplan0_.bcbuid=?
+Hibernate: select company0_.cncoid as cncoid1_9_0_, company0_.cncid as cncid2_9_0_, company0_.cndtin as cndtin3_9_0_, company0_.cntmin as cntmin4_9_0_, company0_.cnuid as cnuid5_9_0_, company0_.cndtlu as cndtlu6_9_0_, company0_.cntmlu as cntmlu7_9_0_, company0_.cnuidm as cnuidm8_9_0_, company0_.cnanum as cnanum9_9_0_, company0_.cncrcb as cncrcb10_9_0_, company0_.cncap as cncap11_9_0_, company0_.cncfy as cncfy12_9_0_, company0_.cncip as cncip13_9_0_, company0_.cncpp as cncpp14_9_0_, company0_.cncrp as cncrp15_9_0_, company0_.cndesb1 as cndesb16_9_0_, company0_.cnfdp as cnfdp17_9_0_ from t0020 company0_ where company0_.cncoid=?
+Hibernate: select branchplan0_.bcbuid as bcbuid1_11_0_, branchplan0_.bccid as bccid2_11_0_, branchplan0_.bcdtin as bcdtin3_11_0_, branchplan0_.bctmin as bctmin4_11_0_, branchplan0_.bcuid as bcuid5_11_0_, branchplan0_.bcdtlu as bcdtlu6_11_0_, branchplan0_.bctmlu as bctmlu7_11_0_, branchplan0_.bcuidm as bcuidm8_11_0_, branchplan0_.bcanum as bcanum9_11_0_, branchplan0_.bcctm as bcctm10_11_0_, branchplan0_.bcitgl as bcitgl11_11_0_, branchplan0_.bcilc as bcilc12_11_0_, branchplan0_.bcxrt as bcxrt13_11_0_, branchplan0_.bcxrt2 as bcxrt14_11_0_, branchplan0_.bclctl as bclctl15_11_0_, branchplan0_.bcpucm as bcpucm16_11_0_, branchplan0_.bcsicm as bcsicm17_11_0_, branchplan0_.bcwctl as bcwctl18_11_0_, businessun1_.bnbuid as bnbuid1_10_1_, businessun1_.bncid as bncid2_10_1_, businessun1_.bndtin as bndtin3_10_1_, businessun1_.bntmin as bntmin4_10_1_, businessun1_.bnuid as bnuid5_10_1_, businessun1_.bndtlu as bndtlu6_10_1_, businessun1_.bntmlu as bntmlu7_10_1_, businessun1_.bnuidm as bnuidm8_10_1_, businessun1_.bnbuty as bnbuty9_10_1_, businessun1_.bncoid as bncoid10_10_1_, businessun1_.bndesb1 as bndesb11_10_1_, businessun1_.bnanum as bnanum12_10_1_, businessun1_.bnfmod as bnfmod13_10_1_, businessun1_.bnbuid1 as bnbuid14_10_1_, company2_.cncoid as cncoid1_9_2_, company2_.cncid as cncid2_9_2_, company2_.cndtin as cndtin3_9_2_, company2_.cntmin as cntmin4_9_2_, company2_.cnuid as cnuid5_9_2_, company2_.cndtlu as cndtlu6_9_2_, company2_.cntmlu as cntmlu7_9_2_, company2_.cnuidm as cnuidm8_9_2_, company2_.cnanum as cnanum9_9_2_, company2_.cncrcb as cncrcb10_9_2_, company2_.cncap as cncap11_9_2_, company2_.cncfy as cncfy12_9_2_, company2_.cncip as cncip13_9_2_, company2_.cncpp as cncpp14_9_2_, company2_.cncrp as cncrp15_9_2_, company2_.cndesb1 as cndesb16_9_2_, company2_.cnfdp as cnfdp17_9_2_ from t0022 branchplan0_ inner join t0021 businessun1_ on branchplan0_.bcbuid=businessun1_.bnbuid inner join t0020 company2_ on businessun1_.bncoid=company2_.cncoid where branchplan0_.bcbuid=?
+Hibernate: select branchplan0_.bcbuid as bcbuid1_11_0_, branchplan0_.bccid as bccid2_11_0_, branchplan0_.bcdtin as bcdtin3_11_0_, branchplan0_.bctmin as bctmin4_11_0_, branchplan0_.bcuid as bcuid5_11_0_, branchplan0_.bcdtlu as bcdtlu6_11_0_, branchplan0_.bctmlu as bctmlu7_11_0_, branchplan0_.bcuidm as bcuidm8_11_0_, branchplan0_.bcanum as bcanum9_11_0_, branchplan0_.bcctm as bcctm10_11_0_, branchplan0_.bcitgl as bcitgl11_11_0_, branchplan0_.bcilc as bcilc12_11_0_, branchplan0_.bcxrt as bcxrt13_11_0_, branchplan0_.bcxrt2 as bcxrt14_11_0_, branchplan0_.bclctl as bclctl15_11_0_, branchplan0_.bcpucm as bcpucm16_11_0_, branchplan0_.bcsicm as bcsicm17_11_0_, branchplan0_.bcwctl as bcwctl18_11_0_, businessun1_.bnbuid as bnbuid1_10_1_, businessun1_.bncid as bncid2_10_1_, businessun1_.bndtin as bndtin3_10_1_, businessun1_.bntmin as bntmin4_10_1_, businessun1_.bnuid as bnuid5_10_1_, businessun1_.bndtlu as bndtlu6_10_1_, businessun1_.bntmlu as bntmlu7_10_1_, businessun1_.bnuidm as bnuidm8_10_1_, businessun1_.bnbuty as bnbuty9_10_1_, businessun1_.bncoid as bncoid10_10_1_, businessun1_.bndesb1 as bndesb11_10_1_, businessun1_.bnanum as bnanum12_10_1_, businessun1_.bnfmod as bnfmod13_10_1_, businessun1_.bnbuid1 as bnbuid14_10_1_, company2_.cncoid as cncoid1_9_2_, company2_.cncid as cncid2_9_2_, company2_.cndtin as cndtin3_9_2_, company2_.cntmin as cntmin4_9_2_, company2_.cnuid as cnuid5_9_2_, company2_.cndtlu as cndtlu6_9_2_, company2_.cntmlu as cntmlu7_9_2_, company2_.cnuidm as cnuidm8_9_2_, company2_.cnanum as cnanum9_9_2_, company2_.cncrcb as cncrcb10_9_2_, company2_.cncap as cncap11_9_2_, company2_.cncfy as cncfy12_9_2_, company2_.cncip as cncip13_9_2_, company2_.cncpp as cncpp14_9_2_, company2_.cncrp as cncrp15_9_2_, company2_.cndesb1 as cndesb16_9_2_, company2_.cnfdp as cnfdp17_9_2_ from t0022 branchplan0_ inner join t0021 businessun1_ on branchplan0_.bcbuid=businessun1_.bnbuid inner join t0020 company2_ on businessun1_.bncoid=company2_.cncoid where branchplan0_.bcbuid=?
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/businessUnits/
+       Parameters = {}
+          Headers = {Accept=[application/json]}
+             Body = &lt;no character encoding set&gt;
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@262467, SPRING_SECURITY_CONTEXT=org.springframework.security.core.context.SecurityContextImpl@475fcd89: Authentication: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@475fcd89: Principal: org.springframework.security.core.userdetails.User@f02988d6: Username: username; Password: [PROTECTED]; Enabled: true; AccountNonExpired: true; credentialsNonExpired: true; AccountNonLocked: true; Not granted any authorities; Credentials: [PROTECTED]; Authenticated: true; Details: null; Not granted any authorities}
+
+Handler:
+             Type = org.springframework.data.rest.webmvc.RepositoryEntityController
+           Method = public org.springframework.hateoas.Resources&lt;?&gt; org.springframework.data.rest.webmvc.RepositoryEntityController.getCollectionResource(org.springframework.data.rest.webmvc.RootResourceInformation,org.springframework.data.rest.webmvc.support.DefaultedPageable,org.springframework.data.domain.Sort,org.springframework.data.rest.webmvc.PersistentEntityResourceAssembler) throws org.springframework.data.rest.webmvc.ResourceNotFoundException,org.springframework.web.HttpRequestMethodNotSupportedException
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Type=[application/json;charset=UTF-8], X-Content-Type-Options=[nosniff], X-XSS-Protection=[1; mode=block], Cache-Control=[no-cache, no-store, max-age=0, must-revalidate], Pragma=[no-cache], Expires=[0], X-Frame-Options=[DENY]}
+     Content type = application/json;charset=UTF-8
+             Body = {
+  &quot;_embedded&quot; : {
+    &quot;businessUnits&quot; : [ {
+      &quot;inputUserId&quot; : &quot;QSA&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;QSA&quot;,
+      &quot;computerId&quot; : &quot;WIN7UL7P5&quot;,
+      &quot;businessUnitId&quot; : &quot;100&quot;,
+      &quot;description&quot; : &quot;AMTEK&quot;,
+      &quot;businessUnitType&quot; : &quot;BS&quot;,
+      &quot;idNumber&quot; : &quot;&quot;,
+      &quot;companyId&quot; : &quot;11000&quot;,
+      &quot;relatedBusinessUnitId&quot; : &quot;&quot;,
+      &quot;modelOrConsolidated&quot; : &quot;&quot;,
+      &quot;companyPreview&quot; : {
+        &quot;companyId&quot; : &quot;11000&quot;,
+        &quot;description&quot; : &quot;AMTEK&quot;
+      },
+      &quot;lastUpdateDateTime&quot; : &quot;2017-10-23T19:15:11&quot;,
+      &quot;inputDateTime&quot; : &quot;2017-10-23T19:15:11&quot;,
+      &quot;relatedPreview&quot; : null,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/businessUnits/100&quot;
+        },
+        &quot;businessUnit&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/businessUnits/100&quot;
+        },
+        &quot;related&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/businessUnits/100/related&quot;
+        },
+        &quot;itemBranchInfos&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/businessUnits/100/itemBranchInfos&quot;
+        },
+        &quot;locations&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/businessUnits/100/locations&quot;
+        },
+        &quot;company&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/businessUnits/100/company&quot;
+        },
+        &quot;configuration&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/businessUnits/100/configuration&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;QSA&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;QSA&quot;,
+      &quot;computerId&quot; : &quot;WIN7UL7P5&quot;,
+      &quot;businessUnitId&quot; : &quot;110&quot;,
+      &quot;description&quot; : &quot;AMTEK SOKA&quot;,
+      &quot;businessUnitType&quot; : &quot;IS&quot;,
+      &quot;idNumber&quot; : &quot;&quot;,
+      &quot;companyId&quot; : &quot;11000&quot;,
+      &quot;relatedBusinessUnitId&quot; : &quot;&quot;,
+      &quot;modelOrConsolidated&quot; : &quot;&quot;,
+      &quot;companyPreview&quot; : {
+        &quot;companyId&quot; : &quot;11000&quot;,
+        &quot;description&quot; : &quot;AMTEK&quot;
+      },
+      &quot;lastUpdateDateTime&quot; : &quot;2017-10-23T19:15:49&quot;,
+      &quot;inputDateTime&quot; : &quot;2017-10-23T19:15:49&quot;,
+      &quot;relatedPreview&quot; : null,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/businessUnits/110&quot;
+        },
+        &quot;businessUnit&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/businessUnits/110&quot;
+        },
+        &quot;related&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/businessUnits/110/related&quot;
+        },
+        &quot;itemBranchInfos&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/businessUnits/110/itemBranchInfos&quot;
+        },
+        &quot;locations&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/businessUnits/110/locations&quot;
+        },
+        &quot;company&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/businessUnits/110/company&quot;
+        },
+        &quot;configuration&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/businessUnits/110/configuration&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;QSA&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;QSA&quot;,
+      &quot;computerId&quot; : &quot;WIN7UL7P5&quot;,
+      &quot;businessUnitId&quot; : &quot;120&quot;,
+      &quot;description&quot; : &quot;AMTEK THR&quot;,
+      &quot;businessUnitType&quot; : &quot;IS&quot;,
+      &quot;idNumber&quot; : &quot;&quot;,
+      &quot;companyId&quot; : &quot;11000&quot;,
+      &quot;relatedBusinessUnitId&quot; : &quot;&quot;,
+      &quot;modelOrConsolidated&quot; : &quot;&quot;,
+      &quot;companyPreview&quot; : {
+        &quot;companyId&quot; : &quot;11000&quot;,
+        &quot;description&quot; : &quot;AMTEK&quot;
+      },
+      &quot;lastUpdateDateTime&quot; : &quot;2017-10-23T19:16:00&quot;,
+      &quot;inputDateTime&quot; : &quot;2017-10-23T19:16:00&quot;,
+      &quot;relatedPreview&quot; : null,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/businessUnits/120&quot;
+        },
+        &quot;businessUnit&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/businessUnits/120&quot;
+        },
+        &quot;related&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/businessUnits/120/related&quot;
+        },
+        &quot;itemBranchInfos&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/businessUnits/120/itemBranchInfos&quot;
+        },
+        &quot;locations&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/businessUnits/120/locations&quot;
+        },
+        &quot;company&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/businessUnits/120/company&quot;
+        },
+        &quot;configuration&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/businessUnits/120/configuration&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;QSA&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;login not yet&quot;,
+      &quot;computerId&quot; : &quot;LAPTOP-FHFRCCL6&quot;,
+      &quot;businessUnitId&quot; : &quot;123&quot;,
+      &quot;description&quot; : &quot;TESSTBU&quot;,
+      &quot;businessUnitType&quot; : &quot;IS&quot;,
+      &quot;idNumber&quot; : &quot;0000&quot;,
+      &quot;companyId&quot; : &quot;00000&quot;,
+      &quot;relatedBusinessUnitId&quot; : &quot;123&quot;,
+      &quot;modelOrConsolidated&quot; : &quot;C&quot;,
+      &quot;companyPreview&quot; : {
+        &quot;companyId&quot; : &quot;00000&quot;,
+        &quot;description&quot; : &quot;AMTEK GROUP&quot;
+      },
+      &quot;lastUpdateDateTime&quot; : &quot;2018-07-03T17:10:45&quot;,
+      &quot;inputDateTime&quot; : &quot;2018-06-25T09:55:40&quot;,
+      &quot;relatedPreview&quot; : {
+        &quot;businessUnitId&quot; : &quot;123&quot;,
+        &quot;description&quot; : &quot;TESSTBU&quot;
+      },
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/businessUnits/123&quot;
+        },
+        &quot;businessUnit&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/businessUnits/123&quot;
+        },
+        &quot;related&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/businessUnits/123/related&quot;
+        },
+        &quot;itemBranchInfos&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/businessUnits/123/itemBranchInfos&quot;
+        },
+        &quot;locations&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/businessUnits/123/locations&quot;
+        },
+        &quot;company&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/businessUnits/123/company&quot;
+        },
+        &quot;configuration&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/businessUnits/123/configuration&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;QSA&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;QSA&quot;,
+      &quot;computerId&quot; : &quot;LAPTOP-FHFRCCL6&quot;,
+      &quot;businessUnitId&quot; : &quot;345&quot;,
+      &quot;description&quot; : &quot;tes2&quot;,
+      &quot;businessUnitType&quot; : &quot;&quot;,
+      &quot;idNumber&quot; : &quot;PT A&quot;,
+      &quot;companyId&quot; : &quot;12345&quot;,
+      &quot;relatedBusinessUnitId&quot; : &quot;&quot;,
+      &quot;modelOrConsolidated&quot; : &quot;&quot;,
+      &quot;companyPreview&quot; : {
+        &quot;companyId&quot; : &quot;12345&quot;,
+        &quot;description&quot; : &quot;TEST&quot;
+      },
+      &quot;lastUpdateDateTime&quot; : &quot;2018-08-20T15:35:13&quot;,
+      &quot;inputDateTime&quot; : &quot;2018-08-20T15:35:13&quot;,
+      &quot;relatedPreview&quot; : null,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/businessUnits/345&quot;
+        },
+        &quot;businessUnit&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/businessUnits/345&quot;
+        },
+        &quot;related&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/businessUnits/345/related&quot;
+        },
+        &quot;itemBranchInfos&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/businessUnits/345/itemBranchInfos&quot;
+        },
+        &quot;locations&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/businessUnits/345/locations&quot;
+        },
+        &quot;company&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/businessUnits/345/company&quot;
+        },
+        &quot;configuration&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/businessUnits/345/configuration&quot;
+        }
+      }
+    }, {
+      &quot;inputUserId&quot; : &quot;QSA&quot;,
+      &quot;lastUpdateUserId&quot; : &quot;QSA&quot;,
+      &quot;computerId&quot; : &quot;WIN7UL7P5&quot;,
+      &quot;businessUnitId&quot; : &quot;MDL&quot;,
+      &quot;description&quot; : &quot;Model Business Unit&quot;,
+      &quot;businessUnitType&quot; : &quot;&quot;,
+      &quot;idNumber&quot; : &quot;&quot;,
+      &quot;companyId&quot; : &quot;00000&quot;,
+      &quot;relatedBusinessUnitId&quot; : &quot;&quot;,
+      &quot;modelOrConsolidated&quot; : &quot;M&quot;,
+      &quot;companyPreview&quot; : {
+        &quot;companyId&quot; : &quot;00000&quot;,
+        &quot;description&quot; : &quot;AMTEK GROUP&quot;
+      },
+      &quot;lastUpdateDateTime&quot; : &quot;2017-10-23T19:15:36&quot;,
+      &quot;inputDateTime&quot; : &quot;2017-10-23T19:15:36&quot;,
+      &quot;relatedPreview&quot; : null,
+      &quot;_links&quot; : {
+        &quot;self&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/businessUnits/MDL&quot;
+        },
+        &quot;businessUnit&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/businessUnits/MDL&quot;
+        },
+        &quot;related&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/businessUnits/MDL/related&quot;
+        },
+        &quot;itemBranchInfos&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/businessUnits/MDL/itemBranchInfos&quot;
+        },
+        &quot;locations&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/businessUnits/MDL/locations&quot;
+        },
+        &quot;company&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/businessUnits/MDL/company&quot;
+        },
+        &quot;configuration&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/businessUnits/MDL/configuration&quot;
+        }
+      }
+    } ]
+  },
+  &quot;_links&quot; : {
+    &quot;self&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/businessUnits{?page,size,sort}&quot;,
+      &quot;templated&quot; : true
+    },
+    &quot;profile&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/profile/businessUnits&quot;
+    }
+  },
+  &quot;page&quot; : {
+    &quot;size&quot; : 20,
+    &quot;totalElements&quot; : 6,
+    &quot;totalPages&quot; : 1,
+    &quot;number&quot; : 0
+  }
+}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2018-12-14 17:35:55.096  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@143aa50a testClass = BusinessUnitApiTest, testInstance = ags.goldenlionerp.apiTests.setups.BusinessUnitApiTest@45f39d65, testMethod = getTestCollection@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@22aea804 testClass = BusinessUnitApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4f157508 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+2018-12-14 17:35:55.096  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@143aa50a testClass = BusinessUnitApiTest, testInstance = ags.goldenlionerp.apiTests.setups.BusinessUnitApiTest@6e1e455d, testMethod = createTestWithPut@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@22aea804 testClass = BusinessUnitApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4f157508 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:55.096  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:55.096  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:55.096  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+Hibernate: select businessun0_.bnbuid as bnbuid1_10_0_, businessun0_.bncid as bncid2_10_0_, businessun0_.bndtin as bndtin3_10_0_, businessun0_.bntmin as bntmin4_10_0_, businessun0_.bnuid as bnuid5_10_0_, businessun0_.bndtlu as bndtlu6_10_0_, businessun0_.bntmlu as bntmlu7_10_0_, businessun0_.bnuidm as bnuidm8_10_0_, businessun0_.bnbuty as bnbuty9_10_0_, businessun0_.bncoid as bncoid10_10_0_, businessun0_.bndesb1 as bndesb11_10_0_, businessun0_.bnanum as bnanum12_10_0_, businessun0_.bnfmod as bnfmod13_10_0_, businessun0_.bnbuid1 as bnbuid14_10_0_, company1_.cncoid as cncoid1_9_1_, company1_.cncid as cncid2_9_1_, company1_.cndtin as cndtin3_9_1_, company1_.cntmin as cntmin4_9_1_, company1_.cnuid as cnuid5_9_1_, company1_.cndtlu as cndtlu6_9_1_, company1_.cntmlu as cntmlu7_9_1_, company1_.cnuidm as cnuidm8_9_1_, company1_.cnanum as cnanum9_9_1_, company1_.cncrcb as cncrcb10_9_1_, company1_.cncap as cncap11_9_1_, company1_.cncfy as cncfy12_9_1_, company1_.cncip as cncip13_9_1_, company1_.cncpp as cncpp14_9_1_, company1_.cncrp as cncrp15_9_1_, company1_.cndesb1 as cndesb16_9_1_, company1_.cnfdp as cnfdp17_9_1_, branchplan2_.bcbuid as bcbuid1_11_2_, branchplan2_.bccid as bccid2_11_2_, branchplan2_.bcdtin as bcdtin3_11_2_, branchplan2_.bctmin as bctmin4_11_2_, branchplan2_.bcuid as bcuid5_11_2_, branchplan2_.bcdtlu as bcdtlu6_11_2_, branchplan2_.bctmlu as bctmlu7_11_2_, branchplan2_.bcuidm as bcuidm8_11_2_, branchplan2_.bcanum as bcanum9_11_2_, branchplan2_.bcctm as bcctm10_11_2_, branchplan2_.bcitgl as bcitgl11_11_2_, branchplan2_.bcilc as bcilc12_11_2_, branchplan2_.bcxrt as bcxrt13_11_2_, branchplan2_.bcxrt2 as bcxrt14_11_2_, branchplan2_.bclctl as bclctl15_11_2_, branchplan2_.bcpucm as bcpucm16_11_2_, branchplan2_.bcsicm as bcsicm17_11_2_, branchplan2_.bcwctl as bcwctl18_11_2_ from t0021 businessun0_ inner join t0020 company1_ on businessun0_.bncoid=company1_.cncoid left outer join t0022 branchplan2_ on businessun0_.bnbuid=branchplan2_.bcbuid where businessun0_.bnbuid=?
+2018-12-14 17:35:55.111  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@143aa50a testClass = BusinessUnitApiTest, testInstance = ags.goldenlionerp.apiTests.setups.BusinessUnitApiTest@6e1e455d, testMethod = createTestWithPut@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@22aea804 testClass = BusinessUnitApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4f157508 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+2018-12-14 17:35:55.111  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@143aa50a testClass = BusinessUnitApiTest, testInstance = ags.goldenlionerp.apiTests.setups.BusinessUnitApiTest@f1c1592, testMethod = deleteTest@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@22aea804 testClass = BusinessUnitApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4f157508 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:55.111  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:55.111  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:55.111  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+Hibernate: select businessun0_.bnbuid as bnbuid1_10_0_, businessun0_.bncid as bncid2_10_0_, businessun0_.bndtin as bndtin3_10_0_, businessun0_.bntmin as bntmin4_10_0_, businessun0_.bnuid as bnuid5_10_0_, businessun0_.bndtlu as bndtlu6_10_0_, businessun0_.bntmlu as bntmlu7_10_0_, businessun0_.bnuidm as bnuidm8_10_0_, businessun0_.bnbuty as bnbuty9_10_0_, businessun0_.bncoid as bncoid10_10_0_, businessun0_.bndesb1 as bndesb11_10_0_, businessun0_.bnanum as bnanum12_10_0_, businessun0_.bnfmod as bnfmod13_10_0_, businessun0_.bnbuid1 as bnbuid14_10_0_, company1_.cncoid as cncoid1_9_1_, company1_.cncid as cncid2_9_1_, company1_.cndtin as cndtin3_9_1_, company1_.cntmin as cntmin4_9_1_, company1_.cnuid as cnuid5_9_1_, company1_.cndtlu as cndtlu6_9_1_, company1_.cntmlu as cntmlu7_9_1_, company1_.cnuidm as cnuidm8_9_1_, company1_.cnanum as cnanum9_9_1_, company1_.cncrcb as cncrcb10_9_1_, company1_.cncap as cncap11_9_1_, company1_.cncfy as cncfy12_9_1_, company1_.cncip as cncip13_9_1_, company1_.cncpp as cncpp14_9_1_, company1_.cncrp as cncrp15_9_1_, company1_.cndesb1 as cndesb16_9_1_, company1_.cnfdp as cnfdp17_9_1_, branchplan2_.bcbuid as bcbuid1_11_2_, branchplan2_.bccid as bccid2_11_2_, branchplan2_.bcdtin as bcdtin3_11_2_, branchplan2_.bctmin as bctmin4_11_2_, branchplan2_.bcuid as bcuid5_11_2_, branchplan2_.bcdtlu as bcdtlu6_11_2_, branchplan2_.bctmlu as bctmlu7_11_2_, branchplan2_.bcuidm as bcuidm8_11_2_, branchplan2_.bcanum as bcanum9_11_2_, branchplan2_.bcctm as bcctm10_11_2_, branchplan2_.bcitgl as bcitgl11_11_2_, branchplan2_.bcilc as bcilc12_11_2_, branchplan2_.bcxrt as bcxrt13_11_2_, branchplan2_.bcxrt2 as bcxrt14_11_2_, branchplan2_.bclctl as bclctl15_11_2_, branchplan2_.bcpucm as bcpucm16_11_2_, branchplan2_.bcsicm as bcsicm17_11_2_, branchplan2_.bcwctl as bcwctl18_11_2_ from t0021 businessun0_ inner join t0020 company1_ on businessun0_.bncoid=company1_.cncoid left outer join t0022 branchplan2_ on businessun0_.bnbuid=branchplan2_.bcbuid where businessun0_.bnbuid=?
+2018-12-14 17:35:55.127  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@143aa50a testClass = BusinessUnitApiTest, testInstance = ags.goldenlionerp.apiTests.setups.BusinessUnitApiTest@f1c1592, testMethod = deleteTest@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@22aea804 testClass = BusinessUnitApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4f157508 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+2018-12-14 17:35:55.127  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@143aa50a testClass = BusinessUnitApiTest, testInstance = ags.goldenlionerp.apiTests.setups.BusinessUnitApiTest@3e394ee5, testMethod = createTestWithPost@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@22aea804 testClass = BusinessUnitApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4f157508 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:55.127  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:55.127  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:55.143  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 16 ms
+Hibernate: select businessun0_.bnbuid as bnbuid1_10_0_, businessun0_.bncid as bncid2_10_0_, businessun0_.bndtin as bndtin3_10_0_, businessun0_.bntmin as bntmin4_10_0_, businessun0_.bnuid as bnuid5_10_0_, businessun0_.bndtlu as bndtlu6_10_0_, businessun0_.bntmlu as bntmlu7_10_0_, businessun0_.bnuidm as bnuidm8_10_0_, businessun0_.bnbuty as bnbuty9_10_0_, businessun0_.bncoid as bncoid10_10_0_, businessun0_.bndesb1 as bndesb11_10_0_, businessun0_.bnanum as bnanum12_10_0_, businessun0_.bnfmod as bnfmod13_10_0_, businessun0_.bnbuid1 as bnbuid14_10_0_, company1_.cncoid as cncoid1_9_1_, company1_.cncid as cncid2_9_1_, company1_.cndtin as cndtin3_9_1_, company1_.cntmin as cntmin4_9_1_, company1_.cnuid as cnuid5_9_1_, company1_.cndtlu as cndtlu6_9_1_, company1_.cntmlu as cntmlu7_9_1_, company1_.cnuidm as cnuidm8_9_1_, company1_.cnanum as cnanum9_9_1_, company1_.cncrcb as cncrcb10_9_1_, company1_.cncap as cncap11_9_1_, company1_.cncfy as cncfy12_9_1_, company1_.cncip as cncip13_9_1_, company1_.cncpp as cncpp14_9_1_, company1_.cncrp as cncrp15_9_1_, company1_.cndesb1 as cndesb16_9_1_, company1_.cnfdp as cnfdp17_9_1_, branchplan2_.bcbuid as bcbuid1_11_2_, branchplan2_.bccid as bccid2_11_2_, branchplan2_.bcdtin as bcdtin3_11_2_, branchplan2_.bctmin as bctmin4_11_2_, branchplan2_.bcuid as bcuid5_11_2_, branchplan2_.bcdtlu as bcdtlu6_11_2_, branchplan2_.bctmlu as bctmlu7_11_2_, branchplan2_.bcuidm as bcuidm8_11_2_, branchplan2_.bcanum as bcanum9_11_2_, branchplan2_.bcctm as bcctm10_11_2_, branchplan2_.bcitgl as bcitgl11_11_2_, branchplan2_.bcilc as bcilc12_11_2_, branchplan2_.bcxrt as bcxrt13_11_2_, branchplan2_.bcxrt2 as bcxrt14_11_2_, branchplan2_.bclctl as bclctl15_11_2_, branchplan2_.bcpucm as bcpucm16_11_2_, branchplan2_.bcsicm as bcsicm17_11_2_, branchplan2_.bcwctl as bcwctl18_11_2_ from t0021 businessun0_ inner join t0020 company1_ on businessun0_.bncoid=company1_.cncoid left outer join t0022 branchplan2_ on businessun0_.bnbuid=branchplan2_.bcbuid where businessun0_.bnbuid=?
+Hibernate: select count(*) as col_0_0_ from t0021 businessun0_ where businessun0_.bnbuid=?
+Hibernate: select businessun0_.bnbuid as bnbuid1_10_0_, businessun0_.bncid as bncid2_10_0_, businessun0_.bndtin as bndtin3_10_0_, businessun0_.bntmin as bntmin4_10_0_, businessun0_.bnuid as bnuid5_10_0_, businessun0_.bndtlu as bndtlu6_10_0_, businessun0_.bntmlu as bntmlu7_10_0_, businessun0_.bnuidm as bnuidm8_10_0_, businessun0_.bnbuty as bnbuty9_10_0_, businessun0_.bncoid as bncoid10_10_0_, businessun0_.bndesb1 as bndesb11_10_0_, businessun0_.bnanum as bnanum12_10_0_, businessun0_.bnfmod as bnfmod13_10_0_, businessun0_.bnbuid1 as bnbuid14_10_0_ from t0021 businessun0_ where businessun0_.bnbuid=?
+Hibernate: insert into t0021 (bncid, bndtin, bntmin, bnuid, bndtlu, bntmlu, bnuidm, bnbuty, bncoid, bndesb1, bnanum, bnfmod, bnbuid1, bnbuid) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: select businessun0_.bnbuid as bnbuid1_10_0_, businessun0_.bncid as bncid2_10_0_, businessun0_.bndtin as bndtin3_10_0_, businessun0_.bntmin as bntmin4_10_0_, businessun0_.bnuid as bnuid5_10_0_, businessun0_.bndtlu as bndtlu6_10_0_, businessun0_.bntmlu as bntmlu7_10_0_, businessun0_.bnuidm as bnuidm8_10_0_, businessun0_.bnbuty as bnbuty9_10_0_, businessun0_.bncoid as bncoid10_10_0_, businessun0_.bndesb1 as bndesb11_10_0_, businessun0_.bnanum as bnanum12_10_0_, businessun0_.bnfmod as bnfmod13_10_0_, businessun0_.bnbuid1 as bnbuid14_10_0_, company1_.cncoid as cncoid1_9_1_, company1_.cncid as cncid2_9_1_, company1_.cndtin as cndtin3_9_1_, company1_.cntmin as cntmin4_9_1_, company1_.cnuid as cnuid5_9_1_, company1_.cndtlu as cndtlu6_9_1_, company1_.cntmlu as cntmlu7_9_1_, company1_.cnuidm as cnuidm8_9_1_, company1_.cnanum as cnanum9_9_1_, company1_.cncrcb as cncrcb10_9_1_, company1_.cncap as cncap11_9_1_, company1_.cncfy as cncfy12_9_1_, company1_.cncip as cncip13_9_1_, company1_.cncpp as cncpp14_9_1_, company1_.cncrp as cncrp15_9_1_, company1_.cndesb1 as cndesb16_9_1_, company1_.cnfdp as cnfdp17_9_1_, branchplan2_.bcbuid as bcbuid1_11_2_, branchplan2_.bccid as bccid2_11_2_, branchplan2_.bcdtin as bcdtin3_11_2_, branchplan2_.bctmin as bctmin4_11_2_, branchplan2_.bcuid as bcuid5_11_2_, branchplan2_.bcdtlu as bcdtlu6_11_2_, branchplan2_.bctmlu as bctmlu7_11_2_, branchplan2_.bcuidm as bcuidm8_11_2_, branchplan2_.bcanum as bcanum9_11_2_, branchplan2_.bcctm as bcctm10_11_2_, branchplan2_.bcitgl as bcitgl11_11_2_, branchplan2_.bcilc as bcilc12_11_2_, branchplan2_.bcxrt as bcxrt13_11_2_, branchplan2_.bcxrt2 as bcxrt14_11_2_, branchplan2_.bclctl as bclctl15_11_2_, branchplan2_.bcpucm as bcpucm16_11_2_, branchplan2_.bcsicm as bcsicm17_11_2_, branchplan2_.bcwctl as bcwctl18_11_2_ from t0021 businessun0_ inner join t0020 company1_ on businessun0_.bncoid=company1_.cncoid left outer join t0022 branchplan2_ on businessun0_.bnbuid=branchplan2_.bcbuid where businessun0_.bnbuid=?
+Hibernate: select businessun0_.bnbuid as bnbuid1_10_0_, businessun0_.bncid as bncid2_10_0_, businessun0_.bndtin as bndtin3_10_0_, businessun0_.bntmin as bntmin4_10_0_, businessun0_.bnuid as bnuid5_10_0_, businessun0_.bndtlu as bndtlu6_10_0_, businessun0_.bntmlu as bntmlu7_10_0_, businessun0_.bnuidm as bnuidm8_10_0_, businessun0_.bnbuty as bnbuty9_10_0_, businessun0_.bncoid as bncoid10_10_0_, businessun0_.bndesb1 as bndesb11_10_0_, businessun0_.bnanum as bnanum12_10_0_, businessun0_.bnfmod as bnfmod13_10_0_, businessun0_.bnbuid1 as bnbuid14_10_0_, company1_.cncoid as cncoid1_9_1_, company1_.cncid as cncid2_9_1_, company1_.cndtin as cndtin3_9_1_, company1_.cntmin as cntmin4_9_1_, company1_.cnuid as cnuid5_9_1_, company1_.cndtlu as cndtlu6_9_1_, company1_.cntmlu as cntmlu7_9_1_, company1_.cnuidm as cnuidm8_9_1_, company1_.cnanum as cnanum9_9_1_, company1_.cncrcb as cncrcb10_9_1_, company1_.cncap as cncap11_9_1_, company1_.cncfy as cncfy12_9_1_, company1_.cncip as cncip13_9_1_, company1_.cncpp as cncpp14_9_1_, company1_.cncrp as cncrp15_9_1_, company1_.cndesb1 as cndesb16_9_1_, company1_.cnfdp as cnfdp17_9_1_, branchplan2_.bcbuid as bcbuid1_11_2_, branchplan2_.bccid as bccid2_11_2_, branchplan2_.bcdtin as bcdtin3_11_2_, branchplan2_.bctmin as bctmin4_11_2_, branchplan2_.bcuid as bcuid5_11_2_, branchplan2_.bcdtlu as bcdtlu6_11_2_, branchplan2_.bctmlu as bctmlu7_11_2_, branchplan2_.bcuidm as bcuidm8_11_2_, branchplan2_.bcanum as bcanum9_11_2_, branchplan2_.bcctm as bcctm10_11_2_, branchplan2_.bcitgl as bcitgl11_11_2_, branchplan2_.bcilc as bcilc12_11_2_, branchplan2_.bcxrt as bcxrt13_11_2_, branchplan2_.bcxrt2 as bcxrt14_11_2_, branchplan2_.bclctl as bclctl15_11_2_, branchplan2_.bcpucm as bcpucm16_11_2_, branchplan2_.bcsicm as bcsicm17_11_2_, branchplan2_.bcwctl as bcwctl18_11_2_ from t0021 businessun0_ inner join t0020 company1_ on businessun0_.bncoid=company1_.cncoid left outer join t0022 branchplan2_ on businessun0_.bnbuid=branchplan2_.bcbuid where businessun0_.bnbuid=?
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/businessUnits/125
+       Parameters = {}
+          Headers = {Accept=[application/json]}
+             Body = &lt;no character encoding set&gt;
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@19224313, SPRING_SECURITY_CONTEXT=org.springframework.security.core.context.SecurityContextImpl@475fcd89: Authentication: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@475fcd89: Principal: org.springframework.security.core.userdetails.User@f02988d6: Username: username; Password: [PROTECTED]; Enabled: true; AccountNonExpired: true; credentialsNonExpired: true; AccountNonLocked: true; Not granted any authorities; Credentials: [PROTECTED]; Authenticated: true; Details: null; Not granted any authorities}
+
+Handler:
+             Type = org.springframework.data.rest.webmvc.RepositoryEntityController
+           Method = public org.springframework.http.ResponseEntity&lt;org.springframework.hateoas.Resource&lt;?&gt;&gt; org.springframework.data.rest.webmvc.RepositoryEntityController.getItemResource(org.springframework.data.rest.webmvc.RootResourceInformation,java.io.Serializable,org.springframework.data.rest.webmvc.PersistentEntityResourceAssembler,org.springframework.http.HttpHeaders) throws org.springframework.web.HttpRequestMethodNotSupportedException
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Type=[application/json;charset=UTF-8], X-Content-Type-Options=[nosniff], X-XSS-Protection=[1; mode=block], Cache-Control=[no-cache, no-store, max-age=0, must-revalidate], Pragma=[no-cache], Expires=[0], X-Frame-Options=[DENY]}
+     Content type = application/json;charset=UTF-8
+             Body = {
+  &quot;inputUserId&quot; : &quot;username&quot;,
+  &quot;lastUpdateUserId&quot; : &quot;username&quot;,
+  &quot;computerId&quot; : &quot;username&quot;,
+  &quot;businessUnitId&quot; : &quot;125&quot;,
+  &quot;description&quot; : &quot;TESTTEST&quot;,
+  &quot;businessUnitType&quot; : &quot;BS&quot;,
+  &quot;idNumber&quot; : &quot;&quot;,
+  &quot;companyId&quot; : &quot;00000&quot;,
+  &quot;relatedBusinessUnitId&quot; : &quot;110&quot;,
+  &quot;modelOrConsolidated&quot; : &quot;&quot;,
+  &quot;companyPreview&quot; : {
+    &quot;companyId&quot; : &quot;00000&quot;,
+    &quot;description&quot; : &quot;AMTEK GROUP&quot;
+  },
+  &quot;lastUpdateDateTime&quot; : &quot;2018-12-14T17:35:55&quot;,
+  &quot;inputDateTime&quot; : &quot;2018-12-14T17:35:55&quot;,
+  &quot;relatedPreview&quot; : {
+    &quot;businessUnitId&quot; : &quot;110&quot;,
+    &quot;description&quot; : &quot;AMTEK SOKA&quot;
+  },
+  &quot;_links&quot; : {
+    &quot;self&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/businessUnits/125&quot;
+    },
+    &quot;businessUnit&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/businessUnits/125&quot;
+    },
+    &quot;related&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/businessUnits/125/related&quot;
+    },
+    &quot;itemBranchInfos&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/businessUnits/125/itemBranchInfos&quot;
+    },
+    &quot;locations&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/businessUnits/125/locations&quot;
+    },
+    &quot;company&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/businessUnits/125/company&quot;
+    },
+    &quot;configuration&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/businessUnits/125/configuration&quot;
+    }
+  }
+}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2018-12-14 17:35:55.158  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@143aa50a testClass = BusinessUnitApiTest, testInstance = ags.goldenlionerp.apiTests.setups.BusinessUnitApiTest@3e394ee5, testMethod = createTestWithPost@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@22aea804 testClass = BusinessUnitApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4f157508 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 4.2.1</a> at 14 Dec, 2018 5:36:06 PM</p>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ags.goldenlionerp.apiTests.setups.DiscountApiTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2018-12-14T10:35:55" hostname="LAPTOP-FHFRCCL6" time="0.429">
+  <properties/>
+  <testcase name="updateTestWithPut" classname="ags.goldenlionerp.apiTests.setups.DiscountApiTest" time="0.274"/>
+  <testcase name="getTestSingle" classname="ags.goldenlionerp.apiTests.setups.DiscountApiTest" time="0.02"/>
+  <testcase name="updateTestWithPatch" classname="ags.goldenlionerp.apiTests.setups.DiscountApiTest" time="0.05"/>
+  <testcase name="getTestCollection" classname="ags.goldenlionerp.apiTests.setups.DiscountApiTest" time="0.02"/>
+  <testcase name="createTestWithPut" classname="ags.goldenlionerp.apiTests.setups.DiscountApiTest" time="0.012"/>
+  <testcase name="deleteTest" classname="ags.goldenlionerp.apiTests.setups.DiscountApiTest" time="0.019"/>
+  <testcase name="createTestWithPost" classname="ags.goldenlionerp.apiTests.setups.DiscountApiTest" time="0.031"/>
+  <system-out><![CDATA[2018-12-14 17:35:55.488  INFO 9212 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [ags.goldenlionerp.apiTests.setups.DiscountApiTest], using SpringBootContextLoader
+2018-12-14 17:35:55.488  INFO 9212 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [ags.goldenlionerp.apiTests.setups.DiscountApiTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2018-12-14 17:35:55.488  INFO 9212 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [ags.goldenlionerp.apiTests.setups.DiscountApiTest]: DiscountApiTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2018-12-14 17:35:55.488  INFO 9212 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration ags.goldenlionerp.GoldenLionErpApplication for test class ags.goldenlionerp.apiTests.setups.DiscountApiTest
+2018-12-14 17:35:55.488  INFO 9212 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-12-14 17:35:55.488  INFO 9212 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@406472e0, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@4c9f30e1, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@31bdc136, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@56e192c2, org.springframework.test.context.support.DirtiesContextTestExecutionListener@35f1198c, org.springframework.test.context.transaction.TransactionalTestExecutionListener@dc2feb, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@5f37fab7, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@51a1411, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@381a4047, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@59d883d8, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@395a3816, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@6cb509b0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@6c77419, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@1b1ce15a]
+2018-12-14 17:35:55.504  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@728d5935 testClass = DiscountApiTest, testInstance = ags.goldenlionerp.apiTests.setups.DiscountApiTest@5183fd10, testMethod = updateTestWithPut@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@195658ae testClass = DiscountApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@7cf559c6 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:55.504  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:55.504  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:55.519  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 15 ms
+Hibernate: select discountma0_.dudccd as dudccd1_13_0_, discountma0_.ducid as ducid2_13_0_, discountma0_.dudtin as dudtin3_13_0_, discountma0_.dutmin as dutmin4_13_0_, discountma0_.duuid as duuid5_13_0_, discountma0_.dudtlu as dudtlu6_13_0_, discountma0_.dutmlu as dutmlu7_13_0_, discountma0_.duuidm as duuidm8_13_0_, discountma0_.dudesb1 as dudesb9_13_0_, discountma0_.duamt01 as duamt10_13_0_, discountma0_.duamt02 as duamt11_13_0_, discountma0_.duamt03 as duamt12_13_0_, discountma0_.duamt04 as duamt13_13_0_, discountma0_.duamt05 as duamt14_13_0_, discountma0_.dupcn01 as dupcn15_13_0_, discountma0_.dupcn02 as dupcn16_13_0_, discountma0_.dupcn03 as dupcn17_13_0_, discountma0_.dupcn04 as dupcn18_13_0_, discountma0_.dupcn05 as dupcn19_13_0_, discountma0_.duobid as duobid20_13_0_ from t0026 discountma0_ where discountma0_.dudccd=?
+2018-12-14 17:35:55.785  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@728d5935 testClass = DiscountApiTest, testInstance = ags.goldenlionerp.apiTests.setups.DiscountApiTest@5183fd10, testMethod = updateTestWithPut@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@195658ae testClass = DiscountApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@7cf559c6 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]
+2018-12-14 17:35:55.785  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@728d5935 testClass = DiscountApiTest, testInstance = ags.goldenlionerp.apiTests.setups.DiscountApiTest@1e38c242, testMethod = getTestSingle@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@195658ae testClass = DiscountApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@7cf559c6 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:55.785  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:55.785  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:55.785  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+Hibernate: select discountma0_.dudccd as dudccd1_13_0_, discountma0_.ducid as ducid2_13_0_, discountma0_.dudtin as dudtin3_13_0_, discountma0_.dutmin as dutmin4_13_0_, discountma0_.duuid as duuid5_13_0_, discountma0_.dudtlu as dudtlu6_13_0_, discountma0_.dutmlu as dutmlu7_13_0_, discountma0_.duuidm as duuidm8_13_0_, discountma0_.dudesb1 as dudesb9_13_0_, discountma0_.duamt01 as duamt10_13_0_, discountma0_.duamt02 as duamt11_13_0_, discountma0_.duamt03 as duamt12_13_0_, discountma0_.duamt04 as duamt13_13_0_, discountma0_.duamt05 as duamt14_13_0_, discountma0_.dupcn01 as dupcn15_13_0_, discountma0_.dupcn02 as dupcn16_13_0_, discountma0_.dupcn03 as dupcn17_13_0_, discountma0_.dupcn04 as dupcn18_13_0_, discountma0_.dupcn05 as dupcn19_13_0_, discountma0_.duobid as duobid20_13_0_ from t0026 discountma0_ where discountma0_.dudccd=?
+2018-12-14 17:35:55.800  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@728d5935 testClass = DiscountApiTest, testInstance = ags.goldenlionerp.apiTests.setups.DiscountApiTest@1e38c242, testMethod = getTestSingle@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@195658ae testClass = DiscountApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@7cf559c6 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]
+2018-12-14 17:35:55.800  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@728d5935 testClass = DiscountApiTest, testInstance = ags.goldenlionerp.apiTests.setups.DiscountApiTest@ff2051a, testMethod = updateTestWithPatch@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@195658ae testClass = DiscountApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@7cf559c6 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:55.800  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:55.800  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:55.816  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 16 ms
+Hibernate: select discountma0_.dudccd as dudccd1_13_0_, discountma0_.ducid as ducid2_13_0_, discountma0_.dudtin as dudtin3_13_0_, discountma0_.dutmin as dutmin4_13_0_, discountma0_.duuid as duuid5_13_0_, discountma0_.dudtlu as dudtlu6_13_0_, discountma0_.dutmlu as dutmlu7_13_0_, discountma0_.duuidm as duuidm8_13_0_, discountma0_.dudesb1 as dudesb9_13_0_, discountma0_.duamt01 as duamt10_13_0_, discountma0_.duamt02 as duamt11_13_0_, discountma0_.duamt03 as duamt12_13_0_, discountma0_.duamt04 as duamt13_13_0_, discountma0_.duamt05 as duamt14_13_0_, discountma0_.dupcn01 as dupcn15_13_0_, discountma0_.dupcn02 as dupcn16_13_0_, discountma0_.dupcn03 as dupcn17_13_0_, discountma0_.dupcn04 as dupcn18_13_0_, discountma0_.dupcn05 as dupcn19_13_0_, discountma0_.duobid as duobid20_13_0_ from t0026 discountma0_ where discountma0_.dudccd=?
+Hibernate: update t0026 set ducid=?, dudtlu=?, dutmlu=?, duuidm=?, dudesb1=?, duamt01=?, duamt02=?, duamt03=?, duamt04=?, duamt05=?, dupcn01=?, dupcn02=?, dupcn03=?, dupcn04=?, dupcn05=?, duobid=? where dudccd=?
+Hibernate: select discountma0_.dudccd as dudccd1_13_0_, discountma0_.ducid as ducid2_13_0_, discountma0_.dudtin as dudtin3_13_0_, discountma0_.dutmin as dutmin4_13_0_, discountma0_.duuid as duuid5_13_0_, discountma0_.dudtlu as dudtlu6_13_0_, discountma0_.dutmlu as dutmlu7_13_0_, discountma0_.duuidm as duuidm8_13_0_, discountma0_.dudesb1 as dudesb9_13_0_, discountma0_.duamt01 as duamt10_13_0_, discountma0_.duamt02 as duamt11_13_0_, discountma0_.duamt03 as duamt12_13_0_, discountma0_.duamt04 as duamt13_13_0_, discountma0_.duamt05 as duamt14_13_0_, discountma0_.dupcn01 as dupcn15_13_0_, discountma0_.dupcn02 as dupcn16_13_0_, discountma0_.dupcn03 as dupcn17_13_0_, discountma0_.dupcn04 as dupcn18_13_0_, discountma0_.dupcn05 as dupcn19_13_0_, discountma0_.duobid as duobid20_13_0_ from t0026 discountma0_ where discountma0_.dudccd=?
+2018-12-14 17:35:55.847  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@728d5935 testClass = DiscountApiTest, testInstance = ags.goldenlionerp.apiTests.setups.DiscountApiTest@ff2051a, testMethod = updateTestWithPatch@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@195658ae testClass = DiscountApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@7cf559c6 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]
+2018-12-14 17:35:55.847  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@728d5935 testClass = DiscountApiTest, testInstance = ags.goldenlionerp.apiTests.setups.DiscountApiTest@2ef89779, testMethod = getTestCollection@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@195658ae testClass = DiscountApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@7cf559c6 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:55.847  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:55.847  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:55.863  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 16 ms
+Hibernate: select discountma0_.dudccd as dudccd1_13_, discountma0_.ducid as ducid2_13_, discountma0_.dudtin as dudtin3_13_, discountma0_.dutmin as dutmin4_13_, discountma0_.duuid as duuid5_13_, discountma0_.dudtlu as dudtlu6_13_, discountma0_.dutmlu as dutmlu7_13_, discountma0_.duuidm as duuidm8_13_, discountma0_.dudesb1 as dudesb9_13_, discountma0_.duamt01 as duamt10_13_, discountma0_.duamt02 as duamt11_13_, discountma0_.duamt03 as duamt12_13_, discountma0_.duamt04 as duamt13_13_, discountma0_.duamt05 as duamt14_13_, discountma0_.dupcn01 as dupcn15_13_, discountma0_.dupcn02 as dupcn16_13_, discountma0_.dupcn03 as dupcn17_13_, discountma0_.dupcn04 as dupcn18_13_, discountma0_.dupcn05 as dupcn19_13_, discountma0_.duobid as duobid20_13_ from t0026 discountma0_
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/discounts/
+       Parameters = {}
+          Headers = {Accept=[application/json]}
+             Body = <no character encoding set>
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@44c11fba, SPRING_SECURITY_CONTEXT=org.springframework.security.core.context.SecurityContextImpl@475fcd89: Authentication: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@475fcd89: Principal: org.springframework.security.core.userdetails.User@f02988d6: Username: username; Password: [PROTECTED]; Enabled: true; AccountNonExpired: true; credentialsNonExpired: true; AccountNonLocked: true; Not granted any authorities; Credentials: [PROTECTED]; Authenticated: true; Details: null; Not granted any authorities}
+
+Handler:
+             Type = org.springframework.data.rest.webmvc.RepositoryEntityController
+           Method = public org.springframework.hateoas.Resources<?> org.springframework.data.rest.webmvc.RepositoryEntityController.getCollectionResource(org.springframework.data.rest.webmvc.RootResourceInformation,org.springframework.data.rest.webmvc.support.DefaultedPageable,org.springframework.data.domain.Sort,org.springframework.data.rest.webmvc.PersistentEntityResourceAssembler) throws org.springframework.data.rest.webmvc.ResourceNotFoundException,org.springframework.web.HttpRequestMethodNotSupportedException
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Type=[application/json;charset=UTF-8], X-Content-Type-Options=[nosniff], X-XSS-Protection=[1; mode=block], Cache-Control=[no-cache, no-store, max-age=0, must-revalidate], Pragma=[no-cache], Expires=[0], X-Frame-Options=[DENY]}
+     Content type = application/json;charset=UTF-8
+             Body = {
+  "_embedded" : {
+    "discounts" : [ {
+      "inputUserId" : "DEBBY",
+      "lastUpdateUserId" : "DEBBY",
+      "computerId" : "DESKTOP-09OGK1M",
+      "discountCode" : "D00",
+      "description" : "Discount 10%",
+      "discountPercentage1" : 10.000000000000000,
+      "discountPercentage2" : 0E-15,
+      "discountPercentage3" : 0E-15,
+      "discountPercentage4" : 0E-15,
+      "discountPercentage5" : 0E-15,
+      "discountAmount1" : 0.00000,
+      "discountAmount2" : 0.00000,
+      "discountAmount3" : 0.00000,
+      "discountAmount4" : 0.00000,
+      "discountAmount5" : 0.00000,
+      "objectId" : "F0026",
+      "discountAmounts" : [ 0.00000, 0.00000, 0.00000, 0.00000, 0.00000 ],
+      "discountPercentages" : [ 10.000000000000000, 0E-15, 0E-15, 0E-15, 0E-15 ],
+      "lastUpdateDateTime" : "2018-02-24T10:57:03",
+      "inputDateTime" : "2018-02-24T10:57:03",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/discounts/D00"
+        },
+        "discountMaster" : {
+          "href" : "http://localhost/api/discounts/D00"
+        },
+        "calculate" : {
+          "href" : "http://localhost/api/discounts/D00/calculate"
+        }
+      }
+    }, {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "QSA",
+      "computerId" : "LAPTOP-FHFRCCL6",
+      "discountCode" : "D01",
+      "description" : "10% + 5%",
+      "discountPercentage1" : 10.000000000000000,
+      "discountPercentage2" : 5.000000000000000,
+      "discountPercentage3" : 0E-15,
+      "discountPercentage4" : 0E-15,
+      "discountPercentage5" : 0E-15,
+      "discountAmount1" : 0.00000,
+      "discountAmount2" : 0.00000,
+      "discountAmount3" : 0.00000,
+      "discountAmount4" : 0.00000,
+      "discountAmount5" : 0.00000,
+      "objectId" : "F0026",
+      "discountAmounts" : [ 0.00000, 0.00000, 0.00000, 0.00000, 0.00000 ],
+      "discountPercentages" : [ 10.000000000000000, 5.000000000000000, 0E-15, 0E-15, 0E-15 ],
+      "lastUpdateDateTime" : "2018-08-30T17:24:34",
+      "inputDateTime" : "2018-08-30T17:24:34",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/discounts/D01"
+        },
+        "discountMaster" : {
+          "href" : "http://localhost/api/discounts/D01"
+        },
+        "calculate" : {
+          "href" : "http://localhost/api/discounts/D01/calculate"
+        }
+      }
+    }, {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "QSA",
+      "computerId" : "LAPTOP-FHFRCCL6",
+      "discountCode" : "D02",
+      "description" : "5000 + 10% + 5%",
+      "discountPercentage1" : 10.000000000000000,
+      "discountPercentage2" : 0E-15,
+      "discountPercentage3" : 0E-15,
+      "discountPercentage4" : 0E-15,
+      "discountPercentage5" : 0E-15,
+      "discountAmount1" : 5000.00000,
+      "discountAmount2" : 0.00000,
+      "discountAmount3" : 0.00000,
+      "discountAmount4" : 0.00000,
+      "discountAmount5" : 0.00000,
+      "objectId" : "F0026",
+      "discountAmounts" : [ 5000.00000, 0.00000, 0.00000, 0.00000, 0.00000 ],
+      "discountPercentages" : [ 10.000000000000000, 0E-15, 0E-15, 0E-15, 0E-15 ],
+      "lastUpdateDateTime" : "2018-08-30T17:30:45",
+      "inputDateTime" : "2018-08-30T17:25:48",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/discounts/D02"
+        },
+        "discountMaster" : {
+          "href" : "http://localhost/api/discounts/D02"
+        },
+        "calculate" : {
+          "href" : "http://localhost/api/discounts/D02/calculate"
+        }
+      }
+    }, {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "QSA",
+      "computerId" : "LAPTOP-FHFRCCL6",
+      "discountCode" : "R1000",
+      "description" : "Discount Rupiah",
+      "discountPercentage1" : 0E-15,
+      "discountPercentage2" : 0E-15,
+      "discountPercentage3" : 0E-15,
+      "discountPercentage4" : 0E-15,
+      "discountPercentage5" : 0E-15,
+      "discountAmount1" : 1000.00000,
+      "discountAmount2" : 0.00000,
+      "discountAmount3" : 0.00000,
+      "discountAmount4" : 0.00000,
+      "discountAmount5" : 0.00000,
+      "objectId" : "F0026",
+      "discountAmounts" : [ 1000.00000, 0.00000, 0.00000, 0.00000, 0.00000 ],
+      "discountPercentages" : [ 0E-15, 0E-15, 0E-15, 0E-15, 0E-15 ],
+      "lastUpdateDateTime" : "2018-08-30T17:22:13",
+      "inputDateTime" : "2018-08-30T17:22:13",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/discounts/R1000"
+        },
+        "discountMaster" : {
+          "href" : "http://localhost/api/discounts/R1000"
+        },
+        "calculate" : {
+          "href" : "http://localhost/api/discounts/R1000/calculate"
+        }
+      }
+    } ]
+  },
+  "_links" : {
+    "self" : {
+      "href" : "http://localhost/api/discounts/"
+    },
+    "profile" : {
+      "href" : "http://localhost/api/profile/discounts"
+    }
+  }
+}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2018-12-14 17:35:55.879  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@728d5935 testClass = DiscountApiTest, testInstance = ags.goldenlionerp.apiTests.setups.DiscountApiTest@2ef89779, testMethod = getTestCollection@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@195658ae testClass = DiscountApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@7cf559c6 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]
+2018-12-14 17:35:55.879  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@728d5935 testClass = DiscountApiTest, testInstance = ags.goldenlionerp.apiTests.setups.DiscountApiTest@1b03f140, testMethod = createTestWithPut@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@195658ae testClass = DiscountApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@7cf559c6 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:55.879  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:55.879  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:55.879  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+Hibernate: select discountma0_.dudccd as dudccd1_13_0_, discountma0_.ducid as ducid2_13_0_, discountma0_.dudtin as dudtin3_13_0_, discountma0_.dutmin as dutmin4_13_0_, discountma0_.duuid as duuid5_13_0_, discountma0_.dudtlu as dudtlu6_13_0_, discountma0_.dutmlu as dutmlu7_13_0_, discountma0_.duuidm as duuidm8_13_0_, discountma0_.dudesb1 as dudesb9_13_0_, discountma0_.duamt01 as duamt10_13_0_, discountma0_.duamt02 as duamt11_13_0_, discountma0_.duamt03 as duamt12_13_0_, discountma0_.duamt04 as duamt13_13_0_, discountma0_.duamt05 as duamt14_13_0_, discountma0_.dupcn01 as dupcn15_13_0_, discountma0_.dupcn02 as dupcn16_13_0_, discountma0_.dupcn03 as dupcn17_13_0_, discountma0_.dupcn04 as dupcn18_13_0_, discountma0_.dupcn05 as dupcn19_13_0_, discountma0_.duobid as duobid20_13_0_ from t0026 discountma0_ where discountma0_.dudccd=?
+2018-12-14 17:35:55.879  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@728d5935 testClass = DiscountApiTest, testInstance = ags.goldenlionerp.apiTests.setups.DiscountApiTest@1b03f140, testMethod = createTestWithPut@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@195658ae testClass = DiscountApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@7cf559c6 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]
+2018-12-14 17:35:55.894  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@728d5935 testClass = DiscountApiTest, testInstance = ags.goldenlionerp.apiTests.setups.DiscountApiTest@1703db68, testMethod = deleteTest@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@195658ae testClass = DiscountApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@7cf559c6 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:55.894  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:55.894  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:55.894  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+Hibernate: select discountma0_.dudccd as dudccd1_13_0_, discountma0_.ducid as ducid2_13_0_, discountma0_.dudtin as dudtin3_13_0_, discountma0_.dutmin as dutmin4_13_0_, discountma0_.duuid as duuid5_13_0_, discountma0_.dudtlu as dudtlu6_13_0_, discountma0_.dutmlu as dutmlu7_13_0_, discountma0_.duuidm as duuidm8_13_0_, discountma0_.dudesb1 as dudesb9_13_0_, discountma0_.duamt01 as duamt10_13_0_, discountma0_.duamt02 as duamt11_13_0_, discountma0_.duamt03 as duamt12_13_0_, discountma0_.duamt04 as duamt13_13_0_, discountma0_.duamt05 as duamt14_13_0_, discountma0_.dupcn01 as dupcn15_13_0_, discountma0_.dupcn02 as dupcn16_13_0_, discountma0_.dupcn03 as dupcn17_13_0_, discountma0_.dupcn04 as dupcn18_13_0_, discountma0_.dupcn05 as dupcn19_13_0_, discountma0_.duobid as duobid20_13_0_ from t0026 discountma0_ where discountma0_.dudccd=?
+2018-12-14 17:35:55.910  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@728d5935 testClass = DiscountApiTest, testInstance = ags.goldenlionerp.apiTests.setups.DiscountApiTest@1703db68, testMethod = deleteTest@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@195658ae testClass = DiscountApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@7cf559c6 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]
+2018-12-14 17:35:55.910  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@728d5935 testClass = DiscountApiTest, testInstance = ags.goldenlionerp.apiTests.setups.DiscountApiTest@7b78e0db, testMethod = createTestWithPost@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@195658ae testClass = DiscountApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@7cf559c6 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:55.910  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:55.910  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:55.910  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+Hibernate: select discountma0_.dudccd as dudccd1_13_0_, discountma0_.ducid as ducid2_13_0_, discountma0_.dudtin as dudtin3_13_0_, discountma0_.dutmin as dutmin4_13_0_, discountma0_.duuid as duuid5_13_0_, discountma0_.dudtlu as dudtlu6_13_0_, discountma0_.dutmlu as dutmlu7_13_0_, discountma0_.duuidm as duuidm8_13_0_, discountma0_.dudesb1 as dudesb9_13_0_, discountma0_.duamt01 as duamt10_13_0_, discountma0_.duamt02 as duamt11_13_0_, discountma0_.duamt03 as duamt12_13_0_, discountma0_.duamt04 as duamt13_13_0_, discountma0_.duamt05 as duamt14_13_0_, discountma0_.dupcn01 as dupcn15_13_0_, discountma0_.dupcn02 as dupcn16_13_0_, discountma0_.dupcn03 as dupcn17_13_0_, discountma0_.dupcn04 as dupcn18_13_0_, discountma0_.dupcn05 as dupcn19_13_0_, discountma0_.duobid as duobid20_13_0_ from t0026 discountma0_ where discountma0_.dudccd=?
+Hibernate: select discountma0_.dudccd as dudccd1_13_0_, discountma0_.ducid as ducid2_13_0_, discountma0_.dudtin as dudtin3_13_0_, discountma0_.dutmin as dutmin4_13_0_, discountma0_.duuid as duuid5_13_0_, discountma0_.dudtlu as dudtlu6_13_0_, discountma0_.dutmlu as dutmlu7_13_0_, discountma0_.duuidm as duuidm8_13_0_, discountma0_.dudesb1 as dudesb9_13_0_, discountma0_.duamt01 as duamt10_13_0_, discountma0_.duamt02 as duamt11_13_0_, discountma0_.duamt03 as duamt12_13_0_, discountma0_.duamt04 as duamt13_13_0_, discountma0_.duamt05 as duamt14_13_0_, discountma0_.dupcn01 as dupcn15_13_0_, discountma0_.dupcn02 as dupcn16_13_0_, discountma0_.dupcn03 as dupcn17_13_0_, discountma0_.dupcn04 as dupcn18_13_0_, discountma0_.dupcn05 as dupcn19_13_0_, discountma0_.duobid as duobid20_13_0_ from t0026 discountma0_ where discountma0_.dudccd=?
+Hibernate: insert into t0026 (ducid, dudtin, dutmin, duuid, dudtlu, dutmlu, duuidm, dudesb1, duamt01, duamt02, duamt03, duamt04, duamt05, dupcn01, dupcn02, dupcn03, dupcn04, dupcn05, duobid, dudccd) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: select discountma0_.dudccd as dudccd1_13_0_, discountma0_.ducid as ducid2_13_0_, discountma0_.dudtin as dudtin3_13_0_, discountma0_.dutmin as dutmin4_13_0_, discountma0_.duuid as duuid5_13_0_, discountma0_.dudtlu as dudtlu6_13_0_, discountma0_.dutmlu as dutmlu7_13_0_, discountma0_.duuidm as duuidm8_13_0_, discountma0_.dudesb1 as dudesb9_13_0_, discountma0_.duamt01 as duamt10_13_0_, discountma0_.duamt02 as duamt11_13_0_, discountma0_.duamt03 as duamt12_13_0_, discountma0_.duamt04 as duamt13_13_0_, discountma0_.duamt05 as duamt14_13_0_, discountma0_.dupcn01 as dupcn15_13_0_, discountma0_.dupcn02 as dupcn16_13_0_, discountma0_.dupcn03 as dupcn17_13_0_, discountma0_.dupcn04 as dupcn18_13_0_, discountma0_.dupcn05 as dupcn19_13_0_, discountma0_.duobid as duobid20_13_0_ from t0026 discountma0_ where discountma0_.dudccd=?
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/discounts/TEST
+       Parameters = {}
+          Headers = {Accept=[application/json]}
+             Body = <no character encoding set>
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@36bb6089, SPRING_SECURITY_CONTEXT=org.springframework.security.core.context.SecurityContextImpl@475fcd89: Authentication: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@475fcd89: Principal: org.springframework.security.core.userdetails.User@f02988d6: Username: username; Password: [PROTECTED]; Enabled: true; AccountNonExpired: true; credentialsNonExpired: true; AccountNonLocked: true; Not granted any authorities; Credentials: [PROTECTED]; Authenticated: true; Details: null; Not granted any authorities}
+
+Handler:
+             Type = org.springframework.data.rest.webmvc.RepositoryEntityController
+           Method = public org.springframework.http.ResponseEntity<org.springframework.hateoas.Resource<?>> org.springframework.data.rest.webmvc.RepositoryEntityController.getItemResource(org.springframework.data.rest.webmvc.RootResourceInformation,java.io.Serializable,org.springframework.data.rest.webmvc.PersistentEntityResourceAssembler,org.springframework.http.HttpHeaders) throws org.springframework.web.HttpRequestMethodNotSupportedException
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Type=[application/json;charset=UTF-8], X-Content-Type-Options=[nosniff], X-XSS-Protection=[1; mode=block], Cache-Control=[no-cache, no-store, max-age=0, must-revalidate], Pragma=[no-cache], Expires=[0], X-Frame-Options=[DENY]}
+     Content type = application/json;charset=UTF-8
+             Body = {
+  "inputUserId" : "username",
+  "lastUpdateUserId" : "username",
+  "computerId" : "username",
+  "discountCode" : "TEST",
+  "description" : "Test Discount",
+  "discountPercentage1" : 25.000000000000000,
+  "discountPercentage2" : 0E-15,
+  "discountPercentage3" : 12.123000000000000,
+  "discountPercentage4" : 0E-15,
+  "discountPercentage5" : 8.000000000000000,
+  "discountAmount1" : 0.00000,
+  "discountAmount2" : 10000.00000,
+  "discountAmount3" : 0.00000,
+  "discountAmount4" : 5500.25000,
+  "discountAmount5" : 0.00000,
+  "objectId" : "",
+  "discountAmounts" : [ 0.00000, 10000.00000, 0.00000, 5500.25000, 0.00000 ],
+  "discountPercentages" : [ 25.000000000000000, 0E-15, 12.123000000000000, 0E-15, 8.000000000000000 ],
+  "lastUpdateDateTime" : "2018-12-14T17:35:55",
+  "inputDateTime" : "2018-12-14T17:35:55",
+  "_links" : {
+    "self" : {
+      "href" : "http://localhost/api/discounts/TEST"
+    },
+    "discountMaster" : {
+      "href" : "http://localhost/api/discounts/TEST"
+    },
+    "calculate" : {
+      "href" : "http://localhost/api/discounts/TEST/calculate"
+    }
+  }
+}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2018-12-14 17:35:55.941  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@728d5935 testClass = DiscountApiTest, testInstance = ags.goldenlionerp.apiTests.setups.DiscountApiTest@7b78e0db, testMethod = createTestWithPost@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@195658ae testClass = DiscountApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@7cf559c6 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

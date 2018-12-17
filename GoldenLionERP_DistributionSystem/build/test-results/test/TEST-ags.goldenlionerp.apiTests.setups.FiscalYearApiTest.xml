@@ -1,0 +1,1006 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ags.goldenlionerp.apiTests.setups.FiscalYearApiTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2018-12-14T10:35:57" hostname="LAPTOP-FHFRCCL6" time="0.515">
+  <properties/>
+  <testcase name="extendTest" classname="ags.goldenlionerp.apiTests.setups.FiscalYearApiTest" time="0.267"/>
+  <testcase name="updateTestWithPatch" classname="ags.goldenlionerp.apiTests.setups.FiscalYearApiTest" time="0.033"/>
+  <testcase name="updateTestWithPatchException" classname="ags.goldenlionerp.apiTests.setups.FiscalYearApiTest" time="0.027"/>
+  <testcase name="extendTestWithException" classname="ags.goldenlionerp.apiTests.setups.FiscalYearApiTest" time="0.026"/>
+  <testcase name="updateTestWithPut" classname="ags.goldenlionerp.apiTests.setups.FiscalYearApiTest" time="0.023"/>
+  <testcase name="getTestSingle" classname="ags.goldenlionerp.apiTests.setups.FiscalYearApiTest" time="0.022"/>
+  <testcase name="getTestCollection" classname="ags.goldenlionerp.apiTests.setups.FiscalYearApiTest" time="0.039"/>
+  <testcase name="createTestWithPut" classname="ags.goldenlionerp.apiTests.setups.FiscalYearApiTest" time="0.019"/>
+  <testcase name="deleteTest" classname="ags.goldenlionerp.apiTests.setups.FiscalYearApiTest" time="0.026"/>
+  <testcase name="createTestWithPost" classname="ags.goldenlionerp.apiTests.setups.FiscalYearApiTest" time="0.026"/>
+  <system-out><![CDATA[2018-12-14 17:35:57.263  INFO 9212 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [ags.goldenlionerp.apiTests.setups.FiscalYearApiTest], using SpringBootContextLoader
+2018-12-14 17:35:57.263  INFO 9212 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [ags.goldenlionerp.apiTests.setups.FiscalYearApiTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2018-12-14 17:35:57.263  INFO 9212 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [ags.goldenlionerp.apiTests.setups.FiscalYearApiTest]: FiscalYearApiTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2018-12-14 17:35:57.263  INFO 9212 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration ags.goldenlionerp.GoldenLionErpApplication for test class ags.goldenlionerp.apiTests.setups.FiscalYearApiTest
+2018-12-14 17:35:57.263  INFO 9212 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-12-14 17:35:57.279  INFO 9212 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@459f2012, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@639573ab, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@7099425a, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@6cf1cf6b, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5052ed57, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1892c4dd, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@22a3ce07, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@40cbd7af, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@734a2b4, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@98e3aa3, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@35611e63, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@2b89c1cf, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@90af708, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@71298fa8]
+2018-12-14 17:35:57.295  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@3634d2fa testClass = FiscalYearApiTest, testInstance = ags.goldenlionerp.apiTests.setups.FiscalYearApiTest@3e486260, testMethod = extendTest@FiscalYearApiTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@862a37e testClass = FiscalYearApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4f7c8496 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:57.295  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:57.295  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:57.295  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+Hibernate: select fiscalyear0_.fpfdp as fpfdp1_8_0_, fiscalyear0_.fpyr as fpyr2_8_0_, fiscalyear0_.fpcid as fpcid3_8_0_, fiscalyear0_.fpdtin as fpdtin4_8_0_, fiscalyear0_.fptmin as fptmin5_8_0_, fiscalyear0_.fpuid as fpuid6_8_0_, fiscalyear0_.fpdtlu as fpdtlu7_8_0_, fiscalyear0_.fptmlu as fptmlu8_8_0_, fiscalyear0_.fpuidm as fpuidm9_8_0_, fiscalyear0_.fpdate01 as fpdate10_8_0_, fiscalyear0_.fpdate10 as fpdate11_8_0_, fiscalyear0_.fpdate11 as fpdate12_8_0_, fiscalyear0_.fpdate12 as fpdate13_8_0_, fiscalyear0_.fpdate02 as fpdate14_8_0_, fiscalyear0_.fpdate03 as fpdate15_8_0_, fiscalyear0_.fpdate04 as fpdate16_8_0_, fiscalyear0_.fpdate05 as fpdate17_8_0_, fiscalyear0_.fpdate06 as fpdate18_8_0_, fiscalyear0_.fpdate07 as fpdate19_8_0_, fiscalyear0_.fpdate08 as fpdate20_8_0_, fiscalyear0_.fpdate09 as fpdate21_8_0_, fiscalyear0_.fpdate00 as fpdate22_8_0_ from t0018 fiscalyear0_ where fiscalyear0_.fpfdp=? and fiscalyear0_.fpyr=?
+Hibernate: select fiscalyear0_.fpfdp as fpfdp1_8_0_, fiscalyear0_.fpyr as fpyr2_8_0_, fiscalyear0_.fpcid as fpcid3_8_0_, fiscalyear0_.fpdtin as fpdtin4_8_0_, fiscalyear0_.fptmin as fptmin5_8_0_, fiscalyear0_.fpuid as fpuid6_8_0_, fiscalyear0_.fpdtlu as fpdtlu7_8_0_, fiscalyear0_.fptmlu as fptmlu8_8_0_, fiscalyear0_.fpuidm as fpuidm9_8_0_, fiscalyear0_.fpdate01 as fpdate10_8_0_, fiscalyear0_.fpdate10 as fpdate11_8_0_, fiscalyear0_.fpdate11 as fpdate12_8_0_, fiscalyear0_.fpdate12 as fpdate13_8_0_, fiscalyear0_.fpdate02 as fpdate14_8_0_, fiscalyear0_.fpdate03 as fpdate15_8_0_, fiscalyear0_.fpdate04 as fpdate16_8_0_, fiscalyear0_.fpdate05 as fpdate17_8_0_, fiscalyear0_.fpdate06 as fpdate18_8_0_, fiscalyear0_.fpdate07 as fpdate19_8_0_, fiscalyear0_.fpdate08 as fpdate20_8_0_, fiscalyear0_.fpdate09 as fpdate21_8_0_, fiscalyear0_.fpdate00 as fpdate22_8_0_ from t0018 fiscalyear0_ where fiscalyear0_.fpfdp=? and fiscalyear0_.fpyr=?
+Hibernate: insert into t0018 (fpcid, fpdtin, fptmin, fpuid, fpdtlu, fptmlu, fpuidm, fpdate01, fpdate10, fpdate11, fpdate12, fpdate02, fpdate03, fpdate04, fpdate05, fpdate06, fpdate07, fpdate08, fpdate09, fpdate00, fpfdp, fpyr) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: select fiscalyear0_.fpfdp as fpfdp1_8_0_, fiscalyear0_.fpyr as fpyr2_8_0_, fiscalyear0_.fpcid as fpcid3_8_0_, fiscalyear0_.fpdtin as fpdtin4_8_0_, fiscalyear0_.fptmin as fptmin5_8_0_, fiscalyear0_.fpuid as fpuid6_8_0_, fiscalyear0_.fpdtlu as fpdtlu7_8_0_, fiscalyear0_.fptmlu as fptmlu8_8_0_, fiscalyear0_.fpuidm as fpuidm9_8_0_, fiscalyear0_.fpdate01 as fpdate10_8_0_, fiscalyear0_.fpdate10 as fpdate11_8_0_, fiscalyear0_.fpdate11 as fpdate12_8_0_, fiscalyear0_.fpdate12 as fpdate13_8_0_, fiscalyear0_.fpdate02 as fpdate14_8_0_, fiscalyear0_.fpdate03 as fpdate15_8_0_, fiscalyear0_.fpdate04 as fpdate16_8_0_, fiscalyear0_.fpdate05 as fpdate17_8_0_, fiscalyear0_.fpdate06 as fpdate18_8_0_, fiscalyear0_.fpdate07 as fpdate19_8_0_, fiscalyear0_.fpdate08 as fpdate20_8_0_, fiscalyear0_.fpdate09 as fpdate21_8_0_, fiscalyear0_.fpdate00 as fpdate22_8_0_ from t0018 fiscalyear0_ where fiscalyear0_.fpfdp=? and fiscalyear0_.fpyr=?
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/fiscalYears/F_2024
+       Parameters = {}
+          Headers = {Accept=[application/json]}
+             Body = <no character encoding set>
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@61d593f3, SPRING_SECURITY_CONTEXT=org.springframework.security.core.context.SecurityContextImpl@475fcd89: Authentication: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@475fcd89: Principal: org.springframework.security.core.userdetails.User@f02988d6: Username: username; Password: [PROTECTED]; Enabled: true; AccountNonExpired: true; credentialsNonExpired: true; AccountNonLocked: true; Not granted any authorities; Credentials: [PROTECTED]; Authenticated: true; Details: null; Not granted any authorities}
+
+Handler:
+             Type = org.springframework.data.rest.webmvc.RepositoryEntityController
+           Method = public org.springframework.http.ResponseEntity<org.springframework.hateoas.Resource<?>> org.springframework.data.rest.webmvc.RepositoryEntityController.getItemResource(org.springframework.data.rest.webmvc.RootResourceInformation,java.io.Serializable,org.springframework.data.rest.webmvc.PersistentEntityResourceAssembler,org.springframework.http.HttpHeaders) throws org.springframework.web.HttpRequestMethodNotSupportedException
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Type=[application/json;charset=UTF-8], X-Content-Type-Options=[nosniff], X-XSS-Protection=[1; mode=block], Cache-Control=[no-cache, no-store, max-age=0, must-revalidate], Pragma=[no-cache], Expires=[0], X-Frame-Options=[DENY]}
+     Content type = application/json;charset=UTF-8
+             Body = {
+  "inputUserId" : "username",
+  "lastUpdateUserId" : "username",
+  "computerId" : "username",
+  "fiscalDatePattern" : "F",
+  "fiscalYear" : 2024,
+  "startDate" : "2024-06-15",
+  "endDateOfPeriod1" : "2024-06-30",
+  "endDateOfPeriod2" : "2024-07-31",
+  "endDateOfPeriod3" : "2024-08-31",
+  "endDateOfPeriod4" : "2024-09-30",
+  "endDateOfPeriod5" : "2024-11-23",
+  "endDateOfPeriod6" : "2024-11-30",
+  "endDateOfPeriod7" : "2024-12-31",
+  "endDateOfPeriod8" : "2025-01-31",
+  "endDateOfPeriod9" : "2025-04-12",
+  "endDateOfPeriod10" : "2025-06-12",
+  "endDateOfPeriod11" : "2025-06-12",
+  "endDateOfPeriod12" : "2025-06-14",
+  "lastUpdateDateTime" : "2018-12-14T17:35:57",
+  "inputDateTime" : "2018-12-14T17:35:57",
+  "_links" : {
+    "self" : {
+      "href" : "http://localhost/api/fiscalYears/F_2024"
+    },
+    "fiscalYear" : {
+      "href" : "http://localhost/api/fiscalYears/F_2024"
+    },
+    "extend" : {
+      "href" : "http://localhost/api/fiscalYears/F_2024/extend"
+    }
+  }
+}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+Hibernate: select count(*) as col_0_0_ from t0018 fiscalyear0_ where fiscalyear0_.fpfdp=? and fiscalyear0_.fpyr=?
+Hibernate: select fiscalyear0_.fpfdp as fpfdp1_8_0_, fiscalyear0_.fpyr as fpyr2_8_0_, fiscalyear0_.fpcid as fpcid3_8_0_, fiscalyear0_.fpdtin as fpdtin4_8_0_, fiscalyear0_.fptmin as fptmin5_8_0_, fiscalyear0_.fpuid as fpuid6_8_0_, fiscalyear0_.fpdtlu as fpdtlu7_8_0_, fiscalyear0_.fptmlu as fptmlu8_8_0_, fiscalyear0_.fpuidm as fpuidm9_8_0_, fiscalyear0_.fpdate01 as fpdate10_8_0_, fiscalyear0_.fpdate10 as fpdate11_8_0_, fiscalyear0_.fpdate11 as fpdate12_8_0_, fiscalyear0_.fpdate12 as fpdate13_8_0_, fiscalyear0_.fpdate02 as fpdate14_8_0_, fiscalyear0_.fpdate03 as fpdate15_8_0_, fiscalyear0_.fpdate04 as fpdate16_8_0_, fiscalyear0_.fpdate05 as fpdate17_8_0_, fiscalyear0_.fpdate06 as fpdate18_8_0_, fiscalyear0_.fpdate07 as fpdate19_8_0_, fiscalyear0_.fpdate08 as fpdate20_8_0_, fiscalyear0_.fpdate09 as fpdate21_8_0_, fiscalyear0_.fpdate00 as fpdate22_8_0_ from t0018 fiscalyear0_ where fiscalyear0_.fpfdp=? and fiscalyear0_.fpyr=?
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/fiscalYears/F_2024/extend
+       Parameters = {_csrf=[3a85ecf2-1389-44d9-b84a-e4370644bbee]}
+          Headers = {Content-Type=[application/json], Accept=[application/json]}
+             Body = <no character encoding set>
+    Session Attrs = {SPRING_SECURITY_CONTEXT=org.springframework.security.core.context.SecurityContextImpl@475fcd89: Authentication: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@475fcd89: Principal: org.springframework.security.core.userdetails.User@f02988d6: Username: username; Password: [PROTECTED]; Enabled: true; AccountNonExpired: true; credentialsNonExpired: true; AccountNonLocked: true; Not granted any authorities; Credentials: [PROTECTED]; Authenticated: true; Details: null; Not granted any authorities}
+
+Handler:
+             Type = ags.goldenlionerp.application.setups.fiscalyear.FiscalYearController
+           Method = public org.springframework.http.ResponseEntity<?> ags.goldenlionerp.application.setups.fiscalyear.FiscalYearController.extend(java.lang.String,org.springframework.data.rest.webmvc.PersistentEntityResourceAssembler)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 201
+    Error message = null
+          Headers = {Location=[http://localhost/api/fiscalYears/F_2025], Content-Type=[application/json;charset=UTF-8], X-Content-Type-Options=[nosniff], X-XSS-Protection=[1; mode=block], Cache-Control=[no-cache, no-store, max-age=0, must-revalidate], Pragma=[no-cache], Expires=[0], X-Frame-Options=[DENY]}
+     Content type = application/json;charset=UTF-8
+             Body = {
+  "inputUserId" : "username",
+  "lastUpdateUserId" : "username",
+  "computerId" : "username",
+  "fiscalDatePattern" : "F",
+  "fiscalYear" : 2025,
+  "startDate" : "2025-06-15",
+  "endDateOfPeriod1" : "2025-06-30",
+  "endDateOfPeriod2" : "2025-07-31",
+  "endDateOfPeriod3" : "2025-08-31",
+  "endDateOfPeriod4" : "2025-09-30",
+  "endDateOfPeriod5" : "2025-11-23",
+  "endDateOfPeriod6" : "2025-11-30",
+  "endDateOfPeriod7" : "2025-12-31",
+  "endDateOfPeriod8" : "2026-01-31",
+  "endDateOfPeriod9" : "2026-04-12",
+  "endDateOfPeriod10" : "2026-06-12",
+  "endDateOfPeriod11" : "2026-06-12",
+  "endDateOfPeriod12" : "2026-06-14",
+  "lastUpdateDateTime" : "2018-12-14T17:35:57",
+  "inputDateTime" : "2018-12-14T17:35:57",
+  "_links" : {
+    "self" : {
+      "href" : "http://localhost/api/fiscalYears/F_2025"
+    },
+    "fiscalYear" : {
+      "href" : "http://localhost/api/fiscalYears/F_2025"
+    },
+    "extend" : {
+      "href" : "http://localhost/api/fiscalYears/F_2025/extend"
+    }
+  }
+}
+    Forwarded URL = null
+   Redirected URL = http://localhost/api/fiscalYears/F_2025
+          Cookies = []
+2018-12-14 17:35:57.560  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@3634d2fa testClass = FiscalYearApiTest, testInstance = ags.goldenlionerp.apiTests.setups.FiscalYearApiTest@3e486260, testMethod = extendTest@FiscalYearApiTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@862a37e testClass = FiscalYearApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4f7c8496 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]
+2018-12-14 17:35:57.560  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@3634d2fa testClass = FiscalYearApiTest, testInstance = ags.goldenlionerp.apiTests.setups.FiscalYearApiTest@2822916a, testMethod = updateTestWithPatch@FiscalYearApiTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@862a37e testClass = FiscalYearApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4f7c8496 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:57.560  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:57.560  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:57.560  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+Hibernate: select fiscalyear0_.fpfdp as fpfdp1_8_0_, fiscalyear0_.fpyr as fpyr2_8_0_, fiscalyear0_.fpcid as fpcid3_8_0_, fiscalyear0_.fpdtin as fpdtin4_8_0_, fiscalyear0_.fptmin as fptmin5_8_0_, fiscalyear0_.fpuid as fpuid6_8_0_, fiscalyear0_.fpdtlu as fpdtlu7_8_0_, fiscalyear0_.fptmlu as fptmlu8_8_0_, fiscalyear0_.fpuidm as fpuidm9_8_0_, fiscalyear0_.fpdate01 as fpdate10_8_0_, fiscalyear0_.fpdate10 as fpdate11_8_0_, fiscalyear0_.fpdate11 as fpdate12_8_0_, fiscalyear0_.fpdate12 as fpdate13_8_0_, fiscalyear0_.fpdate02 as fpdate14_8_0_, fiscalyear0_.fpdate03 as fpdate15_8_0_, fiscalyear0_.fpdate04 as fpdate16_8_0_, fiscalyear0_.fpdate05 as fpdate17_8_0_, fiscalyear0_.fpdate06 as fpdate18_8_0_, fiscalyear0_.fpdate07 as fpdate19_8_0_, fiscalyear0_.fpdate08 as fpdate20_8_0_, fiscalyear0_.fpdate09 as fpdate21_8_0_, fiscalyear0_.fpdate00 as fpdate22_8_0_ from t0018 fiscalyear0_ where fiscalyear0_.fpfdp=? and fiscalyear0_.fpyr=?
+Hibernate: update t0018 set fpcid=?, fpdtlu=?, fptmlu=?, fpuidm=?, fpdate01=?, fpdate10=?, fpdate11=?, fpdate12=?, fpdate02=?, fpdate03=?, fpdate04=?, fpdate05=?, fpdate06=?, fpdate07=?, fpdate08=?, fpdate09=?, fpdate00=? where fpfdp=? and fpyr=?
+Hibernate: select fiscalyear0_.fpfdp as fpfdp1_8_0_, fiscalyear0_.fpyr as fpyr2_8_0_, fiscalyear0_.fpcid as fpcid3_8_0_, fiscalyear0_.fpdtin as fpdtin4_8_0_, fiscalyear0_.fptmin as fptmin5_8_0_, fiscalyear0_.fpuid as fpuid6_8_0_, fiscalyear0_.fpdtlu as fpdtlu7_8_0_, fiscalyear0_.fptmlu as fptmlu8_8_0_, fiscalyear0_.fpuidm as fpuidm9_8_0_, fiscalyear0_.fpdate01 as fpdate10_8_0_, fiscalyear0_.fpdate10 as fpdate11_8_0_, fiscalyear0_.fpdate11 as fpdate12_8_0_, fiscalyear0_.fpdate12 as fpdate13_8_0_, fiscalyear0_.fpdate02 as fpdate14_8_0_, fiscalyear0_.fpdate03 as fpdate15_8_0_, fiscalyear0_.fpdate04 as fpdate16_8_0_, fiscalyear0_.fpdate05 as fpdate17_8_0_, fiscalyear0_.fpdate06 as fpdate18_8_0_, fiscalyear0_.fpdate07 as fpdate19_8_0_, fiscalyear0_.fpdate08 as fpdate20_8_0_, fiscalyear0_.fpdate09 as fpdate21_8_0_, fiscalyear0_.fpdate00 as fpdate22_8_0_ from t0018 fiscalyear0_ where fiscalyear0_.fpfdp=? and fiscalyear0_.fpyr=?
+2018-12-14 17:35:57.591  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@3634d2fa testClass = FiscalYearApiTest, testInstance = ags.goldenlionerp.apiTests.setups.FiscalYearApiTest@2822916a, testMethod = updateTestWithPatch@FiscalYearApiTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@862a37e testClass = FiscalYearApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4f7c8496 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]
+2018-12-14 17:35:57.591  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@3634d2fa testClass = FiscalYearApiTest, testInstance = ags.goldenlionerp.apiTests.setups.FiscalYearApiTest@63826b4b, testMethod = updateTestWithPatchException@FiscalYearApiTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@862a37e testClass = FiscalYearApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4f7c8496 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:57.591  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:57.591  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:57.591  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+Hibernate: select fiscalyear0_.fpfdp as fpfdp1_8_0_, fiscalyear0_.fpyr as fpyr2_8_0_, fiscalyear0_.fpcid as fpcid3_8_0_, fiscalyear0_.fpdtin as fpdtin4_8_0_, fiscalyear0_.fptmin as fptmin5_8_0_, fiscalyear0_.fpuid as fpuid6_8_0_, fiscalyear0_.fpdtlu as fpdtlu7_8_0_, fiscalyear0_.fptmlu as fptmlu8_8_0_, fiscalyear0_.fpuidm as fpuidm9_8_0_, fiscalyear0_.fpdate01 as fpdate10_8_0_, fiscalyear0_.fpdate10 as fpdate11_8_0_, fiscalyear0_.fpdate11 as fpdate12_8_0_, fiscalyear0_.fpdate12 as fpdate13_8_0_, fiscalyear0_.fpdate02 as fpdate14_8_0_, fiscalyear0_.fpdate03 as fpdate15_8_0_, fiscalyear0_.fpdate04 as fpdate16_8_0_, fiscalyear0_.fpdate05 as fpdate17_8_0_, fiscalyear0_.fpdate06 as fpdate18_8_0_, fiscalyear0_.fpdate07 as fpdate19_8_0_, fiscalyear0_.fpdate08 as fpdate20_8_0_, fiscalyear0_.fpdate09 as fpdate21_8_0_, fiscalyear0_.fpdate00 as fpdate22_8_0_ from t0018 fiscalyear0_ where fiscalyear0_.fpfdp=? and fiscalyear0_.fpyr=?
+2018-12-14 17:35:57.623  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@3634d2fa testClass = FiscalYearApiTest, testInstance = ags.goldenlionerp.apiTests.setups.FiscalYearApiTest@63826b4b, testMethod = updateTestWithPatchException@FiscalYearApiTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@862a37e testClass = FiscalYearApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4f7c8496 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]
+2018-12-14 17:35:57.623  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@3634d2fa testClass = FiscalYearApiTest, testInstance = ags.goldenlionerp.apiTests.setups.FiscalYearApiTest@73851049, testMethod = extendTestWithException@FiscalYearApiTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@862a37e testClass = FiscalYearApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4f7c8496 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:57.623  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:57.623  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:57.623  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+Hibernate: select fiscalyear0_.fpfdp as fpfdp1_8_0_, fiscalyear0_.fpyr as fpyr2_8_0_, fiscalyear0_.fpcid as fpcid3_8_0_, fiscalyear0_.fpdtin as fpdtin4_8_0_, fiscalyear0_.fptmin as fptmin5_8_0_, fiscalyear0_.fpuid as fpuid6_8_0_, fiscalyear0_.fpdtlu as fpdtlu7_8_0_, fiscalyear0_.fptmlu as fptmlu8_8_0_, fiscalyear0_.fpuidm as fpuidm9_8_0_, fiscalyear0_.fpdate01 as fpdate10_8_0_, fiscalyear0_.fpdate10 as fpdate11_8_0_, fiscalyear0_.fpdate11 as fpdate12_8_0_, fiscalyear0_.fpdate12 as fpdate13_8_0_, fiscalyear0_.fpdate02 as fpdate14_8_0_, fiscalyear0_.fpdate03 as fpdate15_8_0_, fiscalyear0_.fpdate04 as fpdate16_8_0_, fiscalyear0_.fpdate05 as fpdate17_8_0_, fiscalyear0_.fpdate06 as fpdate18_8_0_, fiscalyear0_.fpdate07 as fpdate19_8_0_, fiscalyear0_.fpdate08 as fpdate20_8_0_, fiscalyear0_.fpdate09 as fpdate21_8_0_, fiscalyear0_.fpdate00 as fpdate22_8_0_ from t0018 fiscalyear0_ where fiscalyear0_.fpfdp=? and fiscalyear0_.fpyr=?
+Hibernate: select count(*) as col_0_0_ from t0018 fiscalyear0_ where fiscalyear0_.fpfdp=? and fiscalyear0_.fpyr=?
+2018-12-14 17:35:57.638  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@3634d2fa testClass = FiscalYearApiTest, testInstance = ags.goldenlionerp.apiTests.setups.FiscalYearApiTest@73851049, testMethod = extendTestWithException@FiscalYearApiTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@862a37e testClass = FiscalYearApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4f7c8496 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]
+2018-12-14 17:35:57.638  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@3634d2fa testClass = FiscalYearApiTest, testInstance = ags.goldenlionerp.apiTests.setups.FiscalYearApiTest@670ffde8, testMethod = updateTestWithPut@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@862a37e testClass = FiscalYearApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4f7c8496 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:57.638  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:57.638  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:57.654  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 16 ms
+Hibernate: select fiscalyear0_.fpfdp as fpfdp1_8_0_, fiscalyear0_.fpyr as fpyr2_8_0_, fiscalyear0_.fpcid as fpcid3_8_0_, fiscalyear0_.fpdtin as fpdtin4_8_0_, fiscalyear0_.fptmin as fptmin5_8_0_, fiscalyear0_.fpuid as fpuid6_8_0_, fiscalyear0_.fpdtlu as fpdtlu7_8_0_, fiscalyear0_.fptmlu as fptmlu8_8_0_, fiscalyear0_.fpuidm as fpuidm9_8_0_, fiscalyear0_.fpdate01 as fpdate10_8_0_, fiscalyear0_.fpdate10 as fpdate11_8_0_, fiscalyear0_.fpdate11 as fpdate12_8_0_, fiscalyear0_.fpdate12 as fpdate13_8_0_, fiscalyear0_.fpdate02 as fpdate14_8_0_, fiscalyear0_.fpdate03 as fpdate15_8_0_, fiscalyear0_.fpdate04 as fpdate16_8_0_, fiscalyear0_.fpdate05 as fpdate17_8_0_, fiscalyear0_.fpdate06 as fpdate18_8_0_, fiscalyear0_.fpdate07 as fpdate19_8_0_, fiscalyear0_.fpdate08 as fpdate20_8_0_, fiscalyear0_.fpdate09 as fpdate21_8_0_, fiscalyear0_.fpdate00 as fpdate22_8_0_ from t0018 fiscalyear0_ where fiscalyear0_.fpfdp=? and fiscalyear0_.fpyr=?
+2018-12-14 17:35:57.669  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@3634d2fa testClass = FiscalYearApiTest, testInstance = ags.goldenlionerp.apiTests.setups.FiscalYearApiTest@670ffde8, testMethod = updateTestWithPut@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@862a37e testClass = FiscalYearApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4f7c8496 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]
+2018-12-14 17:35:57.669  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@3634d2fa testClass = FiscalYearApiTest, testInstance = ags.goldenlionerp.apiTests.setups.FiscalYearApiTest@2de2b627, testMethod = getTestSingle@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@862a37e testClass = FiscalYearApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4f7c8496 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:57.669  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:57.669  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:57.669  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+Hibernate: select fiscalyear0_.fpfdp as fpfdp1_8_0_, fiscalyear0_.fpyr as fpyr2_8_0_, fiscalyear0_.fpcid as fpcid3_8_0_, fiscalyear0_.fpdtin as fpdtin4_8_0_, fiscalyear0_.fptmin as fptmin5_8_0_, fiscalyear0_.fpuid as fpuid6_8_0_, fiscalyear0_.fpdtlu as fpdtlu7_8_0_, fiscalyear0_.fptmlu as fptmlu8_8_0_, fiscalyear0_.fpuidm as fpuidm9_8_0_, fiscalyear0_.fpdate01 as fpdate10_8_0_, fiscalyear0_.fpdate10 as fpdate11_8_0_, fiscalyear0_.fpdate11 as fpdate12_8_0_, fiscalyear0_.fpdate12 as fpdate13_8_0_, fiscalyear0_.fpdate02 as fpdate14_8_0_, fiscalyear0_.fpdate03 as fpdate15_8_0_, fiscalyear0_.fpdate04 as fpdate16_8_0_, fiscalyear0_.fpdate05 as fpdate17_8_0_, fiscalyear0_.fpdate06 as fpdate18_8_0_, fiscalyear0_.fpdate07 as fpdate19_8_0_, fiscalyear0_.fpdate08 as fpdate20_8_0_, fiscalyear0_.fpdate09 as fpdate21_8_0_, fiscalyear0_.fpdate00 as fpdate22_8_0_ from t0018 fiscalyear0_ where fiscalyear0_.fpfdp=? and fiscalyear0_.fpyr=?
+2018-12-14 17:35:57.685  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@3634d2fa testClass = FiscalYearApiTest, testInstance = ags.goldenlionerp.apiTests.setups.FiscalYearApiTest@2de2b627, testMethod = getTestSingle@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@862a37e testClass = FiscalYearApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4f7c8496 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]
+2018-12-14 17:35:57.685  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@3634d2fa testClass = FiscalYearApiTest, testInstance = ags.goldenlionerp.apiTests.setups.FiscalYearApiTest@3a0adae, testMethod = getTestCollection@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@862a37e testClass = FiscalYearApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4f7c8496 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:57.685  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:57.685  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:57.701  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 16 ms
+Hibernate: select TOP(?) fiscalyear0_.fpfdp as fpfdp1_8_, fiscalyear0_.fpyr as fpyr2_8_, fiscalyear0_.fpcid as fpcid3_8_, fiscalyear0_.fpdtin as fpdtin4_8_, fiscalyear0_.fptmin as fptmin5_8_, fiscalyear0_.fpuid as fpuid6_8_, fiscalyear0_.fpdtlu as fpdtlu7_8_, fiscalyear0_.fptmlu as fptmlu8_8_, fiscalyear0_.fpuidm as fpuidm9_8_, fiscalyear0_.fpdate01 as fpdate10_8_, fiscalyear0_.fpdate10 as fpdate11_8_, fiscalyear0_.fpdate11 as fpdate12_8_, fiscalyear0_.fpdate12 as fpdate13_8_, fiscalyear0_.fpdate02 as fpdate14_8_, fiscalyear0_.fpdate03 as fpdate15_8_, fiscalyear0_.fpdate04 as fpdate16_8_, fiscalyear0_.fpdate05 as fpdate17_8_, fiscalyear0_.fpdate06 as fpdate18_8_, fiscalyear0_.fpdate07 as fpdate19_8_, fiscalyear0_.fpdate08 as fpdate20_8_, fiscalyear0_.fpdate09 as fpdate21_8_, fiscalyear0_.fpdate00 as fpdate22_8_ from t0018 fiscalyear0_
+Hibernate: select count(fiscalyear0_.fpfdp) as col_0_0_ from t0018 fiscalyear0_
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/fiscalYears/
+       Parameters = {}
+          Headers = {Accept=[application/json]}
+             Body = <no character encoding set>
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@a58b067, SPRING_SECURITY_CONTEXT=org.springframework.security.core.context.SecurityContextImpl@475fcd89: Authentication: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@475fcd89: Principal: org.springframework.security.core.userdetails.User@f02988d6: Username: username; Password: [PROTECTED]; Enabled: true; AccountNonExpired: true; credentialsNonExpired: true; AccountNonLocked: true; Not granted any authorities; Credentials: [PROTECTED]; Authenticated: true; Details: null; Not granted any authorities}
+
+Handler:
+             Type = org.springframework.data.rest.webmvc.RepositoryEntityController
+           Method = public org.springframework.hateoas.Resources<?> org.springframework.data.rest.webmvc.RepositoryEntityController.getCollectionResource(org.springframework.data.rest.webmvc.RootResourceInformation,org.springframework.data.rest.webmvc.support.DefaultedPageable,org.springframework.data.domain.Sort,org.springframework.data.rest.webmvc.PersistentEntityResourceAssembler) throws org.springframework.data.rest.webmvc.ResourceNotFoundException,org.springframework.web.HttpRequestMethodNotSupportedException
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Type=[application/json;charset=UTF-8], X-Content-Type-Options=[nosniff], X-XSS-Protection=[1; mode=block], Cache-Control=[no-cache, no-store, max-age=0, must-revalidate], Pragma=[no-cache], Expires=[0], X-Frame-Options=[DENY]}
+     Content type = application/json;charset=UTF-8
+             Body = {
+  "_embedded" : {
+    "fiscalYears" : [ {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "QSA",
+      "computerId" : "WINXPL7P5",
+      "fiscalDatePattern" : "R",
+      "fiscalYear" : 2008,
+      "startDate" : "2008-01-01",
+      "endDateOfPeriod1" : "2008-01-31",
+      "endDateOfPeriod2" : "2008-02-29",
+      "endDateOfPeriod3" : "2008-03-31",
+      "endDateOfPeriod4" : "2008-04-30",
+      "endDateOfPeriod5" : "2008-05-31",
+      "endDateOfPeriod6" : "2008-06-30",
+      "endDateOfPeriod7" : "2008-07-31",
+      "endDateOfPeriod8" : "2008-08-31",
+      "endDateOfPeriod9" : "2008-09-30",
+      "endDateOfPeriod10" : "2008-10-31",
+      "endDateOfPeriod11" : "2008-11-30",
+      "endDateOfPeriod12" : "2008-12-31",
+      "lastUpdateDateTime" : "2008-05-31T20:50:49",
+      "inputDateTime" : "2008-05-31T20:49:55",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/fiscalYears/R_2008"
+        },
+        "fiscalYear" : {
+          "href" : "http://localhost/api/fiscalYears/R_2008"
+        },
+        "extend" : {
+          "href" : "http://localhost/api/fiscalYears/R_2008/extend"
+        }
+      }
+    }, {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "QSA",
+      "computerId" : "WINXPL7P5",
+      "fiscalDatePattern" : "R",
+      "fiscalYear" : 2009,
+      "startDate" : "2009-01-01",
+      "endDateOfPeriod1" : "2009-01-31",
+      "endDateOfPeriod2" : "2009-02-28",
+      "endDateOfPeriod3" : "2009-03-31",
+      "endDateOfPeriod4" : "2009-04-30",
+      "endDateOfPeriod5" : "2009-05-31",
+      "endDateOfPeriod6" : "2009-06-30",
+      "endDateOfPeriod7" : "2009-07-31",
+      "endDateOfPeriod8" : "2009-08-31",
+      "endDateOfPeriod9" : "2009-09-30",
+      "endDateOfPeriod10" : "2009-10-31",
+      "endDateOfPeriod11" : "2009-11-30",
+      "endDateOfPeriod12" : "2009-12-31",
+      "lastUpdateDateTime" : "2008-12-01T04:37:45",
+      "inputDateTime" : "2008-12-01T04:36:47",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/fiscalYears/R_2009"
+        },
+        "fiscalYear" : {
+          "href" : "http://localhost/api/fiscalYears/R_2009"
+        },
+        "extend" : {
+          "href" : "http://localhost/api/fiscalYears/R_2009/extend"
+        }
+      }
+    }, {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "QSA",
+      "computerId" : "WINXPL7P5",
+      "fiscalDatePattern" : "R",
+      "fiscalYear" : 2010,
+      "startDate" : "2010-01-01",
+      "endDateOfPeriod1" : "2010-01-31",
+      "endDateOfPeriod2" : "2010-02-28",
+      "endDateOfPeriod3" : "2010-03-31",
+      "endDateOfPeriod4" : "2010-04-30",
+      "endDateOfPeriod5" : "2010-05-31",
+      "endDateOfPeriod6" : "2010-06-30",
+      "endDateOfPeriod7" : "2010-07-31",
+      "endDateOfPeriod8" : "2010-08-31",
+      "endDateOfPeriod9" : "2010-09-30",
+      "endDateOfPeriod10" : "2010-10-31",
+      "endDateOfPeriod11" : "2010-11-30",
+      "endDateOfPeriod12" : "2010-12-31",
+      "lastUpdateDateTime" : "2010-01-09T08:38:45",
+      "inputDateTime" : "2010-01-09T08:38:45",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/fiscalYears/R_2010"
+        },
+        "fiscalYear" : {
+          "href" : "http://localhost/api/fiscalYears/R_2010"
+        },
+        "extend" : {
+          "href" : "http://localhost/api/fiscalYears/R_2010/extend"
+        }
+      }
+    }, {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "QSA",
+      "computerId" : "WIN7UL7P5",
+      "fiscalDatePattern" : "R",
+      "fiscalYear" : 2011,
+      "startDate" : "2011-01-01",
+      "endDateOfPeriod1" : "2011-01-31",
+      "endDateOfPeriod2" : "2011-02-28",
+      "endDateOfPeriod3" : "2011-03-31",
+      "endDateOfPeriod4" : "2011-04-30",
+      "endDateOfPeriod5" : "2011-05-31",
+      "endDateOfPeriod6" : "2011-06-30",
+      "endDateOfPeriod7" : "2011-07-31",
+      "endDateOfPeriod8" : "2011-08-31",
+      "endDateOfPeriod9" : "2011-09-30",
+      "endDateOfPeriod10" : "2011-10-31",
+      "endDateOfPeriod11" : "2011-11-30",
+      "endDateOfPeriod12" : "2011-12-31",
+      "lastUpdateDateTime" : "2011-01-20T13:44:52",
+      "inputDateTime" : "2011-01-20T13:44:52",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/fiscalYears/R_2011"
+        },
+        "fiscalYear" : {
+          "href" : "http://localhost/api/fiscalYears/R_2011"
+        },
+        "extend" : {
+          "href" : "http://localhost/api/fiscalYears/R_2011/extend"
+        }
+      }
+    }, {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "QSA",
+      "computerId" : "WIN7UL7P5",
+      "fiscalDatePattern" : "R",
+      "fiscalYear" : 2012,
+      "startDate" : "2012-01-01",
+      "endDateOfPeriod1" : "2012-01-31",
+      "endDateOfPeriod2" : "2012-02-29",
+      "endDateOfPeriod3" : "2012-03-31",
+      "endDateOfPeriod4" : "2012-04-30",
+      "endDateOfPeriod5" : "2012-05-31",
+      "endDateOfPeriod6" : "2012-06-30",
+      "endDateOfPeriod7" : "2012-07-31",
+      "endDateOfPeriod8" : "2012-08-31",
+      "endDateOfPeriod9" : "2012-09-30",
+      "endDateOfPeriod10" : "2012-10-31",
+      "endDateOfPeriod11" : "2012-11-30",
+      "endDateOfPeriod12" : "2012-12-31",
+      "lastUpdateDateTime" : "2011-01-20T13:45:00",
+      "inputDateTime" : "2011-01-20T13:44:55",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/fiscalYears/R_2012"
+        },
+        "fiscalYear" : {
+          "href" : "http://localhost/api/fiscalYears/R_2012"
+        },
+        "extend" : {
+          "href" : "http://localhost/api/fiscalYears/R_2012/extend"
+        }
+      }
+    }, {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "QSA",
+      "computerId" : "WIN7UL7P5",
+      "fiscalDatePattern" : "R",
+      "fiscalYear" : 2013,
+      "startDate" : "2013-01-01",
+      "endDateOfPeriod1" : "2013-01-31",
+      "endDateOfPeriod2" : "2013-02-28",
+      "endDateOfPeriod3" : "2013-03-31",
+      "endDateOfPeriod4" : "2013-04-30",
+      "endDateOfPeriod5" : "2013-05-31",
+      "endDateOfPeriod6" : "2013-06-30",
+      "endDateOfPeriod7" : "2013-07-31",
+      "endDateOfPeriod8" : "2013-08-31",
+      "endDateOfPeriod9" : "2013-09-30",
+      "endDateOfPeriod10" : "2013-10-31",
+      "endDateOfPeriod11" : "2013-11-30",
+      "endDateOfPeriod12" : "2013-12-31",
+      "lastUpdateDateTime" : "2011-01-20T13:45:03",
+      "inputDateTime" : "2011-01-20T13:45:03",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/fiscalYears/R_2013"
+        },
+        "fiscalYear" : {
+          "href" : "http://localhost/api/fiscalYears/R_2013"
+        },
+        "extend" : {
+          "href" : "http://localhost/api/fiscalYears/R_2013/extend"
+        }
+      }
+    }, {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "QSA",
+      "computerId" : "WIN7UL7P5",
+      "fiscalDatePattern" : "R",
+      "fiscalYear" : 2014,
+      "startDate" : "2014-01-01",
+      "endDateOfPeriod1" : "2014-01-31",
+      "endDateOfPeriod2" : "2014-02-28",
+      "endDateOfPeriod3" : "2014-03-31",
+      "endDateOfPeriod4" : "2014-04-30",
+      "endDateOfPeriod5" : "2014-05-31",
+      "endDateOfPeriod6" : "2014-06-30",
+      "endDateOfPeriod7" : "2014-07-31",
+      "endDateOfPeriod8" : "2014-08-31",
+      "endDateOfPeriod9" : "2014-09-30",
+      "endDateOfPeriod10" : "2014-10-31",
+      "endDateOfPeriod11" : "2014-11-30",
+      "endDateOfPeriod12" : "2014-12-31",
+      "lastUpdateDateTime" : "2011-01-20T13:45:04",
+      "inputDateTime" : "2011-01-20T13:45:04",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/fiscalYears/R_2014"
+        },
+        "fiscalYear" : {
+          "href" : "http://localhost/api/fiscalYears/R_2014"
+        },
+        "extend" : {
+          "href" : "http://localhost/api/fiscalYears/R_2014/extend"
+        }
+      }
+    }, {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "QSA",
+      "computerId" : "WIN7UL7P5",
+      "fiscalDatePattern" : "R",
+      "fiscalYear" : 2015,
+      "startDate" : "2015-01-01",
+      "endDateOfPeriod1" : "2015-01-31",
+      "endDateOfPeriod2" : "2015-02-28",
+      "endDateOfPeriod3" : "2015-03-31",
+      "endDateOfPeriod4" : "2015-04-30",
+      "endDateOfPeriod5" : "2015-05-31",
+      "endDateOfPeriod6" : "2015-06-30",
+      "endDateOfPeriod7" : "2015-07-31",
+      "endDateOfPeriod8" : "2015-08-31",
+      "endDateOfPeriod9" : "2015-09-30",
+      "endDateOfPeriod10" : "2015-10-31",
+      "endDateOfPeriod11" : "2015-11-30",
+      "endDateOfPeriod12" : "2015-12-31",
+      "lastUpdateDateTime" : "2011-01-20T13:45:06",
+      "inputDateTime" : "2011-01-20T13:45:06",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/fiscalYears/R_2015"
+        },
+        "fiscalYear" : {
+          "href" : "http://localhost/api/fiscalYears/R_2015"
+        },
+        "extend" : {
+          "href" : "http://localhost/api/fiscalYears/R_2015/extend"
+        }
+      }
+    }, {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "QSA",
+      "computerId" : "WIN7UL7P5",
+      "fiscalDatePattern" : "R",
+      "fiscalYear" : 2016,
+      "startDate" : "2016-01-01",
+      "endDateOfPeriod1" : "2016-01-31",
+      "endDateOfPeriod2" : "2016-02-29",
+      "endDateOfPeriod3" : "2016-03-31",
+      "endDateOfPeriod4" : "2016-04-30",
+      "endDateOfPeriod5" : "2016-05-31",
+      "endDateOfPeriod6" : "2016-06-30",
+      "endDateOfPeriod7" : "2016-07-31",
+      "endDateOfPeriod8" : "2016-08-31",
+      "endDateOfPeriod9" : "2016-09-30",
+      "endDateOfPeriod10" : "2016-10-31",
+      "endDateOfPeriod11" : "2016-11-30",
+      "endDateOfPeriod12" : "2016-12-31",
+      "lastUpdateDateTime" : "2011-01-20T13:45:13",
+      "inputDateTime" : "2011-01-20T13:45:08",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/fiscalYears/R_2016"
+        },
+        "fiscalYear" : {
+          "href" : "http://localhost/api/fiscalYears/R_2016"
+        },
+        "extend" : {
+          "href" : "http://localhost/api/fiscalYears/R_2016/extend"
+        }
+      }
+    }, {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "QSA",
+      "computerId" : "WIN7UL7P5",
+      "fiscalDatePattern" : "R",
+      "fiscalYear" : 2017,
+      "startDate" : "2017-01-01",
+      "endDateOfPeriod1" : "2017-01-31",
+      "endDateOfPeriod2" : "2017-02-28",
+      "endDateOfPeriod3" : "2017-03-31",
+      "endDateOfPeriod4" : "2017-04-30",
+      "endDateOfPeriod5" : "2017-05-31",
+      "endDateOfPeriod6" : "2017-06-30",
+      "endDateOfPeriod7" : "2017-07-31",
+      "endDateOfPeriod8" : "2017-08-31",
+      "endDateOfPeriod9" : "2017-09-30",
+      "endDateOfPeriod10" : "2017-10-31",
+      "endDateOfPeriod11" : "2017-11-30",
+      "endDateOfPeriod12" : "2017-12-31",
+      "lastUpdateDateTime" : "2012-01-02T13:35:23",
+      "inputDateTime" : "2012-01-02T13:35:23",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/fiscalYears/R_2017"
+        },
+        "fiscalYear" : {
+          "href" : "http://localhost/api/fiscalYears/R_2017"
+        },
+        "extend" : {
+          "href" : "http://localhost/api/fiscalYears/R_2017/extend"
+        }
+      }
+    }, {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "QSA",
+      "computerId" : "WIN7UL7P5",
+      "fiscalDatePattern" : "R",
+      "fiscalYear" : 2018,
+      "startDate" : "2018-01-01",
+      "endDateOfPeriod1" : "2018-01-31",
+      "endDateOfPeriod2" : "2018-02-28",
+      "endDateOfPeriod3" : "2018-03-31",
+      "endDateOfPeriod4" : "2018-04-30",
+      "endDateOfPeriod5" : "2018-05-31",
+      "endDateOfPeriod6" : "2018-06-30",
+      "endDateOfPeriod7" : "2018-07-31",
+      "endDateOfPeriod8" : "2018-08-31",
+      "endDateOfPeriod9" : "2018-09-30",
+      "endDateOfPeriod10" : "2018-10-31",
+      "endDateOfPeriod11" : "2018-11-30",
+      "endDateOfPeriod12" : "2018-12-31",
+      "lastUpdateDateTime" : "2012-01-02T13:35:25",
+      "inputDateTime" : "2012-01-02T13:35:25",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/fiscalYears/R_2018"
+        },
+        "fiscalYear" : {
+          "href" : "http://localhost/api/fiscalYears/R_2018"
+        },
+        "extend" : {
+          "href" : "http://localhost/api/fiscalYears/R_2018/extend"
+        }
+      }
+    }, {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "QSA",
+      "computerId" : "WIN7UL7P5",
+      "fiscalDatePattern" : "R",
+      "fiscalYear" : 2019,
+      "startDate" : "2019-01-01",
+      "endDateOfPeriod1" : "2019-01-31",
+      "endDateOfPeriod2" : "2019-02-28",
+      "endDateOfPeriod3" : "2019-03-31",
+      "endDateOfPeriod4" : "2019-04-30",
+      "endDateOfPeriod5" : "2019-05-31",
+      "endDateOfPeriod6" : "2019-06-30",
+      "endDateOfPeriod7" : "2019-07-31",
+      "endDateOfPeriod8" : "2019-08-31",
+      "endDateOfPeriod9" : "2019-09-30",
+      "endDateOfPeriod10" : "2019-10-31",
+      "endDateOfPeriod11" : "2019-11-30",
+      "endDateOfPeriod12" : "2019-12-31",
+      "lastUpdateDateTime" : "2012-01-02T13:35:27",
+      "inputDateTime" : "2012-01-02T13:35:27",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/fiscalYears/R_2019"
+        },
+        "fiscalYear" : {
+          "href" : "http://localhost/api/fiscalYears/R_2019"
+        },
+        "extend" : {
+          "href" : "http://localhost/api/fiscalYears/R_2019/extend"
+        }
+      }
+    }, {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "QSA",
+      "computerId" : "WIN7UL7P5",
+      "fiscalDatePattern" : "R",
+      "fiscalYear" : 2020,
+      "startDate" : "2020-01-01",
+      "endDateOfPeriod1" : "2020-01-31",
+      "endDateOfPeriod2" : "2020-02-29",
+      "endDateOfPeriod3" : "2020-03-31",
+      "endDateOfPeriod4" : "2020-04-30",
+      "endDateOfPeriod5" : "2020-05-31",
+      "endDateOfPeriod6" : "2020-06-30",
+      "endDateOfPeriod7" : "2020-07-31",
+      "endDateOfPeriod8" : "2020-08-31",
+      "endDateOfPeriod9" : "2020-09-30",
+      "endDateOfPeriod10" : "2020-10-31",
+      "endDateOfPeriod11" : "2020-11-30",
+      "endDateOfPeriod12" : "2020-12-31",
+      "lastUpdateDateTime" : "2012-01-02T13:36:34",
+      "inputDateTime" : "2012-01-02T13:35:29",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/fiscalYears/R_2020"
+        },
+        "fiscalYear" : {
+          "href" : "http://localhost/api/fiscalYears/R_2020"
+        },
+        "extend" : {
+          "href" : "http://localhost/api/fiscalYears/R_2020/extend"
+        }
+      }
+    }, {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "QSA",
+      "computerId" : "WIN7UL7P5",
+      "fiscalDatePattern" : "R",
+      "fiscalYear" : 2021,
+      "startDate" : "2021-01-01",
+      "endDateOfPeriod1" : "2021-01-31",
+      "endDateOfPeriod2" : "2021-02-28",
+      "endDateOfPeriod3" : "2021-03-31",
+      "endDateOfPeriod4" : "2021-04-30",
+      "endDateOfPeriod5" : "2021-05-31",
+      "endDateOfPeriod6" : "2021-06-30",
+      "endDateOfPeriod7" : "2021-07-31",
+      "endDateOfPeriod8" : "2021-08-31",
+      "endDateOfPeriod9" : "2021-09-30",
+      "endDateOfPeriod10" : "2021-10-31",
+      "endDateOfPeriod11" : "2021-11-30",
+      "endDateOfPeriod12" : "2021-12-31",
+      "lastUpdateDateTime" : "2012-01-02T13:35:31",
+      "inputDateTime" : "2012-01-02T13:35:31",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/fiscalYears/R_2021"
+        },
+        "fiscalYear" : {
+          "href" : "http://localhost/api/fiscalYears/R_2021"
+        },
+        "extend" : {
+          "href" : "http://localhost/api/fiscalYears/R_2021/extend"
+        }
+      }
+    }, {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "QSA",
+      "computerId" : "WIN7UL7P5",
+      "fiscalDatePattern" : "R",
+      "fiscalYear" : 2022,
+      "startDate" : "2022-01-01",
+      "endDateOfPeriod1" : "2022-01-31",
+      "endDateOfPeriod2" : "2022-02-28",
+      "endDateOfPeriod3" : "2022-03-31",
+      "endDateOfPeriod4" : "2022-04-30",
+      "endDateOfPeriod5" : "2022-05-31",
+      "endDateOfPeriod6" : "2022-06-30",
+      "endDateOfPeriod7" : "2022-07-31",
+      "endDateOfPeriod8" : "2022-08-31",
+      "endDateOfPeriod9" : "2022-09-30",
+      "endDateOfPeriod10" : "2022-10-31",
+      "endDateOfPeriod11" : "2022-11-30",
+      "endDateOfPeriod12" : "2022-12-31",
+      "lastUpdateDateTime" : "2012-01-02T13:35:32",
+      "inputDateTime" : "2012-01-02T13:35:32",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/fiscalYears/R_2022"
+        },
+        "fiscalYear" : {
+          "href" : "http://localhost/api/fiscalYears/R_2022"
+        },
+        "extend" : {
+          "href" : "http://localhost/api/fiscalYears/R_2022/extend"
+        }
+      }
+    }, {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "QSA",
+      "computerId" : "WIN7UL7P5",
+      "fiscalDatePattern" : "R",
+      "fiscalYear" : 2023,
+      "startDate" : "2023-01-01",
+      "endDateOfPeriod1" : "2023-01-31",
+      "endDateOfPeriod2" : "2023-02-28",
+      "endDateOfPeriod3" : "2023-03-31",
+      "endDateOfPeriod4" : "2023-04-30",
+      "endDateOfPeriod5" : "2023-05-31",
+      "endDateOfPeriod6" : "2023-06-30",
+      "endDateOfPeriod7" : "2023-07-31",
+      "endDateOfPeriod8" : "2023-08-31",
+      "endDateOfPeriod9" : "2023-09-30",
+      "endDateOfPeriod10" : "2023-10-31",
+      "endDateOfPeriod11" : "2023-11-30",
+      "endDateOfPeriod12" : "2023-12-31",
+      "lastUpdateDateTime" : "2012-01-02T13:35:34",
+      "inputDateTime" : "2012-01-02T13:35:34",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/fiscalYears/R_2023"
+        },
+        "fiscalYear" : {
+          "href" : "http://localhost/api/fiscalYears/R_2023"
+        },
+        "extend" : {
+          "href" : "http://localhost/api/fiscalYears/R_2023/extend"
+        }
+      }
+    }, {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "QSA",
+      "computerId" : "WIN7UL7P5",
+      "fiscalDatePattern" : "R",
+      "fiscalYear" : 2024,
+      "startDate" : "2024-01-01",
+      "endDateOfPeriod1" : "2024-01-31",
+      "endDateOfPeriod2" : "2024-02-29",
+      "endDateOfPeriod3" : "2024-03-31",
+      "endDateOfPeriod4" : "2024-04-30",
+      "endDateOfPeriod5" : "2024-05-31",
+      "endDateOfPeriod6" : "2024-06-30",
+      "endDateOfPeriod7" : "2024-07-31",
+      "endDateOfPeriod8" : "2024-08-31",
+      "endDateOfPeriod9" : "2024-09-30",
+      "endDateOfPeriod10" : "2024-10-31",
+      "endDateOfPeriod11" : "2024-11-30",
+      "endDateOfPeriod12" : "2024-12-31",
+      "lastUpdateDateTime" : "2012-01-02T13:36:41",
+      "inputDateTime" : "2012-01-02T13:35:36",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/fiscalYears/R_2024"
+        },
+        "fiscalYear" : {
+          "href" : "http://localhost/api/fiscalYears/R_2024"
+        },
+        "extend" : {
+          "href" : "http://localhost/api/fiscalYears/R_2024/extend"
+        }
+      }
+    }, {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "QSA",
+      "computerId" : "WIN7UL7P5",
+      "fiscalDatePattern" : "R",
+      "fiscalYear" : 2025,
+      "startDate" : "2025-01-01",
+      "endDateOfPeriod1" : "2025-01-31",
+      "endDateOfPeriod2" : "2025-02-28",
+      "endDateOfPeriod3" : "2025-03-31",
+      "endDateOfPeriod4" : "2025-04-30",
+      "endDateOfPeriod5" : "2025-05-31",
+      "endDateOfPeriod6" : "2025-06-30",
+      "endDateOfPeriod7" : "2025-07-31",
+      "endDateOfPeriod8" : "2025-08-31",
+      "endDateOfPeriod9" : "2025-09-30",
+      "endDateOfPeriod10" : "2025-10-31",
+      "endDateOfPeriod11" : "2025-11-30",
+      "endDateOfPeriod12" : "2025-12-31",
+      "lastUpdateDateTime" : "2012-01-02T13:35:37",
+      "inputDateTime" : "2012-01-02T13:35:37",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/fiscalYears/R_2025"
+        },
+        "fiscalYear" : {
+          "href" : "http://localhost/api/fiscalYears/R_2025"
+        },
+        "extend" : {
+          "href" : "http://localhost/api/fiscalYears/R_2025/extend"
+        }
+      }
+    }, {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "QSA",
+      "computerId" : "WIN7UL7P5",
+      "fiscalDatePattern" : "R",
+      "fiscalYear" : 2026,
+      "startDate" : "2026-01-01",
+      "endDateOfPeriod1" : "2026-01-31",
+      "endDateOfPeriod2" : "2026-02-28",
+      "endDateOfPeriod3" : "2026-03-31",
+      "endDateOfPeriod4" : "2026-04-30",
+      "endDateOfPeriod5" : "2026-05-31",
+      "endDateOfPeriod6" : "2026-06-30",
+      "endDateOfPeriod7" : "2026-07-31",
+      "endDateOfPeriod8" : "2026-08-31",
+      "endDateOfPeriod9" : "2026-09-30",
+      "endDateOfPeriod10" : "2026-10-31",
+      "endDateOfPeriod11" : "2026-11-30",
+      "endDateOfPeriod12" : "2026-12-31",
+      "lastUpdateDateTime" : "2012-01-02T13:35:39",
+      "inputDateTime" : "2012-01-02T13:35:39",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/fiscalYears/R_2026"
+        },
+        "fiscalYear" : {
+          "href" : "http://localhost/api/fiscalYears/R_2026"
+        },
+        "extend" : {
+          "href" : "http://localhost/api/fiscalYears/R_2026/extend"
+        }
+      }
+    }, {
+      "inputUserId" : "QSA",
+      "lastUpdateUserId" : "QSA",
+      "computerId" : "WIN7UL7P5",
+      "fiscalDatePattern" : "R",
+      "fiscalYear" : 2027,
+      "startDate" : "2027-01-01",
+      "endDateOfPeriod1" : "2027-01-31",
+      "endDateOfPeriod2" : "2027-02-28",
+      "endDateOfPeriod3" : "2027-03-31",
+      "endDateOfPeriod4" : "2027-04-30",
+      "endDateOfPeriod5" : "2027-05-31",
+      "endDateOfPeriod6" : "2027-06-30",
+      "endDateOfPeriod7" : "2027-07-31",
+      "endDateOfPeriod8" : "2027-08-31",
+      "endDateOfPeriod9" : "2027-09-30",
+      "endDateOfPeriod10" : "2027-10-31",
+      "endDateOfPeriod11" : "2027-11-30",
+      "endDateOfPeriod12" : "2027-12-31",
+      "lastUpdateDateTime" : "2012-01-02T13:35:41",
+      "inputDateTime" : "2012-01-02T13:35:41",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/api/fiscalYears/R_2027"
+        },
+        "fiscalYear" : {
+          "href" : "http://localhost/api/fiscalYears/R_2027"
+        },
+        "extend" : {
+          "href" : "http://localhost/api/fiscalYears/R_2027/extend"
+        }
+      }
+    } ]
+  },
+  "_links" : {
+    "first" : {
+      "href" : "http://localhost/api/fiscalYears?page=0&size=20"
+    },
+    "self" : {
+      "href" : "http://localhost/api/fiscalYears{?page,size,sort}",
+      "templated" : true
+    },
+    "next" : {
+      "href" : "http://localhost/api/fiscalYears?page=1&size=20"
+    },
+    "last" : {
+      "href" : "http://localhost/api/fiscalYears?page=2&size=20"
+    },
+    "profile" : {
+      "href" : "http://localhost/api/profile/fiscalYears"
+    }
+  },
+  "page" : {
+    "size" : 20,
+    "totalElements" : 43,
+    "totalPages" : 3,
+    "number" : 0
+  }
+}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2018-12-14 17:35:57.732  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@3634d2fa testClass = FiscalYearApiTest, testInstance = ags.goldenlionerp.apiTests.setups.FiscalYearApiTest@3a0adae, testMethod = getTestCollection@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@862a37e testClass = FiscalYearApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4f7c8496 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]
+2018-12-14 17:35:57.732  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@3634d2fa testClass = FiscalYearApiTest, testInstance = ags.goldenlionerp.apiTests.setups.FiscalYearApiTest@68f5b5b7, testMethod = createTestWithPut@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@862a37e testClass = FiscalYearApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4f7c8496 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:57.732  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:57.732  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:57.732  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+Hibernate: select fiscalyear0_.fpfdp as fpfdp1_8_0_, fiscalyear0_.fpyr as fpyr2_8_0_, fiscalyear0_.fpcid as fpcid3_8_0_, fiscalyear0_.fpdtin as fpdtin4_8_0_, fiscalyear0_.fptmin as fptmin5_8_0_, fiscalyear0_.fpuid as fpuid6_8_0_, fiscalyear0_.fpdtlu as fpdtlu7_8_0_, fiscalyear0_.fptmlu as fptmlu8_8_0_, fiscalyear0_.fpuidm as fpuidm9_8_0_, fiscalyear0_.fpdate01 as fpdate10_8_0_, fiscalyear0_.fpdate10 as fpdate11_8_0_, fiscalyear0_.fpdate11 as fpdate12_8_0_, fiscalyear0_.fpdate12 as fpdate13_8_0_, fiscalyear0_.fpdate02 as fpdate14_8_0_, fiscalyear0_.fpdate03 as fpdate15_8_0_, fiscalyear0_.fpdate04 as fpdate16_8_0_, fiscalyear0_.fpdate05 as fpdate17_8_0_, fiscalyear0_.fpdate06 as fpdate18_8_0_, fiscalyear0_.fpdate07 as fpdate19_8_0_, fiscalyear0_.fpdate08 as fpdate20_8_0_, fiscalyear0_.fpdate09 as fpdate21_8_0_, fiscalyear0_.fpdate00 as fpdate22_8_0_ from t0018 fiscalyear0_ where fiscalyear0_.fpfdp=? and fiscalyear0_.fpyr=?
+2018-12-14 17:35:57.748  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@3634d2fa testClass = FiscalYearApiTest, testInstance = ags.goldenlionerp.apiTests.setups.FiscalYearApiTest@68f5b5b7, testMethod = createTestWithPut@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@862a37e testClass = FiscalYearApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4f7c8496 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]
+2018-12-14 17:35:57.748  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@3634d2fa testClass = FiscalYearApiTest, testInstance = ags.goldenlionerp.apiTests.setups.FiscalYearApiTest@71bbc716, testMethod = deleteTest@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@862a37e testClass = FiscalYearApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4f7c8496 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:57.748  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:57.748  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:57.763  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 15 ms
+Hibernate: select fiscalyear0_.fpfdp as fpfdp1_8_0_, fiscalyear0_.fpyr as fpyr2_8_0_, fiscalyear0_.fpcid as fpcid3_8_0_, fiscalyear0_.fpdtin as fpdtin4_8_0_, fiscalyear0_.fptmin as fptmin5_8_0_, fiscalyear0_.fpuid as fpuid6_8_0_, fiscalyear0_.fpdtlu as fpdtlu7_8_0_, fiscalyear0_.fptmlu as fptmlu8_8_0_, fiscalyear0_.fpuidm as fpuidm9_8_0_, fiscalyear0_.fpdate01 as fpdate10_8_0_, fiscalyear0_.fpdate10 as fpdate11_8_0_, fiscalyear0_.fpdate11 as fpdate12_8_0_, fiscalyear0_.fpdate12 as fpdate13_8_0_, fiscalyear0_.fpdate02 as fpdate14_8_0_, fiscalyear0_.fpdate03 as fpdate15_8_0_, fiscalyear0_.fpdate04 as fpdate16_8_0_, fiscalyear0_.fpdate05 as fpdate17_8_0_, fiscalyear0_.fpdate06 as fpdate18_8_0_, fiscalyear0_.fpdate07 as fpdate19_8_0_, fiscalyear0_.fpdate08 as fpdate20_8_0_, fiscalyear0_.fpdate09 as fpdate21_8_0_, fiscalyear0_.fpdate00 as fpdate22_8_0_ from t0018 fiscalyear0_ where fiscalyear0_.fpfdp=? and fiscalyear0_.fpyr=?
+2018-12-14 17:35:57.779  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@3634d2fa testClass = FiscalYearApiTest, testInstance = ags.goldenlionerp.apiTests.setups.FiscalYearApiTest@71bbc716, testMethod = deleteTest@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@862a37e testClass = FiscalYearApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4f7c8496 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]
+2018-12-14 17:35:57.779  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@3634d2fa testClass = FiscalYearApiTest, testInstance = ags.goldenlionerp.apiTests.setups.FiscalYearApiTest@6d5c668d, testMethod = createTestWithPost@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@862a37e testClass = FiscalYearApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4f7c8496 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
+2018-12-14 17:35:57.779  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-14 17:35:57.779  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-14 17:35:57.779  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+Hibernate: select fiscalyear0_.fpfdp as fpfdp1_8_0_, fiscalyear0_.fpyr as fpyr2_8_0_, fiscalyear0_.fpcid as fpcid3_8_0_, fiscalyear0_.fpdtin as fpdtin4_8_0_, fiscalyear0_.fptmin as fptmin5_8_0_, fiscalyear0_.fpuid as fpuid6_8_0_, fiscalyear0_.fpdtlu as fpdtlu7_8_0_, fiscalyear0_.fptmlu as fptmlu8_8_0_, fiscalyear0_.fpuidm as fpuidm9_8_0_, fiscalyear0_.fpdate01 as fpdate10_8_0_, fiscalyear0_.fpdate10 as fpdate11_8_0_, fiscalyear0_.fpdate11 as fpdate12_8_0_, fiscalyear0_.fpdate12 as fpdate13_8_0_, fiscalyear0_.fpdate02 as fpdate14_8_0_, fiscalyear0_.fpdate03 as fpdate15_8_0_, fiscalyear0_.fpdate04 as fpdate16_8_0_, fiscalyear0_.fpdate05 as fpdate17_8_0_, fiscalyear0_.fpdate06 as fpdate18_8_0_, fiscalyear0_.fpdate07 as fpdate19_8_0_, fiscalyear0_.fpdate08 as fpdate20_8_0_, fiscalyear0_.fpdate09 as fpdate21_8_0_, fiscalyear0_.fpdate00 as fpdate22_8_0_ from t0018 fiscalyear0_ where fiscalyear0_.fpfdp=? and fiscalyear0_.fpyr=?
+Hibernate: select fiscalyear0_.fpfdp as fpfdp1_8_0_, fiscalyear0_.fpyr as fpyr2_8_0_, fiscalyear0_.fpcid as fpcid3_8_0_, fiscalyear0_.fpdtin as fpdtin4_8_0_, fiscalyear0_.fptmin as fptmin5_8_0_, fiscalyear0_.fpuid as fpuid6_8_0_, fiscalyear0_.fpdtlu as fpdtlu7_8_0_, fiscalyear0_.fptmlu as fptmlu8_8_0_, fiscalyear0_.fpuidm as fpuidm9_8_0_, fiscalyear0_.fpdate01 as fpdate10_8_0_, fiscalyear0_.fpdate10 as fpdate11_8_0_, fiscalyear0_.fpdate11 as fpdate12_8_0_, fiscalyear0_.fpdate12 as fpdate13_8_0_, fiscalyear0_.fpdate02 as fpdate14_8_0_, fiscalyear0_.fpdate03 as fpdate15_8_0_, fiscalyear0_.fpdate04 as fpdate16_8_0_, fiscalyear0_.fpdate05 as fpdate17_8_0_, fiscalyear0_.fpdate06 as fpdate18_8_0_, fiscalyear0_.fpdate07 as fpdate19_8_0_, fiscalyear0_.fpdate08 as fpdate20_8_0_, fiscalyear0_.fpdate09 as fpdate21_8_0_, fiscalyear0_.fpdate00 as fpdate22_8_0_ from t0018 fiscalyear0_ where fiscalyear0_.fpfdp=? and fiscalyear0_.fpyr=?
+Hibernate: insert into t0018 (fpcid, fpdtin, fptmin, fpuid, fpdtlu, fptmlu, fpuidm, fpdate01, fpdate10, fpdate11, fpdate12, fpdate02, fpdate03, fpdate04, fpdate05, fpdate06, fpdate07, fpdate08, fpdate09, fpdate00, fpfdp, fpyr) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: select fiscalyear0_.fpfdp as fpfdp1_8_0_, fiscalyear0_.fpyr as fpyr2_8_0_, fiscalyear0_.fpcid as fpcid3_8_0_, fiscalyear0_.fpdtin as fpdtin4_8_0_, fiscalyear0_.fptmin as fptmin5_8_0_, fiscalyear0_.fpuid as fpuid6_8_0_, fiscalyear0_.fpdtlu as fpdtlu7_8_0_, fiscalyear0_.fptmlu as fptmlu8_8_0_, fiscalyear0_.fpuidm as fpuidm9_8_0_, fiscalyear0_.fpdate01 as fpdate10_8_0_, fiscalyear0_.fpdate10 as fpdate11_8_0_, fiscalyear0_.fpdate11 as fpdate12_8_0_, fiscalyear0_.fpdate12 as fpdate13_8_0_, fiscalyear0_.fpdate02 as fpdate14_8_0_, fiscalyear0_.fpdate03 as fpdate15_8_0_, fiscalyear0_.fpdate04 as fpdate16_8_0_, fiscalyear0_.fpdate05 as fpdate17_8_0_, fiscalyear0_.fpdate06 as fpdate18_8_0_, fiscalyear0_.fpdate07 as fpdate19_8_0_, fiscalyear0_.fpdate08 as fpdate20_8_0_, fiscalyear0_.fpdate09 as fpdate21_8_0_, fiscalyear0_.fpdate00 as fpdate22_8_0_ from t0018 fiscalyear0_ where fiscalyear0_.fpfdp=? and fiscalyear0_.fpyr=?
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/fiscalYears/F_2024
+       Parameters = {}
+          Headers = {Accept=[application/json]}
+             Body = <no character encoding set>
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@36327b8e, SPRING_SECURITY_CONTEXT=org.springframework.security.core.context.SecurityContextImpl@475fcd89: Authentication: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@475fcd89: Principal: org.springframework.security.core.userdetails.User@f02988d6: Username: username; Password: [PROTECTED]; Enabled: true; AccountNonExpired: true; credentialsNonExpired: true; AccountNonLocked: true; Not granted any authorities; Credentials: [PROTECTED]; Authenticated: true; Details: null; Not granted any authorities}
+
+Handler:
+             Type = org.springframework.data.rest.webmvc.RepositoryEntityController
+           Method = public org.springframework.http.ResponseEntity<org.springframework.hateoas.Resource<?>> org.springframework.data.rest.webmvc.RepositoryEntityController.getItemResource(org.springframework.data.rest.webmvc.RootResourceInformation,java.io.Serializable,org.springframework.data.rest.webmvc.PersistentEntityResourceAssembler,org.springframework.http.HttpHeaders) throws org.springframework.web.HttpRequestMethodNotSupportedException
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Type=[application/json;charset=UTF-8], X-Content-Type-Options=[nosniff], X-XSS-Protection=[1; mode=block], Cache-Control=[no-cache, no-store, max-age=0, must-revalidate], Pragma=[no-cache], Expires=[0], X-Frame-Options=[DENY]}
+     Content type = application/json;charset=UTF-8
+             Body = {
+  "inputUserId" : "username",
+  "lastUpdateUserId" : "username",
+  "computerId" : "username",
+  "fiscalDatePattern" : "F",
+  "fiscalYear" : 2024,
+  "startDate" : "2024-06-15",
+  "endDateOfPeriod1" : "2024-06-30",
+  "endDateOfPeriod2" : "2024-07-31",
+  "endDateOfPeriod3" : "2024-08-31",
+  "endDateOfPeriod4" : "2024-09-30",
+  "endDateOfPeriod5" : "2024-11-23",
+  "endDateOfPeriod6" : "2024-11-30",
+  "endDateOfPeriod7" : "2024-12-31",
+  "endDateOfPeriod8" : "2025-01-31",
+  "endDateOfPeriod9" : "2025-04-12",
+  "endDateOfPeriod10" : "2025-06-12",
+  "endDateOfPeriod11" : "2025-06-12",
+  "endDateOfPeriod12" : "2025-06-14",
+  "lastUpdateDateTime" : "2018-12-14T17:35:57",
+  "inputDateTime" : "2018-12-14T17:35:57",
+  "_links" : {
+    "self" : {
+      "href" : "http://localhost/api/fiscalYears/F_2024"
+    },
+    "fiscalYear" : {
+      "href" : "http://localhost/api/fiscalYears/F_2024"
+    },
+    "extend" : {
+      "href" : "http://localhost/api/fiscalYears/F_2024/extend"
+    }
+  }
+}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2018-12-14 17:35:57.810  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@3634d2fa testClass = FiscalYearApiTest, testInstance = ags.goldenlionerp.apiTests.setups.FiscalYearApiTest@6d5c668d, testMethod = createTestWithPost@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@862a37e testClass = FiscalYearApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4f7c8496 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
