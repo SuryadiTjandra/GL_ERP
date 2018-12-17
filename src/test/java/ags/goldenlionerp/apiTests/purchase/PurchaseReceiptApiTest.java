@@ -118,6 +118,7 @@ public class PurchaseReceiptApiTest extends ApiTestBase<PurchaseReceiptPK> {
 	@Override
 	public void assertGetSingleResult(ResultActions action) throws Exception {
 		action
+			.andDo(print())
 			.andExpect(jsonPath("$.details").exists())
 			.andExpect(jsonPath("$.companyId").value(existingId.getCompanyId()))
 			.andExpect(jsonPath("$.documentNumber").value(existingId.getPurchaseReceiptNumber()))
@@ -334,7 +335,6 @@ public class PurchaseReceiptApiTest extends ApiTestBase<PurchaseReceiptPK> {
 				//"/api/lots?pk.businessUnitId=" + requestObject.get("businessUnitId") + "&pk.itemCode=" + poDetails.get(2).get("itemCode");
 		String[] serialNumbers = ((List<String>) requestDetails.get(2).get("serialOrLotNumbers")).toArray(new String[3]);
 		performer.performGet(lotUrl)
-				.andDo(print())
 				.andExpect(jsonPath("$._embedded.lots[*].serialLotNo").value(Matchers.hasItems(serialNumbers)))
 				.andExpect(jsonPath("$._embedded.lots.length()").value(3))
 				.andExpect(jsonPath("$._embedded.lots[0].itemCode").value(poDetails.get(2).get("itemCode")))
@@ -343,7 +343,6 @@ public class PurchaseReceiptApiTest extends ApiTestBase<PurchaseReceiptPK> {
 		//assert new item transactions are created for items with type stock
 		String itemtransUrl = "/api/stockTransactions/";
 		performer.performGet(itemtransUrl + newId())
-				.andDo(print())
 				.andExpect(jsonPath("$.details.length()").value(2))
 				.andExpect(jsonPath("$.details[0].companyId").value(requestObject.get("companyId")))
 				.andExpect(jsonPath("$.details[0].documentNumber").value(requestObject.get("documentNumber")))
@@ -564,7 +563,6 @@ public class PurchaseReceiptApiTest extends ApiTestBase<PurchaseReceiptPK> {
 		//assert new item transactions with negative quantity has been created
 		String itemtransUrl = "/api/stockTransactions/";
 		performer.performGet(itemtransUrl + newId())
-				.andDo(print())
 				.andExpect(jsonPath("$.details[1].companyId").value(requestObject.get("companyId")))
 				.andExpect(jsonPath("$.details[1].documentNumber").value(requestObject.get("documentNumber")))
 				.andExpect(jsonPath("$.details[1].documentType").value(requestObject.get("documentType")))
