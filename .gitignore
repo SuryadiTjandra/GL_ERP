@@ -31,3 +31,6 @@ querydsl/
 /dist/
 /nbdist/
 /.nb-gradle/
+
+### Eclipse ###
+.metadata/
