@@ -8,11 +8,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.hamcrest.Matchers;
+import org.junit.Ignore;
 import org.springframework.test.web.servlet.ResultActions;
 
 import ags.goldenlionerp.apiTests.ApiTestBase;
 import ags.goldenlionerp.application.itemstock.stocktransaction.StockTransactionPK;
 
+@Ignore("not finished yet")
 public class StockTransactionApiTest extends ApiTestBase<StockTransactionPK>{
 
 	@Override
@@ -79,5 +81,7 @@ public class StockTransactionApiTest extends ApiTestBase<StockTransactionPK>{
 		// TODO Auto-generated method stub
 		
 	}
+	
+	
 
 }
