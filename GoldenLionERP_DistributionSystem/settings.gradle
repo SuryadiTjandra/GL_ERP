@@ -17,3 +17,4 @@ include 'services:webservice'
 
 rootProject.name = 'GoldenLionERP_DistributionSystem'
 includeBuild '../GoldenLionERP_CoreModule'
+includeBuild '../GoldenLionERP_SalesModule'
