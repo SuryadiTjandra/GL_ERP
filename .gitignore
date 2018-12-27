@@ -1,6 +1,6 @@
 .gradle
-/build/
-/bin/
+build/
+bin/
 node_modules/
 *.bundle.js
 !gradle/wrapper/gradle-wrapper.jar
