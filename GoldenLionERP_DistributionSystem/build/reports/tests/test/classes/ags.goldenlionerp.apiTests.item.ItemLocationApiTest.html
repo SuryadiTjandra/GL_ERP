@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.546s</div>
+<div class="counter">0.566s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,37 +79,37 @@
 </thead>
 <tr>
 <td class="success">createTestWithPost</td>
-<td>0.138s</td>
+<td>0.083s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">createTestWithPut</td>
-<td>0.020s</td>
+<td>0.060s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">deleteTest</td>
-<td>0.022s</td>
+<td>0.057s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">getTestCollection</td>
-<td>0.100s</td>
+<td>0.122s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">getTestSingle</td>
-<td>0.019s</td>
+<td>0.043s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">updateTestWithPatch</td>
-<td>0.106s</td>
+<td>0.117s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">updateTestWithPut</td>
-<td>0.141s</td>
+<td>0.084s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -117,40 +117,40 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>2018-12-14 17:35:27.530  INFO 9212 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [ags.goldenlionerp.apiTests.item.ItemLocationApiTest], using SpringBootContextLoader
-2018-12-14 17:35:27.530  INFO 9212 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [ags.goldenlionerp.apiTests.item.ItemLocationApiTest]: no resource found for suffixes {-context.xml, Context.groovy}.
-2018-12-14 17:35:27.530  INFO 9212 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [ags.goldenlionerp.apiTests.item.ItemLocationApiTest]: ItemLocationApiTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2018-12-14 17:35:27.530  INFO 9212 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration ags.goldenlionerp.GoldenLionErpApplication for test class ags.goldenlionerp.apiTests.item.ItemLocationApiTest
-2018-12-14 17:35:27.546  INFO 9212 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
-2018-12-14 17:35:27.546  INFO 9212 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1c226e0e, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@7c4a8021, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@7a9a7763, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@770a4bdb, org.springframework.test.context.support.DirtiesContextTestExecutionListener@78d7092a, org.springframework.test.context.transaction.TransactionalTestExecutionListener@50b4d599, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@79bc8183, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@5ccd59fc, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@1c138516, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@6a7d9310, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@77d0a745, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@416402fa, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@415f04f5, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@47bcfadd]
-2018-12-14 17:35:27.561  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@5cb78e12 testClass = ItemLocationApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemLocationApiTest@39e760b8, testMethod = updateTestWithPut@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@6b378341 testClass = ItemLocationApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4af5667e key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
-2018-12-14 17:35:27.561  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
-2018-12-14 17:35:27.561  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
-2018-12-14 17:35:27.561  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+<pre>2018-12-27 11:25:45.894  INFO 2120 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [ags.goldenlionerp.apiTests.item.ItemLocationApiTest], using SpringBootContextLoader
+2018-12-27 11:25:45.895  INFO 2120 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [ags.goldenlionerp.apiTests.item.ItemLocationApiTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2018-12-27 11:25:45.895  INFO 2120 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [ags.goldenlionerp.apiTests.item.ItemLocationApiTest]: ItemLocationApiTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2018-12-27 11:25:45.899  INFO 2120 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration ags.goldenlionerp.GoldenLionErpApplication for test class ags.goldenlionerp.apiTests.item.ItemLocationApiTest
+2018-12-27 11:25:45.900  INFO 2120 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-12-27 11:25:45.902  INFO 2120 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@415f04f5, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@47bcfadd, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@352497e0, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@5436306c, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6df7eeb3, org.springframework.test.context.transaction.TransactionalTestExecutionListener@4d3d8bc2, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@5cb78e12, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@39e760b8, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@6b378341, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@4af5667e, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@2ad2b62c, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@28b2e16e, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@7fc842b2, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@1eef1da3]
+2018-12-27 11:25:45.934  INFO 2120 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@79e2649e testClass = ItemLocationApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemLocationApiTest@4bdf1b00, testMethod = updateTestWithPut@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@445a4bd3 testClass = ItemLocationApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@de3935f key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@75de8c12]; rollback [true]
+2018-12-27 11:25:45.936  INFO 2120 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-27 11:25:45.936  INFO 2120 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-27 11:25:45.945  INFO 2120 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 9 ms
 Hibernate: select itemlocati0_.ilbuid as ilbuid1_33_0_, itemlocati0_.ilinum as ilinum2_33_0_, itemlocati0_.illocid as illocid3_33_0_, itemlocati0_.ilsnlot as ilsnlot4_33_0_, itemlocati0_.ilcid as ilcid5_33_0_, itemlocati0_.ildtin as ildtin6_33_0_, itemlocati0_.iltmin as iltmin7_33_0_, itemlocati0_.iluid as iluid8_33_0_, itemlocati0_.ildtlu as ildtlu9_33_0_, itemlocati0_.iltmlu as iltmlu10_33_0_, itemlocati0_.iluidm as iluidm11_33_0_, itemlocati0_.ildtlt as ildtlt12_33_0_, itemlocati0_.ilexpdt as ilexpdt13_33_0_, itemlocati0_.ilglcls as ilglcls14_33_0_, itemlocati0_.illocst as illocst15_33_0_, itemlocati0_.illsc as illsc16_33_0_, itemlocati0_.ilpqoh as ilpqoh17_33_0_, itemlocati0_.ilqtib as ilqtib18_33_0_, itemlocati0_.ilqtin as ilqtin19_33_0_, itemlocati0_.ilqttr as ilqttr20_33_0_, itemlocati0_.ilqobo as ilqobo21_33_0_, itemlocati0_.ilqohc as ilqohc22_33_0_, itemlocati0_.ilqopo as ilqopo23_33_0_, itemlocati0_.ilqoso as ilqoso24_33_0_, itemlocati0_.ilqosc as ilqosc25_33_0_, itemlocati0_.ilqowo as ilqowo26_33_0_, itemlocati0_.ilqowh as ilqowh27_33_0_, itemlocati0_.ilqows as ilqows28_33_0_, itemlocati0_.ilqot1 as ilqot29_33_0_, itemlocati0_.ilqot2 as ilqot30_33_0_, itemlocati0_.ilqot3 as ilqot31_33_0_, itemlocati0_.ilqtob as ilqtob32_33_0_, itemlocati0_.ilsqoh as ilsqoh33_33_0_, itemlocati0_.ilsqpo as ilsqpo34_33_0_, itemlocati0_.ilsqso as ilsqso35_33_0_, itemlocati0_.ilsqwo as ilsqwo36_33_0_, itemlocati0_.iluom as iluom37_33_0_, itemlocati0_.iluom1 as iluom38_33_0_, itemlocati0_.iluom2 as iluom39_33_0_ from t41021 itemlocati0_ where itemlocati0_.ilbuid=? and itemlocati0_.ilinum=? and itemlocati0_.illocid=? and itemlocati0_.ilsnlot=?
 Hibernate: select lotmaster0_.ltbuid as ltbuid1_34_0_, lotmaster0_.ltinum as ltinum2_34_0_, lotmaster0_.ltsnlot as ltsnlot3_34_0_, lotmaster0_.ltcid as ltcid4_34_0_, lotmaster0_.ltdtin as ltdtin5_34_0_, lotmaster0_.lttmin as lttmin6_34_0_, lotmaster0_.ltuid as ltuid7_34_0_, lotmaster0_.ltdtlu as ltdtlu8_34_0_, lotmaster0_.lttmlu as lttmlu9_34_0_, lotmaster0_.ltuidm as ltuidm10_34_0_, lotmaster0_.ltbodt as ltbodt11_34_0_, lotmaster0_.ltbbdt as ltbbdt12_34_0_, lotmaster0_.ltcldt as ltcldt13_34_0_, lotmaster0_.ltexpdt as ltexpdt14_34_0_, lotmaster0_.ltldsc as ltldsc15_34_0_, lotmaster0_.ltledt as ltledt16_34_0_, lotmaster0_.ltlsc as ltlsc17_34_0_, lotmaster0_.ltmlot1 as ltmlot18_34_0_, lotmaster0_.ltmlot2 as ltmlot19_34_0_, lotmaster0_.ltmlot3 as ltmlot20_34_0_, lotmaster0_.ltohdt as ltohdt21_34_0_, lotmaster0_.ltsern as ltsern22_34_0_ from t4108 lotmaster0_ where lotmaster0_.ltbuid=? and lotmaster0_.ltinum=? and lotmaster0_.ltsnlot=?
-2018-12-14 17:35:27.702  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@5cb78e12 testClass = ItemLocationApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemLocationApiTest@39e760b8, testMethod = updateTestWithPut@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@6b378341 testClass = ItemLocationApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4af5667e key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
-2018-12-14 17:35:27.702  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@5cb78e12 testClass = ItemLocationApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemLocationApiTest@67cfd0e9, testMethod = getTestSingle@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@6b378341 testClass = ItemLocationApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4af5667e key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
-2018-12-14 17:35:27.702  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
-2018-12-14 17:35:27.702  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
-2018-12-14 17:35:27.702  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+2018-12-27 11:25:46.017  INFO 2120 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@79e2649e testClass = ItemLocationApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemLocationApiTest@4bdf1b00, testMethod = updateTestWithPut@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@445a4bd3 testClass = ItemLocationApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@de3935f key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+2018-12-27 11:25:46.021  INFO 2120 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@79e2649e testClass = ItemLocationApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemLocationApiTest@7a61b92f, testMethod = getTestSingle@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@445a4bd3 testClass = ItemLocationApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@de3935f key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@75de8c12]; rollback [true]
+2018-12-27 11:25:46.022  INFO 2120 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-27 11:25:46.022  INFO 2120 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-27 11:25:46.031  INFO 2120 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 9 ms
 Hibernate: select itemlocati0_.ilbuid as ilbuid1_33_0_, itemlocati0_.ilinum as ilinum2_33_0_, itemlocati0_.illocid as illocid3_33_0_, itemlocati0_.ilsnlot as ilsnlot4_33_0_, itemlocati0_.ilcid as ilcid5_33_0_, itemlocati0_.ildtin as ildtin6_33_0_, itemlocati0_.iltmin as iltmin7_33_0_, itemlocati0_.iluid as iluid8_33_0_, itemlocati0_.ildtlu as ildtlu9_33_0_, itemlocati0_.iltmlu as iltmlu10_33_0_, itemlocati0_.iluidm as iluidm11_33_0_, itemlocati0_.ildtlt as ildtlt12_33_0_, itemlocati0_.ilexpdt as ilexpdt13_33_0_, itemlocati0_.ilglcls as ilglcls14_33_0_, itemlocati0_.illocst as illocst15_33_0_, itemlocati0_.illsc as illsc16_33_0_, itemlocati0_.ilpqoh as ilpqoh17_33_0_, itemlocati0_.ilqtib as ilqtib18_33_0_, itemlocati0_.ilqtin as ilqtin19_33_0_, itemlocati0_.ilqttr as ilqttr20_33_0_, itemlocati0_.ilqobo as ilqobo21_33_0_, itemlocati0_.ilqohc as ilqohc22_33_0_, itemlocati0_.ilqopo as ilqopo23_33_0_, itemlocati0_.ilqoso as ilqoso24_33_0_, itemlocati0_.ilqosc as ilqosc25_33_0_, itemlocati0_.ilqowo as ilqowo26_33_0_, itemlocati0_.ilqowh as ilqowh27_33_0_, itemlocati0_.ilqows as ilqows28_33_0_, itemlocati0_.ilqot1 as ilqot29_33_0_, itemlocati0_.ilqot2 as ilqot30_33_0_, itemlocati0_.ilqot3 as ilqot31_33_0_, itemlocati0_.ilqtob as ilqtob32_33_0_, itemlocati0_.ilsqoh as ilsqoh33_33_0_, itemlocati0_.ilsqpo as ilsqpo34_33_0_, itemlocati0_.ilsqso as ilsqso35_33_0_, itemlocati0_.ilsqwo as ilsqwo36_33_0_, itemlocati0_.iluom as iluom37_33_0_, itemlocati0_.iluom1 as iluom38_33_0_, itemlocati0_.iluom2 as iluom39_33_0_ from t41021 itemlocati0_ where itemlocati0_.ilbuid=? and itemlocati0_.ilinum=? and itemlocati0_.illocid=? and itemlocati0_.ilsnlot=?
 Hibernate: select lotmaster0_.ltbuid as ltbuid1_34_0_, lotmaster0_.ltinum as ltinum2_34_0_, lotmaster0_.ltsnlot as ltsnlot3_34_0_, lotmaster0_.ltcid as ltcid4_34_0_, lotmaster0_.ltdtin as ltdtin5_34_0_, lotmaster0_.lttmin as lttmin6_34_0_, lotmaster0_.ltuid as ltuid7_34_0_, lotmaster0_.ltdtlu as ltdtlu8_34_0_, lotmaster0_.lttmlu as lttmlu9_34_0_, lotmaster0_.ltuidm as ltuidm10_34_0_, lotmaster0_.ltbodt as ltbodt11_34_0_, lotmaster0_.ltbbdt as ltbbdt12_34_0_, lotmaster0_.ltcldt as ltcldt13_34_0_, lotmaster0_.ltexpdt as ltexpdt14_34_0_, lotmaster0_.ltldsc as ltldsc15_34_0_, lotmaster0_.ltledt as ltledt16_34_0_, lotmaster0_.ltlsc as ltlsc17_34_0_, lotmaster0_.ltmlot1 as ltmlot18_34_0_, lotmaster0_.ltmlot2 as ltmlot19_34_0_, lotmaster0_.ltmlot3 as ltmlot20_34_0_, lotmaster0_.ltohdt as ltohdt21_34_0_, lotmaster0_.ltsern as ltsern22_34_0_ from t4108 lotmaster0_ where lotmaster0_.ltbuid=? and lotmaster0_.ltinum=? and lotmaster0_.ltsnlot=?
-2018-12-14 17:35:27.717  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@5cb78e12 testClass = ItemLocationApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemLocationApiTest@67cfd0e9, testMethod = getTestSingle@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@6b378341 testClass = ItemLocationApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4af5667e key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
-2018-12-14 17:35:27.717  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@5cb78e12 testClass = ItemLocationApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemLocationApiTest@11cb5fdf, testMethod = updateTestWithPatch@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@6b378341 testClass = ItemLocationApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4af5667e key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
-2018-12-14 17:35:27.717  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
-2018-12-14 17:35:27.717  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
-2018-12-14 17:35:27.717  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+2018-12-27 11:25:46.062  INFO 2120 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@79e2649e testClass = ItemLocationApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemLocationApiTest@7a61b92f, testMethod = getTestSingle@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@445a4bd3 testClass = ItemLocationApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@de3935f key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+2018-12-27 11:25:46.064  INFO 2120 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@79e2649e testClass = ItemLocationApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemLocationApiTest@480381be, testMethod = updateTestWithPatch@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@445a4bd3 testClass = ItemLocationApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@de3935f key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@75de8c12]; rollback [true]
+2018-12-27 11:25:46.065  INFO 2120 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-27 11:25:46.065  INFO 2120 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-27 11:25:46.073  INFO 2120 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 8 ms
 Hibernate: select itemlocati0_.ilbuid as ilbuid1_33_0_, itemlocati0_.ilinum as ilinum2_33_0_, itemlocati0_.illocid as illocid3_33_0_, itemlocati0_.ilsnlot as ilsnlot4_33_0_, itemlocati0_.ilcid as ilcid5_33_0_, itemlocati0_.ildtin as ildtin6_33_0_, itemlocati0_.iltmin as iltmin7_33_0_, itemlocati0_.iluid as iluid8_33_0_, itemlocati0_.ildtlu as ildtlu9_33_0_, itemlocati0_.iltmlu as iltmlu10_33_0_, itemlocati0_.iluidm as iluidm11_33_0_, itemlocati0_.ildtlt as ildtlt12_33_0_, itemlocati0_.ilexpdt as ilexpdt13_33_0_, itemlocati0_.ilglcls as ilglcls14_33_0_, itemlocati0_.illocst as illocst15_33_0_, itemlocati0_.illsc as illsc16_33_0_, itemlocati0_.ilpqoh as ilpqoh17_33_0_, itemlocati0_.ilqtib as ilqtib18_33_0_, itemlocati0_.ilqtin as ilqtin19_33_0_, itemlocati0_.ilqttr as ilqttr20_33_0_, itemlocati0_.ilqobo as ilqobo21_33_0_, itemlocati0_.ilqohc as ilqohc22_33_0_, itemlocati0_.ilqopo as ilqopo23_33_0_, itemlocati0_.ilqoso as ilqoso24_33_0_, itemlocati0_.ilqosc as ilqosc25_33_0_, itemlocati0_.ilqowo as ilqowo26_33_0_, itemlocati0_.ilqowh as ilqowh27_33_0_, itemlocati0_.ilqows as ilqows28_33_0_, itemlocati0_.ilqot1 as ilqot29_33_0_, itemlocati0_.ilqot2 as ilqot30_33_0_, itemlocati0_.ilqot3 as ilqot31_33_0_, itemlocati0_.ilqtob as ilqtob32_33_0_, itemlocati0_.ilsqoh as ilsqoh33_33_0_, itemlocati0_.ilsqpo as ilsqpo34_33_0_, itemlocati0_.ilsqso as ilsqso35_33_0_, itemlocati0_.ilsqwo as ilsqwo36_33_0_, itemlocati0_.iluom as iluom37_33_0_, itemlocati0_.iluom1 as iluom38_33_0_, itemlocati0_.iluom2 as iluom39_33_0_ from t41021 itemlocati0_ where itemlocati0_.ilbuid=? and itemlocati0_.ilinum=? and itemlocati0_.illocid=? and itemlocati0_.ilsnlot=?
 Hibernate: select lotmaster0_.ltbuid as ltbuid1_34_0_, lotmaster0_.ltinum as ltinum2_34_0_, lotmaster0_.ltsnlot as ltsnlot3_34_0_, lotmaster0_.ltcid as ltcid4_34_0_, lotmaster0_.ltdtin as ltdtin5_34_0_, lotmaster0_.lttmin as lttmin6_34_0_, lotmaster0_.ltuid as ltuid7_34_0_, lotmaster0_.ltdtlu as ltdtlu8_34_0_, lotmaster0_.lttmlu as lttmlu9_34_0_, lotmaster0_.ltuidm as ltuidm10_34_0_, lotmaster0_.ltbodt as ltbodt11_34_0_, lotmaster0_.ltbbdt as ltbbdt12_34_0_, lotmaster0_.ltcldt as ltcldt13_34_0_, lotmaster0_.ltexpdt as ltexpdt14_34_0_, lotmaster0_.ltldsc as ltldsc15_34_0_, lotmaster0_.ltledt as ltledt16_34_0_, lotmaster0_.ltlsc as ltlsc17_34_0_, lotmaster0_.ltmlot1 as ltmlot18_34_0_, lotmaster0_.ltmlot2 as ltmlot19_34_0_, lotmaster0_.ltmlot3 as ltmlot20_34_0_, lotmaster0_.ltohdt as ltohdt21_34_0_, lotmaster0_.ltsern as ltsern22_34_0_ from t4108 lotmaster0_ where lotmaster0_.ltbuid=? and lotmaster0_.ltinum=? and lotmaster0_.ltsnlot=?
 Hibernate: update t41021 set ilcid=?, ildtlu=?, iltmlu=?, iluidm=?, ildtlt=?, ilexpdt=?, ilglcls=?, illocst=?, illsc=?, ilpqoh=?, ilqtib=?, ilqtin=?, ilqttr=?, ilqobo=?, ilqohc=?, ilqopo=?, ilqoso=?, ilqosc=?, ilqowo=?, ilqowh=?, ilqows=?, ilqot1=?, ilqot2=?, ilqot3=?, ilqtob=?, ilsqoh=?, ilsqpo=?, ilsqso=?, ilsqwo=?, iluom=?, iluom1=?, iluom2=? where ilbuid=? and ilinum=? and illocid=? and ilsnlot=?
 Hibernate: select itemlocati0_.ilbuid as ilbuid1_33_0_, itemlocati0_.ilinum as ilinum2_33_0_, itemlocati0_.illocid as illocid3_33_0_, itemlocati0_.ilsnlot as ilsnlot4_33_0_, itemlocati0_.ilcid as ilcid5_33_0_, itemlocati0_.ildtin as ildtin6_33_0_, itemlocati0_.iltmin as iltmin7_33_0_, itemlocati0_.iluid as iluid8_33_0_, itemlocati0_.ildtlu as ildtlu9_33_0_, itemlocati0_.iltmlu as iltmlu10_33_0_, itemlocati0_.iluidm as iluidm11_33_0_, itemlocati0_.ildtlt as ildtlt12_33_0_, itemlocati0_.ilexpdt as ilexpdt13_33_0_, itemlocati0_.ilglcls as ilglcls14_33_0_, itemlocati0_.illocst as illocst15_33_0_, itemlocati0_.illsc as illsc16_33_0_, itemlocati0_.ilpqoh as ilpqoh17_33_0_, itemlocati0_.ilqtib as ilqtib18_33_0_, itemlocati0_.ilqtin as ilqtin19_33_0_, itemlocati0_.ilqttr as ilqttr20_33_0_, itemlocati0_.ilqobo as ilqobo21_33_0_, itemlocati0_.ilqohc as ilqohc22_33_0_, itemlocati0_.ilqopo as ilqopo23_33_0_, itemlocati0_.ilqoso as ilqoso24_33_0_, itemlocati0_.ilqosc as ilqosc25_33_0_, itemlocati0_.ilqowo as ilqowo26_33_0_, itemlocati0_.ilqowh as ilqowh27_33_0_, itemlocati0_.ilqows as ilqows28_33_0_, itemlocati0_.ilqot1 as ilqot29_33_0_, itemlocati0_.ilqot2 as ilqot30_33_0_, itemlocati0_.ilqot3 as ilqot31_33_0_, itemlocati0_.ilqtob as ilqtob32_33_0_, itemlocati0_.ilsqoh as ilsqoh33_33_0_, itemlocati0_.ilsqpo as ilsqpo34_33_0_, itemlocati0_.ilsqso as ilsqso35_33_0_, itemlocati0_.ilsqwo as ilsqwo36_33_0_, itemlocati0_.iluom as iluom37_33_0_, itemlocati0_.iluom1 as iluom38_33_0_, itemlocati0_.iluom2 as iluom39_33_0_ from t41021 itemlocati0_ where itemlocati0_.ilbuid=? and itemlocati0_.ilinum=? and itemlocati0_.illocid=? and itemlocati0_.ilsnlot=?
 Hibernate: select lotmaster0_.ltbuid as ltbuid1_34_0_, lotmaster0_.ltinum as ltinum2_34_0_, lotmaster0_.ltsnlot as ltsnlot3_34_0_, lotmaster0_.ltcid as ltcid4_34_0_, lotmaster0_.ltdtin as ltdtin5_34_0_, lotmaster0_.lttmin as lttmin6_34_0_, lotmaster0_.ltuid as ltuid7_34_0_, lotmaster0_.ltdtlu as ltdtlu8_34_0_, lotmaster0_.lttmlu as lttmlu9_34_0_, lotmaster0_.ltuidm as ltuidm10_34_0_, lotmaster0_.ltbodt as ltbodt11_34_0_, lotmaster0_.ltbbdt as ltbbdt12_34_0_, lotmaster0_.ltcldt as ltcldt13_34_0_, lotmaster0_.ltexpdt as ltexpdt14_34_0_, lotmaster0_.ltldsc as ltldsc15_34_0_, lotmaster0_.ltledt as ltledt16_34_0_, lotmaster0_.ltlsc as ltlsc17_34_0_, lotmaster0_.ltmlot1 as ltmlot18_34_0_, lotmaster0_.ltmlot2 as ltmlot19_34_0_, lotmaster0_.ltmlot3 as ltmlot20_34_0_, lotmaster0_.ltohdt as ltohdt21_34_0_, lotmaster0_.ltsern as ltsern22_34_0_ from t4108 lotmaster0_ where lotmaster0_.ltbuid=? and lotmaster0_.ltinum=? and lotmaster0_.ltsnlot=?
-2018-12-14 17:35:27.827  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@5cb78e12 testClass = ItemLocationApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemLocationApiTest@11cb5fdf, testMethod = updateTestWithPatch@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@6b378341 testClass = ItemLocationApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4af5667e key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
-2018-12-14 17:35:27.827  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@5cb78e12 testClass = ItemLocationApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemLocationApiTest@b6e63ca, testMethod = getTestCollection@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@6b378341 testClass = ItemLocationApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4af5667e key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
-2018-12-14 17:35:27.827  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
-2018-12-14 17:35:27.827  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
-2018-12-14 17:35:27.827  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+2018-12-27 11:25:46.179  INFO 2120 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@79e2649e testClass = ItemLocationApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemLocationApiTest@480381be, testMethod = updateTestWithPatch@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@445a4bd3 testClass = ItemLocationApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@de3935f key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+2018-12-27 11:25:46.182  INFO 2120 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@79e2649e testClass = ItemLocationApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemLocationApiTest@381f86cb, testMethod = getTestCollection@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@445a4bd3 testClass = ItemLocationApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@de3935f key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@75de8c12]; rollback [true]
+2018-12-27 11:25:46.183  INFO 2120 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-27 11:25:46.183  INFO 2120 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-27 11:25:46.190  INFO 2120 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 7 ms
 Hibernate: select TOP(?) itemlocati0_.ilbuid as ilbuid1_33_, itemlocati0_.ilinum as ilinum2_33_, itemlocati0_.illocid as illocid3_33_, itemlocati0_.ilsnlot as ilsnlot4_33_, itemlocati0_.ilcid as ilcid5_33_, itemlocati0_.ildtin as ildtin6_33_, itemlocati0_.iltmin as iltmin7_33_, itemlocati0_.iluid as iluid8_33_, itemlocati0_.ildtlu as ildtlu9_33_, itemlocati0_.iltmlu as iltmlu10_33_, itemlocati0_.iluidm as iluidm11_33_, itemlocati0_.ildtlt as ildtlt12_33_, itemlocati0_.ilexpdt as ilexpdt13_33_, itemlocati0_.ilglcls as ilglcls14_33_, itemlocati0_.illocst as illocst15_33_, itemlocati0_.illsc as illsc16_33_, itemlocati0_.ilpqoh as ilpqoh17_33_, itemlocati0_.ilqtib as ilqtib18_33_, itemlocati0_.ilqtin as ilqtin19_33_, itemlocati0_.ilqttr as ilqttr20_33_, itemlocati0_.ilqobo as ilqobo21_33_, itemlocati0_.ilqohc as ilqohc22_33_, itemlocati0_.ilqopo as ilqopo23_33_, itemlocati0_.ilqoso as ilqoso24_33_, itemlocati0_.ilqosc as ilqosc25_33_, itemlocati0_.ilqowo as ilqowo26_33_, itemlocati0_.ilqowh as ilqowh27_33_, itemlocati0_.ilqows as ilqows28_33_, itemlocati0_.ilqot1 as ilqot29_33_, itemlocati0_.ilqot2 as ilqot30_33_, itemlocati0_.ilqot3 as ilqot31_33_, itemlocati0_.ilqtob as ilqtob32_33_, itemlocati0_.ilsqoh as ilsqoh33_33_, itemlocati0_.ilsqpo as ilsqpo34_33_, itemlocati0_.ilsqso as ilsqso35_33_, itemlocati0_.ilsqwo as ilsqwo36_33_, itemlocati0_.iluom as iluom37_33_, itemlocati0_.iluom1 as iluom38_33_, itemlocati0_.iluom2 as iluom39_33_ from t41021 itemlocati0_
 Hibernate: select lotmaster0_.ltbuid as ltbuid1_34_0_, lotmaster0_.ltinum as ltinum2_34_0_, lotmaster0_.ltsnlot as ltsnlot3_34_0_, lotmaster0_.ltcid as ltcid4_34_0_, lotmaster0_.ltdtin as ltdtin5_34_0_, lotmaster0_.lttmin as lttmin6_34_0_, lotmaster0_.ltuid as ltuid7_34_0_, lotmaster0_.ltdtlu as ltdtlu8_34_0_, lotmaster0_.lttmlu as lttmlu9_34_0_, lotmaster0_.ltuidm as ltuidm10_34_0_, lotmaster0_.ltbodt as ltbodt11_34_0_, lotmaster0_.ltbbdt as ltbbdt12_34_0_, lotmaster0_.ltcldt as ltcldt13_34_0_, lotmaster0_.ltexpdt as ltexpdt14_34_0_, lotmaster0_.ltldsc as ltldsc15_34_0_, lotmaster0_.ltledt as ltledt16_34_0_, lotmaster0_.ltlsc as ltlsc17_34_0_, lotmaster0_.ltmlot1 as ltmlot18_34_0_, lotmaster0_.ltmlot2 as ltmlot19_34_0_, lotmaster0_.ltmlot3 as ltmlot20_34_0_, lotmaster0_.ltohdt as ltohdt21_34_0_, lotmaster0_.ltsern as ltsern22_34_0_ from t4108 lotmaster0_ where lotmaster0_.ltbuid=? and lotmaster0_.ltinum=? and lotmaster0_.ltsnlot=?
 Hibernate: select lotmaster0_.ltbuid as ltbuid1_34_0_, lotmaster0_.ltinum as ltinum2_34_0_, lotmaster0_.ltsnlot as ltsnlot3_34_0_, lotmaster0_.ltcid as ltcid4_34_0_, lotmaster0_.ltdtin as ltdtin5_34_0_, lotmaster0_.lttmin as lttmin6_34_0_, lotmaster0_.ltuid as ltuid7_34_0_, lotmaster0_.ltdtlu as ltdtlu8_34_0_, lotmaster0_.lttmlu as lttmlu9_34_0_, lotmaster0_.ltuidm as ltuidm10_34_0_, lotmaster0_.ltbodt as ltbodt11_34_0_, lotmaster0_.ltbbdt as ltbbdt12_34_0_, lotmaster0_.ltcldt as ltcldt13_34_0_, lotmaster0_.ltexpdt as ltexpdt14_34_0_, lotmaster0_.ltldsc as ltldsc15_34_0_, lotmaster0_.ltledt as ltledt16_34_0_, lotmaster0_.ltlsc as ltlsc17_34_0_, lotmaster0_.ltmlot1 as ltmlot18_34_0_, lotmaster0_.ltmlot2 as ltmlot19_34_0_, lotmaster0_.ltmlot3 as ltmlot20_34_0_, lotmaster0_.ltohdt as ltohdt21_34_0_, lotmaster0_.ltsern as ltsern22_34_0_ from t4108 lotmaster0_ where lotmaster0_.ltbuid=? and lotmaster0_.ltinum=? and lotmaster0_.ltsnlot=?
@@ -180,7 +180,7 @@ MockHttpServletRequest:
        Parameters = {}
           Headers = {Accept=[application/json]}
              Body = &lt;no character encoding set&gt;
-    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@235c0a58, SPRING_SECURITY_CONTEXT=org.springframework.security.core.context.SecurityContextImpl@475fcd89: Authentication: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@475fcd89: Principal: org.springframework.security.core.userdetails.User@f02988d6: Username: username; Password: [PROTECTED]; Enabled: true; AccountNonExpired: true; credentialsNonExpired: true; AccountNonLocked: true; Not granted any authorities; Credentials: [PROTECTED]; Authenticated: true; Details: null; Not granted any authorities}
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@7f6cdcef, SPRING_SECURITY_CONTEXT=org.springframework.security.core.context.SecurityContextImpl@475fcd89: Authentication: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@475fcd89: Principal: org.springframework.security.core.userdetails.User@f02988d6: Username: username; Password: [PROTECTED]; Enabled: true; AccountNonExpired: true; credentialsNonExpired: true; AccountNonLocked: true; Not granted any authorities; Credentials: [PROTECTED]; Authenticated: true; Details: null; Not granted any authorities}
 
 Handler:
              Type = org.springframework.data.rest.webmvc.RepositoryEntityController
@@ -256,14 +256,14 @@ MockHttpServletResponse:
         &quot;itemLocation&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.APC-AR2400FP1_110_GDT_&quot;
         },
-        &quot;location&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.APC-AR2400FP1_110_GDT_/location&quot;
+        &quot;lot&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.APC-AR2400FP1_110_GDT_/lot&quot;
         },
         &quot;item&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.APC-AR2400FP1_110_GDT_/item&quot;
         },
-        &quot;lot&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.APC-AR2400FP1_110_GDT_/lot&quot;
+        &quot;location&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.APC-AR2400FP1_110_GDT_/location&quot;
         }
       }
     }, {
@@ -314,14 +314,14 @@ MockHttpServletResponse:
         &quot;itemLocation&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.APC-AR2400FP1_110_GDU_&quot;
         },
-        &quot;location&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.APC-AR2400FP1_110_GDU_/location&quot;
+        &quot;lot&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.APC-AR2400FP1_110_GDU_/lot&quot;
         },
         &quot;item&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.APC-AR2400FP1_110_GDU_/item&quot;
         },
-        &quot;lot&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.APC-AR2400FP1_110_GDU_/lot&quot;
+        &quot;location&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.APC-AR2400FP1_110_GDU_/location&quot;
         }
       }
     }, {
@@ -372,14 +372,14 @@ MockHttpServletResponse:
         &quot;itemLocation&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.APC-AR2400FP1_11000_GDU_&quot;
         },
-        &quot;location&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.APC-AR2400FP1_11000_GDU_/location&quot;
+        &quot;lot&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.APC-AR2400FP1_11000_GDU_/lot&quot;
         },
         &quot;item&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.APC-AR2400FP1_11000_GDU_/item&quot;
         },
-        &quot;lot&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.APC-AR2400FP1_11000_GDU_/lot&quot;
+        &quot;location&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.APC-AR2400FP1_11000_GDU_/location&quot;
         }
       }
     }, {
@@ -430,14 +430,14 @@ MockHttpServletResponse:
         &quot;itemLocation&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.APC-AR2400FP1_120_GDT_&quot;
         },
-        &quot;location&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.APC-AR2400FP1_120_GDT_/location&quot;
+        &quot;lot&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.APC-AR2400FP1_120_GDT_/lot&quot;
         },
         &quot;item&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.APC-AR2400FP1_120_GDT_/item&quot;
         },
-        &quot;lot&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.APC-AR2400FP1_120_GDT_/lot&quot;
+        &quot;location&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.APC-AR2400FP1_120_GDT_/location&quot;
         }
       }
     }, {
@@ -488,14 +488,14 @@ MockHttpServletResponse:
         &quot;itemLocation&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.APC-AR2400FP1_120_GDU_&quot;
         },
-        &quot;location&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.APC-AR2400FP1_120_GDU_/location&quot;
+        &quot;lot&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.APC-AR2400FP1_120_GDU_/lot&quot;
         },
         &quot;item&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.APC-AR2400FP1_120_GDU_/item&quot;
         },
-        &quot;lot&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.APC-AR2400FP1_120_GDU_/lot&quot;
+        &quot;location&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.APC-AR2400FP1_120_GDU_/location&quot;
         }
       }
     }, {
@@ -546,14 +546,14 @@ MockHttpServletResponse:
         &quot;itemLocation&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BATERAI_-_CMOS_t_t_t_110_ABC.1.2.3_&quot;
         },
-        &quot;location&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BATERAI_-_CMOS_t_t_t_110_ABC.1.2.3_/location&quot;
+        &quot;lot&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BATERAI_-_CMOS_t_t_t_110_ABC.1.2.3_/lot&quot;
         },
         &quot;item&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BATERAI_-_CMOS_t_t_t_110_ABC.1.2.3_/item&quot;
         },
-        &quot;lot&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BATERAI_-_CMOS_t_t_t_110_ABC.1.2.3_/lot&quot;
+        &quot;location&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BATERAI_-_CMOS_t_t_t_110_ABC.1.2.3_/location&quot;
         }
       }
     }, {
@@ -604,14 +604,14 @@ MockHttpServletResponse:
         &quot;itemLocation&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BATERAI_-_CMOS_t_t_t_110_GDU_&quot;
         },
-        &quot;location&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BATERAI_-_CMOS_t_t_t_110_GDU_/location&quot;
+        &quot;lot&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BATERAI_-_CMOS_t_t_t_110_GDU_/lot&quot;
         },
         &quot;item&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BATERAI_-_CMOS_t_t_t_110_GDU_/item&quot;
         },
-        &quot;lot&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BATERAI_-_CMOS_t_t_t_110_GDU_/lot&quot;
+        &quot;location&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BATERAI_-_CMOS_t_t_t_110_GDU_/location&quot;
         }
       }
     }, {
@@ -662,14 +662,14 @@ MockHttpServletResponse:
         &quot;itemLocation&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BATERAI_-_CMOS_t_t_t_11000_GDU_&quot;
         },
-        &quot;location&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BATERAI_-_CMOS_t_t_t_11000_GDU_/location&quot;
+        &quot;lot&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BATERAI_-_CMOS_t_t_t_11000_GDU_/lot&quot;
         },
         &quot;item&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BATERAI_-_CMOS_t_t_t_11000_GDU_/item&quot;
         },
-        &quot;lot&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BATERAI_-_CMOS_t_t_t_11000_GDU_/lot&quot;
+        &quot;location&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BATERAI_-_CMOS_t_t_t_11000_GDU_/location&quot;
         }
       }
     }, {
@@ -720,14 +720,14 @@ MockHttpServletResponse:
         &quot;itemLocation&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BATERAI_-_CMOS_t_t_t_120_GDU_&quot;
         },
-        &quot;location&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BATERAI_-_CMOS_t_t_t_120_GDU_/location&quot;
+        &quot;lot&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BATERAI_-_CMOS_t_t_t_120_GDU_/lot&quot;
         },
         &quot;item&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BATERAI_-_CMOS_t_t_t_120_GDU_/item&quot;
         },
-        &quot;lot&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BATERAI_-_CMOS_t_t_t_120_GDU_/lot&quot;
+        &quot;location&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BATERAI_-_CMOS_t_t_t_120_GDU_/location&quot;
         }
       }
     }, {
@@ -778,14 +778,14 @@ MockHttpServletResponse:
         &quot;itemLocation&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-LT6505_110_GDU_&quot;
         },
-        &quot;location&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-LT6505_110_GDU_/location&quot;
+        &quot;lot&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-LT6505_110_GDU_/lot&quot;
         },
         &quot;item&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-LT6505_110_GDU_/item&quot;
         },
-        &quot;lot&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-LT6505_110_GDU_/lot&quot;
+        &quot;location&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-LT6505_110_GDU_/location&quot;
         }
       }
     }, {
@@ -836,14 +836,14 @@ MockHttpServletResponse:
         &quot;itemLocation&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-LT6505_110_GDU_123456&quot;
         },
-        &quot;location&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-LT6505_110_GDU_123456/location&quot;
+        &quot;lot&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-LT6505_110_GDU_123456/lot&quot;
         },
         &quot;item&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-LT6505_110_GDU_123456/item&quot;
         },
-        &quot;lot&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-LT6505_110_GDU_123456/lot&quot;
+        &quot;location&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-LT6505_110_GDU_123456/location&quot;
         }
       }
     }, {
@@ -894,14 +894,14 @@ MockHttpServletResponse:
         &quot;itemLocation&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-LT6505_11000_GDU_&quot;
         },
-        &quot;location&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-LT6505_11000_GDU_/location&quot;
+        &quot;lot&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-LT6505_11000_GDU_/lot&quot;
         },
         &quot;item&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-LT6505_11000_GDU_/item&quot;
         },
-        &quot;lot&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-LT6505_11000_GDU_/lot&quot;
+        &quot;location&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-LT6505_11000_GDU_/location&quot;
         }
       }
     }, {
@@ -952,14 +952,14 @@ MockHttpServletResponse:
         &quot;itemLocation&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-LT6505_120_GDT_&quot;
         },
-        &quot;location&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-LT6505_120_GDT_/location&quot;
+        &quot;lot&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-LT6505_120_GDT_/lot&quot;
         },
         &quot;item&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-LT6505_120_GDT_/item&quot;
         },
-        &quot;lot&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-LT6505_120_GDT_/lot&quot;
+        &quot;location&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-LT6505_120_GDT_/location&quot;
         }
       }
     }, {
@@ -1010,14 +1010,14 @@ MockHttpServletResponse:
         &quot;itemLocation&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-MX4000_110_GDU_&quot;
         },
-        &quot;location&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-MX4000_110_GDU_/location&quot;
+        &quot;lot&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-MX4000_110_GDU_/lot&quot;
         },
         &quot;item&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-MX4000_110_GDU_/item&quot;
         },
-        &quot;lot&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-MX4000_110_GDU_/lot&quot;
+        &quot;location&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-MX4000_110_GDU_/location&quot;
         }
       }
     }, {
@@ -1068,14 +1068,14 @@ MockHttpServletResponse:
         &quot;itemLocation&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-MX4000_11000_GDU_&quot;
         },
-        &quot;location&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-MX4000_11000_GDU_/location&quot;
+        &quot;lot&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-MX4000_11000_GDU_/lot&quot;
         },
         &quot;item&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-MX4000_11000_GDU_/item&quot;
         },
-        &quot;lot&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-MX4000_11000_GDU_/lot&quot;
+        &quot;location&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-MX4000_11000_GDU_/location&quot;
         }
       }
     }, {
@@ -1126,14 +1126,14 @@ MockHttpServletResponse:
         &quot;itemLocation&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-MX4000_120_GDT_&quot;
         },
-        &quot;location&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-MX4000_120_GDT_/location&quot;
+        &quot;lot&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-MX4000_120_GDT_/lot&quot;
         },
         &quot;item&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-MX4000_120_GDT_/item&quot;
         },
-        &quot;lot&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-MX4000_120_GDT_/lot&quot;
+        &quot;location&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-MX4000_120_GDT_/location&quot;
         }
       }
     }, {
@@ -1184,14 +1184,14 @@ MockHttpServletResponse:
         &quot;itemLocation&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-TT4000_110_GDU_&quot;
         },
-        &quot;location&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-TT4000_110_GDU_/location&quot;
+        &quot;lot&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-TT4000_110_GDU_/lot&quot;
         },
         &quot;item&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-TT4000_110_GDU_/item&quot;
         },
-        &quot;lot&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-TT4000_110_GDU_/lot&quot;
+        &quot;location&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-TT4000_110_GDU_/location&quot;
         }
       }
     }, {
@@ -1242,14 +1242,14 @@ MockHttpServletResponse:
         &quot;itemLocation&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-TT4000_120_GDT_&quot;
         },
-        &quot;location&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-TT4000_120_GDT_/location&quot;
+        &quot;lot&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-TT4000_120_GDT_/lot&quot;
         },
         &quot;item&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-TT4000_120_GDT_/item&quot;
         },
-        &quot;lot&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-TT4000_120_GDT_/lot&quot;
+        &quot;location&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.BROTHER-TT4000_120_GDT_/location&quot;
         }
       }
     }, {
@@ -1300,14 +1300,14 @@ MockHttpServletResponse:
         &quot;itemLocation&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.CD-CDBLANK_110_GDU_&quot;
         },
-        &quot;location&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.CD-CDBLANK_110_GDU_/location&quot;
+        &quot;lot&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.CD-CDBLANK_110_GDU_/lot&quot;
         },
         &quot;item&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.CD-CDBLANK_110_GDU_/item&quot;
         },
-        &quot;lot&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.CD-CDBLANK_110_GDU_/lot&quot;
+        &quot;location&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.CD-CDBLANK_110_GDU_/location&quot;
         }
       }
     }, {
@@ -1358,14 +1358,14 @@ MockHttpServletResponse:
         &quot;itemLocation&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.CD-CDBLANK_120_GDT_&quot;
         },
-        &quot;location&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.CD-CDBLANK_120_GDT_/location&quot;
+        &quot;lot&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.CD-CDBLANK_120_GDT_/lot&quot;
         },
         &quot;item&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.CD-CDBLANK_120_GDT_/item&quot;
         },
-        &quot;lot&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.CD-CDBLANK_120_GDT_/lot&quot;
+        &quot;location&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itemLocations/ACC.CD-CDBLANK_120_GDT_/location&quot;
         }
       }
     } ]
@@ -1398,24 +1398,24 @@ MockHttpServletResponse:
     Forwarded URL = null
    Redirected URL = null
           Cookies = []
-2018-12-14 17:35:27.920  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@5cb78e12 testClass = ItemLocationApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemLocationApiTest@b6e63ca, testMethod = getTestCollection@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@6b378341 testClass = ItemLocationApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4af5667e key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
-2018-12-14 17:35:27.920  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@5cb78e12 testClass = ItemLocationApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemLocationApiTest@51da2dee, testMethod = createTestWithPut@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@6b378341 testClass = ItemLocationApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4af5667e key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
-2018-12-14 17:35:27.920  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
-2018-12-14 17:35:27.920  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
-2018-12-14 17:35:27.936  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 16 ms
+2018-12-27 11:25:46.301  INFO 2120 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@79e2649e testClass = ItemLocationApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemLocationApiTest@381f86cb, testMethod = getTestCollection@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@445a4bd3 testClass = ItemLocationApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@de3935f key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+2018-12-27 11:25:46.310  INFO 2120 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@79e2649e testClass = ItemLocationApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemLocationApiTest@39e7d90e, testMethod = createTestWithPut@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@445a4bd3 testClass = ItemLocationApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@de3935f key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@75de8c12]; rollback [true]
+2018-12-27 11:25:46.311  INFO 2120 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-27 11:25:46.313  INFO 2120 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-27 11:25:46.323  INFO 2120 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 10 ms
 Hibernate: select itemlocati0_.ilbuid as ilbuid1_33_0_, itemlocati0_.ilinum as ilinum2_33_0_, itemlocati0_.illocid as illocid3_33_0_, itemlocati0_.ilsnlot as ilsnlot4_33_0_, itemlocati0_.ilcid as ilcid5_33_0_, itemlocati0_.ildtin as ildtin6_33_0_, itemlocati0_.iltmin as iltmin7_33_0_, itemlocati0_.iluid as iluid8_33_0_, itemlocati0_.ildtlu as ildtlu9_33_0_, itemlocati0_.iltmlu as iltmlu10_33_0_, itemlocati0_.iluidm as iluidm11_33_0_, itemlocati0_.ildtlt as ildtlt12_33_0_, itemlocati0_.ilexpdt as ilexpdt13_33_0_, itemlocati0_.ilglcls as ilglcls14_33_0_, itemlocati0_.illocst as illocst15_33_0_, itemlocati0_.illsc as illsc16_33_0_, itemlocati0_.ilpqoh as ilpqoh17_33_0_, itemlocati0_.ilqtib as ilqtib18_33_0_, itemlocati0_.ilqtin as ilqtin19_33_0_, itemlocati0_.ilqttr as ilqttr20_33_0_, itemlocati0_.ilqobo as ilqobo21_33_0_, itemlocati0_.ilqohc as ilqohc22_33_0_, itemlocati0_.ilqopo as ilqopo23_33_0_, itemlocati0_.ilqoso as ilqoso24_33_0_, itemlocati0_.ilqosc as ilqosc25_33_0_, itemlocati0_.ilqowo as ilqowo26_33_0_, itemlocati0_.ilqowh as ilqowh27_33_0_, itemlocati0_.ilqows as ilqows28_33_0_, itemlocati0_.ilqot1 as ilqot29_33_0_, itemlocati0_.ilqot2 as ilqot30_33_0_, itemlocati0_.ilqot3 as ilqot31_33_0_, itemlocati0_.ilqtob as ilqtob32_33_0_, itemlocati0_.ilsqoh as ilsqoh33_33_0_, itemlocati0_.ilsqpo as ilsqpo34_33_0_, itemlocati0_.ilsqso as ilsqso35_33_0_, itemlocati0_.ilsqwo as ilsqwo36_33_0_, itemlocati0_.iluom as iluom37_33_0_, itemlocati0_.iluom1 as iluom38_33_0_, itemlocati0_.iluom2 as iluom39_33_0_ from t41021 itemlocati0_ where itemlocati0_.ilbuid=? and itemlocati0_.ilinum=? and itemlocati0_.illocid=? and itemlocati0_.ilsnlot=?
-2018-12-14 17:35:27.952  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@5cb78e12 testClass = ItemLocationApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemLocationApiTest@51da2dee, testMethod = createTestWithPut@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@6b378341 testClass = ItemLocationApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4af5667e key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
-2018-12-14 17:35:27.952  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@5cb78e12 testClass = ItemLocationApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemLocationApiTest@7d4017df, testMethod = deleteTest@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@6b378341 testClass = ItemLocationApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4af5667e key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
-2018-12-14 17:35:27.952  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
-2018-12-14 17:35:27.952  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
-2018-12-14 17:35:27.952  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+2018-12-27 11:25:46.361  INFO 2120 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@79e2649e testClass = ItemLocationApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemLocationApiTest@39e7d90e, testMethod = createTestWithPut@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@445a4bd3 testClass = ItemLocationApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@de3935f key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+2018-12-27 11:25:46.366  INFO 2120 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@79e2649e testClass = ItemLocationApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemLocationApiTest@31a885e4, testMethod = deleteTest@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@445a4bd3 testClass = ItemLocationApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@de3935f key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@75de8c12]; rollback [true]
+2018-12-27 11:25:46.367  INFO 2120 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-27 11:25:46.367  INFO 2120 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-27 11:25:46.377  INFO 2120 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 10 ms
 Hibernate: select itemlocati0_.ilbuid as ilbuid1_33_0_, itemlocati0_.ilinum as ilinum2_33_0_, itemlocati0_.illocid as illocid3_33_0_, itemlocati0_.ilsnlot as ilsnlot4_33_0_, itemlocati0_.ilcid as ilcid5_33_0_, itemlocati0_.ildtin as ildtin6_33_0_, itemlocati0_.iltmin as iltmin7_33_0_, itemlocati0_.iluid as iluid8_33_0_, itemlocati0_.ildtlu as ildtlu9_33_0_, itemlocati0_.iltmlu as iltmlu10_33_0_, itemlocati0_.iluidm as iluidm11_33_0_, itemlocati0_.ildtlt as ildtlt12_33_0_, itemlocati0_.ilexpdt as ilexpdt13_33_0_, itemlocati0_.ilglcls as ilglcls14_33_0_, itemlocati0_.illocst as illocst15_33_0_, itemlocati0_.illsc as illsc16_33_0_, itemlocati0_.ilpqoh as ilpqoh17_33_0_, itemlocati0_.ilqtib as ilqtib18_33_0_, itemlocati0_.ilqtin as ilqtin19_33_0_, itemlocati0_.ilqttr as ilqttr20_33_0_, itemlocati0_.ilqobo as ilqobo21_33_0_, itemlocati0_.ilqohc as ilqohc22_33_0_, itemlocati0_.ilqopo as ilqopo23_33_0_, itemlocati0_.ilqoso as ilqoso24_33_0_, itemlocati0_.ilqosc as ilqosc25_33_0_, itemlocati0_.ilqowo as ilqowo26_33_0_, itemlocati0_.ilqowh as ilqowh27_33_0_, itemlocati0_.ilqows as ilqows28_33_0_, itemlocati0_.ilqot1 as ilqot29_33_0_, itemlocati0_.ilqot2 as ilqot30_33_0_, itemlocati0_.ilqot3 as ilqot31_33_0_, itemlocati0_.ilqtob as ilqtob32_33_0_, itemlocati0_.ilsqoh as ilsqoh33_33_0_, itemlocati0_.ilsqpo as ilsqpo34_33_0_, itemlocati0_.ilsqso as ilsqso35_33_0_, itemlocati0_.ilsqwo as ilsqwo36_33_0_, itemlocati0_.iluom as iluom37_33_0_, itemlocati0_.iluom1 as iluom38_33_0_, itemlocati0_.iluom2 as iluom39_33_0_ from t41021 itemlocati0_ where itemlocati0_.ilbuid=? and itemlocati0_.ilinum=? and itemlocati0_.illocid=? and itemlocati0_.ilsnlot=?
 Hibernate: select lotmaster0_.ltbuid as ltbuid1_34_0_, lotmaster0_.ltinum as ltinum2_34_0_, lotmaster0_.ltsnlot as ltsnlot3_34_0_, lotmaster0_.ltcid as ltcid4_34_0_, lotmaster0_.ltdtin as ltdtin5_34_0_, lotmaster0_.lttmin as lttmin6_34_0_, lotmaster0_.ltuid as ltuid7_34_0_, lotmaster0_.ltdtlu as ltdtlu8_34_0_, lotmaster0_.lttmlu as lttmlu9_34_0_, lotmaster0_.ltuidm as ltuidm10_34_0_, lotmaster0_.ltbodt as ltbodt11_34_0_, lotmaster0_.ltbbdt as ltbbdt12_34_0_, lotmaster0_.ltcldt as ltcldt13_34_0_, lotmaster0_.ltexpdt as ltexpdt14_34_0_, lotmaster0_.ltldsc as ltldsc15_34_0_, lotmaster0_.ltledt as ltledt16_34_0_, lotmaster0_.ltlsc as ltlsc17_34_0_, lotmaster0_.ltmlot1 as ltmlot18_34_0_, lotmaster0_.ltmlot2 as ltmlot19_34_0_, lotmaster0_.ltmlot3 as ltmlot20_34_0_, lotmaster0_.ltohdt as ltohdt21_34_0_, lotmaster0_.ltsern as ltsern22_34_0_ from t4108 lotmaster0_ where lotmaster0_.ltbuid=? and lotmaster0_.ltinum=? and lotmaster0_.ltsnlot=?
-2018-12-14 17:35:27.967  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@5cb78e12 testClass = ItemLocationApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemLocationApiTest@7d4017df, testMethod = deleteTest@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@6b378341 testClass = ItemLocationApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4af5667e key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
-2018-12-14 17:35:27.967  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@5cb78e12 testClass = ItemLocationApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemLocationApiTest@3032e044, testMethod = createTestWithPost@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@6b378341 testClass = ItemLocationApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4af5667e key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
-2018-12-14 17:35:27.967  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
-2018-12-14 17:35:27.967  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
-2018-12-14 17:35:27.983  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 16 ms
+2018-12-27 11:25:46.420  INFO 2120 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@79e2649e testClass = ItemLocationApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemLocationApiTest@31a885e4, testMethod = deleteTest@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@445a4bd3 testClass = ItemLocationApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@de3935f key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+2018-12-27 11:25:46.423  INFO 2120 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@79e2649e testClass = ItemLocationApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemLocationApiTest@72b0c269, testMethod = createTestWithPost@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@445a4bd3 testClass = ItemLocationApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@de3935f key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@75de8c12]; rollback [true]
+2018-12-27 11:25:46.424  INFO 2120 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-27 11:25:46.424  INFO 2120 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-27 11:25:46.433  INFO 2120 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 9 ms
 Hibernate: select itemlocati0_.ilbuid as ilbuid1_33_0_, itemlocati0_.ilinum as ilinum2_33_0_, itemlocati0_.illocid as illocid3_33_0_, itemlocati0_.ilsnlot as ilsnlot4_33_0_, itemlocati0_.ilcid as ilcid5_33_0_, itemlocati0_.ildtin as ildtin6_33_0_, itemlocati0_.iltmin as iltmin7_33_0_, itemlocati0_.iluid as iluid8_33_0_, itemlocati0_.ildtlu as ildtlu9_33_0_, itemlocati0_.iltmlu as iltmlu10_33_0_, itemlocati0_.iluidm as iluidm11_33_0_, itemlocati0_.ildtlt as ildtlt12_33_0_, itemlocati0_.ilexpdt as ilexpdt13_33_0_, itemlocati0_.ilglcls as ilglcls14_33_0_, itemlocati0_.illocst as illocst15_33_0_, itemlocati0_.illsc as illsc16_33_0_, itemlocati0_.ilpqoh as ilpqoh17_33_0_, itemlocati0_.ilqtib as ilqtib18_33_0_, itemlocati0_.ilqtin as ilqtin19_33_0_, itemlocati0_.ilqttr as ilqttr20_33_0_, itemlocati0_.ilqobo as ilqobo21_33_0_, itemlocati0_.ilqohc as ilqohc22_33_0_, itemlocati0_.ilqopo as ilqopo23_33_0_, itemlocati0_.ilqoso as ilqoso24_33_0_, itemlocati0_.ilqosc as ilqosc25_33_0_, itemlocati0_.ilqowo as ilqowo26_33_0_, itemlocati0_.ilqowh as ilqowh27_33_0_, itemlocati0_.ilqows as ilqows28_33_0_, itemlocati0_.ilqot1 as ilqot29_33_0_, itemlocati0_.ilqot2 as ilqot30_33_0_, itemlocati0_.ilqot3 as ilqot31_33_0_, itemlocati0_.ilqtob as ilqtob32_33_0_, itemlocati0_.ilsqoh as ilsqoh33_33_0_, itemlocati0_.ilsqpo as ilsqpo34_33_0_, itemlocati0_.ilsqso as ilsqso35_33_0_, itemlocati0_.ilsqwo as ilsqwo36_33_0_, itemlocati0_.iluom as iluom37_33_0_, itemlocati0_.iluom1 as iluom38_33_0_, itemlocati0_.iluom2 as iluom39_33_0_ from t41021 itemlocati0_ where itemlocati0_.ilbuid=? and itemlocati0_.ilinum=? and itemlocati0_.illocid=? and itemlocati0_.ilsnlot=?
 Hibernate: select itemlocati0_.ilbuid as ilbuid1_33_0_, itemlocati0_.ilinum as ilinum2_33_0_, itemlocati0_.illocid as illocid3_33_0_, itemlocati0_.ilsnlot as ilsnlot4_33_0_, itemlocati0_.ilcid as ilcid5_33_0_, itemlocati0_.ildtin as ildtin6_33_0_, itemlocati0_.iltmin as iltmin7_33_0_, itemlocati0_.iluid as iluid8_33_0_, itemlocati0_.ildtlu as ildtlu9_33_0_, itemlocati0_.iltmlu as iltmlu10_33_0_, itemlocati0_.iluidm as iluidm11_33_0_, itemlocati0_.ildtlt as ildtlt12_33_0_, itemlocati0_.ilexpdt as ilexpdt13_33_0_, itemlocati0_.ilglcls as ilglcls14_33_0_, itemlocati0_.illocst as illocst15_33_0_, itemlocati0_.illsc as illsc16_33_0_, itemlocati0_.ilpqoh as ilpqoh17_33_0_, itemlocati0_.ilqtib as ilqtib18_33_0_, itemlocati0_.ilqtin as ilqtin19_33_0_, itemlocati0_.ilqttr as ilqttr20_33_0_, itemlocati0_.ilqobo as ilqobo21_33_0_, itemlocati0_.ilqohc as ilqohc22_33_0_, itemlocati0_.ilqopo as ilqopo23_33_0_, itemlocati0_.ilqoso as ilqoso24_33_0_, itemlocati0_.ilqosc as ilqosc25_33_0_, itemlocati0_.ilqowo as ilqowo26_33_0_, itemlocati0_.ilqowh as ilqowh27_33_0_, itemlocati0_.ilqows as ilqows28_33_0_, itemlocati0_.ilqot1 as ilqot29_33_0_, itemlocati0_.ilqot2 as ilqot30_33_0_, itemlocati0_.ilqot3 as ilqot31_33_0_, itemlocati0_.ilqtob as ilqtob32_33_0_, itemlocati0_.ilsqoh as ilsqoh33_33_0_, itemlocati0_.ilsqpo as ilsqpo34_33_0_, itemlocati0_.ilsqso as ilsqso35_33_0_, itemlocati0_.ilsqwo as ilsqwo36_33_0_, itemlocati0_.iluom as iluom37_33_0_, itemlocati0_.iluom1 as iluom38_33_0_, itemlocati0_.iluom2 as iluom39_33_0_ from t41021 itemlocati0_ where itemlocati0_.ilbuid=? and itemlocati0_.ilinum=? and itemlocati0_.illocid=? and itemlocati0_.ilsnlot=?
 Hibernate: insert into t41021 (ilcid, ildtin, iltmin, iluid, ildtlu, iltmlu, iluidm, ildtlt, ilexpdt, ilglcls, illocst, illsc, ilpqoh, ilqtib, ilqtin, ilqttr, ilqobo, ilqohc, ilqopo, ilqoso, ilqosc, ilqowo, ilqowh, ilqows, ilqot1, ilqot2, ilqot3, ilqtob, ilsqoh, ilsqpo, ilsqso, ilsqwo, iluom, iluom1, iluom2, ilbuid, ilinum, illocid, ilsnlot) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
@@ -1428,7 +1428,7 @@ MockHttpServletRequest:
        Parameters = {}
           Headers = {Accept=[application/json]}
              Body = &lt;no character encoding set&gt;
-    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@166369a1, SPRING_SECURITY_CONTEXT=org.springframework.security.core.context.SecurityContextImpl@475fcd89: Authentication: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@475fcd89: Principal: org.springframework.security.core.userdetails.User@f02988d6: Username: username; Password: [PROTECTED]; Enabled: true; AccountNonExpired: true; credentialsNonExpired: true; AccountNonLocked: true; Not granted any authorities; Credentials: [PROTECTED]; Authenticated: true; Details: null; Not granted any authorities}
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@4540fc30, SPRING_SECURITY_CONTEXT=org.springframework.security.core.context.SecurityContextImpl@475fcd89: Authentication: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@475fcd89: Principal: org.springframework.security.core.userdetails.User@f02988d6: Username: username; Password: [PROTECTED]; Enabled: true; AccountNonExpired: true; credentialsNonExpired: true; AccountNonLocked: true; Not granted any authorities; Credentials: [PROTECTED]; Authenticated: true; Details: null; Not granted any authorities}
 
 Handler:
              Type = org.springframework.data.rest.webmvc.RepositoryEntityController
@@ -1493,8 +1493,8 @@ MockHttpServletResponse:
     &quot;unitOfMeasure2&quot; : &quot;&quot;
   },
   &quot;primary&quot; : false,
-  &quot;lastUpdateDateTime&quot; : &quot;2018-12-14T17:35:27&quot;,
-  &quot;inputDateTime&quot; : &quot;2018-12-14T17:35:27&quot;,
+  &quot;lastUpdateDateTime&quot; : &quot;2018-12-27T11:25:46&quot;,
+  &quot;inputDateTime&quot; : &quot;2018-12-27T11:25:46&quot;,
   &quot;_links&quot; : {
     &quot;self&quot; : {
       &quot;href&quot; : &quot;http://localhost/api/itemLocations/TEST.TEST_123_ABC.1.2.3_test&quot;
@@ -1502,21 +1502,21 @@ MockHttpServletResponse:
     &quot;itemLocation&quot; : {
       &quot;href&quot; : &quot;http://localhost/api/itemLocations/TEST.TEST_123_ABC.1.2.3_test&quot;
     },
-    &quot;location&quot; : {
-      &quot;href&quot; : &quot;http://localhost/api/itemLocations/TEST.TEST_123_ABC.1.2.3_test/location&quot;
+    &quot;lot&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/itemLocations/TEST.TEST_123_ABC.1.2.3_test/lot&quot;
     },
     &quot;item&quot; : {
       &quot;href&quot; : &quot;http://localhost/api/itemLocations/TEST.TEST_123_ABC.1.2.3_test/item&quot;
     },
-    &quot;lot&quot; : {
-      &quot;href&quot; : &quot;http://localhost/api/itemLocations/TEST.TEST_123_ABC.1.2.3_test/lot&quot;
+    &quot;location&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/itemLocations/TEST.TEST_123_ABC.1.2.3_test/location&quot;
     }
   }
 }
     Forwarded URL = null
    Redirected URL = null
           Cookies = []
-2018-12-14 17:35:28.108  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@5cb78e12 testClass = ItemLocationApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemLocationApiTest@3032e044, testMethod = createTestWithPost@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@6b378341 testClass = ItemLocationApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4af5667e key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+2018-12-27 11:25:46.504  INFO 2120 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@79e2649e testClass = ItemLocationApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemLocationApiTest@72b0c269, testMethod = createTestWithPost@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@445a4bd3 testClass = ItemLocationApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@de3935f key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
 </pre>
 </span>
 </div>
@@ -1528,7 +1528,7 @@ MockHttpServletResponse:
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 4.2.1</a> at 14 Dec, 2018 5:36:06 PM</p>
+<a href="http://www.gradle.org">Gradle 4.2.1</a> at 27 Dec, 2018 11:26:13 AM</p>
 </div>
 </div>
 </body>

@@ -1,0 +1,26 @@
+{
+  "name": "front",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --display-modules"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap-vue": "^2.0.0-rc.11",
+    "lodash": "^4.17.11",
+    "vue": "^2.5.17"
+  },
+  "devDependencies": {
+    "clean-webpack-plugin": "^0.1.19",
+    "css-loader": "^1.0.0",
+    "style-loader": "^0.23.0",
+    "vue-loader": "^15.4.2",
+    "vue-template-compiler": "^2.5.17",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2"
+  }
+}

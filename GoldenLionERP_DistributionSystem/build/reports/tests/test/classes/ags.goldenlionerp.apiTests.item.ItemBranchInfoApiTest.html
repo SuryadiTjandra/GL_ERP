@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">1.123s</div>
+<div class="counter">0.483s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,37 +79,37 @@
 </thead>
 <tr>
 <td class="success">createTestWithPost</td>
-<td>0.255s</td>
+<td>0.081s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">createTestWithPut</td>
-<td>0.075s</td>
+<td>0.030s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">deleteTest</td>
-<td>0.106s</td>
+<td>0.032s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">getTestCollection</td>
-<td>0.146s</td>
+<td>0.114s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">getTestSingle</td>
-<td>0.140s</td>
+<td>0.035s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">updateTestWithPatch</td>
-<td>0.315s</td>
+<td>0.161s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">updateTestWithPut</td>
-<td>0.086s</td>
+<td>0.030s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -117,36 +117,36 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>2018-12-14 17:35:26.365  INFO 9212 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest], using SpringBootContextLoader
-2018-12-14 17:35:26.365  INFO 9212 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest]: no resource found for suffixes {-context.xml, Context.groovy}.
-2018-12-14 17:35:26.365  INFO 9212 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest]: ItemBranchInfoApiTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2018-12-14 17:35:26.380  INFO 9212 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration ags.goldenlionerp.GoldenLionErpApplication for test class ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest
-2018-12-14 17:35:26.380  INFO 9212 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
-2018-12-14 17:35:26.380  INFO 9212 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@529f098e, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@6e2ef99d, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@36812556, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@e59f228, org.springframework.test.context.support.DirtiesContextTestExecutionListener@24a04914, org.springframework.test.context.transaction.TransactionalTestExecutionListener@3d5bae0c, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@2cf8764, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@4346eda7, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@6508f432, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@5431d51, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@7b494e3a, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@f96af21, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@2d1d6385, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@30a95ae2]
-2018-12-14 17:35:26.411  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@1c24488 testClass = ItemBranchInfoApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest@17360c6b, testMethod = updateTestWithPatch@ItemBranchInfoApiTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7d94b1bb testClass = ItemBranchInfoApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4c3186fa key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
-2018-12-14 17:35:26.411  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
-2018-12-14 17:35:26.411  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
-2018-12-14 17:35:26.411  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+<pre>2018-12-27 11:25:45.340  INFO 2120 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest], using SpringBootContextLoader
+2018-12-27 11:25:45.341  INFO 2120 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2018-12-27 11:25:45.342  INFO 2120 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest]: ItemBranchInfoApiTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2018-12-27 11:25:45.366  INFO 2120 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration ags.goldenlionerp.GoldenLionErpApplication for test class ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest
+2018-12-27 11:25:45.370  INFO 2120 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-12-27 11:25:45.371  INFO 2120 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2d1d6385, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@30a95ae2, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@120fa53, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@3b75a2f1, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7db2ef51, org.springframework.test.context.transaction.TransactionalTestExecutionListener@7b6c44f, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@1c24488, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@17360c6b, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@7d94b1bb, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@4c3186fa, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@5fc47df0, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@78b66737, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@20f708f3, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@60b14c41]
+2018-12-27 11:25:45.403  INFO 2120 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@dcf67f7 testClass = ItemBranchInfoApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest@4c854855, testMethod = updateTestWithPatch@ItemBranchInfoApiTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@546a01db testClass = ItemBranchInfoApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@6a6dbb12 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@75de8c12]; rollback [true]
+2018-12-27 11:25:45.405  INFO 2120 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-27 11:25:45.405  INFO 2120 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-27 11:25:45.413  INFO 2120 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 8 ms
 Hibernate: select itembranch0_.ibbuid as ibbuid1_32_0_, itembranch0_.ibinum as ibinum2_32_0_, itembranch0_.ibcid as ibcid3_32_0_, itembranch0_.ibdtin as ibdtin4_32_0_, itembranch0_.ibtmin as ibtmin5_32_0_, itembranch0_.ibuid as ibuid6_32_0_, itembranch0_.ibdtlu as ibdtlu7_32_0_, itembranch0_.ibtmlu as ibtmlu8_32_0_, itembranch0_.ibuidm as ibuidm9_32_0_, itembranch0_.ibdtls as ibdtls10_32_0_, itembranch0_.ibctm as ibctm11_32_0_, itembranch0_.ibitc02 as ibitc12_32_0_, itembranch0_.ibitc01 as ibitc13_32_0_, itembranch0_.ibitc10 as ibitc14_32_0_, itembranch0_.ibitc04 as ibitc15_32_0_, itembranch0_.ibitc06 as ibitc16_32_0_, itembranch0_.ibitc07 as ibitc17_32_0_, itembranch0_.ibitc08 as ibitc18_32_0_, itembranch0_.ibitc09 as ibitc19_32_0_, itembranch0_.ibitc05 as ibitc20_32_0_, itembranch0_.ibslrc0 as ibslrc21_32_0_, itembranch0_.ibslrc1 as ibslrc22_32_0_, itembranch0_.ibslrc2 as ibslrc23_32_0_, itembranch0_.ibslrc3 as ibslrc24_32_0_, itembranch0_.ibslrc4 as ibslrc25_32_0_, itembranch0_.ibslrc5 as ibslrc26_32_0_, itembranch0_.ibslrc6 as ibslrc27_32_0_, itembranch0_.ibslrc7 as ibslrc28_32_0_, itembranch0_.ibslrc8 as ibslrc29_32_0_, itembranch0_.ibslrc9 as ibslrc30_32_0_, itembranch0_.ibitc03 as ibitc31_32_0_, itembranch0_.ibglcls as ibglcls32_32_0_, itembranch0_.ibilc as ibilc33_32_0_, itembranch0_.ibipg as ibipg34_32_0_, itembranch0_.iblsc as iblsc35_32_0_, itembranch0_.ibmaxroq as ibmaxro36_32_0_, itembranch0_.ibminroq as ibminro37_32_0_, itembranch0_.ibbpid as ibbpid38_32_0_, itembranch0_.ibcsid as ibcsid39_32_0_, itembranch0_.ibudf as ibudf40_32_0_, itembranch0_.ibpmmf as ibpmmf41_32_0_, itembranch0_.ibrbii as ibrbii42_32_0_, itembranch0_.ibrbim as ibrbim43_32_0_, itembranch0_.ibrbis as ibrbis44_32_0_, itembranch0_.ibvnid as ibvnid45_32_0_, itembranch0_.ibtaxpc as ibtaxpc46_32_0_, itembranch0_.ibtaxsc as ibtaxsc47_32_0_, itembranch0_.ibplg as ibplg48_32_0_, itembranch0_.ibrop as ibrop49_32_0_, itembranch0_.ibroq as ibroq50_32_0_, itembranch0_.ibsfstk as ibsfstk51_32_0_, itembranch0_.ibsnr as ibsnr52_32_0_, itembranch0_.ibskty as ibskty53_32_0_, itembranch0_.iblnty as iblnty54_32_0_ from t41011 itembranch0_ where itembranch0_.ibbuid=? and itembranch0_.ibinum=?
 Hibernate: update t41011 set ibcid=?, ibdtlu=?, ibtmlu=?, ibuidm=?, ibdtls=?, ibctm=?, ibitc02=?, ibitc01=?, ibitc10=?, ibitc04=?, ibitc06=?, ibitc07=?, ibitc08=?, ibitc09=?, ibitc05=?, ibslrc0=?, ibslrc1=?, ibslrc2=?, ibslrc3=?, ibslrc4=?, ibslrc5=?, ibslrc6=?, ibslrc7=?, ibslrc8=?, ibslrc9=?, ibitc03=?, ibglcls=?, ibilc=?, ibipg=?, iblsc=?, ibmaxroq=?, ibminroq=?, ibbpid=?, ibcsid=?, ibudf=?, ibpmmf=?, ibrbii=?, ibrbim=?, ibrbis=?, ibvnid=?, ibtaxpc=?, ibtaxsc=?, ibplg=?, ibrop=?, ibroq=?, ibsfstk=?, ibsnr=?, ibskty=?, iblnty=? where ibbuid=? and ibinum=?
 Hibernate: select itembranch0_.ibbuid as ibbuid1_32_0_, itembranch0_.ibinum as ibinum2_32_0_, itembranch0_.ibcid as ibcid3_32_0_, itembranch0_.ibdtin as ibdtin4_32_0_, itembranch0_.ibtmin as ibtmin5_32_0_, itembranch0_.ibuid as ibuid6_32_0_, itembranch0_.ibdtlu as ibdtlu7_32_0_, itembranch0_.ibtmlu as ibtmlu8_32_0_, itembranch0_.ibuidm as ibuidm9_32_0_, itembranch0_.ibdtls as ibdtls10_32_0_, itembranch0_.ibctm as ibctm11_32_0_, itembranch0_.ibitc02 as ibitc12_32_0_, itembranch0_.ibitc01 as ibitc13_32_0_, itembranch0_.ibitc10 as ibitc14_32_0_, itembranch0_.ibitc04 as ibitc15_32_0_, itembranch0_.ibitc06 as ibitc16_32_0_, itembranch0_.ibitc07 as ibitc17_32_0_, itembranch0_.ibitc08 as ibitc18_32_0_, itembranch0_.ibitc09 as ibitc19_32_0_, itembranch0_.ibitc05 as ibitc20_32_0_, itembranch0_.ibslrc0 as ibslrc21_32_0_, itembranch0_.ibslrc1 as ibslrc22_32_0_, itembranch0_.ibslrc2 as ibslrc23_32_0_, itembranch0_.ibslrc3 as ibslrc24_32_0_, itembranch0_.ibslrc4 as ibslrc25_32_0_, itembranch0_.ibslrc5 as ibslrc26_32_0_, itembranch0_.ibslrc6 as ibslrc27_32_0_, itembranch0_.ibslrc7 as ibslrc28_32_0_, itembranch0_.ibslrc8 as ibslrc29_32_0_, itembranch0_.ibslrc9 as ibslrc30_32_0_, itembranch0_.ibitc03 as ibitc31_32_0_, itembranch0_.ibglcls as ibglcls32_32_0_, itembranch0_.ibilc as ibilc33_32_0_, itembranch0_.ibipg as ibipg34_32_0_, itembranch0_.iblsc as iblsc35_32_0_, itembranch0_.ibmaxroq as ibmaxro36_32_0_, itembranch0_.ibminroq as ibminro37_32_0_, itembranch0_.ibbpid as ibbpid38_32_0_, itembranch0_.ibcsid as ibcsid39_32_0_, itembranch0_.ibudf as ibudf40_32_0_, itembranch0_.ibpmmf as ibpmmf41_32_0_, itembranch0_.ibrbii as ibrbii42_32_0_, itembranch0_.ibrbim as ibrbim43_32_0_, itembranch0_.ibrbis as ibrbis44_32_0_, itembranch0_.ibvnid as ibvnid45_32_0_, itembranch0_.ibtaxpc as ibtaxpc46_32_0_, itembranch0_.ibtaxsc as ibtaxsc47_32_0_, itembranch0_.ibplg as ibplg48_32_0_, itembranch0_.ibrop as ibrop49_32_0_, itembranch0_.ibroq as ibroq50_32_0_, itembranch0_.ibsfstk as ibsfstk51_32_0_, itembranch0_.ibsnr as ibsnr52_32_0_, itembranch0_.ibskty as ibskty53_32_0_, itembranch0_.iblnty as iblnty54_32_0_ from t41011 itembranch0_ where itembranch0_.ibbuid=? and itembranch0_.ibinum=?
-2018-12-14 17:35:26.724  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@1c24488 testClass = ItemBranchInfoApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest@17360c6b, testMethod = updateTestWithPatch@ItemBranchInfoApiTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7d94b1bb testClass = ItemBranchInfoApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4c3186fa key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
-2018-12-14 17:35:26.724  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@1c24488 testClass = ItemBranchInfoApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest@295b36b3, testMethod = updateTestWithPut@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7d94b1bb testClass = ItemBranchInfoApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4c3186fa key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
-2018-12-14 17:35:26.724  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
-2018-12-14 17:35:26.724  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
-2018-12-14 17:35:26.724  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+2018-12-27 11:25:45.562  INFO 2120 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@dcf67f7 testClass = ItemBranchInfoApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest@4c854855, testMethod = updateTestWithPatch@ItemBranchInfoApiTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@546a01db testClass = ItemBranchInfoApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@6a6dbb12 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+2018-12-27 11:25:45.565  INFO 2120 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@dcf67f7 testClass = ItemBranchInfoApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest@117a5c86, testMethod = updateTestWithPut@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@546a01db testClass = ItemBranchInfoApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@6a6dbb12 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@75de8c12]; rollback [true]
+2018-12-27 11:25:45.567  INFO 2120 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-27 11:25:45.567  INFO 2120 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-27 11:25:45.574  INFO 2120 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 7 ms
 Hibernate: select itembranch0_.ibbuid as ibbuid1_32_0_, itembranch0_.ibinum as ibinum2_32_0_, itembranch0_.ibcid as ibcid3_32_0_, itembranch0_.ibdtin as ibdtin4_32_0_, itembranch0_.ibtmin as ibtmin5_32_0_, itembranch0_.ibuid as ibuid6_32_0_, itembranch0_.ibdtlu as ibdtlu7_32_0_, itembranch0_.ibtmlu as ibtmlu8_32_0_, itembranch0_.ibuidm as ibuidm9_32_0_, itembranch0_.ibdtls as ibdtls10_32_0_, itembranch0_.ibctm as ibctm11_32_0_, itembranch0_.ibitc02 as ibitc12_32_0_, itembranch0_.ibitc01 as ibitc13_32_0_, itembranch0_.ibitc10 as ibitc14_32_0_, itembranch0_.ibitc04 as ibitc15_32_0_, itembranch0_.ibitc06 as ibitc16_32_0_, itembranch0_.ibitc07 as ibitc17_32_0_, itembranch0_.ibitc08 as ibitc18_32_0_, itembranch0_.ibitc09 as ibitc19_32_0_, itembranch0_.ibitc05 as ibitc20_32_0_, itembranch0_.ibslrc0 as ibslrc21_32_0_, itembranch0_.ibslrc1 as ibslrc22_32_0_, itembranch0_.ibslrc2 as ibslrc23_32_0_, itembranch0_.ibslrc3 as ibslrc24_32_0_, itembranch0_.ibslrc4 as ibslrc25_32_0_, itembranch0_.ibslrc5 as ibslrc26_32_0_, itembranch0_.ibslrc6 as ibslrc27_32_0_, itembranch0_.ibslrc7 as ibslrc28_32_0_, itembranch0_.ibslrc8 as ibslrc29_32_0_, itembranch0_.ibslrc9 as ibslrc30_32_0_, itembranch0_.ibitc03 as ibitc31_32_0_, itembranch0_.ibglcls as ibglcls32_32_0_, itembranch0_.ibilc as ibilc33_32_0_, itembranch0_.ibipg as ibipg34_32_0_, itembranch0_.iblsc as iblsc35_32_0_, itembranch0_.ibmaxroq as ibmaxro36_32_0_, itembranch0_.ibminroq as ibminro37_32_0_, itembranch0_.ibbpid as ibbpid38_32_0_, itembranch0_.ibcsid as ibcsid39_32_0_, itembranch0_.ibudf as ibudf40_32_0_, itembranch0_.ibpmmf as ibpmmf41_32_0_, itembranch0_.ibrbii as ibrbii42_32_0_, itembranch0_.ibrbim as ibrbim43_32_0_, itembranch0_.ibrbis as ibrbis44_32_0_, itembranch0_.ibvnid as ibvnid45_32_0_, itembranch0_.ibtaxpc as ibtaxpc46_32_0_, itembranch0_.ibtaxsc as ibtaxsc47_32_0_, itembranch0_.ibplg as ibplg48_32_0_, itembranch0_.ibrop as ibrop49_32_0_, itembranch0_.ibroq as ibroq50_32_0_, itembranch0_.ibsfstk as ibsfstk51_32_0_, itembranch0_.ibsnr as ibsnr52_32_0_, itembranch0_.ibskty as ibskty53_32_0_, itembranch0_.iblnty as iblnty54_32_0_ from t41011 itembranch0_ where itembranch0_.ibbuid=? and itembranch0_.ibinum=?
-2018-12-14 17:35:26.802  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@1c24488 testClass = ItemBranchInfoApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest@295b36b3, testMethod = updateTestWithPut@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7d94b1bb testClass = ItemBranchInfoApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4c3186fa key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
-2018-12-14 17:35:26.802  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@1c24488 testClass = ItemBranchInfoApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest@57da4708, testMethod = getTestSingle@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7d94b1bb testClass = ItemBranchInfoApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4c3186fa key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
-2018-12-14 17:35:26.802  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
-2018-12-14 17:35:26.802  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
-2018-12-14 17:35:26.818  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 16 ms
+2018-12-27 11:25:45.594  INFO 2120 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@dcf67f7 testClass = ItemBranchInfoApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest@117a5c86, testMethod = updateTestWithPut@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@546a01db testClass = ItemBranchInfoApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@6a6dbb12 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+2018-12-27 11:25:45.597  INFO 2120 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@dcf67f7 testClass = ItemBranchInfoApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest@685193, testMethod = getTestSingle@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@546a01db testClass = ItemBranchInfoApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@6a6dbb12 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@75de8c12]; rollback [true]
+2018-12-27 11:25:45.598  INFO 2120 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-27 11:25:45.598  INFO 2120 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-27 11:25:45.606  INFO 2120 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 8 ms
 Hibernate: select itembranch0_.ibbuid as ibbuid1_32_0_, itembranch0_.ibinum as ibinum2_32_0_, itembranch0_.ibcid as ibcid3_32_0_, itembranch0_.ibdtin as ibdtin4_32_0_, itembranch0_.ibtmin as ibtmin5_32_0_, itembranch0_.ibuid as ibuid6_32_0_, itembranch0_.ibdtlu as ibdtlu7_32_0_, itembranch0_.ibtmlu as ibtmlu8_32_0_, itembranch0_.ibuidm as ibuidm9_32_0_, itembranch0_.ibdtls as ibdtls10_32_0_, itembranch0_.ibctm as ibctm11_32_0_, itembranch0_.ibitc02 as ibitc12_32_0_, itembranch0_.ibitc01 as ibitc13_32_0_, itembranch0_.ibitc10 as ibitc14_32_0_, itembranch0_.ibitc04 as ibitc15_32_0_, itembranch0_.ibitc06 as ibitc16_32_0_, itembranch0_.ibitc07 as ibitc17_32_0_, itembranch0_.ibitc08 as ibitc18_32_0_, itembranch0_.ibitc09 as ibitc19_32_0_, itembranch0_.ibitc05 as ibitc20_32_0_, itembranch0_.ibslrc0 as ibslrc21_32_0_, itembranch0_.ibslrc1 as ibslrc22_32_0_, itembranch0_.ibslrc2 as ibslrc23_32_0_, itembranch0_.ibslrc3 as ibslrc24_32_0_, itembranch0_.ibslrc4 as ibslrc25_32_0_, itembranch0_.ibslrc5 as ibslrc26_32_0_, itembranch0_.ibslrc6 as ibslrc27_32_0_, itembranch0_.ibslrc7 as ibslrc28_32_0_, itembranch0_.ibslrc8 as ibslrc29_32_0_, itembranch0_.ibslrc9 as ibslrc30_32_0_, itembranch0_.ibitc03 as ibitc31_32_0_, itembranch0_.ibglcls as ibglcls32_32_0_, itembranch0_.ibilc as ibilc33_32_0_, itembranch0_.ibipg as ibipg34_32_0_, itembranch0_.iblsc as iblsc35_32_0_, itembranch0_.ibmaxroq as ibmaxro36_32_0_, itembranch0_.ibminroq as ibminro37_32_0_, itembranch0_.ibbpid as ibbpid38_32_0_, itembranch0_.ibcsid as ibcsid39_32_0_, itembranch0_.ibudf as ibudf40_32_0_, itembranch0_.ibpmmf as ibpmmf41_32_0_, itembranch0_.ibrbii as ibrbii42_32_0_, itembranch0_.ibrbim as ibrbim43_32_0_, itembranch0_.ibrbis as ibrbis44_32_0_, itembranch0_.ibvnid as ibvnid45_32_0_, itembranch0_.ibtaxpc as ibtaxpc46_32_0_, itembranch0_.ibtaxsc as ibtaxsc47_32_0_, itembranch0_.ibplg as ibplg48_32_0_, itembranch0_.ibrop as ibrop49_32_0_, itembranch0_.ibroq as ibroq50_32_0_, itembranch0_.ibsfstk as ibsfstk51_32_0_, itembranch0_.ibsnr as ibsnr52_32_0_, itembranch0_.ibskty as ibskty53_32_0_, itembranch0_.iblnty as iblnty54_32_0_ from t41011 itembranch0_ where itembranch0_.ibbuid=? and itembranch0_.ibinum=?
-2018-12-14 17:35:26.943  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@1c24488 testClass = ItemBranchInfoApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest@57da4708, testMethod = getTestSingle@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7d94b1bb testClass = ItemBranchInfoApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4c3186fa key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
-2018-12-14 17:35:26.943  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@1c24488 testClass = ItemBranchInfoApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest@117a5c86, testMethod = getTestCollection@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7d94b1bb testClass = ItemBranchInfoApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4c3186fa key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
-2018-12-14 17:35:26.958  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
-2018-12-14 17:35:26.958  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
-2018-12-14 17:35:26.958  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+2018-12-27 11:25:45.630  INFO 2120 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@dcf67f7 testClass = ItemBranchInfoApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest@685193, testMethod = getTestSingle@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@546a01db testClass = ItemBranchInfoApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@6a6dbb12 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+2018-12-27 11:25:45.634  INFO 2120 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@dcf67f7 testClass = ItemBranchInfoApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest@2f46e640, testMethod = getTestCollection@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@546a01db testClass = ItemBranchInfoApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@6a6dbb12 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@75de8c12]; rollback [true]
+2018-12-27 11:25:45.634  INFO 2120 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-27 11:25:45.634  INFO 2120 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-27 11:25:45.641  INFO 2120 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 7 ms
 Hibernate: select TOP(?) itembranch0_.ibbuid as ibbuid1_32_, itembranch0_.ibinum as ibinum2_32_, itembranch0_.ibcid as ibcid3_32_, itembranch0_.ibdtin as ibdtin4_32_, itembranch0_.ibtmin as ibtmin5_32_, itembranch0_.ibuid as ibuid6_32_, itembranch0_.ibdtlu as ibdtlu7_32_, itembranch0_.ibtmlu as ibtmlu8_32_, itembranch0_.ibuidm as ibuidm9_32_, itembranch0_.ibdtls as ibdtls10_32_, itembranch0_.ibctm as ibctm11_32_, itembranch0_.ibitc02 as ibitc12_32_, itembranch0_.ibitc01 as ibitc13_32_, itembranch0_.ibitc10 as ibitc14_32_, itembranch0_.ibitc04 as ibitc15_32_, itembranch0_.ibitc06 as ibitc16_32_, itembranch0_.ibitc07 as ibitc17_32_, itembranch0_.ibitc08 as ibitc18_32_, itembranch0_.ibitc09 as ibitc19_32_, itembranch0_.ibitc05 as ibitc20_32_, itembranch0_.ibslrc0 as ibslrc21_32_, itembranch0_.ibslrc1 as ibslrc22_32_, itembranch0_.ibslrc2 as ibslrc23_32_, itembranch0_.ibslrc3 as ibslrc24_32_, itembranch0_.ibslrc4 as ibslrc25_32_, itembranch0_.ibslrc5 as ibslrc26_32_, itembranch0_.ibslrc6 as ibslrc27_32_, itembranch0_.ibslrc7 as ibslrc28_32_, itembranch0_.ibslrc8 as ibslrc29_32_, itembranch0_.ibslrc9 as ibslrc30_32_, itembranch0_.ibitc03 as ibitc31_32_, itembranch0_.ibglcls as ibglcls32_32_, itembranch0_.ibilc as ibilc33_32_, itembranch0_.ibipg as ibipg34_32_, itembranch0_.iblsc as iblsc35_32_, itembranch0_.ibmaxroq as ibmaxro36_32_, itembranch0_.ibminroq as ibminro37_32_, itembranch0_.ibbpid as ibbpid38_32_, itembranch0_.ibcsid as ibcsid39_32_, itembranch0_.ibudf as ibudf40_32_, itembranch0_.ibpmmf as ibpmmf41_32_, itembranch0_.ibrbii as ibrbii42_32_, itembranch0_.ibrbim as ibrbim43_32_, itembranch0_.ibrbis as ibrbis44_32_, itembranch0_.ibvnid as ibvnid45_32_, itembranch0_.ibtaxpc as ibtaxpc46_32_, itembranch0_.ibtaxsc as ibtaxsc47_32_, itembranch0_.ibplg as ibplg48_32_, itembranch0_.ibrop as ibrop49_32_, itembranch0_.ibroq as ibroq50_32_, itembranch0_.ibsfstk as ibsfstk51_32_, itembranch0_.ibsnr as ibsnr52_32_, itembranch0_.ibskty as ibskty53_32_, itembranch0_.iblnty as iblnty54_32_ from t41011 itembranch0_
 Hibernate: select count(itembranch0_.ibbuid) as col_0_0_ from t41011 itembranch0_
 
@@ -156,7 +156,7 @@ MockHttpServletRequest:
        Parameters = {}
           Headers = {Accept=[application/json]}
              Body = &lt;no character encoding set&gt;
-    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@16fc8523, SPRING_SECURITY_CONTEXT=org.springframework.security.core.context.SecurityContextImpl@475fcd89: Authentication: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@475fcd89: Principal: org.springframework.security.core.userdetails.User@f02988d6: Username: username; Password: [PROTECTED]; Enabled: true; AccountNonExpired: true; credentialsNonExpired: true; AccountNonLocked: true; Not granted any authorities; Credentials: [PROTECTED]; Authenticated: true; Details: null; Not granted any authorities}
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@6bd9fdb8, SPRING_SECURITY_CONTEXT=org.springframework.security.core.context.SecurityContextImpl@475fcd89: Authentication: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@475fcd89: Principal: org.springframework.security.core.userdetails.User@f02988d6: Username: username; Password: [PROTECTED]; Enabled: true; AccountNonExpired: true; credentialsNonExpired: true; AccountNonLocked: true; Not granted any authorities; Credentials: [PROTECTED]; Authenticated: true; Details: null; Not granted any authorities}
 
 Handler:
              Type = org.springframework.data.rest.webmvc.RepositoryEntityController
@@ -239,8 +239,8 @@ MockHttpServletResponse:
         &quot;salesReportingCode9&quot; : &quot;&quot;,
         &quot;salesReportingCode0&quot; : &quot;&quot;
       },
-      &quot;branchCode&quot; : &quot;110&quot;,
       &quot;itemCode&quot; : &quot;ACC.APC-AR2400FP1&quot;,
+      &quot;branchCode&quot; : &quot;110&quot;,
       &quot;lastUpdateDateTime&quot; : &quot;2018-02-02T17:17:20&quot;,
       &quot;inputDateTime&quot; : &quot;2017-10-30T00:00:00&quot;,
       &quot;_links&quot; : {
@@ -250,11 +250,11 @@ MockHttpServletResponse:
         &quot;itemBranchInfo&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.APC-AR2400FP1&quot;
         },
-        &quot;branch&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.APC-AR2400FP1/branch&quot;
-        },
         &quot;itemMaster&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.APC-AR2400FP1/itemMaster&quot;
+        },
+        &quot;branch&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.APC-AR2400FP1/branch&quot;
         }
       }
     }, {
@@ -312,8 +312,8 @@ MockHttpServletResponse:
         &quot;salesReportingCode9&quot; : &quot;&quot;,
         &quot;salesReportingCode0&quot; : &quot;&quot;
       },
-      &quot;branchCode&quot; : &quot;110&quot;,
       &quot;itemCode&quot; : &quot;ACC.BATERAI - CMOS\t\t\t&quot;,
+      &quot;branchCode&quot; : &quot;110&quot;,
       &quot;lastUpdateDateTime&quot; : &quot;2018-02-12T13:51:22&quot;,
       &quot;inputDateTime&quot; : &quot;2018-02-12T13:51:22&quot;,
       &quot;_links&quot; : {
@@ -323,11 +323,11 @@ MockHttpServletResponse:
         &quot;itemBranchInfo&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.BATERAI_-_CMOS_t_t_t&quot;
         },
-        &quot;branch&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.BATERAI_-_CMOS_t_t_t/branch&quot;
-        },
         &quot;itemMaster&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.BATERAI_-_CMOS_t_t_t/itemMaster&quot;
+        },
+        &quot;branch&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.BATERAI_-_CMOS_t_t_t/branch&quot;
         }
       }
     }, {
@@ -385,8 +385,8 @@ MockHttpServletResponse:
         &quot;salesReportingCode9&quot; : &quot;&quot;,
         &quot;salesReportingCode0&quot; : &quot;&quot;
       },
-      &quot;branchCode&quot; : &quot;110&quot;,
       &quot;itemCode&quot; : &quot;ACC.BROTHER-LT6505&quot;,
+      &quot;branchCode&quot; : &quot;110&quot;,
       &quot;lastUpdateDateTime&quot; : &quot;2018-10-26T14:57:47&quot;,
       &quot;inputDateTime&quot; : &quot;2017-10-30T00:00:00&quot;,
       &quot;_links&quot; : {
@@ -396,11 +396,11 @@ MockHttpServletResponse:
         &quot;itemBranchInfo&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.BROTHER-LT6505&quot;
         },
-        &quot;branch&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.BROTHER-LT6505/branch&quot;
-        },
         &quot;itemMaster&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.BROTHER-LT6505/itemMaster&quot;
+        },
+        &quot;branch&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.BROTHER-LT6505/branch&quot;
         }
       }
     }, {
@@ -458,8 +458,8 @@ MockHttpServletResponse:
         &quot;salesReportingCode9&quot; : &quot;&quot;,
         &quot;salesReportingCode0&quot; : &quot;&quot;
       },
-      &quot;branchCode&quot; : &quot;110&quot;,
       &quot;itemCode&quot; : &quot;ACC.BROTHER-MX4000&quot;,
+      &quot;branchCode&quot; : &quot;110&quot;,
       &quot;lastUpdateDateTime&quot; : &quot;2018-03-24T14:34:05&quot;,
       &quot;inputDateTime&quot; : &quot;2017-10-30T00:00:00&quot;,
       &quot;_links&quot; : {
@@ -469,11 +469,11 @@ MockHttpServletResponse:
         &quot;itemBranchInfo&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.BROTHER-MX4000&quot;
         },
-        &quot;branch&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.BROTHER-MX4000/branch&quot;
-        },
         &quot;itemMaster&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.BROTHER-MX4000/itemMaster&quot;
+        },
+        &quot;branch&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.BROTHER-MX4000/branch&quot;
         }
       }
     }, {
@@ -531,8 +531,8 @@ MockHttpServletResponse:
         &quot;salesReportingCode9&quot; : &quot;&quot;,
         &quot;salesReportingCode0&quot; : &quot;&quot;
       },
-      &quot;branchCode&quot; : &quot;110&quot;,
       &quot;itemCode&quot; : &quot;ACC.BROTHER-TT4000&quot;,
+      &quot;branchCode&quot; : &quot;110&quot;,
       &quot;lastUpdateDateTime&quot; : &quot;2018-03-24T14:34:18&quot;,
       &quot;inputDateTime&quot; : &quot;2017-10-30T00:00:00&quot;,
       &quot;_links&quot; : {
@@ -542,11 +542,11 @@ MockHttpServletResponse:
         &quot;itemBranchInfo&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.BROTHER-TT4000&quot;
         },
-        &quot;branch&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.BROTHER-TT4000/branch&quot;
-        },
         &quot;itemMaster&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.BROTHER-TT4000/itemMaster&quot;
+        },
+        &quot;branch&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.BROTHER-TT4000/branch&quot;
         }
       }
     }, {
@@ -604,8 +604,8 @@ MockHttpServletResponse:
         &quot;salesReportingCode9&quot; : &quot;&quot;,
         &quot;salesReportingCode0&quot; : &quot;&quot;
       },
-      &quot;branchCode&quot; : &quot;110&quot;,
       &quot;itemCode&quot; : &quot;ACC.CD-CDBLANK&quot;,
+      &quot;branchCode&quot; : &quot;110&quot;,
       &quot;lastUpdateDateTime&quot; : &quot;2017-10-30T00:00:00&quot;,
       &quot;inputDateTime&quot; : &quot;2017-10-30T00:00:00&quot;,
       &quot;_links&quot; : {
@@ -615,11 +615,11 @@ MockHttpServletResponse:
         &quot;itemBranchInfo&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.CD-CDBLANK&quot;
         },
-        &quot;branch&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.CD-CDBLANK/branch&quot;
-        },
         &quot;itemMaster&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.CD-CDBLANK/itemMaster&quot;
+        },
+        &quot;branch&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.CD-CDBLANK/branch&quot;
         }
       }
     }, {
@@ -677,8 +677,8 @@ MockHttpServletResponse:
         &quot;salesReportingCode9&quot; : &quot;&quot;,
         &quot;salesReportingCode0&quot; : &quot;&quot;
       },
-      &quot;branchCode&quot; : &quot;110&quot;,
       &quot;itemCode&quot; : &quot;ACC.CHARGER-CHARGER&quot;,
+      &quot;branchCode&quot; : &quot;110&quot;,
       &quot;lastUpdateDateTime&quot; : &quot;2018-04-16T10:52:44&quot;,
       &quot;inputDateTime&quot; : &quot;2018-04-16T10:52:44&quot;,
       &quot;_links&quot; : {
@@ -688,11 +688,11 @@ MockHttpServletResponse:
         &quot;itemBranchInfo&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.CHARGER-CHARGER&quot;
         },
-        &quot;branch&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.CHARGER-CHARGER/branch&quot;
-        },
         &quot;itemMaster&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.CHARGER-CHARGER/itemMaster&quot;
+        },
+        &quot;branch&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.CHARGER-CHARGER/branch&quot;
         }
       }
     }, {
@@ -750,8 +750,8 @@ MockHttpServletResponse:
         &quot;salesReportingCode9&quot; : &quot;&quot;,
         &quot;salesReportingCode0&quot; : &quot;&quot;
       },
-      &quot;branchCode&quot; : &quot;110&quot;,
       &quot;itemCode&quot; : &quot;ACC.KABEL - KABEL POWER\t\t&quot;,
+      &quot;branchCode&quot; : &quot;110&quot;,
       &quot;lastUpdateDateTime&quot; : &quot;2018-02-12T13:49:34&quot;,
       &quot;inputDateTime&quot; : &quot;2018-02-12T13:49:34&quot;,
       &quot;_links&quot; : {
@@ -761,11 +761,11 @@ MockHttpServletResponse:
         &quot;itemBranchInfo&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.KABEL_-_KABEL_POWER_t_t&quot;
         },
-        &quot;branch&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.KABEL_-_KABEL_POWER_t_t/branch&quot;
-        },
         &quot;itemMaster&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.KABEL_-_KABEL_POWER_t_t/itemMaster&quot;
+        },
+        &quot;branch&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.KABEL_-_KABEL_POWER_t_t/branch&quot;
         }
       }
     }, {
@@ -823,8 +823,8 @@ MockHttpServletResponse:
         &quot;salesReportingCode9&quot; : &quot;&quot;,
         &quot;salesReportingCode0&quot; : &quot;&quot;
       },
-      &quot;branchCode&quot; : &quot;110&quot;,
       &quot;itemCode&quot; : &quot;ACC.KABEL - UTP AMP&quot;,
+      &quot;branchCode&quot; : &quot;110&quot;,
       &quot;lastUpdateDateTime&quot; : &quot;2018-02-28T14:34:31&quot;,
       &quot;inputDateTime&quot; : &quot;2018-02-28T14:34:31&quot;,
       &quot;_links&quot; : {
@@ -834,11 +834,11 @@ MockHttpServletResponse:
         &quot;itemBranchInfo&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.KABEL_-_UTP_AMP&quot;
         },
-        &quot;branch&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.KABEL_-_UTP_AMP/branch&quot;
-        },
         &quot;itemMaster&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.KABEL_-_UTP_AMP/itemMaster&quot;
+        },
+        &quot;branch&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.KABEL_-_UTP_AMP/branch&quot;
         }
       }
     }, {
@@ -896,8 +896,8 @@ MockHttpServletResponse:
         &quot;salesReportingCode9&quot; : &quot;&quot;,
         &quot;salesReportingCode0&quot; : &quot;&quot;
       },
-      &quot;branchCode&quot; : &quot;110&quot;,
       &quot;itemCode&quot; : &quot;ACC.KEYBOARD - K120\t\t\t&quot;,
+      &quot;branchCode&quot; : &quot;110&quot;,
       &quot;lastUpdateDateTime&quot; : &quot;2018-02-28T15:16:14&quot;,
       &quot;inputDateTime&quot; : &quot;2018-02-28T15:16:14&quot;,
       &quot;_links&quot; : {
@@ -907,11 +907,11 @@ MockHttpServletResponse:
         &quot;itemBranchInfo&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.KEYBOARD_-_K120_t_t_t&quot;
         },
-        &quot;branch&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.KEYBOARD_-_K120_t_t_t/branch&quot;
-        },
         &quot;itemMaster&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.KEYBOARD_-_K120_t_t_t/itemMaster&quot;
+        },
+        &quot;branch&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.KEYBOARD_-_K120_t_t_t/branch&quot;
         }
       }
     }, {
@@ -969,8 +969,8 @@ MockHttpServletResponse:
         &quot;salesReportingCode9&quot; : &quot;&quot;,
         &quot;salesReportingCode0&quot; : &quot;&quot;
       },
-      &quot;branchCode&quot; : &quot;110&quot;,
       &quot;itemCode&quot; : &quot;ACC.LOGITECH-PAKETAN&quot;,
+      &quot;branchCode&quot; : &quot;110&quot;,
       &quot;lastUpdateDateTime&quot; : &quot;2017-10-30T00:00:00&quot;,
       &quot;inputDateTime&quot; : &quot;2017-10-30T00:00:00&quot;,
       &quot;_links&quot; : {
@@ -980,11 +980,11 @@ MockHttpServletResponse:
         &quot;itemBranchInfo&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.LOGITECH-PAKETAN&quot;
         },
-        &quot;branch&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.LOGITECH-PAKETAN/branch&quot;
-        },
         &quot;itemMaster&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.LOGITECH-PAKETAN/itemMaster&quot;
+        },
+        &quot;branch&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.LOGITECH-PAKETAN/branch&quot;
         }
       }
     }, {
@@ -1042,8 +1042,8 @@ MockHttpServletResponse:
         &quot;salesReportingCode9&quot; : &quot;&quot;,
         &quot;salesReportingCode0&quot; : &quot;&quot;
       },
-      &quot;branchCode&quot; : &quot;110&quot;,
       &quot;itemCode&quot; : &quot;ACC.MOUSE - B100\t\t\t&quot;,
+      &quot;branchCode&quot; : &quot;110&quot;,
       &quot;lastUpdateDateTime&quot; : &quot;2018-02-28T15:18:54&quot;,
       &quot;inputDateTime&quot; : &quot;2018-02-28T15:18:54&quot;,
       &quot;_links&quot; : {
@@ -1053,11 +1053,11 @@ MockHttpServletResponse:
         &quot;itemBranchInfo&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.MOUSE_-_B100_t_t_t&quot;
         },
-        &quot;branch&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.MOUSE_-_B100_t_t_t/branch&quot;
-        },
         &quot;itemMaster&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.MOUSE_-_B100_t_t_t/itemMaster&quot;
+        },
+        &quot;branch&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.MOUSE_-_B100_t_t_t/branch&quot;
         }
       }
     }, {
@@ -1115,8 +1115,8 @@ MockHttpServletResponse:
         &quot;salesReportingCode9&quot; : &quot;&quot;,
         &quot;salesReportingCode0&quot; : &quot;&quot;
       },
-      &quot;branchCode&quot; : &quot;110&quot;,
       &quot;itemCode&quot; : &quot;ACC.MOUSE - MOUSE M221\t\t\t&quot;,
+      &quot;branchCode&quot; : &quot;110&quot;,
       &quot;lastUpdateDateTime&quot; : &quot;2018-02-28T14:46:50&quot;,
       &quot;inputDateTime&quot; : &quot;2018-02-28T14:46:50&quot;,
       &quot;_links&quot; : {
@@ -1126,11 +1126,11 @@ MockHttpServletResponse:
         &quot;itemBranchInfo&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.MOUSE_-_MOUSE_M221_t_t_t&quot;
         },
-        &quot;branch&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.MOUSE_-_MOUSE_M221_t_t_t/branch&quot;
-        },
         &quot;itemMaster&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.MOUSE_-_MOUSE_M221_t_t_t/itemMaster&quot;
+        },
+        &quot;branch&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.MOUSE_-_MOUSE_M221_t_t_t/branch&quot;
         }
       }
     }, {
@@ -1188,8 +1188,8 @@ MockHttpServletResponse:
         &quot;salesReportingCode9&quot; : &quot;&quot;,
         &quot;salesReportingCode0&quot; : &quot;&quot;
       },
-      &quot;branchCode&quot; : &quot;110&quot;,
       &quot;itemCode&quot; : &quot;ACC.MOUSE-B100&quot;,
+      &quot;branchCode&quot; : &quot;110&quot;,
       &quot;lastUpdateDateTime&quot; : &quot;2017-12-04T14:59:10&quot;,
       &quot;inputDateTime&quot; : &quot;2017-10-30T00:00:00&quot;,
       &quot;_links&quot; : {
@@ -1199,11 +1199,11 @@ MockHttpServletResponse:
         &quot;itemBranchInfo&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.MOUSE-B100&quot;
         },
-        &quot;branch&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.MOUSE-B100/branch&quot;
-        },
         &quot;itemMaster&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.MOUSE-B100/itemMaster&quot;
+        },
+        &quot;branch&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.MOUSE-B100/branch&quot;
         }
       }
     }, {
@@ -1261,8 +1261,8 @@ MockHttpServletResponse:
         &quot;salesReportingCode9&quot; : &quot;&quot;,
         &quot;salesReportingCode0&quot; : &quot;&quot;
       },
-      &quot;branchCode&quot; : &quot;110&quot;,
       &quot;itemCode&quot; : &quot;ACC.PAPER - HVS SIDU FOLI&quot;,
+      &quot;branchCode&quot; : &quot;110&quot;,
       &quot;lastUpdateDateTime&quot; : &quot;2018-03-01T11:53:59&quot;,
       &quot;inputDateTime&quot; : &quot;2018-03-01T11:53:59&quot;,
       &quot;_links&quot; : {
@@ -1272,11 +1272,11 @@ MockHttpServletResponse:
         &quot;itemBranchInfo&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.PAPER_-_HVS_SIDU_FOLI&quot;
         },
-        &quot;branch&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.PAPER_-_HVS_SIDU_FOLI/branch&quot;
-        },
         &quot;itemMaster&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.PAPER_-_HVS_SIDU_FOLI/itemMaster&quot;
+        },
+        &quot;branch&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.PAPER_-_HVS_SIDU_FOLI/branch&quot;
         }
       }
     }, {
@@ -1334,8 +1334,8 @@ MockHttpServletResponse:
         &quot;salesReportingCode9&quot; : &quot;&quot;,
         &quot;salesReportingCode0&quot; : &quot;&quot;
       },
-      &quot;branchCode&quot; : &quot;110&quot;,
       &quot;itemCode&quot; : &quot;ACC.PROC - PASTA PROCESSO&quot;,
+      &quot;branchCode&quot; : &quot;110&quot;,
       &quot;lastUpdateDateTime&quot; : &quot;2018-02-12T13:52:34&quot;,
       &quot;inputDateTime&quot; : &quot;2018-02-12T13:52:34&quot;,
       &quot;_links&quot; : {
@@ -1345,11 +1345,11 @@ MockHttpServletResponse:
         &quot;itemBranchInfo&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.PROC_-_PASTA_PROCESSO&quot;
         },
-        &quot;branch&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.PROC_-_PASTA_PROCESSO/branch&quot;
-        },
         &quot;itemMaster&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.PROC_-_PASTA_PROCESSO/itemMaster&quot;
+        },
+        &quot;branch&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.PROC_-_PASTA_PROCESSO/branch&quot;
         }
       }
     }, {
@@ -1407,8 +1407,8 @@ MockHttpServletResponse:
         &quot;salesReportingCode9&quot; : &quot;&quot;,
         &quot;salesReportingCode0&quot; : &quot;&quot;
       },
-      &quot;branchCode&quot; : &quot;110&quot;,
       &quot;itemCode&quot; : &quot;ACC.RIBBON - LABEL&quot;,
+      &quot;branchCode&quot; : &quot;110&quot;,
       &quot;lastUpdateDateTime&quot; : &quot;2018-02-07T17:35:52&quot;,
       &quot;inputDateTime&quot; : &quot;2018-02-07T17:35:52&quot;,
       &quot;_links&quot; : {
@@ -1418,11 +1418,11 @@ MockHttpServletResponse:
         &quot;itemBranchInfo&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.RIBBON_-_LABEL&quot;
         },
-        &quot;branch&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.RIBBON_-_LABEL/branch&quot;
-        },
         &quot;itemMaster&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.RIBBON_-_LABEL/itemMaster&quot;
+        },
+        &quot;branch&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.RIBBON_-_LABEL/branch&quot;
         }
       }
     }, {
@@ -1480,8 +1480,8 @@ MockHttpServletResponse:
         &quot;salesReportingCode9&quot; : &quot;&quot;,
         &quot;salesReportingCode0&quot; : &quot;&quot;
       },
-      &quot;branchCode&quot; : &quot;110&quot;,
       &quot;itemCode&quot; : &quot;ACC.RIBBON - LABEL 55&quot;,
+      &quot;branchCode&quot; : &quot;110&quot;,
       &quot;lastUpdateDateTime&quot; : &quot;2018-02-24T09:25:20&quot;,
       &quot;inputDateTime&quot; : &quot;2018-02-24T09:25:20&quot;,
       &quot;_links&quot; : {
@@ -1491,11 +1491,11 @@ MockHttpServletResponse:
         &quot;itemBranchInfo&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.RIBBON_-_LABEL_55&quot;
         },
-        &quot;branch&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.RIBBON_-_LABEL_55/branch&quot;
-        },
         &quot;itemMaster&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.RIBBON_-_LABEL_55/itemMaster&quot;
+        },
+        &quot;branch&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.RIBBON_-_LABEL_55/branch&quot;
         }
       }
     }, {
@@ -1553,8 +1553,8 @@ MockHttpServletResponse:
         &quot;salesReportingCode9&quot; : &quot;&quot;,
         &quot;salesReportingCode0&quot; : &quot;&quot;
       },
-      &quot;branchCode&quot; : &quot;110&quot;,
       &quot;itemCode&quot; : &quot;ACC.RIBBON WAX RESIN&quot;,
+      &quot;branchCode&quot; : &quot;110&quot;,
       &quot;lastUpdateDateTime&quot; : &quot;2018-02-07T17:27:40&quot;,
       &quot;inputDateTime&quot; : &quot;2018-02-07T17:27:40&quot;,
       &quot;_links&quot; : {
@@ -1564,11 +1564,11 @@ MockHttpServletResponse:
         &quot;itemBranchInfo&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.RIBBON_WAX_RESIN&quot;
         },
-        &quot;branch&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.RIBBON_WAX_RESIN/branch&quot;
-        },
         &quot;itemMaster&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.RIBBON_WAX_RESIN/itemMaster&quot;
+        },
+        &quot;branch&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.RIBBON_WAX_RESIN/branch&quot;
         }
       }
     }, {
@@ -1626,8 +1626,8 @@ MockHttpServletResponse:
         &quot;salesReportingCode9&quot; : &quot;&quot;,
         &quot;salesReportingCode0&quot; : &quot;&quot;
       },
-      &quot;branchCode&quot; : &quot;110&quot;,
       &quot;itemCode&quot; : &quot;ACC.SECURE BOX-CASH DRAWE&quot;,
+      &quot;branchCode&quot; : &quot;110&quot;,
       &quot;lastUpdateDateTime&quot; : &quot;2018-04-09T13:29:44&quot;,
       &quot;inputDateTime&quot; : &quot;2018-04-09T13:22:34&quot;,
       &quot;_links&quot; : {
@@ -1637,11 +1637,11 @@ MockHttpServletResponse:
         &quot;itemBranchInfo&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.SECURE_BOX-CASH_DRAWE&quot;
         },
-        &quot;branch&quot; : {
-          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.SECURE_BOX-CASH_DRAWE/branch&quot;
-        },
         &quot;itemMaster&quot; : {
           &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.SECURE_BOX-CASH_DRAWE/itemMaster&quot;
+        },
+        &quot;branch&quot; : {
+          &quot;href&quot; : &quot;http://localhost/api/itembranches/110_ACC.SECURE_BOX-CASH_DRAWE/branch&quot;
         }
       }
     } ]
@@ -1674,23 +1674,23 @@ MockHttpServletResponse:
     Forwarded URL = null
    Redirected URL = null
           Cookies = []
-2018-12-14 17:35:27.101  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@1c24488 testClass = ItemBranchInfoApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest@117a5c86, testMethod = getTestCollection@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7d94b1bb testClass = ItemBranchInfoApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4c3186fa key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
-2018-12-14 17:35:27.103  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@1c24488 testClass = ItemBranchInfoApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest@65f496d1, testMethod = createTestWithPut@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7d94b1bb testClass = ItemBranchInfoApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4c3186fa key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
-2018-12-14 17:35:27.104  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
-2018-12-14 17:35:27.104  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
-2018-12-14 17:35:27.110  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 6 ms
+2018-12-27 11:25:45.746  INFO 2120 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@dcf67f7 testClass = ItemBranchInfoApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest@2f46e640, testMethod = getTestCollection@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@546a01db testClass = ItemBranchInfoApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@6a6dbb12 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+2018-12-27 11:25:45.749  INFO 2120 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@dcf67f7 testClass = ItemBranchInfoApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest@3e1b317e, testMethod = createTestWithPut@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@546a01db testClass = ItemBranchInfoApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@6a6dbb12 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@75de8c12]; rollback [true]
+2018-12-27 11:25:45.750  INFO 2120 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-27 11:25:45.751  INFO 2120 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-27 11:25:45.759  INFO 2120 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 8 ms
 Hibernate: select itembranch0_.ibbuid as ibbuid1_32_0_, itembranch0_.ibinum as ibinum2_32_0_, itembranch0_.ibcid as ibcid3_32_0_, itembranch0_.ibdtin as ibdtin4_32_0_, itembranch0_.ibtmin as ibtmin5_32_0_, itembranch0_.ibuid as ibuid6_32_0_, itembranch0_.ibdtlu as ibdtlu7_32_0_, itembranch0_.ibtmlu as ibtmlu8_32_0_, itembranch0_.ibuidm as ibuidm9_32_0_, itembranch0_.ibdtls as ibdtls10_32_0_, itembranch0_.ibctm as ibctm11_32_0_, itembranch0_.ibitc02 as ibitc12_32_0_, itembranch0_.ibitc01 as ibitc13_32_0_, itembranch0_.ibitc10 as ibitc14_32_0_, itembranch0_.ibitc04 as ibitc15_32_0_, itembranch0_.ibitc06 as ibitc16_32_0_, itembranch0_.ibitc07 as ibitc17_32_0_, itembranch0_.ibitc08 as ibitc18_32_0_, itembranch0_.ibitc09 as ibitc19_32_0_, itembranch0_.ibitc05 as ibitc20_32_0_, itembranch0_.ibslrc0 as ibslrc21_32_0_, itembranch0_.ibslrc1 as ibslrc22_32_0_, itembranch0_.ibslrc2 as ibslrc23_32_0_, itembranch0_.ibslrc3 as ibslrc24_32_0_, itembranch0_.ibslrc4 as ibslrc25_32_0_, itembranch0_.ibslrc5 as ibslrc26_32_0_, itembranch0_.ibslrc6 as ibslrc27_32_0_, itembranch0_.ibslrc7 as ibslrc28_32_0_, itembranch0_.ibslrc8 as ibslrc29_32_0_, itembranch0_.ibslrc9 as ibslrc30_32_0_, itembranch0_.ibitc03 as ibitc31_32_0_, itembranch0_.ibglcls as ibglcls32_32_0_, itembranch0_.ibilc as ibilc33_32_0_, itembranch0_.ibipg as ibipg34_32_0_, itembranch0_.iblsc as iblsc35_32_0_, itembranch0_.ibmaxroq as ibmaxro36_32_0_, itembranch0_.ibminroq as ibminro37_32_0_, itembranch0_.ibbpid as ibbpid38_32_0_, itembranch0_.ibcsid as ibcsid39_32_0_, itembranch0_.ibudf as ibudf40_32_0_, itembranch0_.ibpmmf as ibpmmf41_32_0_, itembranch0_.ibrbii as ibrbii42_32_0_, itembranch0_.ibrbim as ibrbim43_32_0_, itembranch0_.ibrbis as ibrbis44_32_0_, itembranch0_.ibvnid as ibvnid45_32_0_, itembranch0_.ibtaxpc as ibtaxpc46_32_0_, itembranch0_.ibtaxsc as ibtaxsc47_32_0_, itembranch0_.ibplg as ibplg48_32_0_, itembranch0_.ibrop as ibrop49_32_0_, itembranch0_.ibroq as ibroq50_32_0_, itembranch0_.ibsfstk as ibsfstk51_32_0_, itembranch0_.ibsnr as ibsnr52_32_0_, itembranch0_.ibskty as ibskty53_32_0_, itembranch0_.iblnty as iblnty54_32_0_ from t41011 itembranch0_ where itembranch0_.ibbuid=? and itembranch0_.ibinum=?
-2018-12-14 17:35:27.171  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@1c24488 testClass = ItemBranchInfoApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest@65f496d1, testMethod = createTestWithPut@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7d94b1bb testClass = ItemBranchInfoApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4c3186fa key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
-2018-12-14 17:35:27.171  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@1c24488 testClass = ItemBranchInfoApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest@7dd66d6, testMethod = deleteTest@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7d94b1bb testClass = ItemBranchInfoApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4c3186fa key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
-2018-12-14 17:35:27.171  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
-2018-12-14 17:35:27.171  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
-2018-12-14 17:35:27.171  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+2018-12-27 11:25:45.777  INFO 2120 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@dcf67f7 testClass = ItemBranchInfoApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest@3e1b317e, testMethod = createTestWithPut@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@546a01db testClass = ItemBranchInfoApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@6a6dbb12 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+2018-12-27 11:25:45.779  INFO 2120 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@dcf67f7 testClass = ItemBranchInfoApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest@4da0a38a, testMethod = deleteTest@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@546a01db testClass = ItemBranchInfoApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@6a6dbb12 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@75de8c12]; rollback [true]
+2018-12-27 11:25:45.780  INFO 2120 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-27 11:25:45.780  INFO 2120 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-27 11:25:45.787  INFO 2120 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 7 ms
 Hibernate: select itembranch0_.ibbuid as ibbuid1_32_0_, itembranch0_.ibinum as ibinum2_32_0_, itembranch0_.ibcid as ibcid3_32_0_, itembranch0_.ibdtin as ibdtin4_32_0_, itembranch0_.ibtmin as ibtmin5_32_0_, itembranch0_.ibuid as ibuid6_32_0_, itembranch0_.ibdtlu as ibdtlu7_32_0_, itembranch0_.ibtmlu as ibtmlu8_32_0_, itembranch0_.ibuidm as ibuidm9_32_0_, itembranch0_.ibdtls as ibdtls10_32_0_, itembranch0_.ibctm as ibctm11_32_0_, itembranch0_.ibitc02 as ibitc12_32_0_, itembranch0_.ibitc01 as ibitc13_32_0_, itembranch0_.ibitc10 as ibitc14_32_0_, itembranch0_.ibitc04 as ibitc15_32_0_, itembranch0_.ibitc06 as ibitc16_32_0_, itembranch0_.ibitc07 as ibitc17_32_0_, itembranch0_.ibitc08 as ibitc18_32_0_, itembranch0_.ibitc09 as ibitc19_32_0_, itembranch0_.ibitc05 as ibitc20_32_0_, itembranch0_.ibslrc0 as ibslrc21_32_0_, itembranch0_.ibslrc1 as ibslrc22_32_0_, itembranch0_.ibslrc2 as ibslrc23_32_0_, itembranch0_.ibslrc3 as ibslrc24_32_0_, itembranch0_.ibslrc4 as ibslrc25_32_0_, itembranch0_.ibslrc5 as ibslrc26_32_0_, itembranch0_.ibslrc6 as ibslrc27_32_0_, itembranch0_.ibslrc7 as ibslrc28_32_0_, itembranch0_.ibslrc8 as ibslrc29_32_0_, itembranch0_.ibslrc9 as ibslrc30_32_0_, itembranch0_.ibitc03 as ibitc31_32_0_, itembranch0_.ibglcls as ibglcls32_32_0_, itembranch0_.ibilc as ibilc33_32_0_, itembranch0_.ibipg as ibipg34_32_0_, itembranch0_.iblsc as iblsc35_32_0_, itembranch0_.ibmaxroq as ibmaxro36_32_0_, itembranch0_.ibminroq as ibminro37_32_0_, itembranch0_.ibbpid as ibbpid38_32_0_, itembranch0_.ibcsid as ibcsid39_32_0_, itembranch0_.ibudf as ibudf40_32_0_, itembranch0_.ibpmmf as ibpmmf41_32_0_, itembranch0_.ibrbii as ibrbii42_32_0_, itembranch0_.ibrbim as ibrbim43_32_0_, itembranch0_.ibrbis as ibrbis44_32_0_, itembranch0_.ibvnid as ibvnid45_32_0_, itembranch0_.ibtaxpc as ibtaxpc46_32_0_, itembranch0_.ibtaxsc as ibtaxsc47_32_0_, itembranch0_.ibplg as ibplg48_32_0_, itembranch0_.ibrop as ibrop49_32_0_, itembranch0_.ibroq as ibroq50_32_0_, itembranch0_.ibsfstk as ibsfstk51_32_0_, itembranch0_.ibsnr as ibsnr52_32_0_, itembranch0_.ibskty as ibskty53_32_0_, itembranch0_.iblnty as iblnty54_32_0_ from t41011 itembranch0_ where itembranch0_.ibbuid=? and itembranch0_.ibinum=?
-2018-12-14 17:35:27.280  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@1c24488 testClass = ItemBranchInfoApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest@7dd66d6, testMethod = deleteTest@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7d94b1bb testClass = ItemBranchInfoApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4c3186fa key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
-2018-12-14 17:35:27.280  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@1c24488 testClass = ItemBranchInfoApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest@6cb6f106, testMethod = createTestWithPost@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7d94b1bb testClass = ItemBranchInfoApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4c3186fa key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@76f112e2]; rollback [true]
-2018-12-14 17:35:27.280  INFO 9212 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
-2018-12-14 17:35:27.280  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
-2018-12-14 17:35:27.280  INFO 9212 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+2018-12-27 11:25:45.809  INFO 2120 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@dcf67f7 testClass = ItemBranchInfoApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest@4da0a38a, testMethod = deleteTest@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@546a01db testClass = ItemBranchInfoApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@6a6dbb12 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+2018-12-27 11:25:45.812  INFO 2120 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@dcf67f7 testClass = ItemBranchInfoApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest@5d68b827, testMethod = createTestWithPost@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@546a01db testClass = ItemBranchInfoApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@6a6dbb12 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@75de8c12]; rollback [true]
+2018-12-27 11:25:45.813  INFO 2120 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2018-12-27 11:25:45.813  INFO 2120 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2018-12-27 11:25:45.823  INFO 2120 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 10 ms
 Hibernate: select itembranch0_.ibbuid as ibbuid1_32_0_, itembranch0_.ibinum as ibinum2_32_0_, itembranch0_.ibcid as ibcid3_32_0_, itembranch0_.ibdtin as ibdtin4_32_0_, itembranch0_.ibtmin as ibtmin5_32_0_, itembranch0_.ibuid as ibuid6_32_0_, itembranch0_.ibdtlu as ibdtlu7_32_0_, itembranch0_.ibtmlu as ibtmlu8_32_0_, itembranch0_.ibuidm as ibuidm9_32_0_, itembranch0_.ibdtls as ibdtls10_32_0_, itembranch0_.ibctm as ibctm11_32_0_, itembranch0_.ibitc02 as ibitc12_32_0_, itembranch0_.ibitc01 as ibitc13_32_0_, itembranch0_.ibitc10 as ibitc14_32_0_, itembranch0_.ibitc04 as ibitc15_32_0_, itembranch0_.ibitc06 as ibitc16_32_0_, itembranch0_.ibitc07 as ibitc17_32_0_, itembranch0_.ibitc08 as ibitc18_32_0_, itembranch0_.ibitc09 as ibitc19_32_0_, itembranch0_.ibitc05 as ibitc20_32_0_, itembranch0_.ibslrc0 as ibslrc21_32_0_, itembranch0_.ibslrc1 as ibslrc22_32_0_, itembranch0_.ibslrc2 as ibslrc23_32_0_, itembranch0_.ibslrc3 as ibslrc24_32_0_, itembranch0_.ibslrc4 as ibslrc25_32_0_, itembranch0_.ibslrc5 as ibslrc26_32_0_, itembranch0_.ibslrc6 as ibslrc27_32_0_, itembranch0_.ibslrc7 as ibslrc28_32_0_, itembranch0_.ibslrc8 as ibslrc29_32_0_, itembranch0_.ibslrc9 as ibslrc30_32_0_, itembranch0_.ibitc03 as ibitc31_32_0_, itembranch0_.ibglcls as ibglcls32_32_0_, itembranch0_.ibilc as ibilc33_32_0_, itembranch0_.ibipg as ibipg34_32_0_, itembranch0_.iblsc as iblsc35_32_0_, itembranch0_.ibmaxroq as ibmaxro36_32_0_, itembranch0_.ibminroq as ibminro37_32_0_, itembranch0_.ibbpid as ibbpid38_32_0_, itembranch0_.ibcsid as ibcsid39_32_0_, itembranch0_.ibudf as ibudf40_32_0_, itembranch0_.ibpmmf as ibpmmf41_32_0_, itembranch0_.ibrbii as ibrbii42_32_0_, itembranch0_.ibrbim as ibrbim43_32_0_, itembranch0_.ibrbis as ibrbis44_32_0_, itembranch0_.ibvnid as ibvnid45_32_0_, itembranch0_.ibtaxpc as ibtaxpc46_32_0_, itembranch0_.ibtaxsc as ibtaxsc47_32_0_, itembranch0_.ibplg as ibplg48_32_0_, itembranch0_.ibrop as ibrop49_32_0_, itembranch0_.ibroq as ibroq50_32_0_, itembranch0_.ibsfstk as ibsfstk51_32_0_, itembranch0_.ibsnr as ibsnr52_32_0_, itembranch0_.ibskty as ibskty53_32_0_, itembranch0_.iblnty as iblnty54_32_0_ from t41011 itembranch0_ where itembranch0_.ibbuid=? and itembranch0_.ibinum=?
 Hibernate: select itembranch0_.ibbuid as ibbuid1_32_0_, itembranch0_.ibinum as ibinum2_32_0_, itembranch0_.ibcid as ibcid3_32_0_, itembranch0_.ibdtin as ibdtin4_32_0_, itembranch0_.ibtmin as ibtmin5_32_0_, itembranch0_.ibuid as ibuid6_32_0_, itembranch0_.ibdtlu as ibdtlu7_32_0_, itembranch0_.ibtmlu as ibtmlu8_32_0_, itembranch0_.ibuidm as ibuidm9_32_0_, itembranch0_.ibdtls as ibdtls10_32_0_, itembranch0_.ibctm as ibctm11_32_0_, itembranch0_.ibitc02 as ibitc12_32_0_, itembranch0_.ibitc01 as ibitc13_32_0_, itembranch0_.ibitc10 as ibitc14_32_0_, itembranch0_.ibitc04 as ibitc15_32_0_, itembranch0_.ibitc06 as ibitc16_32_0_, itembranch0_.ibitc07 as ibitc17_32_0_, itembranch0_.ibitc08 as ibitc18_32_0_, itembranch0_.ibitc09 as ibitc19_32_0_, itembranch0_.ibitc05 as ibitc20_32_0_, itembranch0_.ibslrc0 as ibslrc21_32_0_, itembranch0_.ibslrc1 as ibslrc22_32_0_, itembranch0_.ibslrc2 as ibslrc23_32_0_, itembranch0_.ibslrc3 as ibslrc24_32_0_, itembranch0_.ibslrc4 as ibslrc25_32_0_, itembranch0_.ibslrc5 as ibslrc26_32_0_, itembranch0_.ibslrc6 as ibslrc27_32_0_, itembranch0_.ibslrc7 as ibslrc28_32_0_, itembranch0_.ibslrc8 as ibslrc29_32_0_, itembranch0_.ibslrc9 as ibslrc30_32_0_, itembranch0_.ibitc03 as ibitc31_32_0_, itembranch0_.ibglcls as ibglcls32_32_0_, itembranch0_.ibilc as ibilc33_32_0_, itembranch0_.ibipg as ibipg34_32_0_, itembranch0_.iblsc as iblsc35_32_0_, itembranch0_.ibmaxroq as ibmaxro36_32_0_, itembranch0_.ibminroq as ibminro37_32_0_, itembranch0_.ibbpid as ibbpid38_32_0_, itembranch0_.ibcsid as ibcsid39_32_0_, itembranch0_.ibudf as ibudf40_32_0_, itembranch0_.ibpmmf as ibpmmf41_32_0_, itembranch0_.ibrbii as ibrbii42_32_0_, itembranch0_.ibrbim as ibrbim43_32_0_, itembranch0_.ibrbis as ibrbis44_32_0_, itembranch0_.ibvnid as ibvnid45_32_0_, itembranch0_.ibtaxpc as ibtaxpc46_32_0_, itembranch0_.ibtaxsc as ibtaxsc47_32_0_, itembranch0_.ibplg as ibplg48_32_0_, itembranch0_.ibrop as ibrop49_32_0_, itembranch0_.ibroq as ibroq50_32_0_, itembranch0_.ibsfstk as ibsfstk51_32_0_, itembranch0_.ibsnr as ibsnr52_32_0_, itembranch0_.ibskty as ibskty53_32_0_, itembranch0_.iblnty as iblnty54_32_0_ from t41011 itembranch0_ where itembranch0_.ibbuid=? and itembranch0_.ibinum=?
 Hibernate: insert into t41011 (ibcid, ibdtin, ibtmin, ibuid, ibdtlu, ibtmlu, ibuidm, ibdtls, ibctm, ibitc02, ibitc01, ibitc10, ibitc04, ibitc06, ibitc07, ibitc08, ibitc09, ibitc05, ibslrc0, ibslrc1, ibslrc2, ibslrc3, ibslrc4, ibslrc5, ibslrc6, ibslrc7, ibslrc8, ibslrc9, ibitc03, ibglcls, ibilc, ibipg, iblsc, ibmaxroq, ibminroq, ibbpid, ibcsid, ibudf, ibpmmf, ibrbii, ibrbim, ibrbis, ibvnid, ibtaxpc, ibtaxsc, ibplg, ibrop, ibroq, ibsfstk, ibsnr, ibskty, iblnty, ibbuid, ibinum) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
@@ -1702,7 +1702,7 @@ MockHttpServletRequest:
        Parameters = {}
           Headers = {Accept=[application/json]}
              Body = &lt;no character encoding set&gt;
-    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@54a685de, SPRING_SECURITY_CONTEXT=org.springframework.security.core.context.SecurityContextImpl@475fcd89: Authentication: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@475fcd89: Principal: org.springframework.security.core.userdetails.User@f02988d6: Username: username; Password: [PROTECTED]; Enabled: true; AccountNonExpired: true; credentialsNonExpired: true; AccountNonLocked: true; Not granted any authorities; Credentials: [PROTECTED]; Authenticated: true; Details: null; Not granted any authorities}
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@6a7d9310, SPRING_SECURITY_CONTEXT=org.springframework.security.core.context.SecurityContextImpl@475fcd89: Authentication: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@475fcd89: Principal: org.springframework.security.core.userdetails.User@f02988d6: Username: username; Password: [PROTECTED]; Enabled: true; AccountNonExpired: true; credentialsNonExpired: true; AccountNonLocked: true; Not granted any authorities; Credentials: [PROTECTED]; Authenticated: true; Details: null; Not granted any authorities}
 
 Handler:
              Type = org.springframework.data.rest.webmvc.RepositoryEntityController
@@ -1783,10 +1783,10 @@ MockHttpServletResponse:
     &quot;salesReportingCode9&quot; : &quot;&quot;,
     &quot;salesReportingCode0&quot; : &quot;&quot;
   },
-  &quot;branchCode&quot; : &quot;123&quot;,
   &quot;itemCode&quot; : &quot;TEST.TEST&quot;,
-  &quot;lastUpdateDateTime&quot; : &quot;2018-12-14T17:35:27&quot;,
-  &quot;inputDateTime&quot; : &quot;2018-12-14T17:35:27&quot;,
+  &quot;branchCode&quot; : &quot;123&quot;,
+  &quot;lastUpdateDateTime&quot; : &quot;2018-12-27T11:25:45&quot;,
+  &quot;inputDateTime&quot; : &quot;2018-12-27T11:25:45&quot;,
   &quot;_links&quot; : {
     &quot;self&quot; : {
       &quot;href&quot; : &quot;http://localhost/api/itembranches/123_TEST.TEST&quot;
@@ -1794,18 +1794,18 @@ MockHttpServletResponse:
     &quot;itemBranchInfo&quot; : {
       &quot;href&quot; : &quot;http://localhost/api/itembranches/123_TEST.TEST&quot;
     },
-    &quot;branch&quot; : {
-      &quot;href&quot; : &quot;http://localhost/api/itembranches/123_TEST.TEST/branch&quot;
-    },
     &quot;itemMaster&quot; : {
       &quot;href&quot; : &quot;http://localhost/api/itembranches/123_TEST.TEST/itemMaster&quot;
+    },
+    &quot;branch&quot; : {
+      &quot;href&quot; : &quot;http://localhost/api/itembranches/123_TEST.TEST/branch&quot;
     }
   }
 }
     Forwarded URL = null
    Redirected URL = null
           Cookies = []
-2018-12-14 17:35:27.530  INFO 9212 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@1c24488 testClass = ItemBranchInfoApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest@6cb6f106, testMethod = createTestWithPost@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7d94b1bb testClass = ItemBranchInfoApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@4c3186fa key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
+2018-12-27 11:25:45.892  INFO 2120 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@dcf67f7 testClass = ItemBranchInfoApiTest, testInstance = ags.goldenlionerp.apiTests.item.ItemBranchInfoApiTest@5d68b827, testMethod = createTestWithPost@ApiTestBase, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@546a01db testClass = ItemBranchInfoApiTest, locations = '{}', classes = '{class ags.goldenlionerp.GoldenLionErpApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:test.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@636d731e, [ImportsContextCustomizer@6a6dbb12 key = [ags.goldenlionerp.apiTests.ApiTestBase$TestConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6afa5291, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@20cebcb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@49a32273], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true]]
 </pre>
 </span>
 </div>
@@ -1817,7 +1817,7 @@ MockHttpServletResponse:
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 4.2.1</a> at 14 Dec, 2018 5:36:06 PM</p>
+<a href="http://www.gradle.org">Gradle 4.2.1</a> at 27 Dec, 2018 11:26:12 AM</p>
 </div>
 </div>
 </body>
