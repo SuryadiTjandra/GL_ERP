@@ -29,8 +29,8 @@ jar { enabled = true }
 dependencies {
 	implementation('org.springframework.boot:spring-boot-starter-data-jpa')
 	implementation('org.springframework.boot:spring-boot-starter-data-rest')
-    implementation('org.springframework.boot:spring-boot-starter-test')
-	implementation('org.springframework.security:spring-security-test')
-	implementation group: 'junit', name: 'junit', version: '4.12'
+	api('org.springframework.boot:spring-boot-starter-test')
+	api('org.springframework.security:spring-security-test')
+	api group: 'junit', name: 'junit', version: '4.12'
 }
 
