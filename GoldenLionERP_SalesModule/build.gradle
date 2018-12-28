@@ -20,7 +20,7 @@ buildscript {
 
 plugins {
 	 id "com.moowork.node" version "1.2.0"
-	 //id "com.ewerk.gradle.plugins.querydsl" version "1.0.9"
+	 id "com.ewerk.gradle.plugins.querydsl" version "1.0.9"
 }
 
 apply plugin: 'java'
@@ -40,6 +40,8 @@ bootJar{ enabled = false }
 jar { enabled = true }
 
 dependencies {
+	implementation "ags.goldenlionerp:GoldenLionERP_CoreModule"
+
 	//compile only because these are supposed to be included by the CoreModule
     compileOnly('org.springframework.boot:spring-boot-starter-data-jpa')
 	compileOnly('org.springframework.boot:spring-boot-starter-data-rest')
@@ -51,13 +53,34 @@ dependencies {
 
     implementation 'com.google.guava:guava:23.0'
     
-    implementation "ags.goldenlionerp:GoldenLionERP_CoreModule"
-
-    testImplementation 'junit:junit:4.12'
+	testImplementation "ags.goldenlionerp:GoldenLionERP_CoreTestModule"
+    testCompileOnly 'junit:junit:4.12'
+    testCompileOnly 'org.springframework.boot:spring-boot-starter-test'
 }
 
-/*querydsl {
-	jpa = true
-}*/
+node {
+	download = false
+	nodeModulesDir = file("${project.projectDir}/src/main/front")
+	npmWorkDir = file("${project.projectDir}/src/main/front")
+}
 
-//build.dependsOn gradle.includedBuild('GoldenLionERP_CoreModule').task(':build')
+querydsl {
+	jpa = true
+}
+
+task cleanJsFiles(type:Delete){
+	delete "src/main/front/dist"
+	delete "src/main/resources/static/js"
+}
+task runWebpack(type:NpmTask, dependsOn: npmInstall){
+	args = ['run', 'build']
+}
+task moveBundledJsFiles(type:Copy, dependsOn: [cleanJsFiles,runWebpack]){
+	from 'src/main/front/dist'
+	into 'src/main/resources/static/js'
+}
+task webpack(dependsOn: [moveBundledJsFiles]){
+
+}
+
+build.dependsOn webpack
