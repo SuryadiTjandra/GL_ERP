@@ -78,7 +78,7 @@ public abstract class ApiTestBaseOld<ID extends Serializable> implements ApiTest
 		
 	
 		requestObject = requestObject();
-		//and random metadata to request object. These shouldn't affect the request result.
+		//add random metadata to request object. These shouldn't affect the request result.
 		requestObject.put("computerId", "YOOO");
 		requestObject.put("inputUserId", "NO");
 		requestObject.put("lastUpdateUserId", "NAY");
@@ -138,11 +138,13 @@ public abstract class ApiTestBaseOld<ID extends Serializable> implements ApiTest
 		
 		assertEquals(
 				(String) JsonPath.read(entityJson, "$.lastUpdateDateTime"),
-				(String) JsonPath.read(entityJson, "$.inputDateTime")
+				(String) JsonPath.read(entityJson, "$.inputDateTime"),
+				"Last update time and input date time are not equal"
 		);
 		assertEquals(
 				(String) JsonPath.read(entityJson, "$.lastUpdateUserId"),
-				(String) JsonPath.read(entityJson, "$.inputUserId")
+				(String) JsonPath.read(entityJson, "$.inputUserId"),
+				"Last update and input user are not equal"
 		);
 	}
 	
